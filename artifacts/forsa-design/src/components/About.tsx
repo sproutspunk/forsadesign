@@ -18,12 +18,41 @@ export default function About() {
           >
             <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent" />
             
-            {/* Geometric Decorative Element */}
-            <div className="relative w-48 h-48 md:w-64 md:h-64">
-              <div className="absolute inset-0 border-2 border-primary/40 rounded-full rotate-45 group-hover:rotate-90 transition-transform duration-1000 ease-in-out" />
-              <div className="absolute inset-4 border-2 border-primary/60 rotate-[60deg] group-hover:rotate-[120deg] transition-transform duration-1000 ease-in-out" />
-              <div className="absolute inset-8 border border-primary/80 rotate-12 group-hover:-rotate-12 transition-transform duration-1000 ease-in-out" />
-              <div className="absolute inset-[30%] bg-primary/20 backdrop-blur-sm rounded-sm rotate-45 group-hover:rotate-180 transition-transform duration-1000 ease-in-out" />
+            {/* 3D Geometric Decorative Element — layered in depth, tumbling in 3D space */}
+            <div
+              className="relative w-48 h-48 md:w-64 md:h-64"
+              style={{ perspective: "900px" }}
+            >
+              <motion.div
+                className="absolute inset-0"
+                style={{ transformStyle: "preserve-3d" }}
+                animate={{ rotateY: 360, rotateX: [14, -14, 14] }}
+                transition={{
+                  rotateY: { repeat: Infinity, duration: 16, ease: "linear" },
+                  rotateX: { repeat: Infinity, duration: 8, ease: "easeInOut" },
+                }}
+              >
+                {/* circle ring — pushed back */}
+                <div
+                  className="absolute inset-0 border-2 border-primary/40 rounded-full"
+                  style={{ transform: "translateZ(-50px) rotate(45deg)" }}
+                />
+                {/* square ring — mid depth */}
+                <div
+                  className="absolute inset-4 border-2 border-primary/60"
+                  style={{ transform: "translateZ(0px) rotate(60deg)" }}
+                />
+                {/* square ring — forward */}
+                <div
+                  className="absolute inset-8 border border-primary/80"
+                  style={{ transform: "translateZ(45px) rotate(12deg)" }}
+                />
+                {/* center diamond — front, solid */}
+                <div
+                  className="absolute inset-[30%] bg-primary/25 backdrop-blur-sm rounded-sm shadow-[0_0_30px_rgba(201,168,76,0.35)]"
+                  style={{ transform: "translateZ(85px) rotate(45deg)" }}
+                />
+              </motion.div>
             </div>
             
             {/* Gold Accent Line */}
