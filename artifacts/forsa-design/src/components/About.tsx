@@ -18,39 +18,38 @@ export default function About() {
           >
             <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent" />
             
-            {/* 3D Geometric Decorative Element — layered in depth, tumbling in 3D space */}
+            {/* 3D Cube — a regular solid with equal sides, tumbling in 3D space */}
             <div
-              className="relative w-48 h-48 md:w-64 md:h-64"
-              style={{ perspective: "900px" }}
+              className="relative w-48 h-48 md:w-64 md:h-64 flex items-center justify-center"
+              style={{ perspective: "1000px" }}
             >
               <motion.div
-                className="absolute inset-0"
-                style={{ transformStyle: "preserve-3d" }}
-                animate={{ rotateY: 360, rotateX: [14, -14, 14] }}
+                className="relative"
+                style={{ transformStyle: "preserve-3d", width: "10rem", height: "10rem" }}
+                animate={{ rotateX: 360, rotateY: 360 }}
                 transition={{
-                  rotateY: { repeat: Infinity, duration: 16, ease: "linear" },
-                  rotateX: { repeat: Infinity, duration: 8, ease: "easeInOut" },
+                  rotateX: { repeat: Infinity, duration: 20, ease: "linear" },
+                  rotateY: { repeat: Infinity, duration: 13, ease: "linear" },
                 }}
               >
-                {/* circle ring — pushed back */}
+                {/* 6 equal square faces — translateZ is half the edge length (5rem) */}
+                {[
+                  "rotateY(0deg)",
+                  "rotateY(90deg)",
+                  "rotateY(180deg)",
+                  "rotateY(-90deg)",
+                  "rotateX(90deg)",
+                  "rotateX(-90deg)",
+                ].map((rot, i) => (
+                  <div
+                    key={i}
+                    className="absolute inset-0 border-2 border-primary/50 bg-primary/[0.06] backdrop-blur-sm"
+                    style={{ transform: `${rot} translateZ(5rem)` }}
+                  />
+                ))}
+                {/* glowing gold core at the centre */}
                 <div
-                  className="absolute inset-0 border-2 border-primary/40 rounded-full"
-                  style={{ transform: "translateZ(-50px) rotate(45deg)" }}
-                />
-                {/* square ring — mid depth */}
-                <div
-                  className="absolute inset-4 border-2 border-primary/60"
-                  style={{ transform: "translateZ(0px) rotate(60deg)" }}
-                />
-                {/* square ring — forward */}
-                <div
-                  className="absolute inset-8 border border-primary/80"
-                  style={{ transform: "translateZ(45px) rotate(12deg)" }}
-                />
-                {/* center diamond — front, solid */}
-                <div
-                  className="absolute inset-[30%] bg-primary/25 backdrop-blur-sm rounded-sm shadow-[0_0_30px_rgba(201,168,76,0.35)]"
-                  style={{ transform: "translateZ(85px) rotate(45deg)" }}
+                  className="absolute inset-[42%] rounded-full bg-primary shadow-[0_0_28px_rgba(201,168,76,0.9)]"
                 />
               </motion.div>
             </div>
