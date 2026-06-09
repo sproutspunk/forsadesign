@@ -23,8 +23,14 @@ export default function About() {
               className="relative w-48 h-48 md:w-64 md:h-64 flex items-center justify-center"
               style={{ perspective: "1000px" }}
             >
-              {/* large circle framing the cube */}
-              <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[15rem] h-[15rem] rounded-full border-2 border-primary/30" />
+              {/* large circle framing the cube, with a soft gold glow */}
+              <div
+                className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[15rem] h-[15rem] rounded-full border-2 border-primary/30 shadow-[0_0_50px_rgba(201,168,76,0.25)]"
+                style={{
+                  background:
+                    "radial-gradient(circle, rgba(201,168,76,0.10) 0%, transparent 70%)",
+                }}
+              />
 
               <motion.div
                 className="relative"
