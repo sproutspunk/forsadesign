@@ -2,24 +2,24 @@
 
 ## Project Overview
 
-This project is a pnpm monorepo for a small brochure-style web presence named Forsa Design. The production application consists of a static React/Vite frontend in `artifacts/forsa-design` and a minimal Express API in `artifacts/api-server` backed by PostgreSQL wiring in `lib/db`, although no production data models or data-handling routes are implemented yet.
+This project is a pnpm monorepo for a small brochure-style web presence named Forsa Design. The production application consists of a static React/Vite frontend in `artifacts/forsa-design` and a minimal Express API in `artifacts/api-server`. A PostgreSQL/Drizzle library exists in `lib/db`, along with generated API client/schema packages in `lib/api-client-react`, `lib/api-spec`, and `lib/api-zod`, but those shared libraries are largely scaffolding at the current stage.
 
 Production assumptions for future scans:
 - Replit provides TLS for deployed traffic.
 - `NODE_ENV` is `production` in deployed builds.
 - `artifacts/mockup-sandbox` is a development-only design surface and is out of scope unless production routing or build configuration starts exposing it.
-- The current repl is not deployed, so production exposure is inferred from artifact configuration rather than a live internet-facing deployment.
+- The application is currently deployed publicly on Replit autoscale; current exposure is determined from the live deployment plus artifact configuration.
 
 ## Assets
 
-- **Frontend integrity** — the static site content, client-side routing, and localized content must not be modified by untrusted input in a way that causes script execution or phishing.
+- **Frontend integrity** — the static site content, client-side routing, and localized content must not be modified by untrusted input in a way that causes script execution, phishing, or deceptive navigation.
 - **API availability and integrity** — the Express service must only expose intended routes and must not grow unsafe middleware or unauthenticated sensitive endpoints as features are added.
 - **Database credentials and future application data** — `DATABASE_URL` and any future stored customer/contact data would be sensitive if the currently stubbed database layer begins to be used.
-- **Session or API credentials in future clients** — `lib/api-client-react` already contains support for bearer-token attachment, so future consumers must avoid exposing tokens to unintended runtimes or logs.
+- **Session or API credentials in future clients** — `lib/api-client-react` already contains support for bearer-token attachment, so future consumers must avoid exposing tokens to unintended runtimes, origins, or logs.
 
 ## Trust Boundaries
 
-- **Browser to frontend assets** — users receive static content from `artifacts/forsa-design/dist/public`; all browser state such as `localStorage` and URL paths is untrusted.
+- **Browser to frontend assets** — users receive static content from `artifacts/forsa-design/dist/public`; all browser state such as `localStorage`, URL paths, and DOM events is untrusted.
 - **Browser to API** — requests to `/api/*` cross into server-controlled code in `artifacts/api-server/src`; every future non-public route must enforce authentication and authorization server-side.
 - **API to database** — `lib/db/src/index.ts` creates a privileged PostgreSQL connection from `DATABASE_URL`; any future raw query construction here would directly affect confidentiality and integrity.
 - **Build-time/generated-code boundary** — OpenAPI and generated clients/Zod schemas in `lib/api-spec`, `lib/api-zod`, and `lib/api-client-react` are trusted build artifacts and should not be treated as direct user-input channels.
@@ -37,11 +37,11 @@ Production assumptions for future scans:
 
 ### Tampering
 
-The main tampering risk in this project is future expansion of the Express API or database layer without strong validation and server-side enforcement. All future request bodies, query parameters, headers, and path segments that reach `artifacts/api-server` or `lib/db` must be validated, and all database access must continue to use safe parameterized/query-builder patterns.
+The main tampering risk in this project is future expansion of the Express API or database layer without strong validation and server-side enforcement. All future request bodies, query parameters, headers, and path segments that reach `artifacts/api-server` or `lib/db` must be validated, and all database access must continue to use safe parameterized/query-builder patterns. On the frontend, localized content and DOM metadata writes must continue to be driven only by trusted constants or validated values.
 
 ### Information Disclosure
 
-The project currently exposes little sensitive data, but future risk centers on leaking secrets, contact submissions, bearer tokens, or database contents through logs, client bundles, or overbroad API responses. Secrets must stay in environment variables only, sensitive headers must remain redacted in logs, and future APIs must return only fields needed by the caller.
+The project currently exposes little sensitive data, but future risk centers on leaking secrets, contact submissions, bearer tokens, or database contents through logs, client bundles, or overbroad API responses. Secrets must stay in environment variables only, sensitive headers must remain redacted in logs, and future APIs must return only fields needed by the caller. If `lib/api-client-react` begins to be used in production web code, token attachment behavior must be reviewed so credentials are not sent to unintended origins.
 
 ### Denial of Service
 
