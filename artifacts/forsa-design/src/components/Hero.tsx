@@ -77,25 +77,30 @@ export default function Hero() {
               />
             </motion.div>
 
-            {/* Rocket shines in sync with the orbiting sun (peaks at t=0.5) */}
+            {/* Rocket colour shifts with the sun: dark+cool when far, warm gold when near */}
             <motion.img
               src={logo}
               alt="Forsa Design"
               className="w-56 md:w-72 lg:w-80 h-auto object-contain"
               animate={{
                 filter: [
-                  "drop-shadow(0 0 6px rgba(201,168,76,0.15)) brightness(0.92)",
-                  "drop-shadow(0 0 12px rgba(255,215,0,0.35)) brightness(1.0)",
-                  "drop-shadow(0 0 28px rgba(255,215,0,0.75)) brightness(1.18)",
-                  "drop-shadow(0 0 12px rgba(255,215,0,0.35)) brightness(1.0)",
-                  "drop-shadow(0 0 6px rgba(201,168,76,0.15)) brightness(0.92)",
+                  /* t=0   sun far (top)   — dark, desaturated, cool */
+                  "brightness(0.65) saturate(0.35) sepia(0) drop-shadow(0 0 4px rgba(100,120,160,0.2))",
+                  /* t=0.2 approaching    — warming up */
+                  "brightness(0.85) saturate(0.75) sepia(0.15) drop-shadow(0 0 10px rgba(255,200,0,0.25))",
+                  /* t=0.5 sun at peak    — full warm gold blaze */
+                  "brightness(1.22) saturate(2.0) sepia(0.45) drop-shadow(0 0 30px rgba(255,215,0,0.80))",
+                  /* t=0.8 receding       — cooling down again */
+                  "brightness(0.85) saturate(0.75) sepia(0.15) drop-shadow(0 0 10px rgba(255,200,0,0.25))",
+                  /* t=1   sun far again  — back to dark */
+                  "brightness(0.65) saturate(0.35) sepia(0) drop-shadow(0 0 4px rgba(100,120,160,0.2))",
                 ],
               }}
               transition={{
                 repeat: Infinity,
                 duration: 10,
                 ease: "linear",
-                times: [0, 0.15, 0.5, 0.85, 1],
+                times: [0, 0.2, 0.5, 0.8, 1],
               }}
             />
           </motion.div>
