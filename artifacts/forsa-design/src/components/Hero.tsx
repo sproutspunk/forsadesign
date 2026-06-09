@@ -51,14 +51,14 @@ export default function Hero() {
                 overflow: "visible",
               }}
             >
-              {/* Glow bead — 40 px above the container edge ≈ 40-50 px from rocket outline */}
+              {/* Glow bead — brightest when at front of rocket (t=0.125), dimmest at back (t=0.625) */}
               <motion.div
-                animate={{ opacity: [0.3, 0.35, 0.8, 0.35, 0.3] }}
+                animate={{ opacity: [0.45, 0.95, 0.45, 0.2, 0.45, 0.45] }}
                 transition={{
                   repeat: Infinity,
                   duration: 10,
                   ease: "linear",
-                  times: [0, 0.15, 0.5, 0.85, 1],
+                  times: [0, 0.125, 0.375, 0.625, 0.875, 1],
                 }}
                 style={{
                   position: "absolute",
@@ -77,30 +77,32 @@ export default function Hero() {
               />
             </motion.div>
 
-            {/* Rocket colour shifts with the sun: dark+cool when far, warm gold when near */}
+            {/* Rocket: brightest at front (t=0.125 = top-right), darkest at back (t=0.625 = bottom-left) */}
             <motion.img
               src={logo}
               alt="Forsa Design"
               className="w-56 md:w-72 lg:w-80 h-auto object-contain"
               animate={{
                 filter: [
-                  /* t=0   sun far (top)   — dark, desaturated, cool */
-                  "brightness(0.65) saturate(0.35) sepia(0) drop-shadow(0 0 4px rgba(100,120,160,0.2))",
-                  /* t=0.2 approaching    — warming up */
-                  "brightness(0.85) saturate(0.75) sepia(0.15) drop-shadow(0 0 10px rgba(255,200,0,0.25))",
-                  /* t=0.5 sun at peak    — full warm gold blaze */
-                  "brightness(1.22) saturate(2.0) sepia(0.45) drop-shadow(0 0 30px rgba(255,215,0,0.80))",
-                  /* t=0.8 receding       — cooling down again */
-                  "brightness(0.85) saturate(0.75) sepia(0.15) drop-shadow(0 0 10px rgba(255,200,0,0.25))",
-                  /* t=1   sun far again  — back to dark */
-                  "brightness(0.65) saturate(0.35) sepia(0) drop-shadow(0 0 4px rgba(100,120,160,0.2))",
+                  /* t=0     sun at top — warming toward front */
+                  "brightness(0.85) saturate(0.8) sepia(0.1) drop-shadow(0 0 8px rgba(255,200,0,0.3))",
+                  /* t=0.125 sun at top-right = FRONT of rocket — peak blaze */
+                  "brightness(1.25) saturate(2.2) sepia(0.5) drop-shadow(0 0 32px rgba(255,215,0,0.85))",
+                  /* t=0.375 sun at bottom-right — fading */
+                  "brightness(0.78) saturate(0.55) sepia(0.05) drop-shadow(0 0 4px rgba(100,120,160,0.15))",
+                  /* t=0.625 sun at bottom-left = BACK of rocket — darkest */
+                  "brightness(0.52) saturate(0.25) sepia(0) drop-shadow(0 0 2px rgba(80,100,140,0.1))",
+                  /* t=0.875 sun at top-left — approaching front again */
+                  "brightness(0.78) saturate(0.55) sepia(0.05) drop-shadow(0 0 4px rgba(100,120,160,0.15))",
+                  /* t=1     back to top */
+                  "brightness(0.85) saturate(0.8) sepia(0.1) drop-shadow(0 0 8px rgba(255,200,0,0.3))",
                 ],
               }}
               transition={{
                 repeat: Infinity,
                 duration: 10,
                 ease: "linear",
-                times: [0, 0.2, 0.5, 0.8, 1],
+                times: [0, 0.125, 0.375, 0.625, 0.875, 1],
               }}
             />
           </motion.div>
