@@ -77,10 +77,26 @@ export default function Hero() {
               />
             </motion.div>
 
-            <img
+            {/* Rocket shines in sync with the orbiting sun (peaks at t=0.5) */}
+            <motion.img
               src={logo}
               alt="Forsa Design"
-              className="w-56 md:w-72 lg:w-80 h-auto object-contain drop-shadow-[0_0_32px_rgba(201,168,76,0.3)]"
+              className="w-56 md:w-72 lg:w-80 h-auto object-contain"
+              animate={{
+                filter: [
+                  "drop-shadow(0 0 6px rgba(201,168,76,0.15)) brightness(0.92)",
+                  "drop-shadow(0 0 12px rgba(255,215,0,0.35)) brightness(1.0)",
+                  "drop-shadow(0 0 28px rgba(255,215,0,0.75)) brightness(1.18)",
+                  "drop-shadow(0 0 12px rgba(255,215,0,0.35)) brightness(1.0)",
+                  "drop-shadow(0 0 6px rgba(201,168,76,0.15)) brightness(0.92)",
+                ],
+              }}
+              transition={{
+                repeat: Infinity,
+                duration: 10,
+                ease: "linear",
+                times: [0, 0.15, 0.5, 0.85, 1],
+              }}
             />
           </motion.div>
 
