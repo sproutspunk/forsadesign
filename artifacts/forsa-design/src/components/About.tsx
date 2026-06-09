@@ -63,7 +63,7 @@ export default function About() {
 
               <motion.div
                 className="relative"
-                style={{ transformStyle: "preserve-3d", width: "10rem", height: "10rem" }}
+                style={{ transformStyle: "preserve-3d", width: "8rem", height: "8rem" }}
                 animate={{ rotateX: 360, rotateY: 360 }}
                 transition={{
                   rotateX: { repeat: Infinity, duration: 20, ease: "linear" },
@@ -82,7 +82,7 @@ export default function About() {
                   <div
                     key={i}
                     className="absolute inset-0 border-2 border-primary/50 bg-primary/[0.06] backdrop-blur-sm"
-                    style={{ transform: `${rot} translateZ(5rem)` }}
+                    style={{ transform: `${rot} translateZ(4rem)` }}
                   />
                 ))}
                 {/* glowing gold core at the centre */}
