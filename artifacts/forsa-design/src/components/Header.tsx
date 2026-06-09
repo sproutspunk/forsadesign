@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import logo from "../assets/forsa-logo.png";
 
 export default function Header() {
   const { language, setLanguage, t } = useLanguage();
@@ -33,11 +34,15 @@ export default function Header() {
     >
       <div className="container mx-auto px-6 flex items-center justify-between">
         <a 
-          href="#home" 
-          className="font-serif text-xl tracking-[0.2em] font-bold text-white uppercase"
+          href="#home"
           data-testid="link-logo"
+          className="flex items-center shrink-0"
         >
-          Forsa Design
+          <img
+            src={logo}
+            alt="Forsa Design"
+            className="h-11 w-auto object-contain"
+          />
         </a>
 
         {/* Desktop Nav */}

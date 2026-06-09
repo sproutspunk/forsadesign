@@ -1,5 +1,6 @@
 import { useLanguage } from "@/contexts/LanguageContext";
 import { motion, type Variants } from "framer-motion";
+import logo from "../assets/forsa-logo.png";
 
 export default function Hero() {
   const { t } = useLanguage();
@@ -31,29 +32,20 @@ export default function Hero() {
           initial="hidden"
           animate="visible"
         >
-          <motion.div 
+          <motion.div
             variants={itemVariants}
-            className="mb-8 text-primary"
             animate={{ y: [-8, 8, -8] }}
             transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
+            className="mb-6"
           >
-            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2l.5-.5a5.4 5.4 0 0 0 1-4.65 9.19 9.19 0 0 0-4.85-4.85 5.4 5.4 0 0 0-4.65 1l-.5.5Z" />
-              <path d="m12 15 3.3 3.3a1 1 0 0 0 1.4 0l2.6-2.6a1 1 0 0 0 0-1.4L16 11" />
-              <path d="m9 12-3.3-3.3a1 1 0 0 1 0-1.4l2.6-2.6a1 1 0 0 1 1.4 0L13 8" />
-              <path d="M22 2c-1.63 0-5.74.88-9.08 4.22-3.21 3.22-4.14 7.2-4.22 8.78-.02.34.22.64.55.7l.15.02c1.78.3 4.25.99 6.2 3.46.26.33.7.4 1.05.15l.13-.1c1.58-1.46 2.45-5.44 2.45-8.86V2Z" />
-              <path d="M14.5 9.5a1 1 0 1 0-2-2 1 1 0 0 0 2 2Z" />
-            </svg>
+            <img
+              src={logo}
+              alt="Forsa Design"
+              className="w-56 md:w-72 lg:w-80 h-auto object-contain mx-auto drop-shadow-[0_0_32px_rgba(212,165,116,0.25)]"
+            />
           </motion.div>
 
-          <motion.h1 
-            variants={itemVariants}
-            className="font-serif text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight text-white mb-6"
-          >
-            FORSA DESIGN
-          </motion.h1>
-
-          <motion.div variants={itemVariants} className="w-24 h-1 bg-primary mb-8" />
+          <motion.div variants={itemVariants} className="w-24 h-px bg-primary mb-8" />
 
           <motion.h2 
             variants={itemVariants}
