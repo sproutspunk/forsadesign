@@ -33,7 +33,7 @@ export default function Process() {
                 className="relative flex md:flex-col items-start md:items-center gap-6 md:gap-8 md:text-center"
               >
                 {/* Numbered Circle */}
-                <div className="relative z-10 flex-shrink-0 w-12 h-12 rounded-full border-2 border-primary bg-background flex items-center justify-center text-primary font-serif font-bold text-xl shadow-[0_0_15px_rgba(212,165,116,0.15)]">
+                <div className="relative z-10 flex-shrink-0 w-12 h-12 rounded-full border-2 border-primary bg-background flex items-center justify-center text-primary font-serif font-bold text-xl shadow-[0_0_15px_rgba(201,168,76,0.18)]">
                   {index + 1}
                 </div>
 

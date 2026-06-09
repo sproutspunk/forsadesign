@@ -41,7 +41,7 @@ export default function Hero() {
             <img
               src={logo}
               alt="Forsa Design"
-              className="w-56 md:w-72 lg:w-80 h-auto object-contain mx-auto drop-shadow-[0_0_32px_rgba(212,165,116,0.25)]"
+              className="w-56 md:w-72 lg:w-80 h-auto object-contain mx-auto drop-shadow-[0_0_32px_rgba(201,168,76,0.3)]"
             />
           </motion.div>
 
@@ -66,7 +66,7 @@ export default function Hero() {
             href="#contact"
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.98 }}
-            className="inline-flex items-center justify-center px-8 py-4 bg-primary text-primary-foreground font-semibold text-lg rounded-sm transition-shadow hover:shadow-[0_0_20px_rgba(212,165,116,0.4)]"
+            className="inline-flex items-center justify-center px-8 py-4 bg-primary text-primary-foreground font-semibold text-lg rounded-sm transition-shadow hover:shadow-[0_0_20px_rgba(201,168,76,0.45)]"
             data-testid="btn-hero-cta"
           >
             {t("hero.cta")}

@@ -152,7 +152,7 @@ export default function Contact() {
                 type="submit"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="w-full md:w-auto px-10 py-4 bg-primary text-primary-foreground font-semibold text-lg rounded-sm transition-shadow hover:shadow-[0_0_20px_rgba(212,165,116,0.4)]"
+                className="w-full md:w-auto px-10 py-4 bg-primary text-primary-foreground font-semibold text-lg rounded-sm transition-shadow hover:shadow-[0_0_20px_rgba(201,168,76,0.45)]"
                 data-testid="btn-submit"
               >
                 {t("contact.submit")}
