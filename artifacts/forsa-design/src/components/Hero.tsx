@@ -36,7 +36,7 @@ export default function Hero() {
             variants={itemVariants}
             animate={{ y: [-8, 8, -8] }}
             transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
-            className="mb-6 mx-auto"
+            className="mb-1 mx-auto"
             style={{ position: "relative", width: "fit-content" }}
           >
             {/* Orbit arm — rotates 360° in 10 s, centred on the logo */}
@@ -81,7 +81,7 @@ export default function Hero() {
             <motion.img
               src={logo}
               alt="Forsa Design"
-              className="w-56 md:w-72 lg:w-80 h-auto object-contain"
+              className="w-56 md:w-72 lg:w-80 h-auto object-contain block"
               animate={{
                 filter: [
                   /* t=0    0°   — 45° before peak, already warming */
@@ -111,16 +111,31 @@ export default function Hero() {
                 times: [0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875, 1],
               }}
             />
+
+          </motion.div>
+
+          {/* Readable tagline — replaces the unreadable baked text in the logo PNG */}
+          <motion.div variants={itemVariants} className="mb-6 -mt-2">
+            <span
+              style={{
+                display: "inline-block",
+                color: "#FFD700",
+                fontFamily: "'Inter', sans-serif",
+                fontSize: "clamp(9px, 1.1vw, 13px)",
+                fontWeight: 600,
+                letterSpacing: "0.22em",
+                textTransform: "uppercase",
+                textShadow: "0 0 10px rgba(255,215,0,0.35)",
+                borderTop: "1px solid rgba(255,215,0,0.25)",
+                borderBottom: "1px solid rgba(255,215,0,0.25)",
+                padding: "4px 16px",
+              }}
+            >
+              Comprehensive Website Design &amp; Creation
+            </span>
           </motion.div>
 
           <motion.div variants={itemVariants} className="w-24 h-px bg-primary mb-8" />
-
-          <motion.h2 
-            variants={itemVariants}
-            className="text-2xl md:text-3xl font-medium text-foreground/90 mb-4"
-          >
-            {t("hero.tagline")}
-          </motion.h2>
 
           <motion.p 
             variants={itemVariants}
