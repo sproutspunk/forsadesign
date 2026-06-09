@@ -23,6 +23,9 @@ export default function About() {
               className="relative w-48 h-48 md:w-64 md:h-64 flex items-center justify-center"
               style={{ perspective: "1000px" }}
             >
+              {/* large circle framing the cube */}
+              <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[15rem] h-[15rem] rounded-full border-2 border-primary/30" />
+
               <motion.div
                 className="relative"
                 style={{ transformStyle: "preserve-3d", width: "10rem", height: "10rem" }}
