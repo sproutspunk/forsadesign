@@ -114,28 +114,7 @@ export default function Hero() {
 
           </motion.div>
 
-          {/* Readable tagline — replaces the unreadable baked text in the logo PNG */}
-          <motion.div variants={itemVariants} className="mb-6 -mt-2">
-            <span
-              style={{
-                display: "inline-block",
-                color: "#FFD700",
-                fontFamily: "'Inter', sans-serif",
-                fontSize: "clamp(9px, 1.1vw, 13px)",
-                fontWeight: 600,
-                letterSpacing: "0.22em",
-                textTransform: "uppercase",
-                textShadow: "0 0 10px rgba(255,215,0,0.35)",
-                borderTop: "1px solid rgba(255,215,0,0.25)",
-                borderBottom: "1px solid rgba(255,215,0,0.25)",
-                padding: "4px 16px",
-              }}
-            >
-              Comprehensive Website Design &amp; Creation
-            </span>
-          </motion.div>
-
-          <motion.div variants={itemVariants} className="w-24 h-px bg-primary mb-8" />
+          <motion.div variants={itemVariants} className="w-24 h-px bg-primary mb-8 mt-6" />
 
           <motion.p 
             variants={itemVariants}
