@@ -36,9 +36,9 @@ export default function Hero() {
             variants={itemVariants}
             animate={{ y: [-8, 8, -8] }}
             transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
-            className="mb-6 mx-auto flex flex-col items-center"
+            className="mb-1 mx-auto"
+            style={{ position: "relative", width: "fit-content" }}
           >
-          <div style={{ position: "relative", width: "fit-content" }}>
             {/* Orbit arm — rotates 360° in 10 s, centred on the logo */}
             <motion.div
               className="pointer-events-none"
@@ -111,40 +111,11 @@ export default function Hero() {
                 times: [0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875, 1],
               }}
             />
-          </div>
 
-          {/* Tagline — integral to the logo; glows as the orbiting sun swings beneath it (peak t=0.5, sun at bottom; dim at t=0/1, sun at top) */}
-          <motion.div
-            className="mt-2"
-            animate={{
-              filter: [
-                /* t=0    0°   sun at top, farthest — dim */
-                "brightness(0.85) drop-shadow(0 0 2px rgba(255,215,0,0.12))",
-                /* t=.125 45°  warming */
-                "brightness(0.90) drop-shadow(0 0 4px rgba(255,215,0,0.20))",
-                /* t=.25  90°  side */
-                "brightness(1.00) drop-shadow(0 0 7px rgba(255,215,0,0.35))",
-                /* t=.375 135° approaching from below */
-                "brightness(1.15) drop-shadow(0 0 16px rgba(255,215,0,0.60))",
-                /* t=.5   180° sun directly beneath — PEAK */
-                "brightness(1.30) drop-shadow(0 0 28px rgba(255,215,0,0.95))",
-                /* t=.625 225° leaving */
-                "brightness(1.15) drop-shadow(0 0 16px rgba(255,215,0,0.60))",
-                /* t=.75  270° side */
-                "brightness(1.00) drop-shadow(0 0 7px rgba(255,215,0,0.35))",
-                /* t=.875 315° fading */
-                "brightness(0.90) drop-shadow(0 0 4px rgba(255,215,0,0.20))",
-                /* t=1    360° back to top — seamless loop */
-                "brightness(0.85) drop-shadow(0 0 2px rgba(255,215,0,0.12))",
-              ],
-            }}
-            transition={{
-              repeat: Infinity,
-              duration: 10,
-              ease: "linear",
-              times: [0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875, 1],
-            }}
-          >
+          </motion.div>
+
+          {/* Readable tagline — replaces the unreadable baked text in the logo PNG */}
+          <motion.div variants={itemVariants} className="mb-6 -mt-2">
             <span
               style={{
                 display: "inline-block",
@@ -154,6 +125,7 @@ export default function Hero() {
                 fontWeight: 600,
                 letterSpacing: "0.22em",
                 textTransform: "uppercase",
+                textShadow: "0 0 10px rgba(255,215,0,0.35)",
                 borderTop: "1px solid rgba(255,215,0,0.25)",
                 borderBottom: "1px solid rgba(255,215,0,0.25)",
                 padding: "4px 16px",
@@ -161,7 +133,6 @@ export default function Hero() {
             >
               Comprehensive Website Design &amp; Creation
             </span>
-          </motion.div>
           </motion.div>
 
           <motion.div variants={itemVariants} className="w-24 h-px bg-primary mb-8" />
