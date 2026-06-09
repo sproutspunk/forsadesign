@@ -51,7 +51,7 @@ const translations = {
       details: { label: "Project Details", placeholder: "Tell us about your project..." },
       submit: "Send Message",
       success: "Thank you! We'll get back to you soon.",
-      alternative: "Or reach out directly at: contact@forsadesign.com",
+      alternative: "Or reach out directly at: contact@forsa.com",
       projectTypes: ["Website", "E-commerce Shop", "Forum / Community", "Complex System", "Other"],
       selectPlaceholder: "Select a project type...",
       errors: {
