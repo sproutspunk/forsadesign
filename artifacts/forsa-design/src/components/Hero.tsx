@@ -36,12 +36,36 @@ export default function Hero() {
             variants={itemVariants}
             animate={{ y: [-8, 8, -8] }}
             transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
-            className="mb-6"
+            className="mb-6 relative w-56 md:w-72 lg:w-80 mx-auto"
           >
+            {/* Orbiting sun-glow arm — rotates 360° in 10s */}
+            <motion.div
+              className="absolute inset-0 pointer-events-none"
+              animate={{ rotate: 360 }}
+              transition={{ repeat: Infinity, duration: 10, ease: "linear" }}
+              style={{ transformOrigin: "center center" }}
+            >
+              {/* Glow dot sits at the top of the arm radius */}
+              <div
+                className="absolute left-1/2"
+                style={{
+                  top: "-14px",
+                  transform: "translateX(-50%)",
+                  width: "18px",
+                  height: "18px",
+                  borderRadius: "50%",
+                  background: "#FFD700",
+                  boxShadow:
+                    "0 0 8px 4px rgba(255,215,0,0.7), 0 0 18px 9px rgba(255,215,0,0.35), 0 0 32px 16px rgba(255,215,0,0.12)",
+                  filter: "blur(1px)",
+                }}
+              />
+            </motion.div>
+
             <img
               src={logo}
               alt="Forsa Design"
-              className="w-56 md:w-72 lg:w-80 h-auto object-contain mx-auto drop-shadow-[0_0_32px_rgba(201,168,76,0.3)]"
+              className="w-full h-auto object-contain drop-shadow-[0_0_32px_rgba(201,168,76,0.3)]"
             />
           </motion.div>
 
