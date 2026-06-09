@@ -15,7 +15,7 @@ const translations = {
     },
     hero: {
       tagline: "Comprehensive Website Design & Creation",
-      subheader: "From concept to launch — and beyond",
+      subheader: "From concept to launch - and beyond",
       cta: "Start Your Project",
     },
     services: {
