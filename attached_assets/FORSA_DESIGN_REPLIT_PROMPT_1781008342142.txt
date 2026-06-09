@@ -1,0 +1,190 @@
+Zbuduj responsywną, dwujęzyczną stronę dla FORSA DESIGN (English + Polish).
+
+## BRANDING
+- Kolor główny: dark teal #0a3a47
+- Akcent: gold/warm #D4A574
+- Tekst: white / light gray
+- Logo: FORSA-LOGO.jpeg (center hero)
+- Feel: premium, profesjonalny, nowoczesny, zero fluff
+
+## LANGUAGE SETUP
+- Language switcher: flaga EN/PL w top-right headera (elegancki, subtelny)
+- Persist selection: localStorage
+- URL: /en/ i /pl/ (path-based routing)
+- Wszystkie teksty/labels/placeholders: English + Polish
+- Default language: Auto-detect browser locale, fallback to English
+
+## STRUKTURA STRON (BILINGUAL)
+
+### 1. HERO
+EN:
+- Logo + tagline: "Comprehensive Website Design & Creation"
+- Subheader: "From concept to launch — and beyond"
+- CTA Button: "Start Your Project"
+
+PL:
+- Logo + tagline: "Kompleksowy Web Design i Tworzenie Stron"
+- Subheader: "Od koncepcji do uruchomienia — i dalej"
+- CTA Button: "Rozpocznij Projekt"
+
+### 2. SERVICES
+EN | PL (3 karty/sekcje):
+
+CARD 1:
+EN: "Web Design & Build"
+Description: "Responsive websites, custom CMS, integrated content editors. We build beautiful, fast, and functional sites tailored to your brand."
+PL: "Web Design i Budowa"
+Description: "Responsywne strony, niestandardowe CMS, zintegrowane edytory treści. Tworzymy piękne, szybkie i funkcjonalne witryny dostosowane do Twojej marki."
+
+CARD 2:
+EN: "E-commerce & Payments"
+Description: "Shopify integration, custom platforms, payment gateway setup. Launch your online store with confidence."
+PL: "Sklepy Online i Płatności"
+Description: "Integracja Shopify, platformy niestandardowe, konfiguracja bramek płatności. Uruchom swój sklep online bez obaw."
+
+CARD 3:
+EN: "Advanced Projects"
+Description: "Forums, complex systems, ongoing support & optimization. We handle sophisticated solutions that grow with your business."
+PL: "Zaawansowane Projekty"
+Description: "Fora, systemy złożone, ciągłe wsparcie i optymalizacja. Obsługujemy zaawansowane rozwiązania, które rosną wraz z Twoim biznesem."
+
+### 3. PORTFOLIO
+EN: "Our Work" | PL: "Nasze Prace"
+Subheading EN: "Featured projects completed for clients across industries"
+Subheading PL: "Wybranych projektów wykonanych dla klientów z różnych branż"
+
+Grid/Carousel - Placeholder:
+EN: "[Portfolio showcase - live examples of completed projects coming soon]"
+PL: "[Galeria projektów - przykłady wykonanych prac wkrótce]"
+
+### 4. PROCESS
+EN | PL (4 steps timeline):
+
+Step 1:
+EN: "Discovery & Planning" | Description: "We understand your goals, audience, and vision."
+PL: "Analiza i Planowanie" | Description: "Rozumiemy Twoje cele, odbiorców i wizję."
+
+Step 2:
+EN: "Design & Development" | Description: "Creative design meets clean code and best practices."
+PL: "Projektowanie i Rozwój" | Description: "Kreatywny design łączy się z czystym kodem i najlepszymi praktykami."
+
+Step 3:
+EN: "Launch & Testing" | Description: "Rigorous testing ensures your site works flawlessly."
+PL: "Uruchomienie i Testowanie" | Description: "Gruntowne testowanie zapewnia bezawaryjne działanie Twojej witryny."
+
+Step 4:
+EN: "Support & Optimization" | Description: "Ongoing monitoring, updates, and performance optimization."
+PL: "Wsparcie i Optymalizacja" | Description: "Ciągłe monitorowanie, aktualizacje i optymalizacja wydajności."
+
+### 5. ABOUT
+Heading EN: "About Forsa Design" | PL: "O Firmie Forsa Design"
+
+EN Placeholder:
+"Forsa Design is a boutique web agency based in Banff, Scotland. We specialize in building professional, high-performance websites and web applications for businesses of all sizes. From startup landing pages to complex e-commerce platforms and custom solutions, we deliver quality, integrity, and ongoing support. Our approach is straightforward: understand your needs, build with excellence, and ensure your success."
+
+PL Placeholder:
+"Forsa Design to boutique'owa agencja internetowa z siedzibą w Banff, Szkocja. Specjalizujemy się w tworzeniu profesjonalnych, wydajnych stron internetowych i aplikacji webowych dla firm wszystkich rozmiarów. Od stron startowych dla startupów po złożone platformy e-commerce i rozwiązania niestandardowe, dostarczamy jakość, uczciwość i ciągłe wsparcie. Nasze podejście jest proste: zrozumieć Twoje potrzeby, budować z doskonałością i zapewnić Twój sukces."
+
+### 6. CONTACT
+Heading EN: "Get In Touch" | PL: "Skontaktuj Się Z Nami"
+Subheading EN: "Ready to start your next project? Let's talk."
+Subheading PL: "Gotów na nowy projekt? Porozmawiajmy."
+
+FORM FIELDS & LABELS:
+
+Label EN: "Full Name" | PL: "Imię i Nazwisko"
+Placeholder EN: "Your name" | PL: "Twoje imię i nazwisko"
+
+Label EN: "Email Address" | PL: "Adres Email"
+Placeholder EN: "your@email.com" | PL: "twój@email.com"
+
+Label EN: "Project Type" | PL: "Typ Projektu"
+Options:
+  - EN: "Website" | PL: "Strona Internetowa"
+  - EN: "E-commerce Shop" | PL: "Sklep Online"
+  - EN: "Forum / Community" | PL: "Forum / Społeczność"
+  - EN: "Complex System" | PL: "System Złożony"
+  - EN: "Other" | PL: "Inne"
+
+Label EN: "Project Details" | PL: "Szczegóły Projektu"
+Placeholder EN: "Tell us about your project..." | PL: "Opowiedz nam o swoim projekcie..."
+
+Button EN: "Send Message" | PL: "Wyślij Wiadomość"
+Success Message EN: "Thank you! We'll get back to you soon."
+Success Message PL: "Dziękuję! Wkrótce do Ciebie wrócimy."
+
+Alternative Contact EN: "Or reach out directly at: contact@forsadesign.com | Phone: +44 [number]"
+Alternative Contact PL: "Lub skontaktuj się bezpośrednio: contact@forsadesign.com | Telefon: +44 [number]"
+
+### 7. FOOTER
+
+Navigation Links:
+EN: Home | Services | Portfolio | Contact
+PL: Strona Główna | Usługi | Portfolio | Kontakt
+
+Company Info EN: "Forsa Design | Comprehensive Website Design & Creation | Banff, Scotland"
+Company Info PL: "Forsa Design | Kompleksowy Web Design i Tworzenie Stron | Banff, Szkocja"
+
+Copyright EN: "© 2024 Forsa Design. All rights reserved."
+Copyright PL: "© 2024 Forsa Design. Wszystkie prawa zastrzeżone."
+
+Social Media (jeśli dostępne):
+LinkedIn | Twitter / X | Instagram
+
+## HEADER / NAVIGATION
+- Logo: left
+- Navigation Menu: center (Home, Services, Portfolio, Contact - w wybranym języku)
+- Language Switcher: right (EN | PL flags, clickable)
+- Sticky header na scroll
+
+## TECH STACK
+- Frontend: React + React Router (dla /en/, /pl/) + Tailwind CSS
+  ALTERNATYWA: HTML5 / CSS3 / Vanilla JavaScript z language context object
+- Language State: localStorage untuk persistence
+- Responsive: Mobile-first design, tested on mobile/tablet/desktop
+- Animations: Subtle fade-in on scroll, gold hover effects on buttons/links, soft transitions between languages
+- Contact Form: Frontend validation (name, email, message required) + backend submission
+- Icons: Rocket icon z loga (animated subtle float na hero), service icons
+
+## ANIMACJE & INTERAKCJE
+- Fade-in on scroll dla sekcji
+- Gold accent (#D4A574) na hover dla buttons, links
+- Rocket icon: gentle floating animation na hero section
+- Language switcher: smooth fade transition przy zmianie języka
+- Smooth scroll behavior
+- CTA buttons: hover state z shadow/scale
+
+## SEO & META
+- Meta tags dla każdego języka (title, description, og:locale)
+- Semantic HTML (header, nav, main, section, footer)
+- hreflang tags w <head> (link rel="alternate" hreflang="en" / "pl")
+- og:image, og:title, og:description
+- Alt text na wszystkie images
+- Fast load time (optimize images, minify CSS/JS)
+
+## DEPLOYMENT & TESTING
+- Deployable to Replit / Vercel / netlify
+- Language switcher fully functional
+- Contact form working (či send to console/email backend)
+- Responsywny design testowany na mobile/tablet/desktop
+- Obaj języki complete, polished, bez placeholder tekstów
+- Rocket icon i branding colors consistent throughout
+
+---
+
+KONTAKT DO WSTAWIENIA:
+Email: [WSTAW EMAIL]
+Phone: [WSTAW PHONE - opcjonalnie]
+Social Media: [WSTAW URLS - opcjonalnie]
+
+OPCJONALNIE - PORTFOLIO PROJECTS:
+Jeśli masz projekty do pokazania, wstaw linki/screenshots i opisy:
+Project 1: [Nazwa EN / Nazwa PL] | [URL / Screenshot Path] | [Type]
+Project 2: ...
+Project 3: ...
+
+---
+
+NOTATKA: Całość powinna być elegancka, profesjonalna, bez zbędnych elementów. Kolor turquoise + gold powinien być subtelnie rozłożony, nie agresywnie. Focus na zawartości i czystości designu. Rocket icon z loga powinien być wisualnym hookiem na hero - może być animated lub stylized SVG.
+
+Buduj to w React + Tailwind dla czystego, maintainable kodu. Struktura powinna być łatwa do rozszerzenia (dodawanie nowych usług, projektów, itd.).
