@@ -53,6 +53,12 @@ const translations = {
       success: "Thank you! We'll get back to you soon.",
       alternative: "Or reach out directly at: contact@forsadesign.com",
       projectTypes: ["Website", "E-commerce Shop", "Forum / Community", "Complex System", "Other"],
+      selectPlaceholder: "Select a project type...",
+      errors: {
+        required: "This field is required",
+        invalidEmail: "Please enter a valid email address",
+        selectRequired: "Please select a project type",
+      },
     },
     footer: {
       tagline: "Comprehensive Website Design & Creation",
@@ -109,6 +115,12 @@ const translations = {
       success: "Dziękuję! Wkrótce do Ciebie wrócimy.",
       alternative: "Lub skontaktuj się bezpośrednio: contact@forsadesign.com",
       projectTypes: ["Strona Internetowa", "Sklep Online", "Forum / Społeczność", "System Złożony", "Inne"],
+      selectPlaceholder: "Wybierz typ projektu...",
+      errors: {
+        required: "To pole jest wymagane",
+        invalidEmail: "Proszę podać prawidłowy adres email",
+        selectRequired: "Proszę wybrać typ projektu",
+      },
     },
     footer: {
       tagline: "Kompleksowy Web Design i Tworzenie Stron",

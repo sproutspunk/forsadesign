@@ -19,13 +19,14 @@ export default function Contact() {
 
   const validate = () => {
     const newErrors: Record<string, string> = {};
-    if (!formData.name.trim()) newErrors.name = "Required";
+    if (!formData.name.trim()) newErrors.name = t("contact.errors.required");
     if (!formData.email.trim()) {
-      newErrors.email = "Required";
+      newErrors.email = t("contact.errors.required");
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-      newErrors.email = "Invalid format";
+      newErrors.email = t("contact.errors.invalidEmail");
     }
-    if (!formData.details.trim()) newErrors.details = "Required";
+    if (!formData.projectType) newErrors.projectType = t("contact.errors.selectRequired");
+    if (!formData.details.trim()) newErrors.details = t("contact.errors.required");
     
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -118,7 +119,7 @@ export default function Contact() {
                 className="w-full bg-background border border-border rounded-sm px-4 py-3 text-white focus:outline-none focus:border-primary transition-colors appearance-none"
                 data-testid="select-project-type"
               >
-                <option value="" disabled>Select...</option>
+                <option value="" disabled>{t("contact.selectPlaceholder")}</option>
                 {projectTypes.map((type, i) => (
                   <option key={i} value={type}>{type}</option>
                 ))}
