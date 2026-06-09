@@ -36,28 +36,43 @@ export default function Hero() {
             variants={itemVariants}
             animate={{ y: [-8, 8, -8] }}
             transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
-            className="mb-6 relative w-56 md:w-72 lg:w-80 mx-auto"
+            className="mb-6 mx-auto"
+            style={{ position: "relative", width: "fit-content" }}
           >
-            {/* Orbiting sun-glow arm — rotates 360° in 10s */}
+            {/* Orbit arm — rotates 360° in 10 s, centred on the logo */}
             <motion.div
-              className="absolute inset-0 pointer-events-none"
+              className="pointer-events-none"
               animate={{ rotate: 360 }}
               transition={{ repeat: Infinity, duration: 10, ease: "linear" }}
-              style={{ transformOrigin: "center center" }}
+              style={{
+                position: "absolute",
+                inset: 0,
+                transformOrigin: "center center",
+                overflow: "visible",
+              }}
             >
-              {/* Glow dot sits at the top of the arm radius */}
-              <div
-                className="absolute left-1/2"
+              {/* Glow bead — 40 px above the container edge ≈ 40-50 px from rocket outline */}
+              <motion.div
+                animate={{ opacity: [0.3, 0.35, 0.8, 0.35, 0.3] }}
+                transition={{
+                  repeat: Infinity,
+                  duration: 10,
+                  ease: "linear",
+                  times: [0, 0.15, 0.5, 0.85, 1],
+                }}
                 style={{
-                  top: "-14px",
+                  position: "absolute",
+                  top: "-40px",
+                  left: "50%",
                   transform: "translateX(-50%)",
-                  width: "18px",
-                  height: "18px",
+                  width: "22px",
+                  height: "22px",
                   borderRadius: "50%",
-                  background: "#FFD700",
+                  background:
+                    "radial-gradient(circle, #FFEC40 0%, #FFD700 40%, #FFA500 100%)",
                   boxShadow:
-                    "0 0 8px 4px rgba(255,215,0,0.7), 0 0 18px 9px rgba(255,215,0,0.35), 0 0 32px 16px rgba(255,215,0,0.12)",
-                  filter: "blur(1px)",
+                    "0 0 6px 3px rgba(255,215,0,0.9), 0 0 16px 8px rgba(255,215,0,0.55), 0 0 36px 18px rgba(255,200,0,0.25)",
+                  filter: "blur(0.5px)",
                 }}
               />
             </motion.div>
@@ -65,7 +80,7 @@ export default function Hero() {
             <img
               src={logo}
               alt="Forsa Design"
-              className="w-full h-auto object-contain drop-shadow-[0_0_32px_rgba(201,168,76,0.3)]"
+              className="w-56 md:w-72 lg:w-80 h-auto object-contain drop-shadow-[0_0_32px_rgba(201,168,76,0.3)]"
             />
           </motion.div>
 
