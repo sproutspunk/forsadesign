@@ -23,14 +23,43 @@ export default function About() {
               className="relative w-48 h-48 md:w-64 md:h-64 flex items-center justify-center"
               style={{ perspective: "1000px" }}
             >
-              {/* large circle framing the cube, with a soft gold glow */}
-              <div
-                className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[16rem] h-[16rem] rounded-full border-2 border-primary/70 shadow-[0_0_50px_rgba(201,168,76,0.3)]"
-                style={{
-                  background:
-                    "radial-gradient(circle, rgba(201,168,76,0.10) 0%, transparent 70%)",
-                }}
-              />
+              {/* wireframe globe framing the cube — sphere outline + equator + parallels + meridians */}
+              <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[16rem] h-[16rem]">
+                {/* sphere outline + soft gold glow */}
+                <div
+                  className="absolute inset-0 rounded-full border-2 border-primary/70 shadow-[0_0_50px_rgba(201,168,76,0.3)]"
+                  style={{
+                    background:
+                      "radial-gradient(circle, rgba(201,168,76,0.10) 0%, transparent 70%)",
+                  }}
+                />
+                {/* equator + parallels (horizontal ellipses) */}
+                {[
+                  { w: 16, h: 4, dy: 0 },
+                  { w: 14, h: 3, dy: -4 },
+                  { w: 14, h: 3, dy: 4 },
+                  { w: 8, h: 2, dy: -7 },
+                  { w: 8, h: 2, dy: 7 },
+                ].map((l, i) => (
+                  <div
+                    key={`lat-${i}`}
+                    className="absolute left-1/2 top-1/2 rounded-[50%] border border-primary/35"
+                    style={{
+                      width: `${l.w}rem`,
+                      height: `${l.h}rem`,
+                      transform: `translate(-50%, calc(-50% + ${l.dy}rem))`,
+                    }}
+                  />
+                ))}
+                {/* meridians (vertical ellipses) */}
+                {[10, 5].map((w, i) => (
+                  <div
+                    key={`mer-${i}`}
+                    className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-[16rem] rounded-[50%] border border-primary/35"
+                    style={{ width: `${w}rem` }}
+                  />
+                ))}
+              </div>
 
               <motion.div
                 className="relative"
