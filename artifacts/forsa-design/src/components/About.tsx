@@ -80,7 +80,7 @@ export default function About() {
                     marginLeft: "-2.5rem",
                     marginTop: "-2.5rem",
                   }}
-                  animate={{ rotateX: 360, rotateY: 360 }}
+                  animate={{ rotateX: -360, rotateY: -360 }}
                   transition={{
                     rotateX: { repeat: Infinity, duration: 20, ease: "linear" },
                     rotateY: { repeat: Infinity, duration: 13, ease: "linear" },
