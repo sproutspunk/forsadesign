@@ -51,14 +51,14 @@ export default function Hero() {
                 overflow: "visible",
               }}
             >
-              {/* Glow bead — brightest when at front of rocket (t=0.125), dimmest at back (t=0.625) */}
+              {/* Sun bead opacity — cosine curve, 8 equal steps, peak at t=0.125 (front of rocket) */}
               <motion.div
-                animate={{ opacity: [0.45, 0.95, 0.45, 0.2, 0.45, 0.45] }}
+                animate={{ opacity: [0.80, 0.90, 0.80, 0.55, 0.30, 0.20, 0.30, 0.55, 0.80] }}
                 transition={{
                   repeat: Infinity,
                   duration: 10,
                   ease: "linear",
-                  times: [0, 0.125, 0.375, 0.625, 0.875, 1],
+                  times: [0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875, 1],
                 }}
                 style={{
                   position: "absolute",
@@ -77,32 +77,38 @@ export default function Hero() {
               />
             </motion.div>
 
-            {/* Rocket: brightest at front (t=0.125 = top-right), darkest at back (t=0.625 = bottom-left) */}
+            {/* Rocket: smooth cosine brightness — 8 equal 45° steps, peak at front (t=0.125), darkest at back (t=0.625) */}
             <motion.img
               src={logo}
               alt="Forsa Design"
               className="w-56 md:w-72 lg:w-80 h-auto object-contain"
               animate={{
                 filter: [
-                  /* t=0     sun at top — warming toward front */
-                  "brightness(0.85) saturate(0.8) sepia(0.1) drop-shadow(0 0 8px rgba(255,200,0,0.3))",
-                  /* t=0.125 sun at top-right = FRONT of rocket — peak blaze */
-                  "brightness(1.25) saturate(2.2) sepia(0.5) drop-shadow(0 0 32px rgba(255,215,0,0.85))",
-                  /* t=0.375 sun at bottom-right — fading */
-                  "brightness(0.78) saturate(0.55) sepia(0.05) drop-shadow(0 0 4px rgba(100,120,160,0.15))",
-                  /* t=0.625 sun at bottom-left = BACK of rocket — darkest */
-                  "brightness(0.52) saturate(0.25) sepia(0) drop-shadow(0 0 2px rgba(80,100,140,0.1))",
-                  /* t=0.875 sun at top-left — approaching front again */
-                  "brightness(0.78) saturate(0.55) sepia(0.05) drop-shadow(0 0 4px rgba(100,120,160,0.15))",
-                  /* t=1     back to top */
-                  "brightness(0.85) saturate(0.8) sepia(0.1) drop-shadow(0 0 8px rgba(255,200,0,0.3))",
+                  /* t=0    0°   — 45° before peak, already warming */
+                  "brightness(1.14) saturate(1.7)  sepia(0.38) drop-shadow(0 0 16px rgba(255,215,0,0.55))",
+                  /* t=.125 45°  — FRONT of rocket, peak */
+                  "brightness(1.25) saturate(2.0)  sepia(0.45) drop-shadow(0 0 32px rgba(255,215,0,0.85))",
+                  /* t=.25  90°  — right side, easing off */
+                  "brightness(1.14) saturate(1.7)  sepia(0.38) drop-shadow(0 0 16px rgba(255,215,0,0.55))",
+                  /* t=.375 135° — below-right, fading */
+                  "brightness(0.88) saturate(1.0)  sepia(0.18) drop-shadow(0 0 6px rgba(200,175,80,0.2))",
+                  /* t=.5   180° — directly below */
+                  "brightness(0.62) saturate(0.35) sepia(0.03) drop-shadow(0 0 3px rgba(90,110,150,0.15))",
+                  /* t=.625 225° — BACK of rocket, darkest */
+                  "brightness(0.51) saturate(0.2)  sepia(0)    drop-shadow(0 0 2px rgba(70,90,130,0.1))",
+                  /* t=.75  270° — left side, still dark */
+                  "brightness(0.62) saturate(0.35) sepia(0.03) drop-shadow(0 0 3px rgba(90,110,150,0.15))",
+                  /* t=.875 315° — above-left, warming again */
+                  "brightness(0.88) saturate(1.0)  sepia(0.18) drop-shadow(0 0 6px rgba(200,175,80,0.2))",
+                  /* t=1    360° — back to 0°, seamless loop */
+                  "brightness(1.14) saturate(1.7)  sepia(0.38) drop-shadow(0 0 16px rgba(255,215,0,0.55))",
                 ],
               }}
               transition={{
                 repeat: Infinity,
                 duration: 10,
                 ease: "linear",
-                times: [0, 0.125, 0.375, 0.625, 0.875, 1],
+                times: [0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875, 1],
               }}
             />
           </motion.div>
