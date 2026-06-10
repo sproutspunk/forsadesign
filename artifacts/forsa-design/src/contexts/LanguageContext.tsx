@@ -62,9 +62,9 @@ const translations = {
     },
     about: {
       heading: "About Forsa Design",
-      body: "We are an independent web development agency based in Scotland, engineering high-performance digital infrastructure for high-end corporate sectors. We completely eliminate agency fluff, overcomplicated pitches, and useless overhead.",
+      body: "We are an independent web development agency based in Scotland, building custom digital platforms for corporate and enterprise sectors. We cut out the useless agency overhead, bloated management layers, and overcomplicated sales pitches.",
       body2:
-        "You do not just need a website that looks good—you need an optimized, zero-latency digital asset that maximizes conversion and ensures bulletproof data security. We handle the entire engineering pipeline. You collaborate directly with the core technical architects writing your code, eliminating miscommunication and delivering enterprise-grade precision from day one.",
+        "You do not just need a website that looks nice—you need a fast, secure asset that drives sales and keeps data safe. We handle the technical build from start to finish. You talk directly to the programmers writing your code, eliminating miscommunication and delivering exactly what your business needs.",
     },
     contact: {
       heading: "Get In Touch",
@@ -159,9 +159,9 @@ const translations = {
     },
     about: {
       heading: "O Forsa Design",
-      body: "Jesteśmy małym zespołem ze Szkocji. Nie robimy korporacyjnego lania wody ani przekombinowanych prezentacji.",
+      body: "Jesteśmy niezależną agencją web developmentu ze Szkocji, tworzącą dedykowane systemy i strony dla sektora biznesowego. Całkowicie rezygnujemy z korporacyjnego bełkotu, bezużytecznych spotkań i sztucznie nadmuchanych kosztów obsługi.",
       body2:
-        "Potrzebujesz strony, która dobrze wygląda i działa bez zarzutu na każdym urządzeniu. Dokładnie taką budujemy. Zajmujemy się projektem, kodem i wszystkimi technicznymi sprawami w tle. Rozmawiasz bezpośrednio z osobą, która pisze kod, więc nic nie ginie po drodze. Prosto, uczciwie i praktycznie.",
+        "Nie potrzebujesz strony, która tylko ładnie wygląda – potrzebujesz szybkiego, stabilnego narzędzia, które sprzedaje i chroni dane firmy. Robimy wszystko od projektu po serwer. Rozmawiasz bezpośrednio z programistami, którzy piszą Twój kod, co eliminuje błędy w ustaleniach i gwarantuje precyzję od samego początku.",
     },
     contact: {
       heading: "Skontaktuj Się Z Nami",
