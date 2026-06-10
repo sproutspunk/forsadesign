@@ -19,7 +19,7 @@ function Redirector() {
         setLocation(`/${savedLang}/`);
         return;
       }
-      
+
       const navLang = navigator.language.toLowerCase();
       if (navLang.startsWith("pl")) {
         setLocation("/pl/");

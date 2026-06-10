@@ -5,6 +5,7 @@
 This project is a pnpm monorepo for a small brochure-style web presence named Forsa Design. The production application consists of a static React/Vite frontend in `artifacts/forsa-design` and a minimal Express API in `artifacts/api-server`. A PostgreSQL/Drizzle library exists in `lib/db`, along with generated API client/schema packages in `lib/api-client-react`, `lib/api-spec`, and `lib/api-zod`, but those shared libraries are largely scaffolding at the current stage.
 
 Production assumptions for future scans:
+
 - Replit provides TLS for deployed traffic.
 - `NODE_ENV` is `production` in deployed builds.
 - `artifacts/mockup-sandbox` is a development-only design surface and is out of scope unless production routing or build configuration starts exposing it.

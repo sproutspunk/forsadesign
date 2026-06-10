@@ -13,8 +13,7 @@ const router: IRouter = Router();
 const CONTACT_RECIPIENT = "hello@forsadesign.co.uk";
 const CONTACT_FROM_NAME = "Forsa Design";
 
-const TURNSTILE_VERIFY_URL =
-  "https://challenges.cloudflare.com/turnstile/v0/siteverify";
+const TURNSTILE_VERIFY_URL = "https://challenges.cloudflare.com/turnstile/v0/siteverify";
 
 // Verifies a Cloudflare Turnstile token server-side.
 // Returns true when verification passes OR when no secret key is configured
@@ -27,9 +26,7 @@ async function verifyTurnstile(
 ): Promise<boolean> {
   const secret = process.env.TURNSTILE_SECRET_KEY;
   if (!secret) {
-    logger.warn(
-      "TURNSTILE_SECRET_KEY not set; skipping CAPTCHA verification for contact form",
-    );
+    logger.warn("TURNSTILE_SECRET_KEY not set; skipping CAPTCHA verification for contact form");
     return true;
   }
 
@@ -82,15 +79,11 @@ function encodeHeaderWord(value: string): string {
 }
 
 async function sendGmail(connectors: ReplitConnectors, mime: string) {
-  return connectors.proxy(
-    "google-mail",
-    "/gmail/v1/users/me/messages/send",
-    {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ raw: toBase64Url(mime) }),
-    },
-  );
+  return connectors.proxy("google-mail", "/gmail/v1/users/me/messages/send", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ raw: toBase64Url(mime) }),
+  });
 }
 
 // Branded confirmation copy sent back to the visitor, localised to the site language.
@@ -142,24 +135,19 @@ function buildConfirmation(
 router.post("/contact", contactRateLimiter, async (req, res) => {
   const parsed = SubmitContactBody.safeParse(req.body);
   if (!parsed.success) {
-    return res
-      .status(400)
-      .json(
-        SubmitContactResponse.parse({
-          ok: false,
-          error: "Invalid form submission.",
-        }),
-      );
+    return res.status(400).json(
+      SubmitContactResponse.parse({
+        ok: false,
+        error: "Invalid form submission.",
+      }),
+    );
   }
 
   // Honeypot: the `website` field is hidden from real users via CSS. If it has
   // any value, a bot filled it in. Silently accept (return success so the bot
   // gets no signal) but skip all email delivery.
   if (parsed.data.website && parsed.data.website.trim() !== "") {
-    logger.warn(
-      { ip: req.ip },
-      "Contact form honeypot triggered; dropping submission",
-    );
+    logger.warn({ ip: req.ip }, "Contact form honeypot triggered; dropping submission");
     return res.json(SubmitContactResponse.parse({ ok: true }));
   }
 
@@ -212,30 +200,20 @@ router.post("/contact", contactRateLimiter, async (req, res) => {
 
     if (!response.ok) {
       const errText = await response.text().catch(() => "");
-      logger.error(
-        { status: response.status, errText },
-        "Gmail send failed for contact form",
+      logger.error({ status: response.status, errText }, "Gmail send failed for contact form");
+      return res.status(502).json(
+        SubmitContactResponse.parse({
+          ok: false,
+          error: "Email delivery failed.",
+        }),
       );
-      return res
-        .status(502)
-        .json(
-          SubmitContactResponse.parse({
-            ok: false,
-            error: "Email delivery failed.",
-          }),
-        );
     }
 
     // Send the visitor a branded confirmation in their site language.
     // Failure here must not fail the request: the business inbox already received
     // the enquiry, so we log and still return success to the visitor.
     try {
-      const confirmation = buildConfirmation(
-        language,
-        name,
-        projectType,
-        details,
-      );
+      const confirmation = buildConfirmation(language, name, projectType, details);
       const confirmationMime = [
         `From: ${encodeHeaderWord(CONTACT_FROM_NAME)} <${CONTACT_RECIPIENT}>`,
         `To: ${email}`,
@@ -248,10 +226,7 @@ router.post("/contact", contactRateLimiter, async (req, res) => {
         confirmation.body,
       ].join("\r\n");
 
-      const confirmationResponse = await sendGmail(
-        connectors,
-        confirmationMime,
-      );
+      const confirmationResponse = await sendGmail(connectors, confirmationMime);
       if (!confirmationResponse.ok) {
         const errText = await confirmationResponse.text().catch(() => "");
         logger.error(
@@ -260,23 +235,18 @@ router.post("/contact", contactRateLimiter, async (req, res) => {
         );
       }
     } catch (confirmErr) {
-      logger.error(
-        { err: confirmErr },
-        "Visitor confirmation email failed",
-      );
+      logger.error({ err: confirmErr }, "Visitor confirmation email failed");
     }
 
     return res.json(SubmitContactResponse.parse({ ok: true }));
   } catch (err) {
     logger.error({ err }, "Contact form submission failed");
-    return res
-      .status(502)
-      .json(
-        SubmitContactResponse.parse({
-          ok: false,
-          error: "Email delivery failed.",
-        }),
-      );
+    return res.status(502).json(
+      SubmitContactResponse.parse({
+        ok: false,
+        error: "Email delivery failed.",
+      }),
+    );
   }
 });
 

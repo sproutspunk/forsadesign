@@ -18,7 +18,7 @@ export default function Process() {
         <div className="relative">
           {/* Connector Line (Desktop) */}
           <div className="hidden md:block absolute top-6 left-0 w-full h-[2px] bg-primary/20" />
-          
+
           {/* Connector Line (Mobile) */}
           <div className="md:hidden absolute top-0 left-6 h-full w-[2px] bg-primary/20" />
 
@@ -38,12 +38,8 @@ export default function Process() {
                 </div>
 
                 <div className="flex-1">
-                  <h3 className="font-serif text-xl font-bold text-white mb-3">
-                    {step.title}
-                  </h3>
-                  <p className="text-foreground/70 font-light leading-relaxed">
-                    {step.desc}
-                  </p>
+                  <h3 className="font-serif text-xl font-bold text-white mb-3">{step.title}</h3>
+                  <p className="text-foreground/70 font-light leading-relaxed">{step.desc}</p>
                 </div>
               </motion.div>
             ))}

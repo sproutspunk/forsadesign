@@ -59,9 +59,7 @@ beforeEach(() => {
     "fetch",
     vi.fn(async (_url: unknown, init: { body?: unknown } = {}) => {
       const params =
-        init.body instanceof URLSearchParams
-          ? init.body
-          : new URLSearchParams(init.body as string);
+        init.body instanceof URLSearchParams ? init.body : new URLSearchParams(init.body as string);
       const success = params.get("secret") !== FAIL_SECRET;
       return {
         ok: true,

@@ -1,0 +1,30 @@
+node_modules
+**/node_modules
+dist
+**/dist
+build
+**/build
+.cache
+**/.cache
+coverage
+**/coverage
+*.tsbuildinfo
+.expo
+.expo-shared
+
+# Generated code
+**/src/generated
+**/src/.generated
+lib/api-client-react/src/generated
+
+# Vendored shadcn UI components (also ignored by ESLint)
+**/src/components/ui
+
+# Lockfiles
+pnpm-lock.yaml
+
+# Replit / local
+.local
+.agents
+.config
+attached_assets

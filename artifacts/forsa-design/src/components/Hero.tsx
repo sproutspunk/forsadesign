@@ -22,11 +22,14 @@ export default function Hero() {
   };
 
   return (
-    <section id="home" className="relative min-h-[100dvh] flex items-center justify-center pt-20 overflow-hidden">
+    <section
+      id="home"
+      className="relative min-h-[100dvh] flex items-center justify-center pt-20 overflow-hidden"
+    >
       <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary/10 via-background to-background" />
-      
+
       <div className="container mx-auto px-6 relative z-10">
-        <motion.div 
+        <motion.div
           className="max-w-4xl mx-auto text-center flex flex-col items-center"
           variants={containerVariants}
           initial="hidden"
@@ -53,7 +56,7 @@ export default function Hero() {
             >
               {/* Sun bead opacity — cosine curve, 8 equal steps, peak at t=0.125 (front of rocket) */}
               <motion.div
-                animate={{ opacity: [0.80, 0.90, 0.80, 0.55, 0.30, 0.20, 0.30, 0.55, 0.80] }}
+                animate={{ opacity: [0.8, 0.9, 0.8, 0.55, 0.3, 0.2, 0.3, 0.55, 0.8] }}
                 transition={{
                   repeat: Infinity,
                   duration: 10,
@@ -68,8 +71,7 @@ export default function Hero() {
                   width: "22px",
                   height: "22px",
                   borderRadius: "50%",
-                  background:
-                    "radial-gradient(circle, #FFEC40 0%, #FFD700 40%, #FFA500 100%)",
+                  background: "radial-gradient(circle, #FFEC40 0%, #FFD700 40%, #FFA500 100%)",
                   boxShadow:
                     "0 0 6px 3px rgba(255,215,0,0.9), 0 0 16px 8px rgba(255,215,0,0.55), 0 0 36px 18px rgba(255,200,0,0.25)",
                   filter: "blur(0.5px)",
@@ -111,12 +113,11 @@ export default function Hero() {
                 times: [0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875, 1],
               }}
             />
-
           </motion.div>
 
           <motion.div variants={itemVariants} className="w-24 h-px bg-primary mb-8 mt-6" />
 
-          <motion.p 
+          <motion.p
             variants={itemVariants}
             className="text-lg md:text-xl text-foreground/70 font-light mb-6 max-w-2xl"
           >
@@ -130,7 +131,7 @@ export default function Hero() {
             {t("hero.body")}
           </motion.p>
 
-          <motion.a 
+          <motion.a
             variants={itemVariants}
             href="#contact"
             whileHover={{ scale: 1.03 }}

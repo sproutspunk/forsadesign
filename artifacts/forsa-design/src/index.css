@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap");
 @import "tailwindcss";
 @import "tw-animate-css";
 @plugin "@tailwindcss/typography";
@@ -68,19 +68,19 @@
 }
 
 :root {
-  --button-outline: rgba(0,0,0, .10);
-  --badge-outline: rgba(0,0,0, .05);
+  --button-outline: rgba(0, 0, 0, 0.1);
+  --badge-outline: rgba(0, 0, 0, 0.05);
 
   --opaque-button-border-intensity: -8;
 
-  --elevate-1: rgba(0,0,0, .03);
-  --elevate-2: rgba(0,0,0, .08);
+  --elevate-1: rgba(0, 0, 0, 0.03);
+  --elevate-2: rgba(0, 0, 0, 0.08);
 
   /* Navy blue palette extracted from logo background (#0d2540) */
   --background: 210 66% 15%;
   --foreground: 0 0% 95%;
   --border: 210 60% 11%;
-  
+
   --card: 210 60% 11%;
   --card-foreground: 0 0% 95%;
   --card-border: 210 60% 9%;
@@ -120,10 +120,10 @@
   --chart-4: 210 20% 58%;
   --chart-5: 210 10% 68%;
 
-  --app-font-sans: 'Inter', sans-serif;
-  --app-font-serif: 'Playfair Display', serif;
+  --app-font-sans: "Inter", sans-serif;
+  --app-font-serif: "Playfair Display", serif;
   --app-font-mono: Menlo, monospace;
-  --radius: .5rem;
+  --radius: 0.5rem;
 
   --shadow-2xs: 0px 2px 0px 0px hsl(43 58% 54% / 0.1);
   --shadow-xs: 0px 2px 0px 0px hsl(43 58% 54% / 0.1);
@@ -133,22 +133,22 @@
   --shadow-lg: 0px 2px 0px 0px hsl(43 58% 54% / 0.1), 0px 4px 6px -1px hsl(43 58% 54% / 0.1);
   --shadow-xl: 0px 2px 0px 0px hsl(43 58% 54% / 0.1), 0px 8px 10px -1px hsl(43 58% 54% / 0.1);
   --shadow-2xl: 0px 2px 0px 0px hsl(43 58% 54% / 0.1);
-  
+
   --tracking-normal: 0em;
   --spacing: 0.25rem;
 }
 
 .dark {
-  --button-outline: rgba(255,255,255, .10);
-  --badge-outline: rgba(255,255,255, .05);
+  --button-outline: rgba(255, 255, 255, 0.1);
+  --badge-outline: rgba(255, 255, 255, 0.05);
   --opaque-button-border-intensity: 9;
-  --elevate-1: rgba(255,255,255, .04);
-  --elevate-2: rgba(255,255,255, .09);
+  --elevate-1: rgba(255, 255, 255, 0.04);
+  --elevate-2: rgba(255, 255, 255, 0.09);
 
   --background: 210 66% 15%;
   --foreground: 0 0% 95%;
   --border: 210 60% 11%;
-  
+
   --card: 210 60% 11%;
   --card-foreground: 0 0% 95%;
   --card-border: 210 60% 9%;
@@ -201,7 +201,7 @@
   * {
     @apply border-border;
   }
-  
+
   html {
     scroll-behavior: smooth;
   }

@@ -33,16 +33,8 @@ export default function Header() {
       }`}
     >
       <div className="container mx-auto px-6 flex items-center justify-between">
-        <a 
-          href="#home"
-          data-testid="link-logo"
-          className="flex items-center shrink-0"
-        >
-          <img
-            src={logo}
-            alt="Forsa Design"
-            className="h-11 w-auto object-contain"
-          />
+        <a href="#home" data-testid="link-logo" className="flex items-center shrink-0">
+          <img src={logo} alt="Forsa Design" className="h-11 w-auto object-contain" />
         </a>
 
         {/* Desktop Nav */}
@@ -110,13 +102,19 @@ export default function Header() {
               ))}
               <div className="flex items-center gap-4 mt-4 pt-4 border-t border-border">
                 <button
-                  onClick={() => { setLanguage("en"); setIsMobileMenuOpen(false); }}
+                  onClick={() => {
+                    setLanguage("en");
+                    setIsMobileMenuOpen(false);
+                  }}
                   className={`text-lg font-semibold ${language === "en" ? "text-primary" : "text-foreground/60"}`}
                 >
                   EN
                 </button>
                 <button
-                  onClick={() => { setLanguage("pl"); setIsMobileMenuOpen(false); }}
+                  onClick={() => {
+                    setLanguage("pl");
+                    setIsMobileMenuOpen(false);
+                  }}
                   className={`text-lg font-semibold ${language === "pl" ? "text-primary" : "text-foreground/60"}`}
                 >
                   PL

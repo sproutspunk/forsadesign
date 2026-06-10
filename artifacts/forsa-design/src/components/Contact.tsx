@@ -7,9 +7,7 @@ import Turnstile from "./Turnstile";
 
 type Status = "idle" | "sending" | "success" | "error";
 
-const TURNSTILE_SITE_KEY = import.meta.env.VITE_TURNSTILE_SITE_KEY as
-  | string
-  | undefined;
+const TURNSTILE_SITE_KEY = import.meta.env.VITE_TURNSTILE_SITE_KEY as string | undefined;
 
 export default function Contact() {
   const { t, language } = useLanguage();
@@ -67,11 +65,13 @@ export default function Contact() {
     }
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>,
+  ) => {
     const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+    setFormData((prev) => ({ ...prev, [name]: value }));
     if (errors[name]) {
-      setErrors(prev => ({ ...prev, [name]: "" }));
+      setErrors((prev) => ({ ...prev, [name]: "" }));
     }
   };
 
@@ -90,9 +90,7 @@ export default function Contact() {
           <h2 className="font-serif text-4xl md:text-5xl font-bold text-white mb-4">
             {t("contact.heading")}
           </h2>
-          <p className="text-foreground/70 font-light mb-6">
-            {t("contact.subheading")}
-          </p>
+          <p className="text-foreground/70 font-light mb-6">{t("contact.subheading")}</p>
           <div className="w-16 h-1 bg-primary mx-auto" />
         </motion.div>
 
@@ -104,7 +102,11 @@ export default function Contact() {
         >
           <form onSubmit={handleSubmit} className="space-y-6" noValidate>
             {/* Honeypot field: hidden from real users, only bots fill it in. */}
-            <div aria-hidden="true" className="absolute left-[-9999px] top-[-9999px] h-0 w-0 overflow-hidden" style={{ position: "absolute" }}>
+            <div
+              aria-hidden="true"
+              className="absolute left-[-9999px] top-[-9999px] h-0 w-0 overflow-hidden"
+              style={{ position: "absolute" }}
+            >
               <label htmlFor="website">Website</label>
               <input
                 type="text"
@@ -127,7 +129,7 @@ export default function Contact() {
                   value={formData.name}
                   onChange={handleChange}
                   placeholder={t("contact.name.placeholder")}
-                  className={`w-full bg-background border ${errors.name ? 'border-destructive' : 'border-border'} rounded-sm px-4 py-3 text-white focus:outline-none focus:border-primary transition-colors`}
+                  className={`w-full bg-background border ${errors.name ? "border-destructive" : "border-border"} rounded-sm px-4 py-3 text-white focus:outline-none focus:border-primary transition-colors`}
                   data-testid="input-name"
                 />
                 {errors.name && <p className="mt-1 text-sm text-destructive">{errors.name}</p>}
@@ -143,7 +145,7 @@ export default function Contact() {
                   value={formData.email}
                   onChange={handleChange}
                   placeholder={t("contact.email.placeholder")}
-                  className={`w-full bg-background border ${errors.email ? 'border-destructive' : 'border-border'} rounded-sm px-4 py-3 text-white focus:outline-none focus:border-primary transition-colors`}
+                  className={`w-full bg-background border ${errors.email ? "border-destructive" : "border-border"} rounded-sm px-4 py-3 text-white focus:outline-none focus:border-primary transition-colors`}
                   data-testid="input-email"
                 />
                 {errors.email && <p className="mt-1 text-sm text-destructive">{errors.email}</p>}
@@ -158,15 +160,21 @@ export default function Contact() {
                 name="projectType"
                 value={formData.projectType}
                 onChange={handleChange}
-                className={`w-full bg-background border ${errors.projectType ? 'border-destructive' : 'border-border'} rounded-sm px-4 py-3 text-white focus:outline-none focus:border-primary transition-colors appearance-none`}
+                className={`w-full bg-background border ${errors.projectType ? "border-destructive" : "border-border"} rounded-sm px-4 py-3 text-white focus:outline-none focus:border-primary transition-colors appearance-none`}
                 data-testid="select-project-type"
               >
-                <option value="" disabled>{t("contact.selectPlaceholder")}</option>
+                <option value="" disabled>
+                  {t("contact.selectPlaceholder")}
+                </option>
                 {projectTypes.map((type, i) => (
-                  <option key={i} value={type}>{type}</option>
+                  <option key={i} value={type}>
+                    {type}
+                  </option>
                 ))}
               </select>
-              {errors.projectType && <p className="mt-1 text-sm text-destructive">{errors.projectType}</p>}
+              {errors.projectType && (
+                <p className="mt-1 text-sm text-destructive">{errors.projectType}</p>
+              )}
             </div>
 
             <div>
@@ -179,20 +187,26 @@ export default function Contact() {
                 onChange={handleChange}
                 placeholder={t("contact.details.placeholder")}
                 rows={5}
-                className={`w-full bg-background border ${errors.details ? 'border-destructive' : 'border-border'} rounded-sm px-4 py-3 text-white focus:outline-none focus:border-primary transition-colors resize-none`}
+                className={`w-full bg-background border ${errors.details ? "border-destructive" : "border-border"} rounded-sm px-4 py-3 text-white focus:outline-none focus:border-primary transition-colors resize-none`}
                 data-testid="textarea-details"
               />
               {errors.details && <p className="mt-1 text-sm text-destructive">{errors.details}</p>}
             </div>
 
             {status === "success" && (
-              <div className="p-4 bg-primary/20 border border-primary/50 text-primary rounded-sm text-center font-medium" data-testid="msg-success">
+              <div
+                className="p-4 bg-primary/20 border border-primary/50 text-primary rounded-sm text-center font-medium"
+                data-testid="msg-success"
+              >
                 {t("contact.success")}
               </div>
             )}
 
             {status === "error" && (
-              <div className="p-4 bg-destructive/20 border border-destructive/50 text-destructive rounded-sm text-center font-medium" data-testid="msg-error">
+              <div
+                className="p-4 bg-destructive/20 border border-destructive/50 text-destructive rounded-sm text-center font-medium"
+                data-testid="msg-error"
+              >
                 {t("contact.error")}
               </div>
             )}
@@ -234,14 +248,14 @@ export default function Contact() {
           </form>
 
           <div className="mt-16 text-center border-t border-border/20 pt-12">
-            <p className="text-foreground/80 font-medium mb-6">
-              {t("contact.alternative")}
-            </p>
+            <p className="text-foreground/80 font-medium mb-6">{t("contact.alternative")}</p>
 
             <div className="space-y-2 mb-8">
               <p className="text-foreground/70">
                 <span className="text-foreground/50">{t("contact.contactPersonLabel")}: </span>
-                <span className="text-white font-medium" data-testid="text-contact-person">{t("contact.contactPerson")}</span>
+                <span className="text-white font-medium" data-testid="text-contact-person">
+                  {t("contact.contactPerson")}
+                </span>
               </p>
               <p>
                 <a
@@ -264,13 +278,28 @@ export default function Contact() {
             </div>
 
             <div className="flex justify-center gap-6">
-              <a href="#" className="text-foreground/60 hover:text-primary transition-colors p-2" aria-label="LinkedIn" data-testid="link-social-linkedin">
+              <a
+                href="#"
+                className="text-foreground/60 hover:text-primary transition-colors p-2"
+                aria-label="LinkedIn"
+                data-testid="link-social-linkedin"
+              >
                 <Linkedin size={24} />
               </a>
-              <a href="#" className="text-foreground/60 hover:text-primary transition-colors p-2" aria-label="X (Twitter)" data-testid="link-social-x">
+              <a
+                href="#"
+                className="text-foreground/60 hover:text-primary transition-colors p-2"
+                aria-label="X (Twitter)"
+                data-testid="link-social-x"
+              >
                 <Twitter size={24} />
               </a>
-              <a href="#" className="text-foreground/60 hover:text-primary transition-colors p-2" aria-label="Instagram" data-testid="link-social-instagram">
+              <a
+                href="#"
+                className="text-foreground/60 hover:text-primary transition-colors p-2"
+                aria-label="Instagram"
+                data-testid="link-social-instagram"
+              >
                 <Instagram size={24} />
               </a>
             </div>

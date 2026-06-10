@@ -21,9 +21,18 @@ const translations = {
     },
     services: {
       heading: "Our Services",
-      card1: { title: "Web Design & Build", desc: "We build bespoke websites from scratch. Clean design, custom content management, and easy editing tools. You get a fast, responsive site tailored specifically to what your business needs.\n\nWe don't use ready-made, heavy templates. Every line of code is written to make sure your site loads instantly and stays secure." },
-      card2: { title: "E-commerce & Payments", desc: "Shopify integration, custom platforms, payment gateway setup. Launch your online store with confidence." },
-      card3: { title: "Advanced Projects", desc: "Forums, complex systems, ongoing support & optimization. We handle sophisticated solutions that grow with your business." },
+      card1: {
+        title: "Web Design & Build",
+        desc: "We build bespoke websites from scratch. Clean design, custom content management, and easy editing tools. You get a fast, responsive site tailored specifically to what your business needs.\n\nWe don't use ready-made, heavy templates. Every line of code is written to make sure your site loads instantly and stays secure.",
+      },
+      card2: {
+        title: "E-commerce & Payments",
+        desc: "Shopify integration, custom platforms, payment gateway setup. Launch your online store with confidence.",
+      },
+      card3: {
+        title: "Advanced Projects",
+        desc: "Forums, complex systems, ongoing support & optimization. We handle sophisticated solutions that grow with your business.",
+      },
     },
     portfolio: {
       heading: "Our Work",
@@ -34,15 +43,22 @@ const translations = {
       heading: "How We Work",
       steps: [
         { title: "Discovery & Planning", desc: "We understand your goals, audience, and vision." },
-        { title: "Design & Development", desc: "Creative design meets clean code and best practices." },
+        {
+          title: "Design & Development",
+          desc: "Creative design meets clean code and best practices.",
+        },
         { title: "Launch & Testing", desc: "Rigorous testing ensures your site works flawlessly." },
-        { title: "Support & Optimization", desc: "Ongoing monitoring, updates, and performance optimization." },
+        {
+          title: "Support & Optimization",
+          desc: "Ongoing monitoring, updates, and performance optimization.",
+        },
       ],
     },
     about: {
       heading: "About Forsa Design",
       body: "We are a small team based in Scotland. We don't do corporate fluff or overcomplicated pitches.",
-      body2: "You need a website that looks good and works perfectly on every device. We build exactly that. We handle the design, the code, and all the technical bits behind the scenes. You talk directly to the person writing the code, so nothing gets lost in translation. We keep it simple, honest, and practical.",
+      body2:
+        "You need a website that looks good and works perfectly on every device. We build exactly that. We handle the design, the code, and all the technical bits behind the scenes. You talk directly to the person writing the code, so nothing gets lost in translation. We keep it simple, honest, and practical.",
     },
     contact: {
       heading: "Get In Touch",
@@ -96,9 +112,18 @@ const translations = {
     },
     services: {
       heading: "Nasze Usługi",
-      card1: { title: "Web Design i Budowa", desc: "Budujemy strony szyte na miarę, od zera. Czysty design, własny system zarządzania treścią i proste narzędzia do edycji. Dostajesz szybką, responsywną stronę dopasowaną dokładnie do potrzeb Twojej firmy.\n\nNie używamy gotowych, ciężkich szablonów. Każda linijka kodu jest napisana tak, aby strona ładowała się błyskawicznie i była bezpieczna." },
-      card2: { title: "Sklepy Online i Płatności", desc: "Integracja Shopify, platformy niestandardowe, konfiguracja bramek płatności. Uruchom swój sklep online bez obaw." },
-      card3: { title: "Zaawansowane Projekty", desc: "Fora, systemy złożone, ciągłe wsparcie i optymalizacja. Obsługujemy zaawansowane rozwiązania, które rosną wraz z Twoim biznesem." },
+      card1: {
+        title: "Web Design i Budowa",
+        desc: "Budujemy strony szyte na miarę, od zera. Czysty design, własny system zarządzania treścią i proste narzędzia do edycji. Dostajesz szybką, responsywną stronę dopasowaną dokładnie do potrzeb Twojej firmy.\n\nNie używamy gotowych, ciężkich szablonów. Każda linijka kodu jest napisana tak, aby strona ładowała się błyskawicznie i była bezpieczna.",
+      },
+      card2: {
+        title: "Sklepy Online i Płatności",
+        desc: "Integracja Shopify, platformy niestandardowe, konfiguracja bramek płatności. Uruchom swój sklep online bez obaw.",
+      },
+      card3: {
+        title: "Zaawansowane Projekty",
+        desc: "Fora, systemy złożone, ciągłe wsparcie i optymalizacja. Obsługujemy zaawansowane rozwiązania, które rosną wraz z Twoim biznesem.",
+      },
     },
     portfolio: {
       heading: "Nasze Prace",
@@ -109,15 +134,25 @@ const translations = {
       heading: "Jak Pracujemy",
       steps: [
         { title: "Analiza i Planowanie", desc: "Rozumiemy Twoje cele, odbiorców i wizję." },
-        { title: "Projektowanie i Rozwój", desc: "Kreatywny design łączy się z czystym kodem i najlepszymi praktykami." },
-        { title: "Uruchomienie i Testowanie", desc: "Gruntowne testowanie zapewnia bezawaryjne działanie Twojej witryny." },
-        { title: "Wsparcie i Optymalizacja", desc: "Ciągłe monitorowanie, aktualizacje i optymalizacja wydajności." },
+        {
+          title: "Projektowanie i Rozwój",
+          desc: "Kreatywny design łączy się z czystym kodem i najlepszymi praktykami.",
+        },
+        {
+          title: "Uruchomienie i Testowanie",
+          desc: "Gruntowne testowanie zapewnia bezawaryjne działanie Twojej witryny.",
+        },
+        {
+          title: "Wsparcie i Optymalizacja",
+          desc: "Ciągłe monitorowanie, aktualizacje i optymalizacja wydajności.",
+        },
       ],
     },
     about: {
       heading: "O Forsa Design",
       body: "Jesteśmy małym zespołem ze Szkocji. Nie robimy korporacyjnego lania wody ani przekombinowanych prezentacji.",
-      body2: "Potrzebujesz strony, która dobrze wygląda i działa bez zarzutu na każdym urządzeniu. Dokładnie taką budujemy. Zajmujemy się projektem, kodem i wszystkimi technicznymi sprawami w tle. Rozmawiasz bezpośrednio z osobą, która pisze kod, więc nic nie ginie po drodze. Prosto, uczciwie i praktycznie.",
+      body2:
+        "Potrzebujesz strony, która dobrze wygląda i działa bez zarzutu na każdym urządzeniu. Dokładnie taką budujemy. Zajmujemy się projektem, kodem i wszystkimi technicznymi sprawami w tle. Rozmawiasz bezpośrednio z osobą, która pisze kod, więc nic nie ginie po drodze. Prosto, uczciwie i praktycznie.",
     },
     contact: {
       heading: "Skontaktuj Się Z Nami",
@@ -135,7 +170,13 @@ const translations = {
       contactPerson: "Sprouts Punk",
       directEmail: "hello@forsadesign.co.uk",
       phone: "07770110735",
-      projectTypes: ["Strona Internetowa", "Sklep Online", "Forum / Społeczność", "System Złożony", "Inne"],
+      projectTypes: [
+        "Strona Internetowa",
+        "Sklep Online",
+        "Forum / Społeczność",
+        "System Złożony",
+        "Inne",
+      ],
       selectPlaceholder: "Wybierz typ projektu...",
       errors: {
         required: "To pole jest wymagane",
@@ -168,7 +209,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   const [_, setLocation] = useLocation();
   const [language, setLanguageState] = useState<Language>(() => {
     const saved = localStorage.getItem("forsa-lang");
-    return (saved === "en" || saved === "pl") ? saved : "en";
+    return saved === "en" || saved === "pl" ? saved : "en";
   });
 
   const setLanguage = (lang: Language) => {

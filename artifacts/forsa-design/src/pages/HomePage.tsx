@@ -23,19 +23,22 @@ export default function HomePage({ lang }: HomePageProps) {
   }, [lang, language, setLanguage]);
 
   useEffect(() => {
-    const seo = lang === "en"
-      ? {
-          title: "Forsa Design | Comprehensive Website Design & Creation",
-          description: "Forsa Design is a boutique web agency in Banff, Scotland. We build responsive websites, e-commerce platforms, and custom web applications — from concept to launch and beyond.",
-          ogTitle: "Forsa Design | Web Design & Creation",
-          ogLocale: "en_US",
-        }
-      : {
-          title: "Forsa Design | Kompleksowy Web Design i Tworzenie Stron",
-          description: "Forsa Design to agencja internetowa z Banff w Szkocji. Tworzymy responsywne strony, sklepy e-commerce i dedykowane aplikacje webowe — od koncepcji do uruchomienia.",
-          ogTitle: "Forsa Design | Web Design i Tworzenie Stron",
-          ogLocale: "pl_PL",
-        };
+    const seo =
+      lang === "en"
+        ? {
+            title: "Forsa Design | Comprehensive Website Design & Creation",
+            description:
+              "Forsa Design is a boutique web agency in Banff, Scotland. We build responsive websites, e-commerce platforms, and custom web applications — from concept to launch and beyond.",
+            ogTitle: "Forsa Design | Web Design & Creation",
+            ogLocale: "en_US",
+          }
+        : {
+            title: "Forsa Design | Kompleksowy Web Design i Tworzenie Stron",
+            description:
+              "Forsa Design to agencja internetowa z Banff w Szkocji. Tworzymy responsywne strony, sklepy e-commerce i dedykowane aplikacje webowe — od koncepcji do uruchomienia.",
+            ogTitle: "Forsa Design | Web Design i Tworzenie Stron",
+            ogLocale: "pl_PL",
+          };
 
     document.title = seo.title;
 
@@ -52,14 +55,24 @@ export default function HomePage({ lang }: HomePageProps) {
     };
 
     // Meta description
-    const descEl = document.querySelector<HTMLMetaElement>('meta[name="description"]')
-      || (() => { const m = document.createElement("meta"); m.setAttribute("name", "description"); document.head.appendChild(m); return m; })();
+    const descEl =
+      document.querySelector<HTMLMetaElement>('meta[name="description"]') ||
+      (() => {
+        const m = document.createElement("meta");
+        m.setAttribute("name", "description");
+        document.head.appendChild(m);
+        return m;
+      })();
     descEl.setAttribute("content", seo.description);
 
     // OG tags
     const setOg = (prop: string, val: string) => {
       let el = document.querySelector<HTMLMetaElement>(`meta[property="${prop}"]`);
-      if (!el) { el = document.createElement("meta"); el.setAttribute("property", prop); document.head.appendChild(el); }
+      if (!el) {
+        el = document.createElement("meta");
+        el.setAttribute("property", prop);
+        document.head.appendChild(el);
+      }
       el.setAttribute("content", val);
     };
     setOg("og:title", seo.ogTitle);

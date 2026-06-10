@@ -5,8 +5,7 @@ import { useEffect, useRef } from "react";
 // The site key is read from VITE_TURNSTILE_SITE_KEY; when it is not set the
 // component renders nothing so the form keeps working without CAPTCHA.
 
-const SCRIPT_SRC =
-  "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit";
+const SCRIPT_SRC = "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit";
 
 type TurnstileRenderOptions = {
   sitekey: string;
@@ -38,9 +37,7 @@ function loadTurnstileScript(): Promise<void> {
   if (scriptPromise) return scriptPromise;
 
   scriptPromise = new Promise<void>((resolve, reject) => {
-    const existing = document.querySelector<HTMLScriptElement>(
-      `script[src="${SCRIPT_SRC}"]`,
-    );
+    const existing = document.querySelector<HTMLScriptElement>(`script[src="${SCRIPT_SRC}"]`);
     if (existing) {
       existing.addEventListener("load", () => resolve());
       existing.addEventListener("error", () =>

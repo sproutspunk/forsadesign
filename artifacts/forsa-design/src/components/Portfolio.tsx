@@ -27,9 +27,7 @@ export default function Portfolio() {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               className="aspect-[4/3] rounded-md border-2 border-dashed border-primary/30 bg-gradient-to-br from-card to-background flex items-center justify-center p-8 text-center transition-colors hover:border-primary/60"
             >
-              <p className="text-foreground/50 font-medium italic">
-                {t("portfolio.placeholder")}
-              </p>
+              <p className="text-foreground/50 font-medium italic">{t("portfolio.placeholder")}</p>
             </motion.div>
           ))}
         </div>
