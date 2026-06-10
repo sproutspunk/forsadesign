@@ -3,9 +3,11 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { motion } from "framer-motion";
 import { Linkedin, Twitter, Instagram } from "lucide-react";
 
+type Status = "idle" | "sending" | "success" | "error";
+
 export default function Contact() {
   const { t } = useLanguage();
-  
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -13,7 +15,7 @@ export default function Contact() {
     details: "",
   });
   const [errors, setErrors] = useState<Record<string, string>>({});
-  const [isSuccess, setIsSuccess] = useState(false);
+  const [status, setStatus] = useState<Status>("idle");
 
   const projectTypes = t("contact.projectTypes") as string[];
 
@@ -27,18 +29,29 @@ export default function Contact() {
     }
     if (!formData.projectType) newErrors.projectType = t("contact.errors.selectRequired");
     if (!formData.details.trim()) newErrors.details = t("contact.errors.required");
-    
+
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (validate()) {
-      console.log("Form submitted:", formData);
-      setIsSuccess(true);
+    if (!validate()) return;
+
+    setStatus("sending");
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+      if (!res.ok) throw new Error(`Request failed with status ${res.status}`);
+      setStatus("success");
       setFormData({ name: "", email: "", projectType: "", details: "" });
-      setTimeout(() => setIsSuccess(false), 5000);
+      setTimeout(() => setStatus("idle"), 6000);
+    } catch (err) {
+      console.error("Contact form submission failed:", err);
+      setStatus("error");
     }
   };
 
@@ -49,6 +62,8 @@ export default function Contact() {
       setErrors(prev => ({ ...prev, [name]: "" }));
     }
   };
+
+  const isSending = status === "sending";
 
   return (
     <section id="contact" className="py-24 bg-card border-t border-border/10">
@@ -90,8 +105,9 @@ export default function Contact() {
                   className={`w-full bg-background border ${errors.name ? 'border-destructive' : 'border-border'} rounded-sm px-4 py-3 text-white focus:outline-none focus:border-primary transition-colors`}
                   data-testid="input-name"
                 />
+                {errors.name && <p className="mt-1 text-sm text-destructive">{errors.name}</p>}
               </div>
-              
+
               <div>
                 <label className="block text-sm font-medium text-white mb-2">
                   {t("contact.email.label")}
@@ -105,6 +121,7 @@ export default function Contact() {
                   className={`w-full bg-background border ${errors.email ? 'border-destructive' : 'border-border'} rounded-sm px-4 py-3 text-white focus:outline-none focus:border-primary transition-colors`}
                   data-testid="input-email"
                 />
+                {errors.email && <p className="mt-1 text-sm text-destructive">{errors.email}</p>}
               </div>
             </div>
 
@@ -116,7 +133,7 @@ export default function Contact() {
                 name="projectType"
                 value={formData.projectType}
                 onChange={handleChange}
-                className="w-full bg-background border border-border rounded-sm px-4 py-3 text-white focus:outline-none focus:border-primary transition-colors appearance-none"
+                className={`w-full bg-background border ${errors.projectType ? 'border-destructive' : 'border-border'} rounded-sm px-4 py-3 text-white focus:outline-none focus:border-primary transition-colors appearance-none`}
                 data-testid="select-project-type"
               >
                 <option value="" disabled>{t("contact.selectPlaceholder")}</option>
@@ -124,6 +141,7 @@ export default function Contact() {
                   <option key={i} value={type}>{type}</option>
                 ))}
               </select>
+              {errors.projectType && <p className="mt-1 text-sm text-destructive">{errors.projectType}</p>}
             </div>
 
             <div>
@@ -139,23 +157,31 @@ export default function Contact() {
                 className={`w-full bg-background border ${errors.details ? 'border-destructive' : 'border-border'} rounded-sm px-4 py-3 text-white focus:outline-none focus:border-primary transition-colors resize-none`}
                 data-testid="textarea-details"
               />
+              {errors.details && <p className="mt-1 text-sm text-destructive">{errors.details}</p>}
             </div>
 
-            {isSuccess && (
-              <div className="p-4 bg-primary/20 border border-primary/50 text-primary rounded-sm text-center font-medium">
+            {status === "success" && (
+              <div className="p-4 bg-primary/20 border border-primary/50 text-primary rounded-sm text-center font-medium" data-testid="msg-success">
                 {t("contact.success")}
+              </div>
+            )}
+
+            {status === "error" && (
+              <div className="p-4 bg-destructive/20 border border-destructive/50 text-destructive rounded-sm text-center font-medium" data-testid="msg-error">
+                {t("contact.error")}
               </div>
             )}
 
             <div className="text-center pt-4">
               <motion.button
                 type="submit"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                className="w-full md:w-auto px-10 py-4 bg-primary text-primary-foreground font-semibold text-lg rounded-sm transition-shadow hover:shadow-[0_0_20px_rgba(201,168,76,0.45)]"
+                disabled={isSending}
+                whileHover={{ scale: isSending ? 1 : 1.02 }}
+                whileTap={{ scale: isSending ? 1 : 0.98 }}
+                className="w-full md:w-auto px-10 py-4 bg-primary text-primary-foreground font-semibold text-lg rounded-sm transition-shadow hover:shadow-[0_0_20px_rgba(201,168,76,0.45)] disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:shadow-none"
                 data-testid="btn-submit"
               >
-                {t("contact.submit")}
+                {isSending ? t("contact.sending") : t("contact.submit")}
               </motion.button>
             </div>
           </form>
@@ -164,7 +190,32 @@ export default function Contact() {
             <p className="text-foreground/80 font-medium mb-6">
               {t("contact.alternative")}
             </p>
-            
+
+            <div className="space-y-2 mb-8">
+              <p className="text-foreground/70">
+                <span className="text-foreground/50">{t("contact.contactPersonLabel")}: </span>
+                <span className="text-white font-medium" data-testid="text-contact-person">{t("contact.contactPerson")}</span>
+              </p>
+              <p>
+                <a
+                  href={`mailto:${t("contact.directEmail")}`}
+                  className="text-primary hover:underline font-medium"
+                  data-testid="link-email"
+                >
+                  {t("contact.directEmail")}
+                </a>
+              </p>
+              <p>
+                <a
+                  href={`tel:${t("contact.phone")}`}
+                  className="text-primary hover:underline font-medium"
+                  data-testid="link-phone"
+                >
+                  {t("contact.phone")}
+                </a>
+              </p>
+            </div>
+
             <div className="flex justify-center gap-6">
               <a href="#" className="text-foreground/60 hover:text-primary transition-colors p-2" aria-label="LinkedIn" data-testid="link-social-linkedin">
                 <Linkedin size={24} />

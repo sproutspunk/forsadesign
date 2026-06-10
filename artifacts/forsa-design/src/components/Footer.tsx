@@ -1,5 +1,5 @@
 import { useLanguage } from "@/contexts/LanguageContext";
-import { Linkedin, Twitter, Instagram } from "lucide-react";
+import { Linkedin, Twitter, Instagram, Mail, Phone } from "lucide-react";
 
 export default function Footer() {
   const { t } = useLanguage();
@@ -16,9 +16,28 @@ export default function Footer() {
             <p className="text-foreground/60 font-light mb-2">
               {t("footer.tagline")}
             </p>
-            <p className="text-foreground/60 font-light">
+            <p className="text-foreground/60 font-light mb-4">
               {t("footer.location")}
             </p>
+            <div className="space-y-2">
+              <p className="text-sm text-foreground/50">
+                {t("footer.contactPersonLabel")}: <span className="text-foreground/70">{t("footer.contactPerson")}</span>
+              </p>
+              <a
+                href={`mailto:${t("footer.email")}`}
+                className="flex items-center gap-2 text-sm text-foreground/60 hover:text-primary transition-colors w-fit"
+                data-testid="footer-link-email"
+              >
+                <Mail size={14} /> {t("footer.email")}
+              </a>
+              <a
+                href={`tel:${t("footer.phone")}`}
+                className="flex items-center gap-2 text-sm text-foreground/60 hover:text-primary transition-colors w-fit"
+                data-testid="footer-link-phone"
+              >
+                <Phone size={14} /> {t("footer.phone")}
+              </a>
+            </div>
           </div>
 
           <div className="flex flex-col gap-3">
