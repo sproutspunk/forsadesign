@@ -78,7 +78,7 @@ const translations = {
       heading: "About Forsa Design",
       body: "We are an independent web development agency based in Scotland, building bespoke systems and websites for the corporate sector. We completely cut out corporate jargon, useless meetings, and artificially inflated management costs.",
       body2:
-        "You do not just need a website that looks nice\u2014you need a fast, secure asset that drives sales and keeps data safe. We handle the technical build from start to finish. You talk directly to the programmers writing your code, eliminating miscommunication and delivering exactly what your business needs.",
+        "We design for revenue, not empty aesthetics. High-end visual design is our absolute baseline \u2013 we deliver fast, stable digital assets that actually drive conversions and protect your corporate data. We handle everything from clean code to server architecture. You collaborate directly with the engineers writing your project, eliminating miscommunication and guaranteeing technical precision from day one.",
     },
     cta: {
       heading: "Built for scale. Hardcoded for speed.",
