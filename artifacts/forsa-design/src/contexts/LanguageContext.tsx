@@ -76,7 +76,7 @@ const translations = {
     },
     about: {
       heading: "About Forsa Design",
-      body: "We are an independent web development agency based in Scotland, building custom digital platforms for corporate and enterprise sectors. We cut out the useless agency overhead, bloated management layers, and overcomplicated sales pitches.",
+      body: "We are an independent web development agency based in Scotland, building bespoke systems and websites for the corporate sector. We completely cut out corporate jargon, useless meetings, and artificially inflated management costs.",
       body2:
         "You do not just need a website that looks nice\u2014you need a fast, secure asset that drives sales and keeps data safe. We handle the technical build from start to finish. You talk directly to the programmers writing your code, eliminating miscommunication and delivering exactly what your business needs.",
     },
