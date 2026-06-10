@@ -22,16 +22,16 @@ const translations = {
     services: {
       heading: "Our Services",
       card1: {
-        title: "Web Design & Build",
-        desc: "We build bespoke websites from scratch. Clean design, custom content management, and easy editing tools. You get a fast, responsive site tailored specifically to what your business needs.\n\nWe don't use ready-made, heavy templates. Every line of code is written to make sure your site loads instantly and stays secure.",
+        title: "Enterprise Web Engineering",
+        desc: "We build high-performance corporate platforms from scratch. Zero heavy templates. Zero bloated code. Every single line is engineered for bulletproof security, instant loading times, and full custom control tailored to your exact operational requirements.",
       },
       card2: {
-        title: "E-commerce & Payments",
-        desc: "Shopify integration, custom platforms, payment gateway setup. Launch your online store with confidence.",
+        title: "High-Conversion E-commerce",
+        desc: "Scalable e-commerce infrastructure engineered to maximize revenue. From advanced Shopify customization to bespoke checkout architecture and secure payment gateway integration, we eliminate cart abandonment and turn high-end brand traffic into pure profit.",
       },
       card3: {
-        title: "Advanced Projects",
-        desc: "Forums, complex systems, ongoing support & optimization. We handle sophisticated solutions that grow with your business.",
+        title: "Bespoke Web Applications",
+        desc: "Complex, data-driven systems engineered for specialized industries. We handle sophisticated digital infrastructure, legacy software modernization, and ongoing performance optimization for businesses that demand zero downtime and absolute precision.",
       },
     },
     portfolio: {
@@ -113,16 +113,16 @@ const translations = {
     services: {
       heading: "Nasze Usługi",
       card1: {
-        title: "Web Design i Budowa",
-        desc: "Budujemy strony szyte na miarę, od zera. Czysty design, własny system zarządzania treścią i proste narzędzia do edycji. Dostajesz szybką, responsywną stronę dopasowaną dokładnie do potrzeb Twojej firmy.\n\nNie używamy gotowych, ciężkich szablonów. Każda linijka kodu jest napisana tak, aby strona ładowała się błyskawicznie i była bezpieczna.",
+        title: "Projektowanie i Inżynieria Web",
+        desc: "Budujemy od zera wysokowydajne platformy korporacyjne. Zero ciężkich szablonów. Zero przeładowanego kodu. Każda linijka jest zaprojektowana z myślą o pancernym bezpieczeństwie, błyskawicznym ładowaniu i pełnej kontroli nad systemem.",
       },
       card2: {
-        title: "Sklepy Online i Płatności",
-        desc: "Integracja Shopify, platformy niestandardowe, konfiguracja bramek płatności. Uruchom swój sklep online bez obaw.",
+        title: "E-commerce i Systemy Płatności",
+        desc: "Skalowalna infrastruktura sprzedażowa zaprojektowana do maksymalizacji przychodów. Od zaawansowanych modyfikacji Shopify po autorską architekturę procesu zakupowego. Likwidujemy problem porzuconych koszyków i przekuwamy ruch w czysty zysk.",
       },
       card3: {
-        title: "Zaawansowane Projekty",
-        desc: "Fora, systemy złożone, ciągłe wsparcie i optymalizacja. Obsługujemy zaawansowane rozwiązania, które rosną wraz z Twoim biznesem.",
+        title: "Dedykowane Aplikacje i Systemy",
+        desc: "Złożone systemy oparte na danych, projektowane dla wymagających sektorów biznesowych. Tworzymy zaawansowaną infrastrukturę cyfrową, modernizujemy systemy i optymalizujemy wydajność tam, gdzie liczy się absolutna precyzja i brak przestojów.",
       },
     },
     portfolio: {

@@ -1,0 +1,44 @@
+Kafel 1: Web Design & Build
+Co jest źle w image_678b77.png: Zwrot „easy editing tools” (łatwe narzędzia do edycji) brzmi tanio – jakbyś sprzedawał prosty szablon na WordPressie dla kogoś, kto chce sam klikać bloga. Duży klient ma od tego ludzi i interesuje go wyłącznie wydajność kodu.
+
+Wersja Brytyjska (UK Premium):
+
+Enterprise Web Engineering
+
+We build high-performance corporate platforms from scratch. Zero heavy templates. Zero bloated code. Every single line is engineered for bulletproof security, instant loading times, and full custom control tailored to your exact operational requirements.
+
+Polska Wersja:
+
+Projektowanie i Inżynieria Web
+
+Budujemy od zera wysokowydajne platformy korporacyjne. Zero ciężkich szablonów. Zero przeładowanego kodu. Każda linijka jest zaprojektowana z myślą o pancernym bezpieczeństwie, błyskawicznym ładowaniu i pełnej kontroli nad systemem.
+
+Kafel 2: E-commerce & Payments
+Co jest źle w image_678b77.png: Tekst jest zbyt pasywny („Shopify integration, custom platforms... Launch your store with confidence”). Brzmi jak instrukcja obsługi, a nie oferta premium. Musisz pokazać, że Twoje e-commerce rozbija bank pod kątem konwersji.
+
+Wersja Brytyjska (UK Premium):
+
+High-Conversion E-commerce
+
+Scalable e-commerce infrastructure engineered to maximize revenue. From advanced Shopify customization to bespoke checkout architecture and secure payment gateway integration, we eliminate cart abandonment and turn high-end brand traffic into pure profit.
+
+Polska Wersja:
+
+E-commerce i Systemy Płatności
+
+Skalowalna infrastruktura sprzedażowa zaprojektowana do maksymalizacji przychodów. Od zaawansowanych modyfikacji Shopify po autorską architekturę procesu zakupowego. Likwidujemy problem porzuconych koszyków i przekuwamy ruch w czysty zysk.
+
+Kafel 3: Advanced Projects
+Co jest źle w image_678b77.png: Słowo „Forums” (fora dyskusyjne) natychmiast degraduje ten kafel do poziomu roku 2010. Poważne firmy nie szukają dziś stawiania forum internetowego. Zastąp to systemami dedykowanymi (Custom Systems / Web Apps) i automatyzacją.
+
+Wersja Brytyjska (UK Premium):
+
+Bespoke Web Applications
+
+Complex, data-driven systems engineered for specialized industries. We handle sophisticated digital infrastructure, legacy software modernization, and ongoing performance optimization for businesses that demand zero downtime and absolute precision.
+
+Polska Wersja:
+
+Dedykowane Aplikacje i Systemy
+
+Złożone systemy oparte na danych, projektowane dla wymagających sektorów biznesowych. Tworzymy zaawansowaną infrastrukturę cyfrową, modernizujemy systemy i optymalizujemy wydajność tam, gdzie liczy się absolutna precyzja i brak przestojów.
