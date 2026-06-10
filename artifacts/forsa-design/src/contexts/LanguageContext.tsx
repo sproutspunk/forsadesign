@@ -15,7 +15,7 @@ const translations = {
     },
     hero: {
       tagline: "Comprehensive Website Design & Creation",
-      subheader: "From idea to launch. And beyond.",
+      subheader: "Engineered for scale. Built to perform.",
       body: "We engineer high-conversion web infrastructure for high-end corporate clients. No jargon. No fuss. Just clean, fast, and solid code that actually drives business growth.",
       cta: "[ Start a Project ]",
     },
