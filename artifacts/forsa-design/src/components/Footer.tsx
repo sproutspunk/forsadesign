@@ -99,10 +99,17 @@ export default function Footer() {
           <p className="mb-2">{t("footer.copyright")}</p>
           <a
             href="/terms"
-            className="hover:text-primary transition-colors"
+            className="hover:text-primary transition-colors mr-4"
             data-testid="footer-link-terms"
           >
             Terms &amp; Conditions
+          </a>
+          <a
+            href="/privacy"
+            className="hover:text-primary transition-colors"
+            data-testid="footer-link-privacy"
+          >
+            Privacy Policy
           </a>
         </div>
       </div>

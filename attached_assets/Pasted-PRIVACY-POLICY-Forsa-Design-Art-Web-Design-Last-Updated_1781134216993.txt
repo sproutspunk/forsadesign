@@ -1,0 +1,590 @@
+PRIVACY POLICY
+
+Forsa Design – Art & Web Design
+
+Last Updated: June 2026
+
+---
+
+1. INTRODUCTION
+
+Forsa Design ("we," "us," "our," or "Company") is committed to protecting your privacy and ensuring you have a positive experience on our website and when engaging with our services.
+
+This Privacy Policy explains how we collect, use, disclose, and process your personal data in accordance with the General Data Protection Regulation (GDPR), the Data Protection Act 2018, and all applicable data protection laws.
+
+By accessing our website or engaging our services, you consent to the practices described in this Privacy Policy.
+
+If you do not agree with our privacy practices, please do not use our website or services.
+
+---
+
+2. DEFINITIONS
+
+"Personal Data" means any information relating to an identified or identifiable natural person.
+
+"Processing" means any operation performed on Personal Data, such as collection, recording, organisation, storage, use, transmission, or deletion.
+
+"Data Subject" means the individual to whom Personal Data relates.
+
+"Controller" means the entity that determines the purposes and means of Processing. Forsa Design is the Controller for this website.
+
+---
+
+3. CONTROLLER AND DATA PROTECTION OFFICER
+
+3.1 Data Controller
+
+Forsa Design
+Art & Web Design
+Banff, Scotland
+Email: [your email]
+Website: [your website]
+
+3.2 Data Protection Officer
+
+For all data protection enquiries and to exercise your rights, please contact:
+
+Data Protection Officer
+Forsa Design
+Email: [your email]
+Phone: [your phone]
+
+---
+
+4. PERSONAL DATA WE COLLECT
+
+4.1 Data Collected Directly
+
+We collect Personal Data that you voluntarily provide, including:
+
+**Contact Forms:**
+- Name
+- Email address
+- Phone number
+- Company name (if applicable)
+- Project enquiry details or message content
+
+**Service Enquiries and Quotation Requests:**
+- Name, email, phone number
+- Business information
+- Project description and requirements
+- Budget and timeline information
+- Any attachments or supporting materials
+
+**Project Clients:**
+- Full name, email, phone number
+- Billing address
+- Payment information (processed by third-party payment providers)
+- Company information
+- Project requirements, content, and materials provided by client
+
+**Communication:**
+- Email correspondence
+- Chat or messaging platform communications
+- Call recordings (only with prior consent)
+- Feedback, testimonials, or reviews (if provided)
+
+**Account or Service Registration:**
+- Login credentials (email, password)
+- Account preferences
+- Payment history
+
+4.2 Data Collected Automatically
+
+We collect certain data automatically when you visit our website:
+
+**Website Usage Data:**
+- IP address
+- Browser type and version
+- Operating system
+- Referring website or source
+- Pages visited and time spent on each page
+- Click-through data
+- Search queries within the site
+- Device type and identifiers
+
+**Cookies and Tracking Technologies:**
+- Session cookies (temporary, automatically deleted when you close your browser)
+- Persistent cookies (stored for specific purposes, e.g., user preferences)
+- Web beacons and pixels
+- Local storage and similar technologies
+
+**Analytics Data:**
+- Collected via Google Analytics
+- Aggregated user behaviour patterns
+- Traffic sources
+- User journey and navigation
+- Conversion data (form submissions, enquiry sign-ups)
+
+4.3 Data from Third Parties
+
+We may receive Personal Data from:
+- Your employer (if they engage us for services)
+- Referral sources or partners
+- Publicly available sources (e.g., business registries, social media)
+- Third-party service providers
+
+---
+
+5. LEGAL BASIS FOR PROCESSING
+
+We process your Personal Data only where we have a lawful basis under GDPR:
+
+5.1 Consent
+
+**Basis:** You have explicitly consented to Processing.
+
+**Applied to:** Marketing emails, newsletters, non-essential cookies, testimonial use, call recordings, optional data fields.
+
+You may withdraw consent at any time by unsubscribing from communications or contacting us.
+
+5.2 Contract Performance
+
+**Basis:** Processing is necessary to perform a contract with you or to take steps at your request prior to entering into a contract.
+
+**Applied to:** Client name, email, phone, billing address, project materials, payment information, service delivery data.
+
+5.3 Legal Obligation
+
+**Basis:** Processing is necessary for compliance with applicable law.
+
+**Applied to:** Tax records, accounting data, fraud prevention, child protection, public safety.
+
+5.4 Legitimate Interest
+
+**Basis:** Processing is necessary for legitimate interests pursued by the Company, except where overridden by your interests, rights, or freedoms.
+
+**Applied to:** Website security, fraud prevention, analytics, customer service improvements, marketing (with legitimate interest assessment), business operations.
+
+Legitimate interests include:
+- Preventing fraud and abuse
+- Protecting website security and integrity
+- Improving website functionality and user experience
+- Managing customer relationships
+- Conducting business analytics
+- Contacting you about updates or service changes
+
+5.5 Vital Interests
+
+**Basis:** Processing is necessary to protect vital interests (e.g., life, safety).
+
+**Applied to:** Emergency situations, child protection, data breaches affecting your safety.
+
+---
+
+6. HOW WE USE YOUR PERSONAL DATA
+
+6.1 Service Delivery
+
+- Providing quotations and project estimates
+- Creating and delivering website design and development services
+- Communicating about project progress, milestones, and deliverables
+- Processing payments
+- Providing ongoing support and maintenance
+- Troubleshooting technical issues
+
+6.2 Communication and Customer Service
+
+- Responding to enquiries and requests
+- Providing customer support
+- Sending transactional emails (invoices, receipts, project updates)
+- Notifying you of service changes or important updates
+- Gathering feedback to improve services
+
+6.3 Marketing and Promotion
+
+- Sending marketing emails, newsletters, or promotional materials (with your consent)
+- Featuring your project as a portfolio example or case study (with consent and optional anonymisation)
+- Requesting testimonials or reviews
+- Using your information in marketing materials or social media (with consent)
+
+You may opt out of marketing communications at any time by unsubscribing or contacting us.
+
+6.4 Website Analytics and Improvement
+
+- Analysing website usage patterns to improve user experience
+- Identifying technical issues and monitoring website performance
+- Conducting A/B testing and user research
+- Generating aggregate statistics (non-identifying)
+- Understanding visitor demographics and interests
+
+6.5 Security and Fraud Prevention
+
+- Detecting, investigating, and preventing fraud or abuse
+- Protecting against malicious, deceptive, or illegal activity
+- Enforcing our Terms and Conditions
+- Protecting the security and integrity of our website and services
+
+6.6 Legal Compliance
+
+- Complying with legal obligations
+- Responding to lawful requests from authorities
+- Establishing, exercising, or defending legal claims
+- Audit and accounting purposes
+
+6.7 Business Operations
+
+- Managing business records and files
+- Financial and accounting purposes
+- Human resources management (if you are an employee or contractor)
+- Business planning and strategy
+
+---
+
+7. DATA RETENTION
+
+7.1 Retention Periods
+
+We retain Personal Data only for as long as necessary to achieve the purposes for which it was collected, unless a longer retention period is required by law.
+
+**Contact Form Enquiries:** 2 years (unless converted to a client)
+
+**Project Clients:** Duration of project + 7 years (for accounting and legal purposes)
+
+**Marketing Lists:** Until you unsubscribe; thereafter, we retain evidence of unsubscription for 2 years
+
+**Website Analytics:** 26 months (default Google Analytics retention)
+
+**Email Communications:** 2 years or duration of business relationship, whichever is longer
+
+**Payment Records:** 7 years (UK tax retention requirements)
+
+**Call Recordings:** 1 year (if applicable)
+
+**Server Logs and IP Data:** 90 days
+
+7.2 Deletion
+
+When Personal Data is no longer necessary, we securely delete or anonymise it. You may request deletion at any time (subject to legal retention requirements).
+
+---
+
+8. SHARING AND DISCLOSURE OF PERSONAL DATA
+
+8.1 With Your Consent
+
+We only share your Personal Data with third parties if you have consented or it is necessary for service delivery.
+
+8.2 Service Providers and Third Parties
+
+We may disclose Personal Data to:
+
+**Hosting Providers:** Data centres where your website is hosted
+
+**Payment Processors:** Third-party payment gateways (Stripe, PayPal, etc.) for payment processing
+
+**Email Service Providers:** Email marketing platforms (if you have consented to marketing)
+
+**Analytics Providers:** Google Analytics for website usage analysis
+
+**Communication Tools:** Project management, communication, or CRM platforms used for client management
+
+**Professional Services:** Accountants, lawyers, or consultants as necessary for business operations
+
+**Cloud Storage:** Third-party cloud services for data backup and document storage
+
+All service providers are contractually bound to process data only on our instructions and to maintain confidentiality.
+
+8.3 Legal Obligations
+
+We may disclose Personal Data if required by law, court order, or lawful authority request (e.g., police, tax authorities).
+
+8.4 Business Transfer
+
+If Forsa Design is acquired, merged, or restructured, Personal Data may be transferred as part of that transaction. We will notify you of any such change and your rights.
+
+8.5 Public Information
+
+We will not share your Personal Data publicly unless you have consented (e.g., publishing a testimonial or case study).
+
+8.6 No Sale of Data
+
+We do not sell, rent, or trade your Personal Data to third parties for marketing purposes.
+
+---
+
+9. INTERNATIONAL DATA TRANSFERS
+
+9.1 Data Location
+
+Forsa Design processes and stores Personal Data primarily within the United Kingdom and European Union.
+
+9.2 Transfers Outside the UK/EU
+
+If Personal Data is transferred outside the UK or EU (e.g., to cloud service providers in other jurisdictions), we ensure:
+- Appropriate safeguards are in place (e.g., Standard Contractual Clauses, adequacy decisions)
+- Transfer is necessary for service delivery
+- Recipient countries have adequate data protection standards (where required)
+
+9.3 Your Rights
+
+You have the right to object to transfers outside the UK/EU. Contact us if you have concerns.
+
+---
+
+10. COOKIES AND TRACKING TECHNOLOGIES
+
+10.1 What Are Cookies?
+
+Cookies are small text files stored on your device that allow websites to recognise and remember you.
+
+10.2 Types of Cookies We Use
+
+**Essential Cookies:**
+- Purpose: Maintain website functionality, security, user session management
+- Consent: Not required; automatically set
+- Duration: Session or up to 12 months
+- Examples: Security tokens, CSRF protection, language preference
+
+**Analytics Cookies:**
+- Purpose: Understand website usage, visitor behaviour, traffic patterns
+- Consent: Required (unless already given)
+- Provider: Google Analytics
+- Duration: Up to 26 months
+- Data: Anonymised usage patterns; no Personal Data collected
+
+**Preference Cookies:**
+- Purpose: Remember your choices (theme, language, accessibility settings)
+- Consent: Not required
+- Duration: Up to 12 months
+- Examples: Dark mode preference, language selection
+
+**Marketing Cookies:**
+- Purpose: Deliver targeted advertising; track advertising effectiveness
+- Consent: Required
+- Provider: Google Ads, Facebook Pixel, other ad networks (if used)
+- Duration: Up to 12 months
+- Notes: Only set if you consent to marketing
+
+10.3 Third-Party Cookies
+
+Third-party service providers (Google, Facebook, etc.) may set their own cookies on your device. These are governed by their privacy policies, not ours.
+
+10.4 Cookie Consent
+
+When you first visit our website, we display a cookie consent banner. You may:
+- Accept all cookies
+- Reject non-essential cookies
+- Customise cookie preferences
+- Withdraw or change consent at any time
+
+10.5 Disabling Cookies
+
+You can disable cookies in your browser settings, but this may affect website functionality and user experience.
+
+10.6 Tracking Technologies
+
+We may also use:
+- Web beacons (1x1 pixel images) to track email opens
+- Local storage and similar technologies to remember preferences
+- Session replay tools (with consent) to improve user experience
+
+---
+
+11. YOUR RIGHTS UNDER GDPR
+
+As a Data Subject, you have the following rights:
+
+11.1 Right of Access
+
+You have the right to request access to your Personal Data and information about how we process it. We will provide this within 30 days at no cost.
+
+11.2 Right to Rectification
+
+You have the right to correct inaccurate or incomplete Personal Data.
+
+11.3 Right to Erasure ("Right to Be Forgotten")
+
+You have the right to request deletion of your Personal Data, except where:
+- Processing is necessary for legal obligations
+- Processing is necessary for contract performance
+- Legitimate interests override your rights
+- Data is essential for fraud prevention or security
+
+11.4 Right to Restrict Processing
+
+You have the right to request that we limit how we process your data while you resolve a dispute or exercise other rights.
+
+11.5 Right to Data Portability
+
+You have the right to receive a copy of your Personal Data in a structured, commonly-used, machine-readable format and to transmit it to another controller.
+
+11.6 Right to Object
+
+You have the right to object to Processing based on legitimate interest, including for marketing purposes. We will cease Processing unless we have compelling legitimate reasons.
+
+11.7 Right to Lodge a Complaint
+
+You have the right to lodge a complaint with the relevant data protection authority if you believe your rights have been violated.
+
+**UK Information Commissioner's Office (ICO):** www.ico.org.uk
+
+**Other EU Member State authorities:** Contact your local data protection authority
+
+11.8 Automated Decision-Making
+
+We do not use automated decision-making or profiling for decisions that significantly affect you.
+
+---
+
+12. CHILDREN'S PRIVACY
+
+Our website and services are not directed to children under 13 years old.
+
+We do not knowingly collect Personal Data from children under 13. If we become aware that a child has provided Personal Data, we will delete it immediately.
+
+For children aged 13–18, parental consent may be required depending on jurisdiction.
+
+If you are a parent or guardian and believe your child's data has been collected, please contact us immediately.
+
+---
+
+13. DATA SECURITY
+
+13.1 Security Measures
+
+We implement reasonable technical, administrative, and organisational security measures to protect Personal Data against unauthorised access, alteration, disclosure, or destruction:
+
+- SSL/TLS encryption for data in transit
+- Encrypted data storage (where applicable)
+- Restricted access to personal data (employees and contractors only)
+- Regular security assessments and updates
+- Firewalls and intrusion detection systems
+- Secure password policies and multi-factor authentication
+
+13.2 Limitations
+
+While we implement appropriate security measures, no method of transmission over the internet or electronic storage is completely secure. We cannot guarantee absolute security.
+
+You are responsible for keeping your passwords confidential and securing your access credentials.
+
+13.3 Data Breach Notification
+
+If we discover a data breach that poses a risk to your rights and freedoms, we will:
+- Notify the relevant data protection authority within 72 hours (where required)
+- Notify affected individuals without undue delay
+- Provide information about the breach and steps you can take to protect yourself
+
+---
+
+14. THIRD-PARTY LINKS AND SERVICES
+
+Our website may contain links to third-party websites, applications, and services. This Privacy Policy applies only to our website and services.
+
+We are not responsible for the privacy practices of third-party websites. Please review their privacy policies before providing Personal Data.
+
+Third-party services we use (Google Analytics, payment processors, hosting providers) have their own privacy policies. Contact us if you need information about their practices.
+
+---
+
+15. BUSINESS PARTNERS AND CLIENT DATA PROCESSING
+
+15.1 Client Websites
+
+If you are a Forsa Design client, we process Personal Data on your behalf for website hosting, maintenance, and operation.
+
+As the Data Controller, you are responsible for:
+- Obtaining necessary consents from end-users
+- Maintaining a privacy policy for your website
+- Complying with GDPR and applicable data protection laws
+
+As a Data Processor, we process data only according to your instructions.
+
+15.2 Data Processing Addendum
+
+For client projects involving significant Personal Data processing, a separate Data Processing Addendum (DPA) will be executed.
+
+---
+
+16. RETENTION AND DELETION REQUESTS
+
+16.1 How to Request Data Deletion
+
+You may request deletion of your Personal Data by contacting us at:
+
+Email: [your email]
+Phone: [your phone]
+
+We will respond to deletion requests within 30 days, except where:
+- Legal retention requirements apply
+- Processing is necessary for contract performance
+- Legitimate interests override your request
+
+16.2 Account Deletion
+
+If you have an account or profile with us, you may request complete account deletion. This will remove associated Personal Data, except where retention is legally required.
+
+---
+
+17. MARKETING COMMUNICATIONS AND OPT-OUT
+
+17.1 Email Marketing
+
+We may send marketing emails, newsletters, or promotional materials only if you have consented.
+
+17.2 Unsubscribe
+
+You may unsubscribe from marketing communications at any time by:
+- Clicking the "Unsubscribe" link in any email
+- Contacting us directly
+- Updating your preferences in your account
+
+We will honour unsubscribe requests within 10 business days.
+
+17.3 Transactional Communications
+
+Even if you unsubscribe from marketing, we will continue to send transactional emails (invoices, service updates, account notifications) as necessary.
+
+---
+
+18. CHANGES TO THIS PRIVACY POLICY
+
+We may update this Privacy Policy periodically to reflect changes in our practices, technology, legal requirements, or other factors.
+
+**Last Updated:** June 2026
+
+**Effective Date of Changes:** Updated Privacy Policies are effective upon publication on this website.
+
+We will notify you of material changes by email (if you have provided an email address) or by posting a notice on this website.
+
+Continued use of our website or services following changes constitutes acceptance of the updated Privacy Policy.
+
+---
+
+19. CONTACT US
+
+For questions, concerns, or to exercise your rights under GDPR, please contact:
+
+**Data Protection Officer / Privacy Contact:**
+
+Forsa Design
+Art & Web Design
+Banff, Scotland
+
+Email: [your email]
+Phone: [your phone]
+Website: [your website]
+
+**Response Time:** We will respond to all privacy enquiries within 30 days.
+
+**Complaints:** If you are not satisfied with our response, you may lodge a complaint with the Information Commissioner's Office (ICO) at www.ico.org.uk.
+
+---
+
+20. LEGAL BASIS SUMMARY TABLE
+
+| Data Type | Purpose | Legal Basis |
+|-----------|---------|-------------|
+| Contact form data | Service enquiries | Consent + Contract |
+| Project client data | Service delivery | Contract |
+| Email address | Marketing communications | Consent |
+| Website usage data | Analytics, improvement | Legitimate interest |
+| IP address, device info | Security, fraud prevention | Legitimate interest |
+| Payment information | Payment processing | Contract + Legal obligation |
+| Testimonials | Marketing | Consent |
+| Call recordings | Service improvement | Consent |
+| Cookies | Website functionality, analytics | Consent (essential cookies exempt) |
+
+---
+
+END OF PRIVACY POLICY
