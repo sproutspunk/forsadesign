@@ -106,7 +106,7 @@ const translations = {
     },
     hero: {
       tagline: "Kompleksowy Web Design i Tworzenie Stron",
-      subheader: "Od pomysłu do startu. I dalej.",
+      subheader: "Zaprojektowane by skalować. Stworzone by zarabiać.",
       body: "Budujemy porządne strony dla firm w całej Szkocji. Bez żargonu. Bez kombinowania. Czysty, szybki i solidny kod, który po prostu działa.",
       cta: "[ Rozpocznij projekt ]",
     },
