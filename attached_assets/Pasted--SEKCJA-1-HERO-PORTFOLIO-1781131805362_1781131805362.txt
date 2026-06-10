@@ -1,0 +1,69 @@
+========================================================================
+SEKCJA 1: HERO / PORTFOLIO INTRO
+========================================================================
+PODTYTUŁ:
+Szybkie, pisane od zera strony i sklepy, stworzone by zamieniać ruch w realny zysk.
+
+========================================================================
+SEKCJA 2: SIATKA PORTFOLIO (3 KOLUMNY)
+========================================================================
+KAFEL 1 (Aktywne Case Study):
+Tytuł: Love Sprouts — Przebudowa E-commerce
+Opis: Stworzenie nowej strony Shopify od zera. Skrócenie ładowania do 1.1s i zatrzymanie porzuconych koszyków.
+Tag: [ CASE STUDY LIVE ]
+
+KAFEL 2 (Zajawka):
+Tytuł: System Web dla Sektora Prawnego
+Opis: Bezpieczny i szybki system internetowy, zaprojektowany pod kątem konwersji dla branży prawniczej.
+Tag: [ W REALIZACJI ]
+
+KAFEL 3 (Zajawka):
+Tytuł: Platforma Cyfrowa dla Branży Energetycznej
+Opis: Dedykowany, lekki framework i zoptymalizowana ścieżka użytkownika dla sektora enterprise.
+Tag: [ W PLANACH ]
+
+========================================================================
+SEKCJA 3: USŁUGI (3 KAFELKI)
+========================================================================
+KAFEL 1:
+Tytuł: Projektowanie i Kodowanie Stron
+Opis: Zero ciężkich, gotowych szablonów. Zero zamulających wtyczek. Piszemy czysty kod od zera, żeby Twoja strona była bezpieczna, ładowała się natychmiast i dawała Ci pełną kontrolę nad wyglądem.
+
+KAFEL 2:
+Tytuł: Sklepy Internetowe i Płatności
+Opis: Skalowalne sklepy nastawione na sprzedaż. Od zaawansowanych modyfikacji Shopify po autorskie koszyki zakupowe. Likwidujemy błędy techniczne, przez które tracisz klientów na etapie płatności.
+
+KAFEL 3:
+Tytuł: Dedykowane Aplikacje i Systemy
+Opis: Złożone projekty oparte na bazach danych dla specjalistycznych branż. Tworzymy systemy od zera, odświeżamy stary kod i dbamy o stabilność tam, gdzie liczy się bezwzględna precyzja i brak przestojów.
+
+========================================================================
+SEKCJA 4: PROCES / JAK PRACUJEMY (4 KROKI)
+========================================================================
+KROK 1:
+Tytuł: Audyt Techniczny
+Opis: Analizujemy Twój obecny system, znajdujemy elementy, które spowalniają stronę, i planujemy strukturę kodu pod Twoje cele sprzedażowe.
+
+KROK 2:
+Tytuł: Pisanie Kodu
+Opis: Żadnych gotowców. Kodujemy dedykowany frontend i stabilny backend. Dbamy o to, by kod był lekki, szybki i odporny na ataki.
+
+KROK 3:
+Tytuł: Testy Obciążeniowe
+Opis: Przed uruchomieniem sprawdzamy szybkość, przeprowadzamy audyt bezpieczeństwa i testujemy system pod dużym ruchem. Dostajesz produkt gotowy do walki.
+
+KROK 4:
+Tytuł: Wsparcie i Rozwój
+Opis: Reagujemy zanim coś się zepsuje. Dbamy o serwery, bezpieczeństwo i regularne aktualizacje kodu, żeby strona działała idealnie podczas rozwoju firmy.
+
+========================================================================
+SEKCJA 5: WEZWANIE DO DZIAŁANIA (CTA / NA DOLE STRONY)
+========================================================================
+NAGŁÓWEK GŁÓWNY:
+Stworzone by działać. Napisane by zarabiać.
+
+TEKST OPISOWY:
+Budujemy dedykowane systemy webowe dla firm, które oczekują wyników, a nie marketingu. Bez zbędnego żargonu. Bez owijania w bawełnę. Tylko czysty, szybki i stabilny kod, który rozwija Twój biznes.
+
+TEKST NA PRZYCISKU:
+[ Rozpocznij projekt ]

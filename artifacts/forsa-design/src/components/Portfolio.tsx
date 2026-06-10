@@ -4,6 +4,24 @@ import { motion } from "framer-motion";
 export default function Portfolio() {
   const { t } = useLanguage();
 
+  const cases = [
+    {
+      title: t("portfolio.case1.title"),
+      desc: t("portfolio.case1.desc"),
+      tag: t("portfolio.case1.tag"),
+    },
+    {
+      title: t("portfolio.case2.title"),
+      desc: t("portfolio.case2.desc"),
+      tag: t("portfolio.case2.tag"),
+    },
+    {
+      title: t("portfolio.case3.title"),
+      desc: t("portfolio.case3.desc"),
+      tag: t("portfolio.case3.tag"),
+    },
+  ];
+
   return (
     <section id="portfolio" className="py-24 bg-background border-t border-border/10">
       <div className="container mx-auto px-6">
@@ -18,16 +36,25 @@ export default function Portfolio() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {[1, 2, 3].map((item, index) => (
+          {cases.map((item, index) => (
             <motion.div
-              key={item}
+              key={index}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="aspect-[4/3] rounded-md border-2 border-dashed border-primary/30 bg-gradient-to-br from-card to-background flex items-center justify-center p-8 text-center transition-colors hover:border-primary/60"
+              whileHover={{ y: -8 }}
+              className="bg-card border-t-4 border-t-primary rounded-b-md p-8 shadow-sm transition-all duration-300 hover:shadow-[0_10px_30px_rgba(201,168,76,0.12)]"
             >
-              <p className="text-foreground/50 font-medium italic">{t("portfolio.placeholder")}</p>
+              <span className="inline-block text-xs font-bold tracking-wider text-primary mb-4 border border-primary/30 px-3 py-1 rounded-sm">
+                {item.tag}
+              </span>
+              <h3 className="font-serif text-2xl font-bold text-white mb-4">
+                {item.title}
+              </h3>
+              <p className="text-foreground/70 leading-relaxed font-light">
+                {item.desc}
+              </p>
             </motion.div>
           ))}
         </div>
