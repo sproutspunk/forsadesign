@@ -27,7 +27,7 @@ export default function Contact() {
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [status, setStatus] = useState<Status>("idle");
 
-  const projectTypes = t("contact.projectTypes") as string[];
+  const projectTypes = t("contact.projectTypes") as unknown as string[];
 
   const validate = () => {
     const newErrors: Record<string, string> = {};

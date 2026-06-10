@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, useEffect, ReactNode } from "react";
+import { createContext, useContext, useState, ReactNode } from "react";
 import { useLocation } from "wouter";
 
 type Language = "en" | "pl";
@@ -156,18 +156,10 @@ const translations = {
   },
 };
 
-type NestedKeyOf<ObjectType extends object> = 
-  {[Key in keyof ObjectType & (string | number)]: ObjectType[Key] extends object
-    ? `${Key}.${NestedKeyOf<ObjectType[Key]>}`
-    : `${Key}`
-  }[keyof ObjectType & (string | number)];
-
-type TranslationKeys = NestedKeyOf<typeof translations.en>;
-
 interface LanguageContextType {
   language: Language;
   setLanguage: (lang: Language) => void;
-  t: (key: string) => any;
+  t: (key: string) => string;
 }
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
@@ -185,17 +177,17 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     setLocation(`/${lang}/`);
   };
 
-  const t = (key: string) => {
+  const t = (key: string): string => {
     const keys = key.split(".");
-    let result: any = translations[language];
+    let result: unknown = translations[language];
     for (const k of keys) {
       if (result && typeof result === "object" && k in result) {
-        result = result[k];
+        result = (result as Record<string, unknown>)[k];
       } else {
         return key;
       }
     }
-    return result;
+    return result as string;
   };
 
   return (

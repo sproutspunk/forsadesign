@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 export default function Process() {
   const { t } = useLanguage();
-  const steps = t("process.steps") as { title: string; desc: string }[];
+  const steps = t("process.steps") as unknown as { title: string; desc: string }[];
 
   return (
     <section id="process" className="py-24 bg-card">
