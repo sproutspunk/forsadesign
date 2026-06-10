@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { motion } from "framer-motion";
-import { Linkedin, Twitter, Instagram } from "lucide-react";
+import { Facebook, Instagram } from "lucide-react";
 import { submitContact } from "@workspace/api-client-react";
 import Turnstile from "./Turnstile";
 
@@ -279,23 +279,19 @@ export default function Contact() {
 
             <div className="flex justify-center gap-6">
               <a
-                href="#"
+                href="https://www.facebook.com/share/1BvxH2rXRc/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-foreground/60 hover:text-primary transition-colors p-2"
-                aria-label="LinkedIn"
-                data-testid="link-social-linkedin"
+                aria-label="Facebook"
+                data-testid="link-social-facebook"
               >
-                <Linkedin size={24} />
+                <Facebook size={24} />
               </a>
               <a
-                href="#"
-                className="text-foreground/60 hover:text-primary transition-colors p-2"
-                aria-label="X (Twitter)"
-                data-testid="link-social-x"
-              >
-                <Twitter size={24} />
-              </a>
-              <a
-                href="#"
+                href="https://www.instagram.com/forsa.design"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-foreground/60 hover:text-primary transition-colors p-2"
                 aria-label="Instagram"
                 data-testid="link-social-instagram"

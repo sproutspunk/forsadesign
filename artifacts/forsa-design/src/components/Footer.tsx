@@ -1,5 +1,5 @@
 import { useLanguage } from "@/contexts/LanguageContext";
-import { Linkedin, Twitter, Instagram, Mail, Phone } from "lucide-react";
+import { Facebook, Instagram, Mail, Phone } from "lucide-react";
 
 export default function Footer() {
   const { t } = useLanguage();
@@ -77,19 +77,17 @@ export default function Footer() {
 
           <div className="flex gap-4 md:justify-end">
             <a
-              href="#"
+              href="https://www.facebook.com/share/1BvxH2rXRc/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-foreground/50 hover:text-primary transition-colors bg-card p-3 rounded-full h-fit"
             >
-              <Linkedin size={18} />
+              <Facebook size={18} />
             </a>
             <a
-              href="#"
-              className="text-foreground/50 hover:text-primary transition-colors bg-card p-3 rounded-full h-fit"
-            >
-              <Twitter size={18} />
-            </a>
-            <a
-              href="#"
+              href="https://www.instagram.com/forsa.design"
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-foreground/50 hover:text-primary transition-colors bg-card p-3 rounded-full h-fit"
             >
               <Instagram size={18} />
