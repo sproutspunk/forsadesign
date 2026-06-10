@@ -1,0 +1,416 @@
+TERMS AND CONDITIONS
+
+Forsa Design – Art & Web Design
+
+Last Updated: June 2026
+
+---
+
+1. INTRODUCTION
+
+Welcome to Forsa Design ("we," "us," "our," or "Company"). These Terms and Conditions ("Terms") govern your access to our website and your engagement with our services.
+
+By accessing our website or engaging our services, you agree to be bound by these Terms. If you do not agree with any part of these terms, please do not use our website or services.
+
+These Terms apply to all services provided by Forsa Design, including but not limited to website design, web development, e-commerce solutions, custom systems, and ongoing support.
+
+---
+
+2. WEBSITE USE
+
+The content of this website is provided for general information purposes only and may be updated or changed without notice.
+
+We make reasonable efforts to ensure the information on this website is accurate; however, we do not guarantee its completeness, accuracy, or suitability for any particular purpose.
+
+We reserve the right to restrict or deny access to any individual or organisation without providing reasons.
+
+---
+
+3. INTELLECTUAL PROPERTY RIGHTS
+
+3.1 Website and Platform Content
+
+Unless otherwise agreed in writing, all intellectual property rights relating to this website, including but not limited to text, graphics, branding, design elements, layouts, code, and content, belong exclusively to Forsa Design.
+
+You may view and print pages from this website for personal, non-commercial use only. Any other reproduction, distribution, or use of website content is strictly prohibited without prior written consent from Forsa Design.
+
+3.2 Project Deliverables
+
+Ownership of custom project deliverables (including websites, designs, code, and other materials) created specifically for a client shall be transferred to the client upon receipt of 100% payment of the total project value.
+
+Until full payment is received, all intellectual property rights, including source code, design files, databases, and all associated materials, remain the exclusive property of Forsa Design.
+
+Forsa Design retains the right to use project deliverables as portfolio examples and case studies, with appropriate anonymisation if requested by the client.
+
+3.3 Pre-Existing Materials
+
+Forsa Design retains all intellectual property rights to pre-existing templates, frameworks, libraries, components, processes, and methodologies developed prior to or independently of client projects.
+
+---
+
+4. SERVICE ENQUIRIES AND QUOTATIONS
+
+Any quotation, estimate, proposal, or scope of work provided by Forsa Design is non-binding and indicative only until formally accepted by the client and confirmed in a signed project agreement or contract.
+
+Quotations are valid for 30 days from the date of issue. After 30 days, quotations must be refreshed and may be subject to revised pricing.
+
+We reserve the right to decline any project enquiry or proposal at our sole discretion, without providing reasons.
+
+---
+
+5. DEPOSITS, PAYMENTS, AND PAYMENT TERMS
+
+5.1 Deposit Requirement
+
+A non-refundable deposit equal to 25% of the total project value is required before work commences. This deposit shall be held as payment toward the final invoice.
+
+The deposit must be received and cleared before any work begins.
+
+5.2 Payment Schedule
+
+The remaining 75% balance shall be paid according to the schedule specified in the individual project agreement. Standard payment terms are:
+- Remaining balance upon project completion (if specified in agreement), or
+- Staged payments at agreed milestones (as detailed in the project agreement), or
+- As invoiced at project completion
+
+5.3 Payment Method and Due Date
+
+All invoices are due within 14 days of issue unless alternative terms are specified in writing.
+
+Payment must be made by bank transfer or via agreed payment method. We accept no responsibility for payment delays caused by banking delays.
+
+5.4 Late Payment
+
+Failure to make payments when due may result in immediate suspension of work until outstanding amounts are settled in full.
+
+If payment remains outstanding for more than 30 days beyond the due date, Forsa Design reserves the right to:
+- Terminate the project immediately
+- Invoice for all work completed to date
+- Restrict or disable access to the website or deliverables
+- Pursue recovery of outstanding amounts through legal means
+
+5.5 Ownership and Access
+
+The client shall acquire exclusive ownership rights to the completed website and all deliverables only upon receipt of 100% payment of the total project value.
+
+Until full payment is made, Forsa Design retains all intellectual property rights and may restrict or disable access to the website, source code, and all associated materials.
+
+5.6 Refund Policy
+
+The 25% deposit is non-refundable under any circumstances, including project cancellation by the client.
+
+If the client cancels the project after work has begun, the client shall pay for all work completed to the point of cancellation, in addition to any non-recoverable costs incurred by Forsa Design.
+
+---
+
+6. PROJECT TIMELINES AND MILESTONES
+
+6.1 Indicative Timelines
+
+Any estimated completion dates, timelines, or delivery schedules provided before a formal project agreement is signed are indicative only and should not be considered guaranteed.
+
+Project timelines become firm only upon execution of a formal written project agreement.
+
+6.2 Formal Project Agreement
+
+All project timelines, milestones, deliverables, revision allowances, completion dates, and specific requirements shall be documented in a formal project agreement signed by both parties.
+
+6.3 Client-Caused Delays
+
+Forsa Design shall not be responsible for delays caused by the client, including but not limited to:
+- Delays in providing content, copy, images, branding materials, or other information required to progress the project
+- Delays in providing feedback, approvals, or decision-making
+- Changes to project scope or requirements after work has begun
+- Provision of inaccurate or incomplete information
+- Unavailability of client stakeholders for consultation or review
+
+Any delays caused by the client shall extend the project timeline accordingly, and shall not result in penalties or liability for Forsa Design.
+
+6.4 Force Majeure
+
+Forsa Design shall not be liable for delays or non-performance caused by circumstances beyond its reasonable control, including but not limited to natural disasters, pandemics, government actions, infrastructure failures, or other unforeseen events.
+
+---
+
+7. SCOPE OF WORK AND CHANGE REQUESTS
+
+7.1 Defined Scope
+
+The scope of work shall be defined in the individual project agreement. Work shall be limited to the agreed scope unless otherwise authorised in writing.
+
+7.2 Revision Allowances
+
+The number of revision rounds, feedback cycles, and revisions included in the project fee shall be specified in the project agreement (e.g., "2 rounds of revisions included").
+
+7.3 Out-of-Scope Changes
+
+Any changes, additions, or revisions requested outside the agreed scope or beyond the included revision allowances shall be subject to additional fees.
+
+Change requests must be submitted in writing and shall be quoted separately before work commences. Additional work will not proceed without written approval and agreement on revised fees.
+
+Additional revision rounds are charged at £75 per hour or as quoted.
+
+7.4 Scope Creep Prevention
+
+If requested changes significantly alter the project scope or timeline, Forsa Design reserves the right to:
+- Provide a revised quotation
+- Extend the project timeline
+- Request a supplementary deposit
+- Decline the requested changes
+
+---
+
+8. CLIENT RESPONSIBILITIES
+
+8.1 Provision of Materials
+
+The client is responsible for providing accurate, complete, timely, and properly formatted information, content, materials, images, and branding assets necessary for the completion of the project.
+
+The client shall ensure all provided materials are of sufficient quality and resolution for professional use.
+
+8.2 Intellectual Property Warranty
+
+The client warrants that:
+- All materials, content, images, text, audio, video, and code supplied to Forsa Design are the client's original work or the client has obtained all necessary permissions and licenses
+- No supplied materials infringe the intellectual property rights, copyright, trademark, privacy, or other rights of any third party
+- The client has the right to grant all rights necessary for Forsa Design to use these materials in the project
+
+8.3 Indemnification
+
+The client shall indemnify and hold harmless Forsa Design from any and all third-party claims, damages, costs, or losses arising from:
+- The client's materials, content, or information
+- The client's use of the deliverables
+- The client's violation of these Terms or applicable law
+- Any breach of the client's warranties
+
+8.4 Content Accuracy
+
+Forsa Design is not responsible for the accuracy, legality, or appropriateness of content provided by the client. The client is solely responsible for ensuring all content complies with applicable law and does not infringe third-party rights.
+
+8.5 Timely Feedback and Decisions
+
+The client shall provide timely feedback, approvals, and decisions to prevent project delays. Forsa Design shall not be liable for delays caused by slow client response.
+
+---
+
+9. REVISION ALLOWANCES AND ADDITIONAL WORK
+
+9.1 Included Revisions
+
+The number of revision rounds, review cycles, and revision hours included in the project fee shall be explicitly stated in the project agreement.
+
+Unless stated otherwise, "revisions" include changes to design, layout, copy, functionality, or other elements within the original scope.
+
+9.2 Additional Revisions
+
+Revisions beyond the agreed allowance shall be charged at £75 per hour or as separately quoted.
+
+9.3 Major Changes
+
+If a revision request constitutes a substantial change to the project scope, deliverables, or timeline, Forsa Design reserves the right to treat it as a separate change request subject to additional fees.
+
+---
+
+10. LIMITATION OF LIABILITY
+
+10.1 Excluded Liability
+
+To the fullest extent permitted by law, Forsa Design shall not be liable for any:
+- Indirect, incidental, special, or consequential damages
+- Loss of profits, revenue, business opportunities, goodwill, or reputation
+- Loss of data, business interruption, or system failure
+- Damages arising from your use of or inability to use our website or services
+
+This limitation applies regardless of the cause of action and whether such liability is based on contract, tort, strict liability, or any other legal theory.
+
+10.2 Total Liability Cap
+
+In no event shall Forsa Design's total liability arising out of or relating to these Terms or our services exceed the amount paid by the client in the 12 months preceding the claim or £500, whichever is greater.
+
+10.3 Exceptions
+
+Nothing in these Terms shall exclude or limit Forsa Design's liability for:
+- Death or personal injury caused by negligence
+- Fraud, fraudulent misrepresentation, or wilful misconduct
+- Any liability that cannot legally be excluded or limited under applicable Scottish law
+
+---
+
+11. THIRD-PARTY SERVICES AND HOSTING
+
+11.1 Third-Party Dependencies
+
+Projects may include or rely upon third-party services, platforms, hosting providers, plugins, software, tools, or content delivery networks.
+
+These may include (but are not limited to): hosting providers, domain registrars, SSL certificate providers, email services, payment gateways, analytics tools, CDNs, and third-party plugins.
+
+11.2 Forsa Design Responsibility
+
+Forsa Design accepts no responsibility for:
+- Outages, service interruptions, or downtime caused by third-party providers
+- Changes to terms, features, pricing, or availability from third-party services
+- Security breaches, data loss, or vulnerabilities in third-party platforms
+- Poor performance, slow loading times, or technical issues caused by third-party services
+
+11.3 Client Responsibility
+
+Unless explicitly stated otherwise in the project agreement, the client shall be responsible for:
+- Selecting and contracting with hosting providers
+- Registering and maintaining domain names
+- Maintaining SSL/TLS certificates
+- Managing email services and backup solutions
+- Paying all hosting, domain, and third-party service fees
+
+If Forsa Design arranges third-party services on behalf of the client, the client shall reimburse all costs and shall be responsible for ongoing management and fees.
+
+11.4 Service Level Agreements
+
+Forsa Design does not provide or guarantee any service level agreement (SLA) for third-party services. Uptime, availability, and performance depend entirely on third-party providers.
+
+---
+
+12. WEBSITE AVAILABILITY AND MAINTENANCE
+
+12.1 No Guarantee of Availability
+
+We do not guarantee that this website will be continuously available, uninterrupted, error-free, or secure.
+
+Access to the website may be suspended temporarily for:
+- Scheduled maintenance and updates
+- Emergency repairs
+- Security patches
+- Server upgrades
+- Circumstances beyond our reasonable control
+
+12.2 No Liability for Downtime
+
+Forsa Design shall not be liable for any downtime, data loss, or inability to access the website, except where caused directly by Forsa Design's negligence.
+
+---
+
+13. INTELLECTUAL PROPERTY AND PORTFOLIO USE
+
+13.1 Portfolio and Case Studies
+
+Forsa Design retains the right to:
+- Display the website as a portfolio example
+- Feature the project in case studies, marketing materials, or testimonials
+- Use anonymised descriptions and screenshots for promotional purposes
+
+13.2 Client Attribution
+
+If the client requests anonymity, this must be agreed in writing at the time of project commencement. Anonymisation requests may impact Forsa Design's ability to use the project in marketing.
+
+13.3 Client Testimonials
+
+Forsa Design may request permission to use client testimonials, feedback, or reviews for marketing purposes. Use of testimonials requires prior written consent.
+
+---
+
+14. DATA PROTECTION AND PRIVACY
+
+14.1 GDPR and Data Protection
+
+Both parties shall comply with the General Data Protection Regulation (GDPR), the Data Protection Act 2018, and all applicable data protection laws.
+
+14.2 Client Responsibility
+
+The client is responsible for:
+- Obtaining all necessary consents from end-users for data collection and processing
+- Ensuring the website's privacy policy complies with GDPR
+- Maintaining appropriate security measures for personal data
+- Notifying Forsa Design of any data breaches involving the website
+
+14.3 Forsa Design Responsibility
+
+Forsa Design shall implement reasonable security measures to protect data hosted on client websites. However, Forsa Design accepts no responsibility for data breaches caused by third-party hosting providers or client-caused security vulnerabilities.
+
+14.4 Data Processing Agreement
+
+If personal data processing is involved, a Data Processing Addendum (DPA) shall be executed as part of the project agreement.
+
+---
+
+15. TERMINATION AND CANCELLATION
+
+15.1 Cancellation by Client
+
+If the client wishes to cancel the project after the deposit has been paid:
+- The 25% deposit is non-refundable under all circumstances
+- The client shall pay for all work completed to the point of cancellation, plus any non-recoverable costs incurred by Forsa Design
+- The client shall not acquire ownership rights to incomplete work until 100% of all work completed has been paid for
+
+15.2 Termination by Forsa Design
+
+Forsa Design reserves the right to terminate the project immediately if:
+- Payment is outstanding for more than 30 days beyond the due date
+- The client materially breaches these Terms or the project agreement
+- The client's conduct is abusive, threatening, or unreasonable
+- The client provides false, misleading, or incomplete information
+
+Upon termination by Forsa Design:
+- Forsa Design shall invoice for all work completed to date
+- The client must pay all outstanding invoices within 7 days
+- The client shall not acquire ownership rights to deliverables until all amounts are paid in full
+
+15.3 Effect of Termination
+
+Upon termination, all work in progress ceases immediately. Forsa Design shall delete or return all client materials, provided all outstanding payments have been made.
+
+---
+
+16. GOVERNING LAW AND DISPUTE RESOLUTION
+
+16.1 Governing Law
+
+These Terms and Conditions shall be governed by and interpreted in accordance with the laws of Scotland, without regard to its conflict of law principles.
+
+16.2 Jurisdiction
+
+Any dispute arising from these Terms or our services shall be subject to the exclusive jurisdiction of the courts of Scotland. Both parties consent to the jurisdiction of Scottish courts.
+
+16.3 Dispute Resolution
+
+Before initiating legal proceedings, both parties agree to attempt to resolve disputes through good faith negotiation. If negotiation fails, disputes shall be resolved through Scottish courts.
+
+---
+
+17. CHANGES TO THESE TERMS
+
+Forsa Design reserves the right to update, amend, or modify these Terms and Conditions at any time at its sole discretion.
+
+Changes become effective upon publication on this website. Continued use of our website or services constitutes acceptance of updated Terms.
+
+For existing projects, the Terms in effect at the time of project commencement shall govern that project.
+
+---
+
+18. SEVERABILITY
+
+If any provision of these Terms is found to be unenforceable or invalid under applicable law, that provision shall be severed, and the remaining provisions shall continue in full force and effect.
+
+---
+
+19. ENTIRE AGREEMENT
+
+These Terms and Conditions, together with any project agreement, quotation, and invoice, constitute the entire agreement between the parties concerning Forsa Design's services.
+
+Any prior discussions, representations, or agreements not documented in writing are superseded by these Terms.
+
+---
+
+20. CONTACT INFORMATION
+
+For questions, disputes, or notices regarding these Terms and Conditions, please contact:
+
+Forsa Design
+Art & Web Design
+Banff, Scotland
+
+Website: [your website]
+Email: [your email]
+Phone: [your phone]
+
+---
+
+END OF TERMS AND CONDITIONS

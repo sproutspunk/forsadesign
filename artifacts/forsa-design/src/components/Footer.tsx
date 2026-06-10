@@ -96,7 +96,14 @@ export default function Footer() {
         </div>
 
         <div className="pt-8 border-t border-border/20 text-center md:text-left text-sm text-foreground/40 font-light">
-          <p>{t("footer.copyright")}</p>
+          <p className="mb-2">{t("footer.copyright")}</p>
+          <a
+            href="/terms"
+            className="hover:text-primary transition-colors"
+            data-testid="footer-link-terms"
+          >
+            Terms &amp; Conditions
+          </a>
         </div>
       </div>
     </footer>

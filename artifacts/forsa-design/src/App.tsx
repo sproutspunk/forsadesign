@@ -4,6 +4,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/not-found";
 import HomePage from "@/pages/HomePage";
+import TermsPage from "@/pages/TermsPage";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import { useEffect } from "react";
 
@@ -39,6 +40,7 @@ function Router() {
       <Switch>
         <Route path="/en/" component={() => <HomePage lang="en" />} />
         <Route path="/pl/" component={() => <HomePage lang="pl" />} />
+        <Route path="/terms" component={TermsPage} />
         <Route path="/" component={() => null} />
         <Route component={NotFound} />
       </Switch>
