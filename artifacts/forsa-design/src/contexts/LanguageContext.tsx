@@ -127,7 +127,7 @@ const translations = {
     },
     portfolio: {
       heading: "Nasze Prace",
-      subheading: "Kilka ostatnich projektów zrobionych dla lokalnych firm z różnych branż.",
+      subheading: "Wydajne rozwiązania cyfrowe zaprojektowane z myślą o maksymalizacji konwersji i skalowaniu biznesu.",
       placeholder: "Galeria projektów już wkrótce",
     },
     process: {
