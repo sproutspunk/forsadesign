@@ -3,8 +3,13 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { motion } from "framer-motion";
 import { Linkedin, Twitter, Instagram } from "lucide-react";
 import { submitContact } from "@workspace/api-client-react";
+import Turnstile from "./Turnstile";
 
 type Status = "idle" | "sending" | "success" | "error";
+
+const TURNSTILE_SITE_KEY = import.meta.env.VITE_TURNSTILE_SITE_KEY as
+  | string
+  | undefined;
 
 export default function Contact() {
   const { t, language } = useLanguage();
@@ -17,6 +22,8 @@ export default function Contact() {
   });
   // Honeypot: hidden from real users; only bots fill it in.
   const [website, setWebsite] = useState("");
+  // Cloudflare Turnstile token; only relevant when a site key is configured.
+  const [captchaToken, setCaptchaToken] = useState("");
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [status, setStatus] = useState<Status>("idle");
 
@@ -33,6 +40,11 @@ export default function Contact() {
     if (!formData.projectType) newErrors.projectType = t("contact.errors.selectRequired");
     if (!formData.details.trim()) newErrors.details = t("contact.errors.required");
 
+    // Require a Turnstile token only when a site key is configured.
+    if (TURNSTILE_SITE_KEY && !captchaToken) {
+      newErrors.captcha = t("contact.errors.captcha");
+    }
+
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
@@ -43,10 +55,11 @@ export default function Contact() {
 
     setStatus("sending");
     try {
-      await submitContact({ ...formData, website, language });
+      await submitContact({ ...formData, website, language, captchaToken });
       setStatus("success");
       setFormData({ name: "", email: "", projectType: "", details: "" });
       setWebsite("");
+      setCaptchaToken("");
       setTimeout(() => setStatus("idle"), 6000);
     } catch (err) {
       console.error("Contact form submission failed:", err);
@@ -181,6 +194,28 @@ export default function Contact() {
             {status === "error" && (
               <div className="p-4 bg-destructive/20 border border-destructive/50 text-destructive rounded-sm text-center font-medium" data-testid="msg-error">
                 {t("contact.error")}
+              </div>
+            )}
+
+            {TURNSTILE_SITE_KEY && (
+              <div className="flex flex-col items-center gap-2 pt-2">
+                <Turnstile
+                  siteKey={TURNSTILE_SITE_KEY}
+                  theme="dark"
+                  onVerify={(token) => {
+                    setCaptchaToken(token);
+                    if (errors.captcha) {
+                      setErrors((prev) => ({ ...prev, captcha: "" }));
+                    }
+                  }}
+                  onExpire={() => setCaptchaToken("")}
+                  onError={() => setCaptchaToken("")}
+                />
+                {errors.captcha && (
+                  <p className="text-sm text-destructive" data-testid="msg-captcha-error">
+                    {errors.captcha}
+                  </p>
+                )}
               </div>
             )}
 

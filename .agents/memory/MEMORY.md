@@ -1,0 +1,1 @@
+- [Turnstile CAPTCHA on contact form](turnstile-contact-form.md) — managed-mode bot check; graceful degradation by design; error 400020 = domain not in site-key allowlist, not a code bug.

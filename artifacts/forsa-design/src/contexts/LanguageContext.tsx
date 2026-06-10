@@ -66,6 +66,7 @@ const translations = {
         required: "This field is required",
         invalidEmail: "Please enter a valid email address",
         selectRequired: "Please select a project type",
+        captcha: "Please complete the verification",
       },
     },
     footer: {
@@ -140,6 +141,7 @@ const translations = {
         required: "To pole jest wymagane",
         invalidEmail: "Proszę podać prawidłowy adres email",
         selectRequired: "Proszę wybrać typ projektu",
+        captcha: "Proszę ukończyć weryfikację",
       },
     },
     footer: {
