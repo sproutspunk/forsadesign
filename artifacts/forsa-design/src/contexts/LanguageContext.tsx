@@ -17,7 +17,7 @@ const translations = {
       tagline: "Comprehensive Website Design & Creation",
       subheader: "Fast, custom-coded web platforms built to convert traffic into revenue.",
       body: "We build custom web systems for corporate clients who want results, not jargon. No fuss. No agency fluff. Just clean, fast, solid code that makes your business grow.",
-      cta: "[ Start a Project ]",
+      cta: "Request a Quote",
     },
     services: {
       heading: "Our Services",
@@ -83,7 +83,7 @@ const translations = {
     cta: {
       heading: "Built for scale. Hardcoded for speed.",
       body: "We build custom web systems for corporate clients who want results, not jargon. No fuss. No agency fluff. Just clean, fast, solid code that makes your business grow.",
-      button: "[ Start a Project ]",
+      button: "Request a Quote",
     },
     contact: {
       heading: "Get In Touch",
