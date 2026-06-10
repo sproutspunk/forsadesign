@@ -118,6 +118,8 @@ const translations = {
       email: "hello@forsadesign.co.uk",
       phone: "07770110735",
       copyright: "\u00A9 2024 Forsa Design. All rights reserved.",
+      terms: "Terms & Conditions",
+      privacy: "Privacy Policy",
     },
   },
   pl: {
@@ -246,6 +248,8 @@ const translations = {
       email: "hello@forsadesign.co.uk",
       phone: "07770110735",
       copyright: "\u00A9 2024 Forsa Design. Wszystkie prawa zastrze\u017cone.",
+      terms: "Regulamin i Warunki",
+      privacy: "Polityka Prywatno\u015bci",
     },
   },
 };

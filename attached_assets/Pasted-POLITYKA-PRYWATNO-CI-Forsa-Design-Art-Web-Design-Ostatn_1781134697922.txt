@@ -1,0 +1,590 @@
+POLITYKA PRYWATNOŚCI
+
+Forsa Design – Art & Web Design
+
+Ostatnia aktualizacja: Czerwiec 2026
+
+---
+
+1. WSTĘP
+
+Forsa Design („My", „nas", „naszych" lub „Spółka") jest zaangażowana w ochronę Twojej prywatności i zapewnienie pozytywnego doświadczenia na naszej stronie internetowej oraz podczas korzystania z naszych usług.
+
+Niniejsza Polityka Prywatności wyjaśnia, w jaki sposób zbieramy, wykorzystujemy, ujawniamy i przetwarzamy Twoje dane osobowe zgodnie z Ogólnym Rozporządzeniem o Ochronie Danych (RODO), Ustawą o Ochronie Danych z 2018 r. i wszystkimi obowiązującymi przepisami o ochronie danych.
+
+Uzyskując dostęp do naszej strony internetowej lub korzystając z naszych usług, wyrażasz zgodę na praktyki opisane w niniejszej Polityce Prywatności.
+
+Jeśli nie zgadzasz się z naszymi praktykami prywatności, prosimy nie korzystaj z naszej strony ani usług.
+
+---
+
+2. DEFINICJE
+
+„Dane Osobowe" to wszelkie informacje dotyczące zidentyfikowanej lub możliwej do zidentyfikowania osoby fizycznej.
+
+„Przetwarzanie" to wszelkie operacje wykonywane na Danych Osobowych, takie jak zbieranie, rejestrowanie, organizowanie, przechowywanie, wykorzystywanie, przesyłanie lub usuwanie.
+
+„Osoba Zainteresowana" to osoba fizyczna, której dotyczą Dane Osobowe.
+
+„Administrator" to jednostka, która określa cele i środki Przetwarzania. Forsa Design jest Administratorem dla tej strony internetowej.
+
+---
+
+3. ADMINISTRATOR I FUNKCJONARIUSZ OCHRONY DANYCH
+
+3.1 Administrator Danych
+
+Forsa Design
+Art & Web Design
+Banff, Szkocja
+Email: [twój email]
+Strona internetowa: [twoja strona]
+
+3.2 Funkcjonariusz Ochrony Danych
+
+W związku ze wszystkimi pytaniami dotyczącymi ochrony danych i korzystaniem z twoich praw, prosimy o kontakt:
+
+Funkcjonariusz Ochrony Danych
+Forsa Design
+Email: [twój email]
+Telefon: [twój telefon]
+
+---
+
+4. DANE OSOBOWE, KTÓRE ZBIERAMY
+
+4.1 Dane Zbierane Bezpośrednio
+
+Zbieramy Dane Osobowe, które dobrowolnie udostępniasz, w tym:
+
+**Formularze Kontaktowe:**
+- Imię i nazwisko
+- Adres e-mail
+- Numer telefonu
+- Nazwa firmy (jeśli dotyczy)
+- Szczegóły zapytania projektowego lub treść wiadomości
+
+**Zapytania o Usługi i Żądania Wyceny:**
+- Imię i nazwisko, e-mail, numer telefonu
+- Informacje biznesowe
+- Opis i wymagania projektu
+- Budżet i informacje o harmonogramie
+- Wszelkie załączniki lub materiały wspierające
+
+**Klienci Projektów:**
+- Pełne imię i nazwisko, e-mail, numer telefonu
+- Adres rozliczeniowy
+- Dane płatności (przetwarzane przez dostawców płatności stron trzecich)
+- Informacje o firmie
+- Wymagania, treści i materiały dostarczone przez klienta
+
+**Komunikacja:**
+- Korespondencja e-mail
+- Komunikacja przez platform czatu lub wiadomości
+- Nagrania rozmów (tylko za uprzednią zgodą)
+- Sprzężenie zwrotne, referencje lub opinie (jeśli dostarczone)
+
+**Rejestracja Konta lub Usługi:**
+- Dane logowania (e-mail, hasło)
+- Preferencje konta
+- Historia płatności
+
+4.2 Dane Zbierane Automatycznie
+
+Zbieramy określone dane automatycznie podczas odwiedzania naszej strony internetowej:
+
+**Dane Użytkowania Strony:**
+- Adres IP
+- Typ i wersja przeglądarki
+- System operacyjny
+- Strona referująca lub źródło
+- Odwiedzone strony i czas spędzony na każdej stronie
+- Dane kliknięć
+- Zapytania wyszukiwania w witrynie
+- Typ urządzenia i identyfikatory
+
+**Pliki Cookie i Technologie Śledzenia:**
+- Pliki cookie sesji (tymczasowe, automatycznie usuwane po zamknięciu przeglądarki)
+- Trwałe pliki cookie (przechowywane w określonych celach, np. preferencje użytkownika)
+- Sieci Web i piksele
+- Magazyn lokalny i podobne technologie
+
+**Dane Analityki:**
+- Zbierane za pośrednictwem Google Analytics
+- Zagregowane wzorce zachowania użytkownika
+- Źródła ruchu
+- Podróż użytkownika i nawigacja
+- Dane konwersji (przesyłanie formularzy, rejestracje zapytań)
+
+4.3 Dane od Stron Trzecich
+
+Możemy otrzymywać Dane Osobowe od:
+- Twojego pracodawcy (jeśli angażuje nas do świadczenia usług)
+- Źródeł lub partnerów rekomendujących
+- Publicznie dostępnych źródeł (np. rejestry biznesu, media społecznościowe)
+- Dostawców usług stron trzecich
+
+---
+
+5. PRAWNA PODSTAWA PRZETWARZANIA
+
+Przetwarzamy Twoje Dane Osobowe wyłącznie wtedy, gdy mamy prawną podstawę zgodnie z RODO:
+
+5.1 Zgoda
+
+**Podstawa:** Wyraźnie zgodziłeś się na Przetwarzanie.
+
+**Zastosowanie:** Wiadomości e-mail marketingowe, biuletyny, nieistotne pliki cookie, użycie referencji, nagrania rozmów, opcjonalne pola danych.
+
+Możesz wycofać zgodę w dowolnym momencie, anulując subskrypcję komunikacji lub kontaktując się z nami.
+
+5.2 Wykonanie Umowy
+
+**Podstawa:** Przetwarzanie jest niezbędne do wykonania umowy z Tobą lub podjęcia działań na Twoją prośbę przed zawarciem umowy.
+
+**Zastosowanie:** Imię i nazwisko klienta, e-mail, telefon, adres rozliczeniowy, materiały projektowe, dane płatności, dane dostarczania usług.
+
+5.3 Obowiązek Prawny
+
+**Podstawa:** Przetwarzanie jest wymagane do zgodności z obowiązującym prawem.
+
+**Zastosowanie:** Ewidencje podatkowe, dane księgowe, zapobieganie oszustwom, ochrona dzieci, bezpieczeństwo publiczne.
+
+5.4 Uzasadniony Interes
+
+**Podstawa:** Przetwarzanie jest niezbędne dla uzasadnionych interesów realizowanych przez Spółkę, z wyjątkiem sytuacji, w której są one przesłaniane przez Twoje interesy, prawa lub wolności.
+
+**Zastosowanie:** Bezpieczeństwo witryny, zapobieganie oszustwom, analityka, ulepszenia doświadczenia użytkownika, marketing (z oceną uzasadnionego interesu), operacje biznesowe.
+
+Uzasadnione interesy obejmują:
+- Zapobieganie oszustwom i nadużyciom
+- Ochrona bezpieczeństwa i integralności witryny
+- Ulepszanie funkcjonalności witryny i doświadczenia użytkownika
+- Zarządzanie relacjami z klientami
+- Przeprowadzanie analityki biznesowej
+- Kontaktowanie się z Tobą w sprawie aktualizacji lub zmian usług
+
+5.5 Interesy Życiowe
+
+**Podstawa:** Przetwarzanie jest niezbędne do ochrony interesów życiowych (np. życie, bezpieczeństwo).
+
+**Zastosowanie:** Sytuacje awaryjne, ochrona dzieci, naruszenia danych dotyczące Twojego bezpieczeństwa.
+
+---
+
+6. JAK WYKORZYSTUJEMY TWOJE DANE OSOBOWE
+
+6.1 Świadczenie Usług
+
+- Dostarczanie ofert i szacunków projektów
+- Tworzenie i dostarczanie usług projektowania i tworzenia stron internetowych
+- Komunikacja na temat postępu projektu, kamieni milowych i rezultatów
+- Przetwarzanie płatności
+- Świadczenie wsparcia bieżącego i konserwacji
+- Rozwiązywanie problemów technicznych
+
+6.2 Komunikacja i Obsługa Klienta
+
+- Odpowiadanie na zapytania i żądania
+- Świadczenie obsługi klienta
+- Wysyłanie e-maili transakcyjnych (faktury, paragony, aktualizacje projektu)
+- Powiadamianie Cię o zmianach usług lub ważnych aktualizacjach
+- Zbieranie sprzężenia zwrotnego w celu poprawy usług
+
+6.3 Marketing i Promocja
+
+- Wysyłanie e-maili marketingowych, biuletynów lub materiałów promocyjnych (za Twoją zgodą)
+- Prezentowanie Twojego projektu jako przykładu z portfolio lub studium przypadku (za Twoją zgodą i opcjonalną anonimizacją)
+- Żądanie referencji lub opinii
+- Wykorzystywanie Twoich informacji w materiałach marketingowych lub mediach społecznościowych (za Twoją zgodą)
+
+Możesz w dowolnym momencie zrezygnować z komunikacji marketingowej, anulując subskrypcję lub kontaktując się z nami.
+
+6.4 Analityka Witryny i Ulepszenia
+
+- Analiza wzorów użytkowania witryny w celu poprawy doświadczenia użytkownika
+- Identyfikacja problemów technicznych i monitorowanie wydajności witryny
+- Przeprowadzanie testów A/B i badań użytkowników
+- Generowanie statystyk zagregowanych (bez identyfikacji)
+- Zrozumienie demografii i zainteresowań odwiedzających
+
+6.5 Bezpieczeństwo i Zapobieganie Oszustwom
+
+- Wykrywanie, badanie i zapobieganie oszustwom lub nadużyciom
+- Ochrona przed złośliwą, oszukańczą lub nielegalną aktywnością
+- Egzekwowanie naszych Warunków Świadczenia Usług
+- Ochrona bezpieczeństwa i integralności naszej strony i usług
+
+6.6 Zgodność Prawna
+
+- Zgodność z obowiązkami prawnymi
+- Odpowiadanie na uzasadnione żądania władz
+- Ustanawianie, wykonywanie lub broniąc roszczeń prawnych
+- Cele audytu i rachunkowości
+
+6.7 Operacje Biznesowe
+
+- Zarządzanie ewidencją biznesową i plikami
+- Cele finansowe i księgowe
+- Zarządzanie zasobami ludzkimi (jeśli jesteś pracownikiem lub wykonawcą)
+- Planowanie i strategia biznesowa
+
+---
+
+7. PRZECHOWYWANIE DANYCH
+
+7.1 Okresy Przechowywania
+
+Przechowujemy Dane Osobowe tylko tak długo, jak jest to niezbędne do osiągnięcia celów, dla których zostały zbierane, chyba że dłuższy okres przechowywania jest wymagany przez prawo.
+
+**Zapytania z Formularza Kontaktowego:** 2 lata (chyba że są przekonwertowane na klienta)
+
+**Klienci Projektów:** Czas trwania projektu + 7 lat (do celów rachunkowości i prawnych)
+
+**Listy Marketingowe:** Do czasu anulowania subskrypcji; następnie przechowujemy dowód anulowania subskrypcji przez 2 lata
+
+**Analityka Witryny:** 26 miesięcy (domyślne przechowywanie Google Analytics)
+
+**Komunikacja E-mail:** 2 lata lub czas trwania relacji biznesowej, w zależności od tego, co jest dłuższe
+
+**Ewidencje Płatności:** 7 lat (wymagania przechowywania podatków w Wielkiej Brytanii)
+
+**Nagrania Rozmów:** 1 rok (jeśli dotyczy)
+
+**Dzienniki Serwerów i Dane IP:** 90 dni
+
+7.2 Usunięcie
+
+Gdy Dane Osobowe nie są już niezbędne, bezpiecznie je usuwamy lub anonimizujemy. Możesz w dowolnym momencie zażądać usunięcia (z zastrzeżeniem wymogów przechowywania prawnego).
+
+---
+
+8. UDOSTĘPNIANIE I UJAWNIANIE DANYCH OSOBOWYCH
+
+8.1 Za Twoją Zgodą
+
+Udostępniamy Twoje Dane Osobowe stronom trzecim wyłącznie za Twoją zgodą lub jeśli jest to konieczne do świadczenia usług.
+
+8.2 Dostawcy Usług i Strony Trzecie
+
+Możemy ujawnić Dane Osobowe:
+
+**Dostawcy Hostingu:** Centra danych, w których hostowana jest Twoja strona
+
+**Processory Płatności:** Bramy płatności stron trzecich (Stripe, PayPal, itp.) do przetwarzania płatności
+
+**Dostawcy Usług E-mail:** Platformy marketingu e-mailowego (jeśli wyraziłeś zgodę na marketing)
+
+**Dostawcy Analityki:** Google Analytics do analizy użytkowania witryny
+
+**Narzędzia Komunikacyjne:** Zarządzanie projektami, komunikacja lub platformy CRM używane do zarządzania klientami
+
+**Usługi Profesjonalne:** Księgowych, prawników lub konsultantów w zależności od potrzeb operacyjnych
+
+**Magazyn w Chmurze:** Usługi chmury stron trzecich do tworzenia kopii zapasowych danych i przechowywania dokumentów
+
+Wszyscy dostawcy usług są umownie zobowiązani do przetwarzania danych wyłącznie na nasze polecenie i utrzymywania poufności.
+
+8.3 Obowiązki Prawne
+
+Możemy ujawnić Dane Osobowe, jeśli jest to wymagane przez prawo, postanowienie sądowe lub uzasadnione żądanie władz (np. policja, władze podatkowe).
+
+8.4 Transfer Biznesowy
+
+Jeśli Forsa Design zostanie przejęta, połączona lub restrukturyzowana, Dane Osobowe mogą zostać przeniesione w ramach tej transakcji. Powiadomimy Cię o wszelkich takich zmianach i Twoich prawach.
+
+8.5 Informacje Publiczne
+
+Nie będziemy ujawniać Twoich Danych Osobowych publicznie, chyba że wyraziłeś na to zgodę (np. publikacja referencji lub studium przypadku).
+
+8.6 Brak Sprzedaży Danych
+
+Nie sprzedajemy, nie wynajmujemy ani nie wymieniamy Twoich Danych Osobowych stronom trzecim do celów marketingowych.
+
+---
+
+9. MIĘDZYNARODOWE TRANSFERY DANYCH
+
+9.1 Lokalizacja Danych
+
+Forsa Design przetwarza i przechowuje Dane Osobowe przede wszystkim w Wielkiej Brytanii i Unii Europejskiej.
+
+9.2 Transfery Poza UK/UE
+
+Jeśli Dane Osobowe są przenoszone poza Wielką Brytanię lub UE (np. do dostawców usług w chmurze w innych jurysdykcjach), zapewniamy:
+- Odpowiednie zabezpieczenia (np. Standardowe Klauzule Umowne, decyzje o adekwatności)
+- Transfer jest konieczny do świadczenia usług
+- Kraje otrzymujące mają odpowiednie standardy ochrony danych (jeśli wymagane)
+
+9.3 Twoje Prawa
+
+Masz prawo do sprzeciwienia się transferom poza Wielką Brytanię/UE. Skontaktuj się z nami, jeśli masz obawy.
+
+---
+
+10. PLIKI COOKIE I TECHNOLOGIE ŚLEDZENIA
+
+10.1 Czym Są Pliki Cookie?
+
+Pliki cookie to małe pliki tekstowe przechowywane na Twoim urządzeniu, które pozwalają witrynom Cię rozpoznawać i zapamiętywać.
+
+10.2 Rodzaje Stosowanych przez Nas Plików Cookie
+
+**Niezbędne Pliki Cookie:**
+- Cel: Utrzymanie funkcjonalności witryny, bezpieczeństwa, zarządzania sesją użytkownika
+- Zgoda: Nie wymagana; ustawiana automatycznie
+- Czas Trwania:** Sesja lub do 12 miesięcy
+- Przykłady: Tokeny bezpieczeństwa, ochrona CSRF, preferencja języka
+
+**Pliki Cookie Analityki:**
+- Cel: Zrozumienie użytkowania witryny, zachowania odwiedzających, wzorów ruchu
+- Zgoda: Wymagana (chyba że już udzielono)
+- Dostawca: Google Analytics
+- Czas Trwania: Do 26 miesięcy
+- Dane: Zanonimizowane wzorce użytkowania; Dane Osobowe nie są zbierane
+
+**Pliki Cookie Preferencji:**
+- Cel: Zapamiętywanie Twoich wyborów (motyw, język, ustawienia dostępności)
+- Zgoda: Nie wymagana
+- Czas Trwania: Do 12 miesięcy
+- Przykłady: Preferencja trybu ciemnego, wybór języka
+
+**Pliki Cookie Marketingowe:**
+- Cel: Dostarczanie ukierunkowanej reklamy; śledzenie skuteczności reklamy
+- Zgoda: Wymagana
+- Dostawca: Google Ads, Facebook Pixel, inne sieci reklamowe (jeśli są używane)
+- Czas Trwania: Do 12 miesięcy
+- Uwagi: Ustawiane tylko jeśli wyrażisz zgodę na marketing
+
+10.3 Pliki Cookie Stron Trzecich
+
+Dostawcy usług stron trzecich (Google, Facebook itp.) mogą ustawiać własne pliki cookie na Twoim urządzeniu. Są one regulowane przez ich polityki prywatności, a nie przez naszą.
+
+10.4 Zgoda na Pliki Cookie
+
+Gdy po raz pierwszy odwiedzasz naszą stronę, wyświetlamy baner zgody na pliki cookie. Możesz:
+- Zaakceptować wszystkie pliki cookie
+- Odrzucić nieistotne pliki cookie
+- Dostosować preferencje dotyczące plików cookie
+- Wycofać lub zmienić zgodę w dowolnym momencie
+
+10.5 Wyłączenie Plików Cookie
+
+Możesz wyłączyć pliki cookie w ustawieniach przeglądarki, ale może to wpłynąć na funkcjonalność witryny i doświadczenie użytkownika.
+
+10.6 Technologie Śledzenia
+
+Możemy również korzystać z:
+- Sieci Web (obrazy 1x1 piksela) do śledzenia otwarć e-maili
+- Magazynu lokalnego i podobnych technologii do zapamiętywania preferencji
+- Narzędzia do powtarzania sesji (za Twoją zgodą) w celu poprawy doświadczenia użytkownika
+
+---
+
+11. TWOJE PRAWA NA MOCY RODO
+
+Jako Osoba Zainteresowana masz następujące prawa:
+
+11.1 Prawo Dostępu
+
+Masz prawo do żądania dostępu do Twoich Danych Osobowych i informacji o tym, w jaki sposób je przetwarzamy. Udostępnimy to w ciągu 30 dni bez opłat.
+
+11.2 Prawo do Sprostowania
+
+Masz prawo do poprawy niedokładnych lub niekompletnych Danych Osobowych.
+
+11.3 Prawo do Usunięcia („Prawo do Bycia Zapomnianym")
+
+Masz prawo do żądania usunięcia Twoich Danych Osobowych, z wyjątkiem sytuacji, w których:
+- Przetwarzanie jest konieczne do obowiązków prawnych
+- Przetwarzanie jest konieczne do wykonania umowy
+- Uzasadnione interesy przesłaniają Twoje prawa
+- Dane są niezbędne do zapobiegania oszustwom lub bezpieczeństwa
+
+11.4 Prawo do Ograniczenia Przetwarzania
+
+Masz prawo do żądania ograniczenia sposobu przetwarzania Twoich danych podczas rozstrzygania sporu lub korzystania z innych praw.
+
+11.5 Prawo do Przenośności Danych
+
+Masz prawo do otrzymania kopii Twoich Danych Osobowych w ustrukturyzowanym, powszechnie używanym, czytelnym dla maszyn formacie i do ich transmisji do innego administratora.
+
+11.6 Prawo Sprzeciwu
+
+Masz prawo do sprzeciwienia się przetwarzaniu na podstawie uzasadnionego interesu, w tym do celów marketingowych. Zaprzestaniemy Przetwarzania, chyba że mamy uzasadnione racje.
+
+11.7 Prawo do Złożenia Skargi
+
+Masz prawo do złożenia skargi do właściwego organu ochrony danych, jeśli uważasz, że Twoje prawa zostały naruszone.
+
+**Brytyjski Urząd Komisarza Informacji (ICO):** www.ico.org.uk
+
+**Inne organy państw członkowskich UE:** Skontaktuj się ze swoim lokalnym organem ochrony danych
+
+11.8 Automatyczne Podejmowanie Decyzji
+
+Nie wykorzystujemy automatycznego podejmowania decyzji ani profilowania w celu podejmowania decyzji, które znacząco na Ciebie wpływają.
+
+---
+
+12. PRYWATNOŚĆ DZIECI
+
+Nasza witryna i usługi nie są skierowane do dzieci poniżej 13 lat.
+
+Nie zbieramy świadomie Danych Osobowych od dzieci poniżej 13 lat. Jeśli dowiemy się, że dziecko dostarczyło Dane Osobowe, natychmiast je usuniemy.
+
+W przypadku dzieci w wieku 13–18 lat zgoda rodziców może być wymagana w zależności od jurysdykcji.
+
+Jeśli jesteś rodzicem lub opiekunem i uważasz, że Dane Osobowe Twojego dziecka zostały zebrane, prosimy o natychmiastowy kontakt.
+
+---
+
+13. BEZPIECZEŃSTWO DANYCH
+
+13.1 Środki Bezpieczeństwa
+
+Wdrażamy rozsądne techniczne, administracyjne i organizacyjne środki bezpieczeństwa w celu ochrony Danych Osobowych przed nieautoryzowanym dostępem, zmianą, ujawnieniem lub zniszczeniem:
+
+- Szyfrowanie SSL/TLS dla danych przesyłanych
+- Zaszyfrowane przechowywanie danych (jeśli dotyczy)
+- Ograniczony dostęp do danych osobowych (tylko pracownicy i wykonawcy)
+- Regularne oceny i aktualizacje bezpieczeństwa
+- Zapory i systemy wykrywania włamań
+- Bezpieczne polityki haseł i uwierzytelnianie wielofaktorowe
+
+13.2 Ograniczenia
+
+Chociaż wdrażamy odpowiednie środki bezpieczeństwa, żaden sposób transmisji przez Internet ani magazyn elektroniczny nie jest całkowicie bezpieczny. Nie możemy zagwarantować bezwzględnego bezpieczeństwa.
+
+Odpowiadasz za zachowanie hasła w poufności i zabezpieczenie Twoich danych logowania.
+
+13.3 Powiadomienie o Naruszeniu Danych
+
+Jeśli odkryjemy naruszenie danych, które stwarzałoby ryzyko dla Twoich praw i wolności, będziemy:
+- Powiadomić właściwy organ ochrony danych w ciągu 72 godzin (jeśli wymagane)
+- Powiadomić osoby, których to dotyczy, bez zbędnej zwłoki
+- Dostarczyć informacje na temat naruszenia i kroki, które możesz podjąć w celu ochrony siebie
+
+---
+
+14. LINKI STRON TRZECICH I USŁUGI
+
+Nasza strona może zawierać linki do witryn, aplikacji i usług stron trzecich. Niniejsza Polityka Prywatności dotyczy wyłącznie naszej witryny i usług.
+
+Nie odpowiadamy za praktyki prywatności witryn stron trzecich. Prosimy o zapoznanie się z ich polityką prywatności przed dostarczeniem Danych Osobowych.
+
+Usługi stron trzecich, z których korzystamy (Google Analytics, processory płatności, dostawcy hostingu), mają własne polityki prywatności. Skontaktuj się z nami, jeśli potrzebujesz informacji o ich praktykach.
+
+---
+
+15. PARTNERZY BIZNESOWI I PRZETWARZANIE DANYCH KLIENTÓW
+
+15.1 Strony Internetowe Klientów
+
+Jeśli jesteś klientem Forsa Design, przetwarzamy Dane Osobowe w Twoim imieniu do hostowania, konserwacji i obsługi witryny.
+
+Jako Administrator, odpowiadasz za:
+- Uzyskanie niezbędnych zgód od użytkowników końcowych
+- Utrzymanie polityki prywatności dla Twojej witryny
+- Zgodność z RODO i obowiązującymi przepisami o ochronie danych
+
+Jako Procesor, przetwarzamy dane wyłącznie zgodnie z Twoimi poleceniami.
+
+15.2 Umowa Przetwarzania Danych
+
+W przypadku projektów klientów obejmujących znaczące przetwarzanie Danych Osobowych zostanie wykonana oddzielna Umowa Przetwarzania Danych (DPA).
+
+---
+
+16. PRZECHOWYWANIE I ŻĄDANIA USUNIĘCIA
+
+16.1 Jak Żądać Usunięcia Danych
+
+Możesz zażądać usunięcia Twoich Danych Osobowych, kontaktując się z nami:
+
+Email: [twój email]
+Telefon: [twój telefon]
+
+Będziemy odpowiadać na żądania usunięcia w ciągu 30 dni, z wyjątkiem sytuacji, w których:
+- Obowiązują wymogi przechowywania prawnego
+- Przetwarzanie jest niezbędne do wykonania umowy
+- Uzasadnione interesy przesłaniają Twoje żądanie
+
+16.2 Usunięcie Konta
+
+Jeśli masz konto lub profil u nas, możesz żądać całkowitego usunięcia konta. Spowoduje to usunięcie powiązanych Danych Osobowych, z wyjątkiem sytuacji, w których przechowywanie jest wymagane przez prawo.
+
+---
+
+17. KOMUNIKACJA MARKETINGOWA I REZYGNACJA
+
+17.1 Marketing E-mail
+
+Możemy wysyłać e-maile marketingowe, biuletyny lub materiały promocyjne wyłącznie za Twoją zgodą.
+
+17.2 Anulowanie Subskrypcji
+
+Możesz zrezygnować z komunikacji marketingowej w dowolnym momencie:
+- Klikając link „Anuluj Subskrypcję" w każdym e-mailu
+- Kontaktując się z nami bezpośrednio
+- Aktualizując swoje preferencje na koncie
+
+Będziemy honorować żądania anulowania subskrypcji w ciągu 10 dni roboczych.
+
+17.3 Komunikacja Transakcyjna
+
+Nawet jeśli anulujesz subskrypcję marketingu, będziemy nadal wysyłać e-maile transakcyjne (faktury, aktualizacje usług, powiadomienia o koncie), jeśli jest to konieczne.
+
+---
+
+18. ZMIANY W NINIEJSZEJ POLITYCE PRYWATNOŚCI
+
+Możemy okresowo aktualizować niniejszą Politykę Prywatności w celu odzwierciedlenia zmian w naszych praktykach, technologii, wymogach prawnych lub innych czynnikach.
+
+**Ostatnia Aktualizacja:** Czerwiec 2026
+
+**Data Wejścia w Życie Zmian:** Zaktualizowane Polityki Prywatności obowiązują po opublikowaniu na tej stronie.
+
+Będziemy Cię powiadamiać o istotnych zmianach za pośrednictwem e-maila (jeśli podałeś adres e-mail) lub publikując zawiadomienie na tej stronie.
+
+Dalsze korzystanie z naszej witryny lub usług po zmianach stanowi zaakceptowanie zaktualizowanej Polityki Prywatności.
+
+---
+
+19. SKONTAKTUJ SIĘ Z NAMI
+
+W przypadku pytań, obaw lub skorzystania z Twoich praw na mocy RODO:
+
+**Funkcjonariusz Ochrony Danych / Kontakt Prywatności:**
+
+Forsa Design
+Art & Web Design
+Banff, Szkocja
+
+Email: [twój email]
+Telefon: [twój telefon]
+Strona internetowa: [twoja strona]
+
+**Czas Odpowiedzi:** Będziemy odpowiadać na wszystkie zapytania dotyczące prywatności w ciągu 30 dni.
+
+**Skargi:** Jeśli nie jesteś zadowolony z naszej odpowiedzi, możesz złożyć skargę u Brytyjskiego Urzędu Komisarza Informacji (ICO) na stronie www.ico.org.uk.
+
+---
+
+20. TABELA PODSUMOWANIA PODSTAW PRAWNYCH
+
+| Typ Danych | Cel | Podstawa Prawna |
+|-----------|-----|-----------------|
+| Dane z formularza kontaktowego | Zapytania o usługi | Zgoda + Umowa |
+| Dane klienta projektu | Świadczenie usług | Umowa |
+| Adres e-mail | Komunikacja marketingowa | Zgoda |
+| Dane użytkowania witryny | Analityka, ulepszenia | Uzasadniony interes |
+| Adres IP, informacje o urządzeniu | Bezpieczeństwo, zapobieganie oszustwom | Uzasadniony interes |
+| Informacje o płatnościach | Przetwarzanie płatności | Umowa + Obowiązek prawny |
+| Referencje | Marketing | Zgoda |
+| Nagrania rozmów | Ulepszanie usług | Zgoda |
+| Pliki Cookie | Funkcjonalność witryny, analityka | Zgoda (pliki cookie niezbędne są wyłączone) |
+
+---
+
+KONIEC POLITYKI PRYWATNOŚCI

@@ -5,7 +5,9 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/not-found";
 import HomePage from "@/pages/HomePage";
 import TermsPage from "@/pages/TermsPage";
+import TermsPagePL from "@/pages/TermsPagePL";
 import PrivacyPage from "@/pages/PrivacyPage";
+import PrivacyPagePL from "@/pages/PrivacyPagePL";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import { useEffect } from "react";
 
@@ -41,7 +43,11 @@ function Router() {
       <Switch>
         <Route path="/en/" component={() => <HomePage lang="en" />} />
         <Route path="/pl/" component={() => <HomePage lang="pl" />} />
+        <Route path="/en/terms" component={TermsPage} />
+        <Route path="/pl/terms" component={TermsPagePL} />
         <Route path="/terms" component={TermsPage} />
+        <Route path="/en/privacy" component={PrivacyPage} />
+        <Route path="/pl/privacy" component={PrivacyPagePL} />
         <Route path="/privacy" component={PrivacyPage} />
         <Route path="/" component={() => null} />
         <Route component={NotFound} />

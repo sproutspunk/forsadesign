@@ -2,7 +2,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { Facebook, Instagram, Mail, Phone } from "lucide-react";
 
 export default function Footer() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   return (
     <footer className="bg-background py-12 border-t border-border/10">
@@ -98,18 +98,18 @@ export default function Footer() {
         <div className="pt-8 border-t border-border/20 text-center md:text-left text-sm text-foreground/40 font-light">
           <p className="mb-2">{t("footer.copyright")}</p>
           <a
-            href="/terms"
+            href={`/${language}/terms`}
             className="hover:text-primary transition-colors mr-4"
             data-testid="footer-link-terms"
           >
-            Terms &amp; Conditions
+            {t("footer.terms")}
           </a>
           <a
-            href="/privacy"
+            href={`/${language}/privacy`}
             className="hover:text-primary transition-colors"
             data-testid="footer-link-privacy"
           >
-            Privacy Policy
+            {t("footer.privacy")}
           </a>
         </div>
       </div>
