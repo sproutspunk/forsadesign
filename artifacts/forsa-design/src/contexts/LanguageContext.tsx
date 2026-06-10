@@ -62,9 +62,9 @@ const translations = {
     },
     about: {
       heading: "About Forsa Design",
-      body: "We are a small team based in Scotland. We don't do corporate fluff or overcomplicated pitches.",
+      body: "We are an independent web development agency based in Scotland, engineering high-performance digital infrastructure for high-end corporate sectors. We completely eliminate agency fluff, overcomplicated pitches, and useless overhead.",
       body2:
-        "You need a website that looks good and works perfectly on every device. We build exactly that. We handle the design, the code, and all the technical bits behind the scenes. You talk directly to the person writing the code, so nothing gets lost in translation. We keep it simple, honest, and practical.",
+        "You do not just need a website that looks good—you need an optimized, zero-latency digital asset that maximizes conversion and ensures bulletproof data security. We handle the entire engineering pipeline. You collaborate directly with the core technical architects writing your code, eliminating miscommunication and delivering enterprise-grade precision from day one.",
     },
     contact: {
       heading: "Get In Touch",
