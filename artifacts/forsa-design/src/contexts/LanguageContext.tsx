@@ -36,7 +36,7 @@ const translations = {
     },
     portfolio: {
       heading: "Our Work",
-      subheading: "High-performance digital products engineered for conversion and business growth",
+      subheading: "High-performance digital products engineered for conversion and business growth.",
       placeholder: "Project gallery coming shortly",
     },
     process: {
