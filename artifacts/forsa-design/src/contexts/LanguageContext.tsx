@@ -133,7 +133,7 @@ const translations = {
       tagline: "Kompleksowy Web Design i Tworzenie Stron",
       subheader: "Szybkie, pisane od zera strony i sklepy, stworzone by zamienia\u0107 ruch w realny zysk.",
       body: "Budujemy dedykowane systemy webowe dla firm, kt\u00f3re oczekuj\u0105 wynik\u00f3w, a nie marketingu. Bez zb\u0119dnego \u017cargonu. Bez owijania w bawe\u0142n\u0119. Tylko czysty, szybki i stabilny kod, kt\u00f3ry rozwija Tw\u00f3j biznes.",
-      cta: "[ Rozpocznij projekt ]",
+      cta: "Popro\u015b o wycen\u0119",
     },
     services: {
       heading: "Nasze Us\u0142ugi",
@@ -199,7 +199,7 @@ const translations = {
     cta: {
       heading: "Stworzone by dzia\u0142a\u0107. Napisane by zarabia\u0107.",
       body: "Budujemy dedykowane systemy webowe dla firm, kt\u00f3re oczekuj\u0105 wynik\u00f3w, a nie marketingu. Bez zb\u0119dnego \u017cargonu. Bez owijania w bawe\u0142n\u0119. Tylko czysty, szybki i stabilny kod, kt\u00f3ry rozwija Tw\u00f3j biznes.",
-      button: "[ Rozpocznij projekt ]",
+      button: "Popro\u015b o wycen\u0119",
     },
     contact: {
       heading: "Skontaktuj Si\u0119 Z Nami",
