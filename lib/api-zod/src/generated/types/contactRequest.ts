@@ -5,6 +5,7 @@
  * API specification
  * OpenAPI spec version: 0.1.0
  */
+import type { ContactRequestLanguage } from './contactRequestLanguage';
 
 export interface ContactRequest {
   /** @minLength 1 */
@@ -14,4 +15,5 @@ export interface ContactRequest {
   projectType: string;
   /** @minLength 1 */
   details: string;
+  language?: ContactRequestLanguage;
 }

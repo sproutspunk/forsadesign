@@ -81,6 +81,9 @@ components:
         details:
           type: string
           minLength: 1
+        language:
+          type: string
+          enum: [en, pl]
       required:
         - name
         - email

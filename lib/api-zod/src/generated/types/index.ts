@@ -7,5 +7,6 @@
  */
 
 export * from './contactRequest';
+export * from './contactRequestLanguage';
 export * from './contactResponse';
 export * from './healthStatus';

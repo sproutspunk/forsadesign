@@ -7,7 +7,7 @@ import { submitContact } from "@workspace/api-client-react";
 type Status = "idle" | "sending" | "success" | "error";
 
 export default function Contact() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   const [formData, setFormData] = useState({
     name: "",
@@ -41,7 +41,7 @@ export default function Contact() {
 
     setStatus("sending");
     try {
-      await submitContact(formData);
+      await submitContact({ ...formData, language });
       setStatus("success");
       setFormData({ name: "", email: "", projectType: "", details: "" });
       setTimeout(() => setStatus("idle"), 6000);

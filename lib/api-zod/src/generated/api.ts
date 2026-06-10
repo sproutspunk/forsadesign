@@ -30,7 +30,8 @@ export const SubmitContactBody = zod.object({
   "name": zod.string().min(1),
   "email": zod.string().email(),
   "projectType": zod.string().min(1),
-  "details": zod.string().min(1)
+  "details": zod.string().min(1),
+  "language": zod.enum(['en', 'pl']).optional()
 })
 
 export const SubmitContactResponse = zod.object({

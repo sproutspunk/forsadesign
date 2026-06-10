@@ -10,6 +10,7 @@ import { logger } from "../lib/logger";
 const router: IRouter = Router();
 
 const CONTACT_RECIPIENT = "hello@forsadesign.co.uk";
+const CONTACT_FROM_NAME = "Forsa Design";
 
 function toBase64Url(input: string): string {
   return Buffer.from(input, "utf-8")
@@ -22,6 +23,64 @@ function toBase64Url(input: string): string {
 // RFC 2047 encoded-word so non-ASCII (e.g. Polish) subject lines render correctly.
 function encodeHeaderWord(value: string): string {
   return `=?UTF-8?B?${Buffer.from(value, "utf-8").toString("base64")}?=`;
+}
+
+async function sendGmail(connectors: ReplitConnectors, mime: string) {
+  return connectors.proxy(
+    "google-mail",
+    "/gmail/v1/users/me/messages/send",
+    {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ raw: toBase64Url(mime) }),
+    },
+  );
+}
+
+// Branded confirmation copy sent back to the visitor, localised to the site language.
+function buildConfirmation(
+  language: "en" | "pl",
+  name: string,
+  projectType: string,
+  details: string,
+) {
+  if (language === "pl") {
+    return {
+      subject: "Dziękujemy za kontakt — Forsa Design",
+      body: [
+        `Cześć ${name},`,
+        "",
+        "Dziękujemy za wiadomość do Forsa Design. Otrzymaliśmy Twoje zgłoszenie i wkrótce się odezwiemy.",
+        "",
+        "Oto kopia tego, co przesłałeś/aś:",
+        `Typ projektu: ${projectType}`,
+        "Szczegóły:",
+        details,
+        "",
+        "Pozdrawiamy,",
+        "Zespół Forsa Design",
+        "hello@forsadesign.co.uk",
+      ].join("\r\n"),
+    };
+  }
+
+  return {
+    subject: "Thanks for getting in touch — Forsa Design",
+    body: [
+      `Hi ${name},`,
+      "",
+      "Thanks for reaching out to Forsa Design. We've received your message and will get back to you soon.",
+      "",
+      "Here's a copy of what you sent:",
+      `Project type: ${projectType}`,
+      "Details:",
+      details,
+      "",
+      "Best regards,",
+      "The Forsa Design Team",
+      "hello@forsadesign.co.uk",
+    ].join("\r\n"),
+  };
 }
 
 router.post("/contact", async (req, res) => {
@@ -41,6 +100,7 @@ router.post("/contact", async (req, res) => {
   const email = parsed.data.email.trim();
   const projectType = parsed.data.projectType.trim();
   const details = parsed.data.details.trim();
+  const language = parsed.data.language === "pl" ? "pl" : "en";
 
   const subject = `New enquiry: ${projectType} — ${name}`;
   const textBody = [
@@ -69,15 +129,7 @@ router.post("/contact", async (req, res) => {
 
   try {
     const connectors = new ReplitConnectors();
-    const response = await connectors.proxy(
-      "google-mail",
-      "/gmail/v1/users/me/messages/send",
-      {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ raw: toBase64Url(mime) }),
-      },
-    );
+    const response = await sendGmail(connectors, mime);
 
     if (!response.ok) {
       const errText = await response.text().catch(() => "");
@@ -93,6 +145,46 @@ router.post("/contact", async (req, res) => {
             error: "Email delivery failed.",
           }),
         );
+    }
+
+    // Send the visitor a branded confirmation in their site language.
+    // Failure here must not fail the request: the business inbox already received
+    // the enquiry, so we log and still return success to the visitor.
+    try {
+      const confirmation = buildConfirmation(
+        language,
+        name,
+        projectType,
+        details,
+      );
+      const confirmationMime = [
+        `From: ${encodeHeaderWord(CONTACT_FROM_NAME)} <${CONTACT_RECIPIENT}>`,
+        `To: ${email}`,
+        `Reply-To: ${CONTACT_RECIPIENT}`,
+        `Subject: ${encodeHeaderWord(confirmation.subject)}`,
+        "MIME-Version: 1.0",
+        'Content-Type: text/plain; charset="UTF-8"',
+        "Content-Transfer-Encoding: 8bit",
+        "",
+        confirmation.body,
+      ].join("\r\n");
+
+      const confirmationResponse = await sendGmail(
+        connectors,
+        confirmationMime,
+      );
+      if (!confirmationResponse.ok) {
+        const errText = await confirmationResponse.text().catch(() => "");
+        logger.error(
+          { status: confirmationResponse.status, errText },
+          "Gmail send failed for visitor confirmation",
+        );
+      }
+    } catch (confirmErr) {
+      logger.error(
+        { err: confirmErr },
+        "Visitor confirmation email failed",
+      );
     }
 
     return res.json(SubmitContactResponse.parse({ ok: true }));

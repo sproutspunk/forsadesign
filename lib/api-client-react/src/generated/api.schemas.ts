@@ -9,6 +9,14 @@ export interface HealthStatus {
   status: string;
 }
 
+export type ContactRequestLanguage = typeof ContactRequestLanguage[keyof typeof ContactRequestLanguage];
+
+
+export const ContactRequestLanguage = {
+  en: 'en',
+  pl: 'pl',
+} as const;
+
 export interface ContactRequest {
   /** @minLength 1 */
   name: string;
@@ -17,6 +25,7 @@ export interface ContactRequest {
   projectType: string;
   /** @minLength 1 */
   details: string;
+  language?: ContactRequestLanguage;
 }
 
 export interface ContactResponse {
