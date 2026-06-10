@@ -6,10 +6,25 @@ _Replace the heading above with the project's name, and this line with one sente
 
 - `pnpm --filter @workspace/api-server run dev` — run the API server (port 5000)
 - `pnpm run typecheck` — full typecheck across all packages
+- `pnpm run check` — lint + typecheck + format check (the full quality gate)
+- `pnpm run format` — auto-fix formatting with Prettier
 - `pnpm run build` — typecheck + build all packages
 - `pnpm --filter @workspace/api-spec run codegen` — regenerate API hooks and Zod schemas from the OpenAPI spec
 - `pnpm --filter @workspace/db run push` — push DB schema changes (dev only)
 - Required env: `DATABASE_URL` — Postgres connection string
+
+## Quality gate (automated)
+
+`pnpm run check` (lint → typecheck → format check) runs automatically so broken or
+unformatted code is caught before it lands. It is wired into two gates:
+
+- **Pre-commit hook** (husky): `.husky/pre-commit` runs `pnpm run check` on every
+  `git commit`. A failing check aborts the commit with a clear message. The hook is
+  installed automatically by the `prepare` script on `pnpm install`. To bypass in an
+  emergency, use `git commit --no-verify`. If formatting is the only failure, run
+  `pnpm run format` to auto-fix, then re-commit.
+- **CI** (GitHub Actions): `.github/workflows/check.yml` runs `pnpm run check` on
+  every push and pull request. A failing check fails the CI run.
 
 ## Stack
 
