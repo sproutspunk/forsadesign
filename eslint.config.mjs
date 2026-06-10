@@ -46,12 +46,6 @@ export default tseslint.config(
   },
   {
     files: ["artifacts/forsa-design/**/*.{ts,tsx}", "artifacts/mockup-sandbox/**/*.{ts,tsx}"],
-    plugins: {
-      "react-hooks": reactHooks,
-    },
-    rules: {
-      "react-hooks/rules-of-hooks": "error",
-      "react-hooks/exhaustive-deps": "warn",
-    },
+    ...reactHooks.configs.flat.recommended,
   },
 );
