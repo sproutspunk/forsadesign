@@ -31,7 +31,8 @@ export const SubmitContactBody = zod.object({
   "email": zod.string().email(),
   "projectType": zod.string().min(1),
   "details": zod.string().min(1),
-  "language": zod.enum(['en', 'pl']).optional()
+  "language": zod.enum(['en', 'pl']).optional(),
+  "website": zod.string().optional().describe('Honeypot field for spam protection. Hidden from real users and must be left empty; submissions with a value are silently discarded.')
 })
 
 export const SubmitContactResponse = zod.object({

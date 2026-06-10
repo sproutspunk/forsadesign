@@ -84,6 +84,11 @@ components:
         language:
           type: string
           enum: [en, pl]
+        website:
+          type: string
+          description: >-
+            Honeypot field for spam protection. Hidden from real users and must
+            be left empty; submissions with a value are silently discarded.
       required:
         - name
         - email

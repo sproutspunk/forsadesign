@@ -15,6 +15,8 @@ export default function Contact() {
     projectType: "",
     details: "",
   });
+  // Honeypot: hidden from real users; only bots fill it in.
+  const [website, setWebsite] = useState("");
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [status, setStatus] = useState<Status>("idle");
 
@@ -41,9 +43,10 @@ export default function Contact() {
 
     setStatus("sending");
     try {
-      await submitContact({ ...formData, language });
+      await submitContact({ ...formData, website, language });
       setStatus("success");
       setFormData({ name: "", email: "", projectType: "", details: "" });
+      setWebsite("");
       setTimeout(() => setStatus("idle"), 6000);
     } catch (err) {
       console.error("Contact form submission failed:", err);
@@ -87,6 +90,19 @@ export default function Contact() {
           transition={{ duration: 0.6, delay: 0.2 }}
         >
           <form onSubmit={handleSubmit} className="space-y-6" noValidate>
+            {/* Honeypot field: hidden from real users, only bots fill it in. */}
+            <div aria-hidden="true" className="absolute left-[-9999px] top-[-9999px] h-0 w-0 overflow-hidden" style={{ position: "absolute" }}>
+              <label htmlFor="website">Website</label>
+              <input
+                type="text"
+                id="website"
+                name="website"
+                value={website}
+                onChange={(e) => setWebsite(e.target.value)}
+                tabIndex={-1}
+                autoComplete="off"
+              />
+            </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
                 <label className="block text-sm font-medium text-white mb-2">

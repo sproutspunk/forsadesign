@@ -16,4 +16,6 @@ export interface ContactRequest {
   /** @minLength 1 */
   details: string;
   language?: ContactRequestLanguage;
+  /** Honeypot field for spam protection. Hidden from real users and must be left empty; submissions with a value are silently discarded. */
+  website?: string;
 }

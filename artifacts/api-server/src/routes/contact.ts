@@ -2,6 +2,7 @@ import { Router, type IRouter } from "express";
 import { ReplitConnectors } from "@replit/connectors-sdk";
 import { SubmitContactBody, SubmitContactResponse } from "@workspace/api-zod";
 import { logger } from "../lib/logger";
+import { contactRateLimiter } from "../middlewares/rateLimit";
 
 // Contact form email delivery.
 // Sends submissions from the Forsa Design website to the business inbox using
@@ -83,7 +84,7 @@ function buildConfirmation(
   };
 }
 
-router.post("/contact", async (req, res) => {
+router.post("/contact", contactRateLimiter, async (req, res) => {
   const parsed = SubmitContactBody.safeParse(req.body);
   if (!parsed.success) {
     return res
@@ -94,6 +95,17 @@ router.post("/contact", async (req, res) => {
           error: "Invalid form submission.",
         }),
       );
+  }
+
+  // Honeypot: the `website` field is hidden from real users via CSS. If it has
+  // any value, a bot filled it in. Silently accept (return success so the bot
+  // gets no signal) but skip all email delivery.
+  if (parsed.data.website && parsed.data.website.trim() !== "") {
+    logger.warn(
+      { ip: req.ip },
+      "Contact form honeypot triggered; dropping submission",
+    );
+    return res.json(SubmitContactResponse.parse({ ok: true }));
   }
 
   const name = parsed.data.name.trim();
