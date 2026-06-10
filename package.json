@@ -15,6 +15,15 @@
     "prepare": "husky"
   },
   "private": true,
+  "lint-staged": {
+    "*.{js,mjs,cjs,ts,tsx}": [
+      "eslint --fix --no-warn-ignored",
+      "prettier --write"
+    ],
+    "*.{json,css,scss,html,md,yml,yaml}": [
+      "prettier --write --ignore-unknown"
+    ]
+  },
   "pnpm": {
     "overrides": {
       "qs": ">=6.15.2",
@@ -27,6 +36,7 @@
     "eslint-plugin-react-hooks": "^7.1.1",
     "globals": "^17.6.0",
     "husky": "^9.1.7",
+    "lint-staged": "^17.0.7",
     "prettier": "^3.8.3",
     "typescript": "~5.9.3",
     "typescript-eslint": "^8.61.0"

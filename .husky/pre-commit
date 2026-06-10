@@ -1,8 +1,8 @@
-echo "Running pnpm run check (lint + typecheck + format) before commit..."
+echo "Running lint-staged (lint + format on staged files) before commit..."
 
-if ! pnpm run check; then
+if ! pnpm exec lint-staged; then
   echo ""
-  echo "✖ pnpm run check failed. Commit aborted."
+  echo "✖ lint-staged failed. Commit aborted."
   echo "  Fix the issues above, or run 'pnpm run format' to auto-fix formatting."
   exit 1
 fi
