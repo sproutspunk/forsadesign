@@ -1,17 +1,15 @@
 import { Router, type IRouter } from "express";
 import { ReplitConnectors } from "@replit/connectors-sdk";
+import { SubmitContactBody, SubmitContactResponse } from "@workspace/api-zod";
 import { logger } from "../lib/logger";
 
 // Contact form email delivery.
 // Sends submissions from the Forsa Design website to the business inbox using
 // the Replit Gmail connector (google-mail) via the @replit/connectors-sdk proxy.
+// Request/response shapes are validated against the generated OpenAPI zod schemas.
 const router: IRouter = Router();
 
 const CONTACT_RECIPIENT = "hello@forsadesign.co.uk";
-
-const isNonEmpty = (v: unknown): v is string =>
-  typeof v === "string" && v.trim().length > 0;
-const isValidEmail = (v: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim());
 
 function toBase64Url(input: string): string {
   return Buffer.from(input, "utf-8")
@@ -27,24 +25,22 @@ function encodeHeaderWord(value: string): string {
 }
 
 router.post("/contact", async (req, res) => {
-  const body = (req.body ?? {}) as Record<string, unknown>;
-  const name = typeof body.name === "string" ? body.name.trim() : "";
-  const email = typeof body.email === "string" ? body.email.trim() : "";
-  const projectType =
-    typeof body.projectType === "string" ? body.projectType.trim() : "";
-  const details = typeof body.details === "string" ? body.details.trim() : "";
-
-  if (
-    !isNonEmpty(name) ||
-    !isNonEmpty(email) ||
-    !isValidEmail(email) ||
-    !isNonEmpty(projectType) ||
-    !isNonEmpty(details)
-  ) {
+  const parsed = SubmitContactBody.safeParse(req.body);
+  if (!parsed.success) {
     return res
       .status(400)
-      .json({ ok: false, error: "Invalid form submission." });
+      .json(
+        SubmitContactResponse.parse({
+          ok: false,
+          error: "Invalid form submission.",
+        }),
+      );
   }
+
+  const name = parsed.data.name.trim();
+  const email = parsed.data.email.trim();
+  const projectType = parsed.data.projectType.trim();
+  const details = parsed.data.details.trim();
 
   const subject = `New enquiry: ${projectType} — ${name}`;
   const textBody = [
@@ -91,13 +87,25 @@ router.post("/contact", async (req, res) => {
       );
       return res
         .status(502)
-        .json({ ok: false, error: "Email delivery failed." });
+        .json(
+          SubmitContactResponse.parse({
+            ok: false,
+            error: "Email delivery failed.",
+          }),
+        );
     }
 
-    return res.json({ ok: true });
+    return res.json(SubmitContactResponse.parse({ ok: true }));
   } catch (err) {
     logger.error({ err }, "Contact form submission failed");
-    return res.status(500).json({ ok: false, error: "Email delivery failed." });
+    return res
+      .status(502)
+      .json(
+        SubmitContactResponse.parse({
+          ok: false,
+          error: "Email delivery failed.",
+        }),
+      );
   }
 });
 

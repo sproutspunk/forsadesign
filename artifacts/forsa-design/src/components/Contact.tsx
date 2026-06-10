@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { motion } from "framer-motion";
 import { Linkedin, Twitter, Instagram } from "lucide-react";
+import { submitContact } from "@workspace/api-client-react";
 
 type Status = "idle" | "sending" | "success" | "error";
 
@@ -40,12 +41,7 @@ export default function Contact() {
 
     setStatus("sending");
     try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
-      if (!res.ok) throw new Error(`Request failed with status ${res.status}`);
+      await submitContact(formData);
       setStatus("success");
       setFormData({ name: "", email: "", projectType: "", details: "" });
       setTimeout(() => setStatus("idle"), 6000);
