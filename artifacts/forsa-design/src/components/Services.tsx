@@ -50,7 +50,7 @@ export default function Services() {
               <h3 className="font-serif text-2xl font-bold text-white mb-4">
                 {service.title}
               </h3>
-              <p className="text-foreground/70 leading-relaxed font-light">
+              <p className="text-foreground/70 leading-relaxed font-light whitespace-pre-line">
                 {service.desc}
               </p>
             </motion.div>

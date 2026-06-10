@@ -118,9 +118,16 @@ export default function Hero() {
 
           <motion.p 
             variants={itemVariants}
-            className="text-lg md:text-xl text-foreground/70 font-light mb-12 max-w-2xl"
+            className="text-lg md:text-xl text-foreground/70 font-light mb-6 max-w-2xl"
           >
             {t("hero.subheader")}
+          </motion.p>
+
+          <motion.p
+            variants={itemVariants}
+            className="text-base md:text-lg text-foreground/60 font-light leading-relaxed mb-12 max-w-2xl"
+          >
+            {t("hero.body")}
           </motion.p>
 
           <motion.a 

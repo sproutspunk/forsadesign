@@ -15,19 +15,20 @@ const translations = {
     },
     hero: {
       tagline: "Comprehensive Website Design & Creation",
-      subheader: "From concept to launch - and beyond",
-      cta: "Start Your Project",
+      subheader: "From idea to launch. And beyond.",
+      body: "We build proper websites for businesses across Scotland. No jargon. No fuss. Just clean, fast, and solid code that actually does the job.",
+      cta: "[ Start a Project ]",
     },
     services: {
       heading: "Our Services",
-      card1: { title: "Web Design & Build", desc: "Responsive websites, custom CMS, integrated content editors. We build beautiful, fast, and functional sites tailored to your brand." },
+      card1: { title: "Web Design & Build", desc: "We build bespoke websites from scratch. Clean design, custom content management, and easy editing tools. You get a fast, responsive site tailored specifically to what your business needs.\n\nWe don't use ready-made, heavy templates. Every line of code is written to make sure your site loads instantly and stays secure." },
       card2: { title: "E-commerce & Payments", desc: "Shopify integration, custom platforms, payment gateway setup. Launch your online store with confidence." },
       card3: { title: "Advanced Projects", desc: "Forums, complex systems, ongoing support & optimization. We handle sophisticated solutions that grow with your business." },
     },
     portfolio: {
       heading: "Our Work",
-      subheading: "Featured projects completed for clients across industries",
-      placeholder: "Portfolio showcase — live examples of completed projects coming soon",
+      subheading: "A few recent projects built for local businesses across different industries.",
+      placeholder: "Project gallery coming shortly",
     },
     process: {
       heading: "How We Work",
@@ -40,7 +41,8 @@ const translations = {
     },
     about: {
       heading: "About Forsa Design",
-      body: "Forsa Design is a boutique web agency based in Banff, Scotland. We specialize in building professional, high-performance websites and web applications for businesses of all sizes. From startup landing pages to complex e-commerce platforms and custom solutions, we deliver quality, integrity, and ongoing support. Our approach is straightforward: understand your needs, build with excellence, and ensure your success.",
+      body: "We are a small team based in Scotland. We don't do corporate fluff or overcomplicated pitches.",
+      body2: "You need a website that looks good and works perfectly on every device. We build exactly that. We handle the design, the code, and all the technical bits behind the scenes. You talk directly to the person writing the code, so nothing gets lost in translation. We keep it simple, honest, and practical.",
     },
     contact: {
       heading: "Get In Touch",
@@ -77,19 +79,20 @@ const translations = {
     },
     hero: {
       tagline: "Kompleksowy Web Design i Tworzenie Stron",
-      subheader: "Od koncepcji do uruchomienia — i dalej",
-      cta: "Rozpocznij Projekt",
+      subheader: "Od pomysłu do startu. I dalej.",
+      body: "Budujemy porządne strony dla firm w całej Szkocji. Bez żargonu. Bez kombinowania. Czysty, szybki i solidny kod, który po prostu działa.",
+      cta: "[ Rozpocznij projekt ]",
     },
     services: {
       heading: "Nasze Usługi",
-      card1: { title: "Web Design i Budowa", desc: "Responsywne strony, niestandardowe CMS, zintegrowane edytory treści. Tworzymy piękne, szybkie i funkcjonalne witryny dostosowane do Twojej marki." },
+      card1: { title: "Web Design i Budowa", desc: "Budujemy strony szyte na miarę, od zera. Czysty design, własny system zarządzania treścią i proste narzędzia do edycji. Dostajesz szybką, responsywną stronę dopasowaną dokładnie do potrzeb Twojej firmy.\n\nNie używamy gotowych, ciężkich szablonów. Każda linijka kodu jest napisana tak, aby strona ładowała się błyskawicznie i była bezpieczna." },
       card2: { title: "Sklepy Online i Płatności", desc: "Integracja Shopify, platformy niestandardowe, konfiguracja bramek płatności. Uruchom swój sklep online bez obaw." },
       card3: { title: "Zaawansowane Projekty", desc: "Fora, systemy złożone, ciągłe wsparcie i optymalizacja. Obsługujemy zaawansowane rozwiązania, które rosną wraz z Twoim biznesem." },
     },
     portfolio: {
       heading: "Nasze Prace",
-      subheading: "Wybranych projektów wykonanych dla klientów z różnych branż",
-      placeholder: "Galeria projektów — przykłady wykonanych prac wkrótce",
+      subheading: "Kilka ostatnich projektów zrobionych dla lokalnych firm z różnych branż.",
+      placeholder: "Galeria projektów już wkrótce",
     },
     process: {
       heading: "Jak Pracujemy",
@@ -101,8 +104,9 @@ const translations = {
       ],
     },
     about: {
-      heading: "O Firmie Forsa Design",
-      body: "Forsa Design to boutique'owa agencja internetowa z siedzibą w Banff, Szkocja. Specjalizujemy się w tworzeniu profesjonalnych, wydajnych stron internetowych i aplikacji webowych dla firm wszystkich rozmiarów. Od stron startowych dla startupów po złożone platformy e-commerce i rozwiązania niestandardowe, dostarczamy jakość, uczciwość i ciągłe wsparcie. Nasze podejście jest proste: zrozumieć Twoje potrzeby, budować z doskonałością i zapewnić Twój sukces.",
+      heading: "O Forsa Design",
+      body: "Jesteśmy małym zespołem ze Szkocji. Nie robimy korporacyjnego lania wody ani przekombinowanych prezentacji.",
+      body2: "Potrzebujesz strony, która dobrze wygląda i działa bez zarzutu na każdym urządzeniu. Dokładnie taką budujemy. Zajmujemy się projektem, kodem i wszystkimi technicznymi sprawami w tle. Rozmawiasz bezpośrednio z osobą, która pisze kod, więc nic nie ginie po drodze. Prosto, uczciwie i praktycznie.",
     },
     contact: {
       heading: "Skontaktuj Się Z Nami",
