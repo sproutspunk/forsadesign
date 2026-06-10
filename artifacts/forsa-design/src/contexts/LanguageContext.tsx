@@ -131,7 +131,8 @@ const translations = {
     },
     hero: {
       tagline: "Kompleksowy Web Design i Tworzenie Stron",
-      subheader: "Szybkie, pisane od zera strony i sklepy, stworzone by zamienia\u0107 ruch w realny zysk.",
+      subheader:
+        "Szybkie, pisane od zera strony i sklepy, stworzone by zamienia\u0107 ruch w realny zysk.",
       body: "Budujemy dedykowane systemy webowe dla firm, kt\u00f3re oczekuj\u0105 wynik\u00f3w, a nie marketingu. Bez zb\u0119dnego \u017cargonu. Bez owijania w bawe\u0142n\u0119. Tylko czysty, szybki i stabilny kod, kt\u00f3ry rozwija Tw\u00f3j biznes.",
       cta: "Popro\u015b o wycen\u0119",
     },
@@ -152,7 +153,8 @@ const translations = {
     },
     portfolio: {
       heading: "Nasze Prace",
-      subheading: "Szybkie, pisane od zera strony i sklepy, stworzone by zamienia\u0107 ruch w realny zysk.",
+      subheading:
+        "Szybkie, pisane od zera strony i sklepy, stworzone by zamienia\u0107 ruch w realny zysk.",
       case1: {
         title: "Love Sprouts \u2014 Przebudowa E-commerce",
         desc: "Stworzenie nowej strony Shopify od zera. Skr\u00f3cenie \u0142adowania do 1.1s i zatrzymanie porzuconych koszyk\u00f3w.",
@@ -207,11 +209,15 @@ const translations = {
       name: { label: "Imi\u0119 i Nazwisko", placeholder: "Twoje imi\u0119 i nazwisko" },
       email: { label: "Adres Email", placeholder: "tw\u00f3j@email.com" },
       projectType: { label: "Typ Projektu" },
-      details: { label: "Szczeg\u00f3\u0142y Projektu", placeholder: "Opowiedz nam o swoim projekcie..." },
+      details: {
+        label: "Szczeg\u00f3\u0142y Projektu",
+        placeholder: "Opowiedz nam o swoim projekcie...",
+      },
       submit: "Wy\u015blij Wiadomo\u015b\u0107",
       sending: "Wysy\u0142anie...",
       success: "Dzi\u0119kuj\u0119! Wkr\u00f3tce do Ciebie wr\u00f3cimy.",
-      error: "Co\u015b posz\u0142o nie tak. Spr\u00f3buj ponownie lub napisz do nas bezpo\u015brednio.",
+      error:
+        "Co\u015b posz\u0142o nie tak. Spr\u00f3buj ponownie lub napisz do nas bezpo\u015brednio.",
       alternative: "Lub skontaktuj si\u0119 bezpo\u015brednio:",
       contactPersonLabel: "Osoba kontaktowa",
       contactPerson: "Sprouts Punk",

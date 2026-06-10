@@ -24,12 +24,8 @@ export default function TermsPage() {
           <h1 className="font-serif text-4xl md:text-5xl font-bold text-white mb-4">
             Terms and Conditions
           </h1>
-          <p className="text-foreground/60 font-light">
-            Forsa Design – Art &amp; Web Design
-          </p>
-          <p className="text-foreground/50 font-light text-sm mt-2">
-            Last Updated: June 2026
-          </p>
+          <p className="text-foreground/60 font-light">Forsa Design – Art &amp; Web Design</p>
+          <p className="text-foreground/50 font-light text-sm mt-2">Last Updated: June 2026</p>
         </div>
 
         <div className="space-y-8 text-foreground/80 font-light leading-relaxed">

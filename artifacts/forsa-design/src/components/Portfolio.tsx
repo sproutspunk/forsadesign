@@ -49,12 +49,8 @@ export default function Portfolio() {
               <span className="inline-block text-xs font-bold tracking-wider text-primary mb-4 border border-primary/30 px-3 py-1 rounded-sm">
                 {item.tag}
               </span>
-              <h3 className="font-serif text-2xl font-bold text-white mb-4">
-                {item.title}
-              </h3>
-              <p className="text-foreground/70 leading-relaxed font-light">
-                {item.desc}
-              </p>
+              <h3 className="font-serif text-2xl font-bold text-white mb-4">{item.title}</h3>
+              <p className="text-foreground/70 leading-relaxed font-light">{item.desc}</p>
             </motion.div>
           ))}
         </div>
