@@ -42,15 +42,21 @@ const translations = {
     process: {
       heading: "How We Work",
       steps: [
-        { title: "Discovery & Planning", desc: "We understand your goals, audience, and vision." },
         {
-          title: "Design & Development",
-          desc: "Creative design meets clean code and best practices.",
+          title: "Strategic Architecture",
+          desc: "We analyze your business logic, audit performance bottlenecks, and map out a data-driven infrastructure blueprint engineered for high conversion.",
         },
-        { title: "Launch & Testing", desc: "Rigorous testing ensures your site works flawlessly." },
         {
-          title: "Support & Optimization",
-          desc: "Ongoing monitoring, updates, and performance optimization.",
+          title: "Engineering & UI Execution",
+          desc: "Zero templates. We develop bespoke front-end layouts and robust back-end systems, writing clean, optimized code designed for maximum speed and security.",
+        },
+        {
+          title: "Stress-Testing & Deployment",
+          desc: "We run comprehensive speed optimization, rigorous security audits, and cross-platform stress-testing before launching a bulletproof digital product.",
+        },
+        {
+          title: "Continuous Growth & Security",
+          desc: "We provide proactive infrastructure scaling, continuous security monitoring, and conversion rate optimization to ensure your platform maintains its competitive edge.",
         },
       ],
     },
@@ -133,18 +139,21 @@ const translations = {
     process: {
       heading: "Jak Pracujemy",
       steps: [
-        { title: "Analiza i Planowanie", desc: "Rozumiemy Twoje cele, odbiorców i wizję." },
         {
-          title: "Projektowanie i Rozwój",
-          desc: "Kreatywny design łączy się z czystym kodem i najlepszymi praktykami.",
+          title: "Architektura Strategiczna",
+          desc: "Analizujemy logikę biznesową Twojej firmy, badamy wąskie gardła wydajności i tworzymy oparty na danych plan infrastruktury zorientowanej na konwersję.",
         },
         {
-          title: "Uruchomienie i Testowanie",
-          desc: "Gruntowne testowanie zapewnia bezawaryjne działanie Twojej witryny.",
+          title: "Inżynieria i Egzekucja UI",
+          desc: "Zero gotowych szablonów. Tworzymy dedykowane układy front-end oraz stabilne systemy back-end, pisząc czysty kod zoptymalizowany pod kątem szybkości i bezpieczeństwa.",
         },
         {
-          title: "Wsparcie i Optymalizacja",
-          desc: "Ciągłe monitorowanie, aktualizacje i optymalizacja wydajności.",
+          title: "Testy Obciążeniowe i Wdrożenie",
+          desc: "Przeprowadzamy zaawansowaną optymalizację szybkości, rygorystyczne audyty bezpieczeństwa i testy obciążeniowe, wdrażając pancerny produkt końcowy.",
+        },
+        {
+          title: "Skalowanie i Ciągłość Działania",
+          desc: "Zapewniamy proaktywne skalowanie infrastruktury, stały monitoring bezpieczeństwa oraz optymalizację konwersji, dbając o przewagę rynkową Twojej platformy.",
         },
       ],
     },

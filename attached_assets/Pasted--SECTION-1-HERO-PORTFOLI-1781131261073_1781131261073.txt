@@ -1,0 +1,69 @@
+========================================================================
+SECTION 1: HERO / PORTFOLIO INTRO
+========================================================================
+SUBHEADING:
+High-performance digital products engineered for conversion and business growth.
+
+========================================================================
+SECTION 2: PORTFOLIO GRID (3 COLUMNS)
+========================================================================
+COLUMN 1 (Active Case Study):
+Title: Love Sprouts — E-commerce Transformation
+Description: How we redesigned a custom boutique experience, cutting page load time to 1.1s and boosting checkout conversions.
+Tag: [ CASE STUDY LIVE ]
+
+COLUMN 2 (Teaser):
+Title: Corporate & Legal Sector Web System
+Description: High-security, data-driven web platform designed for maximum conversion in the legal industry.
+Tag: [ IN PRODUCTION ]
+
+COLUMN 3 (Teaser):
+Title: Energy Infrastructure Digital Platform
+Description: Optimized user flow and custom framework integration for the energy and enterprise sector.
+Tag: [ PIPELINE ]
+
+========================================================================
+SECTION 3: SERVICES (3 CARDS)
+========================================================================
+CARD 1:
+Title: Enterprise Web Engineering
+Description: We build high-performance corporate platforms from scratch. Zero heavy templates. Zero bloated code. Every single line is engineered for bulletproof security, instant loading times, and full custom control tailored to your exact operational requirements.
+
+CARD 2:
+Title: High-Conversion E-commerce
+Description: Scalable e-commerce infrastructure engineered to maximize revenue. From advanced Shopify customization to bespoke checkout architecture and secure payment gateway integration, we eliminate cart abandonment and turn high-end brand traffic into pure profit.
+
+CARD 3:
+Title: Bespoke Web Applications
+Description: Complex, data-driven systems engineered for specialized industries. We handle sophisticated digital infrastructure, legacy software modernization, and ongoing performance optimization for businesses that demand zero downtime and absolute precision.
+
+========================================================================
+SECTION 4: HOW WE WORK (4 STEPS)
+========================================================================
+STEP 1:
+Title: Strategic Architecture
+Description: We analyze your business logic, audit performance bottlenecks, and map out a data-driven infrastructure blueprint engineered for high conversion.
+
+STEP 2:
+Title: Engineering & UI Execution
+Description: Zero templates. We develop bespoke front-end layouts and robust back-end systems, writing clean, optimized code designed for maximum speed and security.
+
+STEP 3:
+Title: Stress-Testing & Deployment
+Description: We run comprehensive speed optimization, rigorous security audits, and cross-platform stress-testing before launching a bulletproof digital product.
+
+STEP 4:
+Title: Continuous Growth & Security
+Description: We provide proactive infrastructure scaling, continuous security monitoring, and conversion rate optimization to ensure your platform maintains its competitive edge.
+
+========================================================================
+SECTION 5: CALL TO ACTION (FOOTER / BOTTOM)
+========================================================================
+MAIN HEADING:
+Engineered for scale. Built to perform.
+
+BODY TEXT:
+We engineer high-conversion web infrastructure for high-end corporate clients. No jargon. No fuss. Just clean, fast, and solid code that actually drives business growth.
+
+BUTTON TEXT:
+[ Start a Project ]
