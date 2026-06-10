@@ -194,7 +194,7 @@ const translations = {
       heading: "O Forsa Design",
       body: "Jeste\u015bmy niezale\u017cn\u0105 agencj\u0105 web developmentu ze Szkocji, tworz\u0105c\u0105 dedykowane systemy i strony dla sektora biznesowego. Ca\u0142kowicie rezygnujemy z korporacyjnego be\u0142kotu, bezu\u017cytecznych spotka\u0144 i sztucznie nadmuchanych koszt\u00f3w obs\u0142ugi.",
       body2:
-        "Nie potrzebujesz strony, kt\u00f3ra tylko \u0142adnie wygl\u0105da \u2013 potrzebujesz szybkiego, stabilnego narz\u0119dzia, kt\u00f3re sprzedaje i chroni dane firmy. Robimy wszystko od projektu po serwer. Rozmawiasz bezpo\u015brednio z programistami, kt\u00f3rzy pisz\u0105 Tw\u00f3j kod, co eliminuje b\u0142\u0119dy w ustaleniach i gwarantuje precyzj\u0119 od samego pocz\u0105tku.",
+        "Projektujemy z my\u015bl\u0105 o zysku, a nie o pustej estetyce. Dobry wygl\u0105d to absolutne minimum \u2013 my dostarczamy szybkie, stabilne narz\u0119dzie, kt\u00f3re realnie sprzedaje i chroni dane Twojej firmy. Robimy wszystko: od czystego kodu po architektur\u0119 serwera. Rozmawiasz bezpo\u015brednio z programistami, kt\u00f3rzy pisz\u0105 Tw\u00f3j projekt, co eliminuje b\u0142\u0119dy w ustaleniach i gwarantuje precyzj\u0119 od samego pocz\u0105tku.",
     },
     cta: {
       heading: "Stworzone by dzia\u0142a\u0107. Napisane by zarabia\u0107.",
