@@ -275,9 +275,9 @@ const translations = {
     cookies: {
       bannerTitle: "U\u017cywamy plik\u00f3w cookie",
       bannerDesc:
-        "U\u017cywamy niezb\u0119dnych plik\u00f3w cookie, aby strona dzia\u0142a\u0142a prawid\u0142owo, oraz opcjonalnych, aby lepiej rozumie\u0107 spos\u00f3b korzystania z witryny. Mo\u017cesz zaakceptowa\u0107 wszystkie, odrzuci\u0107 nieniezb\u0119dne lub dostosowa\u0107 swoje preferencje.",
+        "U\u017cywamy niezb\u0119dnych plik\u00f3w cookie, aby strona dzia\u0142a\u0142a prawid\u0142owo, oraz opcjonalnych, aby lepiej rozumie\u0107 spos\u00f3b korzystania z witryny. Mo\u017cesz zaakceptowa\u0107 wszystkie, odrzuci\u0107 niezb\u0119dne lub dostosowa\u0107 swoje preferencje.",
       acceptAll: "Akceptuj Wszystkie",
-      rejectNonEssential: "Odrzuc Nieniezb\u0119dne",
+      rejectNonEssential: "Odrzu\u0107 Niezb\u0119dne",
       customise: "Dostosuj",
       savePreferences: "Zapisz Preferencje",
       essential: "Niezb\u0119dne",
