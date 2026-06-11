@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <url>
+    <loc>https://forsadesign.co.uk/en/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://forsadesign.co.uk/en/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://forsadesign.co.uk/pl/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://forsadesign.co.uk/en/"/>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://forsadesign.co.uk/pl/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://forsadesign.co.uk/en/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://forsadesign.co.uk/pl/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://forsadesign.co.uk/en/"/>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://forsadesign.co.uk/en/terms</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://forsadesign.co.uk/en/terms"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://forsadesign.co.uk/pl/terms"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://forsadesign.co.uk/en/terms"/>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+
+  <url>
+    <loc>https://forsadesign.co.uk/pl/terms</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://forsadesign.co.uk/en/terms"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://forsadesign.co.uk/pl/terms"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://forsadesign.co.uk/en/terms"/>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+
+  <url>
+    <loc>https://forsadesign.co.uk/en/privacy</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://forsadesign.co.uk/en/privacy"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://forsadesign.co.uk/pl/privacy"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://forsadesign.co.uk/en/privacy"/>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+
+  <url>
+    <loc>https://forsadesign.co.uk/pl/privacy</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://forsadesign.co.uk/en/privacy"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://forsadesign.co.uk/pl/privacy"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://forsadesign.co.uk/en/privacy"/>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+
+</urlset>

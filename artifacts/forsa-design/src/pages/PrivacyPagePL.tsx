@@ -10,7 +10,7 @@ export default function PrivacyPagePL() {
       <div className="border-b border-border/10 py-6">
         <div className="container mx-auto px-6 flex items-center justify-between">
           <a
-            href="/"
+            href="/pl/"
             className="flex items-center gap-2 text-sm font-medium text-foreground/70 hover:text-primary transition-colors"
           >
             <ArrowLeft size={18} />

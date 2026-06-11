@@ -34,5 +34,58 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    <noscript>
+      <style>
+        .noscript-landing {
+          font-family: sans-serif;
+          max-width: 640px;
+          margin: 80px auto;
+          padding: 0 24px;
+          color: #e5e5e5;
+          background: #0a0a0a;
+        }
+        .noscript-landing h1 {
+          font-size: 2rem;
+          margin-bottom: 0.5rem;
+        }
+        .noscript-landing p {
+          color: #a3a3a3;
+          margin-bottom: 1.5rem;
+        }
+        .noscript-landing nav a {
+          color: #a78bfa;
+          text-decoration: none;
+          margin-right: 1.5rem;
+          font-weight: 600;
+        }
+        .noscript-landing nav a:hover {
+          text-decoration: underline;
+        }
+        .noscript-landing ul {
+          color: #a3a3a3;
+          line-height: 2;
+        }
+        .noscript-landing ul a {
+          color: #a78bfa;
+        }
+      </style>
+      <div class="noscript-landing">
+        <h1>Forsa Design</h1>
+        <p>
+          Web Design &amp; Development Agency — Banff, Scotland.<br />
+          Fast, custom-coded web platforms built to convert traffic into revenue.
+        </p>
+        <nav>
+          <a href="/en/" hreflang="en">English</a>
+          <a href="/pl/" hreflang="pl">Polski</a>
+        </nav>
+        <ul>
+          <li><a href="/en/terms">Terms &amp; Conditions (EN)</a></li>
+          <li><a href="/pl/terms">Regulamin i Warunki (PL)</a></li>
+          <li><a href="/en/privacy">Privacy Policy (EN)</a></li>
+          <li><a href="/pl/privacy">Polityka Prywatności (PL)</a></li>
+        </ul>
+      </div>
+    </noscript>
   </body>
 </html>

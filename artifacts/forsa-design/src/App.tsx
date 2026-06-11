@@ -38,6 +38,42 @@ function Redirector() {
   return null;
 }
 
+function RedirectTo({ to }: { to: string }) {
+  const [, setLocation] = useLocation();
+  useEffect(() => {
+    setLocation(to);
+  }, [to, setLocation]);
+  return null;
+}
+
+function RootLandingPage() {
+  return (
+    <div className="min-h-[100dvh] bg-background text-foreground flex flex-col items-center justify-center gap-6 p-8">
+      <h1 className="font-serif text-3xl font-bold text-white">Forsa Design</h1>
+      <p className="text-foreground/70 text-center max-w-md">
+        Web Design &amp; Development Agency — Banff, Scotland
+      </p>
+      <nav className="flex items-center gap-6 text-sm font-semibold">
+        <a
+          href="/en/"
+          className="text-primary hover:text-primary/80 transition-colors"
+          hrefLang="en"
+        >
+          English
+        </a>
+        <span className="text-foreground/30">|</span>
+        <a
+          href="/pl/"
+          className="text-foreground/60 hover:text-foreground transition-colors"
+          hrefLang="pl"
+        >
+          Polski
+        </a>
+      </nav>
+    </div>
+  );
+}
+
 function Router() {
   return (
     <>
@@ -47,11 +83,11 @@ function Router() {
         <Route path="/pl/" component={() => <HomePage lang="pl" />} />
         <Route path="/en/terms" component={TermsPage} />
         <Route path="/pl/terms" component={TermsPagePL} />
-        <Route path="/terms" component={TermsPage} />
+        <Route path="/terms" component={() => <RedirectTo to="/en/terms" />} />
         <Route path="/en/privacy" component={PrivacyPage} />
         <Route path="/pl/privacy" component={PrivacyPagePL} />
-        <Route path="/privacy" component={PrivacyPage} />
-        <Route path="/" component={() => null} />
+        <Route path="/privacy" component={() => <RedirectTo to="/en/privacy" />} />
+        <Route path="/" component={RootLandingPage} />
         <Route component={NotFound} />
       </Switch>
     </>

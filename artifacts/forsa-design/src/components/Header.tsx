@@ -53,21 +53,31 @@ export default function Header() {
 
         {/* Language Switcher */}
         <div className="hidden md:flex items-center gap-2 text-sm font-semibold">
-          <button
-            onClick={() => setLanguage("en")}
+          <a
+            href="/en/"
+            onClick={(e) => {
+              e.preventDefault();
+              setLanguage("en");
+            }}
             className={`transition-colors ${language === "en" ? "text-primary" : "text-foreground/60 hover:text-foreground"}`}
             data-testid="btn-lang-en"
+            hrefLang="en"
           >
             EN
-          </button>
+          </a>
           <span className="text-foreground/30">|</span>
-          <button
-            onClick={() => setLanguage("pl")}
+          <a
+            href="/pl/"
+            onClick={(e) => {
+              e.preventDefault();
+              setLanguage("pl");
+            }}
             className={`transition-colors ${language === "pl" ? "text-primary" : "text-foreground/60 hover:text-foreground"}`}
             data-testid="btn-lang-pl"
+            hrefLang="pl"
           >
             PL
-          </button>
+          </a>
         </div>
 
         {/* Mobile Menu Toggle */}
@@ -101,24 +111,30 @@ export default function Header() {
                 </a>
               ))}
               <div className="flex items-center gap-4 mt-4 pt-4 border-t border-border">
-                <button
-                  onClick={() => {
+                <a
+                  href="/en/"
+                  hrefLang="en"
+                  onClick={(e) => {
+                    e.preventDefault();
                     setLanguage("en");
                     setIsMobileMenuOpen(false);
                   }}
                   className={`text-lg font-semibold ${language === "en" ? "text-primary" : "text-foreground/60"}`}
                 >
                   EN
-                </button>
-                <button
-                  onClick={() => {
+                </a>
+                <a
+                  href="/pl/"
+                  hrefLang="pl"
+                  onClick={(e) => {
+                    e.preventDefault();
                     setLanguage("pl");
                     setIsMobileMenuOpen(false);
                   }}
                   className={`text-lg font-semibold ${language === "pl" ? "text-primary" : "text-foreground/60"}`}
                 >
                   PL
-                </button>
+                </a>
               </div>
             </div>
           </motion.div>
