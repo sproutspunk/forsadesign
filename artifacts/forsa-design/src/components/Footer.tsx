@@ -1,4 +1,5 @@
 import { useLanguage } from "@/contexts/LanguageContext";
+import { openCookiePreferences } from "@/components/CookieConsent";
 import { Facebook, Instagram, Mail, Phone } from "lucide-react";
 
 export default function Footer() {
@@ -106,11 +107,18 @@ export default function Footer() {
           </a>
           <a
             href={`/${language}/privacy`}
-            className="hover:text-primary transition-colors"
+            className="hover:text-primary transition-colors mr-4"
             data-testid="footer-link-privacy"
           >
             {t("footer.privacy")}
           </a>
+          <button
+            onClick={openCookiePreferences}
+            className="hover:text-primary transition-colors"
+            data-testid="footer-link-cookie-preferences"
+          >
+            {t("footer.cookiePreferences")}
+          </button>
         </div>
       </div>
     </footer>

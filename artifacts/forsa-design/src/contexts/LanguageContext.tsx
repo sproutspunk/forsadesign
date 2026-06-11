@@ -120,6 +120,26 @@ const translations = {
       copyright: "\u00A9 2024 Forsa Design. All rights reserved.",
       terms: "Terms & Conditions",
       privacy: "Privacy Policy",
+      cookiePreferences: "Cookie Preferences",
+    },
+    cookies: {
+      bannerTitle: "We use cookies",
+      bannerDesc:
+        "We use essential cookies to keep the site running and optional cookies to understand how you use it. You can accept all, reject non-essential cookies, or customise your preferences.",
+      acceptAll: "Accept All",
+      rejectNonEssential: "Reject Non-Essential",
+      customise: "Customise",
+      savePreferences: "Save Preferences",
+      essential: "Essential",
+      essentialDesc:
+        "Required for the site to function (language preference, security). Cannot be disabled.",
+      analytics: "Analytics",
+      analyticsDesc:
+        "Help us understand how visitors interact with the site (e.g. Google Analytics). No personally identifiable data is collected.",
+      marketing: "Marketing",
+      marketingDesc:
+        "Used to show you relevant advertising on other platforms. Currently no marketing cookies are active.",
+      alwaysOn: "Always on",
     },
   },
   pl: {
@@ -250,6 +270,26 @@ const translations = {
       copyright: "\u00A9 2024 Forsa Design. Wszystkie prawa zastrze\u017cone.",
       terms: "Regulamin i Warunki",
       privacy: "Polityka Prywatno\u015bci",
+      cookiePreferences: "Ustawienia Cookies",
+    },
+    cookies: {
+      bannerTitle: "U\u017cywamy plik\u00f3w cookie",
+      bannerDesc:
+        "U\u017cywamy niezb\u0119dnych plik\u00f3w cookie, aby strona dzia\u0142a\u0142a prawid\u0142owo, oraz opcjonalnych, aby lepiej rozumie\u0107 spos\u00f3b korzystania z witryny. Mo\u017cesz zaakceptowa\u0107 wszystkie, odrzuci\u0107 nieniezb\u0119dne lub dostosowa\u0107 swoje preferencje.",
+      acceptAll: "Akceptuj Wszystkie",
+      rejectNonEssential: "Odrzuc Nieniezb\u0119dne",
+      customise: "Dostosuj",
+      savePreferences: "Zapisz Preferencje",
+      essential: "Niezb\u0119dne",
+      essentialDesc:
+        "Wymagane do prawid\u0142owego dzia\u0142ania strony (preferencje j\u0119zykowe, bezpiecze\u0144stwo). Nie mo\u017cna wy\u0142\u0105czy\u0107.",
+      analytics: "Analityczne",
+      analyticsDesc:
+        "Pomagaj\u0105 nam zrozumie\u0107, jak odwiedzaj\u0105cy korzystaj\u0105 ze strony (np. Google Analytics). \u017badne dane osobowe nie s\u0105 zbierane.",
+      marketing: "Marketingowe",
+      marketingDesc:
+        "U\u017cywane do wy\u015bwietlania reklam na innych platformach. Aktualnie \u017cadne pliki cookie marketingowe nie s\u0105 aktywne.",
+      alwaysOn: "Zawsze w\u0142\u0105czone",
     },
   },
 };

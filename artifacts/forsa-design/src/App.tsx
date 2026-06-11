@@ -9,6 +9,7 @@ import TermsPagePL from "@/pages/TermsPagePL";
 import PrivacyPage from "@/pages/PrivacyPage";
 import PrivacyPagePL from "@/pages/PrivacyPagePL";
 import { LanguageProvider } from "@/contexts/LanguageContext";
+import CookieConsent from "@/components/CookieConsent";
 import { useEffect } from "react";
 
 const queryClient = new QueryClient();
@@ -63,6 +64,7 @@ function App() {
         <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, "")}>
           <LanguageProvider>
             <Router />
+            <CookieConsent />
           </LanguageProvider>
         </WouterRouter>
         <Toaster />
