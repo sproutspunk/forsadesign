@@ -11,6 +11,7 @@ import PrivacyPagePL from "@/pages/PrivacyPagePL";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import CookieConsent from "@/components/CookieConsent";
 import { useEffect } from "react";
+import { applyAnalyticsConsent, CONSENT_UPDATED_EVENT } from "@/lib/consentManager";
 
 const queryClient = new QueryClient();
 
@@ -57,6 +58,18 @@ function Router() {
   );
 }
 
+function AnalyticsGate() {
+  useEffect(() => {
+    applyAnalyticsConsent();
+
+    const handler = () => applyAnalyticsConsent();
+    window.addEventListener(CONSENT_UPDATED_EVENT, handler);
+    return () => window.removeEventListener(CONSENT_UPDATED_EVENT, handler);
+  }, []);
+
+  return null;
+}
+
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
@@ -65,6 +78,7 @@ function App() {
           <LanguageProvider>
             <Router />
             <CookieConsent />
+            <AnalyticsGate />
           </LanguageProvider>
         </WouterRouter>
         <Toaster />

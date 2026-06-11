@@ -2,20 +2,15 @@ import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, ChevronUp, ChevronDown } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import {
+  STORAGE_KEY,
+  CONSENT_UPDATED_EVENT,
+  CONSENT_VERSION,
+  CONSENT_MAX_AGE_MS,
+  type ConsentState,
+} from "@/lib/consentManager";
 
-const STORAGE_KEY = "forsa-cookie-consent";
 const REOPEN_EVENT = "forsa:open-cookie-preferences";
-export const CONSENT_VERSION = 1;
-const CONSENT_MAX_AGE_MS = 365 * 24 * 60 * 60 * 1000;
-
-export interface ConsentState {
-  version: number;
-  savedAt: number;
-  decided: boolean;
-  essential: true;
-  analytics: boolean;
-  marketing: boolean;
-}
 
 export function loadConsent(): ConsentState | null {
   try {
@@ -33,6 +28,7 @@ export function loadConsent(): ConsentState | null {
 function saveConsent(state: Omit<ConsentState, "version" | "savedAt">) {
   const full: ConsentState = { ...state, version: CONSENT_VERSION, savedAt: Date.now() };
   localStorage.setItem(STORAGE_KEY, JSON.stringify(full));
+  window.dispatchEvent(new CustomEvent(CONSENT_UPDATED_EVENT, { detail: full }));
 }
 
 export function openCookiePreferences() {
