@@ -1,5 +1,6 @@
 import { useLanguage } from "@/contexts/LanguageContext";
-import { ArrowLeft } from "lucide-react";
+import { openCookiePreferences } from "@/components/CookieConsent";
+import { ArrowLeft, Settings2 } from "lucide-react";
 
 export default function PrivacyPage() {
   const { t } = useLanguage();
@@ -26,6 +27,13 @@ export default function PrivacyPage() {
           </h1>
           <p className="text-foreground/60 font-light">Forsa Design – Art &amp; Web Design</p>
           <p className="text-foreground/50 font-light text-sm mt-2">Last Updated: June 2026</p>
+          <button
+            onClick={openCookiePreferences}
+            className="mt-4 inline-flex items-center gap-2 text-sm text-primary/80 hover:text-primary transition-colors font-light"
+          >
+            <Settings2 size={15} />
+            {t("cookies.managePreferences")}
+          </button>
         </div>
 
         <div className="space-y-8 text-foreground/80 font-light leading-relaxed">

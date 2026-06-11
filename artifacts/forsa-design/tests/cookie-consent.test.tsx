@@ -1,7 +1,10 @@
 import { describe, it, expect, beforeEach, vi } from "vitest";
 import { render, screen, fireEvent, act } from "@testing-library/react";
 import React from "react";
-import CookieConsent, { openCookiePreferences } from "../src/components/CookieConsent";
+import CookieConsent, {
+  openCookiePreferences,
+  CONSENT_VERSION,
+} from "../src/components/CookieConsent";
 
 vi.mock("framer-motion", async () => {
   const React = await import("react");
@@ -77,7 +80,14 @@ describe("CookieConsent", () => {
   });
 
   it("does NOT appear when a decided consent record exists in localStorage", () => {
-    setConsent({ decided: true, essential: true, analytics: false, marketing: false });
+    setConsent({
+      version: CONSENT_VERSION,
+      savedAt: Date.now(),
+      decided: true,
+      essential: true,
+      analytics: false,
+      marketing: false,
+    });
     render(<CookieConsent />);
     act(() => {
       vi.advanceTimersByTime(700);
@@ -183,7 +193,14 @@ describe("CookieConsent", () => {
   });
 
   it("reopens the banner via the forsa:open-cookie-preferences custom event (footer button)", async () => {
-    setConsent({ decided: true, essential: true, analytics: true, marketing: false });
+    setConsent({
+      version: CONSENT_VERSION,
+      savedAt: Date.now(),
+      decided: true,
+      essential: true,
+      analytics: true,
+      marketing: false,
+    });
     render(<CookieConsent />);
     act(() => {
       vi.advanceTimersByTime(700);

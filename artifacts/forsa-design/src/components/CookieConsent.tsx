@@ -5,26 +5,34 @@ import { useLanguage } from "@/contexts/LanguageContext";
 
 const STORAGE_KEY = "forsa-cookie-consent";
 const REOPEN_EVENT = "forsa:open-cookie-preferences";
+export const CONSENT_VERSION = 1;
+const CONSENT_MAX_AGE_MS = 365 * 24 * 60 * 60 * 1000;
 
-interface ConsentState {
+export interface ConsentState {
+  version: number;
+  savedAt: number;
   decided: boolean;
   essential: true;
   analytics: boolean;
   marketing: boolean;
 }
 
-function loadConsent(): ConsentState | null {
+export function loadConsent(): ConsentState | null {
   try {
     const raw = localStorage.getItem(STORAGE_KEY);
     if (!raw) return null;
-    return JSON.parse(raw) as ConsentState;
+    const parsed = JSON.parse(raw) as ConsentState;
+    if (parsed.version !== CONSENT_VERSION) return null;
+    if (Date.now() - parsed.savedAt > CONSENT_MAX_AGE_MS) return null;
+    return parsed;
   } catch {
     return null;
   }
 }
 
-function saveConsent(state: ConsentState) {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+function saveConsent(state: Omit<ConsentState, "version" | "savedAt">) {
+  const full: ConsentState = { ...state, version: CONSENT_VERSION, savedAt: Date.now() };
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(full));
 }
 
 export function openCookiePreferences() {

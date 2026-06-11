@@ -140,6 +140,7 @@ const translations = {
       marketingDesc:
         "Used to show you relevant advertising on other platforms. Currently no marketing cookies are active.",
       alwaysOn: "Always on",
+      managePreferences: "Manage your cookie preferences",
     },
   },
   pl: {
@@ -290,6 +291,7 @@ const translations = {
       marketingDesc:
         "U\u017cywane do wy\u015bwietlania reklam na innych platformach. Aktualnie \u017cadne pliki cookie marketingowe nie s\u0105 aktywne.",
       alwaysOn: "Zawsze w\u0142\u0105czone",
+      managePreferences: "Zarz\u0105dzaj preferencjami cookie",
     },
   },
 };
