@@ -1,10 +1,8 @@
 import { describe, it, expect, beforeEach, vi } from "vitest";
 import { render, screen, fireEvent, act } from "@testing-library/react";
 import React from "react";
-import CookieConsent, {
-  openCookiePreferences,
-  CONSENT_VERSION,
-} from "../src/components/CookieConsent";
+import CookieConsent, { openCookiePreferences } from "../src/components/CookieConsent";
+import { CONSENT_VERSION, CONSENT_MAX_AGE_MS } from "../src/lib/consentManager";
 
 vi.mock("framer-motion", async () => {
   const React = await import("react");
@@ -190,6 +188,59 @@ describe("CookieConsent", () => {
     expect(consent.decided).toBe(true);
     expect(consent.analytics).toBe(true);
     expect(consent.marketing).toBe(false);
+  });
+
+  it("re-prompts when the stored consent has an outdated version number", () => {
+    setConsent({
+      version: CONSENT_VERSION - 1,
+      savedAt: Date.now(),
+      decided: true,
+      essential: true,
+      analytics: true,
+      marketing: true,
+    });
+    render(<CookieConsent />);
+    act(() => {
+      vi.advanceTimersByTime(700);
+    });
+    expect(screen.getByRole("dialog")).toBeInTheDocument();
+  });
+
+  it("re-prompts when stored consent is older than 365 days", () => {
+    const baseTime = new Date("2025-01-01T00:00:00Z").getTime();
+    vi.setSystemTime(baseTime);
+    setConsent({
+      version: CONSENT_VERSION,
+      savedAt: baseTime,
+      decided: true,
+      essential: true,
+      analytics: false,
+      marketing: false,
+    });
+    vi.setSystemTime(baseTime + CONSENT_MAX_AGE_MS + 1);
+    render(<CookieConsent />);
+    act(() => {
+      vi.advanceTimersByTime(700);
+    });
+    expect(screen.getByRole("dialog")).toBeInTheDocument();
+  });
+
+  it("version mismatch shows the banner even when decided is true (CONSENT_VERSION bump scenario)", () => {
+    // Simulates what happens after a policy change bumps CONSENT_VERSION:
+    // the old record (lower version) must be treated as if no decision was made.
+    setConsent({
+      version: CONSENT_VERSION - 1,
+      savedAt: Date.now(),
+      decided: true,
+      essential: true,
+      analytics: true,
+      marketing: true,
+    });
+    render(<CookieConsent />);
+    act(() => {
+      vi.advanceTimersByTime(700);
+    });
+    expect(screen.getByRole("dialog")).toBeInTheDocument();
   });
 
   it("reopens the banner via the forsa:open-cookie-preferences custom event (footer button)", async () => {
