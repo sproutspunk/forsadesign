@@ -117,6 +117,13 @@ export default function Hero() {
 
           <motion.div variants={itemVariants} className="w-24 h-px bg-primary mb-8 mt-6" />
 
+          <motion.h1
+            variants={itemVariants}
+            className="text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight mb-6 max-w-2xl"
+          >
+            {t("hero.tagline")}
+          </motion.h1>
+
           <motion.p
             variants={itemVariants}
             className="text-lg md:text-xl text-foreground/70 font-light mb-6 max-w-2xl"
