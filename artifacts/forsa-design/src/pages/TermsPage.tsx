@@ -1,8 +1,27 @@
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useSeoMeta, buildHref } from "@/hooks/useSeoMeta";
 import { ArrowLeft } from "lucide-react";
 
 export default function TermsPage() {
   const { t } = useLanguage();
+
+  useSeoMeta({
+    title: "Terms and Conditions | Forsa Design",
+    description:
+      "Read the terms and conditions for Forsa Design web design and development services, including project agreements, payment terms, intellectual property, and liability.",
+    ogTitle: "Terms and Conditions | Forsa Design",
+    ogDescription:
+      "Read the terms and conditions for Forsa Design web design and development services, including project agreements, payment terms, intellectual property, and liability.",
+    twitterTitle: "Terms and Conditions | Forsa Design",
+    twitterDescription:
+      "Read the terms and conditions for Forsa Design web design and development services, including project agreements, payment terms, intellectual property, and liability.",
+    ogLocale: "en_US",
+    canonical: buildHref("/en/terms"),
+    alternates: [
+      { lang: "en", href: buildHref("/en/terms") },
+      { lang: "pl", href: buildHref("/pl/terms") },
+    ],
+  });
 
   return (
     <div className="min-h-[100dvh] bg-background text-foreground">

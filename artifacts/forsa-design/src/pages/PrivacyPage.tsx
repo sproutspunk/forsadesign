@@ -1,9 +1,28 @@
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useSeoMeta, buildHref } from "@/hooks/useSeoMeta";
 import { openCookiePreferences } from "@/components/CookieConsent";
 import { ArrowLeft, Settings2 } from "lucide-react";
 
 export default function PrivacyPage() {
   const { t } = useLanguage();
+
+  useSeoMeta({
+    title: "Privacy Policy | Forsa Design",
+    description:
+      "Read Forsa Design's privacy policy to understand how we collect, use, and protect your personal data in compliance with UK GDPR and applicable data protection law.",
+    ogTitle: "Privacy Policy | Forsa Design",
+    ogDescription:
+      "Read Forsa Design's privacy policy to understand how we collect, use, and protect your personal data in compliance with UK GDPR and applicable data protection law.",
+    twitterTitle: "Privacy Policy | Forsa Design",
+    twitterDescription:
+      "Read Forsa Design's privacy policy to understand how we collect, use, and protect your personal data in compliance with UK GDPR and applicable data protection law.",
+    ogLocale: "en_US",
+    canonical: buildHref("/en/privacy"),
+    alternates: [
+      { lang: "en", href: buildHref("/en/privacy") },
+      { lang: "pl", href: buildHref("/pl/privacy") },
+    ],
+  });
 
   return (
     <div className="min-h-[100dvh] bg-background text-foreground">

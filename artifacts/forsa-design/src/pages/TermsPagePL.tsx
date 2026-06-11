@@ -1,8 +1,27 @@
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useSeoMeta, buildHref } from "@/hooks/useSeoMeta";
 import { ArrowLeft } from "lucide-react";
 
 export default function TermsPagePL() {
   const { t } = useLanguage();
+
+  useSeoMeta({
+    title: "Regulamin i Warunki Świadczenia Usług | Forsa Design",
+    description:
+      "Zapoznaj się z regulaminem i warunkami świadczenia usług Forsa Design, w tym zasadami realizacji projektów, warunkami płatności, własnością intelektualną i odpowiedzialnością.",
+    ogTitle: "Regulamin i Warunki Świadczenia Usług | Forsa Design",
+    ogDescription:
+      "Zapoznaj się z regulaminem i warunkami świadczenia usług Forsa Design, w tym zasadami realizacji projektów, warunkami płatności, własnością intelektualną i odpowiedzialnością.",
+    twitterTitle: "Regulamin i Warunki Świadczenia Usług | Forsa Design",
+    twitterDescription:
+      "Zapoznaj się z regulaminem i warunkami świadczenia usług Forsa Design, w tym zasadami realizacji projektów, warunkami płatności, własnością intelektualną i odpowiedzialnością.",
+    ogLocale: "pl_PL",
+    canonical: buildHref("/pl/terms"),
+    alternates: [
+      { lang: "en", href: buildHref("/en/terms") },
+      { lang: "pl", href: buildHref("/pl/terms") },
+    ],
+  });
 
   return (
     <div className="min-h-[100dvh] bg-background text-foreground">
