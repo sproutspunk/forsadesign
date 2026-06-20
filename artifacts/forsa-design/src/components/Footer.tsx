@@ -1,6 +1,6 @@
 import { useLanguage } from "@/contexts/LanguageContext";
 import { openCookiePreferences } from "@/components/CookieConsent";
-import { Instagram, Mail, Phone } from "lucide-react";
+import { Instagram, Facebook, Mail, Phone } from "lucide-react";
 
 export default function Footer() {
   const { t, language } = useLanguage();
@@ -78,10 +78,20 @@ export default function Footer() {
 
           <div className="flex gap-4 md:justify-end">
             <a
+              href="https://www.facebook.com/forsawebdesign"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-foreground/50 hover:text-primary transition-colors bg-card p-3 rounded-full h-fit"
+              aria-label="Facebook"
+            >
+              <Facebook size={18} />
+            </a>
+            <a
               href="https://www.instagram.com/forsa.design"
               target="_blank"
               rel="noopener noreferrer"
               className="text-foreground/50 hover:text-primary transition-colors bg-card p-3 rounded-full h-fit"
+              aria-label="Instagram"
             >
               <Instagram size={18} />
             </a>
