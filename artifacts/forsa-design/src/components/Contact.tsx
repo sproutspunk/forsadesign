@@ -22,6 +22,9 @@ export default function Contact() {
   const [website, setWebsite] = useState("");
   // Cloudflare Turnstile token; only relevant when a site key is configured.
   const [captchaToken, setCaptchaToken] = useState("");
+  // True when the Turnstile widget fired an error (e.g. domain not in allowlist).
+  // In that case we skip the captcha requirement so the form still works.
+  const [captchaWidgetFailed, setCaptchaWidgetFailed] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [status, setStatus] = useState<Status>("idle");
 
@@ -38,8 +41,10 @@ export default function Contact() {
     if (!formData.projectType) newErrors.projectType = t("contact.errors.selectRequired");
     if (!formData.details.trim()) newErrors.details = t("contact.errors.required");
 
-    // Require a Turnstile token only when a site key is configured.
-    if (TURNSTILE_SITE_KEY && !captchaToken) {
+    // Require a Turnstile token only when a site key is configured AND the widget
+    // loaded successfully. If the widget errored (e.g. 400020 domain not in allowlist)
+    // we degrade gracefully and allow submission without a token.
+    if (TURNSTILE_SITE_KEY && !captchaToken && !captchaWidgetFailed) {
       newErrors.captcha = t("contact.errors.captcha");
     }
 
@@ -218,12 +223,17 @@ export default function Contact() {
                   theme="dark"
                   onVerify={(token) => {
                     setCaptchaToken(token);
+                    setCaptchaWidgetFailed(false);
                     if (errors.captcha) {
                       setErrors((prev) => ({ ...prev, captcha: "" }));
                     }
                   }}
                   onExpire={() => setCaptchaToken("")}
-                  onError={() => setCaptchaToken("")}
+                  onError={() => {
+                    setCaptchaToken("");
+                    setCaptchaWidgetFailed(true);
+                    setErrors((prev) => ({ ...prev, captcha: "" }));
+                  }}
                 />
                 {errors.captcha && (
                   <p className="text-sm text-destructive" data-testid="msg-captcha-error">

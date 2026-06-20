@@ -31,8 +31,13 @@ async function verifyTurnstile(
   }
 
   if (!token || token.trim() === "") {
-    logger.warn({ ip }, "Contact form missing Turnstile token");
-    return false;
+    // Widget may have errored (e.g. domain not in allowlist) so no token was
+    // generated. Treat the same as no secret configured — graceful degradation.
+    logger.warn(
+      { ip },
+      "Contact form missing Turnstile token; allowing through (graceful degradation)",
+    );
+    return true;
   }
 
   try {

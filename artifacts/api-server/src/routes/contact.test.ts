@@ -89,7 +89,7 @@ describe("POST /api/contact bot protection", () => {
     expect(proxyMock).toHaveBeenCalled();
   });
 
-  it("rejects with 400 when the CAPTCHA token is missing", async () => {
+  it("allows submission when the CAPTCHA token is missing (graceful degradation — widget may have errored)", async () => {
     process.env.TURNSTILE_SECRET_KEY = PASS_SECRET;
     const app = await loadApp();
 
@@ -97,9 +97,11 @@ describe("POST /api/contact bot protection", () => {
       .post("/api/contact")
       .send(validBody({ captchaToken: undefined }));
 
-    expect(res.status).toBe(400);
-    expect(res.body.ok).toBe(false);
-    expect(proxyMock).not.toHaveBeenCalled();
+    // Missing token = widget could not load (e.g. domain not in allowlist).
+    // We degrade gracefully and send the email rather than blocking the user.
+    expect(res.status).toBe(200);
+    expect(res.body.ok).toBe(true);
+    expect(proxyMock).toHaveBeenCalled();
   });
 
   it("rejects with 400 when the CAPTCHA token is invalid", async () => {
