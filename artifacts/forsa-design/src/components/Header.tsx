@@ -42,7 +42,11 @@ export default function Header() {
       }`}
     >
       <div className="container mx-auto px-6 flex items-center justify-between">
-        <a href={sectionHref("#home")} data-testid="link-logo" className="flex items-center shrink-0">
+        <a
+          href={sectionHref("#home")}
+          data-testid="link-logo"
+          className="flex items-center shrink-0"
+        >
           <img src={logo} alt="Forsa Design" className="h-11 w-auto object-contain" />
         </a>
 

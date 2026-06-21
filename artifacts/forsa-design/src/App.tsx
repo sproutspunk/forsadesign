@@ -8,12 +8,12 @@ import { lazy, Suspense, useEffect } from "react";
 import { applyAnalyticsConsent, CONSENT_UPDATED_EVENT } from "@/lib/consentManager";
 
 import HomePage from "@/pages/HomePage";
+import BlogPage from "@/pages/BlogPage";
+import ComparisonPage from "@/pages/ComparisonPage";
 import NotFound from "@/pages/not-found";
 
 const AboutPage = lazy(() => import("@/pages/AboutPage"));
-const BlogPage = lazy(() => import("@/pages/BlogPage"));
 const ArticlePage = lazy(() => import("@/pages/ArticlePage"));
-const ComparisonPage = lazy(() => import("@/pages/ComparisonPage"));
 const TermsPage = lazy(() => import("@/pages/TermsPage"));
 const TermsPagePL = lazy(() => import("@/pages/TermsPagePL"));
 const PrivacyPage = lazy(() => import("@/pages/PrivacyPage"));

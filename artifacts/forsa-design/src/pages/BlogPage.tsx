@@ -3,7 +3,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { useSeoMeta, useJsonLd, buildHref } from "@/hooks/useSeoMeta";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { articles } from "@/data/articlesData";
+import { articlesMeta } from "@/data/articlesMeta";
 import { motion } from "framer-motion";
 import { ArrowRight, Clock } from "lucide-react";
 
@@ -79,7 +79,7 @@ export default function BlogPage({ lang }: BlogPageProps) {
           url: "https://forsadesign.co.uk/logo.png",
         },
       },
-      blogPost: articles.map((article) => {
+      blogPost: articlesMeta.map((article) => {
         const a = article[lang];
         const slug = lang === "en" ? article.slugEn : article.slugPl;
         return {
@@ -127,7 +127,7 @@ export default function BlogPage({ lang }: BlogPageProps) {
       <section className="py-20">
         <div className="container mx-auto px-6 max-w-4xl">
           <div className="space-y-6">
-            {articles.map((article, i) => {
+            {articlesMeta.map((article, i) => {
               const a = article[lang];
               const slug = lang === "en" ? article.slugEn : article.slugPl;
               return (
