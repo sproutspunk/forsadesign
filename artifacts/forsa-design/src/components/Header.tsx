@@ -26,6 +26,7 @@ export default function Header() {
     { name: t("nav.about"), href: "#about", page: false },
     { name: t("nav.contact"), href: "#contact", page: false },
     { name: t("nav.blog"), href: `${base}blog`, page: true },
+    { name: t("nav.comparison"), href: `${base}comparison`, page: true },
   ];
 
   return (

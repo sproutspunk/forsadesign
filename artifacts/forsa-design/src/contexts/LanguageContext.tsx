@@ -13,6 +13,7 @@ const translations = {
       about: "About",
       contact: "Contact",
       blog: "Blog",
+      comparison: "Compare",
       aboutPage: "About Us",
     },
     faq: {
@@ -196,6 +197,7 @@ const translations = {
       about: "O Nas",
       contact: "Kontakt",
       blog: "Blog",
+      comparison: "Porównanie",
       aboutPage: "O Nas",
     },
     faq: {

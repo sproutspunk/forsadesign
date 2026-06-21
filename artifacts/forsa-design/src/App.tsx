@@ -11,6 +11,7 @@ import TermsPage from "@/pages/TermsPage";
 import TermsPagePL from "@/pages/TermsPagePL";
 import PrivacyPage from "@/pages/PrivacyPage";
 import PrivacyPagePL from "@/pages/PrivacyPagePL";
+import ComparisonPage from "@/pages/ComparisonPage";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import CookieConsent from "@/components/CookieConsent";
 import { useEffect } from "react";
@@ -98,6 +99,8 @@ function Router() {
         />
         <Route path="/en/blog" component={() => <BlogPage lang="en" />} />
         <Route path="/pl/blog" component={() => <BlogPage lang="pl" />} />
+        <Route path="/en/comparison" component={() => <ComparisonPage lang="en" />} />
+        <Route path="/pl/comparison" component={() => <ComparisonPage lang="pl" />} />
         <Route path="/en/terms" component={TermsPage} />
         <Route path="/pl/terms" component={TermsPagePL} />
         <Route path="/terms" component={() => <RedirectTo to="/en/terms" />} />
