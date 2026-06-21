@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronDown, Search, Link } from "lucide-react";
+import { ChevronDown, Search, Link, ArrowRight } from "lucide-react";
 
 interface FaqItem {
   q: string;
@@ -141,6 +141,22 @@ export default function FAQ() {
             })}
           </div>
         )}
+
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+          className="mt-12 text-center"
+        >
+          <a
+            href={t("faq.comparisonHref") as string}
+            className="inline-flex items-center gap-2 text-primary font-medium hover:text-primary/80 transition-colors group"
+          >
+            {t("faq.comparisonCta") as string}
+            <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+          </a>
+        </motion.div>
       </div>
     </section>
   );
