@@ -25,6 +25,15 @@ export default function HomePage({ lang }: HomePageProps) {
     }
   }, [lang, language, setLanguage]);
 
+  useEffect(() => {
+    const hash = window.location.hash;
+    if (!hash) return;
+    const el = document.querySelector(hash);
+    if (el) {
+      setTimeout(() => el.scrollIntoView({ behavior: "smooth", block: "start" }), 120);
+    }
+  }, []);
+
   const isEn = lang === "en";
   useSeoMeta({
     title: isEn
