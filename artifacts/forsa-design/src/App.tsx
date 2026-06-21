@@ -21,6 +21,25 @@ const PrivacyPagePL = lazy(() => import("@/pages/PrivacyPagePL"));
 
 const queryClient = new QueryClient();
 
+function PrefetchHints() {
+  useEffect(() => {
+    const prefetch = () => {
+      import("@/pages/BlogPage").catch(() => {});
+      import("@/pages/ComparisonPage").catch(() => {});
+      import("@/pages/AboutPage").catch(() => {});
+      import("@/pages/ArticlePage").catch(() => {});
+    };
+    if (typeof requestIdleCallback !== "undefined") {
+      const id = requestIdleCallback(prefetch, { timeout: 3000 });
+      return () => cancelIdleCallback(id);
+    } else {
+      const id = setTimeout(prefetch, 2000);
+      return () => clearTimeout(id);
+    }
+  }, []);
+  return null;
+}
+
 function PageLoader() {
   return (
     <div className="min-h-[100dvh] bg-background flex items-center justify-center">
@@ -147,6 +166,7 @@ function App() {
         <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, "")}>
           <LanguageProvider>
             <Router />
+            <PrefetchHints />
             <CookieConsent />
             <AnalyticsGate />
           </LanguageProvider>
