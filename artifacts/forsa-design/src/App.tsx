@@ -2,22 +2,32 @@ import { Switch, Route, Router as WouterRouter, useLocation } from "wouter";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import NotFound from "@/pages/not-found";
-import HomePage from "@/pages/HomePage";
-import AboutPage from "@/pages/AboutPage";
-import BlogPage from "@/pages/BlogPage";
-import ArticlePage from "@/pages/ArticlePage";
-import TermsPage from "@/pages/TermsPage";
-import TermsPagePL from "@/pages/TermsPagePL";
-import PrivacyPage from "@/pages/PrivacyPage";
-import PrivacyPagePL from "@/pages/PrivacyPagePL";
-import ComparisonPage from "@/pages/ComparisonPage";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import CookieConsent from "@/components/CookieConsent";
-import { useEffect } from "react";
+import { lazy, Suspense, useEffect } from "react";
 import { applyAnalyticsConsent, CONSENT_UPDATED_EVENT } from "@/lib/consentManager";
 
+import HomePage from "@/pages/HomePage";
+import NotFound from "@/pages/not-found";
+
+const AboutPage = lazy(() => import("@/pages/AboutPage"));
+const BlogPage = lazy(() => import("@/pages/BlogPage"));
+const ArticlePage = lazy(() => import("@/pages/ArticlePage"));
+const ComparisonPage = lazy(() => import("@/pages/ComparisonPage"));
+const TermsPage = lazy(() => import("@/pages/TermsPage"));
+const TermsPagePL = lazy(() => import("@/pages/TermsPagePL"));
+const PrivacyPage = lazy(() => import("@/pages/PrivacyPage"));
+const PrivacyPagePL = lazy(() => import("@/pages/PrivacyPagePL"));
+
 const queryClient = new QueryClient();
+
+function PageLoader() {
+  return (
+    <div className="min-h-[100dvh] bg-background flex items-center justify-center">
+      <div className="w-8 h-8 border-2 border-primary border-t-transparent rounded-full animate-spin" />
+    </div>
+  );
+}
 
 function Redirector() {
   const [location, setLocation] = useLocation();
@@ -82,36 +92,38 @@ function Router() {
   return (
     <>
       <Redirector />
-      <Switch>
-        <Route path="/en/about" component={() => <AboutPage lang="en" />} />
-        <Route path="/pl/about" component={() => <AboutPage lang="pl" />} />
-        <Route
-          path="/en/blog/:slug"
-          component={({ params }: { params: { slug: string } }) => (
-            <ArticlePage lang="en" slug={params.slug} />
-          )}
-        />
-        <Route
-          path="/pl/blog/:slug"
-          component={({ params }: { params: { slug: string } }) => (
-            <ArticlePage lang="pl" slug={params.slug} />
-          )}
-        />
-        <Route path="/en/blog" component={() => <BlogPage lang="en" />} />
-        <Route path="/pl/blog" component={() => <BlogPage lang="pl" />} />
-        <Route path="/en/comparison" component={() => <ComparisonPage lang="en" />} />
-        <Route path="/pl/comparison" component={() => <ComparisonPage lang="pl" />} />
-        <Route path="/en/terms" component={TermsPage} />
-        <Route path="/pl/terms" component={TermsPagePL} />
-        <Route path="/terms" component={() => <RedirectTo to="/en/terms" />} />
-        <Route path="/en/privacy" component={PrivacyPage} />
-        <Route path="/pl/privacy" component={PrivacyPagePL} />
-        <Route path="/privacy" component={() => <RedirectTo to="/en/privacy" />} />
-        <Route path="/en/" component={() => <HomePage lang="en" />} />
-        <Route path="/pl/" component={() => <HomePage lang="pl" />} />
-        <Route path="/" component={RootLandingPage} />
-        <Route component={NotFound} />
-      </Switch>
+      <Suspense fallback={<PageLoader />}>
+        <Switch>
+          <Route path="/en/about" component={() => <AboutPage lang="en" />} />
+          <Route path="/pl/about" component={() => <AboutPage lang="pl" />} />
+          <Route
+            path="/en/blog/:slug"
+            component={({ params }: { params: { slug: string } }) => (
+              <ArticlePage lang="en" slug={params.slug} />
+            )}
+          />
+          <Route
+            path="/pl/blog/:slug"
+            component={({ params }: { params: { slug: string } }) => (
+              <ArticlePage lang="pl" slug={params.slug} />
+            )}
+          />
+          <Route path="/en/blog" component={() => <BlogPage lang="en" />} />
+          <Route path="/pl/blog" component={() => <BlogPage lang="pl" />} />
+          <Route path="/en/comparison" component={() => <ComparisonPage lang="en" />} />
+          <Route path="/pl/comparison" component={() => <ComparisonPage lang="pl" />} />
+          <Route path="/en/terms" component={TermsPage} />
+          <Route path="/pl/terms" component={TermsPagePL} />
+          <Route path="/terms" component={() => <RedirectTo to="/en/terms" />} />
+          <Route path="/en/privacy" component={PrivacyPage} />
+          <Route path="/pl/privacy" component={PrivacyPagePL} />
+          <Route path="/privacy" component={() => <RedirectTo to="/en/privacy" />} />
+          <Route path="/en/" component={() => <HomePage lang="en" />} />
+          <Route path="/pl/" component={() => <HomePage lang="pl" />} />
+          <Route path="/" component={RootLandingPage} />
+          <Route component={NotFound} />
+        </Switch>
+      </Suspense>
     </>
   );
 }
