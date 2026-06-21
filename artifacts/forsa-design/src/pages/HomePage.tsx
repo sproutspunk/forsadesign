@@ -31,20 +31,20 @@ export default function HomePage({ lang }: HomePageProps) {
       ? "Forsa Design | Comprehensive Website Design & Creation"
       : "Forsa Design | Kompleksowy Web Design i Tworzenie Stron",
     description: isEn
-      ? "Forsa Design is a boutique web agency in Banff, Scotland. We build responsive websites, e-commerce platforms, and custom web applications — from concept to launch and beyond."
-      : "Forsa Design to agencja internetowa z Banff w Szkocji. Tworzymy responsywne strony, sklepy e-commerce i dedykowane aplikacje webowe — od koncepcji do uruchomienia.",
+      ? "Boutique web design agency in Banff, Scotland. Responsive websites, e-commerce stores & custom web apps — from concept to launch."
+      : "Agencja web design z Banff w Szkocji. Responsywne strony, sklepy e-commerce i dedykowane aplikacje webowe — od koncepcji do startu.",
     ogTitle: isEn
       ? "Forsa Design | Web Design & Creation"
       : "Forsa Design | Web Design i Tworzenie Stron",
     ogDescription: isEn
-      ? "Forsa Design is a boutique web agency in Banff, Scotland. We build responsive websites, e-commerce platforms, and custom web applications — from concept to launch and beyond."
-      : "Forsa Design to agencja internetowa z Banff w Szkocji. Tworzymy responsywne strony, sklepy e-commerce i dedykowane aplikacje webowe — od koncepcji do uruchomienia.",
+      ? "Boutique web design agency in Banff, Scotland. Responsive websites, e-commerce stores & custom web apps — from concept to launch."
+      : "Agencja web design z Banff w Szkocji. Responsywne strony, sklepy e-commerce i dedykowane aplikacje webowe — od koncepcji do startu.",
     twitterTitle: isEn
       ? "Forsa Design | Web Design & Creation"
       : "Forsa Design | Web Design i Tworzenie Stron",
     twitterDescription: isEn
-      ? "Forsa Design is a boutique web agency in Banff, Scotland. We build responsive websites, e-commerce platforms, and custom web applications — from concept to launch and beyond."
-      : "Forsa Design to agencja internetowa z Banff w Szkocji. Tworzymy responsywne strony, sklepy e-commerce i dedykowane aplikacje webowe — od koncepcji do uruchomienia.",
+      ? "Boutique web design agency in Banff, Scotland. Responsive websites, e-commerce stores & custom web apps — from concept to launch."
+      : "Agencja web design z Banff w Szkocji. Responsywne strony, sklepy e-commerce i dedykowane aplikacje webowe — od koncepcji do startu.",
     ogLocale: isEn ? "en_US" : "pl_PL",
     canonical: buildHref(isEn ? "/en/" : "/pl/"),
     alternates: [
