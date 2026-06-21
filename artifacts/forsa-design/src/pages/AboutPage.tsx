@@ -131,6 +131,8 @@ const content = {
       ["Brand consistency", "Low", "Medium", "Varies", "High (guidelines integrated)"],
     ],
     forsa: "Forsa Design",
+    comparisonCta: "See full comparison",
+    comparisonHref: "/en/comparison",
     contactCta: "Start a Project",
     contactHref: "#contact",
   },
@@ -266,6 +268,8 @@ const content = {
       ["Spójność marki", "Mała", "Średnia", "Zależy", "Wysoka (brand guidelines integrated)"],
     ],
     forsa: "Forsa Design",
+    comparisonCta: "Zobacz pełne porównanie",
+    comparisonHref: "/pl/comparison",
     contactCta: "Rozpocznij Projekt",
     contactHref: "#contact",
   },
@@ -516,6 +520,14 @@ export default function AboutPage({ lang }: AboutPageProps) {
                 ))}
               </tbody>
             </table>
+          </div>
+          <div className="mt-8 text-right">
+            <a
+              href={c.comparisonHref}
+              className="inline-flex items-center gap-2 text-primary font-medium hover:underline"
+            >
+              {c.comparisonCta} →
+            </a>
           </div>
         </div>
       </section>
