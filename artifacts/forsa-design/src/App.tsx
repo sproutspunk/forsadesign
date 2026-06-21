@@ -4,6 +4,9 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/not-found";
 import HomePage from "@/pages/HomePage";
+import AboutPage from "@/pages/AboutPage";
+import BlogPage from "@/pages/BlogPage";
+import ArticlePage from "@/pages/ArticlePage";
 import TermsPage from "@/pages/TermsPage";
 import TermsPagePL from "@/pages/TermsPagePL";
 import PrivacyPage from "@/pages/PrivacyPage";
@@ -79,14 +82,30 @@ function Router() {
     <>
       <Redirector />
       <Switch>
-        <Route path="/en/" component={() => <HomePage lang="en" />} />
-        <Route path="/pl/" component={() => <HomePage lang="pl" />} />
+        <Route path="/en/about" component={() => <AboutPage lang="en" />} />
+        <Route path="/pl/about" component={() => <AboutPage lang="pl" />} />
+        <Route
+          path="/en/blog/:slug"
+          component={({ params }: { params: { slug: string } }) => (
+            <ArticlePage lang="en" slug={params.slug} />
+          )}
+        />
+        <Route
+          path="/pl/blog/:slug"
+          component={({ params }: { params: { slug: string } }) => (
+            <ArticlePage lang="pl" slug={params.slug} />
+          )}
+        />
+        <Route path="/en/blog" component={() => <BlogPage lang="en" />} />
+        <Route path="/pl/blog" component={() => <BlogPage lang="pl" />} />
         <Route path="/en/terms" component={TermsPage} />
         <Route path="/pl/terms" component={TermsPagePL} />
         <Route path="/terms" component={() => <RedirectTo to="/en/terms" />} />
         <Route path="/en/privacy" component={PrivacyPage} />
         <Route path="/pl/privacy" component={PrivacyPagePL} />
         <Route path="/privacy" component={() => <RedirectTo to="/en/privacy" />} />
+        <Route path="/en/" component={() => <HomePage lang="en" />} />
+        <Route path="/pl/" component={() => <HomePage lang="pl" />} />
         <Route path="/" component={RootLandingPage} />
         <Route component={NotFound} />
       </Switch>

@@ -12,6 +12,50 @@ const translations = {
       process: "Process",
       about: "About",
       contact: "Contact",
+      blog: "Blog",
+      aboutPage: "About Us",
+    },
+    faq: {
+      heading: "FAQ",
+      subheading: "Answers to the most common questions about working with us.",
+      items: [
+        {
+          q: "How long does it take to build a website?",
+          a: "The timeline depends on the scope and complexity of the project. A typical brochure site takes 4–6 weeks. More advanced projects — such as content management systems or custom integrations — can take 8–12 weeks. In the initial stage, we conduct a detailed needs analysis so we can give you an accurate timeline estimate.",
+        },
+        {
+          q: "What is the difference between responsive and mobile design?",
+          a: "Responsive design automatically adapts to every screen size — phone, tablet, or desktop — using a single codebase. 'Mobile' design is older thinking, based on creating separate versions for mobile and desktop. Today, responsiveness is the standard. Your site must be excellent on every device — it directly impacts SEO, conversions, and user experience.",
+        },
+        {
+          q: "Will my site be compatible with mobile devices?",
+          a: "Yes. Every project we build is created mobile-first and then scaled up for larger screens. This approach ensures your site works perfectly regardless of what device your visitor is using. We test on multiple devices to make sure loading speed, navigation, and readability are all optimal.",
+        },
+        {
+          q: "What is a CMS and do I need one?",
+          a: "A Content Management System (CMS) is a platform that lets you edit your site's content without any technical knowledge. If you'll be regularly updating content, a blog, or products — a CMS is essential. You don't need to ask a developer for every change. You can do it yourself, simply.",
+        },
+        {
+          q: "How does a website affect SEO and Google visibility?",
+          a: "A website is the foundation of SEO. Correct architecture, loading speed, structured data, responsiveness, and keyword-optimised content all influence rankings. We don't just build beautiful sites — we build sites that Google understands and that convert users.",
+        },
+        {
+          q: "Do you handle security (HTTPS, data protection)?",
+          a: "Yes, it's a priority. Every site we build has an SSL certificate (HTTPS). We protect user data, ensure GDPR compliance, and if the site processes payments, we implement encryption and PCI DSS standards. Security isn't an add-on — it's part of every project.",
+        },
+        {
+          q: "How will my site stand out from the competition?",
+          a: "We don't build template sites. Every project starts with an analysis of your industry, your competitors, and your business goals. The result is unique to your company — not generic. We design sites that stand out, build trust, and convert.",
+        },
+        {
+          q: "Can I switch providers if my needs change?",
+          a: "Yes. We work with open standards. Your site isn't locked in with us. You can move to another provider at any time. However, after working together, you'll usually prefer to stay — because we understand your business and support you long-term.",
+        },
+        {
+          q: "How much does maintenance and support cost?",
+          a: "It depends on the complexity of the site and the level of support required. We offer packages from basic monitoring to full management, tailored individually. Many businesses opt for a monthly fee covering hosting, backups, security updates, and technical support — this is standard practice.",
+        },
+      ],
     },
     hero: {
       tagline: "Comprehensive Website Design & Creation",
@@ -145,12 +189,56 @@ const translations = {
   },
   pl: {
     nav: {
-      home: "Strona G\u0142\u00f3wna",
-      services: "Us\u0142ugi",
+      home: "Strona Główna",
+      services: "Usługi",
       portfolio: "Portfolio",
       process: "Proces",
       about: "O Nas",
       contact: "Kontakt",
+      blog: "Blog",
+      aboutPage: "O Nas",
+    },
+    faq: {
+      heading: "FAQ",
+      subheading: "Odpowiedzi na najczęstsze pytania dotyczące współpracy z nami.",
+      items: [
+        {
+          q: "Ile czasu zajmuje stworzenie strony internetowej?",
+          a: "Czas zależy od zakresu i złożoności projektu. Typowa strona wizytówki wymaga 4–6 tygodni. Bardziej zaawansowane projekty, takie jak systemy zarządzania treścią czy integracje, mogą trwać 8–12 tygodni. Na początku przeprowadzamy szczegółową analizę potrzeb, która pozwala nam dać Ci dokładne oszacowanie harmonogramu.",
+        },
+        {
+          q: "Jaka jest różnica między projektowaniem responsywnym a mobilnym?",
+          a: "Projektowanie responsywne dostosowuje się automatycznie do każdego rozmiaru ekranu — telefonu, tabletu czy komputera — przy użyciu jednego kodu. Podejście 'mobilne' to starsze myślenie o tworzeniu osobnych wersji dla mobilnych i desktopowych. Dzisiaj responsywność jest standardem. Twoja strona musi być doskonała na każdym urządzeniu — to wpływa na SEO, konwersję i doświadczenie użytkownika.",
+        },
+        {
+          q: "Czy moja strona będzie kompatybilna z urządzeniami mobilnymi?",
+          a: "Tak. Każdy projekt, który tworzymy, jest tworzony najpierw dla urządzeń mobilnych, a następnie rozwijany dla większych ekranów. To podejście zapewnia, że Twoja strona działa idealnie niezależnie od tego, jakie urządzenie używa odwiedzający. Testujemy na wielu urządzeniach, aby upewnić się, że szybkość ładowania, nawigacja i czytanie tekstu są optymalne.",
+        },
+        {
+          q: "Co to jest CMS i czy go potrzebuję?",
+          a: "System zarządzania treścią (CMS) to platforma, która pozwala Ci edytować zawartość strony bez wiedzy technicznej. Jeśli będziesz regularnie aktualizować treści, bloga lub produkty — CMS jest niezbędny. Nie musisz prosić programisty o każdą zmianę. Możesz to robić sam, w prosty sposób.",
+        },
+        {
+          q: "Jak strona wpływa na SEO i widoczność w Google?",
+          a: "Strona internetowa jest podstawą SEO. Poprawnie budowana architektura, szybkość ładowania, strukturalne dane, responsywność i zawartość optymalizowana dla słów kluczowych — wszystko to wpływa na ranking. Nie tworzymy tylko ładnych stron; tworzymy strony, które Google rozumie i które konwertują użytkowników.",
+        },
+        {
+          q: "Czy gwarantujecie bezpieczeństwo (HTTPS, ochrona danych)?",
+          a: "Tak, to priorytet. Każda strona, którą tworzymy, ma certyfikat SSL (HTTPS). Chronimy dane użytkowników, dbamy o zgodność z RODO, a jeśli strona przetwarza płatności — implementujemy szyfrowanie i standardy PCI DSS. Bezpieczeństwo nie jest dodatkiem — to część każdego projektu.",
+        },
+        {
+          q: "Jak będzie wyglądać moja strona na tle konkurencji?",
+          a: "Nie tworzymy szablonowych stron. Każdy projekt zaczyna się od analizy Twojej branży, konkurencji i Twoich celów biznesowych. Rezultat jest unikatowy dla Twojej firmy — nie generyczny. Projektujemy strony, które wyróżniają się, budują zaufanie i konwertują.",
+        },
+        {
+          q: "Czy mogę zmienić dostawcę, jeśli zmienią się moje potrzeby?",
+          a: "Tak. Pracujemy na otwartych standardach. Twoja strona nie jest zablokowana u nas. Możesz przenieść się do innego dostawcy w każdej chwili. Jednak po pracy razem zwykle wolisz zostać — bo rozumiemy Twój biznes i wspieramy Cię długoterminowo.",
+        },
+        {
+          q: "Ile kosztuje utrzymanie i wsparcie?",
+          a: "To zależy od złożoności strony i poziomu wsparcia. Oferujemy pakiety od podstawowego monitorowania po pełne zarządzanie — ustalamy to indywidualnie. Wiele firm opłaca miesięczny abonament obejmujący hosting, kopie zapasowe, aktualizacje bezpieczeństwa i wsparcie techniczne — to powszechna praktyka.",
+        },
+      ],
     },
     hero: {
       tagline: "Kompleksowy Web Design i Tworzenie Stron",
@@ -299,6 +387,7 @@ const translations = {
 interface LanguageContextType {
   language: Language;
   setLanguage: (lang: Language) => void;
+  syncLanguage: (lang: Language) => void;
   t: (key: string) => string;
 }
 
@@ -311,9 +400,13 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     return saved === "en" || saved === "pl" ? saved : "en";
   });
 
-  const setLanguage = (lang: Language) => {
+  const syncLanguage = (lang: Language) => {
     setLanguageState(lang);
     localStorage.setItem("forsa-lang", lang);
+  };
+
+  const setLanguage = (lang: Language) => {
+    syncLanguage(lang);
     setLocation(`/${lang}/`);
   };
 
@@ -331,7 +424,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   };
 
   return (
-    <LanguageContext.Provider value={{ language, setLanguage, t }}>
+    <LanguageContext.Provider value={{ language, setLanguage, syncLanguage, t }}>
       {children}
     </LanguageContext.Provider>
   );

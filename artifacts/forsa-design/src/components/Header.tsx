@@ -17,13 +17,15 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const base = `/${language}/`;
   const navLinks = [
-    { name: t("nav.home"), href: "#home" },
-    { name: t("nav.services"), href: "#services" },
-    { name: t("nav.portfolio"), href: "#portfolio" },
-    { name: t("nav.process"), href: "#process" },
-    { name: t("nav.about"), href: "#about" },
-    { name: t("nav.contact"), href: "#contact" },
+    { name: t("nav.home"), href: "#home", page: false },
+    { name: t("nav.services"), href: "#services", page: false },
+    { name: t("nav.portfolio"), href: "#portfolio", page: false },
+    { name: t("nav.process"), href: "#process", page: false },
+    { name: t("nav.about"), href: "#about", page: false },
+    { name: t("nav.contact"), href: "#contact", page: false },
+    { name: t("nav.blog"), href: `${base}blog`, page: true },
   ];
 
   return (
@@ -50,6 +52,14 @@ export default function Header() {
             </a>
           ))}
         </nav>
+        {/* About Us page link (desktop) */}
+        <a
+          href={`/${language}/about`}
+          className="hidden md:inline-flex items-center border border-primary/40 text-primary text-xs font-semibold px-4 py-1.5 rounded-sm hover:bg-primary/10 transition-colors"
+          data-testid="link-about-page"
+        >
+          {t("nav.aboutPage")}
+        </a>
 
         {/* Language Switcher */}
         <div className="hidden md:flex items-center gap-2 text-sm font-semibold">
