@@ -31,20 +31,20 @@ export default function HomePage({ lang }: HomePageProps) {
       ? "Forsa Design | Comprehensive Website Design & Creation"
       : "Forsa Design | Kompleksowy Web Design i Tworzenie Stron",
     description: isEn
-      ? "Boutique web design agency in Banff, Scotland. Responsive websites, e-commerce stores & custom web apps — from concept to launch."
-      : "Agencja web design z Banff w Szkocji. Responsywne strony, sklepy e-commerce i dedykowane aplikacje webowe — od koncepcji do startu.",
+      ? "Comprehensive Website Design & Creation by Forsa Design. Boutique web agency in Banff, Scotland — responsive websites, e-commerce & custom web apps."
+      : "Kompleksowy Web Design i Tworzenie Stron. Agencja web design z Banff w Szkocji — responsywne strony, sklepy e-commerce i dedykowane aplikacje webowe.",
     ogTitle: isEn
       ? "Forsa Design | Web Design & Creation"
       : "Forsa Design | Web Design i Tworzenie Stron",
     ogDescription: isEn
-      ? "Boutique web design agency in Banff, Scotland. Responsive websites, e-commerce stores & custom web apps — from concept to launch."
-      : "Agencja web design z Banff w Szkocji. Responsywne strony, sklepy e-commerce i dedykowane aplikacje webowe — od koncepcji do startu.",
+      ? "Comprehensive Website Design & Creation by Forsa Design. Boutique web agency in Banff, Scotland — responsive websites, e-commerce & custom web apps."
+      : "Kompleksowy Web Design i Tworzenie Stron. Agencja web design z Banff w Szkocji — responsywne strony, sklepy e-commerce i dedykowane aplikacje webowe.",
     twitterTitle: isEn
       ? "Forsa Design | Web Design & Creation"
       : "Forsa Design | Web Design i Tworzenie Stron",
     twitterDescription: isEn
-      ? "Boutique web design agency in Banff, Scotland. Responsive websites, e-commerce stores & custom web apps — from concept to launch."
-      : "Agencja web design z Banff w Szkocji. Responsywne strony, sklepy e-commerce i dedykowane aplikacje webowe — od koncepcji do startu.",
+      ? "Comprehensive Website Design & Creation by Forsa Design. Boutique web agency in Banff, Scotland — responsive websites, e-commerce & custom web apps."
+      : "Kompleksowy Web Design i Tworzenie Stron. Agencja web design z Banff w Szkocji — responsywne strony, sklepy e-commerce i dedykowane aplikacje webowe.",
     ogLocale: isEn ? "en_US" : "pl_PL",
     canonical: buildHref(isEn ? "/en/" : "/pl/"),
     alternates: [
