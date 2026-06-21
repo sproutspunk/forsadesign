@@ -1,11 +1,13 @@
 import { useState, useEffect } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useLocation } from "wouter";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import logo from "../assets/forsa-logo.png";
 
 export default function Header() {
   const { language, setLanguage, t } = useLanguage();
+  const [location] = useLocation();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -18,15 +20,19 @@ export default function Header() {
   }, []);
 
   const base = `/${language}/`;
+  const isHomePage = location === `/${language}/` || location === `/${language}`;
+
+  const sectionHref = (hash: string) => (isHomePage ? hash : `${base}${hash}`);
+
   const navLinks = [
-    { name: t("nav.home"), href: "#home", page: false },
-    { name: t("nav.services"), href: "#services", page: false },
-    { name: t("nav.portfolio"), href: "#portfolio", page: false },
-    { name: t("nav.process"), href: "#process", page: false },
-    { name: t("nav.about"), href: "#about", page: false },
-    { name: t("nav.contact"), href: "#contact", page: false },
-    { name: t("nav.blog"), href: `${base}blog`, page: true },
-    { name: t("nav.comparison"), href: `${base}comparison`, page: true },
+    { name: t("nav.home"), href: sectionHref("#home") },
+    { name: t("nav.services"), href: sectionHref("#services") },
+    { name: t("nav.portfolio"), href: sectionHref("#portfolio") },
+    { name: t("nav.process"), href: sectionHref("#process") },
+    { name: t("nav.about"), href: sectionHref("#about") },
+    { name: t("nav.contact"), href: sectionHref("#contact") },
+    { name: t("nav.blog"), href: `${base}blog` },
+    { name: t("nav.comparison"), href: `${base}comparison` },
   ];
 
   return (
@@ -36,7 +42,7 @@ export default function Header() {
       }`}
     >
       <div className="container mx-auto px-6 flex items-center justify-between">
-        <a href="#home" data-testid="link-logo" className="flex items-center shrink-0">
+        <a href={sectionHref("#home")} data-testid="link-logo" className="flex items-center shrink-0">
           <img src={logo} alt="Forsa Design" className="h-11 w-auto object-contain" />
         </a>
 
