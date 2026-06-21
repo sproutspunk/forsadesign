@@ -421,7 +421,7 @@ export default function ComparisonPage({ lang }: ComparisonPageProps) {
             </h2>
             <p className="text-foreground/60 font-light mb-10 leading-relaxed">{c.ctaSub}</p>
             <a
-              href={homeHref + "?scroll=contact"}
+              href={homeHref + "#contact"}
               className="inline-flex items-center gap-2 bg-primary text-background font-semibold px-8 py-4 rounded-sm hover:bg-primary/90 transition-colors"
             >
               {c.ctaButton}

@@ -536,7 +536,7 @@ export default function AboutPage({ lang }: AboutPageProps) {
       <section className="py-20 bg-background border-t border-border/10">
         <div className="container mx-auto px-6 text-center">
           <a
-            href={homeHref + "?scroll=contact"}
+            href={homeHref + "#contact"}
             className="inline-flex items-center gap-2 bg-primary text-background font-semibold px-8 py-4 rounded-sm hover:bg-primary/90 transition-colors"
           >
             {c.contactCta}

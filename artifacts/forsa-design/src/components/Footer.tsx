@@ -1,9 +1,15 @@
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useLocation } from "wouter";
 import { openCookiePreferences } from "@/components/CookieConsent";
 import { Instagram, Facebook, Mail, Phone } from "lucide-react";
 
 export default function Footer() {
   const { t, language } = useLanguage();
+  const [location] = useLocation();
+
+  const base = `/${language}/`;
+  const isHomePage = location === `/${language}/` || location === `/${language}`;
+  const sectionHref = (hash: string) => (isHomePage ? hash : `${base}${hash}`);
 
   return (
     <footer className="bg-background py-12 border-t border-border/10">
@@ -39,37 +45,37 @@ export default function Footer() {
 
           <div className="flex flex-col gap-3">
             <a
-              href="#home"
+              href={sectionHref("#home")}
               className="text-sm font-medium text-foreground/70 hover:text-primary transition-colors w-fit"
             >
               {t("nav.home")}
             </a>
             <a
-              href="#services"
+              href={sectionHref("#services")}
               className="text-sm font-medium text-foreground/70 hover:text-primary transition-colors w-fit"
             >
               {t("nav.services")}
             </a>
             <a
-              href="#portfolio"
+              href={sectionHref("#portfolio")}
               className="text-sm font-medium text-foreground/70 hover:text-primary transition-colors w-fit"
             >
               {t("nav.portfolio")}
             </a>
             <a
-              href="#process"
+              href={sectionHref("#process")}
               className="text-sm font-medium text-foreground/70 hover:text-primary transition-colors w-fit"
             >
               {t("nav.process")}
             </a>
             <a
-              href="#about"
+              href={sectionHref("#about")}
               className="text-sm font-medium text-foreground/70 hover:text-primary transition-colors w-fit"
             >
               {t("nav.about")}
             </a>
             <a
-              href="#contact"
+              href={sectionHref("#contact")}
               className="text-sm font-medium text-foreground/70 hover:text-primary transition-colors w-fit"
             >
               {t("nav.contact")}
