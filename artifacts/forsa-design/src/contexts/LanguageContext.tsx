@@ -19,6 +19,8 @@ const translations = {
     faq: {
       heading: "FAQ",
       subheading: "Answers to the most common questions about working with us.",
+      searchPlaceholder: "Search questions…",
+      noResults: "No questions match your search.",
       items: [
         {
           q: "How long does it take to build a website?",
@@ -203,6 +205,8 @@ const translations = {
     faq: {
       heading: "FAQ",
       subheading: "Odpowiedzi na najczęstsze pytania dotyczące współpracy z nami.",
+      searchPlaceholder: "Szukaj pytań…",
+      noResults: "Brak pytań pasujących do wyszukiwania.",
       items: [
         {
           q: "Ile czasu zajmuje stworzenie strony internetowej?",
