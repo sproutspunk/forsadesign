@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { useSeoMeta, buildHref } from "@/hooks/useSeoMeta";
+import { useSeoMeta, useJsonLd, buildHref } from "@/hooks/useSeoMeta";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { articles } from "@/data/articlesData";
@@ -61,6 +61,46 @@ export default function BlogPage({ lang }: BlogPageProps) {
       { lang: "pl", href: buildHref("/pl/blog") },
     ],
   });
+
+  useJsonLd(
+    {
+      "@context": "https://schema.org",
+      "@type": "Blog",
+      name: "Forsa Design Blog",
+      description: m.desc,
+      url: buildHref(`/${lang}/blog`),
+      inLanguage: lang === "en" ? "en-GB" : "pl-PL",
+      publisher: {
+        "@type": "Organization",
+        name: "Forsa Design",
+        url: "https://forsadesign.co.uk",
+        logo: {
+          "@type": "ImageObject",
+          url: "https://forsadesign.co.uk/logo.png",
+        },
+      },
+      blogPost: articles.map((article) => {
+        const a = article[lang];
+        const slug = lang === "en" ? article.slugEn : article.slugPl;
+        return {
+          "@type": "BlogPosting",
+          headline: a.title,
+          description: a.excerpt,
+          datePublished: article.dateIso,
+          url: buildHref(`/${lang}/blog/${slug}`),
+          author: {
+            "@type": "Person",
+            name: "Miro",
+            worksFor: {
+              "@type": "Organization",
+              name: "Forsa Design",
+            },
+          },
+        };
+      }),
+    },
+    "blog-page",
+  );
 
   return (
     <div className="min-h-[100dvh] bg-background text-foreground">

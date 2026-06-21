@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { useSeoMeta, buildHref } from "@/hooks/useSeoMeta";
+import { useSeoMeta, useJsonLd, buildHref } from "@/hooks/useSeoMeta";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
@@ -294,6 +294,67 @@ export default function AboutPage({ lang }: AboutPageProps) {
       { lang: "pl", href: buildHref("/pl/about") },
     ],
   });
+
+  useJsonLd(
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://forsadesign.co.uk/#organization",
+          name: "Forsa Design",
+          url: "https://forsadesign.co.uk",
+          logo: {
+            "@type": "ImageObject",
+            url: "https://forsadesign.co.uk/logo.png",
+          },
+          email: "hello@forsadesign.co.uk",
+          description:
+            "Boutique web agency based in Banff, Scotland, specialising in private healthcare and B2B websites.",
+          areaServed: "GB",
+          knowsAbout: [
+            "Web Design",
+            "Web Development",
+            "SEO",
+            "Brand Strategy",
+            "E-commerce",
+            "Private Healthcare Websites",
+            "B2B Websites",
+          ],
+        },
+        {
+          "@type": "LocalBusiness",
+          "@id": "https://forsadesign.co.uk/#localbusiness",
+          name: "Forsa Design",
+          url: "https://forsadesign.co.uk",
+          email: "hello@forsadesign.co.uk",
+          description:
+            "Boutique web agency based in Banff, Scotland, specialising in private healthcare and B2B websites.",
+          address: {
+            "@type": "PostalAddress",
+            addressLocality: "Banff",
+            addressRegion: "Scotland",
+            addressCountry: "GB",
+          },
+          areaServed: {
+            "@type": "Country",
+            name: "United Kingdom",
+          },
+          priceRange: "££££",
+          knowsAbout: [
+            "Web Design",
+            "Web Development",
+            "SEO",
+            "Brand Strategy",
+            "E-commerce",
+            "Private Healthcare Websites",
+            "B2B Websites",
+          ],
+        },
+      ],
+    },
+    "about-page",
+  );
 
   return (
     <div className="min-h-[100dvh] bg-background text-foreground">

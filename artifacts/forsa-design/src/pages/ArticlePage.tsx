@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { useSeoMeta, buildHref } from "@/hooks/useSeoMeta";
+import { useSeoMeta, useJsonLd, buildHref } from "@/hooks/useSeoMeta";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { getArticleBySlug } from "@/data/articlesData";
@@ -68,6 +68,44 @@ export default function ArticlePage({ lang, slug }: ArticlePageProps) {
         ]
       : undefined,
   });
+
+  useJsonLd(
+    a && article
+      ? {
+          "@context": "https://schema.org",
+          "@type": "Article",
+          headline: a.title,
+          description: a.excerpt,
+          datePublished: article.dateIso,
+          dateModified: article.dateIso,
+          inLanguage: lang === "en" ? "en-GB" : "pl-PL",
+          url: buildHref(`/${lang}/blog/${canonicalSlug}`),
+          author: {
+            "@type": "Person",
+            name: "Miro",
+            worksFor: {
+              "@type": "Organization",
+              name: "Forsa Design",
+              url: "https://forsadesign.co.uk",
+            },
+          },
+          publisher: {
+            "@type": "Organization",
+            name: "Forsa Design",
+            url: "https://forsadesign.co.uk",
+            logo: {
+              "@type": "ImageObject",
+              url: "https://forsadesign.co.uk/logo.png",
+            },
+          },
+          mainEntityOfPage: {
+            "@type": "WebPage",
+            "@id": buildHref(`/${lang}/blog/${canonicalSlug}`),
+          },
+        }
+      : null,
+    "article-page",
+  );
 
   if (!article || !a) {
     return (
