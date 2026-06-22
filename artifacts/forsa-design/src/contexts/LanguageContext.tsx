@@ -263,12 +263,12 @@ const translations = {
       subheading:
         "Dedykowane strony internetowe skupione na wydajno\u015bci, u\u017cyteczno\u015bci i wzro\u015bcie biznesu.",
       case1: {
-        title: "Love Sprouts \u2014 Przebudowa E-commerce",
+        title: "Love Sprouts\nPrzebudowa E-commerce",
         desc: "Nowoczesne do\u015bwiadczenie zakup\u00f3w online skupione na czystym designie, szybszej wydajno\u015bci i p\u0142ynniejszej \u015bcie\u017cce klienta.",
         tag: "[ CASE STUDY LIVE ]",
       },
       case2: {
-        title: "Forsa Design \u2014 Tworzenie Strony",
+        title: "Forsa Design\nTworzenie Strony",
         desc: "Dedykowana strona zbudowana, by wyra\u017anie prezentowa\u0107 us\u0142ugi, poprawi\u0107 do\u015bwiadczenie u\u017cytkownika i stworzy\u0107 mocniejsz\u0105 obecno\u015b\u0107 cyfrow\u0105.",
         tag: "[ CASE STUDY ]",
       },
