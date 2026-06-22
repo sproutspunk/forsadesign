@@ -306,7 +306,7 @@ const translations = {
         "Jasna wsp\u00f3\u0142praca jest centrum naszego sposobu pracy. Wiesz, co si\u0119 dzieje, dlaczego podejmowane s\u0105 decyzje i co b\u0119dzie nast\u0119pnie. Celem jest strona, kt\u00f3ra pomaga Twojemu biznesowi wygl\u0105da\u0107 profesjonalnie, dzia\u0142a\u0107 sprawniej i wspiera\u0107 d\u0142ugoterminowy wzrost.",
     },
     cta: {
-      heading: "Stworzone by dzia\u0142a\u0107. Napisane by zarabia\u0107.",
+      heading: "Tworzymy rozwi\u0105zania, kt\u00f3re dzia\u0142aj\u0105.\nZaprojektowane z my\u015bl\u0105 o rozwoju.",
       body: "Budujemy dedykowane systemy webowe dla firm, kt\u00f3re oczekuj\u0105 wynik\u00f3w, a nie marketingu. Bez zb\u0119dnego \u017cargonu. Bez owijania w bawe\u0142n\u0119. Tylko czysty, szybki i stabilny kod, kt\u00f3ry rozwija Tw\u00f3j biznes.",
       button: "Popro\u015b o wycen\u0119",
     },
