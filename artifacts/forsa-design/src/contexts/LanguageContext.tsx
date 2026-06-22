@@ -307,7 +307,7 @@ const translations = {
     },
     cta: {
       heading: "Stworzone z my\u015bl\u0105 o wydajno\u015bci. Zaprojektowane dla rozwoju.",
-      body: "Budujemy dedykowane systemy webowe dla firm, kt\u00f3re oczekuj\u0105 wynik\u00f3w, a nie marketingu. Bez zb\u0119dnego \u017cargonu. Bez owijania w bawe\u0142n\u0119. Tylko czysty, szybki i stabilny kod, kt\u00f3ry rozwija Tw\u00f3j biznes.",
+      body: "Czysty kod. Jasna strategia. Lepsze do\u015bwiadczenia cyfrowe.",
       button: "Popro\u015b o wycen\u0119",
     },
     contact: {
