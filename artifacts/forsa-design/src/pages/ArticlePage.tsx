@@ -19,7 +19,7 @@ const ui = {
     notFound: "Article not found.",
     notFoundLink: "View all articles",
     by: "by",
-    author: "Miro — Forsa Design",
+    author: "Miro  |  Forsa Design",
   },
   pl: {
     backToBlog: "Powrót do bloga",
@@ -27,7 +27,7 @@ const ui = {
     notFound: "Artykuł nie został znaleziony.",
     notFoundLink: "Zobacz wszystkie artykuły",
     by: "przez",
-    author: "Miro — Forsa Design",
+    author: "Miro  |  Forsa Design",
   },
 };
 
@@ -186,7 +186,7 @@ export default function ArticlePage({ lang, slug }: ArticlePageProps) {
           <div className="mt-16 pt-8 border-t border-border/20">
             <p className="text-xs text-foreground/40 font-light">
               {u.by.charAt(0).toUpperCase() + u.by.slice(1)}:{" "}
-              <span className="text-foreground/60">{u.author}</span> — hello@forsadesign.co.uk
+              <span className="text-foreground/60">{u.author}</span> | hello@forsadesign.co.uk
             </p>
           </div>
 

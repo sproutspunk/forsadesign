@@ -71,7 +71,7 @@ export const articles: Article[] = [
       ],
     },
     pl: {
-      title: "Jak wybrać agencję webową — 7 pytań, które powinieneś zadać",
+      title: "Jak wybrać agencję webową: 7 pytań, które powinieneś zadać",
       excerpt:
         "Wybór agencji webowej to decyzja biznesowa. Wiele firm skupia się tylko na cenie i zapomina o długoterminowej wartości. Oto 7 pytań, które pomagają odróżnić profesjonalne agencje od firm, które po prostu dostarczają szablon i odchodzą.",
       sections: [
@@ -80,7 +80,7 @@ export const articles: Article[] = [
         },
         {
           heading: "1. Czy macie doświadczenie w mojej branży?",
-          body: "Agencja pracująca z każdym typem biznesu nie zawsze ma głębokie doświadczenie w konkretnej dziedzinie.\n\nZapytaj, jakie projekty zrealizowali w Twojej branży i jakie wyniki osiągnęli.\n\nPatrz szerzej niż tylko na design — weź pod uwagę wydajność, użyteczność, konwersje i wpływ na biznes.",
+          body: "Agencja pracująca z każdym typem biznesu nie zawsze ma głębokie doświadczenie w konkretnej dziedzinie.\n\nZapytaj, jakie projekty zrealizowali w Twojej branży i jakie wyniki osiągnęli.\n\nPatrz szerzej niż tylko na design. Weź pod uwagę wydajność, użyteczność, konwersje i wpływ na biznes.",
         },
         {
           heading: "2. Jaki jest Wasz proces odkrywania projektu?",
@@ -121,7 +121,7 @@ export const articles: Article[] = [
     en: {
       title: "Responsiveness vs Speed: Why Both Matter for Conversions",
       excerpt:
-        "Most people browse the internet using mobile devices. But responsiveness and speed are two different things. Both directly affect user experience and conversions — and a website needs both to perform well.",
+        "Most people browse the internet using mobile devices. But responsiveness and speed are two different things. Both directly affect user experience and conversions. A website needs both to perform well.",
       sections: [
         {
           body: "Most people browse the internet using mobile devices.\n\nBut responsiveness and speed are two different things.\n\nA website needs to look good on every screen and load quickly. Both directly affect user experience and conversions.",

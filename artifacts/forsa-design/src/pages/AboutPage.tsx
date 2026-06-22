@@ -12,9 +12,9 @@ interface AboutPageProps {
 
 const content = {
   en: {
-    seoTitle: "About Us | Forsa Design — Boutique Web Agency",
+    seoTitle: "About Us | Forsa Design, Boutique Web Agency",
     seoDesc:
-      "Learn about Forsa Design — a boutique web agency based in Banff, Scotland, specialising in private healthcare and B2B websites that generate real revenue.",
+      "Learn about Forsa Design, a boutique web agency based in Banff, Scotland, specialising in private healthcare and B2B websites that generate real revenue.",
     heading: "Websites That Work for Your Business",
     intro:
       "We create websites, branding, and digital services for businesses across the UK. We specialise in the private healthcare and B2B sectors, turning websites into tools that genuinely generate revenue and support business growth.",
@@ -22,15 +22,15 @@ const content = {
     services: [
       {
         title: "Web Design & Development",
-        desc: "Every site we build is tailored to your business. We don't work with templates. We start with analysis — Who are you? Who do you serve? What is your business goal? — then build a site that achieves it. The result is a site that is fast, secure, conversion-optimised, and visible in search engines.",
+        desc: "Every site we build is tailored to your business. We don't work with templates. We start with analysis. Who are you? Who do you serve? What is your business goal? Then we build a site that achieves it. The result is a site that is fast, secure, conversion-optimised, and visible in search engines.",
       },
       {
         title: "Brand Strategy & Branding",
-        desc: "A beautiful site without a clear message is a waste. We help you define who you are, what sets you apart from the competition, and why clients should choose you. This creates consistency — from brand identity to on-site content.",
+        desc: "A beautiful site without a clear message is a waste. We help you define who you are, what sets you apart from the competition, and why clients should choose you. This creates consistency from brand identity to on-site content.",
       },
       {
         title: "Technical Support & Optimisation",
-        desc: "After your site launches, we don't disappear. We support you — hosting, security, updates, performance optimisation, SEO monitoring, and conversion opportunities.",
+        desc: "After your site launches, we don't disappear. We support you with hosting, security, updates, performance optimisation, SEO monitoring, and conversion opportunities.",
       },
     ],
     processHeading: "Our Process",
@@ -74,7 +74,7 @@ const content = {
       },
       {
         title: "Focus on business results.",
-        desc: "We measure everything — whether the site attracts users, converts, and supports sales.",
+        desc: "We measure everything. Whether the site attracts users, converts, and supports sales.",
       },
       {
         title: "Specialisation in healthcare and B2B.",
@@ -82,7 +82,7 @@ const content = {
       },
       {
         title: "Long-term partnership.",
-        desc: "We support you months and years after launch — this isn't a project, it's a collaboration.",
+        desc: "We support you months and years after launch. This isn't a project, it's a collaboration.",
       },
       {
         title: "Transparent communication.",
@@ -137,9 +137,9 @@ const content = {
     contactHref: "#contact",
   },
   pl: {
-    seoTitle: "O Nas | Forsa Design — Boutique Agencja Webowa",
+    seoTitle: "O Nas | Forsa Design, Boutique Agencja Webowa",
     seoDesc:
-      "Dowiedz się więcej o Forsa Design — boutique agencji webowej z Banff w Szkocji, specjalizującej się w stronach dla sektora private healthcare i B2B, które naprawdę generują przychody.",
+      "Dowiedz się więcej o Forsa Design, boutique agencji webowej z Banff w Szkocji, specjalizującej się w stronach dla sektora private healthcare i B2B, które naprawdę generują przychody.",
     heading: "Strony Internetowe, Które Pracują dla Twojego Biznesu",
     intro:
       "Tworzymy strony internetowe, branding i cyfrowe usługi dla firm z całej Wielkiej Brytanii. Specjalizujemy się w sektorze private healthcare i firm B2B, zamieniając stronę internetową w narzędzie, które rzeczywiście generuje przychody i wspiera wzrost biznesu.",
@@ -147,15 +147,15 @@ const content = {
     services: [
       {
         title: "Projektowanie i Tworzenie Stron",
-        desc: "Każda strona, którą tworzymy, jest dostosowana do Twojego biznesu. Nie pracujemy z szablonami. Zaczynamy od analizy — Kim jesteś? Kogo obsługujesz? Jaki jest Twój cel biznesowy? — a następnie budujemy stronę, która to osiąga. Wynik to strona, która jest szybka, bezpieczna, zoptymalizowana do konwersji i widoczna w wyszukiwarkach.",
+        desc: "Każda strona, którą tworzymy, jest dostosowana do Twojego biznesu. Nie pracujemy z szablonami. Zaczynamy od analizy. Kim jesteś? Kogo obsługujesz? Jaki jest Twój cel biznesowy? Następnie budujemy stronę, która to osiąga. Wynik to strona, która jest szybka, bezpieczna, zoptymalizowana do konwersji i widoczna w wyszukiwarkach.",
       },
       {
         title: "Strategia Marki i Branding",
-        desc: "Piękna strona bez jasnego przesłania to marnotrawstwo. Pomagamy Ci zdefiniować, kim jesteś, co wyróżnia Cię od konkurencji i dlaczego klienci mają Cię wybrać. To tworzy spójność — od wizerunku marki po treść na stronie.",
+        desc: "Piękna strona bez jasnego przesłania to marnotrawstwo. Pomagamy Ci zdefiniować, kim jesteś, co wyróżnia Cię od konkurencji i dlaczego klienci mają Cię wybrać. To tworzy spójność od wizerunku marki po treść na stronie.",
       },
       {
         title: "Wsparcie Techniczne i Optymalizacja",
-        desc: "Po uruchomieniu strony nie znikamy. Wspieramy Cię — hosting, bezpieczeństwo, aktualizacje, optymalizacja wydajności, monitorowanie SEO i możliwości konwersji.",
+        desc: "Po uruchomieniu strony nie znikamy. Wspieramy Cię w hostingu, bezpieczeństwie, aktualizacjach, optymalizacji wydajności, monitorowaniu SEO i możliwościach konwersji.",
       },
     ],
     processHeading: "Nasz Proces",
@@ -199,7 +199,7 @@ const content = {
       },
       {
         title: "Fokus na wyniki biznesowe.",
-        desc: "Mierzy się wszystko — czy strona przyciąga użytkowników, konwertuje, wspiera sprzedaż.",
+        desc: "Mierzy się wszystko. Czy strona przyciąga użytkowników, konwertuje, wspiera sprzedaż.",
       },
       {
         title: "Specjalizacja w healthcare i B2B.",
@@ -207,7 +207,7 @@ const content = {
       },
       {
         title: "Długoterminowe partnerstwo.",
-        desc: "Wspieramy Cię miesiące i lata po uruchomieniu — to nie projekt, to współpraca.",
+        desc: "Wspieramy Cię miesiące i lata po uruchomieniu. To nie projekt, to współpraca.",
       },
       {
         title: "Transparentna komunikacja.",
