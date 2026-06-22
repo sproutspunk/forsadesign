@@ -80,12 +80,12 @@ const translations = {
       heading: "Our Work",
       subheading: "Custom-built websites focused on performance, usability, and business growth.",
       case1: {
-        title: "Love Sprouts — E-commerce Redesign",
+        title: "Love Sprouts\nE-commerce Redesign",
         desc: "A modern online shopping experience focused on clean design, faster performance, and a smoother customer journey.",
         tag: "[ CASE STUDY LIVE ]",
       },
       case2: {
-        title: "Forsa Design — Website Development",
+        title: "Forsa Design\nWebsite Development",
         desc: "A custom website built to showcase services clearly, improve user experience, and create a stronger digital presence.",
         tag: "[ CASE STUDY ]",
       },
