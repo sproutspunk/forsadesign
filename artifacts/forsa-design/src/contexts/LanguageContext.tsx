@@ -123,7 +123,7 @@ const translations = {
         "Clear collaboration is at the centre of how we work. You know what is happening, why decisions are made, and what comes next. The goal is a website that helps your business look professional, perform better, and support long-term growth.",
     },
     cta: {
-      heading: "Built for scale. Hardcoded for speed.",
+      heading: "Built for performance. Designed for growth.",
       body: "We build custom web systems for corporate clients who want results, not jargon. No fuss. No agency fluff. Just clean, fast, solid code that makes your business grow.",
       button: "Request a Quote",
     },
