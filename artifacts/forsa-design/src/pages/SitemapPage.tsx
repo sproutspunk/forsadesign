@@ -92,12 +92,12 @@ const content = {
 };
 
 export default function SitemapPage({ lang }: SitemapPageProps) {
-  const { setLanguage } = useLanguage();
+  const { syncLanguage } = useLanguage();
   const c = content[lang];
 
   useEffect(() => {
-    setLanguage(lang);
-  }, [lang, setLanguage]);
+    syncLanguage(lang);
+  }, [lang, syncLanguage]);
 
   useSeoMeta({
     title: c.seoTitle,
