@@ -259,7 +259,8 @@ const translations = {
     },
     portfolio: {
       heading: "Nasze Prace",
-      subheading: "Dedykowane strony internetowe skupione na wydajno\u015bci, u\u017cyteczno\u015bci i wzro\u015bcie biznesu.",
+      subheading:
+        "Dedykowane strony internetowe skupione na wydajno\u015bci, u\u017cyteczno\u015bci i wzro\u015bcie biznesu.",
       case1: {
         title: "Love Sprouts \u2014 Przebudowa E-commerce",
         desc: "Nowoczesne do\u015bwiadczenie zakup\u00f3w online skupione na czystym designie, szybszej wydajno\u015bci i p\u0142ynniejszej \u015bcie\u017cce klienta.",

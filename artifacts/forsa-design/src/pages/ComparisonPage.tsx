@@ -139,7 +139,11 @@ const content = {
       {
         name: "Szablon CMS",
         tagline: "Szybko i przyst\u0119pnie",
-        pros: ["Ni\u017cszy koszt wej\u015bcia", "Szybkie uruchomienie", "\u0141atwa aktualizacja tre\u015bci"],
+        pros: [
+          "Ni\u017cszy koszt wej\u015bcia",
+          "Szybkie uruchomienie",
+          "\u0141atwa aktualizacja tre\u015bci",
+        ],
         cons: [
           "Cz\u0119sto oparte na gotowych szablonach",
           "Mo\u017ce spowalnia\u0107 przy zbyt wielu wtyczkach",
@@ -150,7 +154,11 @@ const content = {
       {
         name: "Agencja bez specjalizacji",
         tagline: "Og\u00f3lny dostawca rozwi\u0105za\u0144",
-        pros: ["Do\u015bwiadczone zespo\u0142y", "Zarz\u0105dzanie projektem", "Istniej\u0105ce portfolio"],
+        pros: [
+          "Do\u015bwiadczone zespo\u0142y",
+          "Zarz\u0105dzanie projektem",
+          "Istniej\u0105ce portfolio",
+        ],
         cons: [
           "Cz\u0119sto szablonowe podej\u015bcie",
           "Wy\u017csze koszty wynikaj\u0105ce z rozbudowanych struktur",
@@ -186,7 +194,8 @@ const content = {
       },
     ],
     tableHeading: "Pe\u0142ne Por\u00f3wnanie",
-    tableSub: "Por\u00f3wnanie skupia si\u0119 na praktycznych r\u00f3\u017cnicach mi\u0119dzy ka\u017cdym podej\u015bciem.",
+    tableSub:
+      "Por\u00f3wnanie skupia si\u0119 na praktycznych r\u00f3\u017cnicach mi\u0119dzy ka\u017cdym podej\u015bciem.",
     tableHeaders: [
       "Kryterium",
       "Szablon CMS",
@@ -195,8 +204,20 @@ const content = {
       "Forsa Design",
     ],
     tableRows: [
-      ["Typowy zakres cenowy", "800\u20132\u00a0000\u00a0\u00a3", "3\u00a0000\u20138\u00a0000\u00a0\u00a3", "1\u00a0500\u20134\u00a0000\u00a0\u00a3", "4\u00a0500\u201312\u00a0000\u00a0\u00a3+"],
-      ["Czas realizacji", "2\u20134 tygodnie", "6\u201312 tygodni", "4\u20138 tygodni", "8\u201312 tygodni"],
+      [
+        "Typowy zakres cenowy",
+        "800\u20132\u00a0000\u00a0\u00a3",
+        "3\u00a0000\u20138\u00a0000\u00a0\u00a3",
+        "1\u00a0500\u20134\u00a0000\u00a0\u00a3",
+        "4\u00a0500\u201312\u00a0000\u00a0\u00a3+",
+      ],
+      [
+        "Czas realizacji",
+        "2\u20134 tygodnie",
+        "6\u201312 tygodni",
+        "4\u20138 tygodni",
+        "8\u201312 tygodni",
+      ],
       [
         "Unikalno\u015b\u0107 designu",
         "Zwykle oparte na gotowych szablonach",
@@ -246,7 +267,13 @@ const content = {
         "Mo\u017cliwa",
         "Budowana z my\u015bl\u0105 o przysz\u0142ym wzro\u015bcie",
       ],
-      ["Przeno\u015bno\u015b\u0107", "\u015arednio", "Wysoka", "Wysoka", "Pe\u0142na w\u0142asno\u015b\u0107 i kontrola"],
+      [
+        "Przeno\u015bno\u015b\u0107",
+        "\u015arednio",
+        "Wysoka",
+        "Wysoka",
+        "Pe\u0142na w\u0142asno\u015b\u0107 i kontrola",
+      ],
     ],
     ctaHeading: "Gotowy porozmawia\u0107?",
     ctaSub: "W\u0142a\u015bciwe podej\u015bcie zaczyna si\u0119 od zrozumienia Twojego biznesu.",
