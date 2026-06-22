@@ -1,0 +1,332 @@
+FAQ: 
+
+How to Choose a Web Agency: 7 Questions You Should Ask
+
+Choosing a web agency is a business decision. It requires time, research, and a clear understanding of what you need.
+
+Many businesses focus only on price and forget about long-term value. A website should support your business, not become another problem.
+
+Here are 7 questions that help separate professional agencies from companies that simply deliver a template and move on.
+
+1. Do you have experience in my industry?
+
+An agency that works with every type of business may not always have deep experience in a specific area.
+
+Ask what projects they have completed in your industry and what results they achieved.
+
+Look at more than just design. Consider performance, usability, conversions, and business impact.
+
+2. What is your discovery process?
+
+A professional agency should not start building after a short conversation.
+
+The first stage should include understanding your goals, customers, competitors, and current challenges.
+
+If the process starts with choosing a template, important details may be missed.
+
+3. Do you focus on SEO and performance?
+
+A website needs to do more than look good.
+
+It should load quickly, work well across devices, and help customers find your business.
+
+Ask how they approach technical SEO, speed, and measuring results.
+
+4. Who will manage my project?
+
+Clear communication matters.
+
+You should know who is responsible for your project and who understands your business goals.
+
+A dedicated contact person keeps the process organised.
+
+5. What happens after launch?
+
+A website needs ongoing care.
+
+Ask about updates, security, backups, technical support, and future improvements.
+
+A launch should be the beginning, not the end.
+
+6. Can I move my website if my needs change?
+
+Your website should belong to you.
+
+A good agency builds with flexibility in mind, allowing you to change providers without losing control of your data or domain.
+
+7. How is pricing structured?
+
+Pricing should be clear from the beginning.
+
+You should understand what is included, what happens if the project changes, and what future costs may appear.
+
+Summary
+
+Choose an agency that takes time to understand your business.
+
+The right questions should come from both sides. A good agency wants to understand your goals before building anything.
+
+
+Responsiveness vs Speed: Why Both Matter for Conversions
+
+Most people browse the internet using mobile devices.
+
+But responsiveness and speed are two different things.
+
+A website needs to look good on every screen and load quickly. Both directly affect user experience and conversions.
+
+What is responsiveness?
+
+A responsive website automatically adapts to different screen sizes.
+
+Text, images, buttons, and navigation adjust to work properly on phones, tablets, and desktops.
+
+This is no longer an extra feature. It is a basic requirement for modern websites.
+
+What is loading speed?
+
+Speed is how quickly a website loads and becomes usable.
+
+A slow website creates frustration. Visitors leave before they contact you, make a purchase, or explore your services.
+
+Speed also affects SEO because search engines consider performance when evaluating websites.
+
+How do they work together?
+
+A website can be responsive but poorly optimised.
+
+It may look good on mobile but load slowly because of unnecessary code or large files.
+
+A fast website that is not mobile-friendly creates another problem. Visitors struggle with navigation and leave.
+
+Both areas need attention.
+
+How do you measure speed?
+
+LCP (Largest Contentful Paint):
+Measures how quickly the main content loads.
+
+FID (First Input Delay):
+Measures how quickly the website responds to interaction.
+
+CLS (Cumulative Layout Shift):
+Measures whether the page moves unexpectedly while loading.
+
+These metrics show how users experience your website.
+
+How do you build a fast and responsive website?
+
+Efficient code:
+Avoid unnecessary scripts and keep the website lightweight.
+
+Optimised images:
+Use modern formats, compression, and lazy loading.
+
+Smart structure:
+Use caching and performance improvements where needed.
+
+Real testing:
+Check the website on real devices and different connections.
+
+Summary
+
+Responsiveness helps people use your website.
+
+Speed helps people stay on your website.
+
+Both are essential for conversions.
+
+
+Why a CMS Template Is Not the Same as a Custom Website
+
+A template CMS can be a quick and affordable solution.
+
+However, as a business grows, limitations can appear.
+
+Templates are designed for many users. Custom websites are designed around your specific goals.
+
+Advantages of a template CMS
+
+Lower initial cost.
+
+Faster setup.
+
+Simple editing for non-technical users.
+
+Many features available through existing tools.
+
+Limitations of a template CMS
+
+Many websites look similar.
+
+Custom changes can become difficult.
+
+Too many plugins can affect performance and security.
+
+Moving to another system can become complicated.
+
+Advantages of a custom website
+
+Unique design and functionality.
+
+Better performance through cleaner code.
+
+Full control over SEO, integrations, and data.
+
+Ability to grow with your business.
+
+Easier long-term flexibility.
+
+Limitations of a custom website
+
+Higher initial investment.
+
+Requires proper development and maintenance.
+
+Who should use a template?
+
+Templates work well for small projects, simple websites, portfolios, or businesses testing an idea.
+
+Who should use a custom website?
+
+Custom development makes more sense for businesses focused on growth, strong user experience, integrations, and long-term flexibility.
+
+Summary
+
+A template is a quick solution.
+
+A custom website is built around your business.
+
+
+E-commerce: Why Speed and User Experience Drive Sales
+
+In online retail, small problems can create lost sales.
+
+Speed, trust, and a simple buying process all influence whether customers complete a purchase.
+
+1. Speed affects conversions
+
+Customers expect online shops to respond quickly.
+
+A slow website creates hesitation and increases abandoned visits.
+
+Every second matters when someone is ready to buy.
+
+2. Checkout experience
+
+The buying process should be simple.
+
+Too many steps, hidden costs, or limited payment options create unnecessary barriers.
+
+A smooth checkout helps customers complete their purchase.
+
+3. Trust signals
+
+Customers need confidence before sharing payment details.
+
+Clear information, secure connections, reviews, policies, and contact details all help build trust.
+
+A professional website removes doubts.
+
+4. Mobile shopping
+
+Many customers browse and buy using phones.
+
+Mobile shops need:
+
+Easy navigation.
+
+Clear buttons.
+
+Fast-loading images.
+
+Simple product search.
+
+The experience should feel natural on a smaller screen.
+
+5. Inventory and product management
+
+Customers expect accurate information.
+
+Stock levels, product updates, and recommendations should work correctly.
+
+Small details influence buying decisions.
+
+Summary
+
+E-commerce success depends on removing friction.
+
+Every part of the customer journey affects sales.
+
+
+SEO: Why Your Website Is Only the Beginning
+
+Building a website does not automatically bring customers from Google.
+
+SEO combines technical quality, content, user experience, and online authority.
+
+Your website is the foundation, not the entire strategy.
+
+Website foundation
+
+Structure:
+
+A clear website structure helps search engines understand your pages.
+
+Speed:
+
+Performance affects both user experience and visibility.
+
+Mobile experience:
+
+Search engines focus heavily on mobile versions of websites.
+
+Technical setup:
+
+Correct indexing, structured data, and clean code help search engines read your content.
+
+Content matters
+
+Good content answers real customer questions.
+
+It should match what people are searching for and provide useful information.
+
+Quality matters more than adding unnecessary words.
+
+Experience and trust
+
+Search engines look for signs that a business is reliable.
+
+Clear information, expertise, customer feedback, and real experience help build authority.
+
+Links and mentions
+
+Other websites linking to your business can strengthen your reputation.
+
+Quality matters more than quantity.
+
+User behaviour
+
+How people interact with your website gives search engines signals.
+
+If visitors quickly leave or cannot find what they need, it can affect performance.
+
+Technical SEO basics
+
+Robots.txt:
+Controls which pages search engines should access.
+
+Sitemap:
+Helps search engines discover your content.
+
+Redirects:
+Protect rankings when pages change.
+
+Summary
+
+SEO is ongoing work.
+
+A website creates the foundation.
+
+Content, optimisation, and trust build long-term visibility.
+```
