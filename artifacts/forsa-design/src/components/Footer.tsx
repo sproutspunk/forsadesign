@@ -120,6 +120,13 @@ export default function Footer() {
           >
             {t("footer.privacy")}
           </a>
+          <a
+            href={`/${language}/sitemap`}
+            className="hover:text-primary transition-colors mr-4"
+            data-testid="footer-link-sitemap"
+          >
+            {t("footer.sitemap")}
+          </a>
           <button
             onClick={openCookiePreferences}
             className="hover:text-primary transition-colors"

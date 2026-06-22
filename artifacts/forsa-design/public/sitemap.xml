@@ -2,6 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
+  <!-- Home -->
   <url>
     <loc>https://forsadesign.co.uk/en/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://forsadesign.co.uk/en/"/>
@@ -20,6 +21,150 @@
     <priority>1.0</priority>
   </url>
 
+  <!-- About -->
+  <url>
+    <loc>https://forsadesign.co.uk/en/about</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://forsadesign.co.uk/en/about"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://forsadesign.co.uk/pl/about"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://forsadesign.co.uk/en/about"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://forsadesign.co.uk/pl/about</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://forsadesign.co.uk/en/about"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://forsadesign.co.uk/pl/about"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://forsadesign.co.uk/en/about"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Blog index -->
+  <url>
+    <loc>https://forsadesign.co.uk/en/blog</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://forsadesign.co.uk/en/blog"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://forsadesign.co.uk/pl/blog"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://forsadesign.co.uk/en/blog"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://forsadesign.co.uk/pl/blog</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://forsadesign.co.uk/en/blog"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://forsadesign.co.uk/pl/blog"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://forsadesign.co.uk/en/blog"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Article: How to Choose a Web Agency -->
+  <url>
+    <loc>https://forsadesign.co.uk/en/blog/how-to-choose-a-web-agency</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://forsadesign.co.uk/en/blog/how-to-choose-a-web-agency"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://forsadesign.co.uk/pl/blog/jak-wybrac-agencje-webowa"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://forsadesign.co.uk/en/blog/how-to-choose-a-web-agency"/>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://forsadesign.co.uk/pl/blog/jak-wybrac-agencje-webowa</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://forsadesign.co.uk/en/blog/how-to-choose-a-web-agency"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://forsadesign.co.uk/pl/blog/jak-wybrac-agencje-webowa"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://forsadesign.co.uk/en/blog/how-to-choose-a-web-agency"/>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Article: Responsiveness vs Speed -->
+  <url>
+    <loc>https://forsadesign.co.uk/en/blog/responsiveness-vs-speed</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://forsadesign.co.uk/en/blog/responsiveness-vs-speed"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://forsadesign.co.uk/pl/blog/responsywnosc-vs-szybkosc"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://forsadesign.co.uk/en/blog/responsiveness-vs-speed"/>
+    <lastmod>2026-06-05</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://forsadesign.co.uk/pl/blog/responsywnosc-vs-szybkosc</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://forsadesign.co.uk/en/blog/responsiveness-vs-speed"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://forsadesign.co.uk/pl/blog/responsywnosc-vs-szybkosc"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://forsadesign.co.uk/en/blog/responsiveness-vs-speed"/>
+    <lastmod>2026-06-05</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Article: CMS Template vs Custom Site -->
+  <url>
+    <loc>https://forsadesign.co.uk/en/blog/cms-template-vs-custom-site</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://forsadesign.co.uk/en/blog/cms-template-vs-custom-site"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://forsadesign.co.uk/pl/blog/szablon-cms-vs-strona-na-zamowienie"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://forsadesign.co.uk/en/blog/cms-template-vs-custom-site"/>
+    <lastmod>2026-06-10</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://forsadesign.co.uk/pl/blog/szablon-cms-vs-strona-na-zamowienie</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://forsadesign.co.uk/en/blog/cms-template-vs-custom-site"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://forsadesign.co.uk/pl/blog/szablon-cms-vs-strona-na-zamowienie"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://forsadesign.co.uk/en/blog/cms-template-vs-custom-site"/>
+    <lastmod>2026-06-10</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Article: E-commerce Speed and UX -->
+  <url>
+    <loc>https://forsadesign.co.uk/en/blog/ecommerce-speed-and-ux</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://forsadesign.co.uk/en/blog/ecommerce-speed-and-ux"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://forsadesign.co.uk/pl/blog/ecommerce-szybkosc-i-ux"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://forsadesign.co.uk/en/blog/ecommerce-speed-and-ux"/>
+    <lastmod>2026-06-14</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://forsadesign.co.uk/pl/blog/ecommerce-szybkosc-i-ux</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://forsadesign.co.uk/en/blog/ecommerce-speed-and-ux"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://forsadesign.co.uk/pl/blog/ecommerce-szybkosc-i-ux"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://forsadesign.co.uk/en/blog/ecommerce-speed-and-ux"/>
+    <lastmod>2026-06-14</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Article: SEO — Website is Just the Start -->
+  <url>
+    <loc>https://forsadesign.co.uk/en/blog/seo-2024-website-is-just-the-start</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://forsadesign.co.uk/en/blog/seo-2024-website-is-just-the-start"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://forsadesign.co.uk/pl/blog/seo-2024-strona-to-dopiero-poczatek"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://forsadesign.co.uk/en/blog/seo-2024-website-is-just-the-start"/>
+    <lastmod>2026-06-18</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://forsadesign.co.uk/pl/blog/seo-2024-strona-to-dopiero-poczatek</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://forsadesign.co.uk/en/blog/seo-2024-website-is-just-the-start"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://forsadesign.co.uk/pl/blog/seo-2024-strona-to-dopiero-poczatek"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://forsadesign.co.uk/en/blog/seo-2024-website-is-just-the-start"/>
+    <lastmod>2026-06-18</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Comparison -->
   <url>
     <loc>https://forsadesign.co.uk/en/comparison</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://forsadesign.co.uk/en/comparison"/>
@@ -38,6 +183,26 @@
     <priority>0.8</priority>
   </url>
 
+  <!-- Site Map page -->
+  <url>
+    <loc>https://forsadesign.co.uk/en/sitemap</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://forsadesign.co.uk/en/sitemap"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://forsadesign.co.uk/pl/sitemap"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://forsadesign.co.uk/en/sitemap"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <url>
+    <loc>https://forsadesign.co.uk/pl/sitemap</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://forsadesign.co.uk/en/sitemap"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://forsadesign.co.uk/pl/sitemap"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://forsadesign.co.uk/en/sitemap"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <!-- Legal -->
   <url>
     <loc>https://forsadesign.co.uk/en/terms</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://forsadesign.co.uk/en/terms"/>

@@ -13,6 +13,7 @@ import ComparisonPage from "@/pages/ComparisonPage";
 import NotFound from "@/pages/not-found";
 
 const AboutPage = lazy(() => import("@/pages/AboutPage"));
+const SitemapPage = lazy(() => import("@/pages/SitemapPage"));
 const ArticlePage = lazy(() => import("@/pages/ArticlePage"));
 const TermsPage = lazy(() => import("@/pages/TermsPage"));
 const TermsPagePL = lazy(() => import("@/pages/TermsPagePL"));
@@ -115,6 +116,8 @@ function Router() {
         <Switch>
           <Route path="/en/about" component={() => <AboutPage lang="en" />} />
           <Route path="/pl/about" component={() => <AboutPage lang="pl" />} />
+          <Route path="/en/sitemap" component={() => <SitemapPage lang="en" />} />
+          <Route path="/pl/sitemap" component={() => <SitemapPage lang="pl" />} />
           <Route
             path="/en/blog/:slug"
             component={({ params }: { params: { slug: string } }) => (

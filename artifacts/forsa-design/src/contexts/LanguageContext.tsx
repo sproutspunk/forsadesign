@@ -162,6 +162,7 @@ const translations = {
       copyright: "\u00A9 2024 Forsa Design. All rights reserved.",
       terms: "Terms & Conditions",
       privacy: "Privacy Policy",
+      sitemap: "Site Map",
       cookiePreferences: "Cookie Preferences",
     },
     cookies: {
@@ -354,6 +355,7 @@ const translations = {
       copyright: "\u00A9 2024 Forsa Design. Wszystkie prawa zastrze\u017cone.",
       terms: "Regulamin i Warunki",
       privacy: "Polityka Prywatno\u015bci",
+      sitemap: "Mapa Strony",
       cookiePreferences: "Ustawienia Cookies",
     },
     cookies: {
