@@ -118,19 +118,19 @@ export default function SitemapPage({ lang }: SitemapPageProps) {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Header />
-      <main className="pt-32 pb-24">
+      <main className="pt-24 md:pt-32 pb-16 md:pb-24">
         <div className="container mx-auto px-6 max-w-3xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <h1 className="font-serif text-4xl md:text-5xl font-bold tracking-tight mb-4">
+            <h1 className="font-serif text-4xl md:text-5xl font-bold tracking-tight mb-3 md:mb-4">
               {c.heading}
             </h1>
-            <p className="text-foreground/60 mb-16 text-lg">{c.intro}</p>
+            <p className="text-foreground/60 mb-8 md:mb-16 text-lg">{c.intro}</p>
 
-            <div className="space-y-12">
+            <div className="space-y-8 md:space-y-12">
               {c.sections.map((section, si) => (
                 <motion.div
                   key={si}
