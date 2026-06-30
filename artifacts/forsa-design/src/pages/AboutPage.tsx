@@ -94,7 +94,7 @@ const content = {
       "An honest look at the options available to you, so you can make the right decision for your business.",
     tableHeaders: ["Aspect", "CMS Template", "Non-specialist Agency", "Freelancer", "Forsa Design"],
     tableRows: [
-      ["Price", "£800–2,000", "£3,000–8,000", "£1,500–4,000", "£4,500–12,000+"],
+      ["Price", "£800–2,000", "£3,000–8,000", "£1,500–4,000", "£1,200–12,000+"],
       ["Turnaround", "2–4 weeks", "6–12 weeks", "4–8 weeks", "8–12 weeks"],
       [
         "Design uniqueness",
@@ -225,7 +225,7 @@ const content = {
       "Forsa Design",
     ],
     tableRows: [
-      ["Cena", "800–2 000 £", "3 000–8 000 £", "1 500–4 000 £", "4 500–12 000 £+"],
+      ["Cena", "800–2 000 £", "3 000–8 000 £", "1 500–4 000 £", "1 200–12 000 £+"],
       ["Czas realizacji", "2–4 tygodnie", "6–12 tygodni", "4–8 tygodni", "8–12 tygodni"],
       [
         "Unikalność designu",
