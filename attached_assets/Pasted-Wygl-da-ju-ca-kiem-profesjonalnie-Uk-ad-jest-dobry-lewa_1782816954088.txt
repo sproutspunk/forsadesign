@@ -1,0 +1,174 @@
+Wygląda już całkiem profesjonalnie. Układ jest dobry: lewa strona wybór → prawa strona wynik. Natomiast widzę kilka rzeczy, które bym poprawił, żeby kalkulator wyglądał bardziej jak narzędzie agencji UK premium i lepiej sprzedawał.
+
+Najważniejsze poprawki:
+
+1. **Cena początkowa jest za niska wizualnie**
+   Teraz:
+
+* Landing £700
+* One page £950
+
+Dla UK bardziej premium dałbym:
+
+* Landing Page — od £1,200
+* One Page — od £1,500
+* Small Business — od £2,500
+* Business Website — od £4,000
+* E-commerce — od £6,000
+
+Psychologia:
+£700 wygląda jak freelancer. £1,500+ wygląda jak firma.
+
+---
+
+2. **Prawy panel powinien sprzedawać**
+
+Teraz:
+
+```
+Łącznie
+840 GBP
+```
+
+Lepiej:
+
+```
+Estimated Investment
+
+£8,450
+
+Project value:
+Professional Website Package
+
+Delivery:
+6–8 weeks
+
+Includes:
+✓ Responsive Design
+✓ SEO Foundation
+✓ Security Setup
+✓ Performance Optimisation
+```
+
+Klient widzi wartość, nie tylko liczbę.
+
+---
+
+3. Dodaj 3 pakiety zamiast samego wyboru
+
+Nad kalkulatorem:
+
+```
+Choose your level
+
+STARTER
+£1,500+
+
+BUSINESS
+£4,000+
+
+PREMIUM
+£8,000+
+```
+
+Klik → ustawia bazę.
+
+---
+
+4. Popraw błędy kodowania
+
+Masz:
+
+```
+Jako\u015b\u0107 designu
+Pisanie tre\u015bci
+Wydajno\u015b\u0107
+```
+
+Replit źle interpretuje UTF-8.
+
+W prompt:
+
+```
+Fix all UTF-8 encoding issues.
+All Polish characters must display correctly:
+ą ć ę ł ń ó ś ź ż
+```
+
+---
+
+5. Dodaj "confidence builder"
+
+Pod paskiem:
+
+```
+✓ Transparent pricing
+✓ No hidden costs
+✓ UK based service
+✓ Fixed project quote
+```
+
+---
+
+6. Dodaj kalkulator ROI
+
+Bardzo mocny element:
+
+```
+Your website could generate:
+
+Visitors/month: 5000
+
+Conversion: 2%
+
+Potential enquiries:
+100/month
+
+Estimated revenue impact:
+£5,000–£20,000/month
+```
+
+---
+
+7. Dodaj lead capture zanim pokaże PDF
+
+Po wycenie:
+
+```
+Your quote is ready.
+
+Enter email to receive PDF:
+[             ]
+
+[Send my quote]
+```
+
+To zamienia kalkulator w generator klientów.
+
+---
+
+8. Prompt do Replit na upgrade:
+
+```
+Upgrade the website quote calculator into a premium UK agency sales tool.
+
+Improve the UX and conversion rate.
+
+Changes:
+- Increase visual hierarchy of pricing.
+- Add premium package selector: Starter / Business / Premium.
+- Add ROI calculator section.
+- Add trust indicators.
+- Improve quote summary panel.
+- Add professional PDF quote generation.
+- Add customer email capture before downloading quote.
+- Fix all UTF-8 Polish character encoding problems.
+- Use correct Polish letters.
+- Make the design similar to a high-end London digital agency website.
+- Keep dark navy + gold style.
+- Add smooth animations.
+- Add sticky quotation summary on desktop.
+- Add mobile floating price button.
+```
+
+Obecny wygląd jest już na poziomie MVP. Po tych zmianach będzie bardziej narzędziem sprzedażowym niż zwykłym kalkulatorem.

@@ -13,6 +13,7 @@ import {
   hostingOptions,
   maintenanceOptions,
   deliveryOptions,
+  packagePresets,
   VAT_RATE,
   ADDITIONAL_PAGE_PRICE,
   MAX_ADDITIONAL_PAGES,
@@ -35,6 +36,10 @@ import {
   Clock,
   Tag,
   Calculator as CalcIcon,
+  TrendingUp,
+  ShieldCheck,
+  BadgeCheck,
+  Sparkles,
 } from "lucide-react";
 
 interface QuoteState {
@@ -87,6 +92,7 @@ const sectionIcons: Record<string, React.ReactNode> = {
   maintenance: <WrenchIcon className="w-5 h-5" />,
   delivery: <Clock className="w-5 h-5" />,
   discount: <Tag className="w-5 h-5" />,
+  roi: <TrendingUp className="w-5 h-5" />,
 };
 
 export default function QuoteCalculator() {
@@ -97,21 +103,32 @@ export default function QuoteCalculator() {
   const [state, setState] = useState<QuoteState>(initialState);
   const [openSections, setOpenSections] = useState<Set<string>>(new Set(["project"]));
   const [showSuccess, setShowSuccess] = useState(false);
+  const [activePreset, setActivePreset] = useState<string | null>(null);
+
+  const [roiVisitors, setRoiVisitors] = useState(5000);
+  const [roiConversion, setRoiConversion] = useState(2);
+  const [roiAvgValue, setRoiAvgValue] = useState(2000);
 
   const toggleSection = useCallback((id: string) => {
     setOpenSections((prev) => {
       const next = new Set(prev);
-      if (next.has(id)) {
-        next.delete(id);
-      } else {
-        next.add(id);
-      }
+      if (next.has(id)) next.delete(id);
+      else next.add(id);
       return next;
     });
   }, []);
 
   const update = useCallback(<K extends keyof QuoteState>(key: K, value: QuoteState[K]) => {
     setState((prev) => ({ ...prev, [key]: value }));
+    setActivePreset(null);
+  }, []);
+
+  const applyPreset = useCallback((presetId: string) => {
+    const preset = packagePresets.find((p) => p.id === presetId);
+    if (!preset) return;
+    setState(preset.state);
+    setActivePreset(presetId);
+    setOpenSections(new Set(["project"]));
   }, []);
 
   const toggleFeature = useCallback((value: string) => {
@@ -124,6 +141,7 @@ export default function QuoteCalculator() {
           : [...prev.selectedFeatures, value],
       };
     });
+    setActivePreset(null);
   }, []);
 
   const breakdown = useMemo(() => {
@@ -222,6 +240,15 @@ export default function QuoteCalculator() {
       maximumFractionDigits: 0,
     });
 
+  const projectLabel = useMemo(() => {
+    const pt = projectTypes.find((p) => p.value === state.projectType);
+    return pt ? t(pt.labelEn, pt.labelPl) : "";
+  }, [state.projectType, t]);
+
+  const roiEnquiries = Math.round(roiVisitors * (roiConversion / 100));
+  const roiRevLow = roiEnquiries * roiAvgValue * 0.2;
+  const roiRevHigh = roiEnquiries * roiAvgValue * 0.5;
+
   const Section = ({
     id,
     titleEn,
@@ -306,9 +333,18 @@ export default function QuoteCalculator() {
     </button>
   );
 
+  const trustItems = isEn
+    ? ["Transparent pricing", "No hidden costs", "UK based service", "Fixed project quote"]
+    : [
+        "Przejrzyste ceny",
+        "Brak ukrytych kosztów",
+        "Usługa z Wielkiej Brytanii",
+        "Stała wycena projektu",
+      ];
+
   return (
     <div className="min-h-screen">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 md:pt-32 pb-8 md:pb-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 md:pt-32 pb-24 md:pb-12">
         <div className="mb-8 md:mb-10">
           <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight mb-3">
             {t("Website Quote Calculator", "Kalkulator wyceny strony")}
@@ -316,25 +352,75 @@ export default function QuoteCalculator() {
           <p className="text-foreground/60 max-w-2xl text-sm md:text-base">
             {t(
               "Select the options that match your project requirements. The estimate updates instantly.",
-              "Wybierz opcje odpowiadaj\u0105ce Twoim wymaganiom. Wycena aktualizuje si\u0119 na bie\u017c\u0105co.",
+              "Wybierz opcje odpowiadające Twoim wymaganiom. Wycena aktualizuje się na bieżąco.",
             )}
           </p>
         </div>
 
+        <div className="mb-8">
+          <p className="text-xs font-semibold uppercase tracking-widest text-foreground/40 mb-3">
+            {t("Quick start — choose your level", "Szybki start — wybierz poziom")}
+          </p>
+          <div className="grid grid-cols-3 gap-3 md:gap-4">
+            {packagePresets.map((preset, i) => (
+              <button
+                key={preset.id}
+                onClick={() => applyPreset(preset.id)}
+                className={`relative text-left p-4 md:p-5 rounded-xl border-2 transition-all duration-200 group ${
+                  activePreset === preset.id
+                    ? "border-primary bg-primary/5 shadow-md"
+                    : "border-border/40 hover:border-primary/50 bg-card/50 hover:bg-primary/5"
+                }`}
+              >
+                {i === 1 && (
+                  <span className="absolute -top-2.5 left-1/2 -translate-x-1/2 px-2 py-0.5 text-xs font-semibold rounded-full bg-primary text-primary-foreground whitespace-nowrap">
+                    {t("Most Popular", "Najpopularniejszy")}
+                  </span>
+                )}
+                <div className="flex items-start justify-between gap-1 mb-1">
+                  <span className="font-bold text-sm md:text-base">
+                    {t(preset.labelEn, preset.labelPl)}
+                  </span>
+                  {activePreset === preset.id && (
+                    <Sparkles className="w-4 h-4 text-primary flex-shrink-0" />
+                  )}
+                </div>
+                <div className="text-lg md:text-xl font-bold text-primary">
+                  {formatPrice(preset.fromPrice)}+
+                </div>
+                <div className="text-xs text-foreground/50 mt-0.5 hidden md:block">
+                  {t(preset.taglineEn, preset.taglinePl)}
+                </div>
+              </button>
+            ))}
+          </div>
+        </div>
+
         <div className="flex flex-col lg:flex-row gap-6 lg:gap-8">
           <div className="flex-1 space-y-4">
-            <div className="flex items-center gap-3 mb-2">
-              <div className="flex-1 h-2 bg-muted rounded-full overflow-hidden">
-                <motion.div
-                  className="h-full bg-primary rounded-full"
-                  initial={{ width: 0 }}
-                  animate={{ width: `${progress}%` }}
-                  transition={{ duration: 0.5 }}
-                />
+            <div className="space-y-3 mb-2">
+              <div className="flex items-center gap-3">
+                <div className="flex-1 h-2 bg-muted rounded-full overflow-hidden">
+                  <motion.div
+                    className="h-full bg-primary rounded-full"
+                    initial={{ width: 0 }}
+                    animate={{ width: `${progress}%` }}
+                    transition={{ duration: 0.5 }}
+                  />
+                </div>
+                <span className="text-xs font-medium text-foreground/50 whitespace-nowrap">
+                  {progress}%
+                </span>
               </div>
-              <span className="text-xs font-medium text-foreground/50 whitespace-nowrap">
-                {progress}%
-              </span>
+
+              <div className="flex flex-wrap gap-x-4 gap-y-1">
+                {trustItems.map((item) => (
+                  <div key={item} className="flex items-center gap-1.5 text-xs text-foreground/60">
+                    <BadgeCheck className="w-3.5 h-3.5 text-primary flex-shrink-0" />
+                    <span>{item}</span>
+                  </div>
+                ))}
+              </div>
             </div>
 
             <Section id="project" titleEn="Project Type" titlePl="Typ projektu">
@@ -379,14 +465,14 @@ export default function QuoteCalculator() {
                 </div>
                 <p className="text-xs text-foreground/50">
                   {t(
-                    `${ADDITIONAL_PAGE_PRICE} per additional page`,
-                    `${ADDITIONAL_PAGE_PRICE} za dodatkow\u0105 stron\u0119`,
+                    `£${ADDITIONAL_PAGE_PRICE} per additional page`,
+                    `£${ADDITIONAL_PAGE_PRICE} za dodatkową stronę`,
                   )}
                 </p>
               </div>
             </Section>
 
-            <Section id="design" titleEn="Design Quality" titlePl="Jako\u015b\u0107 designu">
+            <Section id="design" titleEn="Design Quality" titlePl="Jakość designu">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {designOptions.map((d) => (
                   <OptionCard
@@ -400,7 +486,7 @@ export default function QuoteCalculator() {
               </div>
             </Section>
 
-            <Section id="content" titleEn="Content Writing" titlePl="Pisanie tre\u015bci">
+            <Section id="content" titleEn="Content Writing" titlePl="Pisanie treści">
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                 {contentOptions.map((c) => (
                   <OptionCard
@@ -467,7 +553,7 @@ export default function QuoteCalculator() {
                       {isMultilang && (
                         <div className="mt-2 flex items-center gap-2">
                           <span className="text-xs text-foreground/50">
-                            {t("Languages", "J\u0119zyki")}:
+                            {t("Languages", "Języki")}:
                           </span>
                           <input
                             type="number"
@@ -518,7 +604,7 @@ export default function QuoteCalculator() {
               </div>
             </Section>
 
-            <Section id="performance" titleEn="Performance" titlePl="Wydajno\u015b\u0107">
+            <Section id="performance" titleEn="Performance" titlePl="Wydajność">
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                 {performanceOptions.map((p) => (
                   <OptionCard
@@ -559,7 +645,7 @@ export default function QuoteCalculator() {
                 ))}
               </div>
               <p className="text-xs text-foreground/50 mt-2">
-                {t("Prices shown are monthly", "Ceny s\u0105 miesi\u0119czne")}
+                {t("Prices shown are monthly", "Ceny są miesięczne")}
               </p>
             </Section>
 
@@ -574,6 +660,123 @@ export default function QuoteCalculator() {
                     price={Math.round((breakdown.subtotal - breakdown.deliveryFee) * d.multiplier)}
                   />
                 ))}
+              </div>
+            </Section>
+
+            <Section id="roi" titleEn="ROI Calculator" titlePl="Kalkulator ROI">
+              <div className="space-y-5">
+                <p className="text-sm text-foreground/60">
+                  {t(
+                    "Estimate the revenue impact your new website could generate.",
+                    "Oszacuj wpływ nowej strony na Twoje przychody.",
+                  )}
+                </p>
+
+                <div className="space-y-4">
+                  <div>
+                    <div className="flex justify-between mb-1.5">
+                      <label className="text-sm font-medium">
+                        {t("Monthly Visitors", "Odwiedziny miesięcznie")}
+                      </label>
+                      <span className="text-sm font-semibold text-primary">
+                        {roiVisitors.toLocaleString()}
+                      </span>
+                    </div>
+                    <input
+                      type="range"
+                      min={500}
+                      max={50000}
+                      step={500}
+                      value={roiVisitors}
+                      onChange={(e) => setRoiVisitors(parseInt(e.target.value))}
+                      className="w-full h-2 bg-muted rounded-full appearance-none cursor-pointer accent-primary"
+                    />
+                    <div className="flex justify-between text-xs text-foreground/40 mt-1">
+                      <span>500</span>
+                      <span>50,000</span>
+                    </div>
+                  </div>
+
+                  <div>
+                    <div className="flex justify-between mb-1.5">
+                      <label className="text-sm font-medium">
+                        {t("Conversion Rate", "Współczynnik konwersji")}
+                      </label>
+                      <span className="text-sm font-semibold text-primary">{roiConversion}%</span>
+                    </div>
+                    <input
+                      type="range"
+                      min={0.5}
+                      max={10}
+                      step={0.5}
+                      value={roiConversion}
+                      onChange={(e) => setRoiConversion(parseFloat(e.target.value))}
+                      className="w-full h-2 bg-muted rounded-full appearance-none cursor-pointer accent-primary"
+                    />
+                    <div className="flex justify-between text-xs text-foreground/40 mt-1">
+                      <span>0.5%</span>
+                      <span>10%</span>
+                    </div>
+                  </div>
+
+                  <div>
+                    <div className="flex justify-between mb-1.5">
+                      <label className="text-sm font-medium">
+                        {t("Avg. Project / Order Value", "Średnia wartość projektu / zamówienia")}
+                      </label>
+                      <span className="text-sm font-semibold text-primary">
+                        {formatPrice(roiAvgValue)}
+                      </span>
+                    </div>
+                    <input
+                      type="range"
+                      min={100}
+                      max={20000}
+                      step={100}
+                      value={roiAvgValue}
+                      onChange={(e) => setRoiAvgValue(parseInt(e.target.value))}
+                      className="w-full h-2 bg-muted rounded-full appearance-none cursor-pointer accent-primary"
+                    />
+                    <div className="flex justify-between text-xs text-foreground/40 mt-1">
+                      <span>£100</span>
+                      <span>£20,000</span>
+                    </div>
+                  </div>
+                </div>
+
+                <motion.div
+                  key={`${roiVisitors}-${roiConversion}-${roiAvgValue}`}
+                  initial={{ opacity: 0.6, scale: 0.99 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  className="grid grid-cols-3 gap-3"
+                >
+                  <div className="bg-muted/40 rounded-xl p-4 text-center">
+                    <div className="text-xl font-bold text-foreground">
+                      {roiEnquiries.toLocaleString()}
+                    </div>
+                    <div className="text-xs text-foreground/50 mt-1">
+                      {t("Enquiries / mo", "Zapytań / mies.")}
+                    </div>
+                  </div>
+                  <div className="bg-primary/5 border border-primary/20 rounded-xl p-4 text-center col-span-2">
+                    <div className="text-xl font-bold text-primary">
+                      {formatPrice(roiRevLow)} – {formatPrice(roiRevHigh)}
+                    </div>
+                    <div className="text-xs text-foreground/50 mt-1">
+                      {t("Potential revenue / month", "Potencjalny przychód / mies.")}
+                    </div>
+                  </div>
+                </motion.div>
+
+                <div className="flex items-start gap-2 p-3 rounded-lg bg-primary/5 border border-primary/10">
+                  <ShieldCheck className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
+                  <p className="text-xs text-foreground/60">
+                    {t(
+                      "ROI estimates are indicative. Based on industry average conversion rates for professional websites. Actual results will vary.",
+                      "Szacunki ROI mają charakter orientacyjny. Oparte na średnich branżowych wskaźnikach konwersji. Rzeczywiste wyniki mogą się różnić.",
+                    )}
+                  </p>
+                </div>
               </div>
             </Section>
 
@@ -598,7 +801,7 @@ export default function QuoteCalculator() {
                 </div>
                 {state.discountPercent > 0 && (
                   <p className="text-sm text-primary font-medium">
-                    {t("You save", "Oszcz\u0119dzasz")}: {formatPrice(breakdown.discountAmount)}
+                    {t("You save", "Oszczędzasz")}: {formatPrice(breakdown.discountAmount)}
                   </p>
                 )}
               </div>
@@ -613,10 +816,39 @@ export default function QuoteCalculator() {
               showSuccess={showSuccess}
               setShowSuccess={setShowSuccess}
               state={state}
-              onReset={() => setState(initialState)}
+              onReset={() => {
+                setState(initialState);
+                setActivePreset(null);
+              }}
+              projectLabel={projectLabel}
             />
           </div>
         </div>
+      </div>
+
+      <div className="lg:hidden fixed bottom-0 left-0 right-0 z-40 bg-card/95 backdrop-blur-sm border-t border-border/40 px-4 py-3 flex items-center justify-between gap-4 shadow-lg">
+        <div>
+          <div className="text-xs text-foreground/50">
+            {t("Estimated Investment", "Szacowana Inwestycja")}
+          </div>
+          <motion.div
+            key={breakdown.total}
+            initial={{ opacity: 0.7 }}
+            animate={{ opacity: 1 }}
+            className="text-xl font-bold text-primary"
+          >
+            {formatPrice(breakdown.total)}
+          </motion.div>
+        </div>
+        <button
+          onClick={() => {
+            const el = document.querySelector(".lg\\:sticky");
+            el?.scrollIntoView({ behavior: "smooth", block: "start" });
+          }}
+          className="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-primary text-primary-foreground text-sm font-semibold hover:bg-primary/90 transition-colors whitespace-nowrap"
+        >
+          {t("Get Quote", "Pobierz wycenę")}
+        </button>
       </div>
     </div>
   );

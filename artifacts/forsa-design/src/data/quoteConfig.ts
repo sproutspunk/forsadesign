@@ -44,51 +44,189 @@ export interface MaintenanceOption {
   monthlyPrice: number;
 }
 
+export interface PackagePreset {
+  id: string;
+  labelEn: string;
+  labelPl: string;
+  taglineEn: string;
+  taglinePl: string;
+  fromPrice: number;
+  state: {
+    projectType: string;
+    design: string;
+    content: string;
+    logo: string;
+    photography: string;
+    seo: string;
+    performance: string;
+    hosting: string;
+    maintenance: string;
+    delivery: string;
+    selectedFeatures: string[];
+    additionalPages: number;
+    discountPercent: number;
+    multilangCount: number;
+    apiCount: number;
+  };
+}
+
+export const packagePresets: PackagePreset[] = [
+  {
+    id: "starter",
+    labelEn: "Starter",
+    labelPl: "Starter",
+    taglineEn: "Perfect for new businesses",
+    taglinePl: "Idealny dla nowych firm",
+    fromPrice: 1200,
+    state: {
+      projectType: "landing",
+      design: "template",
+      content: "client",
+      logo: "existing",
+      photography: "client",
+      seo: "none",
+      performance: "standard",
+      hosting: "client",
+      maintenance: "none",
+      delivery: "standard",
+      selectedFeatures: ["contact-form"],
+      additionalPages: 0,
+      discountPercent: 0,
+      multilangCount: 1,
+      apiCount: 1,
+    },
+  },
+  {
+    id: "business",
+    labelEn: "Business",
+    labelPl: "Business",
+    taglineEn: "Grow your online presence",
+    taglinePl: "Rozwijaj swoją obecność online",
+    fromPrice: 4000,
+    state: {
+      projectType: "small-business",
+      design: "semi-custom",
+      content: "ai-copy",
+      logo: "simple",
+      photography: "stock",
+      seo: "basic",
+      performance: "optimised",
+      hosting: "managed",
+      maintenance: "monthly",
+      delivery: "standard",
+      selectedFeatures: ["contact-form", "google-maps", "blog", "testimonials"],
+      additionalPages: 2,
+      discountPercent: 0,
+      multilangCount: 1,
+      apiCount: 1,
+    },
+  },
+  {
+    id: "premium",
+    labelEn: "Premium",
+    labelPl: "Premium",
+    taglineEn: "Full-scale digital solution",
+    taglinePl: "Pełne rozwiązanie cyfrowe",
+    fromPrice: 8000,
+    state: {
+      projectType: "business",
+      design: "fully-custom",
+      content: "professional",
+      logo: "professional",
+      photography: "stock",
+      seo: "professional",
+      performance: "core-web",
+      hosting: "managed",
+      maintenance: "business",
+      delivery: "priority",
+      selectedFeatures: [
+        "contact-form",
+        "google-maps",
+        "blog",
+        "testimonials",
+        "newsletter",
+        "gdpr",
+        "cookie",
+        "analytics",
+      ],
+      additionalPages: 5,
+      discountPercent: 0,
+      multilangCount: 1,
+      apiCount: 1,
+    },
+  },
+];
+
 export const projectTypes: QuoteOption[] = [
-  { value: "landing", labelEn: "Landing Page", labelPl: "Strona docelowa", price: 700 },
-  { value: "one-page", labelEn: "One Page Website", labelPl: "Strona jednostronicowa", price: 950 },
+  { value: "landing", labelEn: "Landing Page", labelPl: "Strona docelowa", price: 1200 },
+  {
+    value: "one-page",
+    labelEn: "One Page Website",
+    labelPl: "Strona jednostronicowa",
+    price: 1500,
+  },
   {
     value: "small-business",
     labelEn: "Small Business Website (up to 5 pages)",
     labelPl: "Mała strona firmowa (do 5 stron)",
-    price: 1600,
+    price: 2500,
   },
   {
     value: "business",
     labelEn: "Business Website (6\u201315 pages)",
     labelPl: "Strona firmowa (6\u201315 stron)",
-    price: 2700,
+    price: 4000,
   },
-  { value: "corporate", labelEn: "Corporate Website", labelPl: "Strona korporacyjna", price: 5000 },
-  { value: "ecommerce", labelEn: "E-commerce Website", labelPl: "Sklep internetowy", price: 4500 },
-  { value: "marketplace", labelEn: "Marketplace", labelPl: "Marketplace", price: 9500 },
-  { value: "booking", labelEn: "Booking Website", labelPl: "Strona z rezerwacjami", price: 5500 },
+  {
+    value: "corporate",
+    labelEn: "Corporate Website",
+    labelPl: "Strona korporacyjna",
+    price: 6500,
+  },
+  {
+    value: "ecommerce",
+    labelEn: "E-commerce Website",
+    labelPl: "Sklep internetowy",
+    price: 6000,
+  },
+  { value: "marketplace", labelEn: "Marketplace", labelPl: "Marketplace", price: 12000 },
+  {
+    value: "booking",
+    labelEn: "Booking Website",
+    labelPl: "Strona z rezerwacjami",
+    price: 6500,
+  },
   {
     value: "membership",
     labelEn: "Membership Website",
-    labelPl: "Strona cz\u0142onkowska",
-    price: 6500,
+    labelPl: "Strona członkowska",
+    price: 8000,
   },
   {
     value: "custom-app",
     labelEn: "Custom Web Application",
     labelPl: "Dedykowana aplikacja webowa",
-    price: 8000,
+    price: 10000,
   },
 ];
 
 export const designOptions: QuoteOption[] = [
-  { value: "template", labelEn: "Template Design", labelPl: "Design z szablonu", price: 0 },
+  {
+    value: "template",
+    labelEn: "Template Design",
+    labelPl: "Design z szablonu",
+    price: 0,
+  },
   {
     value: "semi-custom",
     labelEn: "Semi Custom Design",
-    labelPl: "Design cz\u0119\u015bciowo na zam\u00f3wienie",
+    labelPl: "Design częściowo na zamówienie",
     price: 900,
   },
   {
     value: "fully-custom",
     labelEn: "Fully Custom Design",
-    labelPl: "Design w pe\u0142ni na zam\u00f3wienie",
+    labelPl: "Design w pełni na zamówienie",
     price: 2500,
   },
   {
@@ -103,7 +241,7 @@ export const contentOptions: QuoteOption[] = [
   {
     value: "client",
     labelEn: "Client provides content",
-    labelPl: "Klient dostarcza tre\u015b\u0107",
+    labelPl: "Klient dostarcza treść",
     price: 0,
   },
   {
@@ -121,7 +259,7 @@ export const contentOptions: QuoteOption[] = [
 ];
 
 export const logoOptions: QuoteOption[] = [
-  { value: "existing", labelEn: "Existing logo", labelPl: "Istniej\u0105ce logo", price: 0 },
+  { value: "existing", labelEn: "Existing logo", labelPl: "Istniejące logo", price: 0 },
   { value: "simple", labelEn: "Simple Logo", labelPl: "Proste logo", price: 350 },
   {
     value: "professional",
@@ -132,11 +270,11 @@ export const logoOptions: QuoteOption[] = [
 ];
 
 export const photographyOptions: QuoteOption[] = [
-  { value: "client", labelEn: "Client images", labelPl: "Zdj\u0119cia klienta", price: 0 },
+  { value: "client", labelEn: "Client images", labelPl: "Zdjęcia klienta", price: 0 },
   {
     value: "stock",
     labelEn: "Premium Stock Images",
-    labelPl: "Premium zdj\u0119cia stockowe",
+    labelPl: "Premium zdjęcia stockowe",
     price: 250,
   },
   {
@@ -151,9 +289,9 @@ export const features: QuoteFeature[] = [
   { value: "contact-form", labelEn: "Contact Form", labelPl: "Formularz kontaktowy", price: 180 },
   { value: "google-maps", labelEn: "Google Maps", labelPl: "Mapy Google", price: 120 },
   { value: "whatsapp", labelEn: "WhatsApp Chat", labelPl: "Czat WhatsApp", price: 120 },
-  { value: "live-chat", labelEn: "Live Chat", labelPl: "Czat na \u017cywo", price: 250 },
+  { value: "live-chat", labelEn: "Live Chat", labelPl: "Czat na żywo", price: 250 },
   { value: "blog", labelEn: "Blog", labelPl: "Blog", price: 450 },
-  { value: "testimonials", labelEn: "Testimonials", labelPl: "Opinie klient\u00f3w", price: 250 },
+  { value: "testimonials", labelEn: "Testimonials", labelPl: "Opinie klientów", price: 250 },
   { value: "portfolio", labelEn: "Portfolio", labelPl: "Portfolio", price: 350 },
   { value: "gallery", labelEn: "Gallery", labelPl: "Galeria", price: 250 },
   {
@@ -167,13 +305,13 @@ export const features: QuoteFeature[] = [
   {
     value: "multilang",
     labelEn: "Multi-language",
-    labelPl: "Wieloj\u0119zyczno\u015b\u0107",
+    labelPl: "Wielojęzyczność",
     price: 850,
   },
   {
     value: "appointment",
     labelEn: "Appointment Booking",
-    labelPl: "Rezerwacje termin\u00f3w",
+    labelPl: "Rezerwacje terminów",
     price: 850,
   },
   {
@@ -185,28 +323,28 @@ export const features: QuoteFeature[] = [
   {
     value: "membership",
     labelEn: "Membership Area",
-    labelPl: "Strefa cz\u0142onkowska",
+    labelPl: "Strefa członkowska",
     price: 2200,
   },
   { value: "client-portal", labelEn: "Client Portal", labelPl: "Portal klienta", price: 3500 },
   {
     value: "user-dashboard",
     labelEn: "User Dashboard",
-    labelPl: "Panel u\u017cytkownika",
+    labelPl: "Panel użytkownika",
     price: 3500,
   },
   {
     value: "customer-accounts",
     labelEn: "Customer Accounts",
-    labelPl: "Konta klient\u00f3w",
+    labelPl: "Konta klientów",
     price: 950,
   },
-  { value: "wishlist", labelEn: "Wishlist", labelPl: "Lista \u017cycze\u0144", price: 450 },
+  { value: "wishlist", labelEn: "Wishlist", labelPl: "Lista życzeń", price: 450 },
   { value: "reviews", labelEn: "Product Reviews", labelPl: "Opinie o produktach", price: 350 },
   {
     value: "payment",
     labelEn: "Payment Gateway",
-    labelPl: "Bramka p\u0142atno\u015bci",
+    labelPl: "Bramka płatności",
     price: 450,
   },
   { value: "stripe", labelEn: "Stripe Integration", labelPl: "Integracja Stripe", price: 450 },
@@ -224,7 +362,7 @@ export const features: QuoteFeature[] = [
   {
     value: "live-search",
     labelEn: "Live Search",
-    labelPl: "Wyszukiwanie na \u017cywo",
+    labelPl: "Wyszukiwanie na żywo",
     price: 350,
   },
   { value: "crm", labelEn: "CRM Integration", labelPl: "Integracja CRM", price: 1200 },
@@ -244,20 +382,35 @@ export const features: QuoteFeature[] = [
   { value: "calculator", labelEn: "Calculator", labelPl: "Kalkulator", price: 550 },
   { value: "chatbot", labelEn: "Chatbot", labelPl: "Chatbot", price: 950 },
   { value: "ai-assistant", labelEn: "AI Assistant", labelPl: "Asystent AI", price: 2500 },
-  { value: "customer-login", labelEn: "Customer Login", labelPl: "Logowanie klienta", price: 650 },
+  {
+    value: "customer-login",
+    labelEn: "Customer Login",
+    labelPl: "Logowanie klienta",
+    price: 650,
+  },
   {
     value: "admin-dashboard",
     labelEn: "Admin Dashboard",
     labelPl: "Panel administracyjny",
     price: 3500,
   },
-  { value: "analytics", labelEn: "Analytics Dashboard", labelPl: "Panel analityczny", price: 1500 },
+  {
+    value: "analytics",
+    labelEn: "Analytics Dashboard",
+    labelPl: "Panel analityczny",
+    price: 1500,
+  },
 ];
 
 export const seoOptions: QuoteOption[] = [
   { value: "none", labelEn: "No SEO", labelPl: "Bez SEO", price: 0 },
   { value: "basic", labelEn: "Basic SEO", labelPl: "Podstawowe SEO", price: 450 },
-  { value: "professional", labelEn: "Professional SEO", labelPl: "Profesjonalne SEO", price: 1200 },
+  {
+    value: "professional",
+    labelEn: "Professional SEO",
+    labelPl: "Profesjonalne SEO",
+    price: 1200,
+  },
   { value: "advanced", labelEn: "Advanced SEO", labelPl: "Zaawansowane SEO", price: 2800 },
 ];
 
@@ -266,7 +419,7 @@ export const performanceOptions: QuoteOption[] = [
   {
     value: "optimised",
     labelEn: "Performance Optimisation",
-    labelPl: "Optymalizacja wydajno\u015bci",
+    labelPl: "Optymalizacja wydajności",
     price: 650,
   },
   {
@@ -282,7 +435,7 @@ export const hostingOptions: QuoteOption[] = [
   {
     value: "managed",
     labelEn: "Managed Hosting Setup",
-    labelPl: "Zarz\u0105dzany hosting",
+    labelPl: "Zarządzany hosting",
     price: 250,
   },
   {
@@ -298,7 +451,7 @@ export const maintenanceOptions: MaintenanceOption[] = [
   {
     value: "monthly",
     labelEn: "Monthly Care Plan",
-    labelPl: "Miesi\u0119czny plan opieki",
+    labelPl: "Miesięczny plan opieki",
     monthlyPrice: 95,
   },
   {
@@ -331,7 +484,7 @@ export const deliveryOptions: DeliveryOption[] = [
   {
     value: "fast",
     labelEn: "Fast Track (2\u20133 weeks)",
-    labelPl: "Szybka \u015bcie\u017cka (2\u20133 tygodnie)",
+    labelPl: "Szybka ścieżka (2\u20133 tygodnie)",
     multiplier: 0.4,
   },
   {
@@ -344,5 +497,5 @@ export const deliveryOptions: DeliveryOption[] = [
 
 export const VAT_RATE = 0.2;
 
-export const ADDITIONAL_PAGE_PRICE = 180;
+export const ADDITIONAL_PAGE_PRICE = 200;
 export const MAX_ADDITIONAL_PAGES = 50;
