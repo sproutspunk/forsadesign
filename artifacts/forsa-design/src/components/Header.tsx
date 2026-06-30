@@ -6,8 +6,14 @@ import { motion, AnimatePresence } from "framer-motion";
 import logo from "../assets/forsa-logo.png";
 
 export default function Header() {
-  const { language, setLanguage, t } = useLanguage();
-  const [location] = useLocation();
+  const { language, syncLanguage, t } = useLanguage();
+  const [location, setLocation] = useLocation();
+
+  const switchLang = (lang: "en" | "pl") => {
+    syncLanguage(lang);
+    const newPath = location.replace(/^\/(en|pl)/, `/${lang}`);
+    setLocation(newPath || `/${lang}/`);
+  };
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -80,7 +86,7 @@ export default function Header() {
             href="/en/"
             onClick={(e) => {
               e.preventDefault();
-              setLanguage("en");
+              switchLang("en");
             }}
             className={`transition-colors ${language === "en" ? "text-primary" : "text-foreground/60 hover:text-foreground"}`}
             data-testid="btn-lang-en"
@@ -93,7 +99,7 @@ export default function Header() {
             href="/pl/"
             onClick={(e) => {
               e.preventDefault();
-              setLanguage("pl");
+              switchLang("pl");
             }}
             className={`transition-colors ${language === "pl" ? "text-primary" : "text-foreground/60 hover:text-foreground"}`}
             data-testid="btn-lang-pl"
@@ -139,7 +145,7 @@ export default function Header() {
                   hrefLang="en"
                   onClick={(e) => {
                     e.preventDefault();
-                    setLanguage("en");
+                    switchLang("en");
                     setIsMobileMenuOpen(false);
                   }}
                   className={`text-lg font-semibold ${language === "en" ? "text-primary" : "text-foreground/60"}`}
@@ -151,7 +157,7 @@ export default function Header() {
                   hrefLang="pl"
                   onClick={(e) => {
                     e.preventDefault();
-                    setLanguage("pl");
+                    switchLang("pl");
                     setIsMobileMenuOpen(false);
                   }}
                   className={`text-lg font-semibold ${language === "pl" ? "text-primary" : "text-foreground/60"}`}
