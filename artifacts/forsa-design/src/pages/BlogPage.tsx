@@ -43,6 +43,8 @@ export default function BlogPage({ lang }: BlogPageProps) {
   const { syncLanguage } = useLanguage();
   const m = meta[lang];
 
+  const sortedArticles = [...articlesMeta].sort((a, b) => b.dateIso.localeCompare(a.dateIso));
+
   useEffect(() => {
     syncLanguage(lang);
   }, [lang, syncLanguage]);
@@ -79,7 +81,7 @@ export default function BlogPage({ lang }: BlogPageProps) {
           url: "https://forsadesign.co.uk/logo.png",
         },
       },
-      blogPost: articlesMeta.map((article) => {
+      blogPost: sortedArticles.map((article) => {
         const a = article[lang];
         const slug = lang === "en" ? article.slugEn : article.slugPl;
         return {
@@ -127,7 +129,7 @@ export default function BlogPage({ lang }: BlogPageProps) {
       <section className="py-20">
         <div className="container mx-auto px-6 max-w-4xl">
           <div className="space-y-6">
-            {articlesMeta.map((article, i) => {
+            {sortedArticles.map((article, i) => {
               const a = article[lang];
               const slug = lang === "en" ? article.slugEn : article.slugPl;
               return (
