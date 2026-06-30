@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronDown, Search, Link, ArrowRight } from "lucide-react";
+import { Plus, Minus, Search, ArrowRight } from "lucide-react";
 
 interface FaqItem {
   q: string;
@@ -44,13 +44,7 @@ export default function FAQ() {
     return () => clearTimeout(timer);
   }, []);
 
-  function handleAnchorClick(e: React.MouseEvent, anchorId: string) {
-    e.preventDefault();
-    e.stopPropagation();
-    const url = `${window.location.pathname}#${anchorId}`;
-    window.history.pushState(null, "", url);
-    navigator.clipboard?.writeText(window.location.origin + url).catch(() => {});
-  }
+  const toggle = (idx: number) => setOpenIndex((prev) => (prev === idx ? null : idx));
 
   return (
     <section id="faq" className="py-24 bg-background">
@@ -80,43 +74,23 @@ export default function FAQ() {
         {filtered.length === 0 ? (
           <p className="text-center text-foreground/50 font-light py-8">{t("faq.noResults")}</p>
         ) : (
-          <div className="space-y-3">
+          <div className="divide-y divide-border/20 border border-border/20 rounded-md overflow-hidden">
             {filtered.map(({ item, originalIndex }) => {
               const isOpen = openIndex === originalIndex;
               const anchorId = slugify(originalIndex);
               return (
-                <motion.div
-                  key={originalIndex}
-                  id={anchorId}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-60px" }}
-                  transition={{ duration: 0.4, delay: originalIndex * 0.05 }}
-                  className="border border-border/30 rounded-md overflow-hidden bg-card scroll-mt-24"
-                >
+                <div key={originalIndex} id={anchorId} className="bg-card scroll-mt-24">
                   <button
-                    onClick={() => setOpenIndex(isOpen ? null : originalIndex)}
-                    className="w-full flex items-center justify-between px-6 py-5 text-left hover:bg-card/80 transition-colors group"
+                    onClick={() => toggle(originalIndex)}
+                    className="w-full flex items-center justify-between px-6 py-5 text-left transition-colors hover:bg-white/[0.03]"
+                    aria-expanded={isOpen}
                   >
-                    <span className="font-medium text-white pr-4 leading-snug">{item.q}</span>
-                    <div className="flex items-center gap-2 flex-shrink-0">
-                      <a
-                        href={`#${anchorId}`}
-                        onClick={(e) => handleAnchorClick(e, anchorId)}
-                        className="text-foreground/30 hover:text-primary transition-colors opacity-0 group-hover:opacity-100 focus:opacity-100"
-                        aria-label="Copy link to this question"
-                        title="Copy link"
-                      >
-                        <Link size={14} />
-                      </a>
-                      <span
-                        className={`text-primary transition-transform duration-300 ${
-                          isOpen ? "rotate-180" : "rotate-0"
-                        }`}
-                      >
-                        <ChevronDown size={20} />
-                      </span>
-                    </div>
+                    <span className="font-medium text-white pr-6 leading-snug text-sm md:text-base">
+                      {item.q}
+                    </span>
+                    <span className="flex-shrink-0 w-6 h-6 rounded-full border border-primary/40 flex items-center justify-center text-primary transition-colors">
+                      {isOpen ? <Minus size={13} /> : <Plus size={13} />}
+                    </span>
                   </button>
 
                   <AnimatePresence initial={false}>
@@ -126,17 +100,33 @@ export default function FAQ() {
                         initial={{ height: 0, opacity: 0 }}
                         animate={{ height: "auto", opacity: 1 }}
                         exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.3, ease: "easeInOut" }}
+                        transition={{ duration: 0.22, ease: "easeInOut" }}
                         className="overflow-hidden"
                       >
-                        <div className="px-6 pb-5 pt-0">
+                        <div className="px-6 pb-6 pt-0">
                           <div className="w-full h-px bg-border/20 mb-4" />
-                          <p className="text-foreground/70 font-light leading-relaxed">{item.a}</p>
+                          <p className="text-foreground/70 font-light leading-relaxed text-sm md:text-base">
+                            {item.a}
+                          </p>
+                          <a
+                            href={`#${anchorId}`}
+                            onClick={(e) => {
+                              e.preventDefault();
+                              const url = `${window.location.pathname}#${anchorId}`;
+                              window.history.pushState(null, "", url);
+                              navigator.clipboard
+                                ?.writeText(window.location.origin + url)
+                                .catch(() => {});
+                            }}
+                            className="inline-flex items-center gap-1.5 mt-4 text-xs text-foreground/30 hover:text-primary/60 transition-colors"
+                          >
+                            # link do pytania
+                          </a>
                         </div>
                       </motion.div>
                     )}
                   </AnimatePresence>
-                </motion.div>
+                </div>
               );
             })}
           </div>
