@@ -380,9 +380,9 @@ export function QuoteSummary({
                 </div>
                 <button
                   onClick={onReset}
-                  className="w-full flex items-center justify-center gap-1.5 px-3 py-2 text-xs font-medium rounded-lg border border-border/30 hover:bg-muted/50 transition-colors text-foreground/50"
+                  className="w-full flex items-center justify-center gap-1.5 px-3 py-2.5 text-sm font-semibold rounded-lg border-2 border-border/60 hover:border-destructive/60 hover:text-destructive hover:bg-destructive/5 transition-colors text-foreground/70"
                 >
-                  <RotateCcw className="w-3.5 h-3.5" />
+                  <RotateCcw className="w-4 h-4" />
                   {t("Reset Calculator", "Resetuj kalkulator")}
                 </button>
               </motion.div>
