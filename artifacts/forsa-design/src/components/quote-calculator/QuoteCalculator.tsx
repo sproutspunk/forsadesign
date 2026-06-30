@@ -375,7 +375,7 @@ export default function QuoteCalculator() {
           <p className="text-xs font-semibold uppercase tracking-widest text-foreground/40 mb-3">
             {t("Quick start: choose your level", "Szybki start: wybierz poziom")}
           </p>
-          <div className="grid grid-cols-3 gap-3 md:gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-4">
             {packagePresets.map((preset, i) => (
               <button
                 key={preset.id}
@@ -768,7 +768,7 @@ export default function QuoteCalculator() {
                     key={`${roiVisitors}-${roiConversion}-${roiAvgValue}`}
                     initial={{ opacity: 0.6, scale: 0.99 }}
                     animate={{ opacity: 1, scale: 1 }}
-                    className="grid grid-cols-3 gap-3"
+                    className="grid grid-cols-1 sm:grid-cols-3 gap-3"
                   >
                     <div className="bg-muted/40 rounded-xl p-4 text-center">
                       <div className="text-xl font-bold text-foreground">
