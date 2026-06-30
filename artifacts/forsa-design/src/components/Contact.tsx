@@ -41,11 +41,16 @@ export default function Contact() {
     if (!formData.projectType) newErrors.projectType = t("contact.errors.selectRequired");
     if (!formData.details.trim()) newErrors.details = t("contact.errors.required");
 
-    // Require a Turnstile token only when a site key is configured AND the widget
-    // loaded successfully. If the widget errored (e.g. 400020 domain not in allowlist)
-    // we degrade gracefully and allow submission without a token.
-    if (TURNSTILE_SITE_KEY && !captchaToken && !captchaWidgetFailed) {
-      newErrors.captcha = t("contact.errors.captcha");
+    // Require a Turnstile token whenever a site key is configured. If the widget
+    // failed to load (e.g. domain not in Cloudflare allowlist), submission is
+    // blocked with a user-visible error — there is no path that sends email
+    // without a verified token; the backend enforces the same requirement.
+    if (TURNSTILE_SITE_KEY) {
+      if (captchaWidgetFailed) {
+        newErrors.captcha = t("contact.errors.captchaFailed");
+      } else if (!captchaToken) {
+        newErrors.captcha = t("contact.errors.captcha");
+      }
     }
 
     setErrors(newErrors);
