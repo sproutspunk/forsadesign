@@ -344,8 +344,8 @@ export const articles: Article[] = [
     },
   },
   {
-    slugEn: "seo-2024-website-is-just-the-start",
-    slugPl: "seo-2024-strona-to-dopiero-poczatek",
+    slugEn: "seo-2026-website-is-just-the-start",
+    slugPl: "seo-2026-strona-to-dopiero-poczatek",
     dateIso: "2026-06-18",
     readingTimeMin: 7,
     en: {
@@ -431,7 +431,7 @@ export const articles: Article[] = [
     dateIso: "2026-06-30",
     readingTimeMin: 8,
     en: {
-      title: "Web Design for Small Businesses in Aberdeenshire: What to Expect in 2025",
+      title: "Web Design for Small Businesses in Aberdeenshire: What to Expect in 2026",
       excerpt:
         "If you run a business in Aberdeenshire, whether in Banff, Huntly, Inverurie, Turriff or anywhere else in the region, this guide covers what to expect from a professional website, what it costs, and what to ask before you commit.",
       sections: [
@@ -443,12 +443,12 @@ export const articles: Article[] = [
           body: "Most customers in Aberdeenshire, whether they're searching in Banff, Macduff, Huntly, Keith, Turriff, Inverurie, Ellon, Peterhead, Fraserburgh or Aberdeen, will check a business online before making contact. If your site is slow, hard to use on a phone, or simply doesn't exist, they'll go with whoever shows up next.\n\nPeople make quick decisions about whether to trust a business based on how its website looks and works. A site built with that in mind turns visitors into calls, bookings and enquiries. A well-optimised site can also put you in front of someone searching 'electrician Inverurie' or 'accountant Huntly' at exactly the right moment.",
         },
         {
-          heading: "What makes a good small business website in 2025",
+          heading: "What makes a good small business website in 2026",
           body: "A good website for a small Aberdeenshire business is not about features. It is about getting the basics right.\n\nSpeed matters more than most people think. The majority of your visitors will be on a mobile phone, possibly on a rural 4G connection. If the site takes more than a few seconds to load, a large portion of those visitors will leave before they see anything.\n\nYour phone number should be on every page. Not buried in the footer. Right there at the top, with a tap-to-call button on mobile.\n\nThe words on your pages should reflect what you do and where you do it. Not just 'Services' but 'Plumbing in Banff and Aberdeenshire'. Google reads this when deciding when to show your site.\n\nAnd every page should make it obvious what you want the visitor to do next. Call, book, enquire, or buy. One clear action per page.",
         },
         {
           heading: "How much does a website cost for a small business in Aberdeenshire?",
-          body: "Pricing varies quite a bit depending on what you need. Here is a rough sense of where things sit for Aberdeenshire businesses in 2025.\n\nA basic site of three to five pages starts from around £1,200. That covers a sole trader or small service business that needs a clean online presence: homepage, services, about, contact.\n\nA standard business website of five to ten pages typically runs from £2,500 to £5,000. That includes custom design, SEO setup, mobile optimisation, contact forms and basic analytics.\n\nE-commerce or more complex projects tend to start at £5,000 and go up from there depending on the scope.\n\nBe cautious with very cheap quotes. A website for £300 from a template platform will often cost more in lost business than it saves upfront. The right price reflects the actual complexity of the project and is delivered by someone who understands what you are trying to achieve, not just what it should look like.",
+          body: "Pricing varies quite a bit depending on what you need. Here is a rough sense of where things sit for Aberdeenshire businesses in 2026.\n\nA basic site of three to five pages starts from around £1,200. That covers a sole trader or small service business that needs a clean online presence: homepage, services, about, contact.\n\nA standard business website of five to ten pages typically runs from £2,500 to £5,000. That includes custom design, SEO setup, mobile optimisation, contact forms and basic analytics.\n\nE-commerce or more complex projects tend to start at £5,000 and go up from there depending on the scope.\n\nBe cautious with very cheap quotes. A website for £300 from a template platform will often cost more in lost business than it saves upfront. The right price reflects the actual complexity of the project and is delivered by someone who understands what you are trying to achieve, not just what it should look like.",
         },
         {
           heading: "What to look for when choosing a web designer in Aberdeenshire",
@@ -473,7 +473,7 @@ export const articles: Article[] = [
       ],
     },
     pl: {
-      title: "Web Design dla Małych Firm w Aberdeenshire: Czego Się Spodziewać w 2025",
+      title: "Web Design dla Małych Firm w Aberdeenshire: Czego Się Spodziewać w 2026",
       excerpt:
         "Jeśli prowadzisz firmę w Aberdeenshire, w Banff, Huntly, Inverurie, Turriff czy gdziekolwiek indziej w regionie, ten przewodnik wyjaśnia czego się spodziewać po profesjonalnej stronie, ile to kosztuje i o co warto zapytać przed podpisaniem umowy.",
       sections: [
@@ -485,12 +485,12 @@ export const articles: Article[] = [
           body: "Większość klientów w Aberdeenshire, czy szukają w Banff, Macduff, Huntly, Keith, Turriff, Inverurie, Ellon, Peterhead, Fraserburgh czy Aberdeen, sprawdza firmę online przed nawiązaniem kontaktu. Jeśli Twoja strona jest wolna, trudna do obsługi na telefonie lub po prostu nie istnieje, klient trafi do konkurenta, który ma działającą witrynę.\n\nLudzie szybko oceniają wiarygodność firmy na podstawie tego, jak wygląda i działa jej strona. Strona zbudowana z myślą o konwersji zamienia odwiedzających w telefony, rezerwacje i zapytania. Dobrze zoptymalizowana witryna może też trafić do kogoś szukającego 'elektryk Inverurie' lub 'księgowy Huntly' dokładnie w odpowiednim momencie.",
         },
         {
-          heading: "Co tworzy dobrą stronę dla małej firmy w 2025",
+          heading: "Co tworzy dobrą stronę dla małej firmy w 2026",
           body: "Dobra strona dla małej firmy z Aberdeenshire to nie kwestia funkcji. Chodzi o dobre wykonanie podstaw.\n\nSzybkość ma większe znaczenie niż większość ludzi myśli. Większość odwiedzających będzie na telefonie, być może na wiejskim połączeniu 4G. Jeśli strona ładuje się dłużej niż kilka sekund, duża część tych osób odejdzie zanim cokolwiek zobaczą.\n\nNumer telefonu powinien być na każdej stronie. Nie ukryty w stopce. Dobrze widoczny na górze, z przyciskiem click-to-call na telefonie.\n\nTreść strony powinna odzwierciedlać co robisz i gdzie to robisz. Nie tylko 'Usługi', ale 'Usługi hydrauliczne w Banff i Aberdeenshire'. Google to czyta, gdy decyduje kiedy pokazać Twoją stronę.\n\nKażda strona powinna jasno wskazywać co odwiedzający ma zrobić dalej. Zadzwonić, zarezerwować, wysłać zapytanie, kupić. Jedna czytelna akcja na stronę.",
         },
         {
           heading: "Ile kosztuje strona internetowa dla małej firmy w Aberdeenshire?",
-          body: "Ceny różnią się dość znacznie w zależności od potrzeb. Oto przybliżony obraz dla firm z Aberdeenshire w 2025.\n\nPodstawowa strona z trzema do pięciu podstronami zaczyna się od około £1 200. To odpowiednie dla jednoosobowej działalności lub małej firmy usługowej, która potrzebuje porządnej obecności online: strona główna, usługi, o nas, kontakt.\n\nStandardowa strona biznesowa z pięcioma do dziesięciu podstronami to zazwyczaj £2 500 do £5 000. Obejmuje indywidualny projekt, konfigurację SEO, optymalizację mobilną, formularze kontaktowe i podstawową analitykę.\n\nE-commerce lub bardziej złożone projekty zaczynają się zazwyczaj od £5 000 i rosną w zależności od zakresu.\n\nUważaj na bardzo tanie oferty. Strona za £300 od platformy szablonowej często kosztuje więcej w postaci utraconych klientów niż oszczędza z góry. Właściwa cena odzwierciedla rzeczywistą złożoność projektu i jest realizowana przez kogoś, kto rozumie Twoje cele, a nie tylko jak strona ma wyglądać.",
+          body: "Ceny różnią się dość znacznie w zależności od potrzeb. Oto przybliżony obraz dla firm z Aberdeenshire w 2026.\n\nPodstawowa strona z trzema do pięciu podstronami zaczyna się od około £1 200. To odpowiednie dla jednoosobowej działalności lub małej firmy usługowej, która potrzebuje porządnej obecności online: strona główna, usługi, o nas, kontakt.\n\nStandardowa strona biznesowa z pięcioma do dziesięciu podstronami to zazwyczaj £2 500 do £5 000. Obejmuje indywidualny projekt, konfigurację SEO, optymalizację mobilną, formularze kontaktowe i podstawową analitykę.\n\nE-commerce lub bardziej złożone projekty zaczynają się zazwyczaj od £5 000 i rosną w zależności od zakresu.\n\nUważaj na bardzo tanie oferty. Strona za £300 od platformy szablonowej często kosztuje więcej w postaci utraconych klientów niż oszczędza z góry. Właściwa cena odzwierciedla rzeczywistą złożoność projektu i jest realizowana przez kogoś, kto rozumie Twoje cele, a nie tylko jak strona ma wyglądać.",
         },
         {
           heading: "Na co zwrócić uwagę wybierając web designera w Aberdeenshire",

@@ -73,19 +73,19 @@ export const articlesMeta: ArticleMeta[] = [
     },
   },
   {
-    slugEn: "seo-2024-website-is-just-the-start",
-    slugPl: "seo-2024-strona-to-dopiero-poczatek",
+    slugEn: "seo-2026-website-is-just-the-start",
+    slugPl: "seo-2026-strona-to-dopiero-poczatek",
     dateIso: "2026-06-18",
     readingTimeMin: 7,
     en: {
-      title: "SEO in 2024: Why Your Website Is Just the Start",
+      title: "SEO in 2026: Why Your Website Is Just the Start",
       excerpt:
-        "The idea that you build a site and Google rankings arrive is a myth from 2010. In 2024, SEO is a combination of architecture, content, backlinks, user signals, and E-E-A-T. The site is the foundation, not the whole picture.",
+        "The idea that you build a site and Google rankings arrive is a myth from 2010. In 2026, SEO is a combination of architecture, content, backlinks, user signals, and E-E-A-T. The site is the foundation, not the whole picture.",
     },
     pl: {
-      title: "SEO w 2024: Dlaczego Twoja strona to dopiero początek",
+      title: "SEO w 2026: Dlaczego Twoja strona to dopiero początek",
       excerpt:
-        "Idea, że budujesz stronę i rankingi w Google same przychodzą, to mit z 2010. W 2024, SEO to kombinacja: architektura, treść, linki, sygnały użytkownika, E-E-A-T. Strona to fundament, nie cała strategia.",
+        "Idea, że budujesz stronę i rankingi w Google same przychodzą, to mit z 2010. W 2026, SEO to kombinacja: architektura, treść, linki, sygnały użytkownika, E-E-A-T. Strona to fundament, nie cała strategia.",
     },
   },
   {
@@ -94,12 +94,12 @@ export const articlesMeta: ArticleMeta[] = [
     dateIso: "2026-06-30",
     readingTimeMin: 8,
     en: {
-      title: "Web Design for Small Businesses in Aberdeenshire: What to Expect in 2025",
+      title: "Web Design for Small Businesses in Aberdeenshire: What to Expect in 2026",
       excerpt:
         "If your business is based in Aberdeenshire, whether in Banff, Huntly, Inverurie, Turriff or anywhere across the region, this guide covers what to expect when investing in a professional website, what it costs, and what questions to ask before signing anything.",
     },
     pl: {
-      title: "Web Design dla Małych Firm w Aberdeenshire: Czego Się Spodziewać w 2025",
+      title: "Web Design dla Małych Firm w Aberdeenshire: Czego Się Spodziewać w 2026",
       excerpt:
         "Jeśli Twoja firma działa w Aberdeenshire, w Banff, Huntly, Inverurie, Turriff lub gdziekolwiek w regionie, ten przewodnik wyjaśnia, czego oczekiwać inwestując w profesjonalną stronę, ile to kosztuje i jakie pytania zadać przed podpisaniem umowy.",
     },

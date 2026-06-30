@@ -198,7 +198,7 @@ function buildHomepageBodyEn() {
 <footer>
 <p>Built for scale. Hardcoded for speed. — Banff, Scotland</p>
 <nav><a href="/en/terms">Terms &amp; Conditions</a> | <a href="/en/privacy">Privacy Policy</a></nav>
-<p>&#169; 2024 Forsa Design. All rights reserved.</p>
+<p>&#169; 2026 Forsa Design. All rights reserved.</p>
 </footer>`;
 }
 
@@ -278,7 +278,7 @@ function buildHomepageBodyPl() {
 <footer>
 <p>Stworzone by dzia&#322;a&#263;. Napisane by zarabia&#263;. &#8212; Banff, Szkocja</p>
 <nav><a href="/pl/terms">Regulamin i Warunki</a> | <a href="/pl/privacy">Polityka Prywatno&#347;ci</a></nav>
-<p>&#169; 2024 Forsa Design. Wszystkie prawa zastrze&#380;one.</p>
+<p>&#169; 2026 Forsa Design. Wszystkie prawa zastrze&#380;one.</p>
 </footer>`;
 }
 
