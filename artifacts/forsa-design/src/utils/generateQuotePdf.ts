@@ -165,39 +165,11 @@ export async function generateQuotePdf(data: PdfData): Promise<void> {
   });
   y -= 4;
 
-  // Subtotal ex VAT
-  drawText(
-    page,
-    t(data, "Subtotal (ex. VAT)", "Suma netto"),
-    MARGIN + 6,
-    y - 4,
-    fontReg,
-    9,
-    MID_GREY,
-  );
-  const stW = textWidth(data.formatPrice(data.subtotalExVat), fontBold, 9);
-  drawText(
-    page,
-    data.formatPrice(data.subtotalExVat),
-    W - MARGIN - stW - 6,
-    y - 4,
-    fontBold,
-    9,
-    DARK,
-  );
-  y -= rowH;
-
-  // VAT
-  drawText(page, t(data, "VAT (20%)", "VAT (20%)"), MARGIN + 6, y - 4, fontReg, 9, MID_GREY);
-  const vatW = textWidth(data.formatPrice(data.vat), fontBold, 9);
-  drawText(page, data.formatPrice(data.vat), W - MARGIN - vatW - 6, y - 4, fontBold, 9, DARK);
-  y -= rowH + 4;
-
   // Total box
   page.drawRectangle({ x: MARGIN, y: y - 28, width: COL, height: 36, color: NAVY });
   drawText(
     page,
-    t(data, "TOTAL (inc. VAT)", "LACZNIE (z VAT)"),
+    t(data, "TOTAL", "LACZNIE"),
     MARGIN + 10,
     y - 9,
     fontBold,

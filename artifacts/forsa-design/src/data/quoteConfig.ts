@@ -495,7 +495,7 @@ export const deliveryOptions: DeliveryOption[] = [
   },
 ];
 
-export const VAT_RATE = 0.2;
+export const VAT_RATE = 0;
 
 export const ADDITIONAL_PAGE_PRICE = 200;
 export const MAX_ADDITIONAL_PAGES = 50;

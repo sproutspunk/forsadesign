@@ -188,9 +188,6 @@ export function QuoteSummary({
             <div className="text-3xl md:text-4xl font-bold text-foreground mt-2">
               {formatPrice(breakdown.total)}
             </div>
-            <div className="text-xs text-foreground/50 mt-1">
-              {t("inc. VAT (20%)", "z VAT (20%)")}
-            </div>
           </motion.div>
 
           <div className="mt-3 pt-3 border-t border-border/20 space-y-1 text-sm">
@@ -264,18 +261,14 @@ export function QuoteSummary({
                         <span>-{formatPrice(breakdown.discountAmount)}</span>
                       </div>
                     )}
-                    <div className="border-t border-border/20 pt-2 mt-2 space-y-1">
+                    <div className="border-t border-border/20 pt-2 mt-2">
                       <div className="flex justify-between text-sm">
-                        <span className="text-foreground/60">
-                          {t("Subtotal", "Suma czesciowa")}
+                        <span className="text-foreground/60 font-semibold">
+                          {t("Total", "Razem")}
                         </span>
                         <span className="font-semibold">
-                          {formatPrice(breakdown.subtotal - breakdown.discountAmount)}
+                          {formatPrice(breakdown.total)}
                         </span>
-                      </div>
-                      <div className="flex justify-between text-sm">
-                        <span className="text-foreground/60">{t("VAT (20%)", "VAT (20%)")}</span>
-                        <span className="font-semibold">{formatPrice(breakdown.vat)}</span>
                       </div>
                     </div>
                   </div>
