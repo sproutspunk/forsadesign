@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   Download,
@@ -11,7 +11,9 @@ import {
   ChevronDown,
   ChevronUp,
   Send,
+  Loader2,
 } from "lucide-react";
+import { generateQuotePdf } from "@/utils/generateQuotePdf";
 
 interface Breakdown {
   projectPrice: number;
@@ -57,8 +59,8 @@ const INCLUDED_EN = [
 const INCLUDED_PL = [
   "Responsywny design",
   "Podstawy SEO",
-  "Konfiguracja bezpieczeństwa",
-  "Optymalizacja wydajności",
+  "Konfiguracja bezpieczenstwa",
+  "Optymalizacja wydajnosci",
   "Optymalizacja mobilna",
   "Testy cross-browser",
 ];
@@ -78,7 +80,7 @@ export function QuoteSummary({
   const [showLineItems, setShowLineItems] = useState(false);
   const [emailStep, setEmailStep] = useState<"idle" | "capturing" | "done">("idle");
   const [email, setEmail] = useState("");
-  const summaryRef = useRef<HTMLDivElement>(null);
+  const [isGenerating, setIsGenerating] = useState(false);
 
   const handleSave = () => {
     const quotes = JSON.parse(localStorage.getItem("forsa-quotes") || "[]");
@@ -101,95 +103,53 @@ export function QuoteSummary({
   const handlePrint = () => window.print();
 
   const handleEmail = () => {
-    const subject = encodeURIComponent(t("Website Quote Request", "Zapytanie o wycenę strony"));
+    const subject = encodeURIComponent(t("Website Quote Request", "Zapytanie o wycene strony"));
     const body = encodeURIComponent(
-      `${t("Project total", "Całkowita wycena")}: ${formatPrice(breakdown.total)}\n${t("Estimated time", "Szacowany czas")}: ${isEn ? breakdown.estimatedWeeks : breakdown.estimatedWeeksPl}`,
+      `${t("Project total", "Calkowita wycena")}: ${formatPrice(breakdown.total)}\n${t("Estimated time", "Szacowany czas")}: ${isEn ? breakdown.estimatedWeeks : breakdown.estimatedWeeksPl}`,
     );
     window.location.href = `mailto:hello@forsadesign.co.uk?subject=${subject}&body=${body}`;
   };
 
-  const triggerDownload = () => {
-    const lines = [
-      "FORSA DESIGN",
-      "forsadesign.co.uk | hello@forsadesign.co.uk",
-      "=".repeat(40),
-      "",
-      t("WEBSITE QUOTE", "WYCENA STRONY"),
-      `${t("Date", "Data")}: ${new Date().toLocaleDateString(isEn ? "en-GB" : "pl-PL")}`,
-      "",
-      `${t("Project", "Projekt")}: ${projectLabel}`,
-      "",
-      "-".repeat(40),
-      t("COST BREAKDOWN", "ZESTAWIENIE KOSZTÓW"),
-      "-".repeat(40),
-    ];
-    if (breakdown.projectPrice > 0)
-      lines.push(`${t("Project Type", "Typ projektu")}: ${formatPrice(breakdown.projectPrice)}`);
-    if (breakdown.pagesPrice > 0)
-      lines.push(
-        `${t("Additional Pages", "Dodatkowe strony")}: ${formatPrice(breakdown.pagesPrice)}`,
-      );
-    if (breakdown.designPrice > 0)
-      lines.push(`${t("Design", "Design")}: ${formatPrice(breakdown.designPrice)}`);
-    if (breakdown.contentPrice > 0)
-      lines.push(`${t("Content", "Treść")}: ${formatPrice(breakdown.contentPrice)}`);
-    if (breakdown.logoPrice > 0)
-      lines.push(`${t("Logo", "Logo")}: ${formatPrice(breakdown.logoPrice)}`);
-    if (breakdown.photoPrice > 0)
-      lines.push(`${t("Photography", "Fotografia")}: ${formatPrice(breakdown.photoPrice)}`);
-    if (breakdown.featuresPrice > 0)
-      lines.push(`${t("Features", "Funkcje")}: ${formatPrice(breakdown.featuresPrice)}`);
-    if (breakdown.seoPrice > 0)
-      lines.push(`${t("SEO", "SEO")}: ${formatPrice(breakdown.seoPrice)}`);
-    if (breakdown.perfPrice > 0)
-      lines.push(`${t("Performance", "Wydajność")}: ${formatPrice(breakdown.perfPrice)}`);
-    if (breakdown.hostingPrice > 0)
-      lines.push(`${t("Hosting", "Hosting")}: ${formatPrice(breakdown.hostingPrice)}`);
-    if (breakdown.deliveryFee > 0)
-      lines.push(`${t("Delivery Fee", "Opłata za czas")}: ${formatPrice(breakdown.deliveryFee)}`);
-    if (breakdown.discountAmount > 0)
-      lines.push(`${t("Discount", "Rabat")}: -${formatPrice(breakdown.discountAmount)}`);
-    lines.push(
-      "",
-      "-".repeat(40),
-      `${t("Subtotal (ex VAT)", "Suma netto")}: ${formatPrice(breakdown.subtotal - breakdown.discountAmount)}`,
-      `${t("VAT (20%)", "VAT (20%)")}: ${formatPrice(breakdown.vat)}`,
-      `${t("TOTAL", "ŁĄCZNIE")}: ${formatPrice(breakdown.total)}`,
-      "",
-    );
-    if (breakdown.maintenanceMonthly > 0) {
-      lines.push(
-        `${t("Monthly Maintenance", "Miesięczna konserwacja")}: ${formatPrice(breakdown.maintenanceMonthly)}/${t("month", "mies.")}`,
-        "",
-      );
+  const lineItems = [
+    { label: t("Project", "Projekt"), value: breakdown.projectPrice },
+    { label: t("Additional Pages", "Dodatkowe strony"), value: breakdown.pagesPrice },
+    { label: t("Design", "Design"), value: breakdown.designPrice },
+    { label: t("Content", "Tresc"), value: breakdown.contentPrice },
+    { label: t("Logo", "Logo"), value: breakdown.logoPrice },
+    { label: t("Photography", "Fotografia"), value: breakdown.photoPrice },
+    { label: t("Features", "Funkcje"), value: breakdown.featuresPrice },
+    { label: t("SEO", "SEO"), value: breakdown.seoPrice },
+    { label: t("Performance", "Wydajnosc"), value: breakdown.perfPrice },
+    { label: t("Hosting", "Hosting"), value: breakdown.hostingPrice },
+    { label: t("Delivery Fee", "Oplata za czas"), value: breakdown.deliveryFee },
+  ].filter((item) => item.value > 0);
+
+  const triggerPdf = async () => {
+    setIsGenerating(true);
+    try {
+      await generateQuotePdf({
+        quoteId: `FD-${Date.now().toString(36).toUpperCase()}`,
+        dateStr: new Date().toLocaleDateString(isEn ? "en-GB" : "pl-PL"),
+        projectLabel,
+        subtotalExVat: breakdown.subtotal - breakdown.discountAmount,
+        vat: breakdown.vat,
+        total: breakdown.total,
+        discountAmount: breakdown.discountAmount,
+        maintenanceMonthly: breakdown.maintenanceMonthly,
+        estimatedWeeks: isEn ? breakdown.estimatedWeeks : breakdown.estimatedWeeksPl,
+        lineItems,
+        includedItems: isEn ? INCLUDED_EN : INCLUDED_PL,
+        formatPrice,
+        isEn,
+      });
+    } finally {
+      setIsGenerating(false);
     }
-    lines.push(
-      "-".repeat(40),
-      t("INCLUDED IN EVERY PROJECT", "W KAŻDYM PROJEKCIE"),
-      "-".repeat(40),
-    );
-    (isEn ? INCLUDED_EN : INCLUDED_PL).forEach((item) => lines.push(`✓ ${item}`));
-    lines.push(
-      "",
-      `${t("Estimated Delivery", "Szacowany czas realizacji")}: ${isEn ? breakdown.estimatedWeeks : breakdown.estimatedWeeksPl}`,
-      "",
-      t(
-        "This is an indicative estimate. Final pricing confirmed after discovery call.",
-        "To jest wstępna wycena. Ostateczna cena potwierdzona po rozmowie wstępnej.",
-      ),
-    );
-    const blob = new Blob([lines.join("\n")], { type: "text/plain;charset=utf-8" });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = `forsa-quote-${new Date().toISOString().slice(0, 10)}.txt`;
-    a.click();
-    URL.revokeObjectURL(url);
   };
 
   const handleDownloadClick = () => {
     if (emailStep === "done") {
-      triggerDownload();
+      void triggerPdf();
     } else {
       setEmailStep("capturing");
     }
@@ -205,29 +165,12 @@ export function QuoteSummary({
       localStorage.setItem("forsa-quotes", JSON.stringify(quotes));
     }
     setEmailStep("done");
-    triggerDownload();
+    void triggerPdf();
   };
-
-  const lineItems = [
-    { label: t("Project", "Projekt"), value: breakdown.projectPrice },
-    { label: t("Additional Pages", "Dodatkowe strony"), value: breakdown.pagesPrice },
-    { label: t("Design", "Design"), value: breakdown.designPrice },
-    { label: t("Content", "Treść"), value: breakdown.contentPrice },
-    { label: t("Logo", "Logo"), value: breakdown.logoPrice },
-    { label: t("Photography", "Fotografia"), value: breakdown.photoPrice },
-    { label: t("Features", "Funkcje"), value: breakdown.featuresPrice },
-    { label: t("SEO", "SEO"), value: breakdown.seoPrice },
-    { label: t("Performance", "Wydajność"), value: breakdown.perfPrice },
-    { label: t("Hosting", "Hosting"), value: breakdown.hostingPrice },
-    { label: t("Delivery Fee", "Opłata za czas"), value: breakdown.deliveryFee },
-  ].filter((item) => item.value > 0);
 
   return (
     <div className="lg:sticky lg:top-6">
-      <div
-        ref={summaryRef}
-        className="bg-card border border-border/30 rounded-xl shadow-lg overflow-hidden"
-      >
+      <div className="bg-card border border-border/30 rounded-xl shadow-lg overflow-hidden">
         <div className="bg-gradient-to-br from-primary/10 to-primary/5 p-5 md:p-6 border-b border-border/20">
           <div className="flex items-center gap-2 mb-1">
             <PoundSterling className="w-4 h-4 text-primary" />
@@ -252,7 +195,7 @@ export function QuoteSummary({
 
           <div className="mt-3 pt-3 border-t border-border/20 space-y-1 text-sm">
             <div className="flex justify-between text-foreground/70">
-              <span>{t("Project value", "Wartość projektu")}</span>
+              <span>{t("Project value", "Wartosc projektu")}</span>
               <span className="font-medium text-foreground">{projectLabel}</span>
             </div>
             <div className="flex justify-between text-foreground/70">
@@ -263,7 +206,7 @@ export function QuoteSummary({
             </div>
             {breakdown.maintenanceMonthly > 0 && (
               <div className="flex justify-between text-foreground/70">
-                <span>{t("Monthly", "Miesięcznie")}</span>
+                <span>{t("Monthly", "Miesieczna")}</span>
                 <span className="font-medium text-foreground">
                   {formatPrice(breakdown.maintenanceMonthly)}/{t("mo", "mies.")}
                 </span>
@@ -275,7 +218,7 @@ export function QuoteSummary({
         <div className="p-5 md:p-6 space-y-4">
           <div className="space-y-1.5">
             <p className="text-xs font-semibold uppercase tracking-widest text-foreground/50">
-              {t("Included in every project", "W każdym projekcie")}
+              {t("Included in every project", "W kazdym projekcie")}
             </p>
             <div className="grid grid-cols-1 gap-1">
               {(isEn ? INCLUDED_EN : INCLUDED_PL).map((item) => (
@@ -292,7 +235,7 @@ export function QuoteSummary({
               onClick={() => setShowLineItems((v) => !v)}
               className="w-full flex items-center justify-between text-xs text-foreground/50 hover:text-foreground/80 transition-colors"
             >
-              <span>{t("View cost breakdown", "Zestawienie kosztów")}</span>
+              <span>{t("View cost breakdown", "Zestawienie kosztow")}</span>
               {showLineItems ? (
                 <ChevronUp className="w-3.5 h-3.5" />
               ) : (
@@ -324,7 +267,7 @@ export function QuoteSummary({
                     <div className="border-t border-border/20 pt-2 mt-2 space-y-1">
                       <div className="flex justify-between text-sm">
                         <span className="text-foreground/60">
-                          {t("Subtotal", "Suma częściowa")}
+                          {t("Subtotal", "Suma czesciowa")}
                         </span>
                         <span className="font-semibold">
                           {formatPrice(breakdown.subtotal - breakdown.discountAmount)}
@@ -357,7 +300,7 @@ export function QuoteSummary({
                 <p className="text-xs text-foreground/60">
                   {t(
                     "Enter your email to receive the PDF quote:",
-                    "Podaj email, aby otrzymać wycenę:",
+                    "Podaj email, aby otrzymac wycene:",
                   )}
                 </p>
                 <input
@@ -365,23 +308,26 @@ export function QuoteSummary({
                   required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder={t("your@email.com", "twój@email.com")}
+                  placeholder="your@email.com"
                   className="w-full px-3 py-2 text-sm rounded-lg border border-border bg-background focus:outline-none focus:border-primary transition-colors"
                 />
                 <div className="grid grid-cols-2 gap-2">
                   <button
                     type="button"
-                    onClick={() => setEmailStep("idle")}
+                    onClick={() => {
+                      setEmailStep("done");
+                      void triggerPdf();
+                    }}
                     className="px-3 py-2 text-xs font-medium rounded-lg border border-border/40 hover:bg-muted/50 transition-colors text-foreground/60"
                   >
-                    {t("Skip", "Pomiń")}
+                    {t("Skip", "Pomin")}
                   </button>
                   <button
                     type="submit"
                     className="flex items-center justify-center gap-1.5 px-3 py-2 text-xs font-semibold rounded-lg bg-primary text-primary-foreground hover:bg-primary/90 transition-colors"
                   >
                     <Send className="w-3 h-3" />
-                    {t("Send my quote", "Wyślij wycenę")}
+                    {t("Send my quote", "Wyslij wycene")}
                   </button>
                 </div>
               </motion.form>
@@ -394,10 +340,20 @@ export function QuoteSummary({
               >
                 <button
                   onClick={handleDownloadClick}
-                  className="w-full flex items-center justify-center gap-2 px-4 py-2.5 text-sm font-semibold rounded-lg bg-primary text-primary-foreground hover:bg-primary/90 transition-colors"
+                  disabled={isGenerating}
+                  className="w-full flex items-center justify-center gap-2 px-4 py-2.5 text-sm font-semibold rounded-lg bg-primary text-primary-foreground hover:bg-primary/90 transition-colors disabled:opacity-70 disabled:cursor-not-allowed"
                 >
-                  <Download className="w-4 h-4" />
-                  {t("Download Quote", "Pobierz wycenę")}
+                  {isGenerating ? (
+                    <>
+                      <Loader2 className="w-4 h-4 animate-spin" />
+                      {t("Generating PDF...", "Generowanie PDF...")}
+                    </>
+                  ) : (
+                    <>
+                      <Download className="w-4 h-4" />
+                      {t("Download PDF Quote", "Pobierz wycene PDF")}
+                    </>
+                  )}
                 </button>
                 <div className="grid grid-cols-3 gap-2">
                   <button
@@ -442,7 +398,7 @@ export function QuoteSummary({
                 className="flex items-center gap-2 p-3 rounded-lg bg-emerald-500/10 text-emerald-600 text-sm"
               >
                 <CheckCircle2 className="w-4 h-4" />
-                {t("Quote saved successfully", "Wycena zapisana pomyślnie")}
+                {t("Quote saved successfully", "Wycena zapisana pomyslnie")}
               </motion.div>
             )}
           </AnimatePresence>
@@ -450,7 +406,7 @@ export function QuoteSummary({
           <p className="text-xs text-foreground/40 text-center leading-relaxed">
             {t(
               "Indicative estimate. Final price confirmed after discovery call.",
-              "Wstępna wycena. Ostateczna cena po rozmowie wstępnej.",
+              "Wstepna wycena. Ostateczna cena po rozmowie wstepnej.",
             )}
           </p>
         </div>
