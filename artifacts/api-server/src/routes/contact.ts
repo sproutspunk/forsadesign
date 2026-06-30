@@ -159,10 +159,10 @@ router.post("/contact", contactRateLimiter, async (req, res) => {
   // before sending any email. Fails closed when verification does not pass.
   const captchaOk = await verifyTurnstile(parsed.data.captchaToken, req.ip);
   if (!captchaOk) {
-    return res.status(400).json(
+    return res.status(403).json(
       SubmitContactResponse.parse({
         ok: false,
-        error: "Verification failed. Please try again.",
+        error: "captcha_failed",
       }),
     );
   }

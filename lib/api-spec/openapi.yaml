@@ -51,6 +51,12 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/ContactResponse"
+        "403":
+          description: CAPTCHA verification failed
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ContactResponse"
         "502":
           description: Email delivery failed
           content:
@@ -100,7 +106,6 @@ components:
         - email
         - projectType
         - details
-        - captchaToken
     ContactResponse:
       type: object
       properties:

@@ -33,7 +33,7 @@ export const SubmitContactBody = zod.object({
   "details": zod.string().min(1),
   "language": zod.enum(['en', 'pl']).optional(),
   "website": zod.string().optional().describe('Honeypot field for spam protection. Hidden from real users and must be left empty; submissions with a value are silently discarded.'),
-  "captchaToken": zod.string().describe('Cloudflare Turnstile token produced by the widget on the contact form. Required and verified server-side before any email is sent; submissions without a valid token are rejected.')
+  "captchaToken": zod.string().optional().describe('Cloudflare Turnstile token produced by the widget on the contact form. Required and verified server-side before any email is sent; submissions without a valid token are rejected.')
 })
 
 export const SubmitContactResponse = zod.object({

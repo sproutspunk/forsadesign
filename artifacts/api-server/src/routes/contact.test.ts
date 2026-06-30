@@ -97,10 +97,11 @@ describe("POST /api/contact bot protection", () => {
       .post("/api/contact")
       .send(validBody({ captchaToken: undefined }));
 
-    // No bot proof = no email. The contract requires captchaToken and the
-    // handler verifies it, so an unauthenticated submission must be denied.
-    expect(res.status).toBe(400);
+    // No bot proof = no email. captchaToken is optional at the schema level
+    // so the request reaches verifyTurnstile, which rejects it with 403.
+    expect(res.status).toBe(403);
     expect(res.body.ok).toBe(false);
+    expect(res.body.error).toBe("captcha_failed");
     expect(proxyMock).not.toHaveBeenCalled();
   });
 
@@ -112,12 +113,13 @@ describe("POST /api/contact bot protection", () => {
       .post("/api/contact")
       .send(validBody({ captchaToken: "" }));
 
-    expect(res.status).toBe(400);
+    expect(res.status).toBe(403);
     expect(res.body.ok).toBe(false);
+    expect(res.body.error).toBe("captcha_failed");
     expect(proxyMock).not.toHaveBeenCalled();
   });
 
-  it("rejects with 400 when the CAPTCHA token is invalid", async () => {
+  it("rejects with 403 when the CAPTCHA token is invalid", async () => {
     process.env.TURNSTILE_SECRET_KEY = FAIL_SECRET;
     const app = await loadApp();
 
@@ -125,8 +127,9 @@ describe("POST /api/contact bot protection", () => {
       .post("/api/contact")
       .send(validBody({ captchaToken: "an-invalid-token" }));
 
-    expect(res.status).toBe(400);
+    expect(res.status).toBe(403);
     expect(res.body.ok).toBe(false);
+    expect(res.body.error).toBe("captcha_failed");
     expect(proxyMock).not.toHaveBeenCalled();
   });
 
@@ -168,8 +171,9 @@ describe("POST /api/contact bot protection", () => {
     // With no CAPTCHA secret the server cannot verify bot proof, so it must not
     // send email regardless of environment: failing closed prevents the endpoint
     // from becoming an open, branded mail relay.
-    expect(res.status).toBe(400);
+    expect(res.status).toBe(403);
     expect(res.body.ok).toBe(false);
+    expect(res.body.error).toBe("captcha_failed");
     expect(proxyMock).not.toHaveBeenCalled();
   });
 });
