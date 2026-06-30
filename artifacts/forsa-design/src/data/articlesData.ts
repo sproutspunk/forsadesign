@@ -425,4 +425,90 @@ export const articles: Article[] = [
       ],
     },
   },
+  {
+    slugEn: "web-design-aberdeenshire",
+    slugPl: "web-design-aberdeenshire-szkocja",
+    dateIso: "2026-06-30",
+    readingTimeMin: 8,
+    en: {
+      title: "Web Design for Small Businesses in Aberdeenshire: What to Expect in 2025",
+      excerpt:
+        "If your business is based in Aberdeenshire — whether in Banff, Huntly, Inverurie, Turriff or anywhere across the region — this guide covers what to expect when investing in a professional website, what it costs, and what questions to ask before signing anything.",
+      sections: [
+        {
+          body: "Aberdeenshire has a strong base of small and medium businesses — tradespeople, hospitality, healthcare, agriculture, retail and professional services — many of whom are still operating without a professional website, or with one built years ago that no longer represents the business properly.\n\nThis guide is written for business owners in Aberdeenshire considering a new website or a redesign. It covers what to expect, what it costs, what to avoid, and how to choose the right agency or freelancer for the job.",
+        },
+        {
+          heading: "Why a professional website matters for Aberdeenshire businesses",
+          body: "Most customers in Aberdeenshire — whether they're searching in Banff, Macduff, Huntly, Keith, Turriff, Inverurie, Ellon, Peterhead, Fraserburgh or Aberdeen — will check a business online before making contact.\n\nIf your website is slow, hard to navigate on a phone, or simply doesn't exist, you lose that customer to a competitor who does have a working site.\n\nA professional website does three things for a local business:\n\n1. It builds credibility — customers make snap judgements about legitimacy based on how your site looks and performs.\n2. It generates enquiries — a site built with conversion in mind turns visitors into calls, bookings or purchases.\n3. It improves local search visibility — when someone searches 'electrician Inverurie' or 'accountant Huntly', a well-optimised site can put you in front of them.",
+        },
+        {
+          heading: "What makes a good small business website in 2025",
+          body: "A good website for a small Aberdeenshire business is not about having the most features. It is about doing the basics very well.\n\n**Speed.** Most of your visitors will be on a mobile phone, possibly on a rural 4G connection. A site that takes more than 3 seconds to load will lose a significant portion of those visitors before they see anything.\n\n**Clear contact information.** Your phone number should be visible on every page. A click-to-call button on mobile is essential. If you serve a specific area — say Turriff and surrounding villages — say that clearly.\n\n**Local SEO structure.** Pages should include the name of your service and your location. Not just 'Services' but 'Plumbing services in Banff and Aberdeenshire'. Google reads this and uses it to decide when to show your site.\n\n**Mobile-first design.** More than 60% of searches for local services happen on a phone. Your site should be built for mobile as the primary experience, not added as an afterthought.\n\n**A clear call to action.** Every page should guide the visitor towards one action — calling you, filling in a form, booking an appointment, or making a purchase.",
+        },
+        {
+          heading: "How much does a website cost for a small business in Aberdeenshire?",
+          body: "Pricing varies significantly depending on what you need. Here is a rough guide for Aberdeenshire businesses in 2025:\n\n**Basic website (3–5 pages)** — From £1,200. Suitable for a sole trader or small service business that needs a professional online presence: homepage, services, about, contact.\n\n**Standard business website (5–10 pages)** — £2,500–£5,000. Includes custom design, SEO setup, mobile optimisation, contact forms and basic analytics. Suitable for most SMEs.\n\n**E-commerce or custom project** — £5,000–£12,000+. Online shop, booking system, or a site with complex functionality.\n\nBeware of very cheap quotes — a website for £300 from a template platform will likely cost you more in lost business than it saves upfront. Equally, a large agency quote of £20,000+ for a basic brochure site is unlikely to be justified for most small businesses.\n\nThe right price is one that reflects the actual complexity of your project and is delivered by someone who understands your business goals — not just your design preferences.",
+        },
+        {
+          heading: "What to look for when choosing a web designer in Aberdeenshire",
+          body: "Whether you're working with a local freelancer or a small agency, there are a few things worth checking before you commit.\n\n**Do they ask questions about your business before showing you designs?** A good designer starts with your goals, not with a portfolio of templates. If the first question is 'what colours do you like?', that is a warning sign.\n\n**Can they explain what happens to your site if you stop working with them?** You should own your domain, your hosting account and your content. If those are controlled by a third party, you are dependent on them indefinitely.\n\n**Do they understand local SEO?** Getting found in Aberdeenshire searches requires more than just a nice-looking site. Ask specifically about how they approach local visibility.\n\n**Do they have examples of sites that perform well, not just look good?** Ask about page speed scores, Google rankings, and enquiry rates — not just screenshots of the homepage.",
+        },
+        {
+          heading: "Common mistakes made by small businesses in Aberdeenshire",
+          body: "**Choosing the cheapest option.** A website is a business asset. The cheapest option rarely produces the best business outcome.\n\n**Building on a platform that locks you in.** Some DIY platforms make it very difficult to migrate your site if you want to switch providers or take more control. Always check portability before committing.\n\n**Forgetting about mobile.** A site that looks great on a laptop but is difficult to use on a phone will lose the majority of local visitors.\n\n**Not providing clear location information.** Google cannot guess where you operate. If you serve Huntly, Keith and surrounding areas, say so explicitly on your site.\n\n**No contact information above the fold.** If a visitor cannot see your phone number or a clear contact option within the first few seconds, most will leave.",
+        },
+        {
+          heading: "Local SEO: getting found in Aberdeenshire searches",
+          body: "Local SEO is the practice of optimising your website so that it appears when someone nearby searches for a service you provide.\n\nFor an Aberdeenshire business, this means:\n\n**Google Business Profile.** Set up a free listing at business.google.com. Even without a public address, you can register as a service area business. This is essential for appearing in Google Maps results.\n\n**Location-specific pages or content.** A dedicated page for 'web design in Inverurie' or 'accountancy services in Turriff' performs better in local searches than a generic services page.\n\n**Consistent name, address and phone number.** Your business details should appear identically across your website, Google Business Profile, Yell, Checkatrade and any other directory listings.\n\n**Local content.** Blog posts or guides that mention specific areas — like this one — help Google associate your site with Aberdeenshire searches.",
+        },
+        {
+          heading: "Working with Forsa Design",
+          body: "We are based in Banff, Aberdeenshire, and work with businesses across the region and beyond.\n\nEvery project starts with a discovery conversation — we ask about your business, your customers, your goals and your current challenges before we propose any solution.\n\nWe do not use templates. We build custom sites that are fast, clean and designed to produce results for the specific business we are working with.\n\nIf you are based in Aberdeenshire and looking for a new website or a redesign, get in touch at hello@forsadesign.co.uk or use the contact form on this site. Initial consultations are free and come with no obligation.",
+        },
+        {
+          heading: "Summary",
+          body: "A professional website is one of the most valuable investments a small Aberdeenshire business can make in 2025.\n\nThe key is not the most expensive option or the fastest one — it is finding someone who understands your business goals and builds a site that serves them.\n\nIf you are based in Banff, Macduff, Turriff, Huntly, Keith, Inverurie, Ellon, Peterhead, Fraserburgh, Aberdeen or anywhere across Aberdeenshire, we are happy to talk through what you need.",
+        },
+      ],
+    },
+    pl: {
+      title: "Web Design dla Małych Firm w Aberdeenshire: Czego Się Spodziewać w 2025",
+      excerpt:
+        "Jeśli Twoja firma działa w Aberdeenshire — w Banff, Huntly, Inverurie, Turriff lub gdziekolwiek indziej w regionie — ten przewodnik wyjaśnia, czego oczekiwać inwestując w profesjonalną stronę internetową, ile to kosztuje i jakie pytania zadać przed podpisaniem umowy.",
+      sections: [
+        {
+          body: "Aberdeenshire ma silną bazę małych i średnich firm — rzemieślnicy, hotelarstwo, ochrona zdrowia, rolnictwo, handel detaliczny i usługi profesjonalne — z których wiele nadal działa bez profesjonalnej strony internetowej lub z witryną stworzoną lata temu, która już nie reprezentuje firmy właściwie.\n\nTen przewodnik jest napisany dla właścicieli firm w Aberdeenshire rozważających nową stronę lub redesign. Obejmuje czego oczekiwać, ile to kosztuje, czego unikać i jak wybrać odpowiednią agencję lub freelancera.",
+        },
+        {
+          heading: "Dlaczego profesjonalna strona ma znaczenie dla firm z Aberdeenshire",
+          body: "Większość klientów w Aberdeenshire — czy szukają w Banff, Macduff, Huntly, Keith, Turriff, Inverurie, Ellon, Peterhead, Fraserburgh czy Aberdeen — sprawdza firmę online przed nawiązaniem kontaktu.\n\nJeśli Twoja strona jest wolna, trudna do obsługi na telefonie lub po prostu nie istnieje, tracisz tego klienta na rzecz konkurenta, który ma działającą witrynę.\n\nProfesjonalna strona robi trzy rzeczy dla lokalnej firmy:\n\n1. Buduje wiarygodność — klienci oceniają wiarygodność na podstawie wyglądu i działania strony.\n2. Generuje zapytania — strona zbudowana z myślą o konwersji zamienia odwiedzających w telefony, rezerwacje lub zakupy.\n3. Poprawia widoczność w lokalnym wyszukiwaniu — gdy ktoś szuka 'elektryk Inverurie' lub 'księgowy Huntly', dobrze zoptymalizowana strona może go do Ciebie skierować.",
+        },
+        {
+          heading: "Co tworzy dobrą stronę dla małej firmy w 2025",
+          body: "Dobra strona dla małej firmy z Aberdeenshire to nie kwestia posiadania jak największej liczby funkcji. Chodzi o bardzo dobre wykonanie podstaw.\n\n**Szybkość.** Większość odwiedzających będzie na telefonie, być może na wiejskim połączeniu 4G. Strona ładująca się ponad 3 sekundy straci znaczną część tych odwiedzających zanim cokolwiek zobaczą.\n\n**Wyraźne dane kontaktowe.** Numer telefonu powinien być widoczny na każdej stronie. Przycisk click-to-call na telefonie jest niezbędny.\n\n**Struktura lokalnego SEO.** Strony powinny zawierać nazwę usługi i lokalizację. Nie tylko 'Usługi' ale 'Usługi hydrauliczne w Banff i Aberdeenshire'.\n\n**Projekt mobile-first.** Ponad 60% wyszukiwań lokalnych usług odbywa się na telefonie. Strona powinna być zbudowana z myślą o urządzeniach mobilnych jako o głównym doświadczeniu.\n\n**Wyraźne wezwanie do działania.** Każda strona powinna kierować odwiedzającego do jednej czynności — zadzwonienia, wypełnienia formularza, umówienia wizyty lub dokonania zakupu.",
+        },
+        {
+          heading: "Ile kosztuje strona internetowa dla małej firmy w Aberdeenshire?",
+          body: "Ceny znacznie się różnią w zależności od potrzeb. Przybliżony przewodnik dla firm z Aberdeenshire w 2025:\n\n**Podstawowa strona (3–5 podstron)** — Od £1 200. Odpowiednia dla jednoosobowej działalności lub małej firmy usługowej: strona główna, usługi, o nas, kontakt.\n\n**Standardowa strona biznesowa (5–10 podstron)** — £2 500–£5 000. Obejmuje indywidualny projekt, konfigurację SEO, optymalizację mobilną, formularze kontaktowe i podstawową analitykę.\n\n**E-commerce lub projekt niestandardowy** — £5 000–£12 000+. Sklep internetowy, system rezerwacji lub strona z rozbudowaną funkcjonalnością.\n\nUważaj na bardzo tanie oferty — strona za £300 od platformy szablonowej prawdopodobnie kosztuje Cię więcej w utraconych klientach niż oszczędza z góry. Właściwa cena odzwierciedla rzeczywistą złożoność projektu i jest dostarczona przez kogoś, kto rozumie Twoje cele biznesowe.",
+        },
+        {
+          heading: "Na co zwrócić uwagę wybierając web designera w Aberdeenshire",
+          body: "Czy zadają pytania o Twój biznes przed pokazaniem projektów? Dobry designer zaczyna od Twoich celów, nie od portfolio szablonów.\n\nCzy mogą wyjaśnić, co dzieje się z Twoją stroną, jeśli przestaniesz z nimi współpracować? Powinieneś być właścicielem swojej domeny, konta hostingowego i treści.\n\nCzy rozumieją lokalne SEO? Pojawienie się w wynikach wyszukiwania w Aberdeenshire wymaga czegoś więcej niż tylko ładnie wyglądającej strony.\n\nCzy mają przykłady stron, które dobrze działają, a nie tylko dobrze wyglądają? Zapytaj konkretnie o szybkość ładowania, rankingi Google i wskaźniki zapytań.",
+        },
+        {
+          heading: "Lokalne SEO: jak być widocznym w wyszukiwaniach w Aberdeenshire",
+          body: "Dla firmy z Aberdeenshire lokalne SEO oznacza:\n\n**Google Business Profile.** Utwórz bezpłatny profil na business.google.com. Nawet bez publicznego adresu możesz zarejestrować się jako firma obsługująca obszar. Jest to niezbędne do pojawiania się w wynikach Google Maps.\n\n**Treści specyficzne dla lokalizacji.** Dedykowana strona dla 'web design w Inverurie' lub 'usługi księgowe w Turriff' działa lepiej w lokalnych wyszukiwaniach niż ogólna strona usług.\n\n**Spójne dane NAP.** Twoje dane firmowe powinny być identyczne na stronie internetowej, w Google Business Profile i we wszystkich innych katalogach.\n\n**Lokalne treści.** Artykuły na blogu lub przewodniki wspominające konkretne obszary — takie jak ten — pomagają Google powiązać Twoją stronę z wyszukiwaniami w Aberdeenshire.",
+        },
+        {
+          heading: "Praca z Forsa Design",
+          body: "Działamy z Banff w Aberdeenshire i pracujemy z firmami z całego regionu i nie tylko.\n\nKażdy projekt zaczyna się od rozmowy odkrywczej — pytamy o Twój biznes, Twoich klientów, Twoje cele i aktualne wyzwania przed zaproponowaniem jakiegokolwiek rozwiązania.\n\nNie używamy szablonów. Budujemy niestandardowe strony, które są szybkie, czyste i zaprojektowane tak, aby przynosić wyniki konkretnemu biznesowi, z którym pracujemy.\n\nJeśli prowadzisz działalność w Aberdeenshire i szukasz nowej strony lub redesignu, skontaktuj się z nami przez hello@forsadesign.co.uk lub formularz na tej stronie.",
+        },
+        {
+          heading: "Podsumowanie",
+          body: "Profesjonalna strona internetowa to jedna z najcenniejszych inwestycji, jaką mała firma z Aberdeenshire może poczynić w 2025 roku.\n\nKluczem nie jest najdroższa opcja ani najszybsza — to znalezienie kogoś, kto rozumie Twoje cele biznesowe i buduje stronę, która im służy.\n\nJeśli działasz w Banff, Macduff, Turriff, Huntly, Keith, Inverurie, Ellon, Peterhead, Fraserburgh, Aberdeen lub gdziekolwiek w Aberdeenshire, chętnie porozmawiamy o tym, czego potrzebujesz.",
+        },
+      ],
+    },
+  },
 ];

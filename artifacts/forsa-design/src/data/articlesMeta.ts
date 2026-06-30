@@ -88,4 +88,20 @@ export const articlesMeta: ArticleMeta[] = [
         "Idea, że budujesz stronę i rankingi w Google same przychodzą, to mit z 2010. W 2024, SEO to kombinacja: architektura, treść, linki, sygnały użytkownika, E-E-A-T. Strona to fundament, nie cała strategia.",
     },
   },
+  {
+    slugEn: "web-design-aberdeenshire",
+    slugPl: "web-design-aberdeenshire-szkocja",
+    dateIso: "2026-06-30",
+    readingTimeMin: 8,
+    en: {
+      title: "Web Design for Small Businesses in Aberdeenshire: What to Expect in 2025",
+      excerpt:
+        "If your business is based in Aberdeenshire — whether in Banff, Huntly, Inverurie, Turriff or anywhere across the region — this guide covers what to expect when investing in a professional website, what it costs, and what questions to ask before signing anything.",
+    },
+    pl: {
+      title: "Web Design dla Małych Firm w Aberdeenshire: Czego Się Spodziewać w 2025",
+      excerpt:
+        "Jeśli Twoja firma działa w Aberdeenshire — w Banff, Huntly, Inverurie, Turriff lub gdziekolwiek w regionie — ten przewodnik wyjaśnia, czego oczekiwać inwestując w profesjonalną stronę, ile to kosztuje i jakie pytania zadać przed podpisaniem umowy.",
+    },
+  },
 ];
