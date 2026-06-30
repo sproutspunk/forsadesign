@@ -1,3 +1,4 @@
-- [Turnstile CAPTCHA on contact form](turnstile-contact-form.md) — managed-mode bot check; graceful degradation by design; error 400020 = domain not in site-key allowlist, not a code bug.
+- [Turnstile CAPTCHA on contact form](turnstile-contact-form.md) — managed-mode bot check; backend FAILS CLOSED (no secret/token = reject); error 400020 = domain not in site-key allowlist, not a code bug.
 - [react-hooks v7 flat config](react-hooks-flat-config.md) — use `reactHooks.configs.flat.recommended` (not `.recommended`, which is legacy eslintrc & crashes flat config); fix set-state-in-effect via useSyncExternalStore / `key` remount.
+- [Security scan task recurrence](security-scan-recurrence.md) — scanner checks the LIVE deployment, not source; a merged fix only clears the finding after re-publish; probe prod safely before re-fixing.
 - [Wouter v3 routing pitfalls](wouter-v3-routing.md) — Switch partial-match (specific routes before /en/), setLanguage redirects to homepage (use syncLanguage in sub-pages), Polish curly quotes break esbuild (use Python to fix).
