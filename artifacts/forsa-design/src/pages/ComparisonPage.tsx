@@ -12,9 +12,9 @@ interface ComparisonPageProps {
 
 const content = {
   en: {
-    seoTitle: "Forsa Design vs. Templates, Agencies & Freelancers | Honest Comparison",
+    seoTitle: "Web Design Options in Aberdeenshire | Forsa Design vs. Templates & Agencies",
     seoDesc:
-      "An honest side-by-side comparison of Forsa Design against CMS templates, non-specialist agencies, and freelancers. Make the right decision for your business.",
+      "Comparing web design options in Aberdeenshire and Scotland: custom agency vs. CMS templates, generalist agencies, and freelancers. Find the right fit for your business.",
     heading: "Which Option Is Right for You?",
     intro:
       "Not every business needs a custom website. The right choice depends on your goals, budget, timeline, and how important flexibility, performance, and future growth are. Below is a practical comparison of the most common web solutions.",
@@ -132,9 +132,9 @@ const content = {
     highlighted: "Recommended",
   },
   pl: {
-    seoTitle: "Forsa Design vs. Szablony, Agencje i Freelancerzy | Uczciwe Porównanie",
+    seoTitle: "Opcje Web Design w Aberdeenshire | Forsa Design vs. Szablony i Agencje",
     seoDesc:
-      "Uczciwe zestawienie Forsa Design z szablonami CMS, agencjami bez specjalizacji i freelancerami. Podejmij właściwą decyzję dla swojego biznesu.",
+      "Porównanie opcji web design w Aberdeenshire i Szkocji: autorska agencja vs. szablony CMS, agencje bez specjalizacji i freelancerzy. Znajdź najlepsze rozwiązanie dla swojego biznesu.",
     heading: "Która Opcja Jest Dla Ciebie?",
     intro:
       "Nie ka\u017cdy biznes potrzebuje dedykowanej strony. Wyb\u00f3r zale\u017cy od Twoich cel\u00f3w, bud\u017cetu, harmonogramu i tego, jak wa\u017cne s\u0105 elastyczno\u015b\u0107, wydajno\u015b\u0107 i przysz\u0142y wzrost. Poni\u017cej znajdziesz praktyczne por\u00f3wnanie najpopularniejszych rozwi\u0105za\u0144 webowych.",

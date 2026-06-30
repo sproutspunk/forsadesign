@@ -17,7 +17,7 @@ const content = {
       "Learn about Forsa Design, a web agency based in Banff, Aberdeenshire, Scotland, specialising in custom websites for healthcare and B2B businesses across Aberdeenshire.",
     heading: "Websites That Work for Your Business",
     intro:
-      "We create websites, branding, and digital services for businesses across the UK. We specialise in the private healthcare and B2B sectors, turning websites into tools that genuinely generate revenue and support business growth.",
+      "We create websites, branding, and digital services for businesses across Aberdeenshire, Scotland and beyond. We specialise in the private healthcare and B2B sectors, turning websites into tools that genuinely generate revenue and support business growth.",
     whatWeDoHeading: "What We Do",
     services: [
       {
@@ -137,9 +137,9 @@ const content = {
     contactHref: "#contact",
   },
   pl: {
-    seoTitle: "O Nas | Forsa Design, Boutique Agencja Webowa",
+    seoTitle: "O Nas | Forsa Design — Agencja Web Design w Banff, Aberdeenshire",
     seoDesc:
-      "Dowiedz się więcej o Forsa Design, boutique agencji webowej z Banff w Szkocji, specjalizującej się w stronach dla sektora private healthcare i B2B, które naprawdę generują przychody.",
+      "Poznaj Forsa Design, agencję web design z Banff w Aberdeenshire w Szkocji, specjalizującą się w autorskich stronach internetowych dla firm z Aberdeenshire i całej Szkocji.",
     heading: "Strony Internetowe, Które Pracują dla Twojego Biznesu",
     intro:
       "Tworzymy strony internetowe, branding i cyfrowe usługi dla firm z całej Wielkiej Brytanii. Specjalizujemy się w sektorze private healthcare i firm B2B, zamieniając stronę internetową w narzędzie, które rzeczywiście generuje przychody i wspiera wzrost biznesu.",
