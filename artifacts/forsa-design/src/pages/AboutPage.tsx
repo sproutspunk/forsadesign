@@ -12,9 +12,9 @@ interface AboutPageProps {
 
 const content = {
   en: {
-    seoTitle: "About Us | Forsa Design, Boutique Web Agency",
+    seoTitle: "About Us | Forsa Design — Web Agency in Banff, Aberdeenshire",
     seoDesc:
-      "Learn about Forsa Design, a boutique web agency based in Banff, Scotland, specialising in private healthcare and B2B websites that generate real revenue.",
+      "Learn about Forsa Design, a web agency based in Banff, Aberdeenshire, Scotland, specialising in custom websites for healthcare and B2B businesses across Aberdeenshire.",
     heading: "Websites That Work for Your Business",
     intro:
       "We create websites, branding, and digital services for businesses across the UK. We specialise in the private healthcare and B2B sectors, turning websites into tools that genuinely generate revenue and support business growth.",

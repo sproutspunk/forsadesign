@@ -37,23 +37,23 @@ export default function HomePage({ lang }: HomePageProps) {
   const isEn = lang === "en";
   useSeoMeta({
     title: isEn
-      ? "Forsa Design | Comprehensive Website Design & Creation"
-      : "Forsa Design | Kompleksowy Web Design i Tworzenie Stron",
+      ? "Web Design Aberdeenshire | Forsa Design — Banff, Scotland"
+      : "Tworzenie Stron Internetowych Aberdeenshire | Forsa Design",
     description: isEn
-      ? "Comprehensive Website Design & Creation by Forsa Design. Boutique web agency in Banff, Scotland. Responsive websites, e-commerce and custom web apps."
-      : "Kompleksowy Web Design i Tworzenie Stron. Agencja web design z Banff w Szkocji. Responsywne strony, sklepy e-commerce i dedykowane aplikacje webowe.",
+      ? "Web design agency in Banff, Aberdeenshire. Forsa Design builds fast, custom websites, e-commerce stores and web apps for businesses across Aberdeenshire and Scotland."
+      : "Agencja web design z Banff w Aberdeenshire w Szkocji. Tworzymy szybkie, autorskie strony internetowe, sklepy e-commerce i aplikacje webowe dla firm z Aberdeenshire i Szkocji.",
     ogTitle: isEn
-      ? "Forsa Design | Web Design & Creation"
-      : "Forsa Design | Web Design i Tworzenie Stron",
+      ? "Web Design Aberdeenshire | Forsa Design"
+      : "Web Design Aberdeenshire | Forsa Design",
     ogDescription: isEn
-      ? "Comprehensive Website Design & Creation by Forsa Design. Boutique web agency in Banff, Scotland. Responsive websites, e-commerce and custom web apps."
-      : "Kompleksowy Web Design i Tworzenie Stron. Agencja web design z Banff w Szkocji. Responsywne strony, sklepy e-commerce i dedykowane aplikacje webowe.",
+      ? "Web design agency in Banff, Aberdeenshire. Fast, custom websites, e-commerce stores and web apps for businesses across Aberdeenshire and Scotland."
+      : "Agencja web design z Banff w Aberdeenshire. Szybkie, autorskie strony internetowe i sklepy e-commerce dla firm ze Szkocji.",
     twitterTitle: isEn
-      ? "Forsa Design | Web Design & Creation"
-      : "Forsa Design | Web Design i Tworzenie Stron",
+      ? "Web Design Aberdeenshire | Forsa Design"
+      : "Web Design Aberdeenshire | Forsa Design",
     twitterDescription: isEn
-      ? "Comprehensive Website Design & Creation by Forsa Design. Boutique web agency in Banff, Scotland. Responsive websites, e-commerce and custom web apps."
-      : "Kompleksowy Web Design i Tworzenie Stron. Agencja web design z Banff w Szkocji. Responsywne strony, sklepy e-commerce i dedykowane aplikacje webowe.",
+      ? "Web design agency in Banff, Aberdeenshire. Fast, custom websites, e-commerce stores and web apps for businesses across Aberdeenshire and Scotland."
+      : "Agencja web design z Banff w Aberdeenshire. Szybkie, autorskie strony internetowe i sklepy e-commerce dla firm ze Szkocji.",
     ogLocale: isEn ? "en_US" : "pl_PL",
     canonical: buildHref(isEn ? "/en/" : "/pl/"),
     alternates: [
