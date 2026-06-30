@@ -12,7 +12,7 @@ interface AboutPageProps {
 
 const content = {
   en: {
-    seoTitle: "About Us | Forsa Design — Web Agency in Banff, Aberdeenshire",
+    seoTitle: "About Us | Forsa Design, Web Agency in Banff, Aberdeenshire",
     seoDesc:
       "Learn about Forsa Design, a web agency based in Banff, Aberdeenshire, Scotland, building custom websites for businesses across Aberdeenshire and Scotland.",
     heading: "Websites That Work for Your Business",
@@ -137,7 +137,7 @@ const content = {
     contactHref: "#contact",
   },
   pl: {
-    seoTitle: "O Nas | Forsa Design — Agencja Web Design w Banff, Aberdeenshire",
+    seoTitle: "O Nas | Forsa Design, Agencja Web Design w Banff, Aberdeenshire",
     seoDesc:
       "Poznaj Forsa Design, agencję web design z Banff w Aberdeenshire w Szkocji, specjalizującą się w autorskich stronach internetowych dla firm z Aberdeenshire i całej Szkocji.",
     heading: "Strony Internetowe, Które Pracują dla Twojego Biznesu",

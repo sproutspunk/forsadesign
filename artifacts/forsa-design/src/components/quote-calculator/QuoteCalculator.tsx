@@ -373,7 +373,7 @@ export default function QuoteCalculator() {
 
         <div className="mb-8">
           <p className="text-xs font-semibold uppercase tracking-widest text-foreground/40 mb-3">
-            {t("Quick start — choose your level", "Szybki start — wybierz poziom")}
+            {t("Quick start: choose your level", "Szybki start: wybierz poziom")}
           </p>
           <div className="grid grid-cols-3 gap-3 md:gap-4">
             {packagePresets.map((preset, i) => (

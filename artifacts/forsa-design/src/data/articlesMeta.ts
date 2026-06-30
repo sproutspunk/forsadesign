@@ -96,12 +96,12 @@ export const articlesMeta: ArticleMeta[] = [
     en: {
       title: "Web Design for Small Businesses in Aberdeenshire: What to Expect in 2025",
       excerpt:
-        "If your business is based in Aberdeenshire — whether in Banff, Huntly, Inverurie, Turriff or anywhere across the region — this guide covers what to expect when investing in a professional website, what it costs, and what questions to ask before signing anything.",
+        "If your business is based in Aberdeenshire, whether in Banff, Huntly, Inverurie, Turriff or anywhere across the region, this guide covers what to expect when investing in a professional website, what it costs, and what questions to ask before signing anything.",
     },
     pl: {
       title: "Web Design dla Małych Firm w Aberdeenshire: Czego Się Spodziewać w 2025",
       excerpt:
-        "Jeśli Twoja firma działa w Aberdeenshire — w Banff, Huntly, Inverurie, Turriff lub gdziekolwiek w regionie — ten przewodnik wyjaśnia, czego oczekiwać inwestując w profesjonalną stronę, ile to kosztuje i jakie pytania zadać przed podpisaniem umowy.",
+        "Jeśli Twoja firma działa w Aberdeenshire, w Banff, Huntly, Inverurie, Turriff lub gdziekolwiek w regionie, ten przewodnik wyjaśnia, czego oczekiwać inwestując w profesjonalną stronę, ile to kosztuje i jakie pytania zadać przed podpisaniem umowy.",
     },
   },
 ];

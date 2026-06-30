@@ -37,7 +37,7 @@ export default function HomePage({ lang }: HomePageProps) {
   const isEn = lang === "en";
   useSeoMeta({
     title: isEn
-      ? "Web Design Aberdeenshire | Forsa Design — Banff, Scotland"
+      ? "Web Design Aberdeenshire | Forsa Design, Banff, Scotland"
       : "Tworzenie Stron Internetowych Aberdeenshire | Forsa Design",
     description: isEn
       ? "Web design agency in Banff, Aberdeenshire. Forsa Design builds fast, custom websites, e-commerce stores and web apps for businesses across Aberdeenshire and Scotland."
