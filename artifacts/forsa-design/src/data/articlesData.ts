@@ -34,39 +34,39 @@ export const articles: Article[] = [
         "Choosing a web agency is a business decision. Many businesses focus only on price and forget about long-term value. Here are 7 questions that help separate professional agencies from companies that simply deliver a template and move on.",
       sections: [
         {
-          body: "Choosing a web agency is a business decision. It requires time, research, and a clear understanding of what you need.\n\nMany businesses focus only on price and forget about long-term value. A website should support your business, not become another problem.\n\nHere are 7 questions that help separate professional agencies from companies that simply deliver a template and move on.",
+          body: "Choosing a web agency is one of those decisions that looks simple until you start looking. There are a lot of options, prices vary enormously, and most agencies will show you the same polished portfolio. These seven questions help cut through that and get to what actually matters.",
         },
         {
           heading: "1. Do you have experience in my industry?",
-          body: "An agency that works with every type of business may not always have deep experience in a specific area.\n\nAsk what projects they have completed in your industry and what results they achieved.\n\nLook at more than just design. Consider performance, usability, conversions, and business impact.",
+          body: "Ask what they have actually built in your industry, not just general portfolio pieces. Design is easy to present. What you really want to know is whether the sites they built performed well. Did they improve enquiry rates? Did they rank well in local searches? That is harder to fake than a good-looking homepage.",
         },
         {
           heading: "2. What is your discovery process?",
-          body: "A professional agency should not start building after a short conversation.\n\nThe first stage should include understanding your goals, customers, competitors, and current challenges.\n\nIf the process starts with choosing a template, important details may be missed.",
+          body: "A good agency does not start building until they understand your business. The first meeting should feel like they are learning about you, not selling to you. If they arrive with design concepts before they have talked about your customers and goals, that is not a good sign.",
         },
         {
           heading: "3. Do you focus on SEO and performance?",
-          body: "A website needs to do more than look good.\n\nIt should load quickly, work well across devices, and help customers find your business.\n\nAsk how they approach technical SEO, speed, and measuring results.",
+          body: "A site that looks great but loads slowly or does not appear in search is missing most of its value. Ask specifically how they approach page speed, mobile optimisation and local search visibility. If the answer is vague, keep looking.",
         },
         {
           heading: "4. Who will manage my project?",
-          body: "Clear communication matters.\n\nYou should know who is responsible for your project and who understands your business goals.\n\nA dedicated contact person keeps the process organised.",
+          body: "You should know exactly who you will be speaking to and how often. Smaller studios and freelancers often work across several clients at once. A clear point of contact who knows your project makes a real difference when things need to move quickly.",
         },
         {
           heading: "5. What happens after launch?",
-          body: "A website needs ongoing care.\n\nAsk about updates, security, backups, technical support, and future improvements.\n\nA launch should be the beginning, not the end.",
+          body: "Launch is the beginning, not the end. Ask what is covered after go-live: security updates, backups, performance monitoring, small content changes. Some agencies are very present during the project and hard to reach afterwards.",
         },
         {
           heading: "6. Can I move my website if my needs change?",
-          body: "Your website should belong to you.\n\nA good agency builds with flexibility in mind, allowing you to change providers without losing control of your data or domain.",
+          body: "You should own your domain, your hosting account and your content directly. If the agency or their platform controls those things, you are tied to them for as long as your site exists. Always check portability before you sign anything.",
         },
         {
           heading: "7. How is pricing structured?",
-          body: "Pricing should be clear from the beginning.\n\nYou should understand what is included, what happens if the project changes, and what future costs may appear.",
+          body: "Get the full picture upfront: what is included, how revisions work, what triggers extra cost, what ongoing fees look like. A clear quote with no ambiguity is a good sign. Lots of 'it depends' before you have even agreed on scope is a warning.",
         },
         {
           heading: "Summary",
-          body: "Choose an agency that takes time to understand your business.\n\nThe right questions should come from both sides. A good agency wants to understand your goals before building anything.",
+          body: "The best agencies ask more questions than you do in the first conversation. They want to understand your business before they start talking about solutions.",
         },
       ],
     },
@@ -76,39 +76,39 @@ export const articles: Article[] = [
         "Wybór agencji webowej to decyzja biznesowa. Wiele firm skupia się tylko na cenie i zapomina o długoterminowej wartości. Oto 7 pytań, które pomagają odróżnić profesjonalne agencje od firm, które po prostu dostarczają szablon i odchodzą.",
       sections: [
         {
-          body: "Wybór agencji webowej to decyzja biznesowa. Wymaga czasu, badań i jasnego zrozumienia swoich potrzeb.\n\nWiele firm skupia się tylko na cenie i zapomina o długoterminowej wartości. Strona internetowa powinna wspierać Twój biznes, a nie stać się kolejnym problemem.\n\nOto 7 pytań, które pomagają odróżnić profesjonalne agencje od firm, które po prostu dostarczają szablon i odchodzą.",
+          body: "Wybór agencji webowej to jedna z tych decyzji, które wyglądają prosto dopóki nie zaczniesz szukać. Ofert jest dużo, ceny różnią się ogromnie, a większość agencji pokaże Ci to samo dopracowane portfolio. Te siedem pytań pomaga przez to przebić i dotrzeć do tego, co naprawdę ma znaczenie.",
         },
         {
           heading: "1. Czy macie doświadczenie w mojej branży?",
-          body: "Agencja pracująca z każdym typem biznesu nie zawsze ma głębokie doświadczenie w konkretnej dziedzinie.\n\nZapytaj, jakie projekty zrealizowali w Twojej branży i jakie wyniki osiągnęli.\n\nPatrz szerzej niż tylko na design. Weź pod uwagę wydajność, użyteczność, konwersje i wpływ na biznes.",
+          body: "Zapytaj co konkretnie zbudowali w Twojej branży, a nie tylko o ogólne portfolio. Design łatwo zaprezentować. Naprawdę chcesz wiedzieć, czy strony które zbudowali działały dobrze. Czy poprawiły wskaźniki zapytań? Czy dobrze wypadały w lokalnych wyszukiwaniach? To trudniej podrobić niż ładną stronę główną.",
         },
         {
           heading: "2. Jaki jest Wasz proces odkrywania projektu?",
-          body: "Profesjonalna agencja nie powinna zaczynać budowania po krótkim spotkaniu.\n\nPierwszy etap powinien obejmować zrozumienie Twoich celów, klientów, konkurencji i aktualnych wyzwań.\n\nJeśli proces zaczyna się od wyboru szablonu, ważne szczegóły mogą zostać pominięte.",
+          body: "Dobra agencja nie zaczyna budowania zanim nie zrozumie Twojego biznesu. Pierwsze spotkanie powinno wyglądać jak uczenie się o Tobie, a nie sprzedaż. Jeśli przychodzą z koncepcjami designu zanim porozmawiali o Twoich klientach i celach, to nie jest dobry znak.",
         },
         {
           heading: "3. Czy skupiacie się na SEO i wydajności?",
-          body: "Strona internetowa musi robić więcej niż tylko dobrze wyglądać.\n\nPowinna ładować się szybko, działać dobrze na wszystkich urządzeniach i pomagać klientom znaleźć Twój biznes.\n\nZapytaj, jak podchodzą do technicznego SEO, szybkości i mierzenia wyników.",
+          body: "Strona, która świetnie wygląda, ale wolno się ładuje lub nie pojawia się w wyszukiwarce, traci większość swojej wartości. Zapytaj konkretnie jak podchodzą do szybkości strony, optymalizacji mobilnej i lokalnej widoczności. Jeśli odpowiedź jest ogólna, szukaj dalej.",
         },
         {
           heading: "4. Kto będzie zarządzał moim projektem?",
-          body: "Jasna komunikacja ma znaczenie.\n\nPowinieneś wiedzieć, kto jest odpowiedzialny za Twój projekt i kto rozumie Twoje cele biznesowe.\n\nDedykowana osoba kontaktowa utrzymuje proces w porządku.",
+          body: "Powinieneś wiedzieć dokładnie z kim będziesz rozmawiał i jak często. Mniejsze studia i freelancerzy często pracują z kilkoma klientami jednocześnie. Jasny punkt kontaktu, który zna Twój projekt, robi realną różnicę gdy sprawy muszą się posuwać szybko.",
         },
         {
           heading: "5. Co się dzieje po uruchomieniu?",
-          body: "Strona internetowa wymaga stałej opieki.\n\nZapytaj o aktualizacje, bezpieczeństwo, kopie zapasowe, wsparcie techniczne i przyszłe ulepszenia.\n\nUruchomienie powinno być początkiem, nie końcem.",
+          body: "Uruchomienie to początek, nie koniec. Zapytaj co jest objęte po go-live: aktualizacje bezpieczeństwa, kopie zapasowe, monitorowanie wydajności, małe zmiany w treści. Niektóre agencje są bardzo obecne w trakcie projektu i trudne do znalezienia po jego zakończeniu.",
         },
         {
           heading: "6. Czy mogę przenieść stronę, jeśli moje potrzeby się zmienią?",
-          body: "Twoja strona powinna należeć do Ciebie.\n\nDobra agencja buduje z myślą o elastyczności, pozwalając Ci zmienić dostawcę bez utraty kontroli nad danymi lub domeną.",
+          body: "Powinieneś bezpośrednio posiadać domenę, konto hostingowe i treść. Jeśli agencja lub jej platforma kontroluje te rzeczy, jesteś do nich przywiązany dopóki Twoja strona istnieje. Zawsze sprawdź przenośność przed podpisaniem czegokolwiek.",
         },
         {
           heading: "7. Jak wygląda wycena projektu?",
-          body: "Ceny powinny być jasne od samego początku.\n\nPowinieneś rozumieć, co jest zawarte, co się stanie, jeśli projekt się zmieni, i jakie przyszłe koszty mogą się pojawić.",
+          body: "Poznaj pełny obraz z góry: co jest zawarte, jak działają rewizje, co powoduje dodatkowy koszt, jak wyglądają opłaty bieżące. Jasna wycena bez niejednoznaczności to dobry znak. Dużo 'to zależy' zanim uzgodniono nawet zakres to ostrzeżenie.",
         },
         {
           heading: "Podsumowanie",
-          body: "Wybierz agencję, która poświęca czas na zrozumienie Twojego biznesu.\n\nWłaściwe pytania powinny płynąć z obu stron. Dobra agencja chce zrozumieć Twoje cele przed rozpoczęciem czegokolwiek.",
+          body: "Najlepsze agencje zadają więcej pytań niż Ty podczas pierwszej rozmowy. Chcą zrozumieć Twój biznes zanim zaczną mówić o rozwiązaniach.",
         },
       ],
     },
@@ -124,31 +124,31 @@ export const articles: Article[] = [
         "Most people browse the internet using mobile devices. But responsiveness and speed are two different things. Both directly affect user experience and conversions. A website needs both to perform well.",
       sections: [
         {
-          body: "Most people browse the internet using mobile devices.\n\nBut responsiveness and speed are two different things.\n\nA website needs to look good on every screen and load quickly. Both directly affect user experience and conversions.",
+          body: "Most people browse on their phones these days. So responsiveness sounds like the obvious priority. But responsiveness and speed are two separate problems, and you need both working well. A site that adjusts perfectly to mobile but takes five seconds to load will lose visitors just as quickly as one that is hard to navigate.",
         },
         {
           heading: "What is responsiveness?",
-          body: "A responsive website automatically adapts to different screen sizes.\n\nText, images, buttons, and navigation adjust to work properly on phones, tablets, and desktops.\n\nThis is no longer an extra feature. It is a basic requirement for modern websites.",
+          body: "A responsive site adjusts automatically to whatever screen it is viewed on. Text stays readable, buttons are tappable, images scale correctly. This is not a bonus feature any more. It is the starting point for any site built in the last ten years. If someone visits on a phone and has to pinch and zoom to read your content, they will leave.",
         },
         {
           heading: "What is loading speed?",
-          body: "Speed is how quickly a website loads and becomes usable.\n\nA slow website creates frustration. Visitors leave before they contact you, make a purchase, or explore your services.\n\nSpeed also affects SEO because search engines consider performance when evaluating websites.",
+          body: "Speed is how quickly the site loads and becomes usable. Most visitors will abandon a page that takes more than three seconds to load. Speed also feeds directly into Google's ranking signals, particularly for mobile searches. A slow site pays twice: it loses visitors and it ranks lower in search results.",
         },
         {
           heading: "How do they work together?",
-          body: "A website can be responsive but poorly optimised.\n\nIt may look good on mobile but load slowly because of unnecessary code or large files.\n\nA fast website that is not mobile-friendly creates another problem. Visitors struggle with navigation and leave.\n\nBoth areas need attention.",
+          body: "A responsive site can still be slow if it was built with heavy images, unnecessary scripts or too many third-party tools. A fast site can still frustrate mobile users if buttons are tiny or navigation was designed for a desktop. The two problems need to be addressed together, not treated as separate checkboxes.",
         },
         {
           heading: "How do you measure speed?",
-          body: "LCP (Largest Contentful Paint): Measures how quickly the main content loads. Target: under 2.5 seconds.\n\nFID (First Input Delay): Measures how quickly the website responds to interaction. Target: under 100ms.\n\nCLS (Cumulative Layout Shift): Measures whether the page moves unexpectedly while loading. Target: under 0.1.\n\nThese metrics show how users experience your website.",
+          body: "Google's Core Web Vitals are the benchmark worth knowing. LCP (Largest Contentful Paint) measures how quickly the main content loads, with a target of under 2.5 seconds. INP measures responsiveness to clicks and taps. CLS (Cumulative Layout Shift) measures whether the page shifts unexpectedly while loading. PageSpeed Insights and GTmetrix will show you how your site scores on all three.",
         },
         {
           heading: "How do you build a fast and responsive website?",
-          body: "Efficient code: Avoid unnecessary scripts and keep the website lightweight.\n\nOptimised images: Use modern formats, compression, and lazy loading.\n\nSmart structure: Use caching and performance improvements where needed.\n\nReal testing: Check the website on real devices and different connections.",
+          body: "The main levers are image optimisation (use modern formats, compress properly, load only what is visible), lean code without unnecessary plugins, and smart caching. Test on real mobile devices and real connections, not just a desktop emulator. A site that scores well in a lab but struggles on a rural 4G connection has a real problem for the people you most want to reach.",
         },
         {
           heading: "Summary",
-          body: "Responsiveness helps people use your website.\n\nSpeed helps people stay on your website.\n\nBoth are essential for conversions.",
+          body: "Responsiveness means people can use your site on any device. Speed means they are willing to wait for it. Both matter and both need attention.",
         },
       ],
     },
@@ -158,31 +158,31 @@ export const articles: Article[] = [
         "Większość ludzi przegląda internet na urządzeniach mobilnych. Ale responsywność i szybkość to dwie różne rzeczy. Obie bezpośrednio wpływają na doświadczenie użytkownika i konwersje.",
       sections: [
         {
-          body: "Większość ludzi przegląda internet na urządzeniach mobilnych.\n\nAle responsywność i szybkość to dwie różne rzeczy.\n\nStrona musi dobrze wyglądać na każdym ekranie i ładować się szybko. Oba czynniki bezpośrednio wpływają na doświadczenie użytkownika i konwersje.",
+          body: "Większość ludzi przegląda internet na telefonach. Więc responsywność brzmi jak oczywisty priorytet. Ale responsywność i szybkość to dwa osobne problemy i oba muszą działać dobrze. Strona, która perfekcyjnie dostosowuje się do telefonu, ale ładuje się pięć sekund, straci odwiedzających równie szybko jak ta, po której trudno się poruszać.",
         },
         {
           heading: "Co to jest responsywność?",
-          body: "Responsywna strona automatycznie dostosowuje się do różnych rozmiarów ekranu.\n\nTekst, obrazy, przyciski i nawigacja dostosowują się, by działać prawidłowo na telefonach, tabletach i komputerach.\n\nTo nie jest już dodatkowa funkcja. To podstawowe wymaganie dla nowoczesnych stron.",
+          body: "Responsywna strona automatycznie dostosowuje się do ekranu, na którym jest wyświetlana. Tekst pozostaje czytelny, przyciski dają się kliknąć, obrazy skalują się prawidłowo. To nie jest już bonus. To punkt wyjścia dla każdej strony zbudowanej w ostatnich dziesięciu latach. Jeśli ktoś odwiedza Twoją stronę na telefonie i musi szczypać ekran żeby przeczytać treść, odejdzie.",
         },
         {
           heading: "Co to jest szybkość ładowania?",
-          body: "Szybkość to czas, w którym strona ładuje się i staje się użyteczna.\n\nWolna strona tworzy frustrację. Odwiedzający odchodzą, zanim się skontaktują, dokonają zakupu lub poznają usługi.\n\nSzybkość wpływa też na SEO, ponieważ wyszukiwarki biorą wydajność pod uwagę przy ocenie stron.",
+          body: "Szybkość to czas, w którym strona ładuje się i staje się użyteczna. Większość odwiedzających porzuca stronę, która ładuje się dłużej niż trzy sekundy. Szybkość wpływa też bezpośrednio na sygnały rankingowe Google, szczególnie dla wyszukiwań mobilnych. Wolna strona płaci podwójnie: traci odwiedzających i spada w wynikach wyszukiwania.",
         },
         {
           heading: "Jak działają razem?",
-          body: "Strona może być responsywna, ale słabo zoptymalizowana.\n\nMoże dobrze wyglądać na mobile, ale ładować się wolno z powodu zbędnego kodu lub dużych plików.\n\nSzybka strona, która nie jest przyjazna mobilnie, tworzy inny problem. Odwiedzający mają trudności z nawigacją i odchodzą.\n\nOba obszary wymagają uwagi.",
+          body: "Responsywna strona może nadal być wolna jeśli zbudowano ją z ciężkimi obrazami, zbędnymi skryptami lub zbyt wieloma zewnętrznymi narzędziami. Szybka strona może nadal frustrować użytkowników mobilnych jeśli przyciski są małe lub nawigacja była zaprojektowana dla desktopa. Oba problemy muszą być rozwiązane razem, a nie traktowane jako osobne zadania.",
         },
         {
           heading: "Jak mierzyć szybkość?",
-          body: "LCP (Largest Contentful Paint): Mierzy, jak szybko ładuje się główna treść. Cel: poniżej 2,5 sekundy.\n\nFID (First Input Delay): Mierzy, jak szybko strona reaguje na interakcję. Cel: poniżej 100ms.\n\nCLS (Cumulative Layout Shift): Mierzy, czy strona przesuwa się nieoczekiwanie podczas ładowania. Cel: poniżej 0,1.\n\nTe metryki pokazują, jak użytkownicy doświadczają Twojej strony.",
+          body: "Core Web Vitals Google to benchmark wart znajomości. LCP (Largest Contentful Paint) mierzy jak szybko ładuje się główna treść, z celem poniżej 2,5 sekundy. INP mierzy responsywność na kliknięcia i dotknięcia. CLS (Cumulative Layout Shift) mierzy czy strona przesuwa się nieoczekiwanie podczas ładowania. PageSpeed Insights i GTmetrix pokażą jak Twoja strona wypada na wszystkich trzech.",
         },
         {
           heading: "Jak budować szybką i responsywną stronę?",
-          body: "Efektywny kod: Unikaj zbędnych skryptów i trzymaj stronę lekką.\n\nZoptymalizowane obrazy: Używaj nowoczesnych formatów, kompresji i lazy loading.\n\nInteligentna struktura: Używaj cachowania i ulepszeń wydajności tam, gdzie potrzeba.\n\nPrawdziwe testy: Sprawdzaj stronę na rzeczywistych urządzeniach i różnych połączeniach.",
+          body: "Główne dźwignie to optymalizacja obrazów (nowoczesne formaty, kompresja, ładowanie tylko tego co widoczne), lekki kod bez niepotrzebnych wtyczek i inteligentne cachowanie. Testuj na prawdziwych urządzeniach mobilnych i prawdziwych połączeniach, a nie tylko na emulatorze desktopu. Strona, która dobrze wypada w laboratorium, ale ma problemy na wiejskim połączeniu 4G, ma realny problem dla osób, które chcesz przyciągnąć.",
         },
         {
           heading: "Podsumowanie",
-          body: "Responsywność pomaga użytkownikom korzystać ze strony.\n\nSzybkość pomaga im pozostać na stronie.\n\nOba są niezbędne dla konwersji.",
+          body: "Responsywność oznacza że ludzie mogą korzystać z Twojej strony na każdym urządzeniu. Szybkość oznacza że są gotowi na nią poczekać. Oba mają znaczenie i oba wymagają uwagi.",
         },
       ],
     },
@@ -198,35 +198,35 @@ export const articles: Article[] = [
         "A template CMS can be a quick and affordable solution. But as a business grows, limitations can appear. Templates are designed for many users. Custom websites are designed around your specific goals.",
       sections: [
         {
-          body: "A template CMS can be a quick and affordable solution.\n\nHowever, as a business grows, limitations can appear.\n\nTemplates are designed for many users. Custom websites are designed around your specific goals.",
+          body: "A template CMS is often the first stop for a new business that needs a website. It is fast to set up, relatively cheap and straightforward to edit. That works well for a lot of projects. But as a business grows and its requirements become more specific, the limitations of a template can start to show.",
         },
         {
           heading: "Advantages of a template CMS",
-          body: "Lower initial cost.\n\nFaster setup.\n\nSimple editing for non-technical users.\n\nMany features available through existing tools.",
+          body: "The main advantages are cost and speed. A template-based site can be live in days and costs a fraction of a custom build. Editing is designed for non-technical users, so you can update content without touching code. There is also a wide ecosystem of plugins and integrations available for the most popular platforms.",
         },
         {
           heading: "Limitations of a template CMS",
-          body: "Many websites look similar because they use the same themes.\n\nCustom changes can become difficult or require workarounds.\n\nToo many plugins can affect performance and security.\n\nMoving to another platform can become complicated.",
+          body: "A template is built to work for many businesses, not one specific business. The result is that many sites end up looking similar because they share the same underlying themes. Custom changes often require workarounds that add complexity over time. Heavy plugin use can drag down performance and introduce security vulnerabilities. And when it comes to moving platforms later, migration can be a significant project.",
         },
         {
           heading: "Advantages of a custom website",
-          body: "Unique design and functionality built for your business.\n\nBetter performance through cleaner, more efficient code.\n\nFull control over SEO, integrations, and data.\n\nAbility to grow and adapt with your business.\n\nEasier long-term flexibility.",
+          body: "A custom site is built from the ground up around your specific goals and users. The design is unique, the functionality matches what you actually need, and the code is clean without unnecessary overhead. You have full control over SEO, integrations and how the site grows over time. It is also easier to adapt as your business evolves.",
         },
         {
           heading: "Limitations of a custom website",
-          body: "Higher initial investment.\n\nRequires proper development and ongoing maintenance.",
+          body: "The upfront investment is higher and the build timeline is longer. You are also more dependent on the agency or developer who built it for ongoing changes. Neither of these is a dealbreaker, but they are worth factoring in before you commit.",
         },
         {
           heading: "Who should use a template?",
-          body: "Templates work well for small projects, simple websites, portfolios, or businesses testing an idea on a limited budget.",
+          body: "Templates work well for small projects, portfolio sites, simple service businesses testing an idea, or any business with a tight launch budget and straightforward requirements.",
         },
         {
           heading: "Who should use a custom website?",
-          body: "Custom development makes more sense for businesses focused on growth, strong user experience, specific integrations, and long-term flexibility.",
+          body: "Custom development makes more sense when performance, search visibility, unique functionality or a specific user experience are central to how the business works. If your site is a key part of how you generate revenue, it is worth building it right.",
         },
         {
           heading: "Summary",
-          body: "A template is a quick solution.\n\nA custom website is built around your business.",
+          body: "A template gets you online quickly. A custom site is built around how your business actually works. The right choice depends on where you are and where you are heading.",
         },
       ],
     },
@@ -236,35 +236,35 @@ export const articles: Article[] = [
         "Szablon CMS może być szybkim i przystępnym rozwiązaniem. Jednak wraz z rozwojem biznesu mogą pojawić się ograniczenia. Szablony są projektowane dla wielu użytkowników. Dedykowane strony są tworzone wokół Twoich konkretnych celów.",
       sections: [
         {
-          body: "Szablon CMS może być szybkim i przystępnym rozwiązaniem.\n\nJednak wraz z rozwojem biznesu mogą pojawić się ograniczenia.\n\nSzablony są projektowane dla wielu użytkowników. Dedykowane strony są tworzone wokół Twoich konkretnych celów.",
+          body: "Szablon CMS to często pierwsze zatrzymanie dla nowego biznesu potrzebującego strony. Szybko go uruchomić, jest stosunkowo tani i prosty do edycji. Sprawdza się to dobrze dla wielu projektów. Jednak gdy firma rośnie i jej wymagania stają się bardziej specyficzne, ograniczenia szablonu zaczynają być widoczne.",
         },
         {
           heading: "Zalety szablonu CMS",
-          body: "Niższy koszt wejścia.\n\nSzybsza konfiguracja.\n\nProsta edycja dla osób bez wiedzy technicznej.\n\nWiele funkcji dostępnych przez istniejące narzędzia.",
+          body: "Główne zalety to koszt i szybkość. Strona oparta na szablonie może być live w ciągu dni i kosztuje ułamek dedykowanego projektu. Edycja jest zaprojektowana dla użytkowników bez wiedzy technicznej, więc możesz aktualizować treść bez dotykania kodu. Istnieje też szeroki ekosystem wtyczek i integracji dla najpopularniejszych platform.",
         },
         {
           heading: "Ograniczenia szablonu CMS",
-          body: "Wiele stron wygląda podobnie, bo korzysta z tych samych szablonów.\n\nNiestandardowe zmiany mogą być trudne lub wymagać obejść.\n\nZbyt wiele wtyczek może wpływać na wydajność i bezpieczeństwo.\n\nPrzejście na inną platformę może być skomplikowane.",
+          body: "Szablon jest zbudowany by działać dla wielu firm, a nie jednej konkretnej. Efekt jest taki, że wiele stron wygląda podobnie, bo dzielą te same bazowe motywy. Niestandardowe zmiany często wymagają obejść, które z czasem dodają złożoności. Ciężkie użycie wtyczek może obniżyć wydajność i wprowadzić luki bezpieczeństwa. A gdy przyjdzie czas na zmianę platformy, migracja może być poważnym projektem.",
         },
         {
           heading: "Zalety dedykowanej strony",
-          body: "Unikalny design i funkcjonalność zbudowane dla Twojego biznesu.\n\nLepsza wydajność dzięki czystszemu, bardziej efektywnemu kodowi.\n\nPełna kontrola nad SEO, integracjami i danymi.\n\nMożliwość rozwoju i adaptacji wraz z Twoim biznesem.\n\nŁatwiejsza długoterminowa elastyczność.",
+          body: "Dedykowana strona jest zbudowana od podstaw wokół Twoich konkretnych celów i użytkowników. Design jest unikalny, funkcjonalność odpowiada temu czego naprawdę potrzebujesz, a kod jest czysty bez zbędnego nadmiaru. Masz pełną kontrolę nad SEO, integracjami i tym jak strona rośnie w czasie. Łatwiej też ją adaptować gdy biznes się zmienia.",
         },
         {
           heading: "Ograniczenia dedykowanej strony",
-          body: "Wyższa inwestycja wstępna.\n\nWymaga odpowiedniego developmentu i bieżącego utrzymania.",
+          body: "Inwestycja wstępna jest wyższa, a czas realizacji dłuższy. Jesteś też bardziej zależny od agencji lub developera, który ją zbudował, przy bieżących zmianach. Żadne z tych nie jest dyskwalifikatorem, ale warto je uwzględnić zanim się zdecydujesz.",
         },
         {
           heading: "Dla kogo szablon?",
-          body: "Szablony sprawdzają się dobrze dla małych projektów, prostych stron, portfolio lub firm testujących pomysł przy ograniczonym budżecie.",
+          body: "Szablony sprawdzają się dobrze dla małych projektów, stron portfolio, prostych firm usługowych testujących pomysł lub każdego biznesu z ograniczonym budżetem startowym i prostymi wymaganiami.",
         },
         {
           heading: "Dla kogo dedykowana strona?",
-          body: "Dedykowany development ma więcej sensu dla firm skupionych na wzroście, silnym doświadczeniu użytkownika, konkretnych integracjach i długoterminowej elastyczności.",
+          body: "Dedykowany development ma więcej sensu gdy wydajność, widoczność w wyszukiwarkach, unikalna funkcjonalność lub specyficzne doświadczenie użytkownika są centralną częścią jak działa biznes. Jeśli Twoja strona jest kluczową częścią generowania przychodów, warto zbudować ją dobrze.",
         },
         {
           heading: "Podsumowanie",
-          body: "Szablon to szybkie rozwiązanie.\n\nDedykowana strona jest zbudowana wokół Twojego biznesu.",
+          body: "Szablon szybko stawia Cię online. Dedykowana strona jest zbudowana wokół tego, jak Twój biznes naprawdę działa. Właściwy wybór zależy od tego, gdzie jesteś i dokąd zmierzasz.",
         },
       ],
     },
@@ -280,31 +280,31 @@ export const articles: Article[] = [
         "In online retail, small problems can create lost sales. Speed, trust, and a simple buying process all influence whether customers complete a purchase.",
       sections: [
         {
-          body: "In online retail, small problems can create lost sales.\n\nSpeed, trust, and a simple buying process all influence whether customers complete a purchase.",
+          body: "In online retail, the margin between a completed sale and an abandoned cart is thinner than most people think. Speed, trust and a simple buying process all play a role. Small problems anywhere in the journey add up, and customers who hit friction will often just go elsewhere.",
         },
         {
           heading: "1. Speed affects conversions",
-          body: "Customers expect online shops to respond quickly.\n\nA slow website creates hesitation and increases the number of abandoned visits.\n\nEvery second matters when someone is ready to buy.",
+          body: "Customers browsing online have high expectations. A shop that takes too long to load creates doubt before they have even seen your products. The data consistently shows that every additional second of load time reduces conversion rates. When someone is ready to buy, they are not willing to wait.",
         },
         {
           heading: "2. Checkout experience",
-          body: "The buying process should be simple.\n\nToo many steps, hidden costs, or limited payment options create unnecessary barriers.\n\nA smooth checkout helps customers complete their purchase with confidence.",
+          body: "The buying process should be as short as possible. Too many steps, mandatory account creation, hidden costs revealed late in the process, or limited payment options are all common reasons customers abandon checkout. A clean, transparent process with minimal friction helps people complete what they came to do.",
         },
         {
           heading: "3. Trust signals",
-          body: "Customers need confidence before sharing payment details.\n\nClear information, secure connections, customer reviews, return policies, and visible contact details all help build trust.\n\nA professional website removes doubt.",
+          body: "Before sharing payment details, customers need to feel confident in the shop they are buying from. Clear contact information, visible return policies, customer reviews, secure payment badges and a professional design all contribute to that confidence. A site that looks unfinished or hard to navigate creates doubt, and doubt kills sales.",
         },
         {
           heading: "4. Mobile shopping",
-          body: "Many customers browse and buy using phones.\n\nMobile shops need easy navigation, clear buttons, fast-loading product images, and simple search.\n\nThe experience should feel natural on a smaller screen.",
+          body: "A significant and growing share of e-commerce happens on mobile devices. Mobile shops need easy navigation, clear and well-sized buttons, fast-loading product images and a checkout that works well on touch. Mobile UX is not about shrinking a desktop layout. It needs to be designed for how people actually use a phone.",
         },
         {
           heading: "5. Inventory and product management",
-          body: "Customers expect accurate information.\n\nStock levels, product updates, and recommendations should work correctly and update in real time.\n\nSmall details influence buying decisions.",
+          body: "Accurate product information matters for trust and for reducing returns. Stock levels should update in real time, product descriptions should be clear and honest, and recommendations should be relevant. The small details of how products are presented directly influence whether someone decides to buy.",
         },
         {
           heading: "Summary",
-          body: "E-commerce success depends on removing friction.\n\nEvery part of the customer journey affects sales.",
+          body: "E-commerce success comes down to removing obstacles. Every part of the customer journey, from first load to final confirmation, affects whether a sale happens.",
         },
       ],
     },
@@ -314,31 +314,31 @@ export const articles: Article[] = [
         "W handlu online małe problemy mogą powodować utratę sprzedaży. Szybkość, zaufanie i prosty proces zakupu wpływają na to, czy klienci finalizują zamówienie.",
       sections: [
         {
-          body: "W handlu online małe problemy mogą powodować utratę sprzedaży.\n\nSzybkość, zaufanie i prosty proces zakupu wpływają na to, czy klienci finalizują zamówienie.",
+          body: "W handlu online margines między ukończoną sprzedażą a porzuconym koszykiem jest mniejszy niż większość ludzi myśli. Szybkość, zaufanie i prosty proces zakupu odgrywają rolę. Małe problemy w dowolnym miejscu ścieżki się sumują, a klienci, którzy napotkają tarcie, często po prostu pójdą gdzie indziej.",
         },
         {
           heading: "1. Szybkość wpływa na konwersje",
-          body: "Klienci oczekują, że sklepy online reagują szybko.\n\nWolna strona tworzy wahanie i zwiększa liczbę porzuconych wizyt.\n\nKażda sekunda ma znaczenie, gdy ktoś jest gotowy do zakupu.",
+          body: "Klienci przeglądający online mają wysokie oczekiwania. Sklep, który zbyt długo się ładuje, budzi wątpliwości zanim jeszcze zobaczyli Twoje produkty. Dane konsekwentnie pokazują, że każda dodatkowa sekunda czasu ładowania obniża wskaźniki konwersji. Gdy ktoś jest gotowy do zakupu, nie jest skłonny czekać.",
         },
         {
           heading: "2. Doświadczenie checkout",
-          body: "Proces zakupu powinien być prosty.\n\nZbyt wiele kroków, ukryte koszty lub ograniczone opcje płatności tworzą zbędne bariery.\n\nPłynny checkout pomaga klientom sfinalizować zakup z pewnością siebie.",
+          body: "Proces zakupu powinien być jak najkrótszy. Zbyt wiele kroków, obowiązkowe tworzenie konta, koszty ujawniane późno w procesie lub ograniczone opcje płatności to powszechne powody dla których klienci porzucają checkout. Czysty, przejrzysty proces z minimalnym tarciem pomaga ludziom dokończyć to po co przyszli.",
         },
         {
           heading: "3. Sygnały zaufania",
-          body: "Klienci potrzebują pewności przed podaniem danych płatności.\n\nJasne informacje, bezpieczne połączenia, opinie klientów, polityki zwrotów i widoczne dane kontaktowe pomagają budować zaufanie.\n\nProfesjonalna strona usuwa wątpliwości.",
+          body: "Przed podaniem danych płatności klienci muszą czuć się pewnie w sklepie, w którym kupują. Jasne dane kontaktowe, widoczne polityki zwrotów, opinie klientów, odznaki bezpiecznych płatności i profesjonalny design przyczyniają się do tej pewności. Strona, która wygląda niedokończenie lub jest trudna w obsłudze, budzi wątpliwości, a wątpliwości zabijają sprzedaż.",
         },
         {
           heading: "4. Zakupy mobilne",
-          body: "Wielu klientów przegląda i kupuje za pomocą telefonów.\n\nSklepy mobilne potrzebują łatwej nawigacji, wyraźnych przycisków, szybko ładujących się obrazów produktów i prostego wyszukiwania.\n\nDoświadczenie powinno być naturalne na mniejszym ekranie.",
+          body: "Znaczna i rosnąca część e-commerce dzieje się na urządzeniach mobilnych. Sklepy mobilne potrzebują łatwej nawigacji, wyraźnych i dobrze wypozycjonowanych przycisków, szybko ładujących się obrazów produktów i checkout który dobrze działa na dotyk. Mobilne UX to nie kurczenie layoutu desktopa. Musi być zaprojektowane tak jak ludzie naprawdę używają telefonu.",
         },
         {
           heading: "5. Zarządzanie asortymentem",
-          body: "Klienci oczekują dokładnych informacji.\n\nStan magazynu, aktualizacje produktów i rekomendacje powinny działać prawidłowo i aktualizować się w czasie rzeczywistym.\n\nMałe szczegóły wpływają na decyzje zakupowe.",
+          body: "Dokładne informacje o produktach mają znaczenie dla zaufania i zmniejszenia zwrotów. Stany magazynowe powinny aktualizować się w czasie rzeczywistym, opisy produktów powinny być jasne i uczciwe, a rekomendacje trafne. Małe szczegóły prezentacji produktów bezpośrednio wpływają na to, czy ktoś zdecyduje się kupić.",
         },
         {
           heading: "Podsumowanie",
-          body: "Sukces e-commerce zależy od eliminowania trudności.\n\nKażda część ścieżki klienta wpływa na sprzedaż.",
+          body: "Sukces e-commerce sprowadza się do usuwania przeszkód. Każda część ścieżki klienta, od pierwszego ładowania po ostateczne potwierdzenie, wpływa na to, czy sprzedaż dojdzie do skutku.",
         },
       ],
     },
@@ -354,35 +354,35 @@ export const articles: Article[] = [
         "Building a website does not automatically bring customers from Google. SEO combines technical quality, content, user experience, and online authority. Your website is the foundation, not the entire strategy.",
       sections: [
         {
-          body: "Building a website does not automatically bring customers from Google.\n\nSEO combines technical quality, content, user experience, and online authority.\n\nYour website is the foundation, not the entire strategy.",
+          body: "Launching a website does not automatically bring you customers from Google. A lot of people assume it does, and then wonder why the traffic never arrives. SEO is a combination of technical quality, content, user experience and online credibility. Your website is the foundation, but it is only the start.",
         },
         {
           heading: "Website foundation",
-          body: "Structure: A clear website structure helps search engines understand your pages and how they relate to each other.\n\nSpeed: Performance affects both user experience and search engine visibility.\n\nMobile experience: Search engines focus heavily on the mobile version of websites.\n\nTechnical setup: Correct indexing, structured data, and clean code help search engines read and understand your content.",
+          body: "Before anything else, your site needs to be technically sound. This means a clear structure that helps search engines understand what your pages are about and how they relate to each other. It means good performance, because speed affects both user experience and how search engines evaluate your site. And it means proper technical setup: clean code, correct indexing, structured data where relevant, and a solid mobile experience.",
         },
         {
           heading: "Content matters",
-          body: "Good content answers real customer questions.\n\nIt should match what people are searching for and provide genuinely useful information.\n\nQuality matters more than adding unnecessary length.",
+          body: "Good content answers the questions your customers are actually asking. It should match what people search for and offer genuinely useful information, not filler padded out for length. A page that clearly and honestly answers a specific question will tend to outperform a page that mentions a lot of keywords but says little of value.",
         },
         {
           heading: "Experience and trust",
-          body: "Search engines look for signs that a business is reliable and credible.\n\nClear information, demonstrated expertise, customer feedback, and real experience all help build authority over time.",
+          body: "Search engines pay attention to signals of credibility. Clear, accurate information, consistent business details across the web, genuine customer feedback and demonstrated expertise all build authority over time. This cannot be shortcut. It is the result of running a good business and representing it well online.",
         },
         {
           heading: "Links and mentions",
-          body: "Other websites linking to yours can strengthen your online reputation.\n\nQuality matters far more than quantity when it comes to backlinks.",
+          body: "When other reputable websites link to yours, it strengthens your standing in search. Quality matters far more than quantity. A single link from a relevant, trusted source is worth more than hundreds of low-quality ones. Guest posts, directory listings, press mentions and partnerships can all contribute over time.",
         },
         {
           heading: "User behaviour",
-          body: "How people interact with your website gives search engines important signals.\n\nIf visitors quickly leave or cannot find what they need, it can negatively affect your performance.",
+          body: "How people interact with your site gives search engines signals about its quality. If visitors land and leave quickly without engaging, it suggests the page did not deliver what they were looking for. Improving the relevance, usability and clarity of your content directly improves this.",
         },
         {
           heading: "Technical SEO basics",
-          body: "Robots.txt: Controls which pages search engines should access and index.\n\nSitemap: Helps search engines discover and navigate your content.\n\nRedirects: Protect your existing rankings when pages change or are removed.",
+          body: "robots.txt tells search engines which pages to access and index. A sitemap helps them discover all your content. Redirects protect your existing rankings when pages move or are removed. These are not complex, but they need to be set up correctly from the beginning.",
         },
         {
           heading: "Summary",
-          body: "SEO is ongoing work.\n\nA website creates the foundation.\n\nContent, optimisation, and trust build long-term visibility.",
+          body: "SEO is ongoing work, not a one-time setup. Your website creates the foundation. Content, credibility and consistent effort build visibility over time.",
         },
       ],
     },
@@ -392,35 +392,35 @@ export const articles: Article[] = [
         "Stworzenie strony nie sprowadza automatycznie klientów z Google. SEO łączy jakość techniczną, treść, doświadczenie użytkownika i autorytet online. Twoja strona to fundament, nie cała strategia.",
       sections: [
         {
-          body: "Stworzenie strony nie sprowadza automatycznie klientów z Google.\n\nSEO łączy jakość techniczną, treść, doświadczenie użytkownika i autorytet online.\n\nTwoja strona to fundament, nie cała strategia.",
+          body: "Uruchomienie strony internetowej nie sprowadza automatycznie klientów z Google. Wiele osób tak zakłada, a potem zastanawia się dlaczego ruch nie przychodzi. SEO to połączenie jakości technicznej, treści, doświadczenia użytkownika i wiarygodności online. Twoja strona to fundament, ale to dopiero początek.",
         },
         {
           heading: "Fundament strony",
-          body: "Struktura: Jasna struktura strony pomaga wyszukiwarkom zrozumieć Twoje strony i ich wzajemne relacje.\n\nSzybkość: Wydajność wpływa zarówno na doświadczenie użytkownika, jak i widoczność w wyszukiwarkach.\n\nDoświadczenie mobilne: Wyszukiwarki skupiają się mocno na mobilnej wersji stron.\n\nKonfiguracja techniczna: Prawidłowe indeksowanie, dane strukturalne i czysty kod pomagają wyszukiwarkom czytać i rozumieć Twoje treści.",
+          body: "Zanim cokolwiek innego, strona musi być technicznie solidna. Oznacza to przejrzystą strukturę, która pomaga wyszukiwarkom zrozumieć czego dotyczą Twoje strony i jak są ze sobą powiązane. Oznacza dobrą wydajność, bo szybkość wpływa zarówno na doświadczenie użytkownika, jak i na to jak wyszukiwarki oceniają Twoją stronę. I oznacza właściwą konfigurację techniczną: czysty kod, prawidłowe indeksowanie, dane strukturalne tam gdzie właściwe i solidne doświadczenie mobilne.",
         },
         {
           heading: "Treść ma znaczenie",
-          body: "Dobra treść odpowiada na prawdziwe pytania klientów.\n\nPowinna pasować do tego, czego ludzie szukają i dostarczać naprawdę przydatnych informacji.\n\nJakość jest ważniejsza niż dodawanie zbędnej długości.",
+          body: "Dobra treść odpowiada na pytania, które Twoi klienci naprawdę zadają. Powinna odpowiadać temu czego ludzie szukają i oferować naprawdę użyteczne informacje, a nie wypełniacz dla długości. Strona, która jasno i uczciwie odpowiada na konkretne pytanie, zazwyczaj wyprzedzi stronę, która zawiera dużo słów kluczowych, ale mówi niewiele wartościowego.",
         },
         {
           heading: "Doświadczenie i zaufanie",
-          body: "Wyszukiwarki szukają oznak, że firma jest wiarygodna i godna zaufania.\n\nJasne informacje, wykazana ekspertyza, opinie klientów i prawdziwe doświadczenie pomagają budować autorytet w czasie.",
+          body: "Wyszukiwarki zwracają uwagę na sygnały wiarygodności. Jasne, dokładne informacje, spójne dane biznesowe w internecie, autentyczne opinie klientów i wykazana ekspertyza budują autorytet w czasie. Tego nie można skrócić. To wynik prowadzenia dobrego biznesu i dobrego reprezentowania go online.",
         },
         {
           heading: "Linki i wzmianki",
-          body: "Inne strony linkujące do Twojej mogą wzmocnić Twoją reputację online.\n\nJakość ma o wiele większe znaczenie niż ilość, jeśli chodzi o backlinki.",
+          body: "Gdy inne renomowane strony linkują do Twojej, wzmacnia to Twoją pozycję w wyszukiwaniach. Jakość ma znacznie większe znaczenie niż ilość. Jeden link z odpowiedniego, zaufanego źródła jest warty więcej niż setki niskiej jakości. Wpisy gościnne, listy katalogowe, wzmianki w prasie i partnerstwa mogą z czasem przyczynić się do tego.",
         },
         {
           heading: "Zachowanie użytkowników",
-          body: "To, jak ludzie wchodzą w interakcję z Twoją stroną, daje wyszukiwarkom ważne sygnały.\n\nJeśli odwiedzający szybko odchodzą lub nie mogą znaleźć tego, czego potrzebują, może to negatywnie wpłynąć na Twoje wyniki.",
+          body: "To jak ludzie wchodzą w interakcję ze stroną daje wyszukiwarkom sygnały o jej jakości. Jeśli odwiedzający lądują i szybko odchodzą bez angażowania się, sugeruje to że strona nie dostarczyła tego czego szukali. Poprawa trafności, użyteczności i jasności treści bezpośrednio poprawia te sygnały.",
         },
         {
           heading: "Podstawy technicznego SEO",
-          body: "Robots.txt: Kontroluje, do których stron wyszukiwarki powinny mieć dostęp i które indeksować.\n\nSitemap: Pomaga wyszukiwarkom odkrywać i nawigować po Twoich treściach.\n\nPrzekierowania: Chronią istniejące rankingi przy zmianach lub usuwaniu stron.",
+          body: "robots.txt informuje wyszukiwarki do których stron mają dostęp i które indeksować. Sitemap pomaga im odkryć całą Twoją treść. Przekierowania chronią istniejące rankingi gdy strony są przenoszone lub usuwane. To nie jest skomplikowane, ale musi być poprawnie skonfigurowane od początku.",
         },
         {
           heading: "Podsumowanie",
-          body: "SEO to ciągła praca.\n\nStrona tworzy fundament.\n\nTreść, optymalizacja i zaufanie budują długoterminową widoczność.",
+          body: "SEO to bieżąca praca, nie jednorazowa konfiguracja. Twoja strona tworzy fundament. Treść, wiarygodność i stały wysiłek budują widoczność w czasie.",
         },
       ],
     },

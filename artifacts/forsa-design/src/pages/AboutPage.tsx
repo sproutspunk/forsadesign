@@ -14,23 +14,23 @@ const content = {
   en: {
     seoTitle: "About Us | Forsa Design — Web Agency in Banff, Aberdeenshire",
     seoDesc:
-      "Learn about Forsa Design, a web agency based in Banff, Aberdeenshire, Scotland, specialising in custom websites for healthcare and B2B businesses across Aberdeenshire.",
+      "Learn about Forsa Design, a web agency based in Banff, Aberdeenshire, Scotland, building custom websites for businesses across Aberdeenshire and Scotland.",
     heading: "Websites That Work for Your Business",
     intro:
-      "We create websites, branding, and digital services for businesses across Aberdeenshire, Scotland and beyond. We specialise in the private healthcare and B2B sectors, turning websites into tools that genuinely generate revenue and support business growth.",
+      "We build custom websites for businesses in Aberdeenshire, Scotland and beyond. Every project starts with a proper conversation about your business, your customers and your goals. We focus on clean development, performance, usability and search visibility.",
     whatWeDoHeading: "What We Do",
     services: [
       {
         title: "Web Design & Development",
-        desc: "Every site we build is tailored to your business. We don't work with templates. We start with analysis. Who are you? Who do you serve? What is your business goal? Then we build a site that achieves it. The result is a site that is fast, secure, conversion-optimised, and visible in search engines.",
+        desc: "Every site we build starts from scratch, designed around your specific business. We don't use templates. We begin by understanding who you serve and what your site needs to achieve. The result is a site that is fast, secure and built to generate enquiries.",
       },
       {
-        title: "Brand Strategy & Branding",
-        desc: "A beautiful site without a clear message is a waste. We help you define who you are, what sets you apart from the competition, and why clients should choose you. This creates consistency from brand identity to on-site content.",
+        title: "E-commerce & Conversion Optimisation",
+        desc: "Online shops built to make buying straightforward. Whether you are starting from scratch or improving an existing store, we focus on speed, usability and removing the friction that stops customers from completing a purchase.",
       },
       {
-        title: "Technical Support & Optimisation",
-        desc: "After your site launches, we don't disappear. We support you with hosting, security, updates, performance optimisation, SEO monitoring, and conversion opportunities.",
+        title: "Ongoing Support & Optimisation",
+        desc: "After launch, we do not disappear. We help with hosting, security updates, performance monitoring and improvements as your business grows. A website should get better over time, not stay static.",
       },
     ],
     processHeading: "Our Process",
@@ -77,8 +77,8 @@ const content = {
         desc: "We measure everything. Whether the site attracts users, converts, and supports sales.",
       },
       {
-        title: "Specialisation in healthcare and B2B.",
-        desc: "We understand the regulations, decision-making processes, and UX requirements for these industries.",
+        title: "You own everything.",
+        desc: "Your domain, hosting and content are always in your control. No lock-in, no dependency on a single provider.",
       },
       {
         title: "Long-term partnership.",
@@ -142,20 +142,20 @@ const content = {
       "Poznaj Forsa Design, agencję web design z Banff w Aberdeenshire w Szkocji, specjalizującą się w autorskich stronach internetowych dla firm z Aberdeenshire i całej Szkocji.",
     heading: "Strony Internetowe, Które Pracują dla Twojego Biznesu",
     intro:
-      "Tworzymy strony internetowe, branding i cyfrowe usługi dla firm z całej Wielkiej Brytanii. Specjalizujemy się w sektorze private healthcare i firm B2B, zamieniając stronę internetową w narzędzie, które rzeczywiście generuje przychody i wspiera wzrost biznesu.",
+      "Budujemy autorskie strony internetowe dla firm z Aberdeenshire, Szkocji i nie tylko. Każdy projekt zaczyna się od porządnej rozmowy o Twoim biznesie, Twoich klientach i celach. Skupiamy się na czystym kodzie, wydajności, użyteczności i widoczności w wyszukiwarkach.",
     whatWeDoHeading: "Co Robimy",
     services: [
       {
         title: "Projektowanie i Tworzenie Stron",
-        desc: "Każda strona, którą tworzymy, jest dostosowana do Twojego biznesu. Nie pracujemy z szablonami. Zaczynamy od analizy. Kim jesteś? Kogo obsługujesz? Jaki jest Twój cel biznesowy? Następnie budujemy stronę, która to osiąga. Wynik to strona, która jest szybka, bezpieczna, zoptymalizowana do konwersji i widoczna w wyszukiwarkach.",
+        desc: "Każda strona, którą tworzymy, zaczyna się od zera i jest zaprojektowana wokół Twojego konkretnego biznesu. Nie używamy szablonów. Zaczynamy od zrozumienia kogo obsługujesz i co Twoja strona musi osiągnąć. Wynik to strona szybka, bezpieczna i zbudowana, by generować zapytania.",
       },
       {
-        title: "Strategia Marki i Branding",
-        desc: "Piękna strona bez jasnego przesłania to marnotrawstwo. Pomagamy Ci zdefiniować, kim jesteś, co wyróżnia Cię od konkurencji i dlaczego klienci mają Cię wybrać. To tworzy spójność od wizerunku marki po treść na stronie.",
+        title: "Sklepy Internetowe i Optymalizacja Konwersji",
+        desc: "Sklepy online zaprojektowane tak, by zakupy były proste. Czy zaczynasz od zera czy ulepszasz istniejący sklep, skupiamy się na szybkości, użyteczności i usuwaniu przeszkód, które powstrzymują klientów od finalizowania zakupów.",
       },
       {
-        title: "Wsparcie Techniczne i Optymalizacja",
-        desc: "Po uruchomieniu strony nie znikamy. Wspieramy Cię w hostingu, bezpieczeństwie, aktualizacjach, optymalizacji wydajności, monitorowaniu SEO i możliwościach konwersji.",
+        title: "Bieżące Wsparcie i Optymalizacja",
+        desc: "Po uruchomieniu nie znikamy. Pomagamy z hostingiem, aktualizacjami bezpieczeństwa, monitorowaniem wydajności i ulepszeniami w miarę rozwoju Twojego biznesu. Strona powinna z czasem stawać się lepsza, a nie stać w miejscu.",
       },
     ],
     processHeading: "Nasz Proces",
@@ -202,8 +202,8 @@ const content = {
         desc: "Mierzy się wszystko. Czy strona przyciąga użytkowników, konwertuje, wspiera sprzedaż.",
       },
       {
-        title: "Specjalizacja w healthcare i B2B.",
-        desc: "Rozumiemy regulacje, procesy decyzyjne, UX dla tych branż.",
+        title: "Wszystko należy do Ciebie.",
+        desc: "Domena, hosting i treść zawsze są pod Twoją kontrolą. Bez uzależnienia od dostawcy.",
       },
       {
         title: "Długoterminowe partnerstwo.",
@@ -344,7 +344,7 @@ export default function AboutPage({ lang }: AboutPageProps) {
             "@type": "Country",
             name: "United Kingdom",
           },
-          priceRange: "££££",
+          priceRange: "££",
           knowsAbout: [
             "Web Design",
             "Web Development",
