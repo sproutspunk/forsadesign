@@ -15,29 +15,28 @@ const CONTACT_FROM_NAME = "Forsa Design";
 
 const TURNSTILE_VERIFY_URL = "https://challenges.cloudflare.com/turnstile/v0/siteverify";
 
-// Verifies a Cloudflare Turnstile token server-side.
-// Returns true when verification passes OR when no secret key is configured
-// (graceful degradation: the form keeps working until Turnstile is set up).
-// Returns false only when a secret key IS configured and the token is missing
-// or rejected by Cloudflare.
+// Verifies a Cloudflare Turnstile token server-side before any email is sent.
+// Fails closed: email is only sent when Cloudflare validates the token. With no
+// secret configured the server cannot verify bot proof, so it rejects rather
+// than silently sending mail (exactly the abuse this endpoint must prevent).
+// This does NOT depend on NODE_ENV: the deploy start script does not set it, so
+// gating security on the environment name would risk failing open. Local
+// development must configure Turnstile (Cloudflare publishes always-pass test keys).
 async function verifyTurnstile(
   token: string | undefined,
   ip: string | undefined,
 ): Promise<boolean> {
   const secret = process.env.TURNSTILE_SECRET_KEY;
   if (!secret) {
-    logger.warn("TURNSTILE_SECRET_KEY not set; skipping CAPTCHA verification for contact form");
-    return true;
+    logger.error("TURNSTILE_SECRET_KEY not set; rejecting contact form submission (fail closed)");
+    return false;
   }
 
   if (!token || token.trim() === "") {
-    // Widget may have errored (e.g. domain not in allowlist) so no token was
-    // generated. Treat the same as no secret configured — graceful degradation.
-    logger.warn(
-      { ip },
-      "Contact form missing Turnstile token; allowing through (graceful degradation)",
-    );
-    return true;
+    // A secret is configured but no token was supplied. Deny: sending email
+    // without bot proof is exactly the abuse this endpoint must prevent.
+    logger.warn({ ip }, "Contact form rejected: missing Turnstile token");
+    return false;
   }
 
   try {
@@ -157,7 +156,7 @@ router.post("/contact", contactRateLimiter, async (req, res) => {
   }
 
   // Stronger bot check: verify the Cloudflare Turnstile token server-side
-  // before sending any email. Rejected when configured and verification fails.
+  // before sending any email. Fails closed when verification does not pass.
   const captchaOk = await verifyTurnstile(parsed.data.captchaToken, req.ip);
   if (!captchaOk) {
     return res.status(400).json(

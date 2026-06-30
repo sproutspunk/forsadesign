@@ -89,7 +89,7 @@ describe("POST /api/contact bot protection", () => {
     expect(proxyMock).toHaveBeenCalled();
   });
 
-  it("allows submission when the CAPTCHA token is missing (graceful degradation — widget may have errored)", async () => {
+  it("rejects submission when the CAPTCHA token is missing (fail closed)", async () => {
     process.env.TURNSTILE_SECRET_KEY = PASS_SECRET;
     const app = await loadApp();
 
@@ -97,11 +97,24 @@ describe("POST /api/contact bot protection", () => {
       .post("/api/contact")
       .send(validBody({ captchaToken: undefined }));
 
-    // Missing token = widget could not load (e.g. domain not in allowlist).
-    // We degrade gracefully and send the email rather than blocking the user.
-    expect(res.status).toBe(200);
-    expect(res.body.ok).toBe(true);
-    expect(proxyMock).toHaveBeenCalled();
+    // No bot proof = no email. The contract requires captchaToken and the
+    // handler verifies it, so an unauthenticated submission must be denied.
+    expect(res.status).toBe(400);
+    expect(res.body.ok).toBe(false);
+    expect(proxyMock).not.toHaveBeenCalled();
+  });
+
+  it("rejects submission when the CAPTCHA token is an empty string (fail closed)", async () => {
+    process.env.TURNSTILE_SECRET_KEY = PASS_SECRET;
+    const app = await loadApp();
+
+    const res = await request(app)
+      .post("/api/contact")
+      .send(validBody({ captchaToken: "" }));
+
+    expect(res.status).toBe(400);
+    expect(res.body.ok).toBe(false);
+    expect(proxyMock).not.toHaveBeenCalled();
   });
 
   it("rejects with 400 when the CAPTCHA token is invalid", async () => {
@@ -146,16 +159,17 @@ describe("POST /api/contact bot protection", () => {
     expect(limited.body.ok).toBe(false);
   });
 
-  it("accepts valid submissions when no secret key is configured (graceful degradation)", async () => {
+  it("rejects submissions when no secret key is configured (fail closed)", async () => {
     delete process.env.TURNSTILE_SECRET_KEY;
     const app = await loadApp();
 
-    const res = await request(app)
-      .post("/api/contact")
-      .send(validBody({ captchaToken: undefined }));
+    const res = await request(app).post("/api/contact").send(validBody());
 
-    expect(res.status).toBe(200);
-    expect(res.body).toEqual({ ok: true });
-    expect(proxyMock).toHaveBeenCalled();
+    // With no CAPTCHA secret the server cannot verify bot proof, so it must not
+    // send email regardless of environment: failing closed prevents the endpoint
+    // from becoming an open, branded mail relay.
+    expect(res.status).toBe(400);
+    expect(res.body.ok).toBe(false);
+    expect(proxyMock).not.toHaveBeenCalled();
   });
 });

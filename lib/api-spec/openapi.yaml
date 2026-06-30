@@ -93,13 +93,14 @@ components:
           type: string
           description: >-
             Cloudflare Turnstile token produced by the widget on the contact
-            form. Verified server-side before any email is sent when a Turnstile
-            secret key is configured.
+            form. Required and verified server-side before any email is sent;
+            submissions without a valid token are rejected.
       required:
         - name
         - email
         - projectType
         - details
+        - captchaToken
     ContactResponse:
       type: object
       properties:
