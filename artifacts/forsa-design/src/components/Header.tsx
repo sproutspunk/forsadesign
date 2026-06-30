@@ -40,8 +40,9 @@ export default function Header() {
     { name: t("nav.faq"), href: sectionHref("#faq") },
     { name: t("nav.blog"), href: `${base}blog` },
     { name: t("nav.comparison"), href: `${base}comparison` },
-    { name: t("nav.quote"), href: `${base}quote` },
   ];
+
+  const quoteHref = `${base}quote`;
 
   return (
     <header
@@ -70,6 +71,13 @@ export default function Header() {
               {link.name}
             </a>
           ))}
+          <a
+            href={quoteHref}
+            data-testid="link-nav-quote"
+            className="text-sm font-bold px-4 py-1.5 rounded-sm bg-primary text-primary-foreground hover:bg-primary/90 transition-colors"
+          >
+            {t("nav.quote")}
+          </a>
         </nav>
         {/* About Us page link (desktop) */}
         <a
@@ -139,7 +147,14 @@ export default function Header() {
                   {link.name}
                 </a>
               ))}
-              <div className="flex items-center gap-4 mt-4 pt-4 border-t border-border">
+              <a
+                href={quoteHref}
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="text-center text-base font-bold px-4 py-3 rounded-sm bg-primary text-primary-foreground hover:bg-primary/90 transition-colors"
+              >
+                {t("nav.quote")}
+              </a>
+              <div className="flex items-center gap-4 mt-2 pt-4 border-t border-border">
                 <a
                   href="/en/"
                   hrefLang="en"
