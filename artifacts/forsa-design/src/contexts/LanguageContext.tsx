@@ -15,6 +15,7 @@ const translations = {
       faq: "FAQ",
       blog: "Blog",
       comparison: "Compare",
+      quote: "Quote",
       aboutPage: "About Us",
     },
     faq: {
@@ -197,6 +198,7 @@ const translations = {
       faq: "FAQ",
       blog: "Blog",
       comparison: "Porównanie",
+      quote: "Wycena",
       aboutPage: "O Nas",
     },
     faq: {

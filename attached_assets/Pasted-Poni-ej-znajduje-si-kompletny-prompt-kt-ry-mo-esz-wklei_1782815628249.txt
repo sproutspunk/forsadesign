@@ -1,0 +1,475 @@
+Poniżej znajduje się kompletny prompt, który możesz wkleić do Replit AI. Ceny są orientacyjne dla rynku UK w 2026 r. dla małych i średnich agencji oraz freelancerów. Nie są to ceny minimalne ani maksymalne, ale mieszczą się w typowym zakresie.
+
+Create a premium Website Quote Calculator for a UK web design agency.
+
+General Requirements
+
+* Build using React + TypeScript.
+* Use Tailwind CSS.
+* Fully responsive.
+* Modern premium interface.
+* Live price calculation.
+* Animated total.
+* Dark and Light mode.
+* Mobile friendly.
+* Professional business appearance.
+* Currency: GBP (£).
+* VAT toggle (20%).
+* Display:
+
+  * Subtotal
+  * VAT
+  * Total
+  * Estimated completion time
+
+---
+
+SECTION 1
+Project Type
+
+Landing Page
+Base Price: £700
+
+One Page Website
+Base Price: £950
+
+Small Business Website (up to 5 pages)
+Base Price: £1,600
+
+Business Website (6–15 pages)
+Base Price: £2,700
+
+Corporate Website
+Base Price: £5,000
+
+E-commerce Website
+Base Price: £4,500
+
+Marketplace
+Base Price: £9,500
+
+Booking Website
+Base Price: £5,500
+
+Membership Website
+Base Price: £6,500
+
+Custom Web Application
+Base Price: £8,000
+
+---
+
+SECTION 2
+Additional Pages
+
+Slider
+
+0–50 pages
+
+Price:
+
+£180 per additional page
+
+---
+
+SECTION 3
+Design Quality
+
+Template Design
+
++£0
+
+Semi Custom Design
+
++£900
+
+Fully Custom Design
+
++£2,500
+
+Premium Brand Identity Design
+
++£4,500
+
+---
+
+SECTION 4
+Content Writing
+
+Client provides content
+
+£0
+
+AI Assisted Copywriting
+
++£350
+
+Professional Copywriting
+
++£1,200
+
+---
+
+SECTION 5
+Logo
+
+Existing logo
+
+£0
+
+Simple Logo
+
++£350
+
+Professional Brand Identity
+
++£1,500
+
+---
+
+SECTION 6
+Photography
+
+Client images
+
+£0
+
+Premium Stock Images
+
++£250
+
+Professional Photography
+
++£2,000
+
+---
+
+SECTION 7
+Features
+
+Checkboxes
+
+Contact Form
+£180
+
+Google Maps
+£120
+
+WhatsApp Chat
+£120
+
+Live Chat
+£250
+
+Blog
+£450
+
+Testimonials
+£250
+
+Portfolio
+£350
+
+Gallery
+£250
+
+Newsletter Integration
+£220
+
+Cookie Banner
+£150
+
+GDPR Setup
+£300
+
+Multi-language
+£850 per language
+
+Appointment Booking
+£850
+
+Online Booking System
+£1,500
+
+Membership Area
+£2,200
+
+Client Portal
+£3,500
+
+User Dashboard
+£3,500
+
+Customer Accounts
+£950
+
+Wishlist
+£450
+
+Product Reviews
+£350
+
+Payment Gateway
+£450
+
+Stripe Integration
+£450
+
+PayPal Integration
+£350
+
+Apple Pay
+£350
+
+Google Pay
+£350
+
+Subscriptions
+£850
+
+Advanced Search
+£700
+
+Filtering
+£450
+
+Live Search
+£350
+
+CRM Integration
+£1,200
+
+ERP Integration
+£3,000
+
+API Integration
+£850 per API
+
+Email Automation
+£650
+
+SMS Notifications
+£450
+
+Push Notifications
+£650
+
+PDF Generation
+£450
+
+Invoice Generator
+£750
+
+Quote Generator
+£650
+
+Calculator
+£550
+
+Chatbot
+£950
+
+AI Assistant
+£2,500
+
+Customer Login
+£650
+
+Admin Dashboard
+£3,500
+
+Analytics Dashboard
+£1,500
+
+---
+
+SECTION 8
+SEO
+
+No SEO
+
+£0
+
+Basic SEO
+
+£450
+
+Professional SEO
+
+£1,200
+
+Advanced SEO
+
+£2,800
+
+---
+
+SECTION 9
+Performance
+
+Standard
+
+£0
+
+Performance Optimisation
+
+£650
+
+Core Web Vitals Optimisation
+
+£950
+
+---
+
+SECTION 10
+Hosting
+
+Client Hosting
+
+£0
+
+Managed Hosting Setup
+
+£250
+
+Cloudflare Setup
+
+£250
+
+---
+
+SECTION 11
+Maintenance
+
+No Maintenance
+
+£0
+
+Monthly Care Plan
+
+£95/month
+
+Business Care Plan
+
+£180/month
+
+Premium Care Plan
+
+£350/month
+
+---
+
+SECTION 12
+Delivery Time
+
+Standard (6–10 weeks)
+
+0%
+
+Priority (4–6 weeks)
+
++20%
+
+Fast Track (2–3 weeks)
+
++40%
+
+Express (1–2 weeks)
+
++70%
+
+---
+
+SECTION 13
+Discount
+
+Coupon Code
+
+Percentage Discount
+
+Manual Discount
+
+---
+
+SECTION 14
+Summary
+
+Display:
+
+Project Cost
+
+VAT
+
+Grand Total
+
+Estimated Development Time
+
+Estimated Monthly Cost
+
+---
+
+Buttons
+
+Generate PDF Quote
+
+Download PDF
+
+Print Quote
+
+Email Quote
+
+Save Quote
+
+Reset Calculator
+
+---
+
+Admin Features
+
+Save all quotations.
+
+Each quote receives a unique quotation number.
+
+Allow editing.
+
+Allow deleting.
+
+Export to CSV.
+
+Export to PDF.
+
+Search quotations.
+
+Dashboard statistics.
+
+Average project value.
+
+Monthly sales estimate.
+
+---
+
+Nice UI
+
+Animated counters.
+
+Smooth transitions.
+
+Professional icons.
+
+Cards.
+
+Progress indicator.
+
+Responsive layout.
+
+Sticky quote summary on desktop.
+
+Floating total on mobile.
+
+Green success animation after quote generation.
+
+Use British English spelling throughout the application.
+
+All prices must be stored in a separate configuration object so they can easily be updated later without changing the calculator logic.
+
+Tak skonfigurowany kalkulator będzie generował wyceny zbliżone do stawek stosowanych przez wielu freelancerów i agencji w Wielkiej Brytanii. Dla agencji premium (np. działających w Londynie) te same pozycje można zwiększyć o 30–100%, natomiast dla początkujących freelancerów obniżyć o około 20–30%.

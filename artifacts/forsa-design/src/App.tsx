@@ -19,6 +19,7 @@ const TermsPage = lazy(() => import("@/pages/TermsPage"));
 const TermsPagePL = lazy(() => import("@/pages/TermsPagePL"));
 const PrivacyPage = lazy(() => import("@/pages/PrivacyPage"));
 const PrivacyPagePL = lazy(() => import("@/pages/PrivacyPagePL"));
+const QuoteCalculatorPage = lazy(() => import("@/pages/QuoteCalculatorPage"));
 
 const queryClient = new QueryClient();
 
@@ -134,6 +135,8 @@ function Router() {
           <Route path="/pl/blog" component={() => <BlogPage lang="pl" />} />
           <Route path="/en/comparison" component={() => <ComparisonPage lang="en" />} />
           <Route path="/pl/comparison" component={() => <ComparisonPage lang="pl" />} />
+          <Route path="/en/quote" component={() => <QuoteCalculatorPage lang="en" />} />
+          <Route path="/pl/quote" component={() => <QuoteCalculatorPage lang="pl" />} />
           <Route path="/en/terms" component={TermsPage} />
           <Route path="/pl/terms" component={TermsPagePL} />
           <Route path="/terms" component={() => <RedirectTo to="/en/terms" />} />

@@ -34,6 +34,7 @@ export default function Header() {
     { name: t("nav.faq"), href: sectionHref("#faq") },
     { name: t("nav.blog"), href: `${base}blog` },
     { name: t("nav.comparison"), href: `${base}comparison` },
+    { name: t("nav.quote"), href: `${base}quote` },
   ];
 
   return (
