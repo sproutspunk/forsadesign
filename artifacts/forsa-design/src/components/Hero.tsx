@@ -1,6 +1,7 @@
 import { useLanguage } from "@/contexts/LanguageContext";
 import { motion, type Variants } from "framer-motion";
-import logo from "../assets/forsa-logo.png";
+import logoWebP from "../assets/forsa-logo.webp";
+import logoPng from "../assets/forsa-logo-sm.png";
 
 export default function Hero() {
   const { t } = useLanguage();
@@ -80,9 +81,13 @@ export default function Hero() {
             </motion.div>
 
             {/* Rocket: smooth cosine brightness — 8 equal 45° steps, peak at front (t=0.125), darkest at back (t=0.625) */}
-            <motion.img
-              src={logo}
+            <picture>
+              <source srcSet={logoWebP} type="image/webp" />
+              <motion.img
+              src={logoPng}
               alt="Forsa Design"
+              width={640}
+              height={640}
               className="w-56 md:w-72 lg:w-80 h-auto object-contain block"
               animate={{
                 filter: [
@@ -113,6 +118,7 @@ export default function Hero() {
                 times: [0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875, 1],
               }}
             />
+            </picture>
           </motion.div>
 
           <motion.div variants={itemVariants} className="w-24 h-px bg-primary mb-8 mt-6" />
