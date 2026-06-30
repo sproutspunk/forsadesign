@@ -58,7 +58,8 @@ const translations = {
     },
     hero: {
       tagline: "Web Design Agency in Aberdeenshire, Scotland",
-      subheader: "Custom-built websites for businesses in Banff, Aberdeenshire and across Scotland.",
+      subheader:
+        "Custom-built websites for businesses in Banff, Aberdeenshire and across Scotland.",
       body: "We create fast, reliable websites with clean development, strong performance, and a focus on user experience. No unnecessary complexity. No generic solutions. Just well-built websites that help your business look professional, perform better, and support growth.",
       cta: "Request a Quote",
     },
@@ -241,7 +242,8 @@ const translations = {
     },
     hero: {
       tagline: "Agencja Web Design w Aberdeenshire, Szkocja",
-      subheader: "Autorskie strony internetowe dla firm z Banff, Aberdeenshire i ca\u0142ej Szkocji.",
+      subheader:
+        "Autorskie strony internetowe dla firm z Banff, Aberdeenshire i ca\u0142ej Szkocji.",
       body: "Tworzymy szybkie, niezawodne strony z czystym kodem, wysok\u0105 wydajno\u015bci\u0105 i skupieniem na do\u015bwiadczeniu u\u017cytkownika. Bez zb\u0119dnej z\u0142o\u017cono\u015bci. Bez og\u00f3lnych rozwi\u0105za\u0144. Tylko dobrze zbudowane strony, kt\u00f3re pomagaj\u0105 Twojemu biznesowi wygl\u0105da\u0107 profesjonalnie, dzia\u0142a\u0107 sprawniej i wspiera\u0107 wzrost.",
       cta: "Popro\u015b o wycen\u0119",
     },
