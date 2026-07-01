@@ -1,4 +1,5 @@
 - [Turnstile CAPTCHA on contact form](turnstile-contact-form.md) — managed-mode bot check; backend FAILS CLOSED (no secret/token = reject); error 400020 = domain not in site-key allowlist, not a code bug.
+- [Duplicate secret shadowing](duplicate-secret-shadowing.md) — a Replit Secret that "never updates" may have multiple same-name rows; viewEnvVars hides them, deleteEnvVars can't remove them (user must delete in UI).
 - [Deployment builds from GitHub, not workspace](deployment-stale-github-source.md) — if a deploy is GitHub-connected & push fails, prod ships an identical stale bundle forever; disconnect GitHub or fix push, then republish.
 - [react-hooks v7 flat config](react-hooks-flat-config.md) — use `reactHooks.configs.flat.recommended` (not `.recommended`, which is legacy eslintrc & crashes flat config); fix set-state-in-effect via useSyncExternalStore / `key` remount.
 - [Security scan task recurrence](security-scan-recurrence.md) — scanner checks the LIVE deployment, not source; a merged fix only clears the finding after re-publish; probe prod safely before re-fixing.
