@@ -234,11 +234,20 @@ export default function QuoteCalculator() {
   }, []);
 
   const applyPreset = useCallback((presetId: string) => {
-    const preset = packagePresets.find((p) => p.id === presetId);
-    if (!preset) return;
-    setState(preset.state);
-    setActivePreset(presetId);
-    setOpenSections(new Set(["project"]));
+    setActivePreset((current) => {
+      if (current === presetId) {
+        // Toggle off: reset to defaults
+        setState(initialState);
+        setOpenSections(new Set(["project"]));
+        return null;
+      }
+      // Toggle on: apply preset
+      const preset = packagePresets.find((p) => p.id === presetId);
+      if (!preset) return current;
+      setState(preset.state);
+      setOpenSections(new Set(["project"]));
+      return presetId;
+    });
   }, []);
 
   const toggleFeature = useCallback((value: string) => {
