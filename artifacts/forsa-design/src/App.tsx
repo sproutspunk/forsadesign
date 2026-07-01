@@ -81,6 +81,18 @@ function RedirectTo({ to }: { to: string }) {
   return null;
 }
 
+function ScrollToSection({ lang, sectionId }: { lang: "en" | "pl"; sectionId: string }) {
+  const [, setLocation] = useLocation();
+  useEffect(() => {
+    setLocation(`/${lang}/`);
+    setTimeout(() => {
+      const el = document.getElementById(sectionId);
+      if (el) el.scrollIntoView({ behavior: "smooth" });
+    }, 100);
+  }, [lang, sectionId, setLocation]);
+  return null;
+}
+
 function RootLandingPage() {
   return (
     <div className="min-h-[100dvh] bg-background text-foreground flex flex-col items-center justify-center gap-6 p-8">
@@ -143,6 +155,16 @@ function Router() {
           <Route path="/en/privacy" component={PrivacyPage} />
           <Route path="/pl/privacy" component={PrivacyPagePL} />
           <Route path="/privacy" component={() => <RedirectTo to="/en/privacy" />} />
+          <Route
+            path="/en/contact"
+            component={() => <ScrollToSection lang="en" sectionId="contact" />}
+          />
+          <Route
+            path="/pl/contact"
+            component={() => <ScrollToSection lang="pl" sectionId="contact" />}
+          />
+          <Route path="/en/faq" component={() => <ScrollToSection lang="en" sectionId="faq" />} />
+          <Route path="/pl/faq" component={() => <ScrollToSection lang="pl" sectionId="faq" />} />
           <Route path="/en/" component={() => <HomePage lang="en" />} />
           <Route path="/pl/" component={() => <HomePage lang="pl" />} />
           <Route path="/" component={RootLandingPage} />
