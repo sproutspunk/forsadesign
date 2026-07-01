@@ -241,11 +241,26 @@ export default function QuoteCalculator() {
         setOpenSections(new Set(["project"]));
         return null;
       }
-      // Toggle on: apply preset
+      // Toggle on: apply preset and expand all sections
       const preset = packagePresets.find((p) => p.id === presetId);
       if (!preset) return current;
       setState(preset.state);
-      setOpenSections(new Set(["project"]));
+      setOpenSections(
+        new Set([
+          "project",
+          "pages",
+          "design",
+          "content",
+          "logo",
+          "photos",
+          "features",
+          "seo",
+          "performance",
+          "hosting",
+          "maintenance",
+          "delivery",
+        ]),
+      );
       return presetId;
     });
   }, []);

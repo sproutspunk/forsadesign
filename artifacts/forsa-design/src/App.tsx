@@ -155,6 +155,8 @@ function Router() {
           <Route path="/en/privacy" component={PrivacyPage} />
           <Route path="/pl/privacy" component={PrivacyPagePL} />
           <Route path="/privacy" component={() => <RedirectTo to="/en/privacy" />} />
+          <Route path="/en/faq" component={() => <ScrollToSection lang="en" sectionId="faq" />} />
+          <Route path="/pl/faq" component={() => <ScrollToSection lang="pl" sectionId="faq" />} />
           <Route
             path="/en/contact"
             component={() => <ScrollToSection lang="en" sectionId="contact" />}
@@ -163,8 +165,6 @@ function Router() {
             path="/pl/contact"
             component={() => <ScrollToSection lang="pl" sectionId="contact" />}
           />
-          <Route path="/en/faq" component={() => <ScrollToSection lang="en" sectionId="faq" />} />
-          <Route path="/pl/faq" component={() => <ScrollToSection lang="pl" sectionId="faq" />} />
           <Route path="/en/" component={() => <HomePage lang="en" />} />
           <Route path="/pl/" component={() => <HomePage lang="pl" />} />
           <Route path="/" component={RootLandingPage} />
