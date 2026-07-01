@@ -7,8 +7,7 @@ import Turnstile from "./Turnstile";
 
 type Status = "idle" | "sending" | "success" | "error";
 
-const TURNSTILE_SITE_KEY =
-  (import.meta.env.VITE_TURNSTILE_SITE_KEY as string | undefined) || "0x4AAAAAADiKDRnpi0TNeGeS";
+const TURNSTILE_SITE_KEY = "0x4AAAAAADiKDRnpi0TNeGeS";
 
 export default function Contact() {
   const { t, language } = useLanguage();
