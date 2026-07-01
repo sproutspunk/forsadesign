@@ -104,4 +104,20 @@ export const articlesMeta: ArticleMeta[] = [
         "Jeśli Twoja firma działa w Aberdeenshire, w Banff, Huntly, Inverurie, Turriff lub gdziekolwiek w regionie, ten przewodnik wyjaśnia, czego oczekiwać inwestując w profesjonalną stronę, ile to kosztuje i jakie pytania zadać przed podpisaniem umowy.",
     },
   },
+  {
+    slugEn: "website-conversion-what-actually-works",
+    slugPl: "konwersja-strony-co-dziala-naprawde",
+    dateIso: "2026-07-01",
+    readingTimeMin: 6,
+    en: {
+      title: "What Makes a Website Actually Convert Visitors into Customers",
+      excerpt:
+        "Most websites look fine but do not convert. The problem is rarely design. It is usually clarity, trust, and friction. Here is what actually works based on real projects.",
+    },
+    pl: {
+      title: "Co Sprawia, że Strona Naprawdę Zamienia Odwiedzających w Klientów",
+      excerpt:
+        "Większość stron wygląda dobrze, ale nie konwertuje. Problem rzadko leży w designie. To zazwyczaj kwestia jasności, zaufania i tarcia. Oto co działa w praktyce.",
+    },
+  },
 ];

@@ -128,7 +128,6 @@ export default function ArticlePage({ lang, slug }: ArticlePageProps) {
   return (
     <div className="min-h-[100dvh] bg-background text-foreground">
       <Header />
-
       <article className="pt-36 pb-24">
         <div className="container mx-auto px-6 max-w-3xl">
           <a
@@ -178,7 +177,7 @@ export default function ArticlePage({ lang, slug }: ArticlePageProps) {
                     {section.heading}
                   </h2>
                 )}
-                <p className="text-foreground/75 font-light leading-relaxed">{section.body}</p>
+                <p className="text-foreground/75 font-light leading-relaxed text-justify">{section.body}</p>
               </div>
             ))}
           </motion.div>
@@ -201,7 +200,6 @@ export default function ArticlePage({ lang, slug }: ArticlePageProps) {
           </div>
         </div>
       </article>
-
       <Footer />
     </div>
   );

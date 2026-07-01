@@ -511,4 +511,126 @@ export const articles: Article[] = [
       ],
     },
   },
+  {
+    slugEn: "website-conversion-what-actually-works",
+    slugPl: "konwersja-strony-co-dziala-naprawde",
+    dateIso: "2026-07-01",
+    readingTimeMin: 6,
+    en: {
+      title: "What Makes a Website Actually Convert Visitors into Customers",
+      excerpt:
+        "Most websites look fine but do not convert. The problem is rarely design. It is usually clarity, trust, and friction. Here is what actually works based on real projects.",
+      sections: [
+        {
+          body: "Most websites we audit look acceptable. Clean layout, decent typography, proper colours. But the numbers tell a different story: low enquiry rates, high bounce rates, short session durations. The gap between looking professional and actually converting visitors into customers is wider than most business owners realise.",
+        },
+        {
+          heading: "Clarity beats cleverness every time",
+          body: "The visitor should know within three seconds what you do, who you do it for, and what to do next. Not after reading your mission statement. Not after scrolling through a carousel.
+
+We see this mistake constantly: vague headlines like 'Innovative Solutions for Forward-Thinking Businesses.' That means nothing. Compare it to 'Web Design for Small Businesses in Aberdeenshire — Fixed Quotes, No Surprises.' One is forgettable. The other tells the right person immediately that they are in the right place.
+
+Every headline, subheading and call-to-action on your site should pass this test: could a first-time visitor, scanning quickly, understand what you offer and why it matters to them? If not, rewrite it.",
+        },
+        {
+          heading: "Trust signals are not optional",
+          body: "Before someone fills in a form or calls you, they run a background check in their head. Is this business real? Can they deliver what they promise?
+
+Trust is built from specific signals, not general claims. 'We are the best' is a claim. 'We have delivered 47 projects across Aberdeenshire over the past three years' is a signal.
+
+Use real client names where you have permission. Show actual results: 'This booking system reduced no-shows by 34%.' Include a direct phone number on every page, not a contact form buried in the footer. Display your location. For local businesses, being findable and reachable matters more than looking glossy.",
+        },
+        {
+          heading: "Friction kills conversions silently",
+          body: "Every extra click, every unclear label, every form field that feels unnecessary removes a percentage of potential enquiries. The effect is cumulative.
+
+Common sources of friction we fix repeatedly:
+
+• Forms that ask for too much information upfront. Name, email, and what they need is enough. You can ask the rest on the call.
+
+• Navigation with more than six items. Too many choices paralyse. Group related pages and make the path to contact obvious.
+
+• Slow loading speeds. On mobile connections in rural areas, every extra second costs real visitors. Compress images, lazy-load below the fold, and keep the critical path minimal.
+
+• Hidden pricing. If your service has a standard range, say so. Vague pricing does not create curiosity. It creates suspicion.",
+        },
+        {
+          heading: "One action per page",
+          body: "Every page should have one clear purpose and one prominent action. Contact pages should make contacting easy. Service pages should explain the service and offer a clear next step. Homepages should orient the visitor and direct them to the right place.
+
+Multiple competing calls-to-action — 'Call us', 'Download our brochure', 'Sign up for the newsletter', 'Read our blog' — dilute attention and reduce the chance of any one action being taken. Pick the most valuable action for that page and make it impossible to miss.",
+        },
+        {
+          heading: "Mobile is not a separate version. It is the version.",
+          body: "Most web traffic in the UK now comes from mobile. For many local businesses, the figure is higher. Your mobile experience is not a scaled-down desktop site. It is the primary experience for most of your visitors.
+
+Tap targets should be large enough. Text should be readable without zooming. Phone numbers should be tap-to-call. Forms should work with the native keyboard. If any of these are broken, you are losing enquiries before the visitor even reads your content.",
+        },
+        {
+          heading: "Summary",
+          body: "Conversion is not a trick. It is the result of clarity, trust, and removing obstacles. Most improvements come from simplifying what is already there, not adding more.
+
+If your website looks good but the enquiries are not coming in, the problem is usually one of these three things. Fix them and the numbers change.",
+        },
+      ],
+    },
+    pl: {
+      title: "Co Sprawia, że Strona Naprawdę Zamienia Odwiedzających w Klientów",
+      excerpt:
+        "Większość stron wygląda dobrze, ale nie konwertuje. Problem rzadko leży w designie. To zazwyczaj kwestia jasności, zaufania i tarcia. Oto co działa w praktyce.",
+      sections: [
+        {
+          body: "Większość stron, które audytujemy, wygląda przyzwoicie. Czysty layout, poprawna typografia, odpowiednie kolory. Ale liczby opowiadają inną historię: niskie wskaźniki zapytań, wysoki współczynnik odrzuceń, krótkie sesje. Luka między wyglądaniem profesjonalnie a rzeczywistym zamienianiem odwiedzających w klientów jest szersza, niż większość właścicieli firm zdaje sobie sprawę.",
+        },
+        {
+          heading: "Jasność bije spryt za każdym razem",
+          body: "Odwiedzający powinien wiedzieć w ciągu trzech sekund co robisz, dla kogo to robisz i co ma zrobić dalej. Nie po przeczytaniu misji firmy. Nie po przewinięciu karuzeli.
+
+Ten błąd widzimy ciągle: niejasne nagłówki typu 'Innowacyjne Rozwiązania dla Biznesów Przyszłościowych.' To nic nie znaczy. Porównaj to z 'Web Design dla Małych Firm w Aberdeenshire — Stałe Wyceny, Żadnych Niespodzianek.' Jedno jest niezapamiętywalne. Drugie od razu mówi właściwemu człowiekowi, że trafił we właściwe miejsce.
+
+Każdy nagłówek, podtytuł i wezwanie do działania na stronie powinien przejść ten test: czy nowy odwiedzający, przeglądający szybko, zrozumie co oferujesz i dlaczego to dla niego ważne? Jeśli nie, przepisz to.",
+        },
+        {
+          heading: "Sygnały zaufania nie są opcjonalne",
+          body: "Zanim ktoś wypełni formularz lub zadzwoni, wykonuje w głowie szybki background check. Czy ta firma jest prawdziwa? Czy potrafi dostarczyć to, co obiecuje?
+
+Zaufanie buduje się z konkretnych sygnałów, nie ogólnych twierdzeń. 'Jesteśmy najlepsi' to twierdzenie. 'Dostarczyliśmy 47 projektów w Aberdeenshire w ciągu ostatnich trzech lat' to sygnał.
+
+Używaj prawdziwych nazw klientów, gdzie masz zgodę. Pokazuj faktyczne wyniki: 'Ten system rezerwacji zmniejszył nieobecności o 34%.' Umieść bezpośredni numer telefonu na każdej stronie, nie formularz kontaktowy ukryty w stopce. Pokaż swoją lokalizację. Dla firm lokalnych bycie widocznym i osiągalnym ma większe znaczenie niż błyszczący wygląd.",
+        },
+        {
+          heading: "Tarcie cicho zabija konwersję",
+          body: "Każdy dodatkowy klik, każda niejasna etykieta, każde pole formularza, które wydaje się zbędne, odbiera procent potencjalnych zapytań. Efekt jest kumulatywny.
+
+Typowe źródła tarcia, które naprawiamy regularnie:
+
+• Formularze, które proszą o zbyt wiele informacji od razu. Imię, email i czego potrzebują wystarczy. Resztę możesz zapytać podczas rozmowy.
+
+• Nawigacja z więcej niż sześcioma pozycjami. Zbyt wiele wyborów paraliżuje. Grupuj powiązane strony i upewnij się, że ścieżka do kontaktu jest oczywista.
+
+• Wolną prędkość ładowania. Na mobilnych łączach na terenach wiejskich każda dodatkowa sekunda kosztuje rzeczywistych odwiedzających. Kompresuj obrazy, lazy-loaduj treści poza ekranem i utrzymuj ścieżkę krytyczną na minimum.
+
+• Ukryte ceny. Jeśli Twoja usługa ma standardowy zakres, powiedz to. Niejasne cenniki nie budzą ciekawości. Budzą podejrzliwość.",
+        },
+        {
+          heading: "Jedna akcja na stronę",
+          body: "Każda strona powinna mieć jeden jasny cel i jedno widoczne wezwanie do działania. Strona kontaktowa powinna ułatwiać kontakt. Strona usługowa powinna tłumaczyć usługę i oferować jasny następny krok. Strona główna powinna orientować odwiedzającego i skierować go we właściwe miejsce.
+
+Wiele konkurujących wezwań do działania — 'Zadzwoń do nas', 'Pobierz naszą broszurę', 'Zapisz się do newslettera', 'Przeczytaj nasz blog' — rozprasza uwagę i zmniejsza szansę, że którekolwiek zostanie podjęte. Wybierz najbardziej wartościową akcję dla danej strony i spraw, żeby była niemożliwa do przeoczenia.",
+        },
+        {
+          heading: "Mobile to nie osobna wersja. To główna wersja.",
+          body: "Większość ruchu w internecie w UK teraz pochodzi z urządzeń mobilnych. Dla wielu firm lokalnych ten odsetek jest jeszcze wyższy. Twoje doświadczenie mobilne to nie zmniejszona wersja desktopowa. To główne doświadczenie dla większości Twoich odwiedzających.
+
+Cele dotykowe powinny być wystarczająco duże. Tekst powinien być czytelny bez powiększania. Numery telefonów powinny działać jako tap-to-call. Formularze powinny współpracować z natywną klawiaturą. Jeśli którykolwiek z tych elementów jest zepsuty, tracisz zapytania zanim odwiedzający przeczyta Twoją treść.",
+        },
+        {
+          heading: "Podsumowanie",
+          body: "Konwersja to nie trik. To efekt jasności, zaufania i usuwania przeszkód. Większość popraw wynika z upraszczania tego, co już jest, a nie dodawania kolejnych elementów.
+
+Jeśli Twoja strona wygląda dobrze, ale zapytania nie przychodzą, problem zazwyczaj leży w jednej z tych trzech rzeczy. Napraw je, a liczby się zmienią.",
+        },
+      ],
+    },
+  },
 ];
