@@ -16,6 +16,7 @@ const translations = {
       blog: "Blog",
       comparison: "Compare",
       quote: "Quote",
+      pricing: "Pricing",
       aboutPage: "About Us",
     },
     faq: {
@@ -124,6 +125,10 @@ const translations = {
       body2:
         "Clear collaboration is at the centre of how we work. You know what is happening, why decisions are made, and what comes next. The goal is a website that helps your business look professional, perform better, and support long-term growth.",
     },
+    pricing: {
+      heading: "Transparent Pricing",
+      subheading: "Three starting points. Every project is tailored to your needs.",
+    },
     cta: {
       heading: "Built for performance. Designed for growth.",
       body: "Clean code. Clear strategy. Better digital experiences.",
@@ -152,7 +157,8 @@ const translations = {
         invalidEmail: "Please enter a valid email address",
         selectRequired: "Please select a project type",
         captcha: "Please complete the verification",
-        captchaFailed: "Security verification failed to load. Please refresh the page and try again.",
+        captchaFailed:
+          "Security verification failed to load. Please refresh the page and try again.",
       },
     },
     footer: {
@@ -201,6 +207,7 @@ const translations = {
       blog: "Blog",
       comparison: "Porównanie",
       quote: "Wycena",
+      pricing: "Ceny",
       aboutPage: "O Nas",
     },
     faq: {
@@ -310,6 +317,10 @@ const translations = {
       body2:
         "Jasna wsp\u00f3\u0142praca jest centrum naszego sposobu pracy. Wiesz, co si\u0119 dzieje, dlaczego podejmowane s\u0105 decyzje i co b\u0119dzie nast\u0119pnie. Celem jest strona, kt\u00f3ra pomaga Twojemu biznesowi wygl\u0105da\u0107 profesjonalnie, dzia\u0142a\u0107 sprawniej i wspiera\u0107 d\u0142ugoterminowy wzrost.",
     },
+    pricing: {
+      heading: "Przejrzyste ceny",
+      subheading: "Trzy punkty wyj\u015bcia. Ka\u017cdy projekt dopasowany do Twoich potrzeb.",
+    },
     cta: {
       heading: "Stworzone z my\u015bl\u0105 o wydajno\u015bci. Zaprojektowane dla rozwoju.",
       body: "Czysty kod. Jasna strategia. Lepsze do\u015bwiadczenia cyfrowe.",
@@ -348,7 +359,8 @@ const translations = {
         invalidEmail: "Prosz\u0119 poda\u0107 prawid\u0142owy adres email",
         selectRequired: "Prosz\u0119 wybra\u0107 typ projektu",
         captcha: "Prosz\u0119 uko\u0144czy\u0107 weryfikacj\u0119",
-        captchaFailed: "Weryfikacja bezpieczeństwa nie mogła się załadować. Odśwież stronę i spróbuj ponownie.",
+        captchaFailed:
+          "Weryfikacja bezpieczeństwa nie mogła się załadować. Odśwież stronę i spróbuj ponownie.",
       },
     },
     footer: {

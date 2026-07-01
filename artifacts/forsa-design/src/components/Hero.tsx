@@ -84,40 +84,40 @@ export default function Hero() {
             <picture>
               <source srcSet={logoWebP} type="image/webp" />
               <motion.img
-              src={logoPng}
-              alt="Forsa Design"
-              width={640}
-              height={640}
-              className="w-56 md:w-72 lg:w-80 h-auto object-contain block"
-              animate={{
-                filter: [
-                  /* t=0    0°   — 45° before peak, already warming */
-                  "brightness(1.14) saturate(1.7)  sepia(0.38) drop-shadow(0 0 16px rgba(255,215,0,0.55))",
-                  /* t=.125 45°  — FRONT of rocket, peak */
-                  "brightness(1.25) saturate(2.0)  sepia(0.45) drop-shadow(0 0 32px rgba(255,215,0,0.85))",
-                  /* t=.25  90°  — right side, easing off */
-                  "brightness(1.14) saturate(1.7)  sepia(0.38) drop-shadow(0 0 16px rgba(255,215,0,0.55))",
-                  /* t=.375 135° — below-right, fading */
-                  "brightness(0.88) saturate(1.0)  sepia(0.18) drop-shadow(0 0 6px rgba(200,175,80,0.2))",
-                  /* t=.5   180° — directly below */
-                  "brightness(0.62) saturate(0.35) sepia(0.03) drop-shadow(0 0 3px rgba(90,110,150,0.15))",
-                  /* t=.625 225° — BACK of rocket, darkest */
-                  "brightness(0.51) saturate(0.2)  sepia(0)    drop-shadow(0 0 2px rgba(70,90,130,0.1))",
-                  /* t=.75  270° — left side, still dark */
-                  "brightness(0.62) saturate(0.35) sepia(0.03) drop-shadow(0 0 3px rgba(90,110,150,0.15))",
-                  /* t=.875 315° — above-left, warming again */
-                  "brightness(0.88) saturate(1.0)  sepia(0.18) drop-shadow(0 0 6px rgba(200,175,80,0.2))",
-                  /* t=1    360° — back to 0°, seamless loop */
-                  "brightness(1.14) saturate(1.7)  sepia(0.38) drop-shadow(0 0 16px rgba(255,215,0,0.55))",
-                ],
-              }}
-              transition={{
-                repeat: Infinity,
-                duration: 10,
-                ease: "linear",
-                times: [0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875, 1],
-              }}
-            />
+                src={logoPng}
+                alt="Forsa Design"
+                width={640}
+                height={640}
+                className="w-56 md:w-72 lg:w-80 h-auto object-contain block"
+                animate={{
+                  filter: [
+                    /* t=0    0°   — 45° before peak, already warming */
+                    "brightness(1.14) saturate(1.7)  sepia(0.38) drop-shadow(0 0 16px rgba(255,215,0,0.55))",
+                    /* t=.125 45°  — FRONT of rocket, peak */
+                    "brightness(1.25) saturate(2.0)  sepia(0.45) drop-shadow(0 0 32px rgba(255,215,0,0.85))",
+                    /* t=.25  90°  — right side, easing off */
+                    "brightness(1.14) saturate(1.7)  sepia(0.38) drop-shadow(0 0 16px rgba(255,215,0,0.55))",
+                    /* t=.375 135° — below-right, fading */
+                    "brightness(0.88) saturate(1.0)  sepia(0.18) drop-shadow(0 0 6px rgba(200,175,80,0.2))",
+                    /* t=.5   180° — directly below */
+                    "brightness(0.62) saturate(0.35) sepia(0.03) drop-shadow(0 0 3px rgba(90,110,150,0.15))",
+                    /* t=.625 225° — BACK of rocket, darkest */
+                    "brightness(0.51) saturate(0.2)  sepia(0)    drop-shadow(0 0 2px rgba(70,90,130,0.1))",
+                    /* t=.75  270° — left side, still dark */
+                    "brightness(0.62) saturate(0.35) sepia(0.03) drop-shadow(0 0 3px rgba(90,110,150,0.15))",
+                    /* t=.875 315° — above-left, warming again */
+                    "brightness(0.88) saturate(1.0)  sepia(0.18) drop-shadow(0 0 6px rgba(200,175,80,0.2))",
+                    /* t=1    360° — back to 0°, seamless loop */
+                    "brightness(1.14) saturate(1.7)  sepia(0.38) drop-shadow(0 0 16px rgba(255,215,0,0.55))",
+                  ],
+                }}
+                transition={{
+                  repeat: Infinity,
+                  duration: 10,
+                  ease: "linear",
+                  times: [0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875, 1],
+                }}
+              />
             </picture>
           </motion.div>
 

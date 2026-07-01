@@ -103,9 +103,11 @@ export function QuoteSummary({
   const handlePrint = () => window.print();
 
   const handleEmail = () => {
-    const subject = encodeURIComponent(t("Website Quote Request", "Zapytanie o wycene strony"));
+    const subject = encodeURIComponent(
+      t("Website Quote Request", "Zapytanie o wycen\u0119 strony"),
+    );
     const body = encodeURIComponent(
-      `${t("Project total", "Calkowita wycena")}: ${formatPrice(breakdown.total)}\n${t("Estimated time", "Szacowany czas")}: ${isEn ? breakdown.estimatedWeeks : breakdown.estimatedWeeksPl}`,
+      `${t("Project total", "Ca\u0142kowita wycena")}: ${formatPrice(breakdown.total)}\n${t("Estimated time", "Szacowany czas")}: ${isEn ? breakdown.estimatedWeeks : breakdown.estimatedWeeksPl}`,
     );
     window.location.href = `mailto:hello@forsadesign.co.uk?subject=${subject}&body=${body}`;
   };
@@ -114,14 +116,14 @@ export function QuoteSummary({
     { label: t("Project", "Projekt"), value: breakdown.projectPrice },
     { label: t("Additional Pages", "Dodatkowe strony"), value: breakdown.pagesPrice },
     { label: t("Design", "Design"), value: breakdown.designPrice },
-    { label: t("Content", "Tresc"), value: breakdown.contentPrice },
+    { label: t("Content", "Treść"), value: breakdown.contentPrice },
     { label: t("Logo", "Logo"), value: breakdown.logoPrice },
     { label: t("Photography", "Fotografia"), value: breakdown.photoPrice },
     { label: t("Features", "Funkcje"), value: breakdown.featuresPrice },
     { label: t("SEO", "SEO"), value: breakdown.seoPrice },
-    { label: t("Performance", "Wydajnosc"), value: breakdown.perfPrice },
+    { label: t("Performance", "Wydajność"), value: breakdown.perfPrice },
     { label: t("Hosting", "Hosting"), value: breakdown.hostingPrice },
-    { label: t("Delivery Fee", "Oplata za czas"), value: breakdown.deliveryFee },
+    { label: t("Delivery", "Czas realizacji"), value: breakdown.deliveryFee },
   ].filter((item) => item.value > 0);
 
   const triggerPdf = async () => {
@@ -131,8 +133,7 @@ export function QuoteSummary({
         quoteId: `FD-${Date.now().toString(36).toUpperCase()}`,
         dateStr: new Date().toLocaleDateString(isEn ? "en-GB" : "pl-PL"),
         projectLabel,
-        subtotalExVat: breakdown.subtotal - breakdown.discountAmount,
-        vat: breakdown.vat,
+        subtotal: breakdown.subtotal - breakdown.discountAmount,
         total: breakdown.total,
         discountAmount: breakdown.discountAmount,
         maintenanceMonthly: breakdown.maintenanceMonthly,
@@ -192,7 +193,7 @@ export function QuoteSummary({
 
           <div className="mt-3 pt-3 border-t border-border/20 space-y-1 text-sm">
             <div className="flex justify-between text-foreground/70">
-              <span>{t("Project value", "Wartosc projektu")}</span>
+              <span>{t("Project value", "Warto\u015b\u0107 projektu")}</span>
               <span className="font-medium text-foreground">{projectLabel}</span>
             </div>
             <div className="flex justify-between text-foreground/70">
@@ -203,7 +204,7 @@ export function QuoteSummary({
             </div>
             {breakdown.maintenanceMonthly > 0 && (
               <div className="flex justify-between text-foreground/70">
-                <span>{t("Monthly", "Miesieczna")}</span>
+                <span>{t("Monthly", "Miesi\u0119czna")}</span>
                 <span className="font-medium text-foreground">
                   {formatPrice(breakdown.maintenanceMonthly)}/{t("mo", "mies.")}
                 </span>
@@ -215,7 +216,7 @@ export function QuoteSummary({
         <div className="p-5 md:p-6 space-y-4">
           <div className="space-y-1.5">
             <p className="text-xs font-semibold uppercase tracking-widest text-foreground/50">
-              {t("Included in every project", "W kazdym projekcie")}
+              {t("Included in every project", "W ka\u017cdym projekcie")}
             </p>
             <div className="grid grid-cols-1 gap-1">
               {(isEn ? INCLUDED_EN : INCLUDED_PL).map((item) => (
@@ -232,7 +233,7 @@ export function QuoteSummary({
               onClick={() => setShowLineItems((v) => !v)}
               className="w-full flex items-center justify-between text-xs text-foreground/50 hover:text-foreground/80 transition-colors"
             >
-              <span>{t("View cost breakdown", "Zestawienie kosztow")}</span>
+              <span>{t("View cost breakdown", "Zestawienie koszt\u00f3w")}</span>
               {showLineItems ? (
                 <ChevronUp className="w-3.5 h-3.5" />
               ) : (
@@ -266,9 +267,7 @@ export function QuoteSummary({
                         <span className="text-foreground/60 font-semibold">
                           {t("Total", "Razem")}
                         </span>
-                        <span className="font-semibold">
-                          {formatPrice(breakdown.total)}
-                        </span>
+                        <span className="font-semibold">{formatPrice(breakdown.total)}</span>
                       </div>
                     </div>
                   </div>
@@ -313,14 +312,14 @@ export function QuoteSummary({
                     }}
                     className="px-3 py-2 text-xs font-medium rounded-lg border border-border/40 hover:bg-muted/50 transition-colors text-foreground/60"
                   >
-                    {t("Skip", "Pomin")}
+                    {t("Skip", "Pomi\u0144")}
                   </button>
                   <button
                     type="submit"
                     className="flex items-center justify-center gap-1.5 px-3 py-2 text-xs font-semibold rounded-lg bg-primary text-primary-foreground hover:bg-primary/90 transition-colors"
                   >
                     <Send className="w-3 h-3" />
-                    {t("Send my quote", "Wyslij wycene")}
+                    {t("Send my quote", "Wy\u015blij wycen\u0119")}
                   </button>
                 </div>
               </motion.form>
@@ -344,7 +343,7 @@ export function QuoteSummary({
                   ) : (
                     <>
                       <Download className="w-4 h-4" />
-                      {t("Download PDF Quote", "Pobierz wycene PDF")}
+                      {t("Download PDF Quote", "Pobierz wycen\u0119 PDF")}
                     </>
                   )}
                 </button>
@@ -391,7 +390,7 @@ export function QuoteSummary({
                 className="flex items-center gap-2 p-3 rounded-lg bg-emerald-500/10 text-emerald-600 text-sm"
               >
                 <CheckCircle2 className="w-4 h-4" />
-                {t("Quote saved successfully", "Wycena zapisana pomyslnie")}
+                {t("Quote saved successfully", "Wycena zapisana pomy\u015blnie")}
               </motion.div>
             )}
           </AnimatePresence>
@@ -399,7 +398,7 @@ export function QuoteSummary({
           <p className="text-xs text-foreground/40 text-center leading-relaxed">
             {t(
               "Indicative estimate. Final price confirmed after discovery call.",
-              "Wstepna wycena. Ostateczna cena po rozmowie wstepnej.",
+              "Wst\u0119pna wycena. Ostateczna cena po rozmowie wst\u0119pnej.",
             )}
           </p>
         </div>

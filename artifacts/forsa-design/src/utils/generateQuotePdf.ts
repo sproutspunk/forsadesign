@@ -46,8 +46,7 @@ interface PdfData {
   quoteId: string;
   dateStr: string;
   projectLabel: string;
-  subtotalExVat: number;
-  vat: number;
+  subtotal: number;
   total: number;
   discountAmount: number;
   maintenanceMonthly: number;
@@ -169,7 +168,7 @@ export async function generateQuotePdf(data: PdfData): Promise<void> {
   page.drawRectangle({ x: MARGIN, y: y - 28, width: COL, height: 36, color: NAVY });
   drawText(
     page,
-    t(data, "TOTAL", "LACZNIE"),
+    t(data, "TOTAL", "ŁĄCZNIE"),
     MARGIN + 10,
     y - 9,
     fontBold,
@@ -179,13 +178,21 @@ export async function generateQuotePdf(data: PdfData): Promise<void> {
   const totStr = data.formatPrice(data.total);
   const totW = textWidth(totStr, fontBold, 16);
   drawText(page, totStr, W - MARGIN - totW - 10, y - 13, fontBold, 16, GOLD);
+  // subtotal note under total (when discount applied)
+  if (data.discountAmount > 0) {
+    y -= 14;
+    const subStr = data.formatPrice(data.subtotal);
+    const subNote = `${data.isEn ? "Before discount" : "Przed rabatem"}: ${subStr}`;
+    const subW = textWidth(subNote, fontReg, 8);
+    drawText(page, subNote, W - MARGIN - subW - 10, y, fontReg, 8, MID_GREY);
+  }
   y -= 46;
 
   if (data.maintenanceMonthly > 0) {
     y -= 4;
     drawText(
       page,
-      `${t(data, "Monthly Maintenance", "Miesieczna konserwacja")}: ${data.formatPrice(data.maintenanceMonthly)}/${t(data, "mo", "mies.")}`,
+      `${t(data, "Monthly Maintenance", "Miesięczna konserwacja")}: ${data.formatPrice(data.maintenanceMonthly)}/${t(data, "mo", "mies.")}`,
       MARGIN,
       y,
       fontReg,
@@ -244,7 +251,7 @@ export async function generateQuotePdf(data: PdfData): Promise<void> {
     t(
       data,
       "This is an indicative estimate. Final pricing confirmed after a discovery call.",
-      "To jest wstepna wycena. Ostateczna cena potwierdzona po rozmowie wstepnej.",
+      "To jest wstępna wycena. Ostateczna cena potwierdzona po rozmowie wstępnej.",
     ),
     MARGIN,
     y,

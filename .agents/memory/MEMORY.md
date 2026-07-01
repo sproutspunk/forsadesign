@@ -2,3 +2,5 @@
 - [react-hooks v7 flat config](react-hooks-flat-config.md) — use `reactHooks.configs.flat.recommended` (not `.recommended`, which is legacy eslintrc & crashes flat config); fix set-state-in-effect via useSyncExternalStore / `key` remount.
 - [Security scan task recurrence](security-scan-recurrence.md) — scanner checks the LIVE deployment, not source; a merged fix only clears the finding after re-publish; probe prod safely before re-fixing.
 - [Wouter v3 routing pitfalls](wouter-v3-routing.md) — Switch partial-match (specific routes before /en/), setLanguage redirects to homepage (use syncLanguage in sub-pages), Polish curly quotes break esbuild (use Python to fix).
+- [Bilingual pricing helpers](bilingual-pricing.md) — PricingSection uses dual-argument `bi(en, pl)` instead of single `t(key)` because prices/presets are static arrays without translation keys.
+- [VAT disabled in quotes](vat-disabled.md) — `VAT_RATE=0` in quoteConfig.ts; all prices shown as final gross; PdfData uses `subtotal` (not subtotalExVat/vat); keep interface synced with caller.

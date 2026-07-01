@@ -156,12 +156,14 @@ function OptionCard({
   label,
   price,
   highlight = false,
+  isBasePrice = false,
 }: {
   selected: boolean;
   onClick: () => void;
   label: string;
   price: number;
   highlight?: boolean;
+  isBasePrice?: boolean;
 }) {
   const { isEn, formatPrice } = useContext(CalcCtx);
   return (
@@ -169,14 +171,24 @@ function OptionCard({
       onClick={onClick}
       className={`relative w-full text-left p-3 md:p-4 rounded-lg border-2 transition-all duration-200 ${
         selected
-          ? "border-primary bg-primary/5"
-          : "border-border/40 hover:border-border/80 bg-card/30"
+          ? "border-primary bg-primary/5 shadow-sm"
+          : "border-border/40 hover:border-border/80 bg-card/30 hover:bg-card/50"
       } ${highlight && selected ? "ring-1 ring-primary/30" : ""}`}
     >
       <div className="flex items-center justify-between gap-2">
-        <span className="text-sm md:text-base font-medium">{label}</span>
-        <span className="text-sm font-semibold text-primary whitespace-nowrap">
-          {price === 0 ? (isEn ? "Included" : "W cenie") : `+${formatPrice(price)}`}
+        <span className={`text-sm md:text-base ${selected ? "font-semibold" : "font-medium"}`}>
+          {label}
+        </span>
+        <span
+          className={`text-sm font-semibold whitespace-nowrap ${selected ? "text-primary" : "text-foreground/60"}`}
+        >
+          {price === 0
+            ? isEn
+              ? "Included"
+              : "W cenie"
+            : isBasePrice
+              ? formatPrice(price)
+              : `+${formatPrice(price)}`}
         </span>
       </div>
       {selected && (
@@ -400,9 +412,9 @@ export default function QuoteCalculator() {
                   )}
                 </div>
                 <div className="text-lg md:text-xl font-bold text-primary">
-                  {formatPrice(preset.fromPrice)}+
+                  {t("From", "Od")} {formatPrice(preset.fromPrice)}
                 </div>
-                <div className="text-xs text-foreground/50 mt-0.5 hidden md:block">
+                <div className="text-xs text-foreground/50 mt-0.5">
                   {t(preset.taglineEn, preset.taglinePl)}
                 </div>
               </button>
@@ -451,6 +463,7 @@ export default function QuoteCalculator() {
                       label={t(p.labelEn, p.labelPl)}
                       price={p.price}
                       highlight={p.value === "custom-app"}
+                      isBasePrice
                     />
                   ))}
                 </div>
@@ -558,13 +571,17 @@ export default function QuoteCalculator() {
                         onClick={() => toggleFeature(f.value)}
                         className={`relative text-left p-3 rounded-lg border-2 transition-all duration-200 ${
                           selected
-                            ? "border-primary bg-primary/5"
-                            : "border-border/40 hover:border-border/80 bg-card/30"
+                            ? "border-primary bg-primary/5 shadow-sm"
+                            : "border-border/40 hover:border-border/80 bg-card/30 hover:bg-card/50"
                         }`}
                       >
                         <div className="flex items-start justify-between gap-2">
-                          <span className="text-sm font-medium">{t(f.labelEn, f.labelPl)}</span>
-                          <span className="text-sm font-semibold text-primary whitespace-nowrap">
+                          <span className={`text-sm ${selected ? "font-semibold" : "font-medium"}`}>
+                            {t(f.labelEn, f.labelPl)}
+                          </span>
+                          <span
+                            className={`text-sm font-semibold whitespace-nowrap ${selected ? "text-primary" : "text-foreground/60"}`}
+                          >
                             {f.price === 0 ? t("Included", "W cenie") : `+${formatPrice(f.price)}`}
                           </span>
                         </div>
@@ -778,7 +795,7 @@ export default function QuoteCalculator() {
                         {t("Enquiries / mo", "Zapytań / mies.")}
                       </div>
                     </div>
-                    <div className="bg-primary/5 border border-primary/20 rounded-xl p-4 text-center col-span-2">
+                    <div className="bg-primary/5 border border-primary/20 rounded-xl p-4 text-center sm:col-span-2">
                       <div className="text-xl font-bold text-primary">
                         {formatPrice(roiRevLow)} – {formatPrice(roiRevHigh)}
                       </div>

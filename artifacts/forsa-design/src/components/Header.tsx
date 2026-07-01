@@ -3,7 +3,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { useLocation } from "wouter";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import logo from "../assets/forsa-logo.png";
+import logo from "../assets/forsa-logo.webp";
 
 export default function Header() {
   const { language, syncLanguage, t } = useLanguage();
@@ -33,6 +33,7 @@ export default function Header() {
   const navLinks = [
     { name: t("nav.home"), href: sectionHref("#home") },
     { name: t("nav.services"), href: sectionHref("#services") },
+    { name: t("nav.pricing"), href: sectionHref("#pricing") },
     { name: t("nav.portfolio"), href: sectionHref("#portfolio") },
     { name: t("nav.process"), href: sectionHref("#process") },
     { name: t("nav.about"), href: sectionHref("#about") },
