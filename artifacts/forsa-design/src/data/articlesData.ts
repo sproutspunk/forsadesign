@@ -526,7 +526,7 @@ export const articles: Article[] = [
         },
         {
           heading: "Clarity beats cleverness every time",
-          body: "A visitor needs to know within three seconds what you do, who you do it for, and what to do next. Not after reading your mission statement. Not after scrolling through a carousel.\n\nWe see this mistake over and over: vague headlines like 'Innovative Solutions for Forward-Thinking Businesses.' That means nothing. Compare it to 'Web Design for Small Businesses in Aberdeenshire — Fixed Quotes, No Surprises.' One is forgettable. The other tells the right person immediately that they are in the right place.\n\nEvery headline, subheading and button on your site needs to pass this test: would a first-time visitor, scanning quickly, understand what you offer and why it matters to them? If not, rewrite it.",
+          body: "A visitor needs to know within three seconds what you do, who you do it for, and what to do next. Not after reading your mission statement. Not after scrolling through a carousel.\n\nWe see this mistake over and over: vague headlines like 'Innovative Solutions for Forward-Thinking Businesses.' That means nothing. Compare it to 'Web Design for Small Businesses in Aberdeenshire: Fixed Quotes, No Surprises.' One is forgettable. The other tells the right person immediately that they are in the right place.\n\nEvery headline, subheading and button on your site needs to pass this test: would a first-time visitor, scanning quickly, understand what you offer and why it matters to them? If not, rewrite it.",
         },
         {
           heading: "Trust signals are not optional",
@@ -538,7 +538,7 @@ export const articles: Article[] = [
         },
         {
           heading: "One action per page",
-          body: "Every page needs one clear purpose and one prominent action. Contact pages need to make contacting easy. Service pages need to explain the service and offer a clear next step. Homepages need to orient the visitor and direct them to the right place.\n\nMultiple competing calls to action — 'Call us', 'Download our brochure', 'Sign up for the newsletter', 'Read our blog' — dilute attention and reduce the chance of any one action being taken. Pick the most important action for that page and make it impossible to miss.",
+          body: "Every page needs one clear purpose and one prominent action. Contact pages need to make contacting easy. Service pages need to explain the service and offer a clear next step. Homepages need to orient the visitor and direct them to the right place.\n\nMultiple competing calls to action, 'Call us', 'Download our brochure', 'Sign up for the newsletter', 'Read our blog', dilute attention and reduce the chance of any one action being taken. Pick the most important action for that page and make it impossible to miss.",
         },
         {
           heading: "Mobile is not a separate version. It is the version.",
@@ -560,7 +560,7 @@ export const articles: Article[] = [
         },
         {
           heading: "Jasność bije spryt za każdym razem",
-          body: "Gość musi wiedzieć w ciągu trzech sekund co robisz, dla kogo to robisz i co ma zrobić dalej. Nie po przeczytaniu misji firmy. Nie po przewinięciu karuzeli.\n\nTen błąd widzimy ciągle: niejasne nagłówki typu 'Innowacyjne Rozwiązania dla Biznesów Przyszłościowych.' To nic nie znaczy. Porównaj to z 'Web Design dla Małych Firm w Aberdeenshire — Stałe Wyceny, Żadnych Niespodzianek.' Jedno jest niezapamiętywalne. Drugie od razu mówi właściwemu człowiekowi, że trafił we właściwe miejsce.\n\nKażdy nagłówek, podtytuł i przycisk na stronie musi przejść ten test: czy nowy odwiedzający, przeglądający szybko, zrozumie co oferujesz i dlaczego to dla niego ważne? Jeśli nie, przepisz to.",
+          body: "Gość musi wiedzieć w ciągu trzech sekund co robisz, dla kogo to robisz i co ma zrobić dalej. Nie po przeczytaniu misji firmy. Nie po przewinięciu karuzeli.\n\nTen błąd widzimy ciągle: niejasne nagłówki typu 'Innowacyjne Rozwiązania dla Biznesów Przyszłościowych.' To nic nie znaczy. Porównaj to z 'Web Design dla Małych Firm w Aberdeenshire: Stałe Wyceny, Żadnych Niespodzianek.' Jedno jest niezapamiętywalne. Drugie od razu mówi właściwemu człowiekowi, że trafił we właściwe miejsce.\n\nKażdy nagłówek, podtytuł i przycisk na stronie musi przejść ten test: czy nowy odwiedzający, przeglądający szybko, zrozumie co oferujesz i dlaczego to dla niego ważne? Jeśli nie, przepisz to.",
         },
         {
           heading: "Sygnały zaufania nie są opcjonalne",
@@ -572,7 +572,7 @@ export const articles: Article[] = [
         },
         {
           heading: "Jedna akcja na stronę",
-          body: "Każda strona potrzebuje jednego jasnego celu i jednego widocznego wezwania do działania. Strona kontaktowa ułatwia kontakt. Strona usługowa tłumaczy usługę i oferuje jasny następny krok. Strona główna orientuje odwiedzającego i kieruje go we właściwe miejsce.\n\nWiele konkurujących wezwań do działania — 'Zadzwoń do nas', 'Pobierz naszą broszurę', 'Zapisz się do newslettera', 'Przeczytaj nasz blog' — rozprasza uwagę i zmniejsza szansę, że którekolwiek zostanie podjęte. Wybierz najważniejszą akcję dla danej strony i spraw, żeby była niemożliwa do przeoczenia.",
+          body: "Każda strona potrzebuje jednego jasnego celu i jednego widocznego wezwania do działania. Strona kontaktowa ułatwia kontakt. Strona usługowa tłumaczy usługę i oferuje jasny następny krok. Strona główna orientuje odwiedzającego i kieruje go we właściwe miejsce.\n\nWiele konkurujących wezwań do działania, 'Zadzwoń do nas', 'Pobierz naszą broszurę', 'Zapisz się do newslettera', 'Przeczytaj nasz blog', rozprasza uwagę i zmniejsza szansę, że którekolwiek zostanie podjęte. Wybierz najważniejszą akcję dla danej strony i spraw, żeby była niemożliwa do przeoczenia.",
         },
         {
           heading: "Mobile to nie osobna wersja. To główna wersja.",
