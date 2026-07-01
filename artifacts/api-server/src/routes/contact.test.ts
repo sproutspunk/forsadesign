@@ -97,11 +97,11 @@ describe("POST /api/contact bot protection", () => {
       .post("/api/contact")
       .send(validBody({ captchaToken: undefined }));
 
-    // No bot proof = no email. captchaToken is optional at the schema level
-    // so the request reaches verifyTurnstile, which rejects it with 403.
-    expect(res.status).toBe(403);
+    // captchaToken is required in the schema; a missing token fails at Zod
+    // validation (400) before any Turnstile or email logic is reached.
+    expect(res.status).toBe(400);
     expect(res.body.ok).toBe(false);
-    expect(res.body.error).toBe("captcha_failed");
+    expect(res.body.error).toBe("Invalid form submission.");
     expect(proxyMock).not.toHaveBeenCalled();
   });
 

@@ -106,6 +106,7 @@ components:
         - email
         - projectType
         - details
+        - captchaToken
     ContactResponse:
       type: object
       properties:

@@ -29,7 +29,7 @@ export interface ContactRequest {
   /** Honeypot field for spam protection. Hidden from real users and must be left empty; submissions with a value are silently discarded. */
   website?: string;
   /** Cloudflare Turnstile token produced by the widget on the contact form. Required and verified server-side before any email is sent; submissions without a valid token are rejected. */
-  captchaToken?: string;
+  captchaToken: string;
 }
 
 export interface ContactResponse {
