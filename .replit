@@ -118,3 +118,4 @@ channel = "stable-25_05"
 [userenv]
 
 [userenv.shared]
+VITE_TURNSTILE_SITE_KEY = "0x4AAAAAADiKDRnpi0TNeGeS"
