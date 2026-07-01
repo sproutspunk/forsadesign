@@ -526,109 +526,62 @@ export const articles: Article[] = [
         },
         {
           heading: "Clarity beats cleverness every time",
-          body: "The visitor should know within three seconds what you do, who you do it for, and what to do next. Not after reading your mission statement. Not after scrolling through a carousel.
-
-We see this mistake constantly: vague headlines like 'Innovative Solutions for Forward-Thinking Businesses.' That means nothing. Compare it to 'Web Design for Small Businesses in Aberdeenshire — Fixed Quotes, No Surprises.' One is forgettable. The other tells the right person immediately that they are in the right place.
-
-Every headline, subheading and call-to-action on your site should pass this test: could a first-time visitor, scanning quickly, understand what you offer and why it matters to them? If not, rewrite it.",
+          body: "The visitor should know within three seconds what you do, who you do it for, and what to do next. Not after reading your mission statement. Not after scrolling through a carousel.\n\nWe see this mistake constantly: vague headlines like 'Innovative Solutions for Forward-Thinking Businesses.' That means nothing. Compare it to 'Web Design for Small Businesses in Aberdeenshire \u2014 Fixed Quotes, No Surprises.' One is forgettable. The other tells the right person immediately that they are in the right place.\n\nEvery headline, subheading and call-to-action on your site should pass this test: could a first-time visitor, scanning quickly, understand what you offer and why it matters to them? If not, rewrite it.",
         },
         {
           heading: "Trust signals are not optional",
-          body: "Before someone fills in a form or calls you, they run a background check in their head. Is this business real? Can they deliver what they promise?
-
-Trust is built from specific signals, not general claims. 'We are the best' is a claim. 'We have delivered 47 projects across Aberdeenshire over the past three years' is a signal.
-
-Use real client names where you have permission. Show actual results: 'This booking system reduced no-shows by 34%.' Include a direct phone number on every page, not a contact form buried in the footer. Display your location. For local businesses, being findable and reachable matters more than looking glossy.",
+          body: "Before someone fills in a form or calls you, they run a background check in their head. Is this business real? Can they deliver what they promise?\n\nTrust is built from specific signals, not general claims. 'We are the best' is a claim. 'We have delivered 47 projects across Aberdeenshire over the past three years' is a signal.\n\nUse real client names where you have permission. Show actual results: 'This booking system reduced no-shows by 34%.' Include a direct phone number on every page, not a contact form buried in the footer. Display your location. For local businesses, being findable and reachable matters more than looking glossy.",
         },
         {
           heading: "Friction kills conversions silently",
-          body: "Every extra click, every unclear label, every form field that feels unnecessary removes a percentage of potential enquiries. The effect is cumulative.
-
-Common sources of friction we fix repeatedly:
-
-• Forms that ask for too much information upfront. Name, email, and what they need is enough. You can ask the rest on the call.
-
-• Navigation with more than six items. Too many choices paralyse. Group related pages and make the path to contact obvious.
-
-• Slow loading speeds. On mobile connections in rural areas, every extra second costs real visitors. Compress images, lazy-load below the fold, and keep the critical path minimal.
-
-• Hidden pricing. If your service has a standard range, say so. Vague pricing does not create curiosity. It creates suspicion.",
+          body: "Every extra click, every unclear label, every form field that feels unnecessary removes a percentage of potential enquiries. The effect is cumulative.\n\nCommon sources of friction we fix repeatedly:\n\n\u2022 Forms that ask for too much information upfront. Name, email, and what they need is enough. You can ask the rest on the call.\n\n\u2022 Navigation with more than six items. Too many choices paralyse. Group related pages and make the path to contact obvious.\n\n\u2022 Slow loading speeds. On mobile connections in rural areas, every extra second costs real visitors. Compress images, lazy-load below the fold, and keep the critical path minimal.\n\n\u2022 Hidden pricing. If your service has a standard range, say so. Vague pricing does not create curiosity. It creates suspicion.",
         },
         {
           heading: "One action per page",
-          body: "Every page should have one clear purpose and one prominent action. Contact pages should make contacting easy. Service pages should explain the service and offer a clear next step. Homepages should orient the visitor and direct them to the right place.
-
-Multiple competing calls-to-action — 'Call us', 'Download our brochure', 'Sign up for the newsletter', 'Read our blog' — dilute attention and reduce the chance of any one action being taken. Pick the most valuable action for that page and make it impossible to miss.",
+          body: "Every page should have one clear purpose and one prominent action. Contact pages should make contacting easy. Service pages should explain the service and offer a clear next step. Homepages should orient the visitor and direct them to the right place.\n\nMultiple competing calls-to-action \u2014 'Call us', 'Download our brochure', 'Sign up for the newsletter', 'Read our blog' \u2014 dilute attention and reduce the chance of any one action being taken. Pick the most valuable action for that page and make it impossible to miss.",
         },
         {
           heading: "Mobile is not a separate version. It is the version.",
-          body: "Most web traffic in the UK now comes from mobile. For many local businesses, the figure is higher. Your mobile experience is not a scaled-down desktop site. It is the primary experience for most of your visitors.
-
-Tap targets should be large enough. Text should be readable without zooming. Phone numbers should be tap-to-call. Forms should work with the native keyboard. If any of these are broken, you are losing enquiries before the visitor even reads your content.",
+          body: "Most web traffic in the UK now comes from mobile. For many local businesses, the figure is higher. Your mobile experience is not a scaled-down desktop site. It is the primary experience for most of your visitors.\n\nTap targets should be large enough. Text should be readable without zooming. Phone numbers should be tap-to-call. Forms should work with the native keyboard. If any of these are broken, you are losing enquiries before the visitor even reads your content.",
         },
         {
           heading: "Summary",
-          body: "Conversion is not a trick. It is the result of clarity, trust, and removing obstacles. Most improvements come from simplifying what is already there, not adding more.
-
-If your website looks good but the enquiries are not coming in, the problem is usually one of these three things. Fix them and the numbers change.",
+          body: "Conversion is not a trick. It is the result of clarity, trust, and removing obstacles. Most improvements come from simplifying what is already there, not adding more.\n\nIf your website looks good but the enquiries are not coming in, the problem is usually one of these three things. Fix them and the numbers change.",
         },
       ],
     },
     pl: {
-      title: "Co Sprawia, że Strona Naprawdę Zamienia Odwiedzających w Klientów",
+      title:
+        "Co Sprawia, \u017ce Strona Naprawd\u0119 Zamienia Odwiedzaj\u0105cych w Klient\u00f3w",
       excerpt:
-        "Większość stron wygląda dobrze, ale nie konwertuje. Problem rzadko leży w designie. To zazwyczaj kwestia jasności, zaufania i tarcia. Oto co działa w praktyce.",
+        "Wi\u0119kszo\u015b\u0107 stron wygl\u0105da dobrze, ale nie konwertuje. Problem rzadko le\u017cy w designie. To zazwyczaj kwestia jasno\u015bci, zaufania i tarcia. Oto co dzia\u0142a w praktyce.",
       sections: [
         {
-          body: "Większość stron, które audytujemy, wygląda przyzwoicie. Czysty layout, poprawna typografia, odpowiednie kolory. Ale liczby opowiadają inną historię: niskie wskaźniki zapytań, wysoki współczynnik odrzuceń, krótkie sesje. Luka między wyglądaniem profesjonalnie a rzeczywistym zamienianiem odwiedzających w klientów jest szersza, niż większość właścicieli firm zdaje sobie sprawę.",
+          body: "Wi\u0119kszo\u015b\u0107 stron, kt\u00f3re audytujemy, wygl\u0105da przyzwoicie. Czysty layout, poprawna typografia, odpowiednie kolory. Ale liczby opowiadaj\u0105 inn\u0105 histori\u0119: niskie wska\u017aniki zapyta\u0144, wysoki wsp\u00f3\u0142czynnik odrzuce\u0144, kr\u00f3tkie sesje. Luka mi\u0119dzy wygl\u0105daniem profesjonalnie a rzeczywistym zamienianiem odwiedzaj\u0105cych w klient\u00f3w jest szersza, ni\u017c wi\u0119kszo\u015b\u0107 w\u0142a\u015bcicieli firm zdaje sobie spraw\u0119.",
         },
         {
-          heading: "Jasność bije spryt za każdym razem",
-          body: "Odwiedzający powinien wiedzieć w ciągu trzech sekund co robisz, dla kogo to robisz i co ma zrobić dalej. Nie po przeczytaniu misji firmy. Nie po przewinięciu karuzeli.
-
-Ten błąd widzimy ciągle: niejasne nagłówki typu 'Innowacyjne Rozwiązania dla Biznesów Przyszłościowych.' To nic nie znaczy. Porównaj to z 'Web Design dla Małych Firm w Aberdeenshire — Stałe Wyceny, Żadnych Niespodzianek.' Jedno jest niezapamiętywalne. Drugie od razu mówi właściwemu człowiekowi, że trafił we właściwe miejsce.
-
-Każdy nagłówek, podtytuł i wezwanie do działania na stronie powinien przejść ten test: czy nowy odwiedzający, przeglądający szybko, zrozumie co oferujesz i dlaczego to dla niego ważne? Jeśli nie, przepisz to.",
+          heading: "Jasno\u015b\u0107 bije spryt za ka\u017cdym razem",
+          body: "Odwiedzaj\u0105cy powinien wiedzie\u0107 w ci\u0105gu trzech sekund co robisz, dla kogo to robisz i co ma zrobi\u0107 dalej. Nie po przeczytaniu misji firmy. Nie po przewini\u0119ciu karuzeli.\n\nTen b\u0142\u0105d widzimy ci\u0105gle: niejasne nag\u0142\u00f3wki typu 'Innowacyjne Rozwi\u0105zania dla Biznes\u00f3w Przysz\u0142o\u015bciowych.' To nic nie znaczy. Por\u00f3wnaj to z 'Web Design dla Ma\u0142ych Firm w Aberdeenshire \u2014 Sta\u0142e Wyceny, \u017badnych Niespodzianek.' Jedno jest niezapami\u0119tywalne. Drugie od razu m\u00f3wi w\u0142a\u015bciwemu cz\u0142owiekowi, \u017ce trafi\u0142 we w\u0142a\u015bciwe miejsce.\n\nKa\u017cdy nag\u0142\u00f3wek, podtytu\u0142 i wezwanie do dzia\u0142ania na stronie powinien przej\u015b\u0107 ten test: czy nowy odwiedzaj\u0105cy, przegl\u0105daj\u0105cy szybko, zrozumie co oferujesz i dlaczego to dla niego wa\u017cne? Je\u015bli nie, przepisz to.",
         },
         {
-          heading: "Sygnały zaufania nie są opcjonalne",
-          body: "Zanim ktoś wypełni formularz lub zadzwoni, wykonuje w głowie szybki background check. Czy ta firma jest prawdziwa? Czy potrafi dostarczyć to, co obiecuje?
-
-Zaufanie buduje się z konkretnych sygnałów, nie ogólnych twierdzeń. 'Jesteśmy najlepsi' to twierdzenie. 'Dostarczyliśmy 47 projektów w Aberdeenshire w ciągu ostatnich trzech lat' to sygnał.
-
-Używaj prawdziwych nazw klientów, gdzie masz zgodę. Pokazuj faktyczne wyniki: 'Ten system rezerwacji zmniejszył nieobecności o 34%.' Umieść bezpośredni numer telefonu na każdej stronie, nie formularz kontaktowy ukryty w stopce. Pokaż swoją lokalizację. Dla firm lokalnych bycie widocznym i osiągalnym ma większe znaczenie niż błyszczący wygląd.",
+          heading: "Sygna\u0142y zaufania nie s\u0105 opcjonalne",
+          body: "Zanim kto\u015b wype\u0142ni formularz lub zadzwoni, wykonuje w g\u0142owie szybki background check. Czy ta firma jest prawdziwa? Czy potrafi dostarczy\u0107 to, co obiecuje?\n\nZaufanie buduje si\u0119 z konkretnych sygna\u0142\u00f3w, nie og\u00f3lnych twierdze\u0144. 'Jeste\u015bmy najlepsi' to twierdzenie. 'Dostarczyli\u015bmy 47 projekt\u00f3w w Aberdeenshire w ci\u0105gu ostatnich trzech lat' to sygna\u0142.\n\nU\u017cywaj prawdziwych nazw klient\u00f3w, gdzie masz zgod\u0119. Pokazuj faktyczne wyniki: 'Ten system rezerwacji zmniejszy\u0142 nieobecno\u015bci o 34%.' Umie\u015b\u0107 bezpo\u015bredni numer telefonu na ka\u017cdej stronie, nie formularz kontaktowy ukryty w stopce. Poka\u017c swoj\u0105 lokalizacj\u0119. Dla firm lokalnych bycie widocznym i osi\u0105galnym ma wi\u0119ksze znaczenie ni\u017c b\u0142yszcz\u0105cy wygl\u0105d.",
         },
         {
-          heading: "Tarcie cicho zabija konwersję",
-          body: "Każdy dodatkowy klik, każda niejasna etykieta, każde pole formularza, które wydaje się zbędne, odbiera procent potencjalnych zapytań. Efekt jest kumulatywny.
-
-Typowe źródła tarcia, które naprawiamy regularnie:
-
-• Formularze, które proszą o zbyt wiele informacji od razu. Imię, email i czego potrzebują wystarczy. Resztę możesz zapytać podczas rozmowy.
-
-• Nawigacja z więcej niż sześcioma pozycjami. Zbyt wiele wyborów paraliżuje. Grupuj powiązane strony i upewnij się, że ścieżka do kontaktu jest oczywista.
-
-• Wolną prędkość ładowania. Na mobilnych łączach na terenach wiejskich każda dodatkowa sekunda kosztuje rzeczywistych odwiedzających. Kompresuj obrazy, lazy-loaduj treści poza ekranem i utrzymuj ścieżkę krytyczną na minimum.
-
-• Ukryte ceny. Jeśli Twoja usługa ma standardowy zakres, powiedz to. Niejasne cenniki nie budzą ciekawości. Budzą podejrzliwość.",
+          heading: "Tarcie cicho zabija konwersj\u0119",
+          body: "Ka\u017cdy dodatkowy klik, ka\u017cda niejasna etykieta, ka\u017cde pole formularza, kt\u00f3re wydaje si\u0119 zb\u0119dne, odbiera procent potencjalnych zapyta\u0144. Efekt jest kumulatywny.\n\nTypowe \u017ar\u00f3d\u0142a tarcia, kt\u00f3re naprawiamy regularnie:\n\n\u2022 Formularze, kt\u00f3re prosz\u0105 o zbyt wiele informacji od razu. Imi\u0119, email i czego potrzebuj\u0105 wystarczy. Reszt\u0119 mo\u017cesz zapyta\u0107 podczas rozmowy.\n\n\u2022 Nawigacja z wi\u0119cej ni\u017c sze\u015bciu pozycjami. Zbyt wiele wybor\u00f3w parali\u017cuje. Grupuj powi\u0105zane strony i upewnij si\u0119, \u017ce \u015bcie\u017cka do kontaktu jest oczywista.\n\n\u2022 Woln\u0105 pr\u0119dko\u015b\u0107 \u0142adowania. Na mobilnych \u0142\u0105czach na terenach wiejskich ka\u017cda dodatkowa sekunda kosztuje rzeczywistych odwiedzaj\u0105cych. Kompresuj obrazy, lazy-loaduj tre\u015bci poza ekranem i utrzymuj \u015bcie\u017ck\u0119 krytyczn\u0105 na minimum.\n\n\u2022 Ukryte ceny. Je\u015bli Twoja us\u0142uga ma standardowy zakres, powiedz to. Niejasne cenniki nie budz\u0105 ciekawo\u015bci. Budz\u0105 podejrzliwo\u015b\u0107.",
         },
         {
-          heading: "Jedna akcja na stronę",
-          body: "Każda strona powinna mieć jeden jasny cel i jedno widoczne wezwanie do działania. Strona kontaktowa powinna ułatwiać kontakt. Strona usługowa powinna tłumaczyć usługę i oferować jasny następny krok. Strona główna powinna orientować odwiedzającego i skierować go we właściwe miejsce.
-
-Wiele konkurujących wezwań do działania — 'Zadzwoń do nas', 'Pobierz naszą broszurę', 'Zapisz się do newslettera', 'Przeczytaj nasz blog' — rozprasza uwagę i zmniejsza szansę, że którekolwiek zostanie podjęte. Wybierz najbardziej wartościową akcję dla danej strony i spraw, żeby była niemożliwa do przeoczenia.",
+          heading: "Jedna akcja na stron\u0119",
+          body: "Ka\u017cda strona powinna mie\u0107 jeden jasny cel i jedno widoczne wezwanie do dzia\u0142ania. Strona kontaktowa powinna u\u0142atwia\u0107 kontakt. Strona us\u0142ugowa powinna t\u0142umaczy\u0107 us\u0142ug\u0119 i oferowa\u0107 jasny nast\u0119pny krok. Strona g\u0142\u00f3wna powinna orientowa\u0107 odwiedzaj\u0105cego i skierowa\u0107 go we w\u0142a\u015bciwe miejsce.\n\nWiele konkuruj\u0105cych wezwa\u0144 do dzia\u0142ania \u2014 'Zadzwo\u0144 do nas', 'Pobierz nasz\u0105 broszur\u0119', 'Zapisz si\u0119 do newslettera', 'Przeczytaj nasz blog' \u2014 rozprasza uwag\u0119 i zmniejsza szans\u0119, \u017ce kt\u00f3rekolwiek zostanie podj\u0119te. Wybierz najbardziej warto\u015bciow\u0105 akcj\u0119 dla danej strony i spraw, \u017ceby by\u0142a niemo\u017cliwa do przeoczenia.",
         },
         {
-          heading: "Mobile to nie osobna wersja. To główna wersja.",
-          body: "Większość ruchu w internecie w UK teraz pochodzi z urządzeń mobilnych. Dla wielu firm lokalnych ten odsetek jest jeszcze wyższy. Twoje doświadczenie mobilne to nie zmniejszona wersja desktopowa. To główne doświadczenie dla większości Twoich odwiedzających.
-
-Cele dotykowe powinny być wystarczająco duże. Tekst powinien być czytelny bez powiększania. Numery telefonów powinny działać jako tap-to-call. Formularze powinny współpracować z natywną klawiaturą. Jeśli którykolwiek z tych elementów jest zepsuty, tracisz zapytania zanim odwiedzający przeczyta Twoją treść.",
+          heading: "Mobile to nie osobna wersja. To g\u0142\u00f3wna wersja.",
+          body: "Wi\u0119kszo\u015b\u0107 ruchu w internecie w UK teraz pochodzi z urz\u0105dze\u0144 mobilnych. Dla wielu firm lokalnych ten odsetek jest jeszcze wy\u017cszy. Twoje do\u015bwiadczenie mobilne to nie zmniejszona wersja desktopowa. To g\u0142\u00f3wne do\u015bwiadczenie dla wi\u0119kszo\u015bci Twoich odwiedzaj\u0105cych.\n\nCele dotykowe powinny by\u0107 wystarczaj\u0105co du\u017ce. Tekst powinien by\u0107 czytelny bez powi\u0119kszania. Numery telefon\u00f3w powinny dzia\u0142a\u0107 jako tap-to-call. Formularze powinny wsp\u00f3\u0142pracowa\u0107 z natywn\u0105 klawiatur\u0105. Je\u015bli kt\u00f3rykolwiek z tych element\u00f3w jest zepsuty, tracisz zapytania zanim odwiedzaj\u0105cy przeczyta Twoj\u0105 tre\u015b\u0107.",
         },
         {
           heading: "Podsumowanie",
-          body: "Konwersja to nie trik. To efekt jasności, zaufania i usuwania przeszkód. Większość popraw wynika z upraszczania tego, co już jest, a nie dodawania kolejnych elementów.
-
-Jeśli Twoja strona wygląda dobrze, ale zapytania nie przychodzą, problem zazwyczaj leży w jednej z tych trzech rzeczy. Napraw je, a liczby się zmienią.",
+          body: "Konwersja to nie trik. To efekt jasno\u015bci, zaufania i usuwania przeszk\u00f3d. Wi\u0119kszo\u015b\u0107 popraw wynika z upraszczania tego, co ju\u017c jest, a nie dodawania kolejnych element\u00f3w.\n\nJe\u015bli Twoja strona wygl\u0105da dobrze, ale zapytania nie przychodz\u0105, problem zazwyczaj le\u017cy w jednej z tych trzech rzeczy. Napraw je, a liczby si\u0119 zmieni\u0105.",
         },
       ],
     },

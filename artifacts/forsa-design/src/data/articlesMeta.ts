@@ -115,9 +115,10 @@ export const articlesMeta: ArticleMeta[] = [
         "Most websites look fine but do not convert. The problem is rarely design. It is usually clarity, trust, and friction. Here is what actually works based on real projects.",
     },
     pl: {
-      title: "Co Sprawia, że Strona Naprawdę Zamienia Odwiedzających w Klientów",
+      title:
+        "Co Sprawia, \u017ce Strona Naprawd\u0119 Zamienia Odwiedzaj\u0105cych w Klient\u00f3w",
       excerpt:
-        "Większość stron wygląda dobrze, ale nie konwertuje. Problem rzadko leży w designie. To zazwyczaj kwestia jasności, zaufania i tarcia. Oto co działa w praktyce.",
+        "Wi\u0119kszo\u015b\u0107 stron wygl\u0105da dobrze, ale nie konwertuje. Problem rzadko le\u017cy w designie. To zazwyczaj kwestia jasno\u015bci, zaufania i tarcia. Oto co dzia\u0142a w praktyce.",
     },
   },
 ];
