@@ -119,6 +119,5 @@ channel = "stable-25_05"
 
 [userenv.shared]
 VITE_TURNSTILE_SITE_KEY = "0x4AAAAAADiKDRnpi0TNeGeS"
-TURNSTILE_SECRET_KEY = "0x4AAAAAADiKDfhbrsw1s4HgqtNqUxQBMbs"
 PORT = "20815"
 BASE_PATH = "/"
