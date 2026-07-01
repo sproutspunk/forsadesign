@@ -372,7 +372,7 @@ export function QuoteSummary({
                 </div>
                 <button
                   onClick={onReset}
-                  className="w-full flex items-center justify-center gap-1.5 px-3 py-2.5 text-sm font-semibold rounded-lg border-2 border-border/60 hover:border-destructive/60 hover:text-destructive hover:bg-destructive/5 transition-colors text-foreground/70"
+                  className="w-full flex items-center justify-center gap-2 px-4 py-3 text-sm font-bold rounded-lg border-2 border-red-400/60 text-red-300 bg-red-400/5 hover:border-red-400 hover:text-red-200 hover:bg-red-400/15 active:scale-[0.98] transition-all"
                 >
                   <RotateCcw className="w-4 h-4" />
                   {t("Reset Calculator", "Resetuj kalkulator")}
