@@ -3,7 +3,6 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { useLocation } from "wouter";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import logo from "../assets/forsa-logo.webp";
 
 export default function Header() {
   const { language, syncLanguage, t } = useLanguage();
@@ -55,9 +54,9 @@ export default function Header() {
         <a
           href={sectionHref("#home")}
           data-testid="link-logo"
-          className="flex items-center shrink-0"
+          className="font-serif text-xl tracking-[0.2em] font-bold text-white uppercase"
         >
-          <img src={logo} alt="Forsa Design" className="h-11 w-auto object-contain" />
+          Forsa Design
         </a>
 
         {/* Desktop Nav */}
