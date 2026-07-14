@@ -308,6 +308,10 @@ export default function AboutPage({ lang }: AboutPageProps) {
           "@id": "https://forsadesign.co.uk/#organization",
           name: "Forsa Design",
           url: "https://forsadesign.co.uk",
+          logo: {
+            "@type": "ImageObject",
+            url: "https://forsadesign.co.uk/logo-new.png",
+          },
           email: "hello@forsadesign.co.uk",
           description:
             "Boutique web agency based in Banff, Scotland, specialising in private healthcare and B2B websites.",

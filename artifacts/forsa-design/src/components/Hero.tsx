@@ -34,7 +34,17 @@ export default function Hero() {
           initial="hidden"
           animate="visible"
         >
-          <motion.div variants={itemVariants} className="w-24 h-px bg-primary mb-8 mt-6" />
+          <motion.div variants={itemVariants} className="mb-6 mx-auto">
+            <img
+              src="/logo-new.png"
+              alt="Forsa Design"
+              width={400}
+              height={400}
+              className="w-48 md:w-64 lg:w-72 h-auto object-contain block mx-auto"
+            />
+          </motion.div>
+
+          <motion.div variants={itemVariants} className="w-24 h-px bg-primary mb-8 mt-2" />
 
           <motion.h1
             variants={itemVariants}

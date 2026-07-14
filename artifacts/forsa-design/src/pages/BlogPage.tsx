@@ -76,6 +76,10 @@ export default function BlogPage({ lang }: BlogPageProps) {
         "@type": "Organization",
         name: "Forsa Design",
         url: "https://forsadesign.co.uk",
+        logo: {
+          "@type": "ImageObject",
+          url: "https://forsadesign.co.uk/logo-new.png",
+        },
       },
       blogPost: sortedArticles.map((article) => {
         const a = article[lang];

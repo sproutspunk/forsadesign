@@ -54,9 +54,9 @@ export default function Header() {
         <a
           href={sectionHref("#home")}
           data-testid="link-logo"
-          className="font-serif text-xl tracking-[0.2em] font-bold text-white uppercase"
+          className="flex items-center shrink-0"
         >
-          Forsa Design
+          <img src="/logo-new-sm.png" alt="Forsa Design" className="h-11 w-auto object-contain" />
         </a>
 
         {/* Desktop Nav */}

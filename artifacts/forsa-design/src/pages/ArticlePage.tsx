@@ -93,6 +93,10 @@ export default function ArticlePage({ lang, slug }: ArticlePageProps) {
             "@type": "Organization",
             name: "Forsa Design",
             url: "https://forsadesign.co.uk",
+            logo: {
+              "@type": "ImageObject",
+              url: "https://forsadesign.co.uk/logo-new.png",
+            },
           },
           mainEntityOfPage: {
             "@type": "WebPage",
