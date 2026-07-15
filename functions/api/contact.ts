@@ -27,7 +27,24 @@ interface ContactBody {
 }
 
 function isValidEmail(value: string): boolean {
-  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+  // RFC 5321 practical check: local@domain.tld with no consecutive dots or
+  // leading/trailing dots in the local part or domain labels.
+  if (value.length > 254) return false;
+  const atIndex = value.lastIndexOf("@");
+  if (atIndex < 1 || atIndex === value.length - 1) return false;
+  const local = value.slice(0, atIndex);
+  const domain = value.slice(atIndex + 1);
+  if (local.length > 64) return false;
+  if (/\.\./.test(local) || /\.\./.test(domain)) return false;
+  if (local.startsWith(".") || local.endsWith(".")) return false;
+  if (domain.startsWith(".") || domain.endsWith(".") || domain.startsWith("-")) return false;
+  // Domain must have at least one dot and a TLD of 2+ characters.
+  const domainParts = domain.split(".");
+  if (domainParts.length < 2) return false;
+  const tld = domainParts[domainParts.length - 1];
+  if (tld.length < 2 || !/^[a-zA-Z]+$/.test(tld)) return false;
+  // Only allow characters valid in email addresses.
+  return /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9.-]+$/.test(value);
 }
 
 function parseBody(raw: unknown): ContactBody | null {
@@ -175,6 +192,7 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
 
   // Honeypot: hidden field filled only by bots — silently accept without sending mail.
   if (body.website && body.website.trim() !== "") {
+    console.warn("[contact] Honeypot triggered; dropping submission", { ip: request.headers.get("CF-Connecting-IP") });
     return Response.json({ ok: true });
   }
 
@@ -232,7 +250,9 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
     CONTACT_RECIPIENT,
     confirmation.subject,
     confirmation.body,
-  ).catch(() => {});
+  ).catch((err) => {
+    console.error("[contact] Visitor confirmation email failed", err);
+  });
 
   return Response.json({ ok: true });
 };
