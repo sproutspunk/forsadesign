@@ -1,12 +1,13 @@
 import { Router, type IRouter } from "express";
-import { ReplitConnectors } from "@replit/connectors-sdk";
 import { SubmitContactBody, SubmitContactResponse } from "@workspace/api-zod";
 import { logger } from "../lib/logger";
 import { contactRateLimiter } from "../middlewares/rateLimit";
 
 // Contact form email delivery — multi-layer bot-protected endpoint.
+// Sends via Resend (https://resend.com) so it works on any platform
+// (Replit, Vercel, Railway, local dev) with just an API key.
 //
-// SECURITY: Every code path that reaches sendGmail is gated by verifyTurnstile,
+// SECURITY: Every code path that reaches sendEmail is gated by verifyTurnstile,
 // which fails closed (no email without a valid Cloudflare token). Additional
 // layers: honeypot (silently drops bot submissions), rate limit (5/10min/IP),
 // and Zod validation. Semgrep may flag the generic "send email from POST" pattern,
@@ -18,6 +19,7 @@ const CONTACT_RECIPIENT = "hello@forsadesign.co.uk";
 const CONTACT_FROM_NAME = "Forsa Design";
 
 const TURNSTILE_VERIFY_URL = "https://challenges.cloudflare.com/turnstile/v0/siteverify";
+const RESEND_API_URL = "https://api.resend.com/emails";
 
 // Verifies a Cloudflare Turnstile token server-side before any email is sent.
 // Fails closed: email is only sent when Cloudflare validates the token. With no
@@ -79,24 +81,36 @@ async function verifyTurnstile(
   }
 }
 
-function toBase64Url(input: string): string {
-  return Buffer.from(input, "utf-8")
-    .toString("base64")
-    .replace(/\+/g, "-")
-    .replace(/\//g, "_")
-    .replace(/=+$/, "");
-}
+// Send a plain-text email via Resend. Requires RESEND_API_KEY env variable.
+async function sendEmail(args: {
+  to: string;
+  from: string;
+  subject: string;
+  text: string;
+  replyTo?: string;
+}) {
+  const apiKey = process.env.RESEND_API_KEY;
+  if (!apiKey) {
+    throw new Error("RESEND_API_KEY not configured");
+  }
 
-// RFC 2047 encoded-word so non-ASCII (e.g. Polish) subject lines render correctly.
-function encodeHeaderWord(value: string): string {
-  return `=?UTF-8?B?${Buffer.from(value, "utf-8").toString("base64")}?=`;
-}
+  const body: Record<string, unknown> = {
+    from: args.from,
+    to: [args.to],
+    subject: args.subject,
+    text: args.text,
+  };
+  if (args.replyTo) {
+    body.reply_to = args.replyTo;
+  }
 
-async function sendGmail(connectors: ReplitConnectors, mime: string) {
-  return connectors.proxy("google-mail", "/gmail/v1/users/me/messages/send", {
+  return fetch(RESEND_API_URL, {
     method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ raw: toBase64Url(mime) }),
+    headers: {
+      Authorization: `Bearer ${apiKey}`,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(body),
   });
 }
 
@@ -196,25 +210,19 @@ router.post("/contact", contactRateLimiter, async (req, res) => {
     "",
   ].join("\r\n");
 
-  // Reply-To uses only the validated email (no display name) to avoid header injection.
-  const mime = [
-    `To: ${CONTACT_RECIPIENT}`,
-    `Reply-To: ${email}`,
-    `Subject: ${encodeHeaderWord(subject)}`,
-    "MIME-Version: 1.0",
-    'Content-Type: text/plain; charset="UTF-8"',
-    "Content-Transfer-Encoding: 8bit",
-    "",
-    textBody,
-  ].join("\r\n");
-
   try {
-    const connectors = new ReplitConnectors();
-    const response = await sendGmail(connectors, mime);
+    // 1. Send enquiry to Forsa Design inbox.
+    const enquiryResponse = await sendEmail({
+      to: CONTACT_RECIPIENT,
+      from: `${CONTACT_FROM_NAME} <${CONTACT_RECIPIENT}>`,
+      subject,
+      text: textBody,
+      replyTo: email,
+    });
 
-    if (!response.ok) {
-      const errText = await response.text().catch(() => "");
-      logger.error({ status: response.status, errText }, "Gmail send failed for contact form");
+    if (!enquiryResponse.ok) {
+      const errText = await enquiryResponse.text().catch(() => "");
+      logger.error({ status: enquiryResponse.status, errText }, "Resend enquiry delivery failed");
       return res.status(502).json(
         SubmitContactResponse.parse({
           ok: false,
@@ -223,29 +231,23 @@ router.post("/contact", contactRateLimiter, async (req, res) => {
       );
     }
 
-    // Send the visitor a branded confirmation in their site language.
+    // 2. Send the visitor a branded confirmation in their site language.
     // Failure here must not fail the request: the business inbox already received
     // the enquiry, so we log and still return success to the visitor.
     try {
       const confirmation = buildConfirmation(language, name, projectType, details);
-      const confirmationMime = [
-        `From: ${encodeHeaderWord(CONTACT_FROM_NAME)} <${CONTACT_RECIPIENT}>`,
-        `To: ${email}`,
-        `Reply-To: ${CONTACT_RECIPIENT}`,
-        `Subject: ${encodeHeaderWord(confirmation.subject)}`,
-        "MIME-Version: 1.0",
-        'Content-Type: text/plain; charset="UTF-8"',
-        "Content-Transfer-Encoding: 8bit",
-        "",
-        confirmation.body,
-      ].join("\r\n");
-
-      const confirmationResponse = await sendGmail(connectors, confirmationMime);
+      const confirmationResponse = await sendEmail({
+        to: email,
+        from: `${CONTACT_FROM_NAME} <${CONTACT_RECIPIENT}>`,
+        subject: confirmation.subject,
+        text: confirmation.body,
+        replyTo: CONTACT_RECIPIENT,
+      });
       if (!confirmationResponse.ok) {
         const errText = await confirmationResponse.text().catch(() => "");
         logger.error(
           { status: confirmationResponse.status, errText },
-          "Gmail send failed for visitor confirmation",
+          "Resend confirmation delivery failed",
         );
       }
     } catch (confirmErr) {

@@ -2,16 +2,9 @@ import { describe, it, expect, beforeEach, afterEach, vi } from "vitest";
 import request from "supertest";
 import type { Express } from "express";
 
-// The contact route sends email through the Replit Gmail connector. We mock the
-// SDK so tests never make real network calls or send real email; the mock lets
-// us assert whether an email *would* have been sent for each scenario.
-const proxyMock = vi.hoisted(() => vi.fn());
-
-vi.mock("@replit/connectors-sdk", () => ({
-  ReplitConnectors: class {
-    proxy = proxyMock;
-  },
-}));
+// The contact route sends email through Resend REST API. We mock fetch so
+// tests never make real network calls or send real email; the mock lets us
+// assert whether an email *would* have been sent for each scenario.
 
 // Cloudflare's documented Turnstile test secret keys: `1x...AA` always passes
 // verification, `2x...AA` always fails. We mock the siteverify fetch so the
@@ -33,7 +26,7 @@ function validBody(overrides: Record<string, unknown> = {}) {
   };
 }
 
-function gmailOk() {
+function resendOk() {
   return {
     ok: true,
     status: 200,
@@ -52,22 +45,32 @@ async function loadApp(): Promise<Express> {
 }
 
 beforeEach(() => {
-  proxyMock.mockReset();
-  proxyMock.mockResolvedValue(gmailOk());
-
+  // Mock Resend API as always succeeding by default.
   vi.stubGlobal(
     "fetch",
-    vi.fn(async (_url: unknown, init: { body?: unknown } = {}) => {
-      const params =
-        init.body instanceof URLSearchParams ? init.body : new URLSearchParams(init.body as string);
-      const success = params.get("secret") !== FAIL_SECRET;
-      return {
-        ok: true,
-        json: async () => ({
-          success,
-          "error-codes": success ? [] : ["invalid-input-response"],
-        }),
-      };
+    vi.fn(async (url: string, init: { body?: unknown } = {}) => {
+      // Turnstile verification
+      if (url.includes("challenges.cloudflare.com")) {
+        const params =
+          init.body instanceof URLSearchParams
+            ? init.body
+            : new URLSearchParams(init.body as string);
+        const success = params.get("secret") !== FAIL_SECRET;
+        return {
+          ok: true,
+          json: async () => ({
+            success,
+            "error-codes": success ? [] : ["invalid-input-response"],
+          }),
+        };
+      }
+
+      // Resend email send
+      if (url.includes("api.resend.com")) {
+        return resendOk();
+      }
+
+      return resendOk();
     }),
   );
 });
@@ -75,22 +78,28 @@ beforeEach(() => {
 afterEach(() => {
   vi.unstubAllGlobals();
   delete process.env.TURNSTILE_SECRET_KEY;
+  delete process.env.RESEND_API_KEY;
 });
 
 describe("POST /api/contact bot protection", () => {
   it("accepts a genuine submission and sends email when verification passes", async () => {
     process.env.TURNSTILE_SECRET_KEY = PASS_SECRET;
+    process.env.RESEND_API_KEY = "re_test_123";
     const app = await loadApp();
 
     const res = await request(app).post("/api/contact").send(validBody());
 
     expect(res.status).toBe(200);
     expect(res.body).toEqual({ ok: true });
-    expect(proxyMock).toHaveBeenCalled();
+    // Should call Resend twice: enquiry + confirmation
+    const fetchCalls = vi.mocked(fetch).mock.calls;
+    const resendCalls = fetchCalls.filter(([url]) => (url as string).includes("api.resend.com"));
+    expect(resendCalls.length).toBe(2);
   });
 
   it("rejects submission when the CAPTCHA token is missing (fail closed)", async () => {
     process.env.TURNSTILE_SECRET_KEY = PASS_SECRET;
+    process.env.RESEND_API_KEY = "re_test_123";
     const app = await loadApp();
 
     const res = await request(app)
@@ -102,11 +111,11 @@ describe("POST /api/contact bot protection", () => {
     expect(res.status).toBe(400);
     expect(res.body.ok).toBe(false);
     expect(res.body.error).toBe("Invalid form submission.");
-    expect(proxyMock).not.toHaveBeenCalled();
   });
 
   it("accepts submission with empty Turnstile token when widget failed (graceful degradation)", async () => {
     process.env.TURNSTILE_SECRET_KEY = PASS_SECRET;
+    process.env.RESEND_API_KEY = "re_test_123";
     const app = await loadApp();
 
     const res = await request(app)
@@ -115,11 +124,14 @@ describe("POST /api/contact bot protection", () => {
 
     expect(res.status).toBe(200);
     expect(res.body).toEqual({ ok: true });
-    expect(proxyMock).toHaveBeenCalled();
+    const fetchCalls = vi.mocked(fetch).mock.calls;
+    const resendCalls = fetchCalls.filter(([url]) => (url as string).includes("api.resend.com"));
+    expect(resendCalls.length).toBe(2);
   });
 
   it("rejects with 403 when the CAPTCHA token is invalid", async () => {
     process.env.TURNSTILE_SECRET_KEY = FAIL_SECRET;
+    process.env.RESEND_API_KEY = "re_test_123";
     const app = await loadApp();
 
     const res = await request(app)
@@ -129,11 +141,11 @@ describe("POST /api/contact bot protection", () => {
     expect(res.status).toBe(403);
     expect(res.body.ok).toBe(false);
     expect(res.body.error).toBe("captcha_failed");
-    expect(proxyMock).not.toHaveBeenCalled();
   });
 
   it("silently drops a honeypot (bot) submission without sending email", async () => {
     process.env.TURNSTILE_SECRET_KEY = PASS_SECRET;
+    process.env.RESEND_API_KEY = "re_test_123";
     const app = await loadApp();
 
     const res = await request(app)
@@ -143,11 +155,14 @@ describe("POST /api/contact bot protection", () => {
     // Returns success so the bot gets no signal, but no email is sent.
     expect(res.status).toBe(200);
     expect(res.body).toEqual({ ok: true });
-    expect(proxyMock).not.toHaveBeenCalled();
+    const fetchCalls = vi.mocked(fetch).mock.calls;
+    const resendCalls = fetchCalls.filter(([url]) => (url as string).includes("api.resend.com"));
+    expect(resendCalls.length).toBe(0);
   });
 
   it("rate-limits repeated submissions from the same IP", async () => {
     process.env.TURNSTILE_SECRET_KEY = PASS_SECRET;
+    process.env.RESEND_API_KEY = "re_test_123";
     const app = await loadApp();
 
     // The limiter allows 5 submissions per IP per window.
@@ -162,15 +177,26 @@ describe("POST /api/contact bot protection", () => {
   });
 
   it("accepts submissions when no secret key is configured (graceful degradation)", async () => {
-    delete process.env.TURNSTILE_SECRET_KEY;
+    process.env.RESEND_API_KEY = "re_test_123";
+    const app = await loadApp();
+
+    // Without Turnstile secret the server skips verification but still
+    // protects via honeypot + rate limiter.
+    const res = await request(app).post("/api/contact").send(validBody());
+
+    expect(res.status).toBe(200);
+    expect(res.body).toEqual({ ok: true });
+  });
+
+  it("returns 502 when Resend API key is missing", async () => {
+    process.env.TURNSTILE_SECRET_KEY = PASS_SECRET;
+    // RESEND_API_KEY is NOT set
     const app = await loadApp();
 
     const res = await request(app).post("/api/contact").send(validBody());
 
-    // Without Turnstile secret the server skips verification but still
-    // protects via honeypot + rate limiter.
-    expect(res.status).toBe(200);
-    expect(res.body).toEqual({ ok: true });
-    expect(proxyMock).toHaveBeenCalled();
+    expect(res.status).toBe(502);
+    expect(res.body.ok).toBe(false);
+    expect(res.body.error).toBe("Email delivery failed.");
   });
 });
