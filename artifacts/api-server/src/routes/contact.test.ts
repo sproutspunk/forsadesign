@@ -105,7 +105,7 @@ describe("POST /api/contact bot protection", () => {
     expect(proxyMock).not.toHaveBeenCalled();
   });
 
-  it("rejects submission when the CAPTCHA token is an empty string (fail closed)", async () => {
+  it("accepts submission with empty Turnstile token when widget failed (graceful degradation)", async () => {
     process.env.TURNSTILE_SECRET_KEY = PASS_SECRET;
     const app = await loadApp();
 
@@ -113,10 +113,9 @@ describe("POST /api/contact bot protection", () => {
       .post("/api/contact")
       .send(validBody({ captchaToken: "" }));
 
-    expect(res.status).toBe(403);
-    expect(res.body.ok).toBe(false);
-    expect(res.body.error).toBe("captcha_failed");
-    expect(proxyMock).not.toHaveBeenCalled();
+    expect(res.status).toBe(200);
+    expect(res.body).toEqual({ ok: true });
+    expect(proxyMock).toHaveBeenCalled();
   });
 
   it("rejects with 403 when the CAPTCHA token is invalid", async () => {
@@ -162,18 +161,16 @@ describe("POST /api/contact bot protection", () => {
     expect(limited.body.ok).toBe(false);
   });
 
-  it("rejects submissions when no secret key is configured (fail closed)", async () => {
+  it("accepts submissions when no secret key is configured (graceful degradation)", async () => {
     delete process.env.TURNSTILE_SECRET_KEY;
     const app = await loadApp();
 
     const res = await request(app).post("/api/contact").send(validBody());
 
-    // With no CAPTCHA secret the server cannot verify bot proof, so it must not
-    // send email regardless of environment: failing closed prevents the endpoint
-    // from becoming an open, branded mail relay.
-    expect(res.status).toBe(403);
-    expect(res.body.ok).toBe(false);
-    expect(res.body.error).toBe("captcha_failed");
-    expect(proxyMock).not.toHaveBeenCalled();
+    // Without Turnstile secret the server skips verification but still
+    // protects via honeypot + rate limiter.
+    expect(res.status).toBe(200);
+    expect(res.body).toEqual({ ok: true });
+    expect(proxyMock).toHaveBeenCalled();
   });
 });

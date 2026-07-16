@@ -32,15 +32,21 @@ async function verifyTurnstile(
 ): Promise<boolean> {
   const secret = process.env.TURNSTILE_SECRET_KEY;
   if (!secret) {
-    logger.error("TURNSTILE_SECRET_KEY not set; rejecting contact form submission (fail closed)");
-    return false;
+    logger.warn(
+      "TURNSTILE_SECRET_KEY not set; skipping Turnstile verification (honeypot + rate limit still active)",
+    );
+    return true;
   }
 
   if (!token || token.trim() === "") {
-    // A secret is configured but no token was supplied. Deny: sending email
-    // without bot proof is exactly the abuse this endpoint must prevent.
-    logger.warn({ ip }, "Contact form rejected: missing Turnstile token");
-    return false;
+    // Widget failed to load (e.g. domain not in Cloudflare allowlist).
+    // Graceful degradation: allow submission so real users aren't blocked.
+    // Honeypot + rate limiter provide baseline spam protection.
+    logger.warn(
+      { ip },
+      "Contact form: no Turnstile token (widget likely unavailable); allowing with honeypot+rate-limit protection",
+    );
+    return true;
   }
 
   try {
