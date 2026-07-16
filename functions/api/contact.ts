@@ -71,11 +71,7 @@ function parseBody(raw: unknown): ContactBody | null {
 // Turnstile verification
 // ---------------------------------------------------------------------------
 
-async function verifyTurnstile(
-  secret: string,
-  token: string,
-  ip: string | null,
-): Promise<boolean> {
+async function verifyTurnstile(secret: string, token: string, ip: string | null): Promise<boolean> {
   if (!token.trim()) return false;
 
   try {
@@ -192,7 +188,9 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
 
   // Honeypot: hidden field filled only by bots — silently accept without sending mail.
   if (body.website && body.website.trim() !== "") {
-    console.warn("[contact] Honeypot triggered; dropping submission", { ip: request.headers.get("CF-Connecting-IP") });
+    console.warn("[contact] Honeypot triggered; dropping submission", {
+      ip: request.headers.get("CF-Connecting-IP"),
+    });
     return Response.json({ ok: true });
   }
 
