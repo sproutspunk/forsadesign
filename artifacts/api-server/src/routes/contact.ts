@@ -2,12 +2,12 @@ import { Router, type IRouter } from "express";
 import { SubmitContactBody, SubmitContactResponse } from "@workspace/api-zod";
 import { logger } from "../lib/logger";
 import { contactRateLimiter } from "../middlewares/rateLimit";
+import { sendViaProton } from "../lib/smtp";
 
 // Contact form email delivery — multi-layer bot-protected endpoint.
-// Sends via Resend (https://resend.com) so it works on any platform
-// (Replit, Vercel, Railway, local dev) with just an API key.
+// Sends via Proton Mail SMTP so you keep full control of your email.
 //
-// SECURITY: Every code path that reaches sendEmail is gated by verifyTurnstile,
+// SECURITY: Every code path that reaches sendViaProton is gated by verifyTurnstile,
 // which fails closed (no email without a valid Cloudflare token). Additional
 // layers: honeypot (silently drops bot submissions), rate limit (5/10min/IP),
 // and Zod validation. Semgrep may flag the generic "send email from POST" pattern,
@@ -16,10 +16,8 @@ import { contactRateLimiter } from "../middlewares/rateLimit";
 const router: IRouter = Router();
 
 const CONTACT_RECIPIENT = "hello@forsadesign.co.uk";
-const CONTACT_FROM_NAME = "Forsa Design";
 
 const TURNSTILE_VERIFY_URL = "https://challenges.cloudflare.com/turnstile/v0/siteverify";
-const RESEND_API_URL = "https://api.resend.com/emails";
 
 // Verifies a Cloudflare Turnstile token server-side before any email is sent.
 // Fails closed: email is only sent when Cloudflare validates the token. With no
@@ -79,39 +77,6 @@ async function verifyTurnstile(
     logger.error({ err, ip }, "Turnstile verification request failed");
     return false;
   }
-}
-
-// Send a plain-text email via Resend. Requires RESEND_API_KEY env variable.
-async function sendEmail(args: {
-  to: string;
-  from: string;
-  subject: string;
-  text: string;
-  replyTo?: string;
-}) {
-  const apiKey = process.env.RESEND_API_KEY;
-  if (!apiKey) {
-    throw new Error("RESEND_API_KEY not configured");
-  }
-
-  const body: Record<string, unknown> = {
-    from: args.from,
-    to: [args.to],
-    subject: args.subject,
-    text: args.text,
-  };
-  if (args.replyTo) {
-    body.reply_to = args.replyTo;
-  }
-
-  return fetch(RESEND_API_URL, {
-    method: "POST",
-    headers: {
-      Authorization: `Bearer ${apiKey}`,
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(body),
-  });
 }
 
 // Branded confirmation copy sent back to the visitor, localised to the site language.
@@ -211,45 +176,27 @@ router.post("/contact", contactRateLimiter, async (req, res) => {
   ].join("\r\n");
 
   try {
-    // 1. Send enquiry to Forsa Design inbox.
-    const enquiryResponse = await sendEmail({
+    // 1. Send enquiry to Forsa Design inbox via Proton Mail.
+    await sendViaProton({
+      from: CONTACT_RECIPIENT,
       to: CONTACT_RECIPIENT,
-      from: `${CONTACT_FROM_NAME} <${CONTACT_RECIPIENT}>`,
       subject,
       text: textBody,
       replyTo: email,
     });
-
-    if (!enquiryResponse.ok) {
-      const errText = await enquiryResponse.text().catch(() => "");
-      logger.error({ status: enquiryResponse.status, errText }, "Resend enquiry delivery failed");
-      return res.status(502).json(
-        SubmitContactResponse.parse({
-          ok: false,
-          error: "Email delivery failed.",
-        }),
-      );
-    }
 
     // 2. Send the visitor a branded confirmation in their site language.
     // Failure here must not fail the request: the business inbox already received
     // the enquiry, so we log and still return success to the visitor.
     try {
       const confirmation = buildConfirmation(language, name, projectType, details);
-      const confirmationResponse = await sendEmail({
+      await sendViaProton({
+        from: CONTACT_RECIPIENT,
         to: email,
-        from: `${CONTACT_FROM_NAME} <${CONTACT_RECIPIENT}>`,
         subject: confirmation.subject,
         text: confirmation.body,
         replyTo: CONTACT_RECIPIENT,
       });
-      if (!confirmationResponse.ok) {
-        const errText = await confirmationResponse.text().catch(() => "");
-        logger.error(
-          { status: confirmationResponse.status, errText },
-          "Resend confirmation delivery failed",
-        );
-      }
     } catch (confirmErr) {
       logger.error({ err: confirmErr }, "Visitor confirmation email failed");
     }
