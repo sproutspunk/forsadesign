@@ -4,6 +4,11 @@ import contactRouter from "./contact";
 
 const router: IRouter = Router();
 
+// Service root — used by the deployment healthcheck probe.
+router.get("/", (_req, res) => {
+  res.json({ status: "ok", service: "api" });
+});
+
 router.use(healthRouter);
 router.use(contactRouter);
 
