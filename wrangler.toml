@@ -1,0 +1,13 @@
+# Cloudflare Pages project configuration.
+# This file is used by `wrangler pages dev` for local development and
+# documents the bindings required for production.
+#
+# Production environment variables (TURNSTILE_SECRET_KEY, RESEND_API_KEY,
+# RESEND_FROM_EMAIL) must be added as Encrypted environment variables in the
+# Cloudflare Pages dashboard — never committed to source control.
+name = "forsadesign"
+pages_build_output_dir = "artifacts/forsa-design/dist/public"
+
+[vars]
+# Placeholder — override with real values in the Cloudflare Pages dashboard.
+# RESEND_FROM_EMAIL = "hello@forsadesign.co.uk"
