@@ -275,8 +275,11 @@ async function handleContact(request, env) {
       replyTo: email,
     });
   } catch (err) {
-    console.error("Contact form email failed:", err && err.message ? err.message : err);
-    return json({ ok: false, error: "Email delivery failed." }, 502);
+    const detail = err && err.message ? err.message : String(err);
+    console.error("Contact form email failed:", detail);
+    // 500 (not 502): Cloudflare masks 502/504 from the origin with its own
+    // error page on proxied custom domains, hiding this JSON body.
+    return json({ ok: false, error: "Email delivery failed.", detail }, 500);
   }
 
   // 2. Visitor confirmation. Failure here must not fail the request: the
@@ -307,8 +310,9 @@ export default {
         try {
           return await handleContact(request, env);
         } catch (err) {
-          console.error("Contact handler crashed:", err && err.message ? err.message : err);
-          return json({ ok: false, error: "Email delivery failed." }, 502);
+          const detail = err && err.message ? err.message : String(err);
+          console.error("Contact handler crashed:", detail);
+          return json({ ok: false, error: "Email delivery failed.", detail }, 500);
         }
       }
       return json({ ok: false, error: "Method not allowed." }, 405);
@@ -319,7 +323,15 @@ export default {
     }
 
     if (path === "/api/healthz") {
-      return json({ status: "ok" });
+      // Config presence flags (booleans only, never values) to diagnose
+      // production issues without dashboard access.
+      return json({
+        status: "ok",
+        smtpUser: Boolean(env.PROTON_SMTP_USER),
+        smtpPass: Boolean(env.PROTON_SMTP_PASS),
+        turnstileSecret: Boolean(env.TURNSTILE_SECRET_KEY),
+        socketsAvailable: typeof connect === "function",
+      });
     }
 
     // Everything else: serve the static site. SPA fallback for client-side
