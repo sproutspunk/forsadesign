@@ -40,10 +40,25 @@ jobs:
         env:
           NODE_ENV: production
 
+      - name: Ensure Cloudflare Pages project exists
+        run: |
+          set +e
+          output=$(pnpm exec wrangler pages project create forsadesign --production-branch=main 2>&1)
+          status=$?
+          set -e
+
+          echo "$output"
+          if [ "$status" -ne 0 ] && ! echo "$output" | grep -qi "already exists"; then
+            exit "$status"
+          fi
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+
       - name: Deploy to Cloudflare Pages
         uses: cloudflare/wrangler-action@v4
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy artifacts/forsa-design/dist/public --project-name=forsadesign --commit-dirty=true --create-project-if-missing
+          command: pages deploy artifacts/forsa-design/dist/public --project-name=forsadesign --commit-dirty=true
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
