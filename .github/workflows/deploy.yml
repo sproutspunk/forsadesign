@@ -45,5 +45,5 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy artifacts/forsa-design/dist/public --project-name=forsadesign --commit-dirty=true
+          command: pages deploy artifacts/forsa-design/dist/public --project-name=forsadesign --commit-dirty=true --create-project-if-missing
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
