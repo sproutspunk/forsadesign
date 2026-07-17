@@ -173,7 +173,7 @@ export default function ArticlePage({ lang, slug }: ArticlePageProps) {
             {a.sections.map((section, i) => (
               <div key={i}>
                 {section.heading && (
-                  <h2 className="font-serif text-xl md:text-2xl font-bold text-white mb-3">
+                  <h2 className="font-serif text-xl md:text-2xl font-bold text-white mb-3 leading-tight">
                     {section.heading}
                   </h2>
                 )}
