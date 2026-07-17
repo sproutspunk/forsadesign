@@ -600,47 +600,27 @@ export const articles: Article[] = [
         },
         {
           heading: "1. Security updates are not optional",
-          body: "Every website runs on software: the server, the framework, the plugins, the contact forms. Developers find security flaws regularly and release patches. If those patches are not applied, your site becomes an easy target.
-
-A compromised site does not just affect you. It can be used to send spam, host phishing pages or infect visitors. Google will flag it in search results. Hosting providers may suspend it. The cleanup costs far more than routine maintenance ever would.
-
-Maintenance means applying updates promptly, monitoring for unusual activity and keeping backups that actually work.",
+          body: "Every website runs on software: the server, the framework, the plugins, the contact forms. Developers find security flaws regularly and release patches. If those patches are not applied, your site becomes an easy target.\n\nA compromised site does not just affect you. It can be used to send spam, host phishing pages or infect visitors. Google will flag it in search results. Hosting providers may suspend it. The cleanup costs far more than routine maintenance ever would.\n\nMaintenance means applying updates promptly, monitoring for unusual activity and keeping backups that actually work.",
         },
         {
           heading: "2. Performance degrades over time",
-          body: "A fast site at launch can become slow within a year. New images get uploaded without compression. Third-party scripts accumulate. Analytics tools, chat widgets and social feeds each add requests. The database grows. Caches need refreshing.
-
-Google uses speed as a ranking factor. Visitors use speed as a trust signal. A site that loaded in two seconds at launch and now takes six is losing both search visibility and conversions. Regular performance audits catch this before it becomes a problem.",
+          body: "A fast site at launch can become slow within a year. New images get uploaded without compression. Third-party scripts accumulate. Analytics tools, chat widgets and social feeds each add requests. The database grows. Caches need refreshing.\n\nGoogle uses speed as a ranking factor. Visitors use speed as a trust signal. A site that loaded in two seconds at launch and now takes six is losing both search visibility and conversions. Regular performance audits catch this before it becomes a problem.",
         },
         {
           heading: "3. Content goes stale quickly",
-          body: "Opening hours change. Team members leave. Services get updated. Phone numbers change. If your site still shows last year's pricing or a team photo from two years ago, it quietly tells visitors you are not paying attention.
-
-Search engines also prefer fresh content. A blog post from 2022 does not carry the same weight as one from this month. Regular small updates — a new article, a refreshed service page, updated testimonials — keep the site alive in Google's eyes.",
+          body: "Opening hours change. Team members leave. Services get updated. Phone numbers change. If your site still shows last year's pricing or a team photo from two years ago, it quietly tells visitors you are not paying attention.\n\nSearch engines also prefer fresh content. A blog post from 2022 does not carry the same weight as one from this month. Regular small updates, like a new article, a refreshed service page or updated testimonials, keep the site alive in Google's eyes.",
         },
         {
           heading: "4. Search rankings need defending",
-          body: "SEO is not a finish line. Competitors publish new content. Google updates its algorithms. Local business listings need verification. Backlinks decay. A site that ranked well in January can be invisible by October if nothing is done.
-
-Maintenance includes checking what still ranks, what has dropped and why. It means updating technical SEO as standards evolve. It means making sure local search signals — Google Business Profile, directory listings, local citations — stay accurate and consistent.",
+          body: "SEO is not a finish line. Competitors publish new content. Google updates its algorithms. Local business listings need verification. Backlinks decay. A site that ranked well in January can be invisible by October if nothing is done.\n\nMaintenance includes checking what still ranks, what has dropped and why. It means updating technical SEO as standards evolve. It means making sure local search signals such as your Google Business Profile, directory listings and local citations stay accurate and consistent.",
         },
         {
           heading: "5. Broken links and forms cost real enquiries",
-          body: "A contact form that silently fails. A booking link that goes to a 404. An email address that no longer exists. These are invisible problems with visible consequences: lost enquiries, frustrated customers, missed revenue.
-
-Regular maintenance means testing forms, checking links and verifying that every path a visitor might take still works. It takes minutes to check and seconds to fix. The alternative is finding out from an angry customer.",
+          body: "A contact form that silently fails. A booking link that goes to a 404. An email address that no longer exists. These are invisible problems with visible consequences: lost enquiries, frustrated customers, missed revenue.\n\nRegular maintenance means testing forms, checking links and verifying that every path a visitor might take still works. It takes minutes to check and seconds to fix. The alternative is finding out from an angry customer.",
         },
         {
           heading: "What does good maintenance look like?",
-          body: "It does not need to be expensive or complicated. A solid maintenance routine includes:
-
-- Monthly software updates and security patches
-- Quarterly performance checks and content reviews
-- Regular backups stored off-site
-- Annual SEO audits and strategy adjustments
-- Immediate fixes for anything broken
-
-The key is consistency. Small, regular attention prevents the big problems that cost time, money and reputation.",
+          body: "It does not need to be expensive or complicated. A solid routine covers monthly software updates and security patches, quarterly performance checks and content reviews, and regular backups stored away from the server. Once a year the SEO deserves a proper audit and a strategy refresh. And anything broken gets fixed straight away, not next month.\n\nThe key is consistency. Small, regular attention prevents the big problems that cost time, money and reputation.",
         },
         {
           heading: "Summary",
@@ -658,47 +638,27 @@ The key is consistency. Small, regular attention prevents the big problems that 
         },
         {
           heading: "1. Aktualizacje bezpieczeństwa nie są opcjonalne",
-          body: "Każda strona działa na oprogramowaniu: serwer, framework, wtyczki, formularze kontaktowe. Deweloperzy regularnie znajdują luki bezpieczeństwa i wydają łatki. Jeśli tych łatek nie zastosujesz, Twoja strona staje się łatwym celem.
-
-Skompromitowana strona nie wpływa tylko na Ciebie. Może być wykorzystana do wysyłania spamu, hostowania stron phishingowych lub infekowania odwiedzających. Google oznaczy ją w wynikach wyszukiwania. Dostawca hostingu może ją zawiesić. Koszt naprawy znacznie przewyższa koszt rutynowego utrzymania.
-
-Utrzymanie oznacza stosowanie aktualizacji na bieżąco, monitorowanie nietypowej aktywności i przechowywanie kopii zapasowych, które faktycznie działają.",
+          body: "Każda strona działa na oprogramowaniu: serwer, framework, wtyczki, formularze kontaktowe. Deweloperzy regularnie znajdują luki bezpieczeństwa i wydają łatki. Jeśli tych łatek nie zastosujesz, Twoja strona staje się łatwym celem.\n\nSkompromitowana strona nie wpływa tylko na Ciebie. Może być wykorzystana do wysyłania spamu, hostowania stron phishingowych lub infekowania odwiedzających. Google oznaczy ją w wynikach wyszukiwania. Dostawca hostingu może ją zawiesić. Koszt naprawy znacznie przewyższa koszt rutynowego utrzymania.\n\nUtrzymanie oznacza stosowanie aktualizacji na bieżąco, monitorowanie nietypowej aktywności i przechowywanie kopii zapasowych, które faktycznie działają.",
         },
         {
           heading: "2. Wydajność degraduje się z czasem",
-          body: "Szybka strona przy starcie może stać się wolna w ciągu roku. Nowe obrazy są uploadowane bez kompresji. Skrypty zewnętrzne się mnożą. Narzędzia analityczne, widgety czatu i feedy społecznościowe dodają kolejne żądania. Baza danych rośnie. Cache wymaga odświeżenia.
-
-Google używa szybkości jako czynnika rankingowego. Odwiedzający używają szybkości jako sygnału zaufania. Strona, która ładowała się w dwie sekundy przy starcie a teraz ładuje się w sześć, traci zarówno widoczność w wyszukiwarce jak i konwersje. Regularne audyty wydajności łapią to zanim stanie się problemem.",
+          body: "Szybka strona przy starcie może stać się wolna w ciągu roku. Nowe obrazy są uploadowane bez kompresji. Skrypty zewnętrzne się mnożą. Narzędzia analityczne, widgety czatu i feedy społecznościowe dodają kolejne żądania. Baza danych rośnie. Cache wymaga odświeżenia.\n\nGoogle używa szybkości jako czynnika rankingowego. Odwiedzający używają szybkości jako sygnału zaufania. Strona, która ładowała się w dwie sekundy przy starcie a teraz ładuje się w sześć, traci zarówno widoczność w wyszukiwarce jak i konwersje. Regularne audyty wydajności łapią to zanim stanie się problemem.",
         },
         {
           heading: "3. Treść szybko się starzeje",
-          body: "Godziny otwarcia się zmieniają. Członkowie zespołu odchodzą. Usługi są aktualizowane. Numery telefonów się zmieniają. Jeśli Twoja strona nadal pokazuje cennik sprzed roku albo zdjęcie zespołu sprzed dwóch lat, cicho mówi odwiedzającym, że nie zwracasz uwagi.
-
-Wyszukiwarki też preferują świeżą treść. Artykuł z 2022 roku nie ma takiej wagi jak ten z tego miesiąca. Regularne małe aktualizacje — nowy artykuł, odświeżona strona usług, zaktualizowane referencje — utrzymują stronę żywą w oczach Google.",
+          body: "Godziny otwarcia się zmieniają. Członkowie zespołu odchodzą. Usługi są aktualizowane. Numery telefonów się zmieniają. Jeśli Twoja strona nadal pokazuje cennik sprzed roku albo zdjęcie zespołu sprzed dwóch lat, cicho mówi odwiedzającym, że nie zwracasz uwagi.\n\nWyszukiwarki też preferują świeżą treść. Artykuł z 2022 roku nie ma takiej wagi jak ten z tego miesiąca. Regularne małe aktualizacje, jak nowy artykuł, odświeżona strona usług czy zaktualizowane referencje, utrzymują stronę żywą w oczach Google.",
         },
         {
           heading: "4. Pozycje wyszukiwania trzeba bronić",
-          body: "SEO to nie meta. Konkurencja publikuje nową treść. Google aktualizuje algorytmy. Wizytówki firm lokalnych wymagają weryfikacji. Backlinki wygasają. Strona, która dobrze rankowała w styczniu, może być niewidoczna w październiku, jeśli nic się nie zrobi.
-
-Utrzymanie obejmuje sprawdzanie co nadal rankuje, co spadło i dlaczego. Oznacza aktualizowanie technicznego SEO w miarę ewolucji standardów. Oznacza upewnienie się, że sygnały lokalnego wyszukiwania — Google Business Profile, wypisy w katalogach, lokalne cytowania — pozostają dokładne i spójne.",
+          body: "SEO to nie meta. Konkurencja publikuje nową treść. Google aktualizuje algorytmy. Wizytówki firm lokalnych wymagają weryfikacji. Backlinki wygasają. Strona, która dobrze rankowała w styczniu, może być niewidoczna w październiku, jeśli nic się nie zrobi.\n\nUtrzymanie obejmuje sprawdzanie co nadal rankuje, co spadło i dlaczego. Oznacza aktualizowanie technicznego SEO w miarę ewolucji standardów. Oznacza upewnienie się, że sygnały lokalnego wyszukiwania, takie jak Google Business Profile, wypisy w katalogach i lokalne cytowania, pozostają dokładne i spójne.",
         },
         {
           heading: "5. Zepsute linki i formularze kosztują realne zapytania",
-          body: "Formularz kontaktowy, który cicho przestaje działać. Link do rezerwacji prowadzący do 404. Adres email, który już nie istnieje. To niewidoczne problemy z widocznymi konsekwencjami: utracone zapytania, sfrustrowani klienci, stracony przychód.
-
-Regularne utrzymanie oznacza testowanie formularzy, sprawdzanie linków i weryfikowanie, że każda ścieżka, którą może pójść odwiedzający, nadal działa. To zajmuje minuty na sprawdzenie i sekundy na naprawę. Alternatywą jest dowiedzenie się o tym od złego klienta.",
+          body: "Formularz kontaktowy, który cicho przestaje działać. Link do rezerwacji prowadzący do 404. Adres email, który już nie istnieje. To niewidoczne problemy z widocznymi konsekwencjami: utracone zapytania, sfrustrowani klienci, stracony przychód.\n\nRegularne utrzymanie oznacza testowanie formularzy, sprawdzanie linków i weryfikowanie, że każda ścieżka, którą może pójść odwiedzający, nadal działa. To zajmuje minuty na sprawdzenie i sekundy na naprawę. Alternatywą jest dowiedzenie się o tym od złego klienta.",
         },
         {
           heading: "Jak wygląda dobre utrzymanie?",
-          body: "Nie musi być drogie ani skomplikowane. Solidna rutyna utrzymania obejmuje:
-
-- Miesięczne aktualizacje oprogramowania i łatki bezpieczeństwa
-- Kwartalne audyty wydajności i przeglądy treści
-- Regularne kopie zapasowe przechowywane poza serwerem
-- Roczne audyty SEO i dostosowanie strategii
-- Natychmiastowe naprawy wszystkiego, co jest zepsute
-
-Kluczem jest konsekwencja. Mała, regularna uwaga zapobiega dużym problemom, które kosztują czas, pieniądze i reputację.",
+          body: "Nie musi być drogie ani skomplikowane. Solidna rutyna to comiesięczne aktualizacje oprogramowania i łatki bezpieczeństwa, kwartalne sprawdzenie wydajności i przegląd treści oraz regularne kopie zapasowe trzymane poza serwerem. Raz w roku warto zrobić porządny audyt SEO i odświeżyć strategię. A wszystko, co się zepsuje, naprawia się od razu, nie za miesiąc.\n\nKluczem jest konsekwencja. Mała, regularna uwaga zapobiega dużym problemom, które kosztują czas, pieniądze i reputację.",
         },
         {
           heading: "Podsumowanie",
