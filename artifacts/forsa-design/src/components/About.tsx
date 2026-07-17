@@ -115,7 +115,7 @@ export default function About() {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <h2 className="font-serif text-4xl md:text-5xl font-bold text-white mb-6">
+            <h2 className="font-serif text-4xl md:text-5xl font-bold text-white leading-tight mb-6">
               {t("about.heading")}
             </h2>
             <div className="w-16 h-1 bg-primary mb-8" />

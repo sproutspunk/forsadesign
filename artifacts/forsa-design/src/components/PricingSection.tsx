@@ -105,7 +105,7 @@ export default function PricingSection() {
           transition={{ duration: 0.6 }}
           className="mb-16 md:text-center"
         >
-          <h2 className="font-serif text-4xl md:text-5xl font-bold text-white mb-4">
+          <h2 className="font-serif text-4xl md:text-5xl font-bold text-white leading-tight mb-4">
             {t("pricing.heading")}
           </h2>
           <p className="text-lg text-foreground/70 max-w-2xl md:mx-auto">

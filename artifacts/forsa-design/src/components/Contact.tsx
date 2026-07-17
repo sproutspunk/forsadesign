@@ -92,7 +92,7 @@ export default function Contact() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="font-serif text-4xl md:text-5xl font-bold text-white mb-4">
+          <h2 className="font-serif text-4xl md:text-5xl font-bold text-white leading-tight mb-4">
             {t("contact.heading")}
           </h2>
           <p className="text-foreground/70 font-light mb-6">{t("contact.subheading")}</p>
