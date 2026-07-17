@@ -121,4 +121,20 @@ export const articlesMeta: ArticleMeta[] = [
         "Wi\u0119kszo\u015b\u0107 stron wygl\u0105da dobrze, ale nie konwertuje. Problem rzadko le\u017cy w designie. To zazwyczaj kwestia jasno\u015bci, zaufania i tarcia. Oto co dzia\u0142a w praktyce.",
     },
   },
+  {
+    slugEn: "website-maintenance-matters",
+    slugPl: "dlaczego-utrzymanie-strony-ma-znaczenie",
+    dateIso: "2026-07-10",
+    readingTimeMin: 5,
+    en: {
+      title: "Why Website Maintenance Matters More Than the Build Itself",
+      excerpt:
+        "A website is not a one-time project. It is a business asset that needs ongoing care. Security, performance, content and search rankings all degrade without regular attention. Here is what maintenance actually involves.",
+    },
+    pl: {
+      title: "Dlaczego Utrzymanie Strony Jest Wa\u017cniejsze Ni\u017c Samo Zbudowanie",
+      excerpt:
+        "Strona internetowa to nie projekt jednorazowy. To aktyw biznesowy wymagaj\u0105cy sta\u0142ej opieki. Bezpiecze\u0144stwo, wydajno\u015b\u0107, tre\u015b\u0107 i pozycje w wyszukiwarce wszystko to ulega degradacji bez regularnej uwagi. Oto czego wymaga utrzymanie.",
+    },
+  },
 ];
