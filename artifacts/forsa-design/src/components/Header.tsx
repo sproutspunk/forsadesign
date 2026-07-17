@@ -56,7 +56,7 @@ export default function Header() {
           data-testid="link-logo"
           className="flex items-center shrink-0"
         >
-          <img src="/logo-new-sm.png" alt="Forsa Design" className="h-11 w-auto object-contain" />
+          <img src="/logo-new-sm.png" alt="Forsa Design" loading="eager" decoding="async" className="h-11 w-auto object-contain" />
         </a>
 
         {/* Desktop Nav */}
