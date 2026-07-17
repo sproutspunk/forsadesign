@@ -38,7 +38,9 @@ export default function Process() {
                 </div>
 
                 <div className="flex-1">
-                  <h3 className="font-serif text-xl font-bold text-white leading-tight mb-3">{step.title}</h3>
+                  <h3 className="font-serif text-xl font-bold text-white leading-tight mb-3">
+                    {step.title}
+                  </h3>
                   <p className="text-foreground/70 font-light leading-relaxed">{step.desc}</p>
                 </div>
               </motion.div>
