@@ -22,6 +22,7 @@
 import { readFileSync, writeFileSync, mkdirSync } from "fs";
 import { join, dirname } from "path";
 import { fileURLToPath } from "url";
+import { articlesMeta } from "./src/data/articlesMeta.ts";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const distDir = join(__dirname, "dist/public");
@@ -1154,6 +1155,52 @@ ${buildSectionsHtml(termsPL)}
 </main>`;
 }
 
+function buildBlogBodyEn() {
+  const sorted = [...articlesMeta].sort((a, b) => b.dateIso.localeCompare(a.dateIso));
+  const articlesHtml = sorted
+    .map((article) => {
+      const a = article.en;
+      const date = new Date(article.dateIso).toLocaleDateString("en-GB", {
+        day: "numeric",
+        month: "long",
+        year: "numeric",
+      });
+      return `<article><a href="/en/blog/${ht(article.slugEn)}"><h2>${ht(a.title)}</h2><p>${ht(a.excerpt)}</p><p>${ht(date)} &middot; ${ht(String(article.readingTimeMin))} min read</p></a></article>`;
+    })
+    .join("\n");
+  return `<header>
+<nav><a href="/en/">&#8592; Home</a> <span>|</span> <span>Forsa Design</span></nav>
+</header>
+<main>
+<h1>Blog</h1>
+<p>Expert insights on web design, SEO, and digital strategy.</p>
+${articlesHtml}
+</main>`;
+}
+
+function buildBlogBodyPl() {
+  const sorted = [...articlesMeta].sort((a, b) => b.dateIso.localeCompare(a.dateIso));
+  const articlesHtml = sorted
+    .map((article) => {
+      const a = article.pl;
+      const date = new Date(article.dateIso).toLocaleDateString("pl-PL", {
+        day: "numeric",
+        month: "long",
+        year: "numeric",
+      });
+      return `<article><a href="/pl/blog/${ht(article.slugPl)}"><h2>${ht(a.title)}</h2><p>${ht(a.excerpt)}</p><p>${ht(date)} &middot; ${ht(String(article.readingTimeMin))} min czytania</p></a></article>`;
+    })
+    .join("\n");
+  return `<header>
+<nav><a href="/pl/">&#8592; Strona G\u0142\u00f3wna</a> <span>|</span> <span>Forsa Design</span></nav>
+</header>
+<main>
+<h1>Blog</h1>
+<p>Wiedza ekspercka o web designie, SEO i strategii cyfrowej.</p>
+${articlesHtml}
+</main>`;
+}
+
 function buildPrivacyBodyEn() {
   return `<header>
 <nav><a href="/en/">&#8592; Home</a> <span>|</span> <span>Forsa Design</span></nav>
@@ -1269,6 +1316,34 @@ const routes = [
       { lang: "pl", href: `${SITE}/pl/privacy` },
     ],
     bodyHtml: buildPrivacyBodyPl(),
+  },
+  {
+    outDir: "en/blog",
+    lang: "en",
+    title: "Blog | Forsa Design",
+    desc: "Expert insights on web design, SEO, e-commerce, and digital strategy from the Forsa Design team.",
+    ogTitle: "Blog | Forsa Design",
+    locale: "en_US",
+    canonical: `${SITE}/en/blog`,
+    alternates: [
+      { lang: "en", href: `${SITE}/en/blog` },
+      { lang: "pl", href: `${SITE}/pl/blog` },
+    ],
+    bodyHtml: buildBlogBodyEn(),
+  },
+  {
+    outDir: "pl/blog",
+    lang: "pl",
+    title: "Blog | Forsa Design",
+    desc: "Wiedza ekspercka o web designie, SEO, e-commerce i strategii cyfrowej od zespo\u0142u Forsa Design.",
+    ogTitle: "Blog | Forsa Design",
+    locale: "pl_PL",
+    canonical: `${SITE}/pl/blog`,
+    alternates: [
+      { lang: "en", href: `${SITE}/en/blog` },
+      { lang: "pl", href: `${SITE}/pl/blog` },
+    ],
+    bodyHtml: buildBlogBodyPl(),
   },
   // Legacy duplicate routes — canonical points to the preferred /en/ versions.
   // Non-JS crawlers that land on /terms or /privacy receive the correct canonical

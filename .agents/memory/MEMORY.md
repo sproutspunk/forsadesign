@@ -8,3 +8,5 @@
 - [Bilingual pricing helpers](bilingual-pricing.md) — PricingSection uses dual-argument `bi(en, pl)` instead of single `t(key)` because prices/presets are static arrays without translation keys.
 - [VAT disabled in quotes](vat-disabled.md) — `VAT_RATE=0` in quoteConfig.ts; all prices shown as final gross; PdfData uses `subtotal` (not subtotalExVat/vat); keep interface synced with caller.
 - [deploymentTarget static vs autoscale](deployment-target-static-pitfall.md) — `deploymentTarget = "static"` in `.replit` breaks multi-artifact setups; never change it without verifying artifact topology.
+- [Stale prerendered files on Cloudflare Pages](stale-prerender-files.md) — Cloudflare Pages preserves stale `index.html` files across deploys; if a route stops being prerendered, the old static file persists and overrides SPA fallback. Always prerender all routes, or use wrangler to purge.
+- [Node 24 strip-types for .ts imports](node-24-strip-types.md) — Node 24 natively supports `import('./file.ts')` without flag in ESM modules; `node --experimental-strip-types` works in CI for running `.mjs` scripts that import `.ts` data files.
