@@ -95,8 +95,23 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="pt-8 border-t border-border/20 text-center md:text-left text-sm text-foreground/40 font-light">
-          <p className="mb-2">{t("footer.copyright")}</p>
+        <div className="pt-8 border-t border-border/20 text-sm text-foreground/40 font-light">
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-4">
+            <p className="text-center md:text-left">{t("footer.copyright")}</p>
+            <a
+              href="https://www.cloudflare.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex justify-center md:justify-end shrink-0"
+              aria-label="Protected by Cloudflare"
+            >
+              <img
+                src="/cloudflare-badge.png"
+                alt="Protected by Cloudflare"
+                className="h-8 w-auto opacity-80 hover:opacity-100 transition-opacity"
+              />
+            </a>
+          </div>
           <a
             href={`/${language}/terms`}
             className="hover:text-primary transition-colors mr-4"
