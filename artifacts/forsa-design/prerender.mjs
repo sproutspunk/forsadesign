@@ -114,7 +114,7 @@ function patch(html, meta) {
   if (!out.includes('href="/logo-new-lg.webp"')) {
     out = out.replace(
       /(<link rel="preconnect" href="https:\/\/fonts\.googleapis\.com" \/>)/,
-      `$1\n    <link rel="preload" as="image" href="/logo-new-lg.webp" type="image/webp" />`
+      `$1\n    <link rel="preload" as="image" href="/logo-new-lg.webp" type="image/webp" />`,
     );
   }
 
