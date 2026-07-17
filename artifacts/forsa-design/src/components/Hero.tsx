@@ -50,6 +50,9 @@ export default function Hero() {
                 width={640}
                 height={640}
                 className="w-56 md:w-72 lg:w-80 h-auto object-contain block"
+                fetchPriority="high"
+                loading="eager"
+                decoding="async"
               />
             </picture>
           </motion.div>

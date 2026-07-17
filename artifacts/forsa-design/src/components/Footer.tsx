@@ -108,6 +108,8 @@ export default function Footer() {
                 <img
                   src="/github-badge.png"
                   alt="Built with GitHub"
+                  loading="lazy"
+                  decoding="async"
                   className="h-8 w-auto opacity-70 hover:opacity-100 transition-opacity"
                 />
               </a>
@@ -120,6 +122,8 @@ export default function Footer() {
                 <img
                   src="/cloudflare-badge.png"
                   alt="Protected by Cloudflare"
+                  loading="lazy"
+                  decoding="async"
                   className="h-8 w-auto opacity-80 hover:opacity-100 transition-opacity"
                 />
               </a>
@@ -132,6 +136,8 @@ export default function Footer() {
                 <img
                   src="/analytics-badge.png"
                   alt="Measured with Google Analytics"
+                  loading="lazy"
+                  decoding="async"
                   className="h-6 w-auto opacity-70 hover:opacity-100 transition-opacity"
                 />
               </a>
