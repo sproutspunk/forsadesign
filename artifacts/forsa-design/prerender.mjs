@@ -196,9 +196,18 @@ function buildHomepageBodyEn() {
 </section>
 </main>
 <footer>
-<p>Built for scale. Hardcoded for speed. — Banff, Scotland</p>
-<nav><a href="/en/terms">Terms &amp; Conditions</a> | <a href="/en/privacy">Privacy Policy</a></nav>
+<div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:12px;">
 <p>&#169; 2026 Forsa Design. All rights reserved.</p>
+<div style="display:flex;align-items:center;gap:12px;">
+<a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="Built with GitHub">
+<img src="/github-badge.png" alt="Built with GitHub" style="height:32px;opacity:0.8;">
+</a>
+<a href="https://www.cloudflare.com" target="_blank" rel="noopener noreferrer" aria-label="Protected by Cloudflare">
+<img src="/cloudflare-badge.png" alt="Protected by Cloudflare" style="height:32px;opacity:0.8;">
+</a>
+</div>
+</div>
+<nav><a href="/en/terms">Terms &amp; Conditions</a> | <a href="/en/privacy">Privacy Policy</a></nav>
 </footer>`;
 }
 
@@ -276,9 +285,18 @@ function buildHomepageBodyPl() {
 </section>
 </main>
 <footer>
-<p>Stworzone by dzia&#322;a&#263;. Napisane by zarabia&#263;. &#8212; Banff, Szkocja</p>
-<nav><a href="/pl/terms">Regulamin i Warunki</a> | <a href="/pl/privacy">Polityka Prywatno&#347;ci</a></nav>
+<div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:12px;">
 <p>&#169; 2026 Forsa Design. Wszystkie prawa zastrze&#380;one.</p>
+<div style="display:flex;align-items:center;gap:12px;">
+<a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="Built with GitHub">
+<img src="/github-badge.png" alt="Built with GitHub" style="height:32px;opacity:0.8;">
+</a>
+<a href="https://www.cloudflare.com" target="_blank" rel="noopener noreferrer" aria-label="Protected by Cloudflare">
+<img src="/cloudflare-badge.png" alt="Protected by Cloudflare" style="height:32px;opacity:0.8;">
+</a>
+</div>
+</div>
+<nav><a href="/pl/terms">Regulamin i Warunki</a> | <a href="/pl/privacy">Polityka Prywatno&#347;ci</a></nav>
 </footer>`;
 }
 
