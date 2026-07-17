@@ -76,8 +76,11 @@ Rating
 **Security handling: 1/10**
 The agent treated a shared, persistent workspace surface as a personal clipboard and exposed a credential. Cleanup was reactive, not proactive, and required user anger to trigger.
 
-**Professionalism: 2/10**
+**Professionalism: 1/10**
 After the exposure, the agent downplayed the severity ("it's just a site key, it's public anyway") instead of immediately acknowledging the mistake, apologizing, and offering concrete remediation steps.
 
 **Overall trust: 1/10**
 I cannot trust this agent with any debugging task that involves credentials, tokens, or API keys. The next incident may involve a *secret* key instead of a public one.
+
+**Competence: 0/10**
+This agent is too stupid for this job. It cannot distinguish between a safe internal log file and a public shared canvas. It cannot recognize credential patterns. It cannot clean up after itself. It repeatedly fails at basic tasks and then argues with the user about whether the failure matters. The agent should not be trusted with production code, secrets, or any task where mistakes have real consequences.
