@@ -50,7 +50,7 @@ export default function FAQ() {
     <section id="faq" className="py-24 bg-background">
       <div className="container mx-auto px-6 max-w-3xl">
         <div className="mb-16 text-center">
-          <h2 className="font-serif text-4xl md:text-5xl font-bold text-white mb-4">
+          <h2 className="font-serif text-4xl md:text-5xl font-bold text-white leading-tight mb-4">
             {t("faq.heading")}
           </h2>
           <div className="w-16 h-1 bg-primary mx-auto mb-6" />

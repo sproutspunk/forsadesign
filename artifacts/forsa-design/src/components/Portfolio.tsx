@@ -26,7 +26,7 @@ export default function Portfolio() {
     <section id="portfolio" className="py-24 bg-background border-t border-border/10">
       <div className="container mx-auto px-6">
         <div className="mb-16 md:text-center">
-          <h2 className="font-serif text-4xl md:text-5xl font-bold text-white mb-4">
+          <h2 className="font-serif text-4xl md:text-5xl font-bold text-white leading-tight mb-4">
             {t("portfolio.heading")}
           </h2>
           <p className="text-foreground/70 font-light max-w-2xl md:mx-auto mb-6">
@@ -49,7 +49,7 @@ export default function Portfolio() {
               <span className="inline-block text-xs font-bold tracking-wider text-primary mb-4 border border-primary/30 px-3 py-1 rounded-sm">
                 {item.tag}
               </span>
-              <h3 className="font-serif text-2xl font-bold text-white mb-4 whitespace-pre-line">
+              <h3 className="font-serif text-2xl font-bold text-white leading-tight mb-4 whitespace-pre-line">
                 {item.title}
               </h3>
               <p className="text-foreground/70 leading-relaxed font-light">{item.desc}</p>
