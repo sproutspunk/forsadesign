@@ -6,3 +6,9 @@ id = "jActUW2x2ialQB7-ykIIM"
 uri = "file://incident-report-2026-07-02.md"
 type = "text"
 title = "Raport incydentu — Forsa Design (2 lipca 2026)"
+
+[[outputs]]
+id = "LQrxF1DeROeeJjJakzux6"
+uri = "file://attached_assets/review-incident.md"
+type = "text"
+title = "Review: Replit Agent Security Incident"
