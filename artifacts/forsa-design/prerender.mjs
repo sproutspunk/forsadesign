@@ -205,6 +205,9 @@ function buildHomepageBodyEn() {
 <a href="https://www.cloudflare.com" target="_blank" rel="noopener noreferrer" aria-label="Protected by Cloudflare">
 <img src="/cloudflare-badge.png" alt="Protected by Cloudflare" style="height:32px;opacity:0.8;">
 </a>
+<a href="https://marketingplatform.google.com/about/analytics/" target="_blank" rel="noopener noreferrer" aria-label="Measured with Google Analytics">
+<img src="/analytics-badge.png" alt="Measured with Google Analytics" style="height:24px;opacity:0.8;">
+</a>
 </div>
 </div>
 <nav><a href="/en/terms">Terms &amp; Conditions</a> | <a href="/en/privacy">Privacy Policy</a></nav>
@@ -293,6 +296,9 @@ function buildHomepageBodyPl() {
 </a>
 <a href="https://www.cloudflare.com" target="_blank" rel="noopener noreferrer" aria-label="Protected by Cloudflare">
 <img src="/cloudflare-badge.png" alt="Protected by Cloudflare" style="height:32px;opacity:0.8;">
+</a>
+<a href="https://marketingplatform.google.com/about/analytics/" target="_blank" rel="noopener noreferrer" aria-label="Measured with Google Analytics">
+<img src="/analytics-badge.png" alt="Measured with Google Analytics" style="height:24px;opacity:0.8;">
 </a>
 </div>
 </div>
