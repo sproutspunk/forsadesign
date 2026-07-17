@@ -620,7 +620,7 @@ export const articles: Article[] = [
         },
         {
           heading: "What does good maintenance look like?",
-          body: "It does not need to be expensive or complicated. A solid maintenance routine includes:\n\n- Monthly software updates and security patches\n- Quarterly performance checks and content reviews\n- Regular backups stored off-site\n- Annual SEO audits and strategy adjustments\n- Immediate fixes for anything broken\n\nThe key is consistency. Small, regular attention prevents the big problems that cost time, money and reputation.",
+          body: "It does not need to be expensive or complicated. A solid routine covers monthly software updates and security patches, quarterly performance checks and content reviews, and regular backups stored away from the server. Once a year the SEO deserves a proper audit and a strategy refresh. And anything broken gets fixed straight away, not next month.\n\nThe key is consistency. Small, regular attention prevents the big problems that cost time, money and reputation.",
         },
         {
           heading: "Summary",
@@ -658,7 +658,7 @@ export const articles: Article[] = [
         },
         {
           heading: "Jak wygląda dobre utrzymanie?",
-          body: "Nie musi być drogie ani skomplikowane. Solidna rutyna utrzymania obejmuje:\n\n- Miesięczne aktualizacje oprogramowania i łatki bezpieczeństwa\n- Kwartalne audyty wydajności i przeglądy treści\n- Regularne kopie zapasowe przechowywane poza serwerem\n- Roczne audyty SEO i dostosowanie strategii\n- Natychmiastowe naprawy wszystkiego, co jest zepsute\n\nKluczem jest konsekwencja. Mała, regularna uwaga zapobiega dużym problemom, które kosztują czas, pieniądze i reputację.",
+          body: "Nie musi być drogie ani skomplikowane. Solidna rutyna to comiesięczne aktualizacje oprogramowania i łatki bezpieczeństwa, kwartalne sprawdzenie wydajności i przegląd treści oraz regularne kopie zapasowe trzymane poza serwerem. Raz w roku warto zrobić porządny audyt SEO i odświeżyć strategię. A wszystko, co się zepsuje, naprawia się od razu, nie za miesiąc.\n\nKluczem jest konsekwencja. Mała, regularna uwaga zapobiega dużym problemom, które kosztują czas, pieniądze i reputację.",
         },
         {
           heading: "Podsumowanie",
