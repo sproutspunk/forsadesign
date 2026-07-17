@@ -123,6 +123,18 @@ export default function Footer() {
                   className="h-8 w-auto opacity-80 hover:opacity-100 transition-opacity"
                 />
               </a>
+              <a
+                href="https://marketingplatform.google.com/about/analytics/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Measured with Google Analytics"
+              >
+                <img
+                  src="/analytics-badge.png"
+                  alt="Measured with Google Analytics"
+                  className="h-6 w-auto opacity-70 hover:opacity-100 transition-opacity"
+                />
+              </a>
             </div>
           </div>
           <a
