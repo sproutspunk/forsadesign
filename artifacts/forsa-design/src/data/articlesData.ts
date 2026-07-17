@@ -608,11 +608,11 @@ export const articles: Article[] = [
         },
         {
           heading: "3. Content goes stale quickly",
-          body: "Opening hours change. Team members leave. Services get updated. Phone numbers change. If your site still shows last year's pricing or a team photo from two years ago, it quietly tells visitors you are not paying attention.\n\nSearch engines also prefer fresh content. A blog post from 2022 does not carry the same weight as one from this month. Regular small updates — a new article, a refreshed service page, updated testimonials — keep the site alive in Google's eyes.",
+          body: "Opening hours change. Team members leave. Services get updated. Phone numbers change. If your site still shows last year's pricing or a team photo from two years ago, it quietly tells visitors you are not paying attention.\n\nSearch engines also prefer fresh content. A blog post from 2022 does not carry the same weight as one from this month. Regular small updates, like a new article, a refreshed service page or updated testimonials, keep the site alive in Google's eyes.",
         },
         {
           heading: "4. Search rankings need defending",
-          body: "SEO is not a finish line. Competitors publish new content. Google updates its algorithms. Local business listings need verification. Backlinks decay. A site that ranked well in January can be invisible by October if nothing is done.\n\nMaintenance includes checking what still ranks, what has dropped and why. It means updating technical SEO as standards evolve. It means making sure local search signals — Google Business Profile, directory listings, local citations — stay accurate and consistent.",
+          body: "SEO is not a finish line. Competitors publish new content. Google updates its algorithms. Local business listings need verification. Backlinks decay. A site that ranked well in January can be invisible by October if nothing is done.\n\nMaintenance includes checking what still ranks, what has dropped and why. It means updating technical SEO as standards evolve. It means making sure local search signals such as your Google Business Profile, directory listings and local citations stay accurate and consistent.",
         },
         {
           heading: "5. Broken links and forms cost real enquiries",
@@ -646,11 +646,11 @@ export const articles: Article[] = [
         },
         {
           heading: "3. Treść szybko się starzeje",
-          body: "Godziny otwarcia się zmieniają. Członkowie zespołu odchodzą. Usługi są aktualizowane. Numery telefonów się zmieniają. Jeśli Twoja strona nadal pokazuje cennik sprzed roku albo zdjęcie zespołu sprzed dwóch lat, cicho mówi odwiedzającym, że nie zwracasz uwagi.\n\nWyszukiwarki też preferują świeżą treść. Artykuł z 2022 roku nie ma takiej wagi jak ten z tego miesiąca. Regularne małe aktualizacje — nowy artykuł, odświeżona strona usług, zaktualizowane referencje — utrzymują stronę żywą w oczach Google.",
+          body: "Godziny otwarcia się zmieniają. Członkowie zespołu odchodzą. Usługi są aktualizowane. Numery telefonów się zmieniają. Jeśli Twoja strona nadal pokazuje cennik sprzed roku albo zdjęcie zespołu sprzed dwóch lat, cicho mówi odwiedzającym, że nie zwracasz uwagi.\n\nWyszukiwarki też preferują świeżą treść. Artykuł z 2022 roku nie ma takiej wagi jak ten z tego miesiąca. Regularne małe aktualizacje, jak nowy artykuł, odświeżona strona usług czy zaktualizowane referencje, utrzymują stronę żywą w oczach Google.",
         },
         {
           heading: "4. Pozycje wyszukiwania trzeba bronić",
-          body: "SEO to nie meta. Konkurencja publikuje nową treść. Google aktualizuje algorytmy. Wizytówki firm lokalnych wymagają weryfikacji. Backlinki wygasają. Strona, która dobrze rankowała w styczniu, może być niewidoczna w październiku, jeśli nic się nie zrobi.\n\nUtrzymanie obejmuje sprawdzanie co nadal rankuje, co spadło i dlaczego. Oznacza aktualizowanie technicznego SEO w miarę ewolucji standardów. Oznacza upewnienie się, że sygnały lokalnego wyszukiwania — Google Business Profile, wypisy w katalogach, lokalne cytowania — pozostają dokładne i spójne.",
+          body: "SEO to nie meta. Konkurencja publikuje nową treść. Google aktualizuje algorytmy. Wizytówki firm lokalnych wymagają weryfikacji. Backlinki wygasają. Strona, która dobrze rankowała w styczniu, może być niewidoczna w październiku, jeśli nic się nie zrobi.\n\nUtrzymanie obejmuje sprawdzanie co nadal rankuje, co spadło i dlaczego. Oznacza aktualizowanie technicznego SEO w miarę ewolucji standardów. Oznacza upewnienie się, że sygnały lokalnego wyszukiwania, takie jak Google Business Profile, wypisy w katalogach i lokalne cytowania, pozostają dokładne i spójne.",
         },
         {
           heading: "5. Zepsute linki i formularze kosztują realne zapytania",
