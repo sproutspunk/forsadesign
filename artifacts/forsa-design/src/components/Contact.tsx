@@ -125,46 +125,73 @@ export default function Contact() {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
-                <label className="block text-sm font-medium text-white mb-2">
+                <label htmlFor="contact-name" className="block text-sm font-medium text-white mb-2">
                   {t("contact.name.label")}
                 </label>
                 <input
+                  id="contact-name"
                   type="text"
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
                   placeholder={t("contact.name.placeholder")}
+                  aria-describedby={errors.name ? "contact-name-error" : undefined}
+                  aria-invalid={!!errors.name}
                   className={`w-full bg-background border ${errors.name ? "border-destructive" : "border-border"} rounded-sm px-4 py-3 text-white focus:outline-none focus:border-primary transition-colors`}
                   data-testid="input-name"
                 />
-                {errors.name && <p className="mt-1 text-sm text-destructive">{errors.name}</p>}
+                {errors.name && (
+                  <p id="contact-name-error" className="mt-1 text-sm text-destructive" role="alert">
+                    {errors.name}
+                  </p>
+                )}
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-white mb-2">
+                <label
+                  htmlFor="contact-email"
+                  className="block text-sm font-medium text-white mb-2"
+                >
                   {t("contact.email.label")}
                 </label>
                 <input
+                  id="contact-email"
                   type="email"
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
                   placeholder={t("contact.email.placeholder")}
+                  aria-describedby={errors.email ? "contact-email-error" : undefined}
+                  aria-invalid={!!errors.email}
                   className={`w-full bg-background border ${errors.email ? "border-destructive" : "border-border"} rounded-sm px-4 py-3 text-white focus:outline-none focus:border-primary transition-colors`}
                   data-testid="input-email"
                 />
-                {errors.email && <p className="mt-1 text-sm text-destructive">{errors.email}</p>}
+                {errors.email && (
+                  <p
+                    id="contact-email-error"
+                    className="mt-1 text-sm text-destructive"
+                    role="alert"
+                  >
+                    {errors.email}
+                  </p>
+                )}
               </div>
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-white mb-2">
+              <label
+                htmlFor="contact-project-type"
+                className="block text-sm font-medium text-white mb-2"
+              >
                 {t("contact.projectType.label")}
               </label>
               <select
+                id="contact-project-type"
                 name="projectType"
                 value={formData.projectType}
                 onChange={handleChange}
+                aria-describedby={errors.projectType ? "contact-project-type-error" : undefined}
+                aria-invalid={!!errors.projectType}
                 className={`w-full bg-background border ${errors.projectType ? "border-destructive" : "border-border"} rounded-sm px-4 py-3 text-white focus:outline-none focus:border-primary transition-colors appearance-none`}
                 data-testid="select-project-type"
               >
@@ -178,24 +205,44 @@ export default function Contact() {
                 ))}
               </select>
               {errors.projectType && (
-                <p className="mt-1 text-sm text-destructive">{errors.projectType}</p>
+                <p
+                  id="contact-project-type-error"
+                  className="mt-1 text-sm text-destructive"
+                  role="alert"
+                >
+                  {errors.projectType}
+                </p>
               )}
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-white mb-2">
+              <label
+                htmlFor="contact-details"
+                className="block text-sm font-medium text-white mb-2"
+              >
                 {t("contact.details.label")}
               </label>
               <textarea
+                id="contact-details"
                 name="details"
                 value={formData.details}
                 onChange={handleChange}
                 placeholder={t("contact.details.placeholder")}
                 rows={5}
+                aria-describedby={errors.details ? "contact-details-error" : undefined}
+                aria-invalid={!!errors.details}
                 className={`w-full bg-background border ${errors.details ? "border-destructive" : "border-border"} rounded-sm px-4 py-3 text-white focus:outline-none focus:border-primary transition-colors resize-none`}
                 data-testid="textarea-details"
               />
-              {errors.details && <p className="mt-1 text-sm text-destructive">{errors.details}</p>}
+              {errors.details && (
+                <p
+                  id="contact-details-error"
+                  className="mt-1 text-sm text-destructive"
+                  role="alert"
+                >
+                  {errors.details}
+                </p>
+              )}
             </div>
 
             {status === "success" && (

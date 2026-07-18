@@ -108,7 +108,9 @@ export default function Header() {
           >
             EN
           </a>
-          <span className="text-foreground/30">|</span>
+          <span className="text-foreground/30" aria-hidden="true">
+            |
+          </span>
           <a
             href="/pl/"
             onClick={(e) => {
@@ -127,9 +129,16 @@ export default function Header() {
         <button
           className="md:hidden text-foreground"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          aria-expanded={isMobileMenuOpen}
+          aria-controls="mobile-nav"
+          aria-label={isMobileMenuOpen ? "Zamknij menu" : "Otwórz menu"}
           data-testid="btn-mobile-menu"
         >
-          {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          {isMobileMenuOpen ? (
+            <X size={24} aria-hidden="true" />
+          ) : (
+            <Menu size={24} aria-hidden="true" />
+          )}
         </button>
       </div>
 
@@ -137,6 +146,7 @@ export default function Header() {
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
+            id="mobile-nav"
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
