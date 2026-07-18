@@ -2,13 +2,15 @@ import { describe, it, expect, beforeEach, afterEach, vi } from "vitest";
 import request from "supertest";
 import type { Express } from "express";
 
-// The contact route sends email through Proton Mail SMTP. We mock the
-// sendViaProton helper so tests never make real network calls or send real
-// email; the mock lets us assert whether an email *would* have been sent.
-const sendViaProtonMock = vi.hoisted(() => vi.fn());
+// The contact route sends email through the Replit Gmail connector. We mock the
+// SDK so tests never make real network calls or send real email; the mock lets
+// us assert whether an email *would* have been sent for each scenario.
+const proxyMock = vi.hoisted(() => vi.fn());
 
-vi.mock("../lib/smtp", () => ({
-  sendViaProton: sendViaProtonMock,
+vi.mock("@replit/connectors-sdk", () => ({
+  ReplitConnectors: class {
+    proxy = proxyMock;
+  },
 }));
 
 // Cloudflare's documented Turnstile test secret keys: `1x...AA` always passes
@@ -31,6 +33,15 @@ function validBody(overrides: Record<string, unknown> = {}) {
   };
 }
 
+function gmailOk() {
+  return {
+    ok: true,
+    status: 200,
+    json: async () => ({ id: "msg-1" }),
+    text: async () => "",
+  };
+}
+
 // Re-import the app fresh for every test. The per-IP rate limiter holds state in
 // a module-level in-memory store, so a fresh import gives each test an isolated
 // counter and prevents cross-test pollution.
@@ -41,8 +52,8 @@ async function loadApp(): Promise<Express> {
 }
 
 beforeEach(() => {
-  sendViaProtonMock.mockReset();
-  sendViaProtonMock.mockResolvedValue(undefined);
+  proxyMock.mockReset();
+  proxyMock.mockResolvedValue(gmailOk());
 
   vi.stubGlobal(
     "fetch",
@@ -64,77 +75,50 @@ beforeEach(() => {
 afterEach(() => {
   vi.unstubAllGlobals();
   delete process.env.TURNSTILE_SECRET_KEY;
-  delete process.env.PROTON_SMTP_USER;
-  delete process.env.PROTON_SMTP_PASS;
 });
 
 describe("POST /api/contact bot protection", () => {
   it("accepts a genuine submission and sends email when verification passes", async () => {
     process.env.TURNSTILE_SECRET_KEY = PASS_SECRET;
-    process.env.PROTON_SMTP_USER = "hello@forsadesign.co.uk";
-    process.env.PROTON_SMTP_PASS = "test-token";
     const app = await loadApp();
 
     const res = await request(app).post("/api/contact").send(validBody());
 
     expect(res.status).toBe(200);
     expect(res.body).toEqual({ ok: true });
-    expect(sendViaProtonMock).toHaveBeenCalled();
+    expect(proxyMock).toHaveBeenCalled();
   });
 
-  it("rejects submission when the CAPTCHA token is missing (fail closed)", async () => {
+  it("allows submission when the CAPTCHA token is missing (graceful degradation — widget may have errored)", async () => {
     process.env.TURNSTILE_SECRET_KEY = PASS_SECRET;
-    process.env.PROTON_SMTP_USER = "hello@forsadesign.co.uk";
-    process.env.PROTON_SMTP_PASS = "test-token";
     const app = await loadApp();
 
     const res = await request(app)
       .post("/api/contact")
       .send(validBody({ captchaToken: undefined }));
 
-    // captchaToken is required in the schema; a missing token fails at Zod
-    // validation (400) before any Turnstile or email logic is reached.
-    expect(res.status).toBe(400);
-    expect(res.body.ok).toBe(false);
-    expect(res.body.error).toBe("Invalid form submission.");
-    expect(sendViaProtonMock).not.toHaveBeenCalled();
-  });
-
-  it("accepts submission with empty Turnstile token when widget failed (graceful degradation)", async () => {
-    process.env.TURNSTILE_SECRET_KEY = PASS_SECRET;
-    process.env.PROTON_SMTP_USER = "hello@forsadesign.co.uk";
-    process.env.PROTON_SMTP_PASS = "test-token";
-    const app = await loadApp();
-
-    const res = await request(app)
-      .post("/api/contact")
-      .send(validBody({ captchaToken: "" }));
-
+    // Missing token = widget could not load (e.g. domain not in allowlist).
+    // We degrade gracefully and send the email rather than blocking the user.
     expect(res.status).toBe(200);
-    expect(res.body).toEqual({ ok: true });
-    expect(sendViaProtonMock).toHaveBeenCalled();
+    expect(res.body.ok).toBe(true);
+    expect(proxyMock).toHaveBeenCalled();
   });
 
-  it("rejects with 403 when the CAPTCHA token is invalid", async () => {
+  it("rejects with 400 when the CAPTCHA token is invalid", async () => {
     process.env.TURNSTILE_SECRET_KEY = FAIL_SECRET;
-    process.env.PROTON_SMTP_USER = "hello@forsadesign.co.uk";
-    process.env.PROTON_SMTP_PASS = "test-token";
     const app = await loadApp();
 
     const res = await request(app)
       .post("/api/contact")
       .send(validBody({ captchaToken: "an-invalid-token" }));
 
-    expect(res.status).toBe(403);
+    expect(res.status).toBe(400);
     expect(res.body.ok).toBe(false);
-    expect(res.body.error).toBe("captcha_failed");
-    expect(sendViaProtonMock).not.toHaveBeenCalled();
+    expect(proxyMock).not.toHaveBeenCalled();
   });
 
   it("silently drops a honeypot (bot) submission without sending email", async () => {
     process.env.TURNSTILE_SECRET_KEY = PASS_SECRET;
-    process.env.PROTON_SMTP_USER = "hello@forsadesign.co.uk";
-    process.env.PROTON_SMTP_PASS = "test-token";
     const app = await loadApp();
 
     const res = await request(app)
@@ -144,13 +128,11 @@ describe("POST /api/contact bot protection", () => {
     // Returns success so the bot gets no signal, but no email is sent.
     expect(res.status).toBe(200);
     expect(res.body).toEqual({ ok: true });
-    expect(sendViaProtonMock).not.toHaveBeenCalled();
+    expect(proxyMock).not.toHaveBeenCalled();
   });
 
   it("rate-limits repeated submissions from the same IP", async () => {
     process.env.TURNSTILE_SECRET_KEY = PASS_SECRET;
-    process.env.PROTON_SMTP_USER = "hello@forsadesign.co.uk";
-    process.env.PROTON_SMTP_PASS = "test-token";
     const app = await loadApp();
 
     // The limiter allows 5 submissions per IP per window.
@@ -164,31 +146,16 @@ describe("POST /api/contact bot protection", () => {
     expect(limited.body.ok).toBe(false);
   });
 
-  it("accepts submissions when no secret key is configured (graceful degradation)", async () => {
-    process.env.PROTON_SMTP_USER = "hello@forsadesign.co.uk";
-    process.env.PROTON_SMTP_PASS = "test-token";
+  it("accepts valid submissions when no secret key is configured (graceful degradation)", async () => {
+    delete process.env.TURNSTILE_SECRET_KEY;
     const app = await loadApp();
 
-    // Without Turnstile secret the server skips verification but still
-    // protects via honeypot + rate limiter.
-    const res = await request(app).post("/api/contact").send(validBody());
+    const res = await request(app)
+      .post("/api/contact")
+      .send(validBody({ captchaToken: undefined }));
 
     expect(res.status).toBe(200);
     expect(res.body).toEqual({ ok: true });
-    expect(sendViaProtonMock).toHaveBeenCalled();
-  });
-
-  it("returns 502 when Proton SMTP fails", async () => {
-    process.env.TURNSTILE_SECRET_KEY = PASS_SECRET;
-    process.env.PROTON_SMTP_USER = "hello@forsadesign.co.uk";
-    process.env.PROTON_SMTP_PASS = "test-token";
-    sendViaProtonMock.mockRejectedValue(new Error("SMTP connection refused"));
-    const app = await loadApp();
-
-    const res = await request(app).post("/api/contact").send(validBody());
-
-    expect(res.status).toBe(502);
-    expect(res.body.ok).toBe(false);
-    expect(res.body.error).toBe("Email delivery failed.");
+    expect(proxyMock).toHaveBeenCalled();
   });
 });

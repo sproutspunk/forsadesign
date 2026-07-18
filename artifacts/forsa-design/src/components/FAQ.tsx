@@ -58,11 +58,16 @@ export default function FAQ() {
         </div>
 
         <div className="relative mb-8">
+          <label htmlFor="faq-search" className="sr-only">
+            {t("faq.searchPlaceholder")}
+          </label>
           <Search
             size={16}
+            aria-hidden="true"
             className="absolute left-4 top-1/2 -translate-y-1/2 text-foreground/40 pointer-events-none"
           />
           <input
+            id="faq-search"
             type="search"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
@@ -84,6 +89,7 @@ export default function FAQ() {
                     onClick={() => toggle(originalIndex)}
                     className="w-full flex items-center justify-between px-6 py-5 text-left transition-colors hover:bg-white/[0.03]"
                     aria-expanded={isOpen}
+                    aria-controls={`faq-answer-${originalIndex}`}
                   >
                     <span className="font-medium text-white pr-6 leading-snug text-sm md:text-base">
                       {item.q}
@@ -96,12 +102,14 @@ export default function FAQ() {
                   <AnimatePresence initial={false}>
                     {isOpen && (
                       <motion.div
+                        id={`faq-answer-${originalIndex}`}
                         key="content"
                         initial={{ height: 0, opacity: 0 }}
                         animate={{ height: "auto", opacity: 1 }}
                         exit={{ height: 0, opacity: 0 }}
                         transition={{ duration: 0.22, ease: "easeInOut" }}
                         className="overflow-hidden"
+                        role="region"
                       >
                         <div className="px-6 pb-6 pt-0">
                           <div className="w-full h-px bg-border/20 mb-4" />

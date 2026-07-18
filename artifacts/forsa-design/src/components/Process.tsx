@@ -9,7 +9,7 @@ export default function Process() {
     <section id="process" className="py-24 bg-card">
       <div className="container mx-auto px-6">
         <div className="mb-16 md:text-center">
-          <h2 className="font-serif text-4xl md:text-5xl font-bold text-white leading-tight mb-4">
+          <h2 className="font-serif text-4xl md:text-5xl font-bold text-white mb-4">
             {t("process.heading")}
           </h2>
           <div className="w-16 h-1 bg-primary md:mx-auto" />
@@ -38,9 +38,7 @@ export default function Process() {
                 </div>
 
                 <div className="flex-1">
-                  <h3 className="font-serif text-xl font-bold text-white leading-tight mb-3">
-                    {step.title}
-                  </h3>
+                  <h3 className="font-serif text-xl font-bold text-white mb-3">{step.title}</h3>
                   <p className="text-foreground/70 font-light leading-relaxed">{step.desc}</p>
                 </div>
               </motion.div>

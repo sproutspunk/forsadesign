@@ -1,15 +1,9 @@
 import { useLanguage } from "@/contexts/LanguageContext";
-import { useLocation } from "wouter";
 import { openCookiePreferences } from "@/components/CookieConsent";
-import { Instagram, Mail, Phone } from "lucide-react";
+import { Instagram, Facebook, Mail, Phone } from "lucide-react";
 
 export default function Footer() {
   const { t, language } = useLanguage();
-  const [location] = useLocation();
-
-  const base = `/${language}/`;
-  const isHomePage = location === `/${language}/` || location === `/${language}`;
-  const sectionHref = (hash: string) => (isHomePage ? hash : `${base}${hash}`);
 
   return (
     <footer className="bg-background py-12 border-t border-border/10">
@@ -45,37 +39,37 @@ export default function Footer() {
 
           <div className="flex flex-col gap-3">
             <a
-              href={sectionHref("#home")}
+              href="#home"
               className="text-sm font-medium text-foreground/70 hover:text-primary transition-colors w-fit"
             >
               {t("nav.home")}
             </a>
             <a
-              href={sectionHref("#services")}
+              href="#services"
               className="text-sm font-medium text-foreground/70 hover:text-primary transition-colors w-fit"
             >
               {t("nav.services")}
             </a>
             <a
-              href={sectionHref("#portfolio")}
+              href="#portfolio"
               className="text-sm font-medium text-foreground/70 hover:text-primary transition-colors w-fit"
             >
               {t("nav.portfolio")}
             </a>
             <a
-              href={sectionHref("#process")}
+              href="#process"
               className="text-sm font-medium text-foreground/70 hover:text-primary transition-colors w-fit"
             >
               {t("nav.process")}
             </a>
             <a
-              href={sectionHref("#about")}
+              href="#about"
               className="text-sm font-medium text-foreground/70 hover:text-primary transition-colors w-fit"
             >
               {t("nav.about")}
             </a>
             <a
-              href={sectionHref("#contact")}
+              href="#contact"
               className="text-sm font-medium text-foreground/70 hover:text-primary transition-colors w-fit"
             >
               {t("nav.contact")}
@@ -83,6 +77,15 @@ export default function Footer() {
           </div>
 
           <div className="flex gap-4 md:justify-end">
+            <a
+              href="https://www.facebook.com/forsawebdesign"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-foreground/50 hover:text-primary transition-colors bg-card p-3 rounded-full h-fit"
+              aria-label="Facebook"
+            >
+              <Facebook size={18} />
+            </a>
             <a
               href="https://www.instagram.com/forsa.design"
               target="_blank"
@@ -95,54 +98,8 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="pt-8 border-t border-border/20 text-sm text-foreground/40 font-light">
-          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-4">
-            <p className="text-center md:text-left">{t("footer.copyright")}</p>
-            <div className="flex justify-center md:justify-end items-center gap-3 shrink-0">
-              <a
-                href="https://github.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Built with GitHub"
-              >
-                <img
-                  src="/github-badge.png"
-                  alt="Built with GitHub"
-                  loading="lazy"
-                  decoding="async"
-                  className="h-8 w-auto opacity-70 hover:opacity-100 transition-opacity"
-                />
-              </a>
-              <a
-                href="https://www.cloudflare.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Protected by Cloudflare"
-              >
-                <img
-                  src="/cloudflare-badge.png"
-                  alt="Protected by Cloudflare"
-                  loading="lazy"
-                  decoding="async"
-                  className="h-8 w-auto opacity-80 hover:opacity-100 transition-opacity"
-                />
-              </a>
-              <a
-                href="https://marketingplatform.google.com/about/analytics/"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Measured with Google Analytics"
-              >
-                <img
-                  src="/analytics-badge.png"
-                  alt="Measured with Google Analytics"
-                  loading="lazy"
-                  decoding="async"
-                  className="h-6 w-auto opacity-70 hover:opacity-100 transition-opacity"
-                />
-              </a>
-            </div>
-          </div>
+        <div className="pt-8 border-t border-border/20 text-center md:text-left text-sm text-foreground/40 font-light">
+          <p className="mb-2">{t("footer.copyright")}</p>
           <a
             href={`/${language}/terms`}
             className="hover:text-primary transition-colors mr-4"
@@ -156,13 +113,6 @@ export default function Footer() {
             data-testid="footer-link-privacy"
           >
             {t("footer.privacy")}
-          </a>
-          <a
-            href={`/${language}/sitemap`}
-            className="hover:text-primary transition-colors mr-4"
-            data-testid="footer-link-sitemap"
-          >
-            {t("footer.sitemap")}
           </a>
           <button
             onClick={openCookiePreferences}

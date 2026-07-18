@@ -1,23 +1,13 @@
-name: Deploy to Cloudflare Pages
+name: Check
 
 on:
   push:
-    branches:
-      - main
   pull_request:
-    branches:
-      - main
-  workflow_dispatch:
 
 jobs:
-  deploy:
-    name: Deploy
+  check:
+    name: Lint, typecheck & format
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      deployments: write
-      pull-requests: write
-
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -47,16 +37,5 @@ jobs:
       - name: Install dependencies
         run: pnpm install --no-frozen-lockfile
 
-      - name: Build
-        run: pnpm --filter @workspace/forsa-design run build
-        env:
-          NODE_ENV: production
-          VITE_TURNSTILE_SITE_KEY: ${{ secrets.VITE_TURNSTILE_SITE_KEY }}
-
-      - name: Deploy to Cloudflare Pages
-        uses: cloudflare/wrangler-action@v4
-        with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy artifacts/forsa-design/dist/public --project-name=forsadesign --commit-dirty=true
-          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+      - name: Run checks
+        run: pnpm run check

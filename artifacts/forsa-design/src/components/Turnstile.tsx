@@ -2,8 +2,8 @@ import { useEffect, useRef } from "react";
 
 // Cloudflare Turnstile widget. Renders in "managed" mode (low-friction,
 // often invisible) and reports the verification token to the parent form.
-// When no site key is provided the component renders nothing so the form
-// keeps working without CAPTCHA.
+// The site key is read from VITE_TURNSTILE_SITE_KEY; when it is not set the
+// component renders nothing so the form keeps working without CAPTCHA.
 
 const SCRIPT_SRC = "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit";
 

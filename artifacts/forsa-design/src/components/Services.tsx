@@ -27,7 +27,7 @@ export default function Services() {
     <section id="services" className="py-24 bg-background">
       <div className="container mx-auto px-6">
         <div className="mb-16 md:text-center">
-          <h2 className="font-serif text-4xl md:text-5xl font-bold text-white leading-tight mb-4">
+          <h2 className="font-serif text-4xl md:text-5xl font-bold text-white mb-4">
             {t("services.heading")}
           </h2>
           <div className="w-16 h-1 bg-primary md:mx-auto" />
@@ -45,9 +45,7 @@ export default function Services() {
               className="bg-card border-t-4 border-t-primary p-8 rounded-b-md shadow-sm transition-all duration-300 hover:shadow-[0_10px_30px_rgba(201,168,76,0.12)]"
             >
               <div className="text-primary mb-6">{service.icon}</div>
-              <h3 className="font-serif text-2xl font-bold text-white leading-tight mb-4">
-                {service.title}
-              </h3>
+              <h3 className="font-serif text-2xl font-bold text-white mb-4">{service.title}</h3>
               <p className="text-foreground/70 leading-relaxed font-light whitespace-pre-line">
                 {service.desc}
               </p>

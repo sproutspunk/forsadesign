@@ -4,11 +4,9 @@ import { useSeoMeta, buildHref } from "@/hooks/useSeoMeta";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Services from "@/components/Services";
-import PricingSection from "@/components/PricingSection";
 import Portfolio from "@/components/Portfolio";
 import Process from "@/components/Process";
 import About from "@/components/About";
-import FAQ from "@/components/FAQ";
 import CTA from "@/components/CTA";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
@@ -26,35 +24,26 @@ export default function HomePage({ lang }: HomePageProps) {
     }
   }, [lang, language, setLanguage]);
 
-  useEffect(() => {
-    const hash = window.location.hash;
-    if (!hash) return;
-    const el = document.querySelector(hash);
-    if (el) {
-      setTimeout(() => el.scrollIntoView({ behavior: "smooth", block: "start" }), 120);
-    }
-  }, []);
-
   const isEn = lang === "en";
   useSeoMeta({
     title: isEn
-      ? "Web Design Aberdeenshire | Forsa Design, Banff, Scotland"
-      : "Tworzenie Stron Internetowych Aberdeenshire | Forsa Design",
+      ? "Forsa Design | Comprehensive Website Design & Creation"
+      : "Forsa Design | Kompleksowy Web Design i Tworzenie Stron",
     description: isEn
-      ? "Web design agency in Banff, Aberdeenshire. Forsa Design builds fast, custom websites, e-commerce stores and web apps for businesses across Aberdeenshire and Scotland."
-      : "Agencja web design z Banff w Aberdeenshire w Szkocji. Tworzymy szybkie, autorskie strony internetowe, sklepy e-commerce i aplikacje webowe dla firm z Aberdeenshire i Szkocji.",
+      ? "Forsa Design is a boutique web agency in Banff, Scotland. We build responsive websites, e-commerce platforms, and custom web applications — from concept to launch and beyond."
+      : "Forsa Design to agencja internetowa z Banff w Szkocji. Tworzymy responsywne strony, sklepy e-commerce i dedykowane aplikacje webowe — od koncepcji do uruchomienia.",
     ogTitle: isEn
-      ? "Web Design Aberdeenshire | Forsa Design"
-      : "Web Design Aberdeenshire | Forsa Design",
+      ? "Forsa Design | Web Design & Creation"
+      : "Forsa Design | Web Design i Tworzenie Stron",
     ogDescription: isEn
-      ? "Web design agency in Banff, Aberdeenshire. Fast, custom websites, e-commerce stores and web apps for businesses across Aberdeenshire and Scotland."
-      : "Agencja web design z Banff w Aberdeenshire. Szybkie, autorskie strony internetowe i sklepy e-commerce dla firm ze Szkocji.",
+      ? "Forsa Design is a boutique web agency in Banff, Scotland. We build responsive websites, e-commerce platforms, and custom web applications — from concept to launch and beyond."
+      : "Forsa Design to agencja internetowa z Banff w Szkocji. Tworzymy responsywne strony, sklepy e-commerce i dedykowane aplikacje webowe — od koncepcji do uruchomienia.",
     twitterTitle: isEn
-      ? "Web Design Aberdeenshire | Forsa Design"
-      : "Web Design Aberdeenshire | Forsa Design",
+      ? "Forsa Design | Web Design & Creation"
+      : "Forsa Design | Web Design i Tworzenie Stron",
     twitterDescription: isEn
-      ? "Web design agency in Banff, Aberdeenshire. Fast, custom websites, e-commerce stores and web apps for businesses across Aberdeenshire and Scotland."
-      : "Agencja web design z Banff w Aberdeenshire. Szybkie, autorskie strony internetowe i sklepy e-commerce dla firm ze Szkocji.",
+      ? "Forsa Design is a boutique web agency in Banff, Scotland. We build responsive websites, e-commerce platforms, and custom web applications — from concept to launch and beyond."
+      : "Forsa Design to agencja internetowa z Banff w Szkocji. Tworzymy responsywne strony, sklepy e-commerce i dedykowane aplikacje webowe — od koncepcji do uruchomienia.",
     ogLocale: isEn ? "en_US" : "pl_PL",
     canonical: buildHref(isEn ? "/en/" : "/pl/"),
     alternates: [
@@ -70,11 +59,9 @@ export default function HomePage({ lang }: HomePageProps) {
       <main>
         <Hero />
         <Services />
-        <PricingSection />
         <Portfolio />
         <Process />
         <About />
-        <FAQ />
         <CTA />
         <Contact />
       </main>

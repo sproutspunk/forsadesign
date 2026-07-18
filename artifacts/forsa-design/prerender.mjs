@@ -22,7 +22,6 @@
 import { readFileSync, writeFileSync, mkdirSync } from "fs";
 import { join, dirname } from "path";
 import { fileURLToPath } from "url";
-import { articlesMeta } from "./src/data/articlesMeta.ts";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const distDir = join(__dirname, "dist/public");
@@ -109,14 +108,6 @@ function patch(html, meta) {
     .map((a) => `    <link rel="alternate" hreflang="${a.lang}" href="${a.href}" />`)
     .join("\n");
   out = out.replace(/(rel="canonical"[^>]*\/>)/, `$1\n${altLines}`);
-
-  // Ensure logo preload is present for LCP optimisation on every prerendered page
-  if (!out.includes('href="/logo-new-lg.webp"')) {
-    out = out.replace(
-      /(<link rel="preconnect" href="https:\/\/fonts\.googleapis\.com" \/>)/,
-      `$1\n    <link rel="preload" as="image" href="/logo-new-lg.webp" type="image/webp" />`,
-    );
-  }
 
   // Inject static body HTML into <div id="root"> so AI crawlers see page copy
   // without executing JavaScript. React will overwrite this on the client.
@@ -205,21 +196,9 @@ function buildHomepageBodyEn() {
 </section>
 </main>
 <footer>
-<div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:12px;">
-<p>&#169; 2026 Forsa Design. All rights reserved.</p>
-<div style="display:flex;align-items:center;gap:12px;">
-<a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="Built with GitHub">
-<img src="/github-badge.png" alt="Built with GitHub" style="height:32px;opacity:0.8;">
-</a>
-<a href="https://www.cloudflare.com" target="_blank" rel="noopener noreferrer" aria-label="Protected by Cloudflare">
-<img src="/cloudflare-badge.png" alt="Protected by Cloudflare" style="height:32px;opacity:0.8;">
-</a>
-<a href="https://marketingplatform.google.com/about/analytics/" target="_blank" rel="noopener noreferrer" aria-label="Measured with Google Analytics">
-<img src="/analytics-badge.png" alt="Measured with Google Analytics" style="height:24px;opacity:0.8;">
-</a>
-</div>
-</div>
+<p>Built for scale. Hardcoded for speed. — Banff, Scotland</p>
 <nav><a href="/en/terms">Terms &amp; Conditions</a> | <a href="/en/privacy">Privacy Policy</a></nav>
+<p>&#169; 2024 Forsa Design. All rights reserved.</p>
 </footer>`;
 }
 
@@ -297,21 +276,9 @@ function buildHomepageBodyPl() {
 </section>
 </main>
 <footer>
-<div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:12px;">
-<p>&#169; 2026 Forsa Design. Wszystkie prawa zastrze&#380;one.</p>
-<div style="display:flex;align-items:center;gap:12px;">
-<a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="Built with GitHub">
-<img src="/github-badge.png" alt="Built with GitHub" style="height:32px;opacity:0.8;">
-</a>
-<a href="https://www.cloudflare.com" target="_blank" rel="noopener noreferrer" aria-label="Protected by Cloudflare">
-<img src="/cloudflare-badge.png" alt="Protected by Cloudflare" style="height:32px;opacity:0.8;">
-</a>
-<a href="https://marketingplatform.google.com/about/analytics/" target="_blank" rel="noopener noreferrer" aria-label="Measured with Google Analytics">
-<img src="/analytics-badge.png" alt="Measured with Google Analytics" style="height:24px;opacity:0.8;">
-</a>
-</div>
-</div>
+<p>Stworzone by dzia&#322;a&#263;. Napisane by zarabia&#263;. &#8212; Banff, Szkocja</p>
 <nav><a href="/pl/terms">Regulamin i Warunki</a> | <a href="/pl/privacy">Polityka Prywatno&#347;ci</a></nav>
+<p>&#169; 2024 Forsa Design. Wszystkie prawa zastrze&#380;one.</p>
 </footer>`;
 }
 
@@ -1163,52 +1130,6 @@ ${buildSectionsHtml(termsPL)}
 </main>`;
 }
 
-function buildBlogBodyEn() {
-  const sorted = [...articlesMeta].sort((a, b) => b.dateIso.localeCompare(a.dateIso));
-  const articlesHtml = sorted
-    .map((article) => {
-      const a = article.en;
-      const date = new Date(article.dateIso).toLocaleDateString("en-GB", {
-        day: "numeric",
-        month: "long",
-        year: "numeric",
-      });
-      return `<article><a href="/en/blog/${ht(article.slugEn)}"><h2>${ht(a.title)}</h2><p>${ht(a.excerpt)}</p><p>${ht(date)} &middot; ${ht(String(article.readingTimeMin))} min read</p></a></article>`;
-    })
-    .join("\n");
-  return `<header>
-<nav><a href="/en/">&#8592; Home</a> <span>|</span> <span>Forsa Design</span></nav>
-</header>
-<main>
-<h1>Blog</h1>
-<p>Expert insights on web design, SEO, and digital strategy.</p>
-${articlesHtml}
-</main>`;
-}
-
-function buildBlogBodyPl() {
-  const sorted = [...articlesMeta].sort((a, b) => b.dateIso.localeCompare(a.dateIso));
-  const articlesHtml = sorted
-    .map((article) => {
-      const a = article.pl;
-      const date = new Date(article.dateIso).toLocaleDateString("pl-PL", {
-        day: "numeric",
-        month: "long",
-        year: "numeric",
-      });
-      return `<article><a href="/pl/blog/${ht(article.slugPl)}"><h2>${ht(a.title)}</h2><p>${ht(a.excerpt)}</p><p>${ht(date)} &middot; ${ht(String(article.readingTimeMin))} min czytania</p></a></article>`;
-    })
-    .join("\n");
-  return `<header>
-<nav><a href="/pl/">&#8592; Strona G\u0142\u00f3wna</a> <span>|</span> <span>Forsa Design</span></nav>
-</header>
-<main>
-<h1>Blog</h1>
-<p>Wiedza ekspercka o web designie, SEO i strategii cyfrowej.</p>
-${articlesHtml}
-</main>`;
-}
-
 function buildPrivacyBodyEn() {
   return `<header>
 <nav><a href="/en/">&#8592; Home</a> <span>|</span> <span>Forsa Design</span></nav>
@@ -1324,34 +1245,6 @@ const routes = [
       { lang: "pl", href: `${SITE}/pl/privacy` },
     ],
     bodyHtml: buildPrivacyBodyPl(),
-  },
-  {
-    outDir: "en/blog",
-    lang: "en",
-    title: "Blog | Forsa Design",
-    desc: "Expert insights on web design, SEO, e-commerce, and digital strategy from the Forsa Design team.",
-    ogTitle: "Blog | Forsa Design",
-    locale: "en_US",
-    canonical: `${SITE}/en/blog`,
-    alternates: [
-      { lang: "en", href: `${SITE}/en/blog` },
-      { lang: "pl", href: `${SITE}/pl/blog` },
-    ],
-    bodyHtml: buildBlogBodyEn(),
-  },
-  {
-    outDir: "pl/blog",
-    lang: "pl",
-    title: "Blog | Forsa Design",
-    desc: "Wiedza ekspercka o web designie, SEO, e-commerce i strategii cyfrowej od zespo\u0142u Forsa Design.",
-    ogTitle: "Blog | Forsa Design",
-    locale: "pl_PL",
-    canonical: `${SITE}/pl/blog`,
-    alternates: [
-      { lang: "en", href: `${SITE}/en/blog` },
-      { lang: "pl", href: `${SITE}/pl/blog` },
-    ],
-    bodyHtml: buildBlogBodyPl(),
   },
   // Legacy duplicate routes — canonical points to the preferred /en/ versions.
   // Non-JS crawlers that land on /terms or /privacy receive the correct canonical

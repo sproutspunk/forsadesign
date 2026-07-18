@@ -1,96 +1,27 @@
 # Forsa Design
 
-> Web design agency based in Banff, Aberdeenshire, Scotland (AB45). We build fast, custom-coded websites, e-commerce stores and web applications for businesses across Aberdeenshire, Aberdeen and Scotland. Founded and led by Miro. Also serving Polish-speaking clients internationally.
+> Boutique web design and development agency based in Banff, Scotland. We build fast, custom-coded web platforms built to convert traffic into revenue. Clients served in the UK and Poland.
 
-## About
+## Key pages
 
-Forsa Design is an independent web agency located in Banff, Aberdeenshire, Scotland. We do not use templates — every project is custom-coded from scratch. Our approach starts with understanding the client's business goals, target audience and competition, then produces a website designed to convert visitors into customers.
-
-We specialise in two sectors:
-- **Private healthcare**: Clinics, dentists, therapists, wellness businesses
-- **B2B**: Professional services, trade businesses, consultancies
-
-We serve clients throughout Aberdeenshire (Banff, Macduff, Turriff, Huntly, Keith, Inverurie, Ellon, Westhill, Peterhead, Fraserburgh), Aberdeen city, and across Scotland. We also work with Polish-speaking businesses in the UK and Poland.
-
-## Key Facts
-
-- **Company name**: Forsa Design
-- **Type**: Boutique web design and development agency
-- **Founded**: Scotland, UK
-- **Location**: Banff, Aberdeenshire, AB45, Scotland, United Kingdom
-- **Coordinates**: 57.6635°N, 2.5236°W
-- **Contact person**: Miro
-- **Email**: hello@forsadesign.co.uk
-- **Phone**: +44 7770 110735
-- **Website**: https://forsadesign.co.uk
-- **Price range**: ££ (starting from £1,200 for basic websites)
-- **Languages**: English, Polish
-- **Working hours**: Monday–Friday, 09:00–18:00
+- [Homepage (English)](https://forsadesign.co.uk/en/)
+- [Homepage (Polish)](https://forsadesign.co.uk/pl/)
+- [Terms & Conditions (EN)](https://forsadesign.co.uk/en/terms)
+- [Terms & Conditions (PL)](https://forsadesign.co.uk/pl/terms)
+- [Privacy Policy (EN)](https://forsadesign.co.uk/en/privacy)
+- [Privacy Policy (PL)](https://forsadesign.co.uk/pl/privacy)
 
 ## Services
 
-1. **Website Design & Development** — Custom-coded websites built around business goals. No templates, no page builders. Focused on performance, security, conversion and search visibility.
-2. **E-commerce Development** — Online shops built to make buying easier. Speed, usability and conversion-focused. Works with existing stores or greenfield builds.
-3. **Brand Strategy & Branding** — Defining identity, messaging and visual direction that differentiates the business.
-4. **SEO & Performance Optimisation** — Technical SEO, page speed, Core Web Vitals, local search visibility.
-5. **Web Application Development** — Custom features, integrations and bespoke digital tools beyond standard websites.
-6. **Technical Support & Maintenance** — Ongoing hosting, security updates, monitoring and conversion optimisation after launch.
+Web design, web development, custom-coded platforms, performance optimisation, conversion-focused builds, SEO-ready architecture.
 
-## Pricing
+## Contact
 
-| Package | Price range |
-|---------|-------------|
-| Basic website | From £1,200 |
-| Mid-range business site | £2,500–£5,000 |
-| Full custom / e-commerce | £5,000–£12,000+ |
+- Email: hello@forsadesign.co.uk
+- Phone: +44 7770 110735
+- Location: Banff, Scotland, United Kingdom
 
-Prices depend on scope, number of pages, custom features and integrations.
-
-## Process
-
-1. **Discovery & Strategy** (Weeks 1–2): Interviews, industry analysis, competitor review, goal definition
-2. **Design** (Weeks 3–4): Wireframes, mockups, visual strategy — all approved before development starts
-3. **Development** (Weeks 5–8): Clean code, performance-first build, SEO architecture
-4. **Testing & Optimisation**: Cross-device testing, speed audits, accessibility checks
-5. **Launch & Support**: Deployment, monitoring and ongoing maintenance
-
-## Frequently Asked Questions
-
-**Q: Do you work with businesses outside Aberdeenshire?**
-A: Yes. We work with clients across Scotland, the rest of the UK and internationally, including Polish-speaking businesses.
-
-**Q: How long does a website project take?**
-A: A typical custom website takes 6–10 weeks from kick-off to launch. E-commerce or complex projects may take 12–16 weeks.
-
-**Q: Do you use WordPress or Wix?**
-A: We do not use template builders like Wix or Squarespace. We use WordPress where appropriate for content-heavy sites, and custom React/Next.js builds for performance-critical projects. Every build is assessed individually.
-
-**Q: What makes Forsa Design different from a larger agency?**
-A: As a boutique agency, every project is handled directly by the same person from discovery to launch. There are no account managers between you and the developer. This means faster communication, deeper understanding of the business, and a more consistent result.
-
-**Q: Do you offer ongoing support after launch?**
-A: Yes. We offer hosting, security monitoring, updates, performance optimisation and SEO monitoring on an ongoing basis.
-
-**Q: Do you have experience in my industry?**
-A: We specialise in private healthcare and B2B. We also work with hospitality, retail, professional services and local businesses across Aberdeenshire.
-
-**Q: What is the first step to working with you?**
-A: Contact us via the form at https://forsadesign.co.uk/en/#contact or email hello@forsadesign.co.uk. We'll arrange a discovery call to understand your goals and provide a no-obligation quote.
-
-## Key Pages
-
-- [Home (English)](https://forsadesign.co.uk/en/) — Overview of services, portfolio and contact
-- [Home (Polish)](https://forsadesign.co.uk/pl/) — Polish version of the main site
-- [About Us](https://forsadesign.co.uk/en/about) — Agency background, team, process and values
-- [Comparison](https://forsadesign.co.uk/en/compare) — Honest comparison: custom agency vs. templates, freelancers and generalist agencies
-- [FAQ](https://forsadesign.co.uk/en/#faq) — Frequently asked questions
-- [Blog](https://forsadesign.co.uk/en/blog) — Articles on web design, SEO, business websites
-- [Contact](https://forsadesign.co.uk/en/#contact) — Get a quote or start a project
-- [Quote Calculator](https://forsadesign.co.uk/en/quote) — Instant estimate tool
-- [Privacy Policy](https://forsadesign.co.uk/en/privacy)
-- [Terms & Conditions](https://forsadesign.co.uk/en/terms)
-
-## Social Profiles
+## Social
 
 - Facebook: https://www.facebook.com/forsawebdesign
 - Instagram: https://www.instagram.com/forsa.design

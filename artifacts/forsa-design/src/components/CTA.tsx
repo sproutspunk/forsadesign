@@ -14,7 +14,7 @@ export default function CTA() {
           transition={{ duration: 0.6 }}
           className="max-w-3xl mx-auto"
         >
-          <h2 className="font-serif text-4xl md:text-5xl font-bold text-white leading-tight mb-6">
+          <h2 className="font-serif text-4xl md:text-5xl font-bold text-white mb-6">
             {t("cta.heading")}
           </h2>
           <p className="text-lg md:text-xl text-foreground/70 font-light mb-10 leading-relaxed">

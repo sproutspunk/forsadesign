@@ -1,10 +1,2 @@
-- [Turnstile CAPTCHA on contact form](turnstile-contact-form.md) — managed-mode bot check; backend FAILS CLOSED (no secret/token = reject); error 400020 = domain not in site-key allowlist, not a code bug.
-- [Forsa Design prod hosting](forsadesign-prod-hosting.md) — prod = Cloudflare Pages via GitHub Actions push-to-main; contact API is public/_worker.js (Proton SMTP over cloudflare:sockets); Replit is dev-only.
-- [Duplicate secret shadowing](duplicate-secret-shadowing.md) — a Replit Secret that "never updates" may have multiple same-name rows; viewEnvVars hides them, deleteEnvVars can't remove them (user must delete in UI).
-- [Deployment builds from GitHub, not workspace](deployment-stale-github-source.md) — if a deploy is GitHub-connected & push fails, prod ships an identical stale bundle forever; disconnect GitHub or fix push, then republish.
+- [Turnstile CAPTCHA on contact form](turnstile-contact-form.md) — managed-mode bot check; graceful degradation by design; error 400020 = domain not in site-key allowlist, not a code bug.
 - [react-hooks v7 flat config](react-hooks-flat-config.md) — use `reactHooks.configs.flat.recommended` (not `.recommended`, which is legacy eslintrc & crashes flat config); fix set-state-in-effect via useSyncExternalStore / `key` remount.
-- [Security scan task recurrence](security-scan-recurrence.md) — scanner checks the LIVE deployment, not source; a merged fix only clears the finding after re-publish; probe prod safely before re-fixing.
-- [Wouter v3 routing pitfalls](wouter-v3-routing.md) — Switch partial-match (specific routes before /en/), setLanguage redirects to homepage (use syncLanguage in sub-pages), Polish curly quotes break esbuild (use Python to fix).
-- [Bilingual pricing helpers](bilingual-pricing.md) — PricingSection uses dual-argument `bi(en, pl)` instead of single `t(key)` because prices/presets are static arrays without translation keys.
-- [VAT disabled in quotes](vat-disabled.md) — `VAT_RATE=0` in quoteConfig.ts; all prices shown as final gross; PdfData uses `subtotal` (not subtotalExVat/vat); keep interface synced with caller.
-- [deploymentTarget static vs autoscale](deployment-target-static-pitfall.md) — `deploymentTarget = "static"` in `.replit` breaks multi-artifact setups; never change it without verifying artifact topology.
