@@ -39,6 +39,7 @@ jobs:
         run: pnpm --filter @workspace/forsa-design run build
         env:
           NODE_ENV: production
+          VITE_TURNSTILE_SITE_KEY: ${{ secrets.VITE_TURNSTILE_SITE_KEY }}
 
       - name: Ensure Cloudflare Pages project exists
         run: |
