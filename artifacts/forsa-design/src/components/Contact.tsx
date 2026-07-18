@@ -7,7 +7,7 @@ import Turnstile from "./Turnstile";
 
 type Status = "idle" | "sending" | "success" | "error";
 
-const TURNSTILE_SITE_KEY = "";
+const TURNSTILE_SITE_KEY = (import.meta.env.VITE_TURNSTILE_SITE_KEY as string) || "";
 
 export default function Contact() {
   const { t, language } = useLanguage();
