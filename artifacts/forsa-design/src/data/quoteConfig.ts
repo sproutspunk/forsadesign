@@ -106,7 +106,7 @@ export const packagePresets: PackagePreset[] = [
     state: {
       projectType: "small-business",
       design: "semi-custom",
-      content: "ai-copy",
+      content: "copy",
       logo: "simple",
       photography: "stock",
       seo: "basic",
@@ -245,9 +245,9 @@ export const contentOptions: QuoteOption[] = [
     price: 0,
   },
   {
-    value: "ai-copy",
-    labelEn: "AI Assisted Copywriting",
-    labelPl: "Copywriting wspomagany AI",
+    value: "copy",
+    labelEn: "Copywriting",
+    labelPl: "Copywriting",
     price: 350,
   },
   {
@@ -381,7 +381,7 @@ export const features: QuoteFeature[] = [
   { value: "quote-gen", labelEn: "Quote Generator", labelPl: "Generator wycen", price: 650 },
   { value: "calculator", labelEn: "Calculator", labelPl: "Kalkulator", price: 550 },
   { value: "chatbot", labelEn: "Chatbot", labelPl: "Chatbot", price: 950 },
-  { value: "ai-assistant", labelEn: "AI Assistant", labelPl: "Asystent AI", price: 2500 },
+  { value: "website-assistant", labelEn: "Website Assistant", labelPl: "Asystent strony", price: 2500 },
   {
     value: "customer-login",
     labelEn: "Customer Login",
