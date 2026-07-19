@@ -95,7 +95,7 @@ export default function ArticlePage({ lang, slug }: ArticlePageProps) {
             url: "https://forsadesign.co.uk",
             logo: {
               "@type": "ImageObject",
-              url: "https://forsadesign.co.uk/logo-new.png",
+              url: "https://forsadesign.co.uk/logo-new.png?v=2",
             },
           },
           mainEntityOfPage: {

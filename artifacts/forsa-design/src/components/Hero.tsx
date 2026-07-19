@@ -43,9 +43,9 @@ export default function Hero() {
           >
             {/* Logo */}
             <picture>
-              <source srcSet="/logo-new-lg.webp" type="image/webp" />
+              <source srcSet="/logo-new-lg.webp?v=2" type="image/webp" />
               <img
-                src="/logo-new-lg.png"
+                src="/logo-new-lg.png?v=2"
                 alt="Forsa Design"
                 width={640}
                 height={640}
