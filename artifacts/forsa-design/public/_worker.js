@@ -38,8 +38,8 @@ function encodeHeaderWord(value) {
 // Minimal SMTP client over Cloudflare TCP sockets (implicit TLS on port 465).
 // Mirrors artifacts/api-server/src/lib/smtp.ts, which runs in dev on Node.
 async function sendViaProton(env, mail) {
-  const host = env.PROTON_SMTP_HOST || "smtp.protonmail.ch";
-  const port = Number(env.PROTON_SMTP_PORT || "465");
+  const host = (env.PROTON_SMTP_HOST || "smtp.protonmail.ch").trim();
+  const port = parseInt((env.PROTON_SMTP_PORT || "465").trim(), 10) || 465;
   const user = env.PROTON_SMTP_USER;
   const pass = env.PROTON_SMTP_PASS;
 
