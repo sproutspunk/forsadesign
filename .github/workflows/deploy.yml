@@ -50,7 +50,7 @@ jobs:
         run: |
           # Secrets pasted into GitHub can pick up trailing whitespace/newlines, which
           # wrangler rejects with "Invalid format for Authorization header" (code 6111).
-          # Trim before use to avoid intermittent auth failures.
-          CLOUDFLARE_API_TOKEN="$(printf '%s' "$CLOUDFLARE_API_TOKEN" | sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//')"
+          # Use tr to strip ALL whitespace (including embedded newlines that sed misses).
+          CLOUDFLARE_API_TOKEN="$(printf '%s' "$CLOUDFLARE_API_TOKEN" | tr -d '[:space:]')"
           export CLOUDFLARE_API_TOKEN
           pnpm exec wrangler pages deploy artifacts/forsa-design/dist/public --project-name=forsadesign --commit-dirty=true
