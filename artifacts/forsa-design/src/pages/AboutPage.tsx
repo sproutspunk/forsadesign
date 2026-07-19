@@ -15,22 +15,22 @@ const content = {
     seoTitle: "About Us | Forsa Design, Web Agency in Banff, Aberdeenshire",
     seoDesc:
       "Learn about Forsa Design, a web agency based in Banff, Aberdeenshire, Scotland, building custom websites for businesses across Aberdeenshire and Scotland.",
-    heading: "Websites That Work for Your Business",
+    heading: "Meet Miroslaw — Founder & Developer",
     intro:
-      "We build custom websites for businesses in Aberdeenshire, Scotland and beyond. Every project starts with a proper conversation about your business, your customers and your goals. We focus on clean development, performance, usability and search visibility.",
-    whatWeDoHeading: "What We Do",
+      "With over 20 years of experience spanning project management, business development, sales and operations, I bring a unique perspective to web development. My career has taken me from running a heavy industry brokerage and liquidation firm across Poland and Ukraine, to negotiating international contracts in Ghana, to providing VIP transport for government and business delegations in Kraków. I've been a Building Surveyor, a Road Technician for Aberdeenshire Council, and a shop manager. Each role taught me how real businesses operate and what they actually need from a website.",
+    whatWeDoHeading: "Why This Background Matters",
     services: [
       {
-        title: "Web Design & Development",
-        desc: "Every site we build starts from scratch, designed around your specific business. We don't use templates. We begin by understanding who you serve and what your site needs to achieve. The result is a site that is fast, secure and built to generate enquiries.",
+        title: "Real Business Perspective",
+        desc: "Having run a company for 17 years, negotiated international contracts across three continents, and managed teams in multiple countries, I understand what a website needs to do for your bottom line. Every design decision is filtered through a business lens, not just an aesthetic one.",
       },
       {
-        title: "E-commerce & Conversion Optimisation",
-        desc: "Online shops built to make buying straightforward. Whether you are starting from scratch or improving an existing store, we focus on speed, usability and removing the friction that stops customers from completing a purchase.",
+        title: "Communication at Every Level",
+        desc: "From driving VIP delegations through Kraków to inspecting roads for Aberdeenshire Council, I've worked with clients and stakeholders from all walks of life. This translates into websites that speak clearly to your audience, whether they are local customers or international partners.",
       },
       {
-        title: "Ongoing Support & Optimisation",
-        desc: "After launch, we do not disappear. We help with hosting, security updates, performance monitoring and improvements as your business grows. A website should get better over time, not stay static.",
+        title: "Results-Focused Delivery",
+        desc: "My career has been built on closing deals, managing projects end-to-end, and delivering measurable outcomes. I bring the same discipline to web development: clear timelines, transparent communication, and a focus on what actually moves the needle for your business.",
       },
     ],
     processHeading: "Our Process",
@@ -140,22 +140,22 @@ const content = {
     seoTitle: "O Nas | Forsa Design, Agencja Web Design w Banff, Aberdeenshire",
     seoDesc:
       "Poznaj Forsa Design, agencję web design z Banff w Aberdeenshire w Szkocji, specjalizującą się w autorskich stronach internetowych dla firm z Aberdeenshire i całej Szkocji.",
-    heading: "Strony Internetowe, Które Pracują dla Twojego Biznesu",
+    heading: "Poznaj Mirosława — Założyciela i Dewelopera",
     intro:
-      "Budujemy autorskie strony internetowe dla firm z Aberdeenshire, Szkocji i nie tylko. Każdy projekt zaczyna się od porządnej rozmowy o Twoim biznesie, Twoich klientach i celach. Skupiamy się na czystym kodzie, wydajności, użyteczności i widoczności w wyszukiwarkach.",
-    whatWeDoHeading: "Co Robimy",
+      "Z ponad 20-letnim doświadczeniem w zarządzaniu projektami, rozwoju biznesu, sprzedaży i operacjach, do web developmentu podchodzę z unikalną perspektywą. Moja kariera prowadziła mnie od prowadzenia firmy pośrednictwa i likwidacji majątku ruchomego w Polsce i na Ukrainie, po negocjacje kontraktów międzynarodowych w Ghanie i transport VIP dla delegacji rządowych i biznesowych w Krakowie. Byłem Building Surveyorem, Technikiem Drogowym Aberdeenshire Council i Managerem sklepu. Każda rola nauczyła mnie, jak funkcjonują realne firmy i czego naprawdę potrzebują od strony internetowej.",
+    whatWeDoHeading: "Dlaczego To Doświadczenie Ma Znaczenie",
     services: [
       {
-        title: "Projektowanie i Tworzenie Stron",
-        desc: "Każda strona, którą tworzymy, zaczyna się od zera i jest zaprojektowana wokół Twojego konkretnego biznesu. Nie używamy szablonów. Zaczynamy od zrozumienia kogo obsługujesz i co Twoja strona musi osiągnąć. Wynik to strona szybka, bezpieczna i zbudowana, by generować zapytania.",
+        title: "Perspektywa Prawdziwego Biznesu",
+        desc: "Prowadząc firmę przez 17 lat, negocjując międzynarodowe kontrakty na trzech kontynentach i zarządzając zespołami w wielu krajach, rozumiem, co strona internetowa musi robić dla Twojego zysku. Każda decyzja projektowa jest filtrowana przez pryzmat biznesowy, nie tylko estetyczny.",
       },
       {
-        title: "Sklepy Internetowe i Optymalizacja Konwersji",
-        desc: "Sklepy online zaprojektowane tak, by zakupy były proste. Czy zaczynasz od zera czy ulepszasz istniejący sklep, skupiamy się na szybkości, użyteczności i usuwaniu przeszkód, które powstrzymują klientów od finalizowania zakupów.",
+        title: "Komunikacja na Każdym Poziomie",
+        desc: "Od transportu VIP przez Kraków po inspekcje dróg dla Aberdeenshire Council, pracowałem z klientami i interesariuszami z każdej dziedziny życia. To przekłada się na strony, które jasno komunikują się z Twoją publicznością — czy to lokalni klienci, czy międzynarodowi partnerzy.",
       },
       {
-        title: "Bieżące Wsparcie i Optymalizacja",
-        desc: "Po uruchomieniu nie znikamy. Pomagamy z hostingiem, aktualizacjami bezpieczeństwa, monitorowaniem wydajności i ulepszeniami w miarę rozwoju Twojego biznesu. Strona powinna z czasem stawać się lepsza, a nie stać w miejscu.",
+        title: "Dostarczanie Wyników",
+        desc: "Cała moja kariera opierała się na zawieraniu umów, zarządzaniu projektami od A do Z i dostarczaniu mierzalnych rezultatów. Tę samą dyscyplinę przenoszę do web developmentu: jasne terminy, transparentna komunikacja i skupienie na tym, co naprawdę przynosi korzyść Twojej firmie.",
       },
     ],
     processHeading: "Nasz Proces",

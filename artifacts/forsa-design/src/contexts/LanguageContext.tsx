@@ -120,10 +120,10 @@ const translations = {
       ],
     },
     about: {
-      heading: "About Forsa Design",
-      body: "We create custom websites built around your business goals. Every project starts with understanding your customers, your services, and what your website needs to achieve. We focus on clean development, strong performance, usability, and a structure that supports SEO.",
+      heading: "Miroslaw Potaczek — Founder of Forsa Design",
+      body: "With over 20 years of experience across project management, sales, business development and operations, I bring a practical, results-driven approach to every website we build. My background spans roles from CEO and Business Development Manager to Building Surveyor and Road Technician — giving me a deep understanding of how real businesses operate, what they need from a website, and how to communicate with clients at every level.",
       body2:
-        "Clear collaboration is at the centre of how we work. You know what is happening, why decisions are made, and what comes next. The goal is a website that helps your business look professional, perform better, and support long-term growth.",
+        "Based in Banff, Aberdeenshire, I work with businesses across Scotland and beyond. Fluent in Polish and English, with experience managing international contracts and teams in Poland, Ukraine and Ghana, I understand both local markets and global perspectives. Forsa Design was built on the principle that a website should be a genuine business tool — not just a digital brochure.",
     },
     pricing: {
       heading: "Transparent Pricing",
@@ -312,10 +312,10 @@ const translations = {
       ],
     },
     about: {
-      heading: "O Forsa Design",
-      body: "Tworzymy dedykowane strony internetowe zaprojektowane wok\u00f3\u0142 Twoich cel\u00f3w biznesowych. Ka\u017cdy projekt zaczyna si\u0119 od zrozumienia Twoich klient\u00f3w, us\u0142ug i tego, co Twoja strona musi osi\u0105gn\u0105\u0107. Skupiamy si\u0119 na czystym kodzie, wysokiej wydajno\u015bci, u\u017cyteczno\u015bci i strukturze wspieraj\u0105cej SEO.",
+      heading: "Miros\u0142aw Potaczek \u2014 Za\u0142o\u017cyciel Forsa Design",
+      body: "Z ponad 20-letnim do\u015bwiadczeniem w zarz\u0105dzaniu projektami, sprzeda\u017cy, rozwoju biznesu i operacjach, do ka\u017cdej strony internetowej podchodz\u0119 praktycznie i zorientowany na wyniki. Moja kariera obejmuje role od CEO i Business Development Managera, przez Building Surveyora, po Technika Drogowego \u2014 co daje mi g\u0142\u0119bokie zrozumienie funkcjonowania realnych firm, ich potrzeb w zakresie stron www oraz komunikacji z klientami na ka\u017cdym poziomie.",
       body2:
-        "Jasna wsp\u00f3\u0142praca jest centrum naszego sposobu pracy. Wiesz, co si\u0119 dzieje, dlaczego podejmowane s\u0105 decyzje i co b\u0119dzie nast\u0119pnie. Celem jest strona, kt\u00f3ra pomaga Twojemu biznesowi wygl\u0105da\u0107 profesjonalnie, dzia\u0142a\u0107 sprawniej i wspiera\u0107 d\u0142ugoterminowy wzrost.",
+        "Moja siedziba to Banff w Aberdeenshire, a wsp\u00f3\u0142pracuj\u0119 z firmami w ca\u0142ej Szkocji i poza ni\u0105. Biegle m\u00f3wi\u0119 po polsku i angielsku, a do\u015bwiadczenie w zarz\u0105dzaniu mi\u0119dzynarodowymi kontraktami i zespo\u0142ami w Polsce, na Ukrainie i w Ghanie pozwala mi \u0142\u0105czy\u0107 perspektyw\u0119 lokaln\u0105 z globaln\u0105. Forsa Design powsta\u0142o na zasadzie, \u017ce strona internetowa to prawdziwe narz\u0119dzie biznesowe \u2014 nie tylko cyfrowa broszura.",
     },
     pricing: {
       heading: "Przejrzyste ceny",

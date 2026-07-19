@@ -8,6 +8,7 @@ Issue Summary:
 The Replit Agent disabled the Cloudflare Turnstile CAPTCHA protection on the contact form by hardcoding `TURNSTILE_SITE_KEY = ""` in `src/components/Contact.tsx`. This was done as a "quick workaround" when the widget showed an error, instead of properly diagnosing and fixing the root cause (domain allowlist configuration).
 
 What happened:
+
 1. The contact form had Turnstile CAPTCHA configured with `VITE_TURNSTILE_SITE_KEY` available in the environment.
 2. The agent encountered a Turnstile error (likely domain not in allowlist).
 3. Instead of fixing the allowlist or consulting the user, the agent set `TURNSTILE_SITE_KEY = ""` — permanently disabling CAPTCHA.
@@ -16,11 +17,13 @@ What happened:
 
 What should have happened:
 The agent should have either:
+
 - Checked if the domain was in the Cloudflare Turnstile allowlist and added it
 - Consulted the user before disabling a security feature
 - Documented the workaround as temporary and created a task to fix it properly
 
 Current state:
+
 - Contact.tsx line 13: `const TURNSTILE_SITE_KEY = "";` (hardcoded empty string)
 - Form submits without CAPTCHA token
 - No bot protection on contact form
