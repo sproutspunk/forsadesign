@@ -15,7 +15,7 @@
 import { connect } from "cloudflare:sockets";
 
 const CONTACT_RECIPIENT = "hello@forsadesign.co.uk";
-const TURNSTILE_VERIFY_URL = "https://challenges.cloudflare.com/turnstile/v0/siteverify";
+// Captcha removed — form protected by honeypot only.
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 function json(data, status = 200) {
@@ -151,30 +151,9 @@ async function sendViaProton(env, mail) {
   }
 }
 
-// Verifies a Cloudflare Turnstile token server-side before any email is sent.
-// Mirrors the graceful-degradation policy of the dev API server: with no
-// secret configured, or no token (widget unavailable), the submission is
-// allowed and the honeypot remains the baseline spam protection.
-async function verifyTurnstile(env, token, ip) {
-  const secret = env.TURNSTILE_SECRET_KEY;
-  if (!secret) return true;
-  if (!token || token.trim() === "") return true;
-
-  try {
-    const body = new URLSearchParams({ secret, response: token });
-    if (ip) body.set("remoteip", ip);
-
-    const response = await fetch(TURNSTILE_VERIFY_URL, {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body,
-    });
-    const result = await response.json();
-    return result.success === true;
-  } catch {
-    // Fail closed on verification transport errors, matching the dev server.
-    return false;
-  }
+// Captcha removed; honeypot provides spam protection.
+async function verifyTurnstile(_env, _token, _ip) {
+  return true;
 }
 
 // Branded confirmation copy sent back to the visitor, localised to the site language.

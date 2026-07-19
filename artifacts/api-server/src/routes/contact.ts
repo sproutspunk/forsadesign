@@ -17,66 +17,12 @@ const router: IRouter = Router();
 
 const CONTACT_RECIPIENT = "hello@forsadesign.co.uk";
 
-const TURNSTILE_VERIFY_URL = "https://challenges.cloudflare.com/turnstile/v0/siteverify";
-
-// Verifies a Cloudflare Turnstile token server-side before any email is sent.
-// Fails closed: email is only sent when Cloudflare validates the token. With no
-// secret configured the server cannot verify bot proof, so it rejects rather
-// than silently sending mail (exactly the abuse this endpoint must prevent).
-// This does NOT depend on NODE_ENV: the deploy start script does not set it, so
-// gating security on the environment name would risk failing open. Local
-// development must configure Turnstile (Cloudflare publishes always-pass test keys).
+// Captcha removed; form protected by honeypot + rate limiter only.
 async function verifyTurnstile(
-  token: string | undefined,
-  ip: string | undefined,
+  _token: string | undefined,
+  _ip: string | undefined,
 ): Promise<boolean> {
-  const secret = process.env.TURNSTILE_SECRET_KEY;
-  if (!secret) {
-    logger.warn(
-      "TURNSTILE_SECRET_KEY not set; skipping Turnstile verification (honeypot + rate limit still active)",
-    );
-    return true;
-  }
-
-  if (!token || token.trim() === "") {
-    // Widget failed to load (e.g. domain not in Cloudflare allowlist).
-    // Graceful degradation: allow submission so real users aren't blocked.
-    // Honeypot + rate limiter provide baseline spam protection.
-    logger.warn(
-      { ip },
-      "Contact form: no Turnstile token (widget likely unavailable); allowing with honeypot+rate-limit protection",
-    );
-    return true;
-  }
-
-  try {
-    const body = new URLSearchParams({ secret, response: token });
-    if (ip) body.set("remoteip", ip);
-
-    const response = await fetch(TURNSTILE_VERIFY_URL, {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body,
-    });
-
-    const result = (await response.json()) as {
-      success: boolean;
-      "error-codes"?: string[];
-    };
-
-    if (!result.success) {
-      logger.warn(
-        { ip, errorCodes: result["error-codes"] },
-        "Turnstile verification rejected contact form submission",
-      );
-      return false;
-    }
-
-    return true;
-  } catch (err) {
-    logger.error({ err, ip }, "Turnstile verification request failed");
-    return false;
-  }
+  return true;
 }
 
 // Branded confirmation copy sent back to the visitor, localised to the site language.

@@ -3,11 +3,8 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { motion } from "framer-motion";
 import { Instagram } from "lucide-react";
 import { submitContact } from "@workspace/api-client-react";
-import Turnstile from "./Turnstile";
 
 type Status = "idle" | "sending" | "success" | "error";
-
-const TURNSTILE_SITE_KEY = (import.meta.env.VITE_TURNSTILE_SITE_KEY as string) || "";
 
 export default function Contact() {
   const { t, language } = useLanguage();
@@ -20,11 +17,6 @@ export default function Contact() {
   });
   // Honeypot: hidden from real users; only bots fill it in.
   const [website, setWebsite] = useState("");
-  // Cloudflare Turnstile token; only relevant when a site key is configured.
-  const [captchaToken, setCaptchaToken] = useState("");
-  // True when the Turnstile widget fired an error (e.g. domain not in allowlist).
-  // In that case we skip the captcha requirement so the form still works.
-  const [captchaWidgetFailed, setCaptchaWidgetFailed] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [status, setStatus] = useState<Status>("idle");
 
@@ -41,13 +33,6 @@ export default function Contact() {
     if (!formData.projectType) newErrors.projectType = t("contact.errors.selectRequired");
     if (!formData.details.trim()) newErrors.details = t("contact.errors.required");
 
-    // Require a Turnstile token whenever a site key is configured and the widget
-    // loaded successfully. If the widget failed (e.g. domain not in Cloudflare
-    // allowlist), we skip the captcha requirement so the form still works.
-    if (TURNSTILE_SITE_KEY && !captchaWidgetFailed && !captchaToken) {
-      newErrors.captcha = t("contact.errors.captcha");
-    }
-
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
@@ -58,11 +43,10 @@ export default function Contact() {
 
     setStatus("sending");
     try {
-      await submitContact({ ...formData, website, language, captchaToken });
+      await submitContact({ ...formData, website, language, captchaToken: "" });
       setStatus("success");
       setFormData({ name: "", email: "", projectType: "", details: "" });
       setWebsite("");
-      setCaptchaToken("");
       setTimeout(() => setStatus("idle"), 6000);
     } catch (err) {
       console.error("Contact form submission failed:", err);
@@ -260,33 +244,6 @@ export default function Contact() {
                 data-testid="msg-error"
               >
                 {t("contact.error")}
-              </div>
-            )}
-
-            {TURNSTILE_SITE_KEY && (
-              <div className="flex flex-col items-center gap-2 pt-2">
-                <Turnstile
-                  siteKey={TURNSTILE_SITE_KEY}
-                  theme="dark"
-                  onVerify={(token) => {
-                    setCaptchaToken(token);
-                    setCaptchaWidgetFailed(false);
-                    if (errors.captcha) {
-                      setErrors((prev) => ({ ...prev, captcha: "" }));
-                    }
-                  }}
-                  onExpire={() => setCaptchaToken("")}
-                  onError={() => {
-                    setCaptchaToken("");
-                    setCaptchaWidgetFailed(true);
-                    setErrors((prev) => ({ ...prev, captcha: "" }));
-                  }}
-                />
-                {errors.captcha && (
-                  <p className="text-sm text-destructive" data-testid="msg-captcha-error">
-                    {errors.captcha}
-                  </p>
-                )}
               </div>
             )}
 
