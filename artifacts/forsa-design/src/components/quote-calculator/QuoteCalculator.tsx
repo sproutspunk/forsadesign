@@ -821,7 +821,7 @@ export default function QuoteCalculator() {
                     </div>
                     <div className="bg-primary/5 border border-primary/20 rounded-xl p-4 text-center sm:col-span-2">
                       <div className="text-xl font-bold text-primary">
-                        {formatPrice(roiRevLow)} – {formatPrice(roiRevHigh)}
+                        {formatPrice(roiRevLow)} - {formatPrice(roiRevHigh)}
                       </div>
                       <div className="text-xs text-foreground/50 mt-1">
                         {t("Potential revenue / month", "Potencjalny przychód / mies.")}

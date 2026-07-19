@@ -15,7 +15,7 @@ const content = {
     seoTitle: "About Us | Forsa Design, Web Agency in Banff, Aberdeenshire",
     seoDesc:
       "Learn about Forsa Design, a web agency based in Banff, Aberdeenshire, Scotland, building custom websites for businesses across Aberdeenshire and Scotland.",
-    heading: "Meet Miroslaw — Founder & Developer",
+    heading: "Meet Miroslaw - Founder & Developer",
     intro:
       "With over 20 years of experience spanning project management, business development, sales and operations, I bring a unique perspective to web development. My career has taken me from running a heavy industry brokerage and liquidation firm across Poland and Ukraine, to negotiating international contracts in Ghana, to providing VIP transport for government and business delegations in Kraków. I've been a Building Surveyor, a Road Technician for Aberdeenshire Council, and a shop manager. Each role taught me how real businesses operate and what they actually need from a website.",
     whatWeDoHeading: "Why This Background Matters",
@@ -38,19 +38,19 @@ const content = {
       {
         num: "01",
         title: "Discovery & Strategy",
-        period: "Weeks 1–2",
+        period: "Weeks 1-2",
         desc: "We conduct interviews, analyse your industry, competition, users, and define business goals.",
       },
       {
         num: "02",
         title: "Design",
-        period: "Weeks 3–4",
+        period: "Weeks 3-4",
         desc: "We create wireframes, mockups, and a visual strategy. Everything approved by you before we write a line of code.",
       },
       {
         num: "03",
         title: "Development",
-        period: "Weeks 5–8",
+        period: "Weeks 5-8",
         desc: "We build the site with a focus on performance, security, SEO, and conversion.",
       },
       {
@@ -94,8 +94,8 @@ const content = {
       "An honest look at the options available to you, so you can make the right decision for your business.",
     tableHeaders: ["Aspect", "CMS Template", "Non-specialist Agency", "Freelancer", "Forsa Design"],
     tableRows: [
-      ["Price", "£800–2,000", "£3,000–8,000", "£1,500–4,000", "£1,200–12,000+"],
-      ["Turnaround", "2–4 weeks", "6–12 weeks", "4–8 weeks", "8–12 weeks"],
+      ["Price", "£800-2,000", "£3,000-8,000", "£1,500-4,000", "£1,200-12,000+"],
+      ["Turnaround", "2-4 weeks", "6-12 weeks", "4-8 weeks", "8-12 weeks"],
       [
         "Design uniqueness",
         "Looks like competition",
@@ -140,7 +140,7 @@ const content = {
     seoTitle: "O Nas | Forsa Design, Agencja Web Design w Banff, Aberdeenshire",
     seoDesc:
       "Poznaj Forsa Design, agencję web design z Banff w Aberdeenshire w Szkocji, specjalizującą się w autorskich stronach internetowych dla firm z Aberdeenshire i całej Szkocji.",
-    heading: "Poznaj Mirosława — Założyciela i Dewelopera",
+    heading: "Poznaj Mirosława - Założyciela i Dewelopera",
     intro:
       "Z ponad 20-letnim doświadczeniem w zarządzaniu projektami, rozwoju biznesu, sprzedaży i operacjach, do web developmentu podchodzę z unikalną perspektywą. Moja kariera prowadziła mnie od prowadzenia firmy pośrednictwa i likwidacji majątku ruchomego w Polsce i na Ukrainie, po negocjacje kontraktów międzynarodowych w Ghanie i transport VIP dla delegacji rządowych i biznesowych w Krakowie. Byłem Building Surveyorem, Technikiem Drogowym Aberdeenshire Council i Managerem sklepu. Każda rola nauczyła mnie, jak funkcjonują realne firmy i czego naprawdę potrzebują od strony internetowej.",
     whatWeDoHeading: "Dlaczego To Doświadczenie Ma Znaczenie",
@@ -151,7 +151,7 @@ const content = {
       },
       {
         title: "Komunikacja na Każdym Poziomie",
-        desc: "Od transportu VIP przez Kraków po inspekcje dróg dla Aberdeenshire Council, pracowałem z klientami i interesariuszami z każdej dziedziny życia. To przekłada się na strony, które jasno komunikują się z Twoją publicznością — czy to lokalni klienci, czy międzynarodowi partnerzy.",
+        desc: "Od transportu VIP przez Kraków po inspekcje dróg dla Aberdeenshire Council, pracowałem z klientami i interesariuszami z każdej dziedziny życia. To przekłada się na strony, które jasno komunikują się z Twoją publicznością - czy to lokalni klienci, czy międzynarodowi partnerzy.",
       },
       {
         title: "Dostarczanie Wyników",
@@ -163,19 +163,19 @@ const content = {
       {
         num: "01",
         title: "Odkrywanie i Strategia",
-        period: "Tygodnie 1–2",
+        period: "Tygodnie 1-2",
         desc: "Przeprowadzamy wywiady, analizujemy Twoją branżę, konkurencję, użytkowników, definiujemy cele biznesowe.",
       },
       {
         num: "02",
         title: "Projektowanie",
-        period: "Tygodnie 3–4",
+        period: "Tygodnie 3-4",
         desc: "Tworzymy wireframe'y, mockupy i strategię wizualną. Wszystko zatwierdzone przez Ciebie zanim zaczynamy kod.",
       },
       {
         num: "03",
         title: "Rozwój",
-        period: "Tygodnie 5–8",
+        period: "Tygodnie 5-8",
         desc: "Budujemy stronę z fokusem na wydajność, bezpieczeństwo, SEO i konwersję.",
       },
       {
@@ -225,8 +225,8 @@ const content = {
       "Forsa Design",
     ],
     tableRows: [
-      ["Cena", "800–2 000 £", "3 000–8 000 £", "1 500–4 000 £", "1 200–12 000 £+"],
-      ["Czas realizacji", "2–4 tygodnie", "6–12 tygodni", "4–8 tygodni", "8–12 tygodni"],
+      ["Cena", "800-2 000 £", "3 000-8 000 £", "1 500-4 000 £", "1 200-12 000 £+"],
+      ["Czas realizacji", "2-4 tygodnie", "6-12 tygodni", "4-8 tygodni", "8-12 tygodni"],
       [
         "Unikalność designu",
         "Szablonowy (jak konkurencja)",

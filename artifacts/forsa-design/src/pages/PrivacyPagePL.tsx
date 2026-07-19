@@ -44,7 +44,7 @@ export default function PrivacyPagePL() {
           <h1 className="font-serif text-4xl md:text-5xl font-bold text-white mb-4">
             Polityka Prywatności
           </h1>
-          <p className="text-foreground/60 font-light">Forsa Design – Art &amp; Web Design</p>
+          <p className="text-foreground/60 font-light">Forsa Design - Art &amp; Web Design</p>
           <p className="text-foreground/50 font-light text-sm mt-2">
             Ostatnia aktualizacja: Czerwiec 2026
           </p>
@@ -247,7 +247,7 @@ const sections: SectionData[] = [
   {
     number: "12",
     title: "Prywatność Dzieci",
-    body: `Nasza witryna i usługi nie są skierowane do dzieci poniżej 13 lat. Nie zbieramy świadomie Danych Osobowych od dzieci poniżej 13 lat. Jeśli dowiemy się, że dziecko dostarczyło Dane Osobowe, natychmiast je usuniemy. W przypadku dzieci w wieku 13–18 lat zgoda rodziców może być wymagana w zależności od jurysdykcji. Jeśli jesteś rodzicem lub opiekunem i uważasz, że Dane Osobowe Twojego dziecka zostały zebrane, prosimy o natychmiastowy kontakt.`,
+    body: `Nasza witryna i usługi nie są skierowane do dzieci poniżej 13 lat. Nie zbieramy świadomie Danych Osobowych od dzieci poniżej 13 lat. Jeśli dowiemy się, że dziecko dostarczyło Dane Osobowe, natychmiast je usuniemy. W przypadku dzieci w wieku 13-18 lat zgoda rodziców może być wymagana w zależności od jurysdykcji. Jeśli jesteś rodzicem lub opiekunem i uważasz, że Dane Osobowe Twojego dziecka zostały zebrane, prosimy o natychmiastowy kontakt.`,
   },
   {
     number: "13",

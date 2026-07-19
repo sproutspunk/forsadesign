@@ -120,10 +120,10 @@ const translations = {
       ],
     },
     about: {
-      heading: "Miroslaw Potaczek — Founder of Forsa Design",
-      body: "With over 20 years of experience across project management, sales, business development and operations, I bring a practical, results-driven approach to every website we build. My background spans roles from CEO and Business Development Manager to Building Surveyor and Road Technician — giving me a deep understanding of how real businesses operate, what they need from a website, and how to communicate with clients at every level.",
+      heading: "Miroslaw Potaczek - Founder of Forsa Design",
+      body: "With over 20 years of experience across project management, sales, business development and operations, I bring a practical, results-driven approach to every website we build. My background spans roles from CEO and Business Development Manager to Building Surveyor and Road Technician - giving me a deep understanding of how real businesses operate, what they need from a website, and how to communicate with clients at every level.",
       body2:
-        "Based in Banff, Aberdeenshire, I work with businesses across Scotland and beyond. Fluent in Polish and English, with experience managing international contracts and teams in Poland, Ukraine and Ghana, I understand both local markets and global perspectives. Forsa Design was built on the principle that a website should be a genuine business tool — not just a digital brochure.",
+        "Based in Banff, Aberdeenshire, I work with businesses across Scotland and beyond. Fluent in Polish and English, with experience managing international contracts and teams in Poland, Ukraine and Ghana, I understand both local markets and global perspectives. Forsa Design was built on the principle that a website should be a genuine business tool - not just a digital brochure.",
     },
     pricing: {
       heading: "Transparent Pricing",
