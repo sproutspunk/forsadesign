@@ -38,6 +38,15 @@ function sendLine(socket: tls.TLSSocket, line: string): void {
   socket.write(line + "\r\n");
 }
 
+// SMTP headers must be ASCII (RFC 5322/2047); raw UTF-8 (e.g. an em dash "—" or
+// Polish diacritics) is invalid and can cause strict servers like Proton to
+// reject the message. Encode as an RFC 2047 encoded-word when needed.
+function encodeHeaderValue(value: string): string {
+  // eslint-disable-next-line no-control-regex -- intentionally matching the full ASCII range
+  if (/^[\x00-\x7F]*$/.test(value)) return value;
+  return `=?UTF-8?B?${Buffer.from(value, "utf-8").toString("base64")}?=`;
+}
+
 export interface SmtpMail {
   from: string;
   to: string;
@@ -103,7 +112,7 @@ export async function sendViaProton(mail: SmtpMail): Promise<void> {
         const headers: string[] = [
           `From: ${mail.from}`,
           `To: ${mail.to}`,
-          `Subject: ${mail.subject}`,
+          `Subject: ${encodeHeaderValue(mail.subject)}`,
           "MIME-Version: 1.0",
           'Content-Type: text/plain; charset="UTF-8"',
           "Content-Transfer-Encoding: 8bit",
@@ -112,10 +121,13 @@ export async function sendViaProton(mail: SmtpMail): Promise<void> {
           headers.push(`Reply-To: ${mail.replyTo}`);
         }
 
-        // SMTP requires CRLF line endings. Escape any line that starts with "."
-        // by adding another dot (RFC 5321 §4.5.2).
+        // SMTP requires CRLF line endings. Normalise any line ending style to
+        // CRLF (splitting on "\n" alone when the input already uses "\r\n"
+        // would otherwise double up the "\r", corrupting the DATA payload).
+        // Also escape any line that starts with "." by adding another dot
+        // (RFC 5321 §4.5.2).
         const escapedBody = mail.text
-          .split("\n")
+          .split(/\r\n|\r|\n/)
           .map((line) => (line.startsWith(".") ? "." + line : line))
           .join("\r\n");
 

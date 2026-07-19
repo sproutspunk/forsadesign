@@ -2,15 +2,13 @@ import { describe, it, expect, beforeEach, afterEach, vi } from "vitest";
 import request from "supertest";
 import type { Express } from "express";
 
-// The contact route sends email through the Replit Gmail connector. We mock the
-// SDK so tests never make real network calls or send real email; the mock lets
-// us assert whether an email *would* have been sent for each scenario.
-const proxyMock = vi.hoisted(() => vi.fn());
+// The contact route sends email via a hand-rolled Proton Mail SMTP client. We
+// mock it so tests never make real network calls or send real email; the mock
+// lets us assert whether an email *would* have been sent for each scenario.
+const sendViaProtonMock = vi.hoisted(() => vi.fn());
 
-vi.mock("@replit/connectors-sdk", () => ({
-  ReplitConnectors: class {
-    proxy = proxyMock;
-  },
+vi.mock("../lib/smtp", () => ({
+  sendViaProton: sendViaProtonMock,
 }));
 
 // Cloudflare's documented Turnstile test secret keys: `1x...AA` always passes
@@ -33,15 +31,6 @@ function validBody(overrides: Record<string, unknown> = {}) {
   };
 }
 
-function gmailOk() {
-  return {
-    ok: true,
-    status: 200,
-    json: async () => ({ id: "msg-1" }),
-    text: async () => "",
-  };
-}
-
 // Re-import the app fresh for every test. The per-IP rate limiter holds state in
 // a module-level in-memory store, so a fresh import gives each test an isolated
 // counter and prevents cross-test pollution.
@@ -52,8 +41,8 @@ async function loadApp(): Promise<Express> {
 }
 
 beforeEach(() => {
-  proxyMock.mockReset();
-  proxyMock.mockResolvedValue(gmailOk());
+  sendViaProtonMock.mockReset();
+  sendViaProtonMock.mockResolvedValue(undefined);
 
   vi.stubGlobal(
     "fetch",
@@ -86,7 +75,7 @@ describe("POST /api/contact bot protection", () => {
 
     expect(res.status).toBe(200);
     expect(res.body).toEqual({ ok: true });
-    expect(proxyMock).toHaveBeenCalled();
+    expect(sendViaProtonMock).toHaveBeenCalled();
   });
 
   it("allows submission when the CAPTCHA token is missing (graceful degradation — widget may have errored)", async () => {
@@ -101,7 +90,7 @@ describe("POST /api/contact bot protection", () => {
     // We degrade gracefully and send the email rather than blocking the user.
     expect(res.status).toBe(200);
     expect(res.body.ok).toBe(true);
-    expect(proxyMock).toHaveBeenCalled();
+    expect(sendViaProtonMock).toHaveBeenCalled();
   });
 
   it("rejects with 400 when the CAPTCHA token is invalid", async () => {
@@ -112,9 +101,9 @@ describe("POST /api/contact bot protection", () => {
       .post("/api/contact")
       .send(validBody({ captchaToken: "an-invalid-token" }));
 
-    expect(res.status).toBe(400);
+    expect(res.status).toBe(403);
     expect(res.body.ok).toBe(false);
-    expect(proxyMock).not.toHaveBeenCalled();
+    expect(sendViaProtonMock).not.toHaveBeenCalled();
   });
 
   it("silently drops a honeypot (bot) submission without sending email", async () => {
@@ -128,7 +117,7 @@ describe("POST /api/contact bot protection", () => {
     // Returns success so the bot gets no signal, but no email is sent.
     expect(res.status).toBe(200);
     expect(res.body).toEqual({ ok: true });
-    expect(proxyMock).not.toHaveBeenCalled();
+    expect(sendViaProtonMock).not.toHaveBeenCalled();
   });
 
   it("rate-limits repeated submissions from the same IP", async () => {
@@ -156,6 +145,6 @@ describe("POST /api/contact bot protection", () => {
 
     expect(res.status).toBe(200);
     expect(res.body).toEqual({ ok: true });
-    expect(proxyMock).toHaveBeenCalled();
+    expect(sendViaProtonMock).toHaveBeenCalled();
   });
 });
