@@ -62,6 +62,28 @@ export function buildHref(path: string) {
   return `${SITE_BASE}${path}`;
 }
 
+export function useJsonLd(schema: Record<string, unknown> | null, id: string) {
+  useEffect(() => {
+    const attr = "data-json-ld-id";
+    if (!schema) {
+      document.querySelector<HTMLScriptElement>(`script[${attr}="${id}"]`)?.remove();
+      return;
+    }
+    let el = document.querySelector<HTMLScriptElement>(`script[${attr}="${id}"]`);
+    if (!el) {
+      el = document.createElement("script");
+      el.setAttribute("type", "application/ld+json");
+      el.setAttribute(attr, id);
+      document.head.appendChild(el);
+    }
+    el.textContent = JSON.stringify(schema);
+    return () => {
+      document.querySelector<HTMLScriptElement>(`script[${attr}="${id}"]`)?.remove();
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [JSON.stringify(schema), id]);
+}
+
 export function useSeoMeta(meta: SeoMeta) {
   const alternatesKey = JSON.stringify(meta.alternates);
   useEffect(() => {
