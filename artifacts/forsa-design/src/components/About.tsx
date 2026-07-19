@@ -17,7 +17,7 @@ export default function About() {
           >
             <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent" />
 
-            {/* 3D Cube — a regular solid with equal sides, tumbling in 3D space */}
+            {/* 3D Cube - a regular solid with equal sides, tumbling in 3D space */}
             <div
               className="relative w-48 h-48 md:w-64 md:h-64 flex items-center justify-center"
               style={{ perspective: "1000px" }}
@@ -84,7 +84,7 @@ export default function About() {
                     rotateY: { repeat: Infinity, duration: 13, ease: "linear" },
                   }}
                 >
-                  {/* 6 equal square faces — translateZ is half the edge length (2.5rem) */}
+                  {/* 6 equal square faces - translateZ is half the edge length (2.5rem) */}
                   {[
                     "rotateY(0deg)",
                     "rotateY(90deg)",
@@ -115,7 +115,7 @@ export default function About() {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <h2 className="font-serif text-4xl md:text-5xl font-bold text-white mb-6">
+            <h2 className="font-serif text-4xl md:text-5xl font-bold text-white leading-tight mb-6">
               {t("about.heading")}
             </h2>
             <div className="w-16 h-1 bg-primary mb-8" />

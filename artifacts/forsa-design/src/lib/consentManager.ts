@@ -11,7 +11,7 @@
  *     version  : number   // schema version; bump CONSENT_VERSION on breaking changes
  *     savedAt  : number   // Unix ms timestamp; consent expires after CONSENT_MAX_AGE_MS
  *     decided  : boolean  // true once the user has made an explicit choice
- *     essential: true     // always true – cannot be turned off
+ *     essential: true     // always true - cannot be turned off
  *     analytics: boolean  // performance / analytics cookies (e.g. GA4)
  *     marketing: boolean  // marketing / targeting cookies
  *   }
@@ -74,7 +74,7 @@ const GA_INLINE_ID = "forsa-ga-init";
  *   1. VITE_GA_MEASUREMENT_ID is defined
  *   2. The user has given analytics consent
  *
- * Safe to call multiple times – skipped if already loaded.
+ * Safe to call multiple times - skipped if already loaded.
  */
 export function loadAnalytics(): void {
   const measurementId = import.meta.env.VITE_GA_MEASUREMENT_ID as string | undefined;

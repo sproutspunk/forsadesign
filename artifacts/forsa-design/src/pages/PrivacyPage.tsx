@@ -44,7 +44,7 @@ export default function PrivacyPage() {
           <h1 className="font-serif text-4xl md:text-5xl font-bold text-white mb-4">
             Privacy Policy
           </h1>
-          <p className="text-foreground/60 font-light">Forsa Design – Art &amp; Web Design</p>
+          <p className="text-foreground/60 font-light">Forsa Design - Art &amp; Web Design</p>
           <p className="text-foreground/50 font-light text-sm mt-2">Last Updated: June 2026</p>
           <button
             onClick={openCookiePreferences}
@@ -245,7 +245,7 @@ const sections: SectionData[] = [
   {
     number: "12",
     title: "Children's Privacy",
-    body: `Our website and services are not directed to children under 13 years old. We do not knowingly collect Personal Data from children under 13. If we become aware that a child has provided Personal Data, we will delete it immediately. For children aged 13–18, parental consent may be required depending on jurisdiction. If you are a parent or guardian and believe your child's data has been collected, please contact us immediately.`,
+    body: `Our website and services are not directed to children under 13 years old. We do not knowingly collect Personal Data from children under 13. If we become aware that a child has provided Personal Data, we will delete it immediately. For children aged 13-18, parental consent may be required depending on jurisdiction. If you are a parent or guardian and believe your child's data has been collected, please contact us immediately.`,
   },
   {
     number: "13",

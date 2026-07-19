@@ -63,7 +63,10 @@ async function sendViaProton(env, mail) {
     try {
       for (;;) {
         const { value, done } = await reader.read();
-        if (done) { readerDone = true; break; }
+        if (done) {
+          readerDone = true;
+          break;
+        }
         incoming += decoder.decode(value, { stream: true });
       }
     } catch {
@@ -140,7 +143,11 @@ async function sendViaProton(env, mail) {
     await waitFor("221", 5000).catch(() => {});
   } finally {
     await readLoop.catch(() => {});
-    try { socket.close(); } catch { /* already closed */ }
+    try {
+      socket.close();
+    } catch {
+      /* already closed */
+    }
   }
 }
 

@@ -381,7 +381,12 @@ export const features: QuoteFeature[] = [
   { value: "quote-gen", labelEn: "Quote Generator", labelPl: "Generator wycen", price: 650 },
   { value: "calculator", labelEn: "Calculator", labelPl: "Kalkulator", price: 550 },
   { value: "chatbot", labelEn: "Chatbot", labelPl: "Chatbot", price: 950 },
-  { value: "website-assistant", labelEn: "Website Assistant", labelPl: "Asystent strony", price: 2500 },
+  {
+    value: "website-assistant",
+    labelEn: "Website Assistant",
+    labelPl: "Asystent strony",
+    price: 2500,
+  },
   {
     value: "customer-login",
     labelEn: "Customer Login",
