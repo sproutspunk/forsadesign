@@ -37,8 +37,6 @@ export default function Header() {
     { name: t("nav.process"), href: sectionHref("#process") },
     { name: t("nav.about"), href: sectionHref("#about") },
     { name: t("nav.contact"), href: sectionHref("#contact") },
-    { name: t("nav.faq"), href: sectionHref("#faq") },
-    { name: t("nav.blog"), href: `${base}blog` },
     { name: t("nav.comparison"), href: `${base}comparison` },
   ];
 

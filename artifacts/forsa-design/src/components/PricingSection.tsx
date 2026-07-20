@@ -38,7 +38,7 @@ const presets = [
     featuresEn: [
       "Up to 5 pages",
       "Semi-custom design",
-      "Blog & testimonials",
+      "Testimonials",
       "Basic SEO setup",
       "Google Maps integration",
       "Monthly care plan",
@@ -46,7 +46,7 @@ const presets = [
     featuresPl: [
       "Do 5 stron",
       "Design częściowo na zamówienie",
-      "Blog i opinie klientów",
+      "Opinie klientów",
       "Podstawowa konfiguracja SEO",
       "Integracja z Mapami Google",
       "Miesięczny plan opieki",

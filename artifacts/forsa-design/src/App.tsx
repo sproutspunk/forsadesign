@@ -8,8 +8,6 @@ import TermsPage from "@/pages/TermsPage";
 import TermsPagePL from "@/pages/TermsPagePL";
 import PrivacyPage from "@/pages/PrivacyPage";
 import PrivacyPagePL from "@/pages/PrivacyPagePL";
-import BlogPage from "@/pages/BlogPage";
-import ArticlePage from "@/pages/ArticlePage";
 import AboutPage from "@/pages/AboutPage";
 import ComparisonPage from "@/pages/ComparisonPage";
 import QuoteCalculatorPage from "@/pages/QuoteCalculatorPage";
@@ -92,14 +90,6 @@ function Router() {
         <Route path="/en/privacy" component={PrivacyPage} />
         <Route path="/pl/privacy" component={PrivacyPagePL} />
         <Route path="/privacy" component={() => <RedirectTo to="/en/privacy" />} />
-        <Route path="/en/blog" component={() => <BlogPage lang="en" />} />
-        <Route path="/pl/blog" component={() => <BlogPage lang="pl" />} />
-        <Route path="/en/blog/:slug">
-          {(params) => <ArticlePage lang="en" slug={params.slug} />}
-        </Route>
-        <Route path="/pl/blog/:slug">
-          {(params) => <ArticlePage lang="pl" slug={params.slug} />}
-        </Route>
         <Route path="/en/about" component={() => <AboutPage lang="en" />} />
         <Route path="/pl/about" component={() => <AboutPage lang="pl" />} />
         <Route path="/en/comparison" component={() => <ComparisonPage lang="en" />} />

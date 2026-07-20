@@ -4,7 +4,6 @@ import { useSeoMeta } from "@/hooks/useSeoMeta";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
-import { articles } from "@/data/articlesData";
 
 interface SitemapPageProps {
   lang: "en" | "pl";
@@ -25,7 +24,6 @@ const content = {
           { label: "Portfolio", href: "/en/#portfolio" },
           { label: "Process", href: "/en/#process" },
           { label: "About", href: "/en/#about" },
-          { label: "FAQ", href: "/en/#faq" },
           { label: "Contact", href: "/en/#contact" },
         ],
       },
@@ -33,13 +31,8 @@ const content = {
         heading: "Pages",
         links: [
           { label: "About Us", href: "/en/about" },
-          { label: "Blog", href: "/en/blog" },
           { label: "Agency Comparison", href: "/en/comparison" },
         ],
-      },
-      {
-        heading: "Articles",
-        links: articles.map((a) => ({ label: a.en.title, href: `/en/blog/${a.slugEn}` })),
       },
       {
         heading: "Legal",
@@ -64,7 +57,6 @@ const content = {
           { label: "Portfolio", href: "/pl/#portfolio" },
           { label: "Jak Pracujemy", href: "/pl/#process" },
           { label: "O Nas", href: "/pl/#about" },
-          { label: "FAQ", href: "/pl/#faq" },
           { label: "Kontakt", href: "/pl/#contact" },
         ],
       },
@@ -72,13 +64,8 @@ const content = {
         heading: "Podstrony",
         links: [
           { label: "O Forsa Design", href: "/pl/about" },
-          { label: "Blog", href: "/pl/blog" },
           { label: "Por\u00f3wnanie Agencji", href: "/pl/comparison" },
         ],
-      },
-      {
-        heading: "Artyku\u0142y",
-        links: articles.map((a) => ({ label: a.pl.title, href: `/pl/blog/${a.slugPl}` })),
       },
       {
         heading: "Dokumenty Prawne",
