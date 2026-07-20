@@ -23,7 +23,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-[100dvh] flex items-center justify-center pt-20 overflow-hidden"
+      className="relative min-h-[70dvh] flex items-center justify-center pt-8 overflow-hidden"
     >
       <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary/10 via-background to-background" />
 
@@ -38,7 +38,7 @@ export default function Hero() {
             variants={itemVariants}
             animate={{ y: [-8, 8, -8] }}
             transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
-            className="mb-1 mx-auto"
+            className="mb-0 mx-auto"
             style={{ position: "relative", width: "fit-content" }}
           >
             <picture>
@@ -56,25 +56,25 @@ export default function Hero() {
             </picture>
           </motion.div>
 
-          <motion.div variants={itemVariants} className="w-24 h-px bg-primary mb-8 mt-6" />
+          <motion.div variants={itemVariants} className="w-20 h-px bg-primary mb-4 mt-3" />
 
           <motion.h1
             variants={itemVariants}
-            className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold tracking-tight leading-tight mb-6 max-w-4xl"
+            className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold tracking-tight leading-tight mb-3 max-w-4xl"
           >
             {t("hero.tagline")}
           </motion.h1>
 
           <motion.p
             variants={itemVariants}
-            className="text-lg md:text-xl text-foreground/70 font-light mb-6 max-w-3xl"
+            className="text-lg md:text-xl text-foreground/70 font-light mb-3 max-w-3xl"
           >
             {t("hero.subheader")}
           </motion.p>
 
           <motion.p
             variants={itemVariants}
-            className="text-base md:text-lg text-foreground/60 font-light leading-relaxed mb-12 max-w-5xl"
+            className="text-base md:text-lg text-foreground/60 font-light leading-relaxed mb-6 max-w-5xl"
           >
             {t("hero.body")}
           </motion.p>
