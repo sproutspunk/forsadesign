@@ -120,10 +120,10 @@ const translations = {
       ],
     },
     about: {
-      heading: "Miroslaw Potaczek - Founder of Forsa Design",
-      body: "With over 20 years of experience across project management, sales, business development and operations, I bring a practical, results-driven approach to every website we build. My background spans roles from CEO and Business Development Manager to Building Surveyor and Road Technician - giving me a deep understanding of how real businesses operate, what they need from a website, and how to communicate with clients at every level.",
+      heading: "Miroslaw Potaczek — Founder of Forsa Design",
+      body: "I started Forsa Design after eighteen years in international B2B sales. I traded metalworking machinery, industrial equipment and engineering solutions across Europe and Asia. I sat on both sides of the procurement table. I know what the process looks like from the first email to the signed contract.",
       body2:
-        "Based in Banff, Aberdeenshire, I work with businesses across Scotland and beyond. Fluent in Polish and English, with experience managing international contracts and teams in Poland, Ukraine and Ghana, I understand both local markets and global perspectives. Forsa Design was built on the principle that a website should be a genuine business tool - not just a digital brochure.",
+        "That experience taught me one thing. Most industrial firms do excellent work, but their websites do not keep up with the standard of their services. And it costs contracts. Not because the work is poor — because in B2B today, your website is the first stage of vetting. I am not a London agency with fifteen people on the team and a coffee bar in the office. I am someone who understands industry, logistics and international trade. I now build websites that speak your customers' language. No templates. No jargon. Just clean code and a clear message. Based in Banff, Aberdeenshire. Serving businesses across Scotland. Fluent in Polish and English.",
     },
     pricing: {
       heading: "Transparent Pricing",
@@ -312,9 +312,9 @@ const translations = {
     },
     about: {
       heading: "Miros\u0142aw Potaczek \u2014 Za\u0142o\u017cyciel Forsa Design",
-      body: "Z ponad 20-letnim do\u015bwiadczeniem w zarz\u0105dzaniu projektami, sprzeda\u017cy, rozwoju biznesu i operacjach, do ka\u017cdej strony internetowej podchodz\u0119 praktycznie i zorientowany na wyniki. Moja kariera obejmuje role od CEO i Business Development Managera, przez Building Surveyora, po Technika Drogowego \u2014 co daje mi g\u0142\u0119bokie zrozumienie funkcjonowania realnych firm, ich potrzeb w zakresie stron www oraz komunikacji z klientami na ka\u017cdym poziomie.",
+      body: "Forsa Design za\u0142o\u017cy\u0142em po osiemnastu latach w mi\u0119dzynarodowej sprzeda\u017cy B2B. Handlowa\u0142em maszynami do obr\u00f3bki metalu, wyposa\u017ceniem przemys\u0142owym i rozwi\u0105zaniami in\u017cynieryjnymi w Europie i Azji. Siedzia\u0142em po obu stronach sto\u0142u zakupowego. Wiem jak wygl\u0105da proces od pierwszego maila po podpisany kontrakt.",
       body2:
-        "Moja siedziba to Banff w Aberdeenshire, a wsp\u00f3\u0142pracuj\u0119 z firmami w ca\u0142ej Szkocji i poza ni\u0105. Biegle m\u00f3wi\u0119 po polsku i angielsku, a do\u015bwiadczenie w zarz\u0105dzaniu mi\u0119dzynarodowymi kontraktami i zespo\u0142ami w Polsce, na Ukrainie i w Ghanie pozwala mi \u0142\u0105czy\u0107 perspektyw\u0119 lokaln\u0105 z globaln\u0105. Forsa Design powsta\u0142o na zasadzie, \u017ce strona internetowa to prawdziwe narz\u0119dzie biznesowe \u2014 nie tylko cyfrowa broszura.",
+        "To do\u015bwiadczenie nauczy\u0142o mnie jednej rzeczy. Wi\u0119kszo\u015b\u0107 firm przemys\u0142owych wykonuje \u015bwietn\u0105 robot\u0119, ale ich strony internetowe nie nad\u0105\u017caj\u0105 za poziomem ich us\u0142ug. I to kosztuje kontrakty. Nie dlatego \u017ce praca jest s\u0142aba, tylko dlatego \u017ce w dzisiejszym B2B strona to pierwszy etap weryfikacji. Nie jestem agencj\u0105 z Londynu z pi\u0119tnastoma osobami w zespole i kawiarni\u0105 w biurze. Jestem cz\u0142owiekiem, kt\u00f3ry rozumie przemys\u0142, logistyk\u0119 i handel mi\u0119dzynarodowy. Teraz buduj\u0119 strony, kt\u00f3re komunikuj\u0105 si\u0119 j\u0119zykiem Twoich klient\u00f3w. Bez szablon\u00f3w. Bez zb\u0119dnego \u017caronu. Tylko czysty kod i jasny przekaz. Banff, Aberdeenshire. Obs\u0142uguj\u0119 firmy w ca\u0142ej Szkocji. M\u00f3wi\u0119 po polsku i po angielsku.",
     },
     pricing: {
       heading: "Przejrzyste ceny",
