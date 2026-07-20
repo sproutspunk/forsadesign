@@ -29,7 +29,7 @@ export default function Hero() {
 
       <div className="container mx-auto px-6 relative z-10">
         <motion.div
-          className="max-w-4xl mx-auto text-center flex flex-col items-center"
+          className="max-w-5xl mx-auto text-center flex flex-col items-center"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
@@ -41,7 +41,6 @@ export default function Hero() {
             className="mb-1 mx-auto"
             style={{ position: "relative", width: "fit-content" }}
           >
-            {/* Logo */}
             <picture>
               <source srcSet="/logo-new-lg.webp?v=2" type="image/webp" />
               <img
@@ -61,21 +60,21 @@ export default function Hero() {
 
           <motion.h1
             variants={itemVariants}
-            className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold tracking-tight leading-tight mb-6 max-w-2xl"
+            className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold tracking-tight leading-tight mb-6 max-w-4xl"
           >
             {t("hero.tagline")}
           </motion.h1>
 
           <motion.p
             variants={itemVariants}
-            className="text-lg md:text-xl text-foreground/70 font-light mb-6 max-w-2xl"
+            className="text-lg md:text-xl text-foreground/70 font-light mb-6 max-w-3xl"
           >
             {t("hero.subheader")}
           </motion.p>
 
           <motion.p
             variants={itemVariants}
-            className="text-base md:text-lg text-foreground/60 font-light leading-relaxed mb-12 max-w-2xl"
+            className="text-base md:text-lg text-foreground/60 font-light leading-relaxed mb-12 max-w-5xl"
           >
             {t("hero.body")}
           </motion.p>

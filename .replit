@@ -1,4 +1,4 @@
-modules = ["nodejs-24", "python-3.11"]
+modules = ["nodejs-20", "python-3.11"]
 
 [deployment]
 router = "application"
@@ -7,58 +7,6 @@ deploymentTarget = "autoscale"
 [deployment.postBuild]
 args = ["pnpm", "store", "prune"]
 env = { "CI" = "true" }
-
-# Cache-Control headers for static assets — hashed JS/CSS are immutable,
-# images/cacheable resources get long TTL, HTML stays fresh for SPA routing.
-[[deployment.responseHeaders]]
-path = "/assets/*"
-name = "Cache-Control"
-value = "public, max-age=31536000, immutable"
-
-[[deployment.responseHeaders]]
-path = "/*.js"
-name = "Cache-Control"
-value = "public, max-age=31536000, immutable"
-
-[[deployment.responseHeaders]]
-path = "/*.css"
-name = "Cache-Control"
-value = "public, max-age=31536000, immutable"
-
-[[deployment.responseHeaders]]
-path = "/*.jpg"
-name = "Cache-Control"
-value = "public, max-age=86400"
-
-[[deployment.responseHeaders]]
-path = "/*.jpeg"
-name = "Cache-Control"
-value = "public, max-age=86400"
-
-[[deployment.responseHeaders]]
-path = "/*.png"
-name = "Cache-Control"
-value = "public, max-age=86400"
-
-[[deployment.responseHeaders]]
-path = "/*.webp"
-name = "Cache-Control"
-value = "public, max-age=86400"
-
-[[deployment.responseHeaders]]
-path = "/*.svg"
-name = "Cache-Control"
-value = "public, max-age=86400"
-
-[[deployment.responseHeaders]]
-path = "/*.ico"
-name = "Cache-Control"
-value = "public, max-age=604800"
-
-[[deployment.responseHeaders]]
-path = "/llms.txt"
-name = "Cache-Control"
-value = "public, max-age=86400"
 
 [workflows]
 runButton = "Project"
@@ -154,15 +102,19 @@ timeoutMs = 20000
 
 [[ports]]
 localPort = 8080
+externalPort = 80
 
 [[ports]]
 localPort = 8081
+externalPort = 8081
 
 [[ports]]
 localPort = 8082
+externalPort = 3003
 
 [[ports]]
 localPort = 20815
+externalPort = 3000
 
 [nix]
 channel = "stable-25_05"
@@ -170,10 +122,3 @@ channel = "stable-25_05"
 [userenv]
 
 [userenv.shared]
-VITE_TURNSTILE_SITE_KEY = "0x4AAAAAADiKDRnpi0TNeGeS"
-PORT = "20815"
-BASE_PATH = "/"
-VITE_GA_MEASUREMENT_ID = "G-9QKVVE4QXE"
-PROTON_SMTP_USER = "hello@forsadesign.co.uk"
-PROTON_SMTP_HOST = "smtp.protonmail.ch"
-PROTON_SMTP_PORT = "465"

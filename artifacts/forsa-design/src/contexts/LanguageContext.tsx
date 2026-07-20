@@ -60,7 +60,7 @@ const translations = {
     hero: {
       tagline: "Websites for Industrial and Trade Businesses Across Scotland",
       subheader: "You know your trade. We know how your customers judge you through a screen.",
-      body: "Eighteen years in international B2B sales taught me one thing. Industrial firms, scaffolding contractors, M&E engineers, haulage companies. They all deliver top quality work, but their websites look like relics from the dial up era. And that costs contracts. We do not use templates. We do not use page builders. We build fast, clear websites that look serious. Because in B2B business your website is not a brochure. It is your first employee, your pitch and your reference check rolled into one.",
+      body: "Eighteen years in international B2B sales taught me one thing. Industrial firms, scaffolding contractors, M&E engineers, haulage companies. They all deliver top quality work, but their websites look like relics from the dial up era. And that costs contracts. When a buyer checks three suppliers, the one with a slow, cluttered site drops off the list first. Not because the work is worse, but because trust starts online. We do not use templates. We do not use page builders. We build fast, clear websites that look serious and load instantly on a phone at a yard. Because in B2B business your website is not a brochure. It is your first employee, your pitch and your reference check rolled into one.",
       cta: "Request a Quote",
     },
     services: {
@@ -251,7 +251,7 @@ const translations = {
     hero: {
       tagline: "Strony internetowe dla firm przemys\u0142owych i handlowych w Szkocji",
       subheader: "Znasz sw\u00f3j fach. My wiemy, jak klienci oceniaj\u0105 ci\u0119 przez ekran.",
-      body: "Osiemna\u015bcie lat w mi\u0119dzynarodowej sprzeda\u017cy B2B nauczy\u0142o mnie jednego. Firmy przemys\u0142owe, wykonawcy rusztowa\u0144, in\u017cynierowie M&E, transportowcy. Wszyscy wykonuj\u0105 \u015bwietn\u0105 robot\u0119, ale ich strony wygl\u0105daj\u0105 jak relikty czas\u00f3w modemu. I to kosztuje kontrakty. Nie u\u017cywamy szablon\u00f3w. Nie u\u017cywamy page builder\u00f3w. Budujemy szybkie, przejrzyste strony, kt\u00f3re wygl\u0105daj\u0105 powa\u017cnie. Bo w biznesie B2B twoja strona to nie folder reklamowy. To tw\u00f3j pierwszy pracownik, twoja oferta i twoja referencja w jednym.",
+      body: "Osiemnaście lat w międzynarodowej sprzedaży B2B nauczyło mnie jednego. Firmy przemysłowe, wykonawcy rusztowań, inżynierowie M&E, transportowcy. Wszyscy wykonują świetną robotę, ale ich strony wyglądają jak relikty czasów modemu. I to kosztuje kontrakty. Gdy kupujący sprawdza trzech dostawców, ten ze spowolnioną, przeładowaną stroną odpada pierwszy. Nie dlatego, że praca jest gorsza, ale dlatego, że zaufanie zaczyna się w internecie. Nie używamy szablonów. Nie używamy page builderów. Budujemy szybkie, przejrzyste strony, które wyglądają poważnie i ładują się natychmiast na telefonie na placu budowy. Bo w biznesie B2B twoja strona to nie folder reklamowy. To twój pierwszy pracownik, twoja oferta i twoja referencja w jednym.",
       cta: "Popro\u015b o wycen\u0119",
     },
     services: {

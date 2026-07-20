@@ -311,7 +311,7 @@ function buildHomepageBodyPl() {
 </a>
 </div>
 </div>
-<nav><a href="/pl/terms">Regulamin i Warunki</a> | <a href="/pl/privacy">Polityka Prywatno&#347;ci</a></nav>
+<nav><a href="/pl/terms">Regulamin i Warunki</a> | <a href="/pl/privacy">Polityka Prywatno&#347;sci</a></nav>
 </footer>`;
 }
 

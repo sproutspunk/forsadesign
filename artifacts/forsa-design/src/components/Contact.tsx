@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { motion } from "framer-motion";
-import { Instagram } from "lucide-react";
 import { submitContact } from "@workspace/api-client-react";
 
 type Status = "idle" | "sending" | "success" | "error";
@@ -289,19 +288,6 @@ export default function Contact() {
                   {t("contact.phone")}
                 </a>
               </p>
-            </div>
-
-            <div className="flex justify-center gap-6">
-              <a
-                href="https://www.instagram.com/forsa.design"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-foreground/60 hover:text-primary transition-colors p-2"
-                aria-label="Instagram"
-                data-testid="link-social-instagram"
-              >
-                <Instagram size={24} />
-              </a>
             </div>
           </div>
         </motion.div>

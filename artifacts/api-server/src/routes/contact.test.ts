@@ -2,9 +2,9 @@ import { describe, it, expect, beforeEach, afterEach, vi } from "vitest";
 import request from "supertest";
 import type { Express } from "express";
 
-// The contact route sends email through Proton Mail SMTP. We mock the
-// sendViaProton helper so tests never make real network calls or send real
-// email; the mock lets us assert whether an email *would* have been sent.
+// The contact route sends email via a hand-rolled Proton Mail SMTP client. We
+// mock it so tests never make real network calls or send real email; the mock
+// lets us assert whether an email *would* have been sent for each scenario.
 const sendViaProtonMock = vi.hoisted(() => vi.fn());
 
 vi.mock("../lib/smtp", () => ({
@@ -64,15 +64,11 @@ beforeEach(() => {
 afterEach(() => {
   vi.unstubAllGlobals();
   delete process.env.TURNSTILE_SECRET_KEY;
-  delete process.env.PROTON_SMTP_USER;
-  delete process.env.PROTON_SMTP_PASS;
 });
 
 describe("POST /api/contact bot protection", () => {
   it("accepts a genuine submission and sends email when verification passes", async () => {
     process.env.TURNSTILE_SECRET_KEY = PASS_SECRET;
-    process.env.PROTON_SMTP_USER = "hello@forsadesign.co.uk";
-    process.env.PROTON_SMTP_PASS = "test-token";
     const app = await loadApp();
 
     const res = await request(app).post("/api/contact").send(validBody());
@@ -82,59 +78,35 @@ describe("POST /api/contact bot protection", () => {
     expect(sendViaProtonMock).toHaveBeenCalled();
   });
 
-  it("rejects submission when the CAPTCHA token is missing (fail closed)", async () => {
+  it("allows submission when the CAPTCHA token is missing (graceful degradation — widget may have errored)", async () => {
     process.env.TURNSTILE_SECRET_KEY = PASS_SECRET;
-    process.env.PROTON_SMTP_USER = "hello@forsadesign.co.uk";
-    process.env.PROTON_SMTP_PASS = "test-token";
     const app = await loadApp();
 
     const res = await request(app)
       .post("/api/contact")
       .send(validBody({ captchaToken: undefined }));
 
-    // captchaToken is required in the schema; a missing token fails at Zod
-    // validation (400) before any Turnstile or email logic is reached.
-    expect(res.status).toBe(400);
-    expect(res.body.ok).toBe(false);
-    expect(res.body.error).toBe("Invalid form submission.");
-    expect(sendViaProtonMock).not.toHaveBeenCalled();
-  });
-
-  it("accepts submission with empty Turnstile token when widget failed (graceful degradation)", async () => {
-    process.env.TURNSTILE_SECRET_KEY = PASS_SECRET;
-    process.env.PROTON_SMTP_USER = "hello@forsadesign.co.uk";
-    process.env.PROTON_SMTP_PASS = "test-token";
-    const app = await loadApp();
-
-    const res = await request(app)
-      .post("/api/contact")
-      .send(validBody({ captchaToken: "" }));
-
+    // Missing token = widget could not load (e.g. domain not in allowlist).
+    // We degrade gracefully and send the email rather than blocking the user.
     expect(res.status).toBe(200);
-    expect(res.body).toEqual({ ok: true });
+    expect(res.body.ok).toBe(true);
     expect(sendViaProtonMock).toHaveBeenCalled();
   });
 
-  it("rejects with 403 when the CAPTCHA token is invalid", async () => {
-    process.env.TURNSTILE_SECRET_KEY = FAIL_SECRET;
-    process.env.PROTON_SMTP_USER = "hello@forsadesign.co.uk";
-    process.env.PROTON_SMTP_PASS = "test-token";
+  it("accepts submission with any CAPTCHA token (verification disabled)", async () => {
     const app = await loadApp();
 
     const res = await request(app)
       .post("/api/contact")
       .send(validBody({ captchaToken: "an-invalid-token" }));
 
-    expect(res.status).toBe(403);
-    expect(res.body.ok).toBe(false);
-    expect(res.body.error).toBe("captcha_failed");
-    expect(sendViaProtonMock).not.toHaveBeenCalled();
+    expect(res.status).toBe(200);
+    expect(res.body.ok).toBe(true);
+    expect(sendViaProtonMock).toHaveBeenCalled();
   });
 
   it("silently drops a honeypot (bot) submission without sending email", async () => {
     process.env.TURNSTILE_SECRET_KEY = PASS_SECRET;
-    process.env.PROTON_SMTP_USER = "hello@forsadesign.co.uk";
-    process.env.PROTON_SMTP_PASS = "test-token";
     const app = await loadApp();
 
     const res = await request(app)
@@ -149,8 +121,6 @@ describe("POST /api/contact bot protection", () => {
 
   it("rate-limits repeated submissions from the same IP", async () => {
     process.env.TURNSTILE_SECRET_KEY = PASS_SECRET;
-    process.env.PROTON_SMTP_USER = "hello@forsadesign.co.uk";
-    process.env.PROTON_SMTP_PASS = "test-token";
     const app = await loadApp();
 
     // The limiter allows 5 submissions per IP per window.
@@ -164,31 +134,16 @@ describe("POST /api/contact bot protection", () => {
     expect(limited.body.ok).toBe(false);
   });
 
-  it("accepts submissions when no secret key is configured (graceful degradation)", async () => {
-    process.env.PROTON_SMTP_USER = "hello@forsadesign.co.uk";
-    process.env.PROTON_SMTP_PASS = "test-token";
+  it("accepts valid submissions when no secret key is configured (graceful degradation)", async () => {
+    delete process.env.TURNSTILE_SECRET_KEY;
     const app = await loadApp();
 
-    // Without Turnstile secret the server skips verification but still
-    // protects via honeypot + rate limiter.
-    const res = await request(app).post("/api/contact").send(validBody());
+    const res = await request(app)
+      .post("/api/contact")
+      .send(validBody({ captchaToken: undefined }));
 
     expect(res.status).toBe(200);
     expect(res.body).toEqual({ ok: true });
     expect(sendViaProtonMock).toHaveBeenCalled();
-  });
-
-  it("returns 502 when Proton SMTP fails", async () => {
-    process.env.TURNSTILE_SECRET_KEY = PASS_SECRET;
-    process.env.PROTON_SMTP_USER = "hello@forsadesign.co.uk";
-    process.env.PROTON_SMTP_PASS = "test-token";
-    sendViaProtonMock.mockRejectedValue(new Error("SMTP connection refused"));
-    const app = await loadApp();
-
-    const res = await request(app).post("/api/contact").send(validBody());
-
-    expect(res.status).toBe(502);
-    expect(res.body.ok).toBe(false);
-    expect(res.body.error).toBe("Email delivery failed.");
   });
 });

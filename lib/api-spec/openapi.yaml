@@ -51,12 +51,6 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/ContactResponse"
-        "403":
-          description: CAPTCHA verification failed
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/ContactResponse"
         "502":
           description: Email delivery failed
           content:
@@ -99,14 +93,13 @@ components:
           type: string
           description: >-
             Cloudflare Turnstile token produced by the widget on the contact
-            form. Required and verified server-side before any email is sent;
-            submissions without a valid token are rejected.
+            form. Verified server-side before any email is sent when a Turnstile
+            secret key is configured.
       required:
         - name
         - email
         - projectType
         - details
-        - captchaToken
     ContactResponse:
       type: object
       properties:
