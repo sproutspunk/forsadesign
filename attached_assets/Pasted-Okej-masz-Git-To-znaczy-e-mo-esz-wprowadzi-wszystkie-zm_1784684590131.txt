@@ -1,0 +1,78 @@
+Okej, masz Git. To znaczy, że możesz wprowadzić wszystkie zmiany lokalnie, zcommitować i zdeployować. Nie potrzebujesz Replita.
+Ale muszę wiedzieć jedną rzecz: jaki to framework? React? Next.js? Vue? Czysty HTML/CSS/JS? To zmienia całą instrukcję.
+Tymczasem — lista zmian, które musisz wprowadzić w kodzie (niezależnie od frameworka):
+1.  Napraw 404 (status 200 zamiast 404)
+Problem: Twoja aplikacja SPA łapuje wszystkie URL-e i renderuje stronę główną z kodem 200.
+Rozwiązanie:
+Jeśli to Next.js — dodaj w app/not-found.tsx lub pages/404.tsx:
+export default function NotFound() {
+return <div>404 - Page not found</div>
+}
+Next.js automatycznie zwróci status 404.
+Jeśli to czysty React/Vite/SPA na Cloudflare Pages — musisz dodać _redirects lub _routes.json:
+/* /index.html 200
+NIE — to jest problem. W SPA na static hostingu 404 zawsze zwraca 200, bo serwer serwuje index.html dla każdego URL-a.
+Jak to naprawić w SPA:
+•  Dodaj _routes.json (Cloudflare Pages) z przekierowaniem 404:
+{
+"version": 1,
+"include": ["/*"],
+"exclude": []
+}
+Albo lepiej — przejdź na framework z SSR (Next.js) albo dodaj Cloudflare Function, która zwraca 404 dla nieistniejących ścieżek.
+2.  Przekierowanie 301 z / na /en/
+W Cloudflare Pages — dodaj plik _redirects w folderze public/:
+/ /en/ 301
+W Next.js — w next.config.js:
+async redirects() {
+return [
+{
+source: '/',
+destination: '/en/',
+permanent: true,
+},
+]
+}
+W Nginx (jeśli masz własny serwer):
+location = / {
+return 301 /en/;
+}
+----
+3.  Włącz HSTS
+W Cloudflare (najszybsze):
+•  SSL/TLS → Edge Certificates → Enable HSTS
+•  Max Age: 1 year (31536000)
+•  Include subdomains: ON
+•  Preload: ON
+W kodzie (nagłówek HTTP):
+Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+----
+4.  Popraw robots.txt
+W folderze public/ (lub static/) stwórz/napraw robots.txt:
+User-agent: *
+Allow: /
+Sitemap: https://forsadesign.co.uk/sitemap.xml
+Usuń cały ten tekst o "Content-Signals" i "ai-input".
+5.  Usuń maximum-scale=1 z viewport
+W index.html lub layout główny:
+----
+6.  Dodaj H2/H3 w HTML (zabijające dla SEO)
+To najtrudniejsze. Jeśli masz SPA (React bez SSR), Google nie widzi nagłówków.
+Opcja A — Szybka: Użyj react-helmet-async lub wrzuć statyczne H2 w index.html przed root div:
+To brzydki hack, ale działa.
+Opcja B — Porządna: Przejdź na Next.js z App Router. Strona renderuje się po stronie serwera, Google widzi wszystko.
+Opcja C — Cloudflare Workers: Dodaj prerender.io lub własny Worker, który serwuje statyczny HTML botom.
+7.  Dodaj formularz w HTML
+W index.html (lub w komponencie React, ale bez warunkowego renderowania):
+Niech JS tylko styluje i dodaje walidację. Formularz musi działać bez JS.
+8.  Dodaj tel: i mailto:
+<a href="tel:+447770110735">+44 7770 110735</a>
+<a href="mailto:meereck@gmail.com">meereck@gmail.com</a>
+----
+9.  Popraw cache Cloudflare
+W public/_headers (Cloudflare Pages):
+/*
+Cache-Control: public, max-age=3600
+Albo w Cloudflare Dashboard: Rules → Page Rules → forsadesign.co.uk/* → Cache Level: Cache Everything.
+Pytanie kluczowe: Jaki masz framework i gdzie deployujesz (Cloudflare Pages, Vercel, Netlify, własny serwer)? Bez tego nie dam Ci dokładnych ścieżek plików.
+Powiedz mi — to React? Next.js? Vue? A może czysty HTML? I gdzie to hostujesz?
