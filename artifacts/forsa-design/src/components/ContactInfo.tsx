@@ -76,7 +76,7 @@ export default function ContactInfo() {
             );
 
             const cardClass =
-              "group flex flex-col items-center text-center p-8 md:p-10 rounded-sm border border-primary/20 bg-background/60 transition-all duration-300 hover:border-primary/60 hover:bg-background";
+              "group h-full flex flex-col items-center justify-center text-center p-8 md:p-10 rounded-sm border border-primary/20 bg-background/60 transition-all duration-300 hover:border-primary/60 hover:bg-background";
             const glowStyle = {
               boxShadow: "0 0 0 0 rgba(201,168,76,0)",
             };
@@ -84,6 +84,7 @@ export default function ContactInfo() {
             return (
               <motion.div
                 key={i}
+                className="h-full"
                 initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-80px" }}
