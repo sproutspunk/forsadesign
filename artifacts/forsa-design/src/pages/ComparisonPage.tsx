@@ -357,9 +357,7 @@ export default function ComparisonPage({ lang }: ComparisonPageProps) {
                   )}
                   <div>
                     <div className="w-6 h-0.5 bg-primary mb-4" />
-                    <h2 className="font-serif text-xl font-bold mb-1 text-white">
-                      {card.name}
-                    </h2>
+                    <h2 className="font-serif text-xl font-bold mb-1 text-white">{card.name}</h2>
                     <p className="text-xs text-foreground/50 font-medium tracking-wide uppercase">
                       {card.tagline}
                     </p>

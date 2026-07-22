@@ -27,7 +27,10 @@ export default function ContactInfo() {
   ];
 
   return (
-    <section id="contact" className="py-24 bg-card border-t border-border/10 relative overflow-hidden">
+    <section
+      id="contact"
+      className="py-24 bg-card border-t border-border/10 relative overflow-hidden"
+    >
       {/* Background glow */}
       <div
         className="absolute inset-0 pointer-events-none"
