@@ -15,14 +15,12 @@ const presets = [
     featuresEn: [
       "Landing page or small website",
       "Template-based design",
-      "Contact form",
       "Mobile responsive",
       "SEO foundation",
     ],
     featuresPl: [
       "Strona docelowa lub mała witryna",
       "Design oparty na szablonie",
-      "Formularz kontaktowy",
       "Responsywna na mobile",
       "Podstawy SEO",
     ],

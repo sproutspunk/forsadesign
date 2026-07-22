@@ -24,7 +24,6 @@ const content = {
           { label: "Portfolio", href: "/en/#portfolio" },
           { label: "Process", href: "/en/#process" },
           { label: "About", href: "/en/#about" },
-          { label: "Contact", href: "/en/#contact" },
         ],
       },
       {
@@ -57,7 +56,6 @@ const content = {
           { label: "Portfolio", href: "/pl/#portfolio" },
           { label: "Jak Pracujemy", href: "/pl/#process" },
           { label: "O Nas", href: "/pl/#about" },
-          { label: "Kontakt", href: "/pl/#contact" },
         ],
       },
       {

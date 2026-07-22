@@ -81,7 +81,7 @@ export default function Hero() {
 
           <motion.a
             variants={itemVariants}
-            href="#contact"
+            href="#pricing"
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.98 }}
             className="inline-flex items-center justify-center px-8 py-4 bg-primary text-primary-foreground font-semibold text-lg rounded-sm transition-shadow hover:shadow-[0_0_20px_rgba(201,168,76,0.45)]"

@@ -8,7 +8,6 @@ import Portfolio from "@/components/Portfolio";
 import Process from "@/components/Process";
 import About from "@/components/About";
 import CTA from "@/components/CTA";
-import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
 interface HomePageProps {
@@ -63,7 +62,6 @@ export default function HomePage({ lang }: HomePageProps) {
         <Process />
         <About />
         <CTA />
-        <Contact />
       </main>
       <Footer />
     </div>
