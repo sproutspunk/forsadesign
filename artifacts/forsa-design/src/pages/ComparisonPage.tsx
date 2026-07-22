@@ -323,7 +323,6 @@ export default function ComparisonPage({ lang }: ComparisonPageProps) {
   return (
     <div className="min-h-[100dvh] bg-background text-foreground">
       <Header />
-
       {/* Hero */}
       <section className="pt-36 pb-20 bg-card border-b border-border/10">
         <div className="container mx-auto px-6 max-w-4xl">
@@ -336,13 +335,12 @@ export default function ComparisonPage({ lang }: ComparisonPageProps) {
             <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
               {c.heading}
             </h1>
-            <p className="text-xl text-foreground/70 font-light leading-relaxed max-w-2xl">
+            <p className="text-xl text-foreground/70 font-light leading-relaxed max-w-2xl text-justify">
               {c.intro}
             </p>
           </motion.div>
         </div>
       </section>
-
       {/* Option Cards */}
       <section className="py-24 bg-background">
         <div className="container mx-auto px-6 max-w-6xl">
@@ -427,7 +425,6 @@ export default function ComparisonPage({ lang }: ComparisonPageProps) {
           </div>
         </div>
       </section>
-
       {/* Full Comparison Table */}
       <section className="py-24 bg-card">
         <div className="container mx-auto px-6 max-w-6xl">
@@ -494,7 +491,6 @@ export default function ComparisonPage({ lang }: ComparisonPageProps) {
           </div>
         </div>
       </section>
-
       {/* CTA */}
       <section className="py-24 bg-background border-t border-border/10">
         <div className="container mx-auto px-6 max-w-2xl text-center">
@@ -518,7 +514,6 @@ export default function ComparisonPage({ lang }: ComparisonPageProps) {
           </motion.div>
         </div>
       </section>
-
       <Footer />
     </div>
   );
