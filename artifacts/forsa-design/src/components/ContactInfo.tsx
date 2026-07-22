@@ -45,7 +45,6 @@ export default function ContactInfo() {
             "radial-gradient(ellipse 70% 50% at 50% 100%, rgba(201,168,76,0.08) 0%, transparent 70%)",
         }}
       />
-
       <div className="container mx-auto px-6 max-w-5xl relative">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -69,7 +68,7 @@ export default function ContactInfo() {
                   {item.label}
                 </p>
                 {item.value && (
-                  <p className="text-white text-xl md:text-2xl font-semibold break-all">
+                  <p className="text-white text-xl md:text-2xl break-all font-medium">
                     {item.value}
                   </p>
                 )}
