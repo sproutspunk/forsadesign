@@ -363,7 +363,6 @@ export default function AboutPage({ lang }: AboutPageProps) {
   return (
     <div className="min-h-[100dvh] bg-background text-foreground">
       <Header />
-
       {/* Hero */}
       <section className="pt-36 pb-20 bg-card border-b border-border/10">
         <div className="container mx-auto px-6 max-w-4xl">
@@ -376,13 +375,12 @@ export default function AboutPage({ lang }: AboutPageProps) {
             <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
               {c.heading}
             </h1>
-            <p className="text-xl text-foreground/70 font-light leading-relaxed max-w-2xl">
+            <p className="text-xl text-foreground/70 font-light leading-relaxed max-w-2xl text-justify">
               {c.intro}
             </p>
           </motion.div>
         </div>
       </section>
-
       {/* What We Do */}
       <section className="py-24 bg-background">
         <div className="container mx-auto px-6 max-w-5xl">
@@ -401,13 +399,12 @@ export default function AboutPage({ lang }: AboutPageProps) {
               >
                 <div className="w-8 h-1 bg-primary mb-6" />
                 <h3 className="font-serif text-xl font-bold text-white mb-4">{service.title}</h3>
-                <p className="text-foreground/70 font-light leading-relaxed">{service.desc}</p>
+                <p className="text-foreground/70 font-light leading-relaxed text-justify">{service.desc}</p>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
-
       {/* Process */}
       <section className="py-24 bg-card">
         <div className="container mx-auto px-6 max-w-5xl">
@@ -441,7 +438,6 @@ export default function AboutPage({ lang }: AboutPageProps) {
           </div>
         </div>
       </section>
-
       {/* Differentiators */}
       <section className="py-24 bg-background">
         <div className="container mx-auto px-6 max-w-5xl">
@@ -468,7 +464,6 @@ export default function AboutPage({ lang }: AboutPageProps) {
           </div>
         </div>
       </section>
-
       {/* Comparison Table */}
       <section className="py-24 bg-card">
         <div className="container mx-auto px-6 max-w-6xl">
@@ -531,7 +526,6 @@ export default function AboutPage({ lang }: AboutPageProps) {
           </div>
         </div>
       </section>
-
       {/* CTA */}
       <section className="py-20 bg-background border-t border-border/10">
         <div className="container mx-auto px-6 text-center">
@@ -543,7 +537,6 @@ export default function AboutPage({ lang }: AboutPageProps) {
           </a>
         </div>
       </section>
-
       <Footer />
     </div>
   );
