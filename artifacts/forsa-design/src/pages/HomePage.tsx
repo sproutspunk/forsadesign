@@ -24,6 +24,23 @@ export default function HomePage({ lang }: HomePageProps) {
     }
   }, [lang, language, setLanguage]);
 
+  useEffect(() => {
+    const hash = window.location.hash;
+    if (!hash) return;
+    const id = hash.slice(1);
+    let attempts = 0;
+    const tryScroll = () => {
+      const el = document.getElementById(id);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth" });
+        return;
+      }
+      if (++attempts < 10) setTimeout(tryScroll, 80);
+    };
+    const t = setTimeout(tryScroll, 80);
+    return () => clearTimeout(t);
+  }, []);
+
   const isEn = lang === "en";
   useSeoMeta({
     title: isEn
