@@ -167,6 +167,38 @@
         "knowsAbout": ["Web Design", "Web Development", "E-commerce", "SEO", "Brand Strategy"]
       }
     </script>
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background-color: hsl(210 66% 15%);
+        color: hsl(210 20% 80%);
+        font-family:
+          Inter,
+          system-ui,
+          -apple-system,
+          sans-serif;
+        -webkit-font-smoothing: antialiased;
+        overflow-x: hidden;
+      }
+      #root {
+        min-height: 100dvh;
+        display: flex;
+        flex-direction: column;
+      }
+      .container {
+        width: 100%;
+        max-width: 80rem;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+      }
+    </style>
     <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
