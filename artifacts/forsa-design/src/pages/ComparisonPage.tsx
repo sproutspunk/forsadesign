@@ -397,7 +397,7 @@ export default function ComparisonPage({ lang }: ComparisonPageProps) {
 
               const baseClass = `relative rounded-md border p-7 flex flex-col gap-5 transition-all duration-300 cursor-pointer`;
               const defaultClass = `${baseClass} bg-card border-border/20 hover:border-primary/50 hover:shadow-[0_0_28px_-6px_rgba(201,168,76,0.25)]`;
-              const highlightClass = `${baseClass} bg-card border-primary/40 shadow-[0_0_40px_-8px_rgba(201,168,76,0.15)] hover:border-primary/80 hover:shadow-[0_0_40px_-4px_rgba(201,168,76,0.35)]`;
+              const highlightClass = `${baseClass} bg-card border-primary/70 shadow-[0_0_60px_-4px_rgba(201,168,76,0.45),0_0_120px_-20px_rgba(201,168,76,0.25)] hover:border-primary hover:shadow-[0_0_80px_0px_rgba(201,168,76,0.6),0_0_160px_-20px_rgba(201,168,76,0.35)]`;
 
               return card.highlight ? (
                 <motion.a
