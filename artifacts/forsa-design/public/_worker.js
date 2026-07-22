@@ -51,7 +51,10 @@ async function sendViaProton(env, mail) {
   const decoder = new TextDecoder();
 
   // STARTTLS: start plain, upgrade after server confirms readiness.
-  const socket = connect({ hostname: host, port }, { secureTransport: "starttls", allowHalfOpen: true });
+  const socket = connect(
+    { hostname: host, port },
+    { secureTransport: "starttls", allowHalfOpen: true },
+  );
 
   let incoming = "";
   let readerDone = false;
@@ -65,7 +68,10 @@ async function sendViaProton(env, mail) {
       try {
         for (;;) {
           const { value, done } = await reader.read();
-          if (done) { readerDone = true; break; }
+          if (done) {
+            readerDone = true;
+            break;
+          }
           incoming += decoder.decode(value, { stream: true });
         }
       } catch {
@@ -166,7 +172,11 @@ async function sendViaProton(env, mail) {
     await waitFor("221", 5000).catch(() => {});
   } finally {
     await readLoop.catch(() => {});
-    try { socket.close(); } catch { /* already closed */ }
+    try {
+      socket.close();
+    } catch {
+      /* already closed */
+    }
   }
 }
 
