@@ -34,11 +34,12 @@ function encodeHeaderWord(value) {
   return `=?UTF-8?B?${btoa(bin)}?=`;
 }
 
-// Minimal SMTP client over Cloudflare TCP sockets (implicit TLS on port 465).
-// Mirrors artifacts/api-server/src/lib/smtp.ts, which runs in dev on Node.
+// Minimal SMTP client over Cloudflare TCP sockets using STARTTLS on port 587.
+// Plain TCP first, upgrades to TLS after server confirms readiness.
+// Implicit TLS (port 465) causes "connection closed before 220" on CF Workers.
 async function sendViaProton(env, mail) {
   const host = (env.PROTON_SMTP_HOST || "smtp.protonmail.ch").trim();
-  const port = parseInt((env.PROTON_SMTP_PORT || "465").trim(), 10) || 465;
+  const port = parseInt((env.PROTON_SMTP_PORT || "587").trim(), 10) || 587;
   const user = (env.PROTON_SMTP_USER || "").trim();
   const pass = (env.PROTON_SMTP_PASS || "").trim();
 
@@ -46,37 +47,38 @@ async function sendViaProton(env, mail) {
     throw new Error("PROTON_SMTP_USER and PROTON_SMTP_PASS must be set");
   }
 
-  // allowHalfOpen:true lets us close the write side after QUIT without
-  // cancelling the readable stream prematurely (CF Workers behaviour).
-  const socket = connect({ hostname: host, port }, { secureTransport: "on", allowHalfOpen: true });
-  const writer = socket.writable.getWriter();
   const encoder = new TextEncoder();
   const decoder = new TextDecoder();
 
-  // Accumulate all incoming bytes into a single string so we never miss a
-  // multi-chunk response or hit stream-cancelled errors on partial reads.
+  // STARTTLS: start plain, upgrade after server confirms readiness.
+  const socket = connect({ hostname: host, port }, { secureTransport: "starttls", allowHalfOpen: true });
+
   let incoming = "";
   let readerDone = false;
-  const readLoop = (async () => {
-    const reader = socket.readable.getReader();
-    try {
-      for (;;) {
-        const { value, done } = await reader.read();
-        if (done) {
-          readerDone = true;
-          break;
+  let activeWriter = socket.writable.getWriter();
+
+  // Drain a readable stream into `incoming` until it ends.
+  function startReadLoop(readable) {
+    return (async () => {
+      readerDone = false;
+      const reader = readable.getReader();
+      try {
+        for (;;) {
+          const { value, done } = await reader.read();
+          if (done) { readerDone = true; break; }
+          incoming += decoder.decode(value, { stream: true });
         }
-        incoming += decoder.decode(value, { stream: true });
+      } catch {
+        readerDone = true;
       }
-    } catch {
-      readerDone = true;
-    }
-  })();
+    })();
+  }
+
+  let readLoop = startReadLoop(socket.readable);
 
   async function waitFor(code, timeoutMs = 20000) {
     const deadline = Date.now() + timeoutMs;
     for (;;) {
-      // Scan accumulated buffer for a final (non-continuation) response line.
       const lines = incoming.split("\r\n");
       for (let i = lines.length - 1; i >= 0; i--) {
         const line = lines[i];
@@ -95,19 +97,41 @@ async function sendViaProton(env, mail) {
 
   async function send(line) {
     incoming = "";
-    await writer.write(encoder.encode(line + "\r\n"));
+    await activeWriter.write(encoder.encode(line + "\r\n"));
   }
 
   try {
+    // Plain-text greeting before TLS upgrade.
     await waitFor("220");
-    await send(`EHLO forsadesign.co.uk`);
+    await send("EHLO forsadesign.co.uk");
     await waitFor("250");
+
+    // Request TLS upgrade.
+    await send("STARTTLS");
+    await waitFor("220");
+
+    // Release the plain-text writer, then upgrade the socket to TLS.
+    activeWriter.releaseLock();
+    const secureSocket = socket.startTls();
+
+    // Switch the read loop to the now-encrypted stream.
+    incoming = "";
+    readLoop = startReadLoop(secureSocket.readable);
+    activeWriter = secureSocket.writable.getWriter();
+
+    // Re-greet over TLS (required by RFC 3207).
+    await send("EHLO forsadesign.co.uk");
+    await waitFor("250");
+
+    // Authenticate.
     await send("AUTH LOGIN");
     await waitFor("334");
     await send(btoa(user));
     await waitFor("334");
     await send(btoa(pass));
     await waitFor("235");
+
+    // Envelope.
     await send(`MAIL FROM:<${mail.from}>`);
     await waitFor("250");
     await send(`RCPT TO:<${mail.to}>`);
@@ -115,6 +139,7 @@ async function sendViaProton(env, mail) {
     await send("DATA");
     await waitFor("354");
 
+    // Headers + body.
     const headers = [
       `From: Forsa Design <${mail.from}>`,
       `To: ${mail.to}`,
@@ -125,8 +150,7 @@ async function sendViaProton(env, mail) {
     ];
     if (mail.replyTo) headers.push(`Reply-To: ${mail.replyTo}`);
 
-    // SMTP requires CRLF line endings. Escape any line starting with "."
-    // (RFC 5321 §4.5.2 dot-stuffing).
+    // SMTP dot-stuffing: escape lines starting with ".".
     const escapedBody = mail.text
       .split("\n")
       .map((l) => (l.startsWith(".") ? "." + l : l))
@@ -135,18 +159,14 @@ async function sendViaProton(env, mail) {
     await send([...headers, "", escapedBody, "."].join("\r\n"));
     await waitFor("250");
 
-    // Close write side to signal we are done, then wait briefly for 221.
+    // Graceful close.
     incoming = "";
-    await writer.write(encoder.encode("QUIT\r\n"));
-    await writer.close().catch(() => {});
+    await activeWriter.write(encoder.encode("QUIT\r\n"));
+    await activeWriter.close().catch(() => {});
     await waitFor("221", 5000).catch(() => {});
   } finally {
     await readLoop.catch(() => {});
-    try {
-      socket.close();
-    } catch {
-      /* already closed */
-    }
+    try { socket.close(); } catch { /* already closed */ }
   }
 }
 
