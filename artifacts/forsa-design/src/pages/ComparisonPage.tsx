@@ -347,65 +347,85 @@ export default function ComparisonPage({ lang }: ComparisonPageProps) {
       <section className="py-24 bg-background">
         <div className="container mx-auto px-6 max-w-6xl">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {c.optionCards.map((card, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-80px" }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
-                className={`relative rounded-md border p-7 flex flex-col gap-5 ${
-                  card.highlight
-                    ? "bg-card border-primary/40 shadow-[0_0_40px_-8px_rgba(var(--primary),0.15)]"
-                    : "bg-card border-border/20"
-                }`}
-              >
-                {card.highlight && (
-                  <span className="absolute -top-3 left-6 bg-primary text-background text-xs font-bold px-3 py-1 rounded-sm tracking-wide">
-                    {c.highlighted}
-                  </span>
-                )}
-                <div>
-                  <div className="w-6 h-0.5 bg-primary mb-4" />
-                  <h2
-                    className={`font-serif text-xl font-bold mb-1 ${card.highlight ? "text-white" : "text-white"}`}
-                  >
-                    {card.name}
-                  </h2>
-                  <p className="text-xs text-foreground/50 font-medium tracking-wide uppercase">
-                    {card.tagline}
-                  </p>
-                </div>
+            {c.optionCards.map((card, i) => {
+              const cardContent = (
+                <>
+                  {card.highlight && (
+                    <span className="absolute -top-3 left-6 bg-primary text-background text-xs font-bold px-3 py-1 rounded-sm tracking-wide">
+                      {c.highlighted}
+                    </span>
+                  )}
+                  <div>
+                    <div className="w-6 h-0.5 bg-primary mb-4" />
+                    <h2 className="font-serif text-xl font-bold mb-1 text-white">
+                      {card.name}
+                    </h2>
+                    <p className="text-xs text-foreground/50 font-medium tracking-wide uppercase">
+                      {card.tagline}
+                    </p>
+                  </div>
 
-                <div>
-                  <p className="text-xs font-semibold text-foreground/40 uppercase tracking-wider mb-2">
-                    {c.pros}
-                  </p>
-                  <ul className="flex flex-col gap-1.5">
-                    {card.pros.map((p, j) => (
-                      <li key={j} className="flex gap-2 text-sm text-foreground/75">
-                        <ProsConsIcon type="pro" />
-                        {p}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+                  <div>
+                    <p className="text-xs font-semibold text-foreground/40 uppercase tracking-wider mb-2">
+                      {c.pros}
+                    </p>
+                    <ul className="flex flex-col gap-1.5">
+                      {card.pros.map((p, j) => (
+                        <li key={j} className="flex gap-2 text-sm text-foreground/75">
+                          <ProsConsIcon type="pro" />
+                          {p}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
 
-                <div>
-                  <p className="text-xs font-semibold text-foreground/40 uppercase tracking-wider mb-2">
-                    {c.cons}
-                  </p>
-                  <ul className="flex flex-col gap-1.5">
-                    {card.cons.map((p, j) => (
-                      <li key={j} className="flex gap-2 text-sm text-foreground/50">
-                        <ProsConsIcon type="con" />
-                        {p}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </motion.div>
-            ))}
+                  <div>
+                    <p className="text-xs font-semibold text-foreground/40 uppercase tracking-wider mb-2">
+                      {c.cons}
+                    </p>
+                    <ul className="flex flex-col gap-1.5">
+                      {card.cons.map((p, j) => (
+                        <li key={j} className="flex gap-2 text-sm text-foreground/50">
+                          <ProsConsIcon type="con" />
+                          {p}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </>
+              );
+
+              const baseClass = `relative rounded-md border p-7 flex flex-col gap-5 transition-all duration-300 cursor-pointer`;
+              const defaultClass = `${baseClass} bg-card border-border/20 hover:border-primary/50 hover:shadow-[0_0_28px_-6px_rgba(201,168,76,0.25)]`;
+              const highlightClass = `${baseClass} bg-card border-primary/40 shadow-[0_0_40px_-8px_rgba(201,168,76,0.15)] hover:border-primary/80 hover:shadow-[0_0_40px_-4px_rgba(201,168,76,0.35)]`;
+
+              return card.highlight ? (
+                <motion.a
+                  key={i}
+                  href={homeHref + "#contact"}
+                  initial={{ opacity: 0, y: 24 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-80px" }}
+                  transition={{ duration: 0.5, delay: i * 0.1 }}
+                  whileHover={{ y: -4 }}
+                  className={highlightClass}
+                >
+                  {cardContent}
+                </motion.a>
+              ) : (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 24 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-80px" }}
+                  transition={{ duration: 0.5, delay: i * 0.1 }}
+                  whileHover={{ y: -4 }}
+                  className={defaultClass}
+                >
+                  {cardContent}
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>
