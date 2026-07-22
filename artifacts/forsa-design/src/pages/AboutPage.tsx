@@ -399,7 +399,9 @@ export default function AboutPage({ lang }: AboutPageProps) {
               >
                 <div className="w-8 h-1 bg-primary mb-6" />
                 <h3 className="font-serif text-xl font-bold text-white mb-4">{service.title}</h3>
-                <p className="text-foreground/70 font-light leading-relaxed text-justify">{service.desc}</p>
+                <p className="text-foreground/70 font-light leading-relaxed text-justify">
+                  {service.desc}
+                </p>
               </motion.div>
             ))}
           </div>
