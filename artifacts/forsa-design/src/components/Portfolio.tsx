@@ -52,7 +52,9 @@ export default function Portfolio() {
               <h3 className="font-serif text-2xl font-bold text-white leading-tight mb-4 whitespace-pre-line">
                 {item.title}
               </h3>
-              <p className="text-foreground/70 leading-relaxed font-light text-justify">{item.desc}</p>
+              <p className="text-foreground/70 leading-relaxed font-light text-justify">
+                {item.desc}
+              </p>
             </motion.div>
           ))}
         </div>
