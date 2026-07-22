@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Mail, Phone, User } from "lucide-react";
+import { Mail, Phone, User, Linkedin } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function ContactInfo() {
@@ -23,6 +23,12 @@ export default function ContactInfo() {
       label: "Phone",
       value: t("footer.phone") as string,
       href: `tel:${t("footer.phone")}`,
+    },
+    {
+      icon: <Linkedin size={32} />,
+      label: "LinkedIn",
+      value: "Miroslaw Potaczek",
+      href: "https://www.linkedin.com/in/miroslaw-potaczek",
     },
   ];
 
@@ -54,7 +60,7 @@ export default function ContactInfo() {
           <div className="w-16 h-1 bg-primary mx-auto" />
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
           {items.map((item, i) => {
             const inner = (
               <>

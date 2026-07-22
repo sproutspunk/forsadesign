@@ -1,6 +1,6 @@
 import { useLanguage } from "@/contexts/LanguageContext";
 import { openCookiePreferences } from "@/components/CookieConsent";
-import { Mail, Phone } from "lucide-react";
+import { Mail, Phone, Linkedin } from "lucide-react";
 
 export default function Footer() {
   const { t, language } = useLanguage();
@@ -33,6 +33,14 @@ export default function Footer() {
                 data-testid="footer-link-phone"
               >
                 <Phone size={14} /> {t("footer.phone")}
+              </a>
+              <a
+                href="https://www.linkedin.com/in/miroslaw-potaczek"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-sm text-foreground/60 hover:text-primary transition-colors w-fit"
+              >
+                <Linkedin size={14} /> LinkedIn
               </a>
             </div>
           </div>
