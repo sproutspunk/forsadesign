@@ -68,7 +68,7 @@ export default function ContactInfo() {
                   {item.label}
                 </p>
                 {item.value && (
-                  <p className="text-white text-xl md:text-2xl break-all font-medium">
+                  <p className="text-white md:text-2xl break-all font-medium text-[16px]">
                     {item.value}
                   </p>
                 )}
