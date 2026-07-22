@@ -26,7 +26,7 @@ const content = {
       },
       {
         title: "Communication at Every Level",
-        desc: "From driving VIP delegations through Kraków to inspecting roads for Aberdeenshire Council, I've worked with clients and stakeholders from all walks of life. This translates into websites that speak clearly to your audience, whether they are local customers or international partners.",
+        desc: "I have spent over twenty years on both sides of the procurement table, selling industrial machinery across Europe and Asia, negotiating contracts, and building businesses from the ground up. I have closed deals with government agencies in West Africa, brokered commodities between continents, and managed complex international supply chains. That experience taught me one thing above all: clarity wins. Whether you are speaking to a procurement director in Aberdeen or a manufacturer in Turkey, your message must be immediate, credible and free of fluff. I bring that clarity to every website.",
       },
       {
         title: "Results-Focused Delivery",
