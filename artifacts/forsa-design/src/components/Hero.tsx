@@ -26,7 +26,6 @@ export default function Hero() {
       className="relative min-h-[70dvh] flex items-center justify-center pt-8 overflow-hidden"
     >
       <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary/10 via-background to-background" />
-
       <div className="container mx-auto px-6 relative z-10">
         <motion.div
           className="max-w-5xl mx-auto text-center flex flex-col items-center"
@@ -74,7 +73,7 @@ export default function Hero() {
 
           <motion.p
             variants={itemVariants}
-            className="text-base md:text-lg text-foreground/60 font-light leading-relaxed mb-6 max-w-5xl"
+            className="text-base md:text-lg text-foreground/60 font-light leading-relaxed mb-6 max-w-5xl text-center"
           >
             {t("hero.body")}
           </motion.p>
