@@ -1,8 +1,6 @@
 import { useLanguage } from "@/contexts/LanguageContext";
 import { motion } from "framer-motion";
 import { Check, ArrowRight, Sparkles } from "lucide-react";
-import { useLocation } from "wouter";
-import { useCallback } from "react";
 
 const presets = [
   {
@@ -80,10 +78,9 @@ const presets = [
 
 export default function PricingSection() {
   const { language, t } = useLanguage();
-  const [, setLocation] = useLocation();
   const isEn = language === "en";
 
-  const bi = useCallback((en: string, pl: string) => (isEn ? en : pl), [isEn]);
+  const bi = (en: string, pl: string) => (isEn ? en : pl);
 
   const formatPrice = (n: number) =>
     n.toLocaleString(isEn ? "en-GB" : "pl-PL", {
@@ -157,8 +154,8 @@ export default function PricingSection() {
                 ))}
               </ul>
 
-              <button
-                onClick={() => setLocation(`/${language}/quote`)}
+              <a
+                href="#contact"
                 className={`w-full flex items-center justify-center gap-2 px-6 py-3 rounded-lg font-semibold text-sm transition-all ${
                   preset.popular
                     ? "bg-primary text-primary-foreground hover:bg-primary/90 hover:shadow-[0_0_20px_rgba(201,168,76,0.35)]"
@@ -167,7 +164,7 @@ export default function PricingSection() {
               >
                 {bi("Get a custom quote", "Uzyskaj wycenę")}
                 <ArrowRight className="w-4 h-4" />
-              </button>
+              </a>
             </motion.div>
           ))}
         </div>
