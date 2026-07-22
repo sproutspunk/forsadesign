@@ -27,7 +27,7 @@ export default function ContactInfo() {
     {
       icon: <Linkedin size={32} />,
       label: "LinkedIn",
-      value: "Miroslaw Potaczek",
+      value: "",
       href: "https://www.linkedin.com/in/miroslaw-potaczek",
     },
   ];
@@ -68,9 +68,11 @@ export default function ContactInfo() {
                 <p className="text-foreground/50 text-sm uppercase tracking-widest mb-2 font-medium">
                   {item.label}
                 </p>
-                <p className="text-white text-xl md:text-2xl font-semibold break-all">
-                  {item.value}
-                </p>
+                {item.value && (
+                  <p className="text-white text-xl md:text-2xl font-semibold break-all">
+                    {item.value}
+                  </p>
+                )}
               </>
             );
 
@@ -94,7 +96,13 @@ export default function ContactInfo() {
                 style={glowStyle}
               >
                 {item.href ? (
-                  <a href={item.href} className={cardClass}>
+                  <a
+                    href={item.href}
+                    className={cardClass}
+                    {...(item.href.startsWith("https")
+                      ? { target: "_blank", rel: "noopener noreferrer" }
+                      : {})}
+                  >
                     {inner}
                   </a>
                 ) : (
