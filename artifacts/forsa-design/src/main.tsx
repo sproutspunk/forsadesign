@@ -5,5 +5,7 @@ import "./index.css";
 const root = document.getElementById("root")!;
 createRoot(root).render(<App />);
 requestAnimationFrame(() => {
-  root.style.opacity = "1";
+  requestAnimationFrame(() => {
+    root.style.opacity = "1";
+  });
 });
