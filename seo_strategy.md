@@ -3,6 +3,7 @@
 ## In scope
 
 - Public marketing pages
+- Public blog index and article pages implemented in `artifacts/forsa-design/src/pages/BlogPage.tsx` and `ArticlePage.tsx`
 - Public legal pages (`/en/terms`, `/pl/terms`, `/en/privacy`, `/pl/privacy`, and duplicate legacy routes `/terms`, `/privacy`)
 - Shared marketing-site assets and metadata (`artifacts/forsa-design/index.html`, `public/robots.txt`, favicon, Open Graph image)
 
