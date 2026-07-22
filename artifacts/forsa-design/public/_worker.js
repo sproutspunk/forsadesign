@@ -7,7 +7,6 @@
 // Required environment variables (Cloudflare Pages -> Settings -> Environment variables):
 //   PROTON_SMTP_USER     hello@forsadesign.co.uk
 //   PROTON_SMTP_PASS     SMTP token from Proton Mail settings
-//   TURNSTILE_SECRET_KEY Cloudflare Turnstile secret (optional but recommended)
 // Optional:
 //   PROTON_SMTP_HOST     defaults to smtp.protonmail.ch
 //   PROTON_SMTP_PORT     defaults to 465
@@ -151,11 +150,6 @@ async function sendViaProton(env, mail) {
   }
 }
 
-// Captcha removed; honeypot provides spam protection.
-async function verifyTurnstile(_env, _token, _ip) {
-  return true;
-}
-
 // Branded confirmation copy sent back to the visitor, localised to the site language.
 function buildConfirmation(language, name, projectType, details) {
   if (language === "pl") {
@@ -223,8 +217,7 @@ async function handleContact(request, env) {
     !projectType ||
     projectType.length > 200 ||
     !details ||
-    details.length > 10000 ||
-    typeof data.captchaToken !== "string"
+    details.length > 10000
   ) {
     return json({ ok: false, error: "Invalid form submission." }, 400);
   }
@@ -232,12 +225,6 @@ async function handleContact(request, env) {
   // Honeypot: hidden field only bots fill in. Silently accept, send nothing.
   if (website !== "") {
     return json({ ok: true });
-  }
-
-  const ip = request.headers.get("CF-Connecting-IP") || undefined;
-  const captchaOk = await verifyTurnstile(env, data.captchaToken, ip);
-  if (!captchaOk) {
-    return json({ ok: false, error: "captcha_failed" }, 403);
   }
 
   const subject = `New enquiry: ${projectType} — ${name}`;
@@ -317,7 +304,6 @@ export default {
         status: "ok",
         smtpUser: Boolean(env.PROTON_SMTP_USER),
         smtpPass: Boolean(env.PROTON_SMTP_PASS),
-        turnstileSecret: Boolean(env.TURNSTILE_SECRET_KEY),
         socketsAvailable: typeof connect === "function",
       });
     }
