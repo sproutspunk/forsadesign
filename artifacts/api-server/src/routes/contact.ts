@@ -4,26 +4,15 @@ import { logger } from "../lib/logger";
 import { contactRateLimiter } from "../middlewares/rateLimit";
 import { sendViaProton } from "../lib/smtp";
 
-// Contact form email delivery — multi-layer bot-protected endpoint.
+// Contact form email delivery — bot-protected endpoint.
 // Sends via Proton Mail SMTP so you keep full control of your email.
 //
-// SECURITY: Every code path that reaches sendViaProton is gated by verifyTurnstile,
-// which fails closed (no email without a valid Cloudflare token). Additional
-// layers: honeypot (silently drops bot submissions), rate limit (5/10min/IP),
-// and Zod validation. Semgrep may flag the generic "send email from POST" pattern,
-// but all paths are verified before any mail delivery.
+// Bot protection layers: honeypot (silently drops bot submissions),
+// rate limit (5/10min/IP), and Zod validation.
 // nosemgrep: generic.secrets.security.send-email-from-post
 const router: IRouter = Router();
 
 const CONTACT_RECIPIENT = "hello@forsadesign.co.uk";
-
-// Captcha removed; form protected by honeypot + rate limiter only.
-async function verifyTurnstile(
-  _token: string | undefined,
-  _ip: string | undefined,
-): Promise<boolean> {
-  return true;
-}
 
 // Branded confirmation copy sent back to the visitor, localised to the site language.
 function buildConfirmation(
@@ -88,18 +77,6 @@ router.post("/contact", contactRateLimiter, async (req, res) => {
   if (parsed.data.website && parsed.data.website.trim() !== "") {
     logger.warn({ ip: req.ip }, "Contact form honeypot triggered; dropping submission");
     return res.json(SubmitContactResponse.parse({ ok: true }));
-  }
-
-  // Stronger bot check: verify the Cloudflare Turnstile token server-side
-  // before sending any email. Fails closed when verification does not pass.
-  const captchaOk = await verifyTurnstile(parsed.data.captchaToken, req.ip);
-  if (!captchaOk) {
-    return res.status(403).json(
-      SubmitContactResponse.parse({
-        ok: false,
-        error: "captcha_failed",
-      }),
-    );
   }
 
   const name = parsed.data.name.trim();

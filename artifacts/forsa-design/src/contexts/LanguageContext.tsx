@@ -154,9 +154,6 @@ const translations = {
         required: "This field is required",
         invalidEmail: "Please enter a valid email address",
         selectRequired: "Please select a project type",
-        captcha: "Please complete the verification",
-        captchaFailed:
-          "Security verification failed to load. Please refresh the page and try again.",
       },
     },
     footer: {
@@ -353,9 +350,6 @@ const translations = {
         required: "To pole jest wymagane",
         invalidEmail: "Prosz\u0119 poda\u0107 prawid\u0142owy adres email",
         selectRequired: "Prosz\u0119 wybra\u0107 typ projektu",
-        captcha: "Prosz\u0119 uko\u0144czy\u0107 weryfikacj\u0119",
-        captchaFailed:
-          "Weryfikacja bezpieczeństwa nie mogła się załadować. Odśwież stronę i spróbuj ponownie.",
       },
     },
     footer: {

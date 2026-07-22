@@ -18,6 +18,4 @@ export interface ContactRequest {
   language?: ContactRequestLanguage;
   /** Honeypot field for spam protection. Hidden from real users and must be left empty; submissions with a value are silently discarded. */
   website?: string;
-  /** Cloudflare Turnstile token produced by the widget on the contact form. Verified server-side before any email is sent when a Turnstile secret key is configured. */
-  captchaToken?: string;
 }

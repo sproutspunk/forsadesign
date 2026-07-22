@@ -32,8 +32,7 @@ export const SubmitContactBody = zod.object({
   "projectType": zod.string().min(1),
   "details": zod.string().min(1),
   "language": zod.enum(['en', 'pl']).optional(),
-  "website": zod.string().optional().describe('Honeypot field for spam protection. Hidden from real users and must be left empty; submissions with a value are silently discarded.'),
-  "captchaToken": zod.string().optional().describe('Cloudflare Turnstile token produced by the widget on the contact form. Verified server-side before any email is sent when a Turnstile secret key is configured.')
+  "website": zod.string().optional().describe('Honeypot field for spam protection. Hidden from real users and must be left empty; submissions with a value are silently discarded.')
 })
 
 export const SubmitContactResponse = zod.object({

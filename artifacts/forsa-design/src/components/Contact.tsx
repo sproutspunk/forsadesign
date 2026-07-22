@@ -42,7 +42,7 @@ export default function Contact() {
 
     setStatus("sending");
     try {
-      await submitContact({ ...formData, website, language, captchaToken: "" });
+      await submitContact({ ...formData, website, language });
       setStatus("success");
       setFormData({ name: "", email: "", projectType: "", details: "" });
       setWebsite("");
