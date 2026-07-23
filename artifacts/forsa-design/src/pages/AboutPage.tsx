@@ -151,7 +151,7 @@ const content = {
       },
       {
         title: "Komunikacja na Każdym Poziomie",
-        desc: "Od transportu VIP przez Kraków po inspekcje dróg dla Aberdeenshire Council, pracowałem z klientami i interesariuszami z każdej dziedziny życia. To przekłada się na strony, które jasno komunikują się z Twoją publicznością - czy to lokalni klienci, czy międzynarodowi partnerzy.",
+        desc: "Pracowałem z klientami i interesariuszami z każdej dziedziny życia. To przekłada się na strony, które jasno komunikują się z odbiorcami — czy to lokalni klienci, czy międzynarodowi partnerzy.",
       },
       {
         title: "Dostarczanie Wyników",
