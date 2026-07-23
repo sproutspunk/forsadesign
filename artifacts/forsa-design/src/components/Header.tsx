@@ -55,7 +55,7 @@ export default function Header() {
           className="flex items-center shrink-0"
         >
           <img
-            src="/logo-new-sm.png?v=2"
+            src="/logo-new-sm.png?v=3"
             alt="Forsa Design"
             loading="eager"
             decoding="async"

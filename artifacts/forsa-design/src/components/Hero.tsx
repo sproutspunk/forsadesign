@@ -41,9 +41,9 @@ export default function Hero() {
             style={{ position: "relative", width: "fit-content" }}
           >
             <picture>
-              <source srcSet="/logo-new-lg.webp?v=2" type="image/webp" />
+              <source srcSet="/logo-new-lg.webp?v=3" type="image/webp" />
               <img
-                src="/logo-new-lg.png?v=2"
+                src="/logo-new-lg.png?v=3"
                 alt="Forsa Design"
                 width={640}
                 height={640}
