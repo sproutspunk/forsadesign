@@ -338,6 +338,14 @@ export default {
       });
     }
 
+    // Legacy duplicate paths — 301 permanent redirects to canonical localised URLs.
+    if (path === "/terms") {
+      return Response.redirect(new URL("/en/terms", url.origin), 301);
+    }
+    if (path === "/privacy") {
+      return Response.redirect(new URL("/en/privacy", url.origin), 301);
+    }
+
     // Everything else: serve the static site. SPA fallback for client-side
     // routes (no file extension) when the asset is missing.
     const assetResponse = await env.ASSETS.fetch(request);

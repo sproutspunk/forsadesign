@@ -1337,37 +1337,6 @@ const routes = [
     ],
     bodyHtml: buildBlogBodyPl(),
   },
-  // Legacy duplicate routes — canonical points to the preferred /en/ versions.
-  // Non-JS crawlers that land on /terms or /privacy receive the correct canonical
-  // so search engines consolidate authority on the /en/* URLs.
-  {
-    outDir: "terms",
-    lang: "en",
-    title: "Terms and Conditions | Forsa Design",
-    desc: "Read the terms and conditions for Forsa Design web design and development services, including project agreements, payment terms, intellectual property, and liability.",
-    ogTitle: "Terms and Conditions | Forsa Design",
-    locale: "en_US",
-    canonical: `${SITE}/en/terms`,
-    alternates: [
-      { lang: "en", href: `${SITE}/en/terms` },
-      { lang: "pl", href: `${SITE}/pl/terms` },
-    ],
-    bodyHtml: buildTermsBodyEn(),
-  },
-  {
-    outDir: "privacy",
-    lang: "en",
-    title: "Privacy Policy | Forsa Design",
-    desc: "Read Forsa Design\u2019s privacy policy to understand how we collect, use, and protect your personal data in compliance with UK GDPR and applicable data protection law.",
-    ogTitle: "Privacy Policy | Forsa Design",
-    locale: "en_US",
-    canonical: `${SITE}/en/privacy`,
-    alternates: [
-      { lang: "en", href: `${SITE}/en/privacy` },
-      { lang: "pl", href: `${SITE}/pl/privacy` },
-    ],
-    bodyHtml: buildPrivacyBodyEn(),
-  },
 ];
 
 const template = readFileSync(join(distDir, "index.html"), "utf-8");
@@ -1380,5 +1349,80 @@ for (const route of routes) {
   writeFileSync(join(outPath, "index.html"), html);
   console.log(`  \u2713 /${route.outDir}/`);
 }
+
+// ---------------------------------------------------------------------------
+// Sitemap generation — derived from the same route sources as the prerender
+// step so the two never drift apart.
+//
+// Only prerendered routes and confirmed SPA router routes are emitted.
+// Blog article URLs are intentionally omitted until per-article routing and
+// prerendering are in place (see App.tsx).
+// ---------------------------------------------------------------------------
+
+/**
+ * Localised marketing pages served by the SPA router but not in the
+ * prerender list. Include them in the sitemap so crawlers discover them even
+ * though they receive the SPA shell rather than pre-built HTML.
+ */
+const spaMarketingRoutes = [
+  { pathEn: "en/about", pathPl: "pl/about", priority: "0.8", changefreq: "monthly" },
+  { pathEn: "en/comparison", pathPl: "pl/comparison", priority: "0.7", changefreq: "monthly" },
+  { pathEn: "en/quote", pathPl: "pl/quote", priority: "0.6", changefreq: "monthly" },
+];
+
+function buildSitemapEntry(loc, alternates, priority, changefreq, lastmod) {
+  const altLines = alternates
+    .map((a) => `    <xhtml:link rel="alternate" hreflang="${a.lang}" href="${a.href}"/>`)
+    .join("\n");
+  const lastmodLine = lastmod ? `\n    <lastmod>${lastmod}</lastmod>` : "";
+  return [
+    "  <url>",
+    `    <loc>${loc}</loc>`,
+    altLines,
+    `${lastmodLine}`,
+    `    <changefreq>${changefreq}</changefreq>`,
+    `    <priority>${priority}</priority>`,
+    "  </url>",
+  ]
+    .filter((l) => l !== "")
+    .join("\n");
+}
+
+const sitemapEntries = [];
+
+for (const route of routes) {
+  const loc = route.canonical;
+  const alternates = route.alternates.map((a) => ({ lang: a.lang, href: a.href }));
+  const isHome = route.outDir === "en" || route.outDir === "pl";
+  const isBlog = route.outDir === "en/blog" || route.outDir === "pl/blog";
+  const isLegal = route.outDir.includes("terms") || route.outDir.includes("privacy");
+  const priority = isHome ? "1.0" : isBlog ? "0.9" : isLegal ? "0.4" : "0.7";
+  const changefreq = isHome ? "monthly" : isBlog ? "weekly" : "yearly";
+  sitemapEntries.push(buildSitemapEntry(loc, alternates, priority, changefreq, null));
+}
+
+for (const cfg of spaMarketingRoutes) {
+  const enLoc = `${SITE}/${cfg.pathEn}`;
+  const plLoc = `${SITE}/${cfg.pathPl}`;
+  const alternates = [
+    { lang: "en", href: enLoc },
+    { lang: "pl", href: plLoc },
+    { lang: "x-default", href: enLoc },
+  ];
+  sitemapEntries.push(buildSitemapEntry(enLoc, alternates, cfg.priority, cfg.changefreq, null));
+  sitemapEntries.push(buildSitemapEntry(plLoc, alternates, cfg.priority, cfg.changefreq, null));
+}
+
+const sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+${sitemapEntries.join("\n\n")}
+
+</urlset>
+`;
+
+writeFileSync(join(distDir, "sitemap.xml"), sitemapXml);
+console.log("  \u2713 sitemap.xml");
 
 console.log("Prerender complete.");
