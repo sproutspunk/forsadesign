@@ -200,24 +200,16 @@ function buildHomepageBodyEn() {
 <section id="contact">
 <h2>Get In Touch</h2>
 <p>Ready to start your next project? Let&#8217;s talk.</p>
-<p>Email: <a href="mailto:hello@forsadesign.co.uk">hello@forsadesign.co.uk</a></p>
+<p>Email: <!--email_off--><a href="mailto:hello@forsadesign.co.uk">hello@forsadesign.co.uk</a><!--/email_off--></p>
 <p>Phone: <a href="tel:07770110735">07770110735</a></p>
 </section>
 </main>
 <footer>
 <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:12px;">
 <p>&#169; 2026 Forsa Design. All rights reserved.</p>
-<div style="display:flex;align-items:center;gap:12px;">
-<a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="Built with GitHub">
-<img src="/github-badge.png" alt="Built with GitHub" style="height:32px;opacity:0.8;">
-</a>
-<a href="https://www.cloudflare.com" target="_blank" rel="noopener noreferrer" aria-label="Protected by Cloudflare">
-<img src="/cloudflare-badge.png" alt="Protected by Cloudflare" style="height:32px;opacity:0.8;">
-</a>
 <a href="https://marketingplatform.google.com/about/analytics/" target="_blank" rel="noopener noreferrer" aria-label="Measured with Google Analytics">
 <img src="/analytics-badge.png" alt="Measured with Google Analytics" style="height:24px;opacity:0.8;">
 </a>
-</div>
 </div>
 <nav><a href="/en/terms">Terms &amp; Conditions</a> | <a href="/en/privacy">Privacy Policy</a></nav>
 </footer>`;
@@ -292,24 +284,16 @@ function buildHomepageBodyPl() {
 <section id="contact">
 <h2>Skontaktuj Si&#281; Z Nami</h2>
 <p>Got&#243;w na nowy projekt? Porozmawiajmy.</p>
-<p>Email: <a href="mailto:hello@forsadesign.co.uk">hello@forsadesign.co.uk</a></p>
+<p>Email: <!--email_off--><a href="mailto:hello@forsadesign.co.uk">hello@forsadesign.co.uk</a><!--/email_off--></p>
 <p>Telefon: <a href="tel:07770110735">07770110735</a></p>
 </section>
 </main>
 <footer>
 <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:12px;">
 <p>&#169; 2026 Forsa Design. Wszystkie prawa zastrze&#380;one.</p>
-<div style="display:flex;align-items:center;gap:12px;">
-<a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="Built with GitHub">
-<img src="/github-badge.png" alt="Built with GitHub" style="height:32px;opacity:0.8;">
-</a>
-<a href="https://www.cloudflare.com" target="_blank" rel="noopener noreferrer" aria-label="Protected by Cloudflare">
-<img src="/cloudflare-badge.png" alt="Protected by Cloudflare" style="height:32px;opacity:0.8;">
-</a>
 <a href="https://marketingplatform.google.com/about/analytics/" target="_blank" rel="noopener noreferrer" aria-label="Measured with Google Analytics">
 <img src="/analytics-badge.png" alt="Measured with Google Analytics" style="height:24px;opacity:0.8;">
 </a>
-</div>
 </div>
 <nav><a href="/pl/terms">Regulamin i Warunki</a> | <a href="/pl/privacy">Polityka Prywatno&#347;sci</a></nav>
 </footer>`;
