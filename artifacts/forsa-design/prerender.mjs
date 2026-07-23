@@ -23,6 +23,7 @@ import { readFileSync, writeFileSync, mkdirSync } from "fs";
 import { join, dirname } from "path";
 import { fileURLToPath } from "url";
 import { articlesMeta } from "./src/data/articlesMeta.ts";
+import { articles } from "./src/data/articlesData.ts";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const distDir = join(__dirname, "dist/public");
@@ -1193,6 +1194,336 @@ ${articlesHtml}
 </main>`;
 }
 
+function buildAboutBodyEn() {
+  return `<header>
+<nav><a href="/en/">&#8592; Home</a> <span>|</span> <a href="/en/blog">Blog</a> <span>|</span> <a href="/en/comparison">Compare Options</a></nav>
+</header>
+<main>
+<h1>Meet the Founder of Forsa Design</h1>
+<p>My name is Miro. I started Forsa Design after more than 20 years in international B2B sales. I traded metalworking machinery, industrial equipment and engineering solutions across Europe and Asia. I sat on both sides of the procurement table. I know what the process looks like from the first email to the signed contract. That experience taught me one thing: most industrial firms do excellent work, but their websites do not keep up. And it costs contracts. I now build websites that speak your customers' language. No templates. No jargon. Just clean code and a clear message.</p>
+<section>
+<h2>Why This Background Matters</h2>
+<div>
+<h3>Real Business Perspective</h3>
+<p>Having run a company for 17 years, negotiated international contracts across three continents, and managed teams in multiple countries, I understand what a website needs to do for your bottom line. Every design decision is filtered through a business lens, not just an aesthetic one.</p>
+</div>
+<div>
+<h3>Communication at Every Level</h3>
+<p>I've worked with clients and stakeholders from all walks of life. This translates into websites that speak clearly to your audience, whether they are local customers or international partners.</p>
+</div>
+<div>
+<h3>Results-Focused Delivery</h3>
+<p>My career has been built on closing deals, managing projects end-to-end, and delivering measurable outcomes. I bring the same discipline to web development: clear timelines, transparent communication, and a focus on what actually moves the needle for your business.</p>
+</div>
+</section>
+<section>
+<h2>Our Process</h2>
+<div><h3>01 — Discovery &amp; Strategy (Weeks 1-2)</h3><p>We conduct interviews, analyse your industry, competition, users, and define business goals.</p></div>
+<div><h3>02 — Design (Weeks 3-4)</h3><p>We create wireframes, mockups, and a visual strategy. Everything approved by you before we write a line of code.</p></div>
+<div><h3>03 — Development (Weeks 5-8)</h3><p>We build the site with a focus on performance, security, SEO, and conversion.</p></div>
+<div><h3>04 — Testing &amp; Optimisation (Week 9)</h3><p>Tests across all devices and browsers, performance analysis, security, SEO.</p></div>
+<div><h3>05 — Launch &amp; Support (Ongoing)</h3><p>We deploy the site live. The first few weeks we're in close contact, then we transition to ongoing support.</p></div>
+</section>
+<section>
+<h2>What Sets Us Apart</h2>
+<p>No templates. Every project starts from scratch, tailored to your industry and goals.</p>
+<p>Focus on business results. We measure everything. Whether the site attracts users, converts, and supports sales.</p>
+<p>You own everything. Your domain, hosting and content are always in your control. No lock-in, no dependency on a single provider.</p>
+<p>Long-term partnership. We support you months and years after launch.</p>
+<p>Transparent communication. You know what's being done, why, and when it will be ready.</p>
+</section>
+<section>
+<h2>How We Compare</h2>
+<p>An honest look at the options available to you, so you can make the right decision for your business.</p>
+<table>
+<thead><tr><th>Aspect</th><th>CMS Template</th><th>Non-specialist Agency</th><th>Freelancer</th><th>Forsa Design</th></tr></thead>
+<tbody>
+<tr><td>Price</td><td>&#163;800-2,000</td><td>&#163;3,000-8,000</td><td>&#163;1,500-4,000</td><td>&#163;1,200-12,000+</td></tr>
+<tr><td>Turnaround</td><td>2-4 weeks</td><td>6-12 weeks</td><td>4-8 weeks</td><td>8-12 weeks</td></tr>
+<tr><td>Design uniqueness</td><td>Looks like competition</td><td>Sometimes template-based</td><td>Varies</td><td>Unique, tailored</td></tr>
+<tr><td>Site speed</td><td>Average (plugin-heavy)</td><td>Good (if clean code)</td><td>Varies</td><td>High (optimised)</td></tr>
+<tr><td>SEO + Optimisation</td><td>Basic</td><td>Average</td><td>Varies</td><td>Advanced (Schema, E-E-A-T)</td></tr>
+<tr><td>Technical support</td><td>Plugins required</td><td>Optional (extra cost)</td><td>Limited</td><td>Included</td></tr>
+<tr><td>Security (SSL, GDPR, PCI)</td><td>Depends on plugins</td><td>Generally yes</td><td>Varies</td><td>Yes, full documentation</td></tr>
+<tr><td>Integrations (CRM, ERP)</td><td>Plugin ecosystem</td><td>Can be done</td><td>Varies</td><td>Yes, custom development</td></tr>
+<tr><td>Scalability</td><td>Difficult (template lock-in)</td><td>Possible</td><td>Possible</td><td>Easy (custom code)</td></tr>
+<tr><td>Portability</td><td>Medium</td><td>High</td><td>High</td><td>High (full control)</td></tr>
+<tr><td>Brand consistency</td><td>Low</td><td>Medium</td><td>Varies</td><td>High (guidelines integrated)</td></tr>
+</tbody>
+</table>
+<p><a href="/en/comparison">See full comparison &#8594;</a></p>
+</section>
+<p><a href="/en/#contact">Start a Project</a></p>
+</main>
+<footer>
+<nav><a href="/en/terms">Terms &amp; Conditions</a> | <a href="/en/privacy">Privacy Policy</a> | <a href="/en/blog">Blog</a></nav>
+</footer>`;
+}
+
+function buildAboutBodyPl() {
+  return `<header>
+<nav><a href="/pl/">&#8592; Strona G&#322;&#243;wna</a> <span>|</span> <a href="/pl/blog">Blog</a> <span>|</span> <a href="/pl/comparison">Por&#243;wnanie</a></nav>
+</header>
+<main>
+<h1>Poznaj Za&#322;o&#380;yciela Forsa Design</h1>
+<p>Nazywam si&#281; Miro. Forsa Design za&#322;o&#380;y&#322;em po ponad 20 latach w mi&#281;dzynarodowej sprzeda&#380;y B2B. Handlowa&#322;em maszynami do obr&#243;bki metalu, wyposa&#380;eniem przemys&#322;owym i rozwi&#261;zaniami in&#380;ynieryjnymi w Europie i Azji. Siedzia&#322;em po obu stronach sto&#322;u zakupowego. Wiem jak wygl&#261;da proces od pierwszego maila po podpisany kontrakt. To do&#347;wiadczenie nauczy&#322;o mnie jednej rzeczy: wi&#281;kszo&#347;&#263; firm przemys&#322;owych wykonuje &#347;wietn&#261; robot&#281;, ale ich strony nie nad&#261;&#380;aj&#261; za poziomem us&#322;ug. I to kosztuje kontrakty. Teraz buduj&#281; strony, kt&#243;re komunikuj&#261; si&#281; j&#281;zykiem Twoich klient&#243;w. Bez szablon&#243;w. Bez &#380;argonu. Tylko czysty kod i jasny przekaz.</p>
+<section>
+<h2>Dlaczego To Do&#347;wiadczenie Ma Znaczenie</h2>
+<div>
+<h3>Perspektywa Prawdziwego Biznesu</h3>
+<p>Prowadz&#261;c firm&#281; przez 17 lat, negocjuj&#261;c mi&#281;dzynarodowe kontrakty na trzech kontynentach i zarz&#261;dzaj&#261;c zespo&#322;ami w wielu krajach, rozumiem, co strona internetowa musi robi&#263; dla Twojego zysku. Ka&#380;da decyzja projektowa jest filtrowana przez pryzmat biznesowy, nie tylko estetyczny.</p>
+</div>
+<div>
+<h3>Komunikacja na Ka&#380;dym Poziomie</h3>
+<p>Pracowa&#322;em z klientami i interesariuszami z ka&#380;dej dziedziny &#380;ycia. To przek&#322;ada si&#281; na strony, kt&#243;re jasno komunikuj&#261; si&#281; z odbiorcami, czy to lokalni klienci, czy mi&#281;dzynarodowi partnerzy.</p>
+</div>
+<div>
+<h3>Dostarczanie Wynik&#243;w</h3>
+<p>Ca&#322;a moja kariera opiera&#322;a si&#281; na zawieraniu um&#243;w, zarz&#261;dzaniu projektami od A do Z i dostarczaniu mierzalnych rezultat&#243;w. T&#281; sam&#261; dyscyplin&#281; przenosz&#281; do web developmentu: jasne terminy, transparentna komunikacja i skupienie na tym, co naprawd&#281; przynosi korzy&#347;&#263; Twojej firmie.</p>
+</div>
+</section>
+<section>
+<h2>Nasz Proces</h2>
+<div><h3>01 &#8212; Odkrywanie i Strategia (Tygodnie 1-2)</h3><p>Przeprowadzamy wywiady, analizujemy Twoj&#261; bran&#380;&#281;, konkurencj&#281;, u&#380;ytkownik&#243;w, definiujemy cele biznesowe.</p></div>
+<div><h3>02 &#8212; Projektowanie (Tygodnie 3-4)</h3><p>Tworzymy wireframe'y, mockupy i strategi&#281; wizualn&#261;. Wszystko zatwierdzone przez Ciebie zanim zaczynamy kod.</p></div>
+<div><h3>03 &#8212; Rozw&#243;j (Tygodnie 5-8)</h3><p>Budujemy stron&#281; z fokusem na wydajno&#347;&#263;, bezpiecze&#324;stwo, SEO i konwersj&#281;.</p></div>
+<div><h3>04 &#8212; Testowanie i Optymalizacja (Tydzie&#324; 9)</h3><p>Testy na wszystkich urz&#261;dzeniach, przegl&#261;darkach, analiza wydajno&#347;ci, bezpiecze&#324;stwa, SEO.</p></div>
+<div><h3>05 &#8212; Uruchomienie i Wsparcie (Na bie&#380;&#261;co)</h3><p>Wdra&#380;amy stron&#281; live. Pierwszych kilka tygodni mamy &#347;cis&#322;y kontakt, potem przystupujemy do wsparcia.</p></div>
+</section>
+<section>
+<h2>Co Nas Wyr&#243;&#380;nia</h2>
+<p>Nie szablony. Ka&#380;dy projekt zaczynamy od zera, dostosowany do Twojej bran&#380;y i cel&#243;w.</p>
+<p>Fokus na wyniki biznesowe. Mierzy si&#281; wszystko. Czy strona przyci&#261;ga u&#380;ytkownik&#243;w, konwertuje, wspiera sprzeda&#380;.</p>
+<p>Wszystko nale&#380;y do Ciebie. Domena, hosting i tre&#347;&#263; zawsze s&#261; pod Twoj&#261; kontrol&#261;. Bez uzale&#380;nienia od dostawcy.</p>
+<p>D&#322;ugoterminowe partnerstwo. Wspieramy Ci&#281; miesi&#261;ce i lata po uruchomieniu.</p>
+<p>Transparentna komunikacja. Wiesz, co si&#281; robi, dlaczego i kiedy b&#281;dzie gotowe.</p>
+</section>
+<p><a href="/pl/#contact">Rozpocznij Projekt</a></p>
+</main>
+<footer>
+<nav><a href="/pl/terms">Regulamin</a> | <a href="/pl/privacy">Polityka Prywatno&#347;ci</a> | <a href="/pl/blog">Blog</a></nav>
+</footer>`;
+}
+
+function buildComparisonBodyEn() {
+  return `<header>
+<nav><a href="/en/">&#8592; Home</a> <span>|</span> <a href="/en/about">About</a> <span>|</span> <a href="/en/blog">Blog</a></nav>
+</header>
+<main>
+<h1>Which Option Is Right for You?</h1>
+<p>Not every business needs a custom website. The right choice depends on your goals, budget, timeline, and how important flexibility, performance, and future growth are. Below is a practical comparison of the most common web solutions.</p>
+<section>
+<h2>Options Overview</h2>
+<div>
+<h3>CMS Template — Fast and affordable</h3>
+<p>Pros: Lower initial cost. Quick to launch. Easy content updates.</p>
+<p>Cons: Often based on existing themes. Can become slower with too many plugins. Limited control over SEO and performance.</p>
+</div>
+<div>
+<h3>Non-specialist Agency — General solution provider</h3>
+<p>Pros: Experienced teams. Project management. Existing portfolio.</p>
+<p>Cons: Often template-based. Higher costs due to larger structures. May lack industry-specific experience.</p>
+</div>
+<div>
+<h3>Freelancer — Flexible and personal</h3>
+<p>Pros: Direct communication. Flexible pricing. Wide range of skills.</p>
+<p>Cons: One person responsible for the whole project. Availability can become a challenge. Quality varies between providers.</p>
+</div>
+<div>
+<h3>Forsa Design — A website that works for your business</h3>
+<p>Built around your customers and business goals. Fast experiences that respect your customers' time. Built to be found and trusted online. Processes simplified through smart automation. A long-term partner when your business evolves. No lock-ins. No dependence on a single provider.</p>
+</div>
+</section>
+<section>
+<h2>Full Comparison</h2>
+<p>This comparison focuses on practical differences between each approach.</p>
+<table>
+<thead><tr><th>Criterion</th><th>DIY Builder</th><th>Freelancer</th><th>Agency</th><th>Forsa Design</th></tr></thead>
+<tbody>
+<tr><td>Time</td><td>Self-service</td><td>Independent developer</td><td>Team-based delivery</td><td>More time to focus on running your business</td></tr>
+<tr><td>Performance</td><td>Often slow</td><td>Varies</td><td>Generally good</td><td>Optimised for Core Web Vitals</td></tr>
+<tr><td>SEO</td><td>Basic</td><td>Varies</td><td>Average</td><td>Advanced — Schema, E-E-A-T, technical SEO</td></tr>
+<tr><td>Security</td><td>Depends on platform</td><td>Varies</td><td>Generally yes</td><td>Yes — SSL, GDPR, full documentation</td></tr>
+<tr><td>Scalability</td><td>Limited</td><td>Possible</td><td>Possible</td><td>Easy (custom codebase)</td></tr>
+<tr><td>Portability</td><td>Low — platform lock-in</td><td>High</td><td>High</td><td>High — full ownership</td></tr>
+<tr><td>Support after launch</td><td>Community forums</td><td>Often limited</td><td>Optional extra cost</td><td>Included — ongoing partnership</td></tr>
+</tbody>
+</table>
+</section>
+<p><a href="/en/quote">Get a Quote &#8594;</a></p>
+</main>
+<footer>
+<nav><a href="/en/terms">Terms &amp; Conditions</a> | <a href="/en/privacy">Privacy Policy</a> | <a href="/en/blog">Blog</a></nav>
+</footer>`;
+}
+
+function buildComparisonBodyPl() {
+  return `<header>
+<nav><a href="/pl/">&#8592; Strona G&#322;&#243;wna</a> <span>|</span> <a href="/pl/about">O Nas</a> <span>|</span> <a href="/pl/blog">Blog</a></nav>
+</header>
+<main>
+<h1>Kt&#243;ra Opcja Jest Dla Ciebie Odpowiednia?</h1>
+<p>Nie ka&#380;dy biznes potrzebuje strony tworzonej od zera. W&#322;a&#347;ciwy wyb&#243;r zale&#380;y od Twoich cel&#243;w, bud&#380;etu, harmonogramu i tego, jak wa&#380;na jest elastyczno&#347;&#263;, wydajno&#347;&#263; i przysz&#322;y rozw&#243;j.</p>
+<section>
+<h2>Przegl&#261;d Opcji</h2>
+<div>
+<h3>Szablon CMS &#8212; Szybki i przyst&#281;pny cenowo</h3>
+<p>Zalety: Ni&#380;szy koszt pocz&#261;tkowy. Szybkie uruchomienie. &#321;atwe aktualizacje tre&#347;ci.</p>
+<p>Wady: Cz&#281;sto oparte na istniej&#261;cych motywach. Mo&#380;e spowalnia&#263; przy zbyt wielu wtyczkach. Ograniczona kontrola nad SEO i wydajno&#347;ci&#261;.</p>
+</div>
+<div>
+<h3>Agencja bez specjalizacji &#8212; Og&#243;lny dostawca rozwi&#261;za&#324;</h3>
+<p>Zalety: Do&#347;wiadczone zespo&#322;y. Zarz&#261;dzanie projektem. Istniej&#261;ce portfolio.</p>
+<p>Wady: Cz&#281;sto szablonowe. Wy&#380;sze koszty przez wi&#281;ksze struktury. Mo&#380;e brakowa&#263; do&#347;wiadczenia bran&#380;owego.</p>
+</div>
+<div>
+<h3>Freelancer &#8212; Elastyczny i osobisty</h3>
+<p>Zalety: Bezpo&#347;rednia komunikacja. Elastyczne ceny. Szeroki zakres umiej&#281;tno&#347;ci.</p>
+<p>Wady: Jedna osoba odpowiedzialna za ca&#322;y projekt. Dost&#281;pno&#347;&#263; mo&#380;e by&#263; wyzwaniem. Jako&#347;&#263; r&#243;&#380;ni si&#281; mi&#281;dzy dostawcami.</p>
+</div>
+<div>
+<h3>Forsa Design &#8212; Strona, kt&#243;ra pracuje dla Twojego biznesu</h3>
+<p>Zbudowana wok&#243;&#322; Twoich klient&#243;w i cel&#243;w biznesowych. Szybkie do&#347;wiadczenia szanuj&#261;ce czas klient&#243;w. Zbudowana by by&#263; znajdowana i obdarzana zaufaniem online. Procesy uproszczone przez m&#261;dr&#261; automatyzacj&#281;. D&#322;ugoterminowy partner gdy Tw&#243;j biznes si&#281; rozwija. Brak uzale&#380;nie&#324;. Brak zale&#380;no&#347;ci od jednego dostawcy.</p>
+</div>
+</section>
+<section>
+<h2>Pe&#322;ne Por&#243;wnanie</h2>
+<table>
+<thead><tr><th>Kryterium</th><th>Builder DIY</th><th>Freelancer</th><th>Agencja</th><th>Forsa Design</th></tr></thead>
+<tbody>
+<tr><td>Czas</td><td>Samoobs&#322;uga</td><td>Niezale&#380;ny developer</td><td>Dostarczanie zespo&#322;owe</td><td>Wi&#281;cej czasu na prowadzenie biznesu</td></tr>
+<tr><td>Wydajno&#347;&#263;</td><td>Cz&#281;sto wolna</td><td>R&#243;&#380;nie</td><td>Generalnie dobra</td><td>Zoptymalizowana pod Core Web Vitals</td></tr>
+<tr><td>SEO</td><td>Podstawowe</td><td>R&#243;&#380;nie</td><td>&#346;rednie</td><td>Zaawansowane &#8212; Schema, E-E-A-T, techniczne SEO</td></tr>
+<tr><td>Bezpiecze&#324;stwo</td><td>Zale&#380;y od platformy</td><td>R&#243;&#380;nie</td><td>Generalnie tak</td><td>Tak &#8212; SSL, RODO, pe&#322;na dokumentacja</td></tr>
+<tr><td>Skalowanie</td><td>Ograniczone</td><td>Mo&#380;liwe</td><td>Mo&#380;liwe</td><td>Proste (custom kod)</td></tr>
+<tr><td>Przeno&#347;no&#347;&#263;</td><td>Niska &#8212; uzale&#380;nienie od platformy</td><td>Wysoka</td><td>Wysoka</td><td>Wysoka &#8212; pe&#322;na w&#322;asno&#347;&#263;</td></tr>
+<tr><td>Wsparcie po uruchomieniu</td><td>Fora spo&#322;eczno&#347;ciowe</td><td>Cz&#281;sto ograniczone</td><td>Opcjonalnie extra op&#322;ata</td><td>Zawarte &#8212; d&#322;ugoterminowe partnerstwo</td></tr>
+</tbody>
+</table>
+</section>
+<p><a href="/pl/quote">Uzyskaj Wycen&#281; &#8594;</a></p>
+</main>
+<footer>
+<nav><a href="/pl/terms">Regulamin</a> | <a href="/pl/privacy">Polityka Prywatno&#347;ci</a> | <a href="/pl/blog">Blog</a></nav>
+</footer>`;
+}
+
+function buildQuoteBodyEn() {
+  return `<header>
+<nav><a href="/en/">&#8592; Home</a> <span>|</span> <a href="/en/about">About</a> <span>|</span> <a href="/en/comparison">Compare Options</a></nav>
+</header>
+<main>
+<h1>Website Quote Calculator</h1>
+<p>Get an instant estimate for your website project. Select your project type and requirements to see a custom price range.</p>
+<section>
+<h2>What We Build</h2>
+<div>
+<h3>Landing Page</h3>
+<p>A focused single-page site built to convert visitors. Ideal for lead generation, product launches, or campaign landing pages.</p>
+</div>
+<div>
+<h3>Business Website</h3>
+<p>A professional multi-page website for your company. Includes services, about, contact, and portfolio sections.</p>
+</div>
+<div>
+<h3>E-commerce Store</h3>
+<p>A custom online shop built for performance and conversion. Product catalogue, checkout, and payment integration.</p>
+</div>
+<div>
+<h3>Web Application</h3>
+<p>Bespoke web systems for complex business requirements. Databases, user accounts, dashboards, and integrations.</p>
+</div>
+</section>
+<section>
+<h2>Get in Touch</h2>
+<p>Prefer to talk through your requirements directly? Contact us and we will put together a detailed proposal.</p>
+<p>Email: <a href="mailto:hello@forsadesign.co.uk">hello@forsadesign.co.uk</a></p>
+<p>Phone: <a href="tel:07770110735">07770110735</a></p>
+</section>
+</main>
+<footer>
+<nav><a href="/en/terms">Terms &amp; Conditions</a> | <a href="/en/privacy">Privacy Policy</a> | <a href="/en/blog">Blog</a></nav>
+</footer>`;
+}
+
+function buildQuoteBodyPl() {
+  return `<header>
+<nav><a href="/pl/">&#8592; Strona G&#322;&#243;wna</a> <span>|</span> <a href="/pl/about">O Nas</a> <span>|</span> <a href="/pl/comparison">Por&#243;wnanie</a></nav>
+</header>
+<main>
+<h1>Kalkulator Wyceny Strony</h1>
+<p>Uzyskaj natychmiastow&#261; wycen&#281; swojego projektu strony. Wybierz typ projektu i wymagania, aby zobaczy&#263; orientacyjny przedzia&#322; cenowy.</p>
+<section>
+<h2>Co Budujemy</h2>
+<div>
+<h3>Landing Page</h3>
+<p>Skupiona strona jednostronicowa zbudowana do konwersji odwiedzaj&#261;cych. Idealna do generowania lead&#243;w, lansowania produkt&#243;w lub kampanii marketingowych.</p>
+</div>
+<div>
+<h3>Strona Firmowa</h3>
+<p>Profesjonalna wielostronicowa strona dla Twojej firmy. Obejmuje us&#322;ugi, o nas, kontakt i sekcje portfolio.</p>
+</div>
+<div>
+<h3>Sklep E-commerce</h3>
+<p>Niestandardowy sklep internetowy zbudowany dla wydajno&#347;ci i konwersji. Katalog produkt&#243;w, koszyk i integracja p&#322;atno&#347;ci.</p>
+</div>
+<div>
+<h3>Aplikacja Webowa</h3>
+<p>Dedykowane systemy webowe dla z&#322;o&#380;onych wymaga&#324; biznesowych. Bazy danych, konta u&#380;ytkownik&#243;w, dashboardy i integracje.</p>
+</div>
+</section>
+<section>
+<h2>Skontaktuj Si&#281; z Nami</h2>
+<p>Wolisz om&#243;wi&#263; swoje wymagania bezpo&#347;rednio? Skontaktuj si&#281; z nami, a przygotujemy szczeg&#243;&#322;ow&#261; ofert&#281;.</p>
+<p>Email: <a href="mailto:hello@forsadesign.co.uk">hello@forsadesign.co.uk</a></p>
+<p>Telefon: <a href="tel:07770110735">07770110735</a></p>
+</section>
+</main>
+<footer>
+<nav><a href="/pl/terms">Regulamin</a> | <a href="/pl/privacy">Polityka Prywatno&#347;ci</a> | <a href="/pl/blog">Blog</a></nav>
+</footer>`;
+}
+
+function buildArticleBody(article, lang) {
+  const a = article[lang];
+  const homeLabel = lang === "en" ? "Home" : "Strona G\u0142\u00f3wna";
+  const backLabel = lang === "en" ? "Back to blog" : "Powr\u00f3t do bloga";
+  const byLabel = lang === "en" ? "By" : "Autor";
+  const minRead = lang === "en" ? "min read" : "min czytania";
+  const date = new Date(article.dateIso).toLocaleDateString(lang === "pl" ? "pl-PL" : "en-GB", {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  });
+
+  const sectionsHtml = a.sections
+    .map((s) => {
+      let html = "";
+      if (s.heading) {
+        html += `<h2>${ht(s.heading)}</h2>\n`;
+      }
+      html += `<p>${ht(s.body)}</p>`;
+      return html;
+    })
+    .join("\n");
+
+  return `<header>
+<nav><a href="/${lang}/">&#8592; ${ht(homeLabel)}</a> | <a href="/${lang}/blog">${ht(backLabel)}</a></nav>
+</header>
+<main>
+<article>
+<p>${ht(date)} &middot; ${ht(String(article.readingTimeMin))} ${ht(minRead)} &middot; ${ht(byLabel)}: Miro | Forsa Design</p>
+<h1>${ht(a.title)}</h1>
+<p>${ht(a.excerpt)}</p>
+${sectionsHtml}
+<p><a href="/${lang}/blog">${ht(backLabel)}</a></p>
+</article>
+</main>
+<footer>
+<nav><a href="/${lang}/terms">${lang === "en" ? "Terms &amp; Conditions" : "Regulamin"}</a> | <a href="/${lang}/privacy">${lang === "en" ? "Privacy Policy" : "Polityka Prywatno&#347;ci"}</a> | <a href="/${lang}/blog">Blog</a></nav>
+</footer>`;
+}
+
 function buildPrivacyBodyEn() {
   return `<header>
 <nav><a href="/en/">&#8592; Home</a> <span>|</span> <span>Forsa Design</span></nav>
@@ -1337,6 +1668,120 @@ const routes = [
     ],
     bodyHtml: buildBlogBodyPl(),
   },
+  {
+    outDir: "en/about",
+    lang: "en",
+    title: "About Us | Forsa Design, Web Agency in Banff, Aberdeenshire",
+    desc: "Learn about Forsa Design, a web agency based in Banff, Aberdeenshire, Scotland, building custom websites for businesses across Aberdeenshire and Scotland.",
+    ogTitle: "About Us | Forsa Design",
+    locale: "en_US",
+    canonical: `${SITE}/en/about`,
+    alternates: [
+      { lang: "en", href: `${SITE}/en/about` },
+      { lang: "pl", href: `${SITE}/pl/about` },
+    ],
+    bodyHtml: buildAboutBodyEn(),
+  },
+  {
+    outDir: "pl/about",
+    lang: "pl",
+    title: "O Nas | Forsa Design, Agencja Web Design w Banff, Aberdeenshire",
+    desc: "Poznaj Forsa Design, agencj\u0119 web design z Banff w Aberdeenshire w Szkocji, specjalizuj\u0105c\u0105 si\u0119 w autorskich stronach internetowych dla firm z Aberdeenshire i ca\u0142ej Szkocji.",
+    ogTitle: "O Nas | Forsa Design",
+    locale: "pl_PL",
+    canonical: `${SITE}/pl/about`,
+    alternates: [
+      { lang: "en", href: `${SITE}/en/about` },
+      { lang: "pl", href: `${SITE}/pl/about` },
+    ],
+    bodyHtml: buildAboutBodyPl(),
+  },
+  {
+    outDir: "en/comparison",
+    lang: "en",
+    title: "Web Design Options in Aberdeenshire | Forsa Design vs. Templates & Agencies",
+    desc: "Comparing web design options in Aberdeenshire and Scotland: custom agency vs. CMS templates, generalist agencies, and freelancers. Find the right fit for your business.",
+    ogTitle: "Web Design Options Compared | Forsa Design",
+    locale: "en_US",
+    canonical: `${SITE}/en/comparison`,
+    alternates: [
+      { lang: "en", href: `${SITE}/en/comparison` },
+      { lang: "pl", href: `${SITE}/pl/comparison` },
+    ],
+    bodyHtml: buildComparisonBodyEn(),
+  },
+  {
+    outDir: "pl/comparison",
+    lang: "pl",
+    title: "Opcje Web Design w Aberdeenshire | Forsa Design vs. Szablony i Agencje",
+    desc: "Por\u00f3wnanie opcji web design w Aberdeenshire i Szkocji: agencja custom vs. szablony CMS, agencje og\u00f3lne i freelancerzy. Znajd\u017a najlepsz\u0105 opcj\u0119 dla swojego biznesu.",
+    ogTitle: "Por\u00f3wnanie Opcji Web Design | Forsa Design",
+    locale: "pl_PL",
+    canonical: `${SITE}/pl/comparison`,
+    alternates: [
+      { lang: "en", href: `${SITE}/en/comparison` },
+      { lang: "pl", href: `${SITE}/pl/comparison` },
+    ],
+    bodyHtml: buildComparisonBodyPl(),
+  },
+  {
+    outDir: "en/quote",
+    lang: "en",
+    title: "Quote Calculator | Forsa Design",
+    desc: "Get an instant estimate for your website project. Custom pricing for landing pages, business sites, e-commerce and web applications.",
+    ogTitle: "Website Quote Calculator | Forsa Design",
+    locale: "en_US",
+    canonical: `${SITE}/en/quote`,
+    alternates: [
+      { lang: "en", href: `${SITE}/en/quote` },
+      { lang: "pl", href: `${SITE}/pl/quote` },
+    ],
+    bodyHtml: buildQuoteBodyEn(),
+  },
+  {
+    outDir: "pl/quote",
+    lang: "pl",
+    title: "Kalkulator wyceny | Forsa Design",
+    desc: "Uzyskaj natychmiastow\u0105 wycen\u0119 swojego projektu strony. Ceny dla stron docelowych, firmowych, sklep\u00f3w i aplikacji webowych.",
+    ogTitle: "Kalkulator wyceny strony | Forsa Design",
+    locale: "pl_PL",
+    canonical: `${SITE}/pl/quote`,
+    alternates: [
+      { lang: "en", href: `${SITE}/en/quote` },
+      { lang: "pl", href: `${SITE}/pl/quote` },
+    ],
+    bodyHtml: buildQuoteBodyPl(),
+  },
+  ...articles.flatMap((article) => [
+    {
+      outDir: `en/blog/${article.slugEn}`,
+      lang: "en",
+      title: `${article.en.title} | Forsa Design`,
+      desc: article.en.excerpt,
+      ogTitle: `${article.en.title} | Forsa Design`,
+      locale: "en_US",
+      canonical: `${SITE}/en/blog/${article.slugEn}`,
+      alternates: [
+        { lang: "en", href: `${SITE}/en/blog/${article.slugEn}` },
+        { lang: "pl", href: `${SITE}/pl/blog/${article.slugPl}` },
+      ],
+      bodyHtml: buildArticleBody(article, "en"),
+    },
+    {
+      outDir: `pl/blog/${article.slugPl}`,
+      lang: "pl",
+      title: `${article.pl.title} | Forsa Design`,
+      desc: article.pl.excerpt,
+      ogTitle: `${article.pl.title} | Forsa Design`,
+      locale: "pl_PL",
+      canonical: `${SITE}/pl/blog/${article.slugPl}`,
+      alternates: [
+        { lang: "en", href: `${SITE}/en/blog/${article.slugEn}` },
+        { lang: "pl", href: `${SITE}/pl/blog/${article.slugPl}` },
+      ],
+      bodyHtml: buildArticleBody(article, "pl"),
+    },
+  ]),
 ];
 
 const template = readFileSync(join(distDir, "index.html"), "utf-8");
@@ -1354,21 +1799,11 @@ for (const route of routes) {
 // Sitemap generation — derived from the same route sources as the prerender
 // step so the two never drift apart.
 //
-// Only prerendered routes and confirmed SPA router routes are emitted.
-// Blog article URLs are intentionally omitted until per-article routing and
-// prerendering are in place (see App.tsx).
+// All prerendered routes (home, legal, blog index, about, comparison, quote,
+// and every article page) are emitted. No SPA-only shell fallbacks remain.
 // ---------------------------------------------------------------------------
 
-/**
- * Localised marketing pages served by the SPA router but not in the
- * prerender list. Include them in the sitemap so crawlers discover them even
- * though they receive the SPA shell rather than pre-built HTML.
- */
-const spaMarketingRoutes = [
-  { pathEn: "en/about", pathPl: "pl/about", priority: "0.8", changefreq: "monthly" },
-  { pathEn: "en/comparison", pathPl: "pl/comparison", priority: "0.7", changefreq: "monthly" },
-  { pathEn: "en/quote", pathPl: "pl/quote", priority: "0.6", changefreq: "monthly" },
-];
+const spaMarketingRoutes = [];
 
 function buildSitemapEntry(loc, alternates, priority, changefreq, lastmod) {
   const altLines = alternates
@@ -1394,10 +1829,36 @@ for (const route of routes) {
   const loc = route.canonical;
   const alternates = route.alternates.map((a) => ({ lang: a.lang, href: a.href }));
   const isHome = route.outDir === "en" || route.outDir === "pl";
-  const isBlog = route.outDir === "en/blog" || route.outDir === "pl/blog";
+  const isBlogIndex = route.outDir === "en/blog" || route.outDir === "pl/blog";
+  const isArticle = route.outDir.startsWith("en/blog/") || route.outDir.startsWith("pl/blog/");
+  const isAbout = route.outDir === "en/about" || route.outDir === "pl/about";
+  const isComparison = route.outDir === "en/comparison" || route.outDir === "pl/comparison";
+  const isQuote = route.outDir === "en/quote" || route.outDir === "pl/quote";
   const isLegal = route.outDir.includes("terms") || route.outDir.includes("privacy");
-  const priority = isHome ? "1.0" : isBlog ? "0.9" : isLegal ? "0.4" : "0.7";
-  const changefreq = isHome ? "monthly" : isBlog ? "weekly" : "yearly";
+  const priority = isHome
+    ? "1.0"
+    : isBlogIndex
+      ? "0.9"
+      : isArticle
+        ? "0.8"
+        : isAbout
+          ? "0.8"
+          : isComparison
+            ? "0.7"
+            : isQuote
+              ? "0.6"
+              : isLegal
+                ? "0.4"
+                : "0.7";
+  const changefreq = isHome
+    ? "monthly"
+    : isBlogIndex
+      ? "weekly"
+      : isArticle
+        ? "monthly"
+        : isLegal
+          ? "yearly"
+          : "monthly";
   sitemapEntries.push(buildSitemapEntry(loc, alternates, priority, changefreq, null));
 }
 

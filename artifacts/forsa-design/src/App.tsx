@@ -11,6 +11,8 @@ import PrivacyPagePL from "@/pages/PrivacyPagePL";
 import AboutPage from "@/pages/AboutPage";
 import ComparisonPage from "@/pages/ComparisonPage";
 import QuoteCalculatorPage from "@/pages/QuoteCalculatorPage";
+import BlogPage from "@/pages/BlogPage";
+import ArticlePage from "@/pages/ArticlePage";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import CookieConsent from "@/components/CookieConsent";
 import { useEffect } from "react";
@@ -96,6 +98,16 @@ function Router() {
         <Route path="/pl/comparison" component={() => <ComparisonPage lang="pl" />} />
         <Route path="/en/quote" component={() => <QuoteCalculatorPage lang="en" />} />
         <Route path="/pl/quote" component={() => <QuoteCalculatorPage lang="pl" />} />
+        <Route
+          path="/en/blog/:slug"
+          component={({ params }) => <ArticlePage lang="en" slug={params.slug} />}
+        />
+        <Route
+          path="/pl/blog/:slug"
+          component={({ params }) => <ArticlePage lang="pl" slug={params.slug} />}
+        />
+        <Route path="/en/blog" component={() => <BlogPage lang="en" />} />
+        <Route path="/pl/blog" component={() => <BlogPage lang="pl" />} />
         <Route path="/" component={RootLandingPage} />
         <Route component={NotFound} />
       </Switch>
