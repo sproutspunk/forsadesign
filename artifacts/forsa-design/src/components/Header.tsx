@@ -156,19 +156,29 @@ export default function Header() {
                   key={link.name}
                   href={link.href}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="text-lg font-medium text-foreground hover:text-primary"
+                  className="text-lg font-medium text-foreground hover:text-primary transition-colors"
                 >
                   {link.name}
                 </a>
               ))}
-              <a
-                href={quoteHref}
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="text-center text-base font-bold px-4 py-3 rounded-sm bg-primary text-primary-foreground hover:bg-primary/90 transition-colors"
-              >
-                {t("nav.quote")}
-              </a>
-              <div className="flex items-center gap-4 mt-2 pt-4 border-t border-border">
+              <div className="flex flex-col gap-3 pt-2 border-t border-border">
+                <a
+                  href={quoteHref}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="text-center text-base font-bold px-4 py-3 rounded-sm bg-primary text-primary-foreground hover:bg-primary/90 transition-colors"
+                >
+                  {t("nav.quote")}
+                </a>
+                <a
+                  href={`/${language}/about`}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  data-testid="link-about-page-mobile"
+                  className="text-center text-sm font-semibold px-4 py-2.5 rounded-sm border border-primary/40 text-primary hover:bg-primary/10 transition-colors"
+                >
+                  {t("nav.aboutPage")}
+                </a>
+              </div>
+              <div className="flex items-center gap-4 pt-2 border-t border-border">
                 <a
                   href="/en/"
                   hrefLang="en"
@@ -177,10 +187,13 @@ export default function Header() {
                     switchLang("en");
                     setIsMobileMenuOpen(false);
                   }}
-                  className={`text-lg font-semibold ${language === "en" ? "text-primary" : "text-foreground/60"}`}
+                  className={`text-lg font-semibold transition-colors ${language === "en" ? "text-primary" : "text-foreground/60 hover:text-foreground"}`}
                 >
                   EN
                 </a>
+                <span className="text-foreground/30" aria-hidden="true">
+                  |
+                </span>
                 <a
                   href="/pl/"
                   hrefLang="pl"
@@ -189,7 +202,7 @@ export default function Header() {
                     switchLang("pl");
                     setIsMobileMenuOpen(false);
                   }}
-                  className={`text-lg font-semibold ${language === "pl" ? "text-primary" : "text-foreground/60"}`}
+                  className={`text-lg font-semibold transition-colors ${language === "pl" ? "text-primary" : "text-foreground/60 hover:text-foreground"}`}
                 >
                   PL
                 </a>
