@@ -48,20 +48,20 @@ export default function HomePage({ lang }: HomePageProps) {
       ? "Forsa Design | Comprehensive Website Design & Creation"
       : "Forsa Design | Kompleksowy Web Design i Tworzenie Stron",
     description: isEn
-      ? "Forsa Design is a boutique web agency in Banff, Scotland. We build responsive websites, e-commerce platforms, and custom web applications — from concept to launch and beyond."
-      : "Forsa Design to agencja internetowa z Banff w Szkocji. Tworzymy responsywne strony, sklepy e-commerce i dedykowane aplikacje webowe — od koncepcji do uruchomienia.",
+      ? "Web design for industrial and trade businesses across Scotland. Custom websites, e-commerce stores and bespoke web solutions. Based in Banff, Aberdeenshire."
+      : "Web design dla firm przemysłowych i handlowych w Szkocji. Dedykowane strony internetowe, sklepy i rozwiązania webowe. Siedziba w Banff, Aberdeenshire.",
     ogTitle: isEn
-      ? "Forsa Design | Web Design & Creation"
-      : "Forsa Design | Web Design i Tworzenie Stron",
+      ? "Forsa Design | Web Design for Industrial and Trade Businesses"
+      : "Forsa Design | Web Design dla Firm Przemysłowych i Handlowych",
     ogDescription: isEn
-      ? "Forsa Design is a boutique web agency in Banff, Scotland. We build responsive websites, e-commerce platforms, and custom web applications — from concept to launch and beyond."
-      : "Forsa Design to agencja internetowa z Banff w Szkocji. Tworzymy responsywne strony, sklepy e-commerce i dedykowane aplikacje webowe — od koncepcji do uruchomienia.",
+      ? "Web design for industrial and trade businesses across Scotland. Custom websites, e-commerce stores and bespoke web solutions. Based in Banff, Aberdeenshire."
+      : "Web design dla firm przemysłowych i handlowych w Szkocji. Dedykowane strony internetowe, sklepy i rozwiązania webowe. Siedziba w Banff, Aberdeenshire.",
     twitterTitle: isEn
-      ? "Forsa Design | Web Design & Creation"
-      : "Forsa Design | Web Design i Tworzenie Stron",
+      ? "Forsa Design | Web Design for Industrial and Trade Businesses"
+      : "Forsa Design | Web Design dla Firm Przemysłowych i Handlowych",
     twitterDescription: isEn
-      ? "Forsa Design is a boutique web agency in Banff, Scotland. We build responsive websites, e-commerce platforms, and custom web applications — from concept to launch and beyond."
-      : "Forsa Design to agencja internetowa z Banff w Szkocji. Tworzymy responsywne strony, sklepy e-commerce i dedykowane aplikacje webowe — od koncepcji do uruchomienia.",
+      ? "Web design for industrial and trade businesses across Scotland. Custom websites, e-commerce stores and bespoke web solutions. Based in Banff, Aberdeenshire."
+      : "Web design dla firm przemysłowych i handlowych w Szkocji. Dedykowane strony internetowe, sklepy i rozwiązania webowe. Siedziba w Banff, Aberdeenshire.",
     ogLocale: isEn ? "en_US" : "pl_PL",
     canonical: buildHref(isEn ? "/en/" : "/pl/"),
     alternates: [
