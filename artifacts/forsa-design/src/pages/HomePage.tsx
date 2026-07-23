@@ -45,8 +45,8 @@ export default function HomePage({ lang }: HomePageProps) {
   const isEn = lang === "en";
   useSeoMeta({
     title: isEn
-      ? "Forsa Design | Comprehensive Website Design & Creation"
-      : "Forsa Design | Kompleksowy Web Design i Tworzenie Stron",
+      ? "Websites for Industrial and Trade Businesses | Forsa Design, Aberdeenshire"
+      : "Strony dla Firm Przemysłowych i Handlowych | Forsa Design, Aberdeenshire",
     description: isEn
       ? "Web design for industrial and trade businesses across Scotland. Custom websites, e-commerce stores and bespoke web solutions. Based in Banff, Aberdeenshire."
       : "Web design dla firm przemysłowych i handlowych w Szkocji. Dedykowane strony internetowe, sklepy i rozwiązania webowe. Siedziba w Banff, Aberdeenshire.",
