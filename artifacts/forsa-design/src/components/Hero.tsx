@@ -53,6 +53,37 @@ export default function Hero() {
                 decoding="async"
               />
             </picture>
+            <span
+              aria-hidden="true"
+              style={{
+                position: "absolute",
+                top: "73%",
+                left: 0,
+                right: 0,
+                height: "12%",
+                background: "hsl(210 66% 15%)",
+                pointerEvents: "none",
+              }}
+            />
+            <span
+              style={{
+                position: "absolute",
+                top: "76%",
+                left: 0,
+                right: 0,
+                textAlign: "center",
+                fontSize: "clamp(6px, 1.6vw, 10px)",
+                letterSpacing: "0.15em",
+                fontWeight: 700,
+                color: "#DBB993",
+                textTransform: "uppercase",
+                fontFamily: "sans-serif",
+                whiteSpace: "nowrap",
+                pointerEvents: "none",
+              }}
+            >
+              Websites for Industrial and Trade Businesses
+            </span>
           </motion.div>
 
           <motion.div variants={itemVariants} className="w-20 h-px bg-primary mb-4 mt-3" />
