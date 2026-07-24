@@ -33,58 +33,6 @@ export default function Hero() {
           initial="hidden"
           animate="visible"
         >
-          <motion.div
-            variants={itemVariants}
-            animate={{ y: [-8, 8, -8] }}
-            transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
-            className="mb-0 mx-auto"
-            style={{ position: "relative", width: "fit-content" }}
-          >
-            <picture>
-              <source srcSet="/logo-new-lg.webp?v=3" type="image/webp" />
-              <img
-                src="/logo-new-lg.png?v=3"
-                alt="Forsa Design"
-                width={640}
-                height={640}
-                className="w-56 md:w-72 lg:w-80 h-auto object-contain block"
-                fetchPriority="high"
-                loading="eager"
-                decoding="async"
-              />
-            </picture>
-            <span
-              aria-hidden="true"
-              style={{
-                position: "absolute",
-                top: "79%",
-                left: 0,
-                right: 0,
-                height: "14%",
-                background: "hsl(210 66% 15%)",
-                pointerEvents: "none",
-              }}
-            />
-            <span
-              style={{
-                position: "absolute",
-                top: "83%",
-                left: 0,
-                right: 0,
-                textAlign: "center",
-                fontSize: "clamp(6px, 1.5vw, 10px)",
-                letterSpacing: "0.12em",
-                fontWeight: 400,
-                color: "#C9A84C",
-                fontFamily: "Georgia, serif",
-                whiteSpace: "nowrap",
-                pointerEvents: "none",
-              }}
-            >
-              Websites for Industrial &amp; Trade Businesses
-            </span>
-          </motion.div>
-
           <motion.div variants={itemVariants} className="w-20 h-px bg-primary mb-4 mt-3" />
 
           <motion.h1
