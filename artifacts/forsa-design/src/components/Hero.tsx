@@ -34,7 +34,7 @@ export default function Hero() {
           animate="visible"
         >
           <img
-            src="/logo-hero.png?v=1"
+            src="/logo-hero.png?v=8"
             alt="Forsa Design"
             width={2048}
             height={2048}
