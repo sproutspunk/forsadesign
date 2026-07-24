@@ -22,8 +22,6 @@
 import { readFileSync, writeFileSync, mkdirSync } from "fs";
 import { join, dirname } from "path";
 import { fileURLToPath } from "url";
-import { articlesMeta } from "./src/data/articlesMeta.ts";
-import { articles } from "./src/data/articlesData.ts";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const distDir = join(__dirname, "dist/public");
@@ -1148,52 +1146,6 @@ ${buildSectionsHtml(termsPL)}
 </main>`;
 }
 
-function buildBlogBodyEn() {
-  const sorted = [...articlesMeta].sort((a, b) => b.dateIso.localeCompare(a.dateIso));
-  const articlesHtml = sorted
-    .map((article) => {
-      const a = article.en;
-      const date = new Date(article.dateIso).toLocaleDateString("en-GB", {
-        day: "numeric",
-        month: "long",
-        year: "numeric",
-      });
-      return `<article><a href="/en/blog/${ht(article.slugEn)}"><h2>${ht(a.title)}</h2><p>${ht(a.excerpt)}</p><p>${ht(date)} &middot; ${ht(String(article.readingTimeMin))} min read</p></a></article>`;
-    })
-    .join("\n");
-  return `<header>
-<nav><a href="/en/">&#8592; Home</a> <span>|</span> <span>Forsa Design</span></nav>
-</header>
-<main>
-<h1>Blog</h1>
-<p>Expert insights on web design, SEO, and digital strategy.</p>
-${articlesHtml}
-</main>`;
-}
-
-function buildBlogBodyPl() {
-  const sorted = [...articlesMeta].sort((a, b) => b.dateIso.localeCompare(a.dateIso));
-  const articlesHtml = sorted
-    .map((article) => {
-      const a = article.pl;
-      const date = new Date(article.dateIso).toLocaleDateString("pl-PL", {
-        day: "numeric",
-        month: "long",
-        year: "numeric",
-      });
-      return `<article><a href="/pl/blog/${ht(article.slugPl)}"><h2>${ht(a.title)}</h2><p>${ht(a.excerpt)}</p><p>${ht(date)} &middot; ${ht(String(article.readingTimeMin))} min czytania</p></a></article>`;
-    })
-    .join("\n");
-  return `<header>
-<nav><a href="/pl/">&#8592; Strona G\u0142\u00f3wna</a> <span>|</span> <span>Forsa Design</span></nav>
-</header>
-<main>
-<h1>Blog</h1>
-<p>Wiedza ekspercka o web designie, SEO i strategii cyfrowej.</p>
-${articlesHtml}
-</main>`;
-}
-
 function buildAboutBodyEn() {
   return `<header>
 <nav><a href="/en/">&#8592; Home</a> <span>|</span> <a href="/en/about">About</a> <span>|</span> <a href="/en/comparison">Compare Options</a></nav>
@@ -1484,46 +1436,6 @@ function buildQuoteBodyPl() {
 </footer>`;
 }
 
-function buildArticleBody(article, lang) {
-  const a = article[lang];
-  const homeLabel = lang === "en" ? "Home" : "Strona G\u0142\u00f3wna";
-  const backLabel = lang === "en" ? "Back to blog" : "Powr\u00f3t do bloga";
-  const byLabel = lang === "en" ? "By" : "Autor";
-  const minRead = lang === "en" ? "min read" : "min czytania";
-  const date = new Date(article.dateIso).toLocaleDateString(lang === "pl" ? "pl-PL" : "en-GB", {
-    day: "numeric",
-    month: "long",
-    year: "numeric",
-  });
-
-  const sectionsHtml = a.sections
-    .map((s) => {
-      let html = "";
-      if (s.heading) {
-        html += `<h2>${ht(s.heading)}</h2>\n`;
-      }
-      html += `<p>${ht(s.body)}</p>`;
-      return html;
-    })
-    .join("\n");
-
-  return `<header>
-<nav><a href="/${lang}/">&#8592; ${ht(homeLabel)}</a> | <a href="/${lang}/blog">${ht(backLabel)}</a></nav>
-</header>
-<main>
-<article>
-<p>${ht(date)} &middot; ${ht(String(article.readingTimeMin))} ${ht(minRead)} &middot; ${ht(byLabel)}: Miro | Forsa Design</p>
-<h1>${ht(a.title)}</h1>
-<p>${ht(a.excerpt)}</p>
-${sectionsHtml}
-<p><a href="/${lang}/blog">${ht(backLabel)}</a></p>
-</article>
-</main>
-<footer>
-<nav><a href="/${lang}/terms">${lang === "en" ? "Terms &amp; Conditions" : "Regulamin"}</a> | <a href="/${lang}/privacy">${lang === "en" ? "Privacy Policy" : "Polityka Prywatno&#347;ci"}</a></nav>
-</footer>`;
-}
-
 function buildPrivacyBodyEn() {
   return `<header>
 <nav><a href="/en/">&#8592; Home</a> <span>|</span> <span>Forsa Design</span></nav>
@@ -1786,11 +1698,7 @@ for (const route of routes) {
           : isLegal
             ? "0.4"
             : "0.7";
-  const changefreq = isHome
-    ? "monthly"
-    : isLegal
-          ? "yearly"
-          : "monthly";
+  const changefreq = isHome ? "monthly" : isLegal ? "yearly" : "monthly";
   sitemapEntries.push(buildSitemapEntry(loc, alternates, priority, changefreq, null));
 }
 
