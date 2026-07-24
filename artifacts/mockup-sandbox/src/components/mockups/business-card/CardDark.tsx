@@ -16,7 +16,6 @@ export function CardDark() {
       <p style={{ color: "#666", fontSize: "12px", letterSpacing: "2px", textTransform: "uppercase", marginBottom: "8px" }}>
         Przód — Wariant Ciemny (Navy)
       </p>
-
       {/* Card front */}
       <div
         style={{
@@ -54,14 +53,16 @@ export function CardDark() {
               }}>
                 FORSA DESIGN
               </div>
-              <div style={{
-                fontSize: "11px",
-                color: "rgba(219,185,147,0.7)",
-                letterSpacing: "1.5px",
-                marginTop: "6px",
-                fontFamily: "'Georgia', serif",
-                fontStyle: "italic",
-              }}>
+              <div
+                style={{
+                  fontSize: "11px",
+                  color: "rgba(219,185,147,0.7)",
+                  letterSpacing: "1.5px",
+                  marginTop: "6px",
+                  fontFamily: "'Georgia', serif",
+                  fontStyle: "italic",
+                }}
+                className="font-thin">
                 Websites for Industrial & Trade Businesses
               </div>
             </div>
@@ -91,7 +92,6 @@ export function CardDark() {
 
         </div>
       </div>
-
       {/* Card back */}
       <div
         style={{
@@ -120,7 +120,6 @@ export function CardDark() {
           </div>
         </div>
       </div>
-
       <p style={{ color: "#444", fontSize: "11px", marginTop: "8px" }}>
         Format druku: 85 × 55 mm · 300 DPI · Bleed 3 mm
       </p>
