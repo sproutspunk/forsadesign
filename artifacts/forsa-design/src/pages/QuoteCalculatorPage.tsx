@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { useSeoMeta, buildHref } from "@/hooks/useSeoMeta";
+import { useSeoMeta, useJsonLd, buildHref } from "@/hooks/useSeoMeta";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import QuoteCalculator from "@/components/quote-calculator/QuoteCalculator";
@@ -41,6 +41,28 @@ export default function QuoteCalculatorPage({ lang }: QuoteCalculatorPageProps) 
       { lang: "pl", href: buildHref("/pl/quote") },
     ],
   });
+
+  useJsonLd(
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: isEn ? "Home" : "Strona Główna",
+          item: `https://forsadesign.co.uk/${isEn ? "en" : "pl"}/`,
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: isEn ? "Quote" : "Wycena",
+          item: `https://forsadesign.co.uk/${isEn ? "en" : "pl"}/quote`,
+        },
+      ],
+    },
+    "quote-breadcrumb",
+  );
 
   return (
     <div className="min-h-[100dvh] bg-background text-foreground">

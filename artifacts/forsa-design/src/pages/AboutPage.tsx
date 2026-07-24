@@ -355,6 +355,23 @@ export default function AboutPage({ lang }: AboutPageProps) {
             "B2B Websites",
           ],
         },
+        {
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            {
+              "@type": "ListItem",
+              position: 1,
+              name: lang === "en" ? "Home" : "Strona Główna",
+              item: `https://forsadesign.co.uk/${lang}/`,
+            },
+            {
+              "@type": "ListItem",
+              position: 2,
+              name: lang === "en" ? "About" : "O Nas",
+              item: `https://forsadesign.co.uk/${lang}/about`,
+            },
+          ],
+        },
       ],
     },
     "about-page",

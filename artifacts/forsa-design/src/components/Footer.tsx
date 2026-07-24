@@ -83,10 +83,16 @@ export default function Footer() {
               {t("nav.contact")}
             </a>
             <a
-              href={`/${language}/blog`}
+              href={`/${language}/comparison`}
               className="text-sm font-medium text-foreground/70 hover:text-primary transition-colors w-fit"
             >
-              Blog
+              {t("nav.comparison")}
+            </a>
+            <a
+              href={`/${language}/quote`}
+              className="text-sm font-medium text-foreground/70 hover:text-primary transition-colors w-fit"
+            >
+              {t("nav.quote")}
             </a>
           </div>
         </div>

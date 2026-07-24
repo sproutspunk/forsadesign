@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { useSeoMeta, buildHref } from "@/hooks/useSeoMeta";
+import { useSeoMeta, useJsonLd, buildHref } from "@/hooks/useSeoMeta";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
@@ -319,6 +319,28 @@ export default function ComparisonPage({ lang }: ComparisonPageProps) {
       { lang: "pl", href: buildHref("/pl/comparison") },
     ],
   });
+
+  useJsonLd(
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: lang === "en" ? "Home" : "Strona Główna",
+          item: `https://forsadesign.co.uk/${lang}/`,
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: lang === "en" ? "Compare Options" : "Porównanie",
+          item: `https://forsadesign.co.uk/${lang}/comparison`,
+        },
+      ],
+    },
+    "comparison-breadcrumb",
+  );
 
   return (
     <div className="min-h-[100dvh] bg-background text-foreground">

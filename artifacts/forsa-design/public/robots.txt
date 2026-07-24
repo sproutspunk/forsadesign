@@ -1,4 +1,8 @@
 User-agent: *
 Allow: /
+Disallow: /en/blog/
+Disallow: /pl/blog/
+Disallow: /en/blog
+Disallow: /pl/blog
 
 Sitemap: https://forsadesign.co.uk/sitemap.xml

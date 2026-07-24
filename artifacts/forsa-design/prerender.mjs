@@ -1196,7 +1196,7 @@ ${articlesHtml}
 
 function buildAboutBodyEn() {
   return `<header>
-<nav><a href="/en/">&#8592; Home</a> <span>|</span> <a href="/en/blog">Blog</a> <span>|</span> <a href="/en/comparison">Compare Options</a></nav>
+<nav><a href="/en/">&#8592; Home</a> <span>|</span> <a href="/en/about">About</a> <span>|</span> <a href="/en/comparison">Compare Options</a></nav>
 </header>
 <main>
 <h1>Meet the Founder of Forsa Design</h1>
@@ -1256,13 +1256,13 @@ function buildAboutBodyEn() {
 <p><a href="/en/#contact">Start a Project</a></p>
 </main>
 <footer>
-<nav><a href="/en/terms">Terms &amp; Conditions</a> | <a href="/en/privacy">Privacy Policy</a> | <a href="/en/blog">Blog</a></nav>
+<nav><a href="/en/terms">Terms &amp; Conditions</a> | <a href="/en/privacy">Privacy Policy</a></nav>
 </footer>`;
 }
 
 function buildAboutBodyPl() {
   return `<header>
-<nav><a href="/pl/">&#8592; Strona G&#322;&#243;wna</a> <span>|</span> <a href="/pl/blog">Blog</a> <span>|</span> <a href="/pl/comparison">Por&#243;wnanie</a></nav>
+<nav><a href="/pl/">&#8592; Strona G&#322;&#243;wna</a> <span>|</span> <a href="/pl/about">O Nas</a> <span>|</span> <a href="/pl/comparison">Por&#243;wnanie</a></nav>
 </header>
 <main>
 <h1>Poznaj Za&#322;o&#380;yciela Forsa Design</h1>
@@ -1301,13 +1301,13 @@ function buildAboutBodyPl() {
 <p><a href="/pl/#contact">Rozpocznij Projekt</a></p>
 </main>
 <footer>
-<nav><a href="/pl/terms">Regulamin</a> | <a href="/pl/privacy">Polityka Prywatno&#347;ci</a> | <a href="/pl/blog">Blog</a></nav>
+<nav><a href="/pl/terms">Regulamin</a> | <a href="/pl/privacy">Polityka Prywatno&#347;ci</a></nav>
 </footer>`;
 }
 
 function buildComparisonBodyEn() {
   return `<header>
-<nav><a href="/en/">&#8592; Home</a> <span>|</span> <a href="/en/about">About</a> <span>|</span> <a href="/en/blog">Blog</a></nav>
+<nav><a href="/en/">&#8592; Home</a> <span>|</span> <a href="/en/about">About</a> <span>|</span> <a href="/en/quote">Get a Quote</a></nav>
 </header>
 <main>
 <h1>Which Option Is Right for You?</h1>
@@ -1353,13 +1353,13 @@ function buildComparisonBodyEn() {
 <p><a href="/en/quote">Get a Quote &#8594;</a></p>
 </main>
 <footer>
-<nav><a href="/en/terms">Terms &amp; Conditions</a> | <a href="/en/privacy">Privacy Policy</a> | <a href="/en/blog">Blog</a></nav>
+<nav><a href="/en/terms">Terms &amp; Conditions</a> | <a href="/en/privacy">Privacy Policy</a></nav>
 </footer>`;
 }
 
 function buildComparisonBodyPl() {
   return `<header>
-<nav><a href="/pl/">&#8592; Strona G&#322;&#243;wna</a> <span>|</span> <a href="/pl/about">O Nas</a> <span>|</span> <a href="/pl/blog">Blog</a></nav>
+<nav><a href="/pl/">&#8592; Strona G&#322;&#243;wna</a> <span>|</span> <a href="/pl/about">O Nas</a> <span>|</span> <a href="/pl/quote">Uzyskaj Wycen&#281;</a></nav>
 </header>
 <main>
 <h1>Kt&#243;ra Opcja Jest Dla Ciebie Odpowiednia?</h1>
@@ -1404,7 +1404,7 @@ function buildComparisonBodyPl() {
 <p><a href="/pl/quote">Uzyskaj Wycen&#281; &#8594;</a></p>
 </main>
 <footer>
-<nav><a href="/pl/terms">Regulamin</a> | <a href="/pl/privacy">Polityka Prywatno&#347;ci</a> | <a href="/pl/blog">Blog</a></nav>
+<nav><a href="/pl/terms">Regulamin</a> | <a href="/pl/privacy">Polityka Prywatno&#347;ci</a></nav>
 </footer>`;
 }
 
@@ -1442,7 +1442,7 @@ function buildQuoteBodyEn() {
 </section>
 </main>
 <footer>
-<nav><a href="/en/terms">Terms &amp; Conditions</a> | <a href="/en/privacy">Privacy Policy</a> | <a href="/en/blog">Blog</a></nav>
+<nav><a href="/en/terms">Terms &amp; Conditions</a> | <a href="/en/privacy">Privacy Policy</a></nav>
 </footer>`;
 }
 
@@ -1480,7 +1480,7 @@ function buildQuoteBodyPl() {
 </section>
 </main>
 <footer>
-<nav><a href="/pl/terms">Regulamin</a> | <a href="/pl/privacy">Polityka Prywatno&#347;ci</a> | <a href="/pl/blog">Blog</a></nav>
+<nav><a href="/pl/terms">Regulamin</a> | <a href="/pl/privacy">Polityka Prywatno&#347;ci</a></nav>
 </footer>`;
 }
 
@@ -1520,7 +1520,7 @@ ${sectionsHtml}
 </article>
 </main>
 <footer>
-<nav><a href="/${lang}/terms">${lang === "en" ? "Terms &amp; Conditions" : "Regulamin"}</a> | <a href="/${lang}/privacy">${lang === "en" ? "Privacy Policy" : "Polityka Prywatno&#347;ci"}</a> | <a href="/${lang}/blog">Blog</a></nav>
+<nav><a href="/${lang}/terms">${lang === "en" ? "Terms &amp; Conditions" : "Regulamin"}</a> | <a href="/${lang}/privacy">${lang === "en" ? "Privacy Policy" : "Polityka Prywatno&#347;ci"}</a></nav>
 </footer>`;
 }
 
@@ -1641,34 +1641,6 @@ const routes = [
     bodyHtml: buildPrivacyBodyPl(),
   },
   {
-    outDir: "en/blog",
-    lang: "en",
-    title: "Blog | Forsa Design",
-    desc: "Expert insights on web design, SEO, e-commerce, and digital strategy from the Forsa Design team.",
-    ogTitle: "Blog | Forsa Design",
-    locale: "en_US",
-    canonical: `${SITE}/en/blog`,
-    alternates: [
-      { lang: "en", href: `${SITE}/en/blog` },
-      { lang: "pl", href: `${SITE}/pl/blog` },
-    ],
-    bodyHtml: buildBlogBodyEn(),
-  },
-  {
-    outDir: "pl/blog",
-    lang: "pl",
-    title: "Blog | Forsa Design",
-    desc: "Wiedza ekspercka o web designie, SEO, e-commerce i strategii cyfrowej od zespo\u0142u Forsa Design.",
-    ogTitle: "Blog | Forsa Design",
-    locale: "pl_PL",
-    canonical: `${SITE}/pl/blog`,
-    alternates: [
-      { lang: "en", href: `${SITE}/en/blog` },
-      { lang: "pl", href: `${SITE}/pl/blog` },
-    ],
-    bodyHtml: buildBlogBodyPl(),
-  },
-  {
     outDir: "en/about",
     lang: "en",
     title: "About Us | Forsa Design, Web Agency in Banff, Aberdeenshire",
@@ -1752,36 +1724,6 @@ const routes = [
     ],
     bodyHtml: buildQuoteBodyPl(),
   },
-  ...articles.flatMap((article) => [
-    {
-      outDir: `en/blog/${article.slugEn}`,
-      lang: "en",
-      title: `${article.en.title} | Forsa Design`,
-      desc: article.en.excerpt,
-      ogTitle: `${article.en.title} | Forsa Design`,
-      locale: "en_US",
-      canonical: `${SITE}/en/blog/${article.slugEn}`,
-      alternates: [
-        { lang: "en", href: `${SITE}/en/blog/${article.slugEn}` },
-        { lang: "pl", href: `${SITE}/pl/blog/${article.slugPl}` },
-      ],
-      bodyHtml: buildArticleBody(article, "en"),
-    },
-    {
-      outDir: `pl/blog/${article.slugPl}`,
-      lang: "pl",
-      title: `${article.pl.title} | Forsa Design`,
-      desc: article.pl.excerpt,
-      ogTitle: `${article.pl.title} | Forsa Design`,
-      locale: "pl_PL",
-      canonical: `${SITE}/pl/blog/${article.slugPl}`,
-      alternates: [
-        { lang: "en", href: `${SITE}/en/blog/${article.slugEn}` },
-        { lang: "pl", href: `${SITE}/pl/blog/${article.slugPl}` },
-      ],
-      bodyHtml: buildArticleBody(article, "pl"),
-    },
-  ]),
 ];
 
 const template = readFileSync(join(distDir, "index.html"), "utf-8");
@@ -1799,8 +1741,8 @@ for (const route of routes) {
 // Sitemap generation — derived from the same route sources as the prerender
 // step so the two never drift apart.
 //
-// All prerendered routes (home, legal, blog index, about, comparison, quote,
-// and every article page) are emitted. No SPA-only shell fallbacks remain.
+// All prerendered routes (home, legal, about, comparison, quote) are emitted.
+// No SPA-only shell fallbacks remain.
 // ---------------------------------------------------------------------------
 
 const spaMarketingRoutes = [];
@@ -1829,34 +1771,24 @@ for (const route of routes) {
   const loc = route.canonical;
   const alternates = route.alternates.map((a) => ({ lang: a.lang, href: a.href }));
   const isHome = route.outDir === "en" || route.outDir === "pl";
-  const isBlogIndex = route.outDir === "en/blog" || route.outDir === "pl/blog";
-  const isArticle = route.outDir.startsWith("en/blog/") || route.outDir.startsWith("pl/blog/");
   const isAbout = route.outDir === "en/about" || route.outDir === "pl/about";
   const isComparison = route.outDir === "en/comparison" || route.outDir === "pl/comparison";
   const isQuote = route.outDir === "en/quote" || route.outDir === "pl/quote";
   const isLegal = route.outDir.includes("terms") || route.outDir.includes("privacy");
   const priority = isHome
     ? "1.0"
-    : isBlogIndex
-      ? "0.9"
-      : isArticle
-        ? "0.8"
-        : isAbout
-          ? "0.8"
-          : isComparison
-            ? "0.7"
-            : isQuote
-              ? "0.6"
-              : isLegal
-                ? "0.4"
-                : "0.7";
+    : isAbout
+      ? "0.8"
+      : isComparison
+        ? "0.7"
+        : isQuote
+          ? "0.6"
+          : isLegal
+            ? "0.4"
+            : "0.7";
   const changefreq = isHome
     ? "monthly"
-    : isBlogIndex
-      ? "weekly"
-      : isArticle
-        ? "monthly"
-        : isLegal
+    : isLegal
           ? "yearly"
           : "monthly";
   sitemapEntries.push(buildSitemapEntry(loc, alternates, priority, changefreq, null));
