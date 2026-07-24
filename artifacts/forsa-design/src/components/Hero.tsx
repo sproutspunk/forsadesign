@@ -41,9 +41,9 @@ export default function Hero() {
             style={{ position: "relative", width: "fit-content" }}
           >
             <picture>
-              <source srcSet="/logo-new-lg.webp?v=2" type="image/webp" />
+              <source srcSet="/logo-new-lg.webp?v=3" type="image/webp" />
               <img
-                src="/logo-new-lg.png?v=2"
+                src="/logo-new-lg.png?v=3"
                 alt="Forsa Design"
                 width={640}
                 height={640}
@@ -57,10 +57,10 @@ export default function Hero() {
               aria-hidden="true"
               style={{
                 position: "absolute",
-                top: "73%",
+                top: "79%",
                 left: 0,
                 right: 0,
-                height: "12%",
+                height: "14%",
                 background: "hsl(210 66% 15%)",
                 pointerEvents: "none",
               }}
@@ -68,21 +68,20 @@ export default function Hero() {
             <span
               style={{
                 position: "absolute",
-                top: "76%",
+                top: "83%",
                 left: 0,
                 right: 0,
                 textAlign: "center",
-                fontSize: "clamp(6px, 1.6vw, 10px)",
-                letterSpacing: "0.15em",
-                fontWeight: 700,
-                color: "#DBB993",
-                textTransform: "uppercase",
-                fontFamily: "sans-serif",
+                fontSize: "clamp(6px, 1.5vw, 10px)",
+                letterSpacing: "0.12em",
+                fontWeight: 400,
+                color: "#C9A84C",
+                fontFamily: "Georgia, serif",
                 whiteSpace: "nowrap",
                 pointerEvents: "none",
               }}
             >
-              Websites for Industrial and Trade Businesses
+              Websites for Industrial &amp; Trade Businesses
             </span>
           </motion.div>
 
