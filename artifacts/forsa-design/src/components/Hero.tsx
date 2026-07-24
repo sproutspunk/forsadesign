@@ -33,29 +33,13 @@ export default function Hero() {
           initial="hidden"
           animate="visible"
         >
-          <motion.div
-            variants={itemVariants}
-            animate={{ y: [-8, 8, -8] }}
-            transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
-            className="mb-0 mx-auto"
-          >
-            <img
-              src="/logo-hero.png?v=1"
-              alt="Forsa Design"
-              width={2048}
-              height={2048}
-              className="w-64 md:w-80 lg:w-96 h-auto object-contain block"
-              fetchPriority="high"
-              loading="eager"
-              decoding="async"
-              style={{
-                maskImage:
-                  "radial-gradient(ellipse 86% 62% at 50% 47%, black 45%, rgba(0,0,0,0.85) 60%, transparent 86%)",
-                WebkitMaskImage:
-                  "radial-gradient(ellipse 86% 62% at 50% 47%, black 45%, rgba(0,0,0,0.85) 60%, transparent 86%)",
-              }}
-            />
-          </motion.div>
+          <img
+            src="/logo-hero.png?v=1"
+            alt="Forsa Design"
+            width={2048}
+            height={2048}
+            className="w-64 md:w-80 lg:w-96 h-auto object-contain block mx-auto mb-2"
+          />
 
           <motion.div variants={itemVariants} className="w-20 h-px bg-primary mb-4 mt-3" />
 
