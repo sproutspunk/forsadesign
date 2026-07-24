@@ -34,11 +34,11 @@ export default function Hero() {
           animate="visible"
         >
           <img
-            src="/logo-hero.png?v=8"
+            src="/logo-hero.png?v=9"
             alt="Forsa Design"
             width={2048}
             height={2048}
-            className="w-64 md:w-80 lg:w-96 h-auto object-contain block mx-auto mb-2 opacity-[1] border-t-[color:var(--elevate-2)] border-r-[color:var(--elevate-2)] border-b-[color:var(--elevate-2)] border-l-[color:var(--elevate-2)]"
+            className="w-64 md:w-80 lg:w-96 h-auto object-contain block mx-auto mb-2"
           />
 
           <motion.div variants={itemVariants} className="w-20 h-px bg-primary mb-4 mt-3" />
