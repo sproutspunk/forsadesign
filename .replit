@@ -123,3 +123,6 @@ packages = ["freetype", "gumbo", "harfbuzz", "jbig2dec", "libjpeg_turbo", "mupdf
 [userenv]
 
 [userenv.shared]
+PROTON_SMTP_USER = "hello@forsadesign.co.uk"
+PROTON_SMTP_HOST = "smtp.protonmail.ch"
+PROTON_SMTP_PORT = "587"

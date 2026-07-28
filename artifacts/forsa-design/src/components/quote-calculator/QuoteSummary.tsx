@@ -64,6 +64,10 @@ const INCLUDED_PL = [
   "Testy cross-browser",
 ];
 
+function createQuoteId() {
+  return `FD-${crypto.randomUUID().replaceAll("-", "").slice(0, 12).toUpperCase()}`;
+}
+
 export function QuoteSummary({
   breakdown,
   isEn,
@@ -80,6 +84,7 @@ export function QuoteSummary({
   const [emailStep, setEmailStep] = useState<"idle" | "capturing" | "done">("idle");
   const [email, setEmail] = useState("");
   const [isGenerating, setIsGenerating] = useState(false);
+  const [emailError, setEmailError] = useState("");
 
   const handleSave = () => {
     const quotes = JSON.parse(localStorage.getItem("forsa-quotes") || "[]");
@@ -125,24 +130,40 @@ export function QuoteSummary({
     { label: t("Delivery", "Czas realizacji"), value: breakdown.deliveryFee },
   ].filter((item) => item.value > 0);
 
+  const createPdf = async (quoteId: string) => {
+    const { generateQuotePdfBytes } = await import("@/utils/generateQuotePdf");
+    return generateQuotePdfBytes({
+      quoteId,
+      dateStr: new Date().toLocaleDateString(isEn ? "en-GB" : "pl-PL"),
+      projectLabel,
+      subtotal: breakdown.subtotal - breakdown.discountAmount,
+      total: breakdown.total,
+      discountAmount: breakdown.discountAmount,
+      maintenanceMonthly: breakdown.maintenanceMonthly,
+      estimatedWeeks: isEn ? breakdown.estimatedWeeks : breakdown.estimatedWeeksPl,
+      lineItems,
+      includedItems: isEn ? INCLUDED_EN : INCLUDED_PL,
+      formatPrice,
+      isEn,
+    });
+  };
+
+  const downloadPdfBytes = (pdfBytes: Uint8Array, quoteId: string) => {
+    const blob = new Blob([pdfBytes.buffer as ArrayBuffer], { type: "application/pdf" });
+    const url = URL.createObjectURL(blob);
+    const anchor = document.createElement("a");
+    anchor.href = url;
+    anchor.download = `forsa-quote-${quoteId}.pdf`;
+    anchor.click();
+    URL.revokeObjectURL(url);
+  };
+
   const triggerPdf = async () => {
     setIsGenerating(true);
     try {
-      const { generateQuotePdf } = await import("@/utils/generateQuotePdf");
-      await generateQuotePdf({
-        quoteId: `FD-${Date.now().toString(36).toUpperCase()}`,
-        dateStr: new Date().toLocaleDateString(isEn ? "en-GB" : "pl-PL"),
-        projectLabel,
-        subtotal: breakdown.subtotal - breakdown.discountAmount,
-        total: breakdown.total,
-        discountAmount: breakdown.discountAmount,
-        maintenanceMonthly: breakdown.maintenanceMonthly,
-        estimatedWeeks: isEn ? breakdown.estimatedWeeks : breakdown.estimatedWeeksPl,
-        lineItems,
-        includedItems: isEn ? INCLUDED_EN : INCLUDED_PL,
-        formatPrice,
-        isEn,
-      });
+      const quoteId = createQuoteId();
+      const pdfBytes = await createPdf(quoteId);
+      downloadPdfBytes(pdfBytes, quoteId);
     } finally {
       setIsGenerating(false);
     }
@@ -156,17 +177,55 @@ export function QuoteSummary({
     }
   };
 
-  const handleEmailSubmit = (e: React.FormEvent) => {
+  const handleEmailSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!email.trim()) return;
+    if (!email.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim())) {
+      setEmailError(t("Enter a valid email address.", "Podaj poprawny adres email."));
+      return;
+    }
+    setEmailError("");
+    setIsGenerating(true);
     const quotes = JSON.parse(localStorage.getItem("forsa-quotes") || "[]");
     const existing = quotes[0];
     if (existing) {
       existing.email = email;
       localStorage.setItem("forsa-quotes", JSON.stringify(quotes));
     }
-    setEmailStep("done");
-    void triggerPdf();
+    try {
+      const quoteId = createQuoteId();
+      const pdfBytes = await createPdf(quoteId);
+      let binary = "";
+      for (const byte of pdfBytes) binary += String.fromCharCode(byte);
+      const response = await fetch("/api/quotes/email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          email: email.trim(),
+          pdfBase64: btoa(binary),
+          quoteId,
+          projectLabel,
+          total: formatPrice(breakdown.total),
+          estimatedWeeks: isEn ? breakdown.estimatedWeeks : breakdown.estimatedWeeksPl,
+          isEn,
+        }),
+      });
+      const result = (await response.json()) as { ok?: boolean; error?: string };
+      if (!response.ok || !result.ok) {
+        throw new Error(
+          result.error || t("Could not send the quote.", "Nie udalo sie wyslac wyceny."),
+        );
+      }
+      setEmailStep("done");
+      downloadPdfBytes(pdfBytes, quoteId);
+    } catch (error) {
+      setEmailError(
+        error instanceof Error
+          ? error.message
+          : t("Could not send the quote.", "Nie udalo sie wyslac wyceny."),
+      );
+    } finally {
+      setIsGenerating(false);
+    }
   };
 
   return (
@@ -303,25 +362,21 @@ export function QuoteSummary({
                   placeholder="your@email.com"
                   className="w-full px-3 py-2 text-sm rounded-lg border border-border bg-background focus:outline-none focus:border-primary transition-colors"
                 />
-                <div className="grid grid-cols-2 gap-2">
-                  <button
-                    type="button"
-                    onClick={() => {
-                      setEmailStep("done");
-                      void triggerPdf();
-                    }}
-                    className="px-3 py-2 text-xs font-medium rounded-lg border border-border/40 hover:bg-muted/50 transition-colors text-foreground/60"
-                  >
-                    {t("Skip", "Pomi\u0144")}
-                  </button>
-                  <button
-                    type="submit"
-                    className="flex items-center justify-center gap-1.5 px-3 py-2 text-xs font-semibold rounded-lg bg-primary text-primary-foreground hover:bg-primary/90 transition-colors"
-                  >
+                {emailError && <p className="text-xs text-red-500">{emailError}</p>}
+                <button
+                  type="submit"
+                  disabled={isGenerating}
+                  className="w-full flex items-center justify-center gap-1.5 px-3 py-2 text-xs font-semibold rounded-lg bg-primary text-primary-foreground hover:bg-primary/90 transition-colors disabled:opacity-70 disabled:cursor-not-allowed"
+                >
+                  {isGenerating ? (
+                    <Loader2 className="w-3 h-3 animate-spin" />
+                  ) : (
                     <Send className="w-3 h-3" />
-                    {t("Send my quote", "Wy\u015blij wycen\u0119")}
-                  </button>
-                </div>
+                  )}
+                  {isGenerating
+                    ? t("Sending quote...", "Wysylanie wyceny...")
+                    : t("Send my quote", "Wyslij wycene")}
+                </button>
               </motion.form>
             ) : (
               <motion.div

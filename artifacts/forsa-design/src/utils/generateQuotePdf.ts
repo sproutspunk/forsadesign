@@ -113,7 +113,7 @@ function itemDescription(label: string, isEn: boolean) {
   );
 }
 
-export async function generateQuotePdf(data: PdfData): Promise<void> {
+export async function generateQuotePdfBytes(data: PdfData): Promise<Uint8Array> {
   const doc = await PDFDocument.create();
   const fontBold = await doc.embedFont(StandardFonts.HelveticaBold);
   const fontReg = await doc.embedFont(StandardFonts.Helvetica);
@@ -417,8 +417,11 @@ export async function generateQuotePdf(data: PdfData): Promise<void> {
     MID_GREY,
   );
 
-  // ── Save ──────────────────────────────────────────────────────────
-  const pdfBytes = await doc.save();
+  return doc.save();
+}
+
+export async function generateQuotePdf(data: PdfData): Promise<void> {
+  const pdfBytes = await generateQuotePdfBytes(data);
   const blob = new Blob([pdfBytes.buffer as ArrayBuffer], { type: "application/pdf" });
   const url = URL.createObjectURL(blob);
   const a = document.createElement("a");
