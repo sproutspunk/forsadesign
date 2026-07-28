@@ -1,22 +1,15 @@
 // Cloudflare Pages advanced-mode worker.
-// The site has no server-side submission endpoints; all routes are static assets.
+// API requests are forwarded to the origin server (Replit API service).
+// Static assets and SPA fallback are handled via env.ASSETS.
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
 
-    if (url.pathname === "/api") {
-      return new Response(
-        JSON.stringify({ status: "ok", service: "forsa-design-api", endpoints: [] }),
-        {
-          headers: { "Content-Type": "application/json; charset=utf-8" },
-        },
-      );
-    }
-
-    if (url.pathname === "/api/healthz") {
-      return new Response(JSON.stringify({ status: "ok" }), {
-        headers: { "Content-Type": "application/json; charset=utf-8" },
-      });
+    // Forward ALL /api/** requests to the origin server unchanged.
+    // Using fetch() instead of env.ASSETS bypasses the edge cache and
+    // reaches the Replit API artifact at its registered /api path.
+    if (url.pathname === "/api" || url.pathname.startsWith("/api/")) {
+      return fetch(request);
     }
 
     const assetResponse = await env.ASSETS.fetch(request);
