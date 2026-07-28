@@ -1,4 +1,5 @@
 import { PDFDocument, StandardFonts, rgb, PDFFont, PDFPage } from "pdf-lib";
+import logoUrl from "@/assets/forsa-logo.png";
 
 // Transliterate Polish characters for standard PDF fonts (which only support cp1252/Latin-1)
 function pl(s: string): string {
@@ -81,6 +82,8 @@ export async function generateQuotePdf(data: PdfData): Promise<void> {
   const doc = await PDFDocument.create();
   const fontBold = await doc.embedFont(StandardFonts.HelveticaBold);
   const fontReg = await doc.embedFont(StandardFonts.Helvetica);
+  const logoBytes = await fetch(logoUrl).then((response) => response.arrayBuffer());
+  const logo = await doc.embedPng(logoBytes);
 
   const page = doc.addPage([W, H]);
 
@@ -89,10 +92,15 @@ export async function generateQuotePdf(data: PdfData): Promise<void> {
   // ── Header banner ────────────────────────────────────────────────
   page.drawRectangle({ x: 0, y: H - 80, width: W, height: 80, color: NAVY });
 
-  // Company name
-  drawText(page, "FORSA DESIGN", MARGIN, H - 30, fontBold, 18, GOLD);
-  drawText(page, "forsadesign.co.uk", MARGIN, H - 47, fontReg, 9, rgb(0.7, 0.75, 0.82));
-  drawText(page, "hello@forsadesign.co.uk", MARGIN, H - 59, fontReg, 9, rgb(0.7, 0.75, 0.82));
+  // Actual company logo, kept compact so the full mark remains legible in print.
+  page.drawImage(logo, {
+    x: MARGIN,
+    y: H - 72,
+    width: 104,
+    height: 68,
+  });
+  drawText(page, "forsadesign.co.uk", MARGIN + 116, H - 34, fontReg, 9, rgb(0.7, 0.75, 0.82));
+  drawText(page, "hello@forsadesign.co.uk", MARGIN + 116, H - 50, fontReg, 9, rgb(0.7, 0.75, 0.82));
 
   // "QUOTE" badge on the right
   const badgeLabel = t(data, "WEBSITE QUOTE", "WYCENA STRONY");
