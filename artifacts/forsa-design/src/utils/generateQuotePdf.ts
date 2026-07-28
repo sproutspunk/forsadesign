@@ -93,17 +93,15 @@ export async function generateQuotePdf(data: PdfData): Promise<void> {
 
   let y = H;
 
-  // ── Full-width brand banner ──────────────────────────────────────
-  page.drawRectangle({ x: 0, y: H - 36, width: W, height: 36, color: NAVY });
+  // ── Brand Header ──────────────────────────────────────────────────
+  page.drawRectangle({ x: 0, y: H - 80, width: W, height: 80, color: NAVY });
 
-  // The logo sits in a compact navy card below the banner, matching the brand
-  // presentation used on the website quote preview.
-  page.drawRectangle({ x: MARGIN, y: H - 126, width: 112, height: 70, color: NAVY });
+  // Official Forsa Design logo.
   page.drawImage(logo, {
     x: MARGIN,
-    y: H - 122,
-    width: 112,
-    height: 62,
+    y: H - 72,
+    width: 104,
+    height: 68,
   });
 
   // "QUOTE" badge on the right
@@ -112,68 +110,23 @@ export async function generateQuotePdf(data: PdfData): Promise<void> {
   page.drawRectangle({ x: W - MARGIN - badgeW, y: H - 57, width: badgeW, height: 26, color: GOLD });
   drawText(page, badgeLabel, W - MARGIN - badgeW + 10, H - 49, fontBold, 11, NAVY);
 
-  y = H - 156;
+  y = H - 100;
 
-  // Quote metadata stays in a compact right-aligned block beside the logo.
+  // ── Quote meta row ────────────────────────────────────────────────
   const metaItems = [
     { label: t(data, "Quote Ref", "Nr wyceny"), value: data.quoteId },
     { label: t(data, "Date", "Data"), value: data.dateStr },
-    { label: t(data, "Valid for", "Wazna przez"), value: t(data, "30 days", "30 dni") },
+    { label: t(data, "Project", "Projekt"), value: pl(data.projectLabel) },
   ];
+
+  page.drawRectangle({ x: MARGIN, y: y - 38, width: COL, height: 46, color: LIGHT_GREY });
   metaItems.forEach((item, i) => {
-    const metaY = H - 80 - i * 14;
-    const valueW = textWidth(`${item.label}: ${item.value}`, fontReg, 8);
-    drawText(
-      page,
-      `${item.label}: ${item.value}`,
-      W - MARGIN - valueW,
-      metaY,
-      fontReg,
-      8,
-      MID_GREY,
-    );
+    const colX = MARGIN + 8 + i * (COL / 3);
+    drawText(page, item.label.toUpperCase(), colX, y, fontBold, 7, MID_GREY);
+    drawText(page, item.value, colX, y - 16, fontBold, 10, DARK);
   });
 
-  drawText(page, pl(data.projectLabel), MARGIN, y, fontBold, 22, NAVY);
-  y -= 18;
-  drawText(
-    page,
-    t(
-      data,
-      "Executive summary and investment breakdown for the strategic redesign and development of your digital presence.",
-      "Podsumowanie i zestawienie inwestycji dla strategicznego redesignu i rozwoju obecnosci cyfrowej.",
-    ),
-    MARGIN,
-    y,
-    fontReg,
-    9,
-    MID_GREY,
-  );
-  y -= 30;
-
-  // Investment summary panel
-  page.drawRectangle({ x: MARGIN, y: y - 68, width: COL, height: 76, color: NAVY });
-  drawText(
-    page,
-    t(data, "TOTAL INVESTMENT", "LACZNA INWESTYCJA"),
-    MARGIN + 14,
-    y - 22,
-    fontBold,
-    8,
-    GOLD,
-  );
-  drawText(page, data.formatPrice(data.total), MARGIN + 14, y - 52, fontBold, 24, rgb(1, 1, 1));
-  drawText(
-    page,
-    t(data, "TIMELINE", "CZAS REALIZACJI"),
-    W - MARGIN - 150,
-    y - 22,
-    fontBold,
-    8,
-    MID_GREY,
-  );
-  drawText(page, pl(data.estimatedWeeks), W - MARGIN - 150, y - 48, fontBold, 14, rgb(1, 1, 1));
-  y -= 94;
+  y -= 58;
 
   // ── Section: Cost breakdown ───────────────────────────────────────
   drawText(page, t(data, "COST BREAKDOWN", "ZESTAWIENIE KOSZTOW"), MARGIN, y, fontBold, 9, GOLD);
