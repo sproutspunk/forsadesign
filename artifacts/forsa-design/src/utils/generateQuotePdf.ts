@@ -351,15 +351,17 @@ export async function generateQuotePdf(data: PdfData): Promise<void> {
 
   // ── Footer ────────────────────────────────────────────────────────
   page.drawRectangle({ x: 0, y: 0, width: W, height: 38, color: LIGHT_GREY });
-  const footer =
-    "Forsa Design Ltd  |  Banff, Scotland  |  forsadesign.co.uk  |  hello@forsadesign.co.uk";
-  drawText(page, footer, MARGIN, 14, fontReg, 7, MID_GREY);
+  const footerLine1 = "Forsa Design Ltd  |  Banff, Aberdeenshire, Scotland  |  07770 110735";
+  const footerLine2 =
+    "forsadesign.co.uk  |  hello@forsadesign.co.uk  |  linkedin.com/in/miroslaw-potaczek";
+  drawText(page, footerLine1, MARGIN, 21, fontReg, 6.5, MID_GREY);
+  drawText(page, footerLine2, MARGIN, 11, fontReg, 6.5, MID_GREY);
   const pageLabel = "Page 1 of 1";
   drawText(
     page,
     pageLabel,
     W - MARGIN - textWidth(pageLabel, fontReg, 7),
-    14,
+    11,
     fontReg,
     7,
     MID_GREY,

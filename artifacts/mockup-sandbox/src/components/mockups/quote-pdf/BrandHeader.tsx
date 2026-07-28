@@ -186,7 +186,7 @@ export default function BrandHeader() {
 
         {/* Footer */}
         <footer className="absolute bottom-0 left-0 right-0 h-24 bg-gray-50 flex items-center justify-between px-14 border-t border-gray-200">
-          <div className="flex gap-8 text-xs text-gray-500">
+          <div className="flex flex-wrap gap-x-6 gap-y-1 text-xs text-gray-500">
             <span className="flex items-center gap-2">
               <svg
                 className="w-4 h-4 text-[#C9A84C]"
@@ -219,6 +219,9 @@ export default function BrandHeader() {
               </svg>
               forsadesign.co.uk
             </span>
+            <span className="flex items-center gap-2">Banff, Aberdeenshire, Scotland</span>
+            <span className="flex items-center gap-2">07770 110735</span>
+            <span className="flex items-center gap-2">linkedin.com/in/miroslaw-potaczek</span>
           </div>
           <div className="text-xs text-gray-400">Page 1 of 1</div>
         </footer>
