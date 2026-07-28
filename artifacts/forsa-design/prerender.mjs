@@ -1186,7 +1186,7 @@ function buildAboutBodyEn() {
 <h2>Why This Background Matters</h2>
 <div>
 <h3>Real Business Perspective</h3>
-<p>Having run a company for 17 years, negotiated international contracts across three continents, and managed teams in multiple countries, I understand what a website needs to do for your bottom line. Every design decision is filtered through a business lens, not just an aesthetic one.</p>
+<p>Having run a company for 20 years, negotiated international contracts across three continents, and managed teams in multiple countries, I understand what a website needs to do for your bottom line. Every design decision is filtered through a business lens, not just an aesthetic one.</p>
 </div>
 <div>
 <h3>Communication at Every Level</h3>
@@ -1252,7 +1252,7 @@ function buildAboutBodyPl() {
 <h2>Dlaczego To Do&#347;wiadczenie Ma Znaczenie</h2>
 <div>
 <h3>Perspektywa Prawdziwego Biznesu</h3>
-<p>Prowadz&#261;c firm&#281; przez 17 lat, negocjuj&#261;c mi&#281;dzynarodowe kontrakty na trzech kontynentach i zarz&#261;dzaj&#261;c zespo&#322;ami w wielu krajach, rozumiem, co strona internetowa musi robi&#263; dla Twojego zysku. Ka&#380;da decyzja projektowa jest filtrowana przez pryzmat biznesowy, nie tylko estetyczny.</p>
+<p>Prowadz&#261;c firm&#281; przez 20 lat, negocjuj&#261;c mi&#281;dzynarodowe kontrakty na trzech kontynentach i zarz&#261;dzaj&#261;c zespo&#322;ami w wielu krajach, rozumiem, co strona internetowa musi robi&#263; dla Twojego zysku. Ka&#380;da decyzja projektowa jest filtrowana przez pryzmat biznesowy, nie tylko estetyczny.</p>
 </div>
 <div>
 <h3>Komunikacja na Ka&#380;dym Poziomie</h3>

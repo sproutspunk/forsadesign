@@ -22,7 +22,7 @@ const content = {
     services: [
       {
         title: "Real Business Perspective",
-        desc: "Having run a company for 17 years, negotiated international contracts across three continents, and managed teams in multiple countries, I understand what a website needs to do for your bottom line. Every design decision is filtered through a business lens, not just an aesthetic one.",
+        desc: "Having run a company for 20 years, negotiated international contracts across three continents, and managed teams in multiple countries, I understand what a website needs to do for your bottom line. Every design decision is filtered through a business lens, not just an aesthetic one.",
       },
       {
         title: "Communication at Every Level",
@@ -147,7 +147,7 @@ const content = {
     services: [
       {
         title: "Perspektywa Prawdziwego Biznesu",
-        desc: "Prowadząc firmę przez 17 lat, negocjując międzynarodowe kontrakty na trzech kontynentach i zarządzając zespołami w wielu krajach, rozumiem, co strona internetowa musi robić dla Twojego zysku. Każda decyzja projektowa jest filtrowana przez pryzmat biznesowy, nie tylko estetyczny.",
+        desc: "Prowadząc firmę przez 20 lat, negocjując międzynarodowe kontrakty na trzech kontynentach i zarządzając zespołami w wielu krajach, rozumiem, co strona internetowa musi robić dla Twojego zysku. Każda decyzja projektowa jest filtrowana przez pryzmat biznesowy, nie tylko estetyczny.",
       },
       {
         title: "Komunikacja na Każdym Poziomie",
