@@ -22,7 +22,7 @@ const translations = {
     faq: {
       heading: "Common Questions",
       subheading: "Straight answers for industrial, engineering and procurement teams.",
-      searchPlaceholder: "Search questions…",
+      searchPlaceholder: "Search questions...",
       noResults: "No questions match your search.",
       comparisonCta: "See full comparison",
       comparisonHref: "/en/comparison",
@@ -33,7 +33,7 @@ const translations = {
         },
         {
           q: "Can you integrate with our stock or ERP system?",
-          a: "Where the API allows, yes. We build bridges between your web frontend and backend systems — not walled gardens that create extra admin work for procurement and sales teams.",
+          a: "Where the API allows, yes. We build bridges between your web frontend and backend systems  -  not walled gardens that create extra admin work for procurement and sales teams.",
         },
         {
           q: "What does hand-coded mean for our business?",
@@ -49,7 +49,7 @@ const translations = {
         },
         {
           q: "How long does an industrial website project take?",
-          a: "Most projects take around 8–12 weeks depending on the number of services, languages, integrations and approval stages. We define the technical scope before design starts.",
+          a: "Most projects take around 8-12 weeks depending on the number of services, languages, integrations and approval stages. We define the technical scope before design starts.",
         },
         {
           q: "What happens during discovery?",
@@ -122,7 +122,7 @@ const translations = {
     },
     about: {
       heading: "Built by Someone Who Understood the Brief",
-      body: "My name is Miro. I started Forsa Design after more than 20 years in international B2B industrial sales. I traded metalworking machinery, industrial equipment and engineering solutions across Europe and Asia. I sat on both sides of the procurement table — selling to refineries, negotiating with plant engineers and vetting suppliers myself.",
+      body: "My name is Miro. I started Forsa Design after more than 20 years in international B2B industrial sales. I traded metalworking machinery, industrial equipment and engineering solutions across Europe and Asia. I sat on both sides of the procurement table  -  selling to refineries, negotiating with plant engineers and vetting suppliers myself.",
       body2:
         "That experience taught me one thing: most industrial firms deliver world-class work, but their digital presence does not reflect it. I am not a London agency with fifteen account managers. I am a developer who understands industry, logistics, international trade and contract deadlines. I write the code myself and answer the phone myself. Based in Banff, Aberdeenshire. Fluent in English and Polish. Serving UK-wide and EU export markets.",
     },
@@ -188,7 +188,7 @@ const translations = {
     faq: {
       heading: "FAQ",
       subheading: "Odpowiedzi na najczęstsze pytania dotyczące współpracy z nami.",
-      searchPlaceholder: "Szukaj pytań…",
+      searchPlaceholder: "Szukaj pytań...",
       noResults: "Brak pytań pasujących do wyszukiwania.",
       comparisonCta: "Zobacz pełne porównanie",
       comparisonHref: "/pl/comparison",

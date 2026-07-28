@@ -4,7 +4,7 @@
  * Runs after `vite build` and writes a route-specific index.html for each
  * public URL so that social crawlers and non-JS agents receive the correct
  * <title>, meta description, Open Graph tags, Twitter tags, canonical, and
- * hreflang alternates — AND the full visible page body — without needing to
+ * hreflang alternates  -  AND the full visible page body  -  without needing to
  * execute JavaScript.
  *
  * Each generated file is written to dist/public/<route>/index.html so that
@@ -14,7 +14,7 @@
  * Body injection strategy:
  *   Static HTML is injected into <div id="root"> before the React bundle
  *   loads. When JavaScript runs, React's createRoot().render() replaces the
- *   static content with the hydrated tree — so users see the full interactive
+ *   static content with the hydrated tree  -  so users see the full interactive
  *   app, while AI crawlers and non-JS agents see the full page copy in the
  *   initial HTML response.
  */
@@ -70,34 +70,34 @@ function buildSectionsHtml(sections) {
 function patch(html, meta) {
   let out = html;
 
-  // <html lang="…">
+  // <html lang="...">
   out = out.replace(/(<html\b[^>]*\blang=")[^"]*(")/s, `$1${meta.lang}$2`);
 
   // <title>
   out = out.replace(/<title>[^<]*<\/title>/, `<title>${ht(meta.title)}</title>`);
 
-  // <meta name="description" content="…">
+  // <meta name="description" content="...">
   out = out.replace(/(name="description"\s+content=")[^"]*(")/s, `$1${he(meta.desc)}$2`);
 
-  // <meta property="og:title" content="…">
+  // <meta property="og:title" content="...">
   out = out.replace(/(property="og:title"\s+content=")[^"]*(")/s, `$1${he(meta.ogTitle)}$2`);
 
-  // <meta property="og:description" content="…">
+  // <meta property="og:description" content="...">
   out = out.replace(/(property="og:description"\s+content=")[^"]*(")/s, `$1${he(meta.desc)}$2`);
 
-  // <meta property="og:locale" content="…">
+  // <meta property="og:locale" content="...">
   out = out.replace(/(property="og:locale"\s+content=")[^"]*(")/s, `$1${meta.locale}$2`);
 
-  // <meta property="og:url" content="…"> — update if present
+  // <meta property="og:url" content="...">  -  update if present
   out = out.replace(/(property="og:url"\s+content=")[^"]*(")/s, `$1${meta.canonical}$2`);
 
-  // <meta name="twitter:title" content="…">
+  // <meta name="twitter:title" content="...">
   out = out.replace(/(name="twitter:title"\s+content=")[^"]*(")/s, `$1${he(meta.ogTitle)}$2`);
 
-  // <meta name="twitter:description" content="…">
+  // <meta name="twitter:description" content="...">
   out = out.replace(/(name="twitter:description"\s+content=")[^"]*(")/s, `$1${he(meta.desc)}$2`);
 
-  // <link rel="canonical" href="…">
+  // <link rel="canonical" href="...">
   out = out.replace(/(rel="canonical"\s+href=")[^"]*(")/s, `$1${meta.canonical}$2`);
 
   // Remove all existing hreflang alternate links
@@ -174,7 +174,7 @@ function buildHomepageBodyEn() {
 <h2>Our Work</h2>
 <p>Fast, custom-coded web platforms built to convert traffic into revenue.</p>
 <div>
-<h3>Love Sprouts — E-commerce Redesign</h3>
+<h3>Love Sprouts  -  E-commerce Redesign</h3>
 <p>Rebuilt a custom Shopify store from scratch. Cut page load times to 1.1s and stopped cart abandonment.</p>
 </div>
 <div>
@@ -1231,11 +1231,11 @@ function buildAboutBodyEn() {
 </section>
 <section>
 <h2>Our Process</h2>
-<div><h3>01 — Discovery &amp; Strategy (Weeks 1-2)</h3><p>We conduct interviews, analyse your industry, competition, users, and define business goals.</p></div>
-<div><h3>02 — Design (Weeks 3-4)</h3><p>We create wireframes, mockups, and a visual strategy. Everything approved by you before we write a line of code.</p></div>
-<div><h3>03 — Development (Weeks 5-8)</h3><p>We build the site with a focus on performance, security, SEO, and conversion.</p></div>
-<div><h3>04 — Testing &amp; Optimisation (Week 9)</h3><p>Tests across all devices and browsers, performance analysis, security, SEO.</p></div>
-<div><h3>05 — Launch &amp; Support (Ongoing)</h3><p>We deploy the site live. The first few weeks we're in close contact, then we transition to ongoing support.</p></div>
+<div><h3>01  -  Discovery &amp; Strategy (Weeks 1-2)</h3><p>We conduct interviews, analyse your industry, competition, users, and define business goals.</p></div>
+<div><h3>02  -  Design (Weeks 3-4)</h3><p>We create wireframes, mockups, and a visual strategy. Everything approved by you before we write a line of code.</p></div>
+<div><h3>03  -  Development (Weeks 5-8)</h3><p>We build the site with a focus on performance, security, SEO, and conversion.</p></div>
+<div><h3>04  -  Testing &amp; Optimisation (Week 9)</h3><p>Tests across all devices and browsers, performance analysis, security, SEO.</p></div>
+<div><h3>05  -  Launch &amp; Support (Ongoing)</h3><p>We deploy the site live. The first few weeks we're in close contact, then we transition to ongoing support.</p></div>
 </section>
 <section>
 <h2>What Sets Us Apart</h2>
@@ -1328,22 +1328,22 @@ function buildComparisonBodyEn() {
 <section>
 <h2>Options Overview</h2>
 <div>
-<h3>CMS Template — Fast and affordable</h3>
+<h3>CMS Template  -  Fast and affordable</h3>
 <p>Pros: Lower initial cost. Quick to launch. Easy content updates.</p>
 <p>Cons: Often based on existing themes. Can become slower with too many plugins. Limited control over SEO and performance.</p>
 </div>
 <div>
-<h3>Non-specialist Agency — General solution provider</h3>
+<h3>Non-specialist Agency  -  General solution provider</h3>
 <p>Pros: Experienced teams. Project management. Existing portfolio.</p>
 <p>Cons: Often template-based. Higher costs due to larger structures. May lack industry-specific experience.</p>
 </div>
 <div>
-<h3>Freelancer — Flexible and personal</h3>
+<h3>Freelancer  -  Flexible and personal</h3>
 <p>Pros: Direct communication. Flexible pricing. Wide range of skills.</p>
 <p>Cons: One person responsible for the whole project. Availability can become a challenge. Quality varies between providers.</p>
 </div>
 <div>
-<h3>Forsa Design — A website that works for your business</h3>
+<h3>Forsa Design  -  A website that works for your business</h3>
 <p>Built around your customers and business goals. Fast experiences that respect your customers' time. Built to be found and trusted online. Processes simplified through smart automation. A long-term partner when your business evolves. No lock-ins. No dependence on a single provider.</p>
 </div>
 </section>
@@ -1355,11 +1355,11 @@ function buildComparisonBodyEn() {
 <tbody>
 <tr><td>Time</td><td>Self-service</td><td>Independent developer</td><td>Team-based delivery</td><td>More time to focus on running your business</td></tr>
 <tr><td>Performance</td><td>Often slow</td><td>Varies</td><td>Generally good</td><td>Optimised for Core Web Vitals</td></tr>
-<tr><td>SEO</td><td>Basic</td><td>Varies</td><td>Average</td><td>Advanced — Schema, E-E-A-T, technical SEO</td></tr>
-<tr><td>Security</td><td>Depends on platform</td><td>Varies</td><td>Generally yes</td><td>Yes — SSL, GDPR, full documentation</td></tr>
+<tr><td>SEO</td><td>Basic</td><td>Varies</td><td>Average</td><td>Advanced  -  Schema, E-E-A-T, technical SEO</td></tr>
+<tr><td>Security</td><td>Depends on platform</td><td>Varies</td><td>Generally yes</td><td>Yes  -  SSL, GDPR, full documentation</td></tr>
 <tr><td>Scalability</td><td>Limited</td><td>Possible</td><td>Possible</td><td>Easy (custom codebase)</td></tr>
-<tr><td>Portability</td><td>Low — platform lock-in</td><td>High</td><td>High</td><td>High — full ownership</td></tr>
-<tr><td>Support after launch</td><td>Community forums</td><td>Often limited</td><td>Optional extra cost</td><td>Included — ongoing partnership</td></tr>
+<tr><td>Portability</td><td>Low  -  platform lock-in</td><td>High</td><td>High</td><td>High  -  full ownership</td></tr>
+<tr><td>Support after launch</td><td>Community forums</td><td>Often limited</td><td>Optional extra cost</td><td>Included  -  ongoing partnership</td></tr>
 </tbody>
 </table>
 </section>
@@ -1522,10 +1522,10 @@ ${buildSectionsHtml(privacyPL)}
 }
 
 // ---------------------------------------------------------------------------
-// Route definitions — one entry per public URL
+// Route definitions  -  one entry per public URL
 // ---------------------------------------------------------------------------
 
-/** Route definitions — one entry per public URL. */
+/** Route definitions  -  one entry per public URL. */
 const routes = [
   {
     outDir: "en",
@@ -1795,7 +1795,7 @@ for (const route of routes) {
 }
 
 // ---------------------------------------------------------------------------
-// Sitemap generation — derived from the same route sources as the prerender
+// Sitemap generation  -  derived from the same route sources as the prerender
 // step so the two never drift apart.
 //
 // All prerendered routes (home, legal, about, comparison, quote) are emitted.

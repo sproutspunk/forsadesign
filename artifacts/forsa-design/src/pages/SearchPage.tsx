@@ -216,7 +216,7 @@ export default function SearchPage({ lang }: { lang: Language }) {
               value={query}
               onChange={(event) => setQuery(event.target.value)}
               placeholder={
-                isEn ? "Search services, FAQ and articles…" : "Szukaj usług, FAQ i artykułów…"
+                isEn ? "Search services, FAQ and articles..." : "Szukaj usług, FAQ i artykułów..."
               }
               autoFocus
               className="w-full bg-card border border-border/30 rounded-md pl-12 pr-4 py-4 text-white placeholder:text-foreground/40 focus:outline-none focus:border-primary/60"

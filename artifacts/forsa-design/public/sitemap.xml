@@ -2,7 +2,7 @@
 <!--
   Dev-server fallback. The authoritative sitemap.xml is generated at build time
   by prerender.mjs from the same route sources as the prerender step, and
-  written to dist/public/sitemap.xml — overwriting this file in production.
+  written to dist/public/sitemap.xml  -  overwriting this file in production.
   Keep this file in sync with the spaMarketingRoutes list in prerender.mjs.
 -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
