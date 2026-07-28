@@ -37,6 +37,7 @@ export default function Header() {
     { name: t("nav.process"), href: sectionHref("#process") },
     { name: t("nav.about"), href: sectionHref("#about") },
     { name: t("nav.contact"), href: sectionHref("#contact") },
+    { name: t("nav.faq"), href: sectionHref("#faq") },
     { name: t("nav.comparison"), href: `${base}comparison` },
   ];
 
@@ -77,6 +78,13 @@ export default function Header() {
               {link.name}
             </a>
           ))}
+          <a
+            href={`${base}search`}
+            data-testid="link-nav-search"
+            className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors"
+          >
+            {t("nav.search")}
+          </a>
           <a
             href={quoteHref}
             data-testid="link-nav-quote"
@@ -163,6 +171,14 @@ export default function Header() {
                   {link.name}
                 </a>
               ))}
+              <a
+                href={`${base}search`}
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="text-lg font-medium text-foreground hover:text-primary transition-colors"
+                data-testid="link-nav-search-mobile"
+              >
+                {t("nav.search")}
+              </a>
               <div className="flex flex-col gap-3 pt-2 border-t border-border">
                 <a
                   href={quoteHref}

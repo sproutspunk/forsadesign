@@ -146,7 +146,7 @@ function ensureXDefault(alternates, fallback) {
 
 function buildHomepageBodyEn() {
   return `<header>
-<nav><a href="/en/">Forsa Design</a> | <a href="/en/#services">Services</a> | <a href="/en/#portfolio">Portfolio</a> | <a href="/en/#about">About</a> | <a href="/en/#contact">Contact</a></nav>
+<nav><a href="/en/">Forsa Design</a> | <a href="/en/#services">Services</a> | <a href="/en/#portfolio">Portfolio</a> | <a href="/en/#about">About</a> | <a href="/en/#faq">FAQ</a> | <a href="/en/#contact">Contact</a> | <a href="/en/search">Search</a></nav>
 </header>
 <main>
 <section id="home">
@@ -230,7 +230,7 @@ function buildHomepageBodyEn() {
 
 function buildHomepageBodyPl() {
   return `<header>
-<nav><a href="/pl/">Forsa Design</a> | <a href="/pl/#services">Us&#322;ugi</a> | <a href="/pl/#portfolio">Portfolio</a> | <a href="/pl/#about">O Nas</a> | <a href="/pl/#contact">Kontakt</a></nav>
+<nav><a href="/pl/">Forsa Design</a> | <a href="/pl/#services">Us&#322;ugi</a> | <a href="/pl/#portfolio">Portfolio</a> | <a href="/pl/#about">O Nas</a> | <a href="/pl/#faq">FAQ</a> | <a href="/pl/#contact">Kontakt</a> | <a href="/pl/search">Szukaj</a></nav>
 </header>
 <main>
 <section id="home">
@@ -328,6 +328,24 @@ function buildServicesBody(lang) {
 <h3>${en ? "Bespoke Web Systems" : "Dedykowane systemy webowe"}</h3>
 <p>${en ? "Dealer portals, technical specification generators, multilingual quote engines and workflow integrations." : "Portale dealerskie, generatory specyfikacji technicznych, wielojęzyczne silniki wycen i integracje procesów."}</p>
 </section>
+</main>`;
+}
+
+function buildSearchBody(lang) {
+  const en = lang === "en";
+  return `<header>
+<nav><a href="/${lang}/">Forsa Design</a> | <a href="/${lang}/#services">${en ? "Services" : "Usługi"}</a> | <a href="/${lang}/#faq">FAQ</a> | <a href="/${lang}/#contact">${en ? "Contact" : "Kontakt"}</a> | <a href="/${lang}/search">${en ? "Search" : "Szukaj"}</a></nav>
+</header>
+<main>
+<h1>${en ? "Search Forsa Design" : "Szukaj w Forsa Design"}</h1>
+<p>${en ? "Search our services, frequently asked questions, guides and articles." : "Przeszukaj nasze usługi, najczęstsze pytania, poradniki i artykuły."}</p>
+<form role="search"><label for="site-search">${en ? "Search the site" : "Szukaj na stronie"}</label><input id="site-search" type="search" placeholder="${en ? "Search services, FAQ and articles" : "Szukaj usług, FAQ i artykułów"}" /></form>
+<h2>${en ? "Searchable content" : "Treści dostępne w wyszukiwarce"}</h2>
+<ul>
+<li><a href="/${lang}/services">${en ? "Industrial web design and bespoke web systems" : "Web design dla przemysłu i dedykowane systemy"}</a></li>
+<li><a href="/${lang}/about">${en ? "About Forsa Design" : "O Forsa Design"}</a></li>
+<li><a href="/${lang}/#faq">FAQ</a></li>
+</ul>
 </main>`;
 }
 
@@ -1734,6 +1752,34 @@ const routes = [
       { lang: "pl", href: `${SITE}/pl/quote` },
     ],
     bodyHtml: buildQuoteBodyPl(),
+  },
+  {
+    outDir: "en/search",
+    lang: "en",
+    title: "Search | Forsa Design",
+    desc: "Search Forsa Design services, industrial web design guidance, frequently asked questions and articles.",
+    ogTitle: "Search Forsa Design",
+    locale: "en_US",
+    canonical: `${SITE}/en/search`,
+    alternates: [
+      { lang: "en", href: `${SITE}/en/search` },
+      { lang: "pl", href: `${SITE}/pl/search` },
+    ],
+    bodyHtml: buildSearchBody("en"),
+  },
+  {
+    outDir: "pl/search",
+    lang: "pl",
+    title: "Szukaj | Forsa Design",
+    desc: "Przeszukaj usługi Forsa Design, poradniki web design dla przemysłu, FAQ i artykuły.",
+    ogTitle: "Szukaj w Forsa Design",
+    locale: "pl_PL",
+    canonical: `${SITE}/pl/search`,
+    alternates: [
+      { lang: "en", href: `${SITE}/en/search` },
+      { lang: "pl", href: `${SITE}/pl/search` },
+    ],
+    bodyHtml: buildSearchBody("pl"),
   },
 ];
 

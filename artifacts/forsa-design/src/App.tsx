@@ -1,4 +1,4 @@
-import { Switch, Route, Router as WouterRouter, useLocation } from "wouter";
+import { Switch, Route, Router as WouterRouter, useLocation, useRoute } from "wouter";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { lazy, Suspense, useEffect } from "react";
 import { Toaster } from "@/components/ui/toaster";
@@ -18,6 +18,9 @@ const ComparisonPage = lazy(() => import("@/pages/ComparisonPage"));
 const QuoteCalculatorPage = lazy(() => import("@/pages/QuoteCalculatorPage"));
 const ServicesPage = lazy(() => import("@/pages/ServicesPage"));
 const ContactPage = lazy(() => import("@/pages/ContactPage"));
+const SearchPage = lazy(() => import("@/pages/SearchPage"));
+const BlogPage = lazy(() => import("@/pages/BlogPage"));
+const ArticlePage = lazy(() => import("@/pages/ArticlePage"));
 
 const queryClient = new QueryClient();
 
@@ -50,6 +53,11 @@ function RedirectTo({ to }: { to: string }) {
     setLocation(to);
   }, [to, setLocation]);
   return null;
+}
+
+function ArticleRoute({ lang }: { lang: "en" | "pl" }) {
+  const [, params] = useRoute(`/${lang}/blog/:slug`);
+  return <ArticlePage lang={lang} slug={params?.slug ?? ""} />;
 }
 
 function RootLandingPage() {
@@ -103,10 +111,12 @@ function Router() {
         <Route path="/pl/comparison" component={() => <ComparisonPage lang="pl" />} />
         <Route path="/en/quote" component={() => <QuoteCalculatorPage lang="en" />} />
         <Route path="/pl/quote" component={() => <QuoteCalculatorPage lang="pl" />} />
-        <Route path="/en/blog/:slug" component={() => <RedirectTo to="/en/" />} />
-        <Route path="/pl/blog/:slug" component={() => <RedirectTo to="/pl/" />} />
-        <Route path="/en/blog" component={() => <RedirectTo to="/en/" />} />
-        <Route path="/pl/blog" component={() => <RedirectTo to="/pl/" />} />
+        <Route path="/en/search" component={() => <SearchPage lang="en" />} />
+        <Route path="/pl/search" component={() => <SearchPage lang="pl" />} />
+        <Route path="/en/blog/:slug" component={() => <ArticleRoute lang="en" />} />
+        <Route path="/pl/blog/:slug" component={() => <ArticleRoute lang="pl" />} />
+        <Route path="/en/blog" component={() => <BlogPage lang="en" />} />
+        <Route path="/pl/blog" component={() => <BlogPage lang="pl" />} />
         <Route path="/" component={RootLandingPage} />
         <Route component={NotFound} />
       </Switch>

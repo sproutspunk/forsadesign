@@ -16,6 +16,8 @@ const translations = {
       quote: "Quote",
       pricing: "Pricing",
       aboutPage: "About Us",
+      search: "Search",
+      faq: "FAQ",
     },
     faq: {
       heading: "Common Questions",
@@ -180,6 +182,8 @@ const translations = {
       quote: "Wycena",
       pricing: "Ceny",
       aboutPage: "O Nas",
+      search: "Szukaj",
+      faq: "FAQ",
     },
     faq: {
       heading: "FAQ",
