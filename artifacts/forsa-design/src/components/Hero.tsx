@@ -34,10 +34,13 @@ export default function Hero() {
           animate="visible"
         >
           <img
-            src="/logo-hero.png?v=10"
+            src="/logo-hero.webp?v=11"
             alt="Forsa Design"
-            width={2048}
-            height={2048}
+            width={1024}
+            height={1024}
+            loading="eager"
+            fetchPriority="high"
+            decoding="async"
             className="w-64 md:w-80 lg:w-96 h-auto object-contain block mx-auto mb-2"
           />
 

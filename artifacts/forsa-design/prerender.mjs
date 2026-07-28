@@ -109,11 +109,11 @@ function patch(html, meta) {
     .join("\n");
   out = out.replace(/(rel="canonical"[^>]*\/>)/, `$1\n${altLines}`);
 
-  // Ensure logo preload is present for LCP optimisation on every prerendered page
-  if (!out.includes('href="/logo-new-lg.webp"')) {
+  // Preload the actual hero LCP image on every prerendered page.
+  if (!out.includes('href="/logo-hero.webp"')) {
     out = out.replace(
       /(<link rel="preconnect" href="https:\/\/fonts\.googleapis\.com" \/>)/,
-      `$1\n    <link rel="preload" as="image" href="/logo-new-lg.webp" type="image/webp" />`,
+      `$1\n    <link rel="preload" as="image" href="/logo-hero.webp" type="image/webp" fetchpriority="high" />`,
     );
   }
 

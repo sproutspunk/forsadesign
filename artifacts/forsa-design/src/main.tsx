@@ -4,8 +4,3 @@ import "./index.css";
 
 const root = document.getElementById("root")!;
 createRoot(root).render(<App />);
-requestAnimationFrame(() => {
-  requestAnimationFrame(() => {
-    root.style.opacity = "1";
-  });
-});
