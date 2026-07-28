@@ -11,3 +11,4 @@
 - [Industrial marketing routes](industrial-marketing-routes.md) — keep React routes, prerendered HTML, SEO/schema, and sitemap entries aligned for every public marketing page.
 - [Direct-contact architecture](direct-contact-architecture.md) — Forsa Design contact is email/phone only; no form endpoint, SMTP, CAPTCHA, or generated submission contract.
 - [Quote email delivery](quote-email-delivery.md) — quote PDF download is gated on server-confirmed SMTP delivery to the client and owner copy.
+- [Logo transparency for PDF and site](logo-transparency.md) — transparent PNG logo works directly in pdf-lib embedPng and on-site; no background flattening needed if alpha=0 corners.
