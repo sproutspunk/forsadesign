@@ -213,7 +213,20 @@ export function QuoteSummary({
           isEn,
         }),
       });
-      const result = (await response.json()) as { ok?: boolean; error?: string };
+      const responseText = await response.text();
+      let result: { ok?: boolean; error?: string } = {};
+      if (responseText.trim()) {
+        try {
+          result = JSON.parse(responseText) as { ok?: boolean; error?: string };
+        } catch {
+          throw new Error(
+            t(
+              `The quote service returned an invalid response (${response.status}). Please try again.`,
+              `Serwis wycen zwrócił nieprawidłową odpowiedź (${response.status}). Spróbuj ponownie.`,
+            ),
+          );
+        }
+      }
       if (!response.ok || !result.ok) {
         throw new Error(
           result.error || t("Could not send the quote.", "Nie udalo sie wyslac wyceny."),
