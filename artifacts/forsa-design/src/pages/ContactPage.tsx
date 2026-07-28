@@ -51,13 +51,13 @@ export default function ContactPage({ lang }: { lang: "en" | "pl" }) {
         <section className="pt-36 pb-12 bg-card">
           <div className="container mx-auto px-6 max-w-4xl">
             <div className="w-12 h-1 bg-primary mb-8" />
-          <h1 className="font-serif text-4xl md:text-6xl font-bold text-white mb-6">
-            {en ? "Contact Forsa Design directly" : "Skontaktuj się bezpośrednio z Forsa Design"}
+            <h1 className="font-serif text-4xl md:text-6xl font-bold text-white mb-6">
+              {en ? "Contact Forsa Design directly" : "Skontaktuj się bezpośrednio z Forsa Design"}
             </h1>
             <p className="text-xl text-foreground/70 font-light leading-relaxed">
               {en
-              ? "Email or call Miro to discuss your industrial website, B2B catalogue or bespoke web system."
-              : "Napisz lub zadzwoń do Miro, aby omówić stronę przemysłową, katalog B2B lub dedykowany system webowy."}
+                ? "Email or call Miro to discuss your industrial website, B2B catalogue or bespoke web system."
+                : "Napisz lub zadzwoń do Miro, aby omówić stronę przemysłową, katalog B2B lub dedykowany system webowy."}
             </p>
           </div>
         </section>

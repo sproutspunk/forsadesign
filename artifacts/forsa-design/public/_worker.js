@@ -5,9 +5,12 @@ export default {
     const url = new URL(request.url);
 
     if (url.pathname === "/api") {
-      return new Response(JSON.stringify({ status: "ok", service: "forsa-design-api", endpoints: [] }), {
-        headers: { "Content-Type": "application/json; charset=utf-8" },
-      });
+      return new Response(
+        JSON.stringify({ status: "ok", service: "forsa-design-api", endpoints: [] }),
+        {
+          headers: { "Content-Type": "application/json; charset=utf-8" },
+        },
+      );
     }
 
     if (url.pathname === "/api/healthz") {
