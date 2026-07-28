@@ -56,7 +56,7 @@ export default function Header() {
           className="flex items-center shrink-0"
         >
           <img
-            src="/logo-header.webp?v=6"
+            src="/logo-header.webp?v=7"
             alt="Forsa Design"
             width={96}
             height={96}
