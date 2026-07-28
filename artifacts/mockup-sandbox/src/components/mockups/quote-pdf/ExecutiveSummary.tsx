@@ -15,17 +15,12 @@ export default function ExecutiveSummary() {
         <div className="p-14 h-full flex flex-col">
           {/* Header */}
           <div className="flex justify-between items-start mb-14 mt-4">
-            <div>
-              <div
-                className="text-4xl tracking-tighter text-[#0D2540]"
-                style={{ fontFamily: "Georgia, serif" }}
-              >
-                <span className="font-bold">Forsa</span>
-                <span className="font-light italic ml-1">Design</span>
-              </div>
-              <div className="text-[10px] tracking-[0.2em] uppercase mt-2 text-[#C9A84C] font-semibold">
-                Strategic Digital Studio
-              </div>
+            <div className="flex items-center">
+              <img
+                src="https://forsadesign.co.uk/logo-new-lg.png?v=2"
+                alt="Forsa Design"
+                className="h-24 w-36 object-contain object-left"
+              />
             </div>
             <div className="text-right text-xs text-gray-400 space-y-1">
               <div>Ref: FD-2024-089</div>
