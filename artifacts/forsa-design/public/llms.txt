@@ -1,11 +1,15 @@
 # Forsa Design
 
-> Boutique web design and development agency based in Banff, Scotland. We build fast, custom-coded web platforms built to convert traffic into revenue. Clients served in the UK and Poland.
+> Forsa Design is an industrial web design studio based in Banff, Aberdeenshire. We build fast, hand-coded websites and bespoke web systems for offshore, energy, engineering, industrial equipment, logistics and manufacturing businesses across the UK and EU.
 
 ## Key pages
 
 - [Homepage (English)](https://forsadesign.co.uk/en/)
 - [Homepage (Polish)](https://forsadesign.co.uk/pl/)
+- [Services (English)](https://forsadesign.co.uk/en/services)
+- [Usługi (Polish)](https://forsadesign.co.uk/pl/services)
+- [Contact (English)](https://forsadesign.co.uk/en/contact)
+- [Kontakt (Polish)](https://forsadesign.co.uk/pl/contact)
 - [Terms & Conditions (EN)](https://forsadesign.co.uk/en/terms)
 - [Terms & Conditions (PL)](https://forsadesign.co.uk/pl/terms)
 - [Privacy Policy (EN)](https://forsadesign.co.uk/en/privacy)
@@ -13,7 +17,11 @@
 
 ## Services
 
-Web design, web development, custom-coded platforms, performance optimisation, conversion-focused builds, SEO-ready architecture.
+Industrial web presence, B2B e-commerce for parts and equipment, procurement-ready websites, bespoke web systems, ERP/stock integrations, performance optimisation and technical SEO.
+
+## Founder
+
+Miro Potaczek founded Forsa Design after more than 20 years in international B2B industrial sales, working with metalworking machinery, engineering solutions and industrial equipment across Europe and Asia. He understands both sides of the procurement table and speaks English and Polish.
 
 ## Contact
 

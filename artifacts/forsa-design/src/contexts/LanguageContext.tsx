@@ -18,62 +18,63 @@ const translations = {
       aboutPage: "About Us",
     },
     faq: {
-      heading: "FAQ",
-      subheading: "Answers to the most common questions about working with us.",
+      heading: "Common Questions",
+      subheading: "Straight answers for industrial, engineering and procurement teams.",
       searchPlaceholder: "Search questions…",
       noResults: "No questions match your search.",
       comparisonCta: "See full comparison",
       comparisonHref: "/en/comparison",
       items: [
         {
-          q: "Do you have experience in my industry?",
-          a: "An agency that works with every type of business may not always have deep experience in a specific area. Ask what projects they have completed in your industry and what results they achieved. Look at more than just design. Consider performance, usability, conversions, and business impact.",
+          q: "Do you work with offshore and energy contractors?",
+          a: "Yes. Based in Aberdeenshire, we work with firms serving North Sea energy, renewables and heavy engineering. We understand the compliance and credibility requirements these sectors place on a website.",
         },
         {
-          q: "What is your discovery process?",
-          a: "A professional agency should not start building after a short conversation. The first stage should include understanding your goals, customers, competitors, and current challenges. If the process starts with choosing a template, important details may be missed.",
+          q: "Can you integrate with our stock or ERP system?",
+          a: "Where the API allows, yes. We build bridges between your web frontend and backend systems — not walled gardens that create extra admin work for procurement and sales teams.",
         },
         {
-          q: "Do you focus on SEO and performance?",
-          a: "A website needs to do more than look good. It should load quickly, work well across devices, and help customers find your business. Ask how they approach technical SEO, speed, and measuring results.",
+          q: "What does hand-coded mean for our business?",
+          a: "No bloated templates or unnecessary plugins that slow the site down and create security holes. The result is a fast, maintainable site that can pass technical audits and support a serious procurement process.",
         },
         {
-          q: "Who will manage my project?",
-          a: "Clear communication matters. You should know who is responsible for your project and who understands your business goals. A dedicated contact person keeps the process organised.",
+          q: "Do you offer support after launch?",
+          a: "Yes. Monthly care plans cover security updates, backups, performance monitoring and incremental improvements. Your website is a living business asset, not a one-off brochure.",
         },
         {
-          q: "What happens after launch?",
-          a: "A website needs ongoing care. Ask about updates, security, backups, technical support, and future improvements. A launch should be the beginning, not the end.",
+          q: "Do you work with Polish or EU-based industrial firms?",
+          a: "Yes. Miro is fluent in English and Polish, with experience in EU industrial trade and export markets. We serve UK businesses and companies selling into UK and European markets.",
         },
         {
-          q: "Can I move my website if my needs change?",
-          a: "Your website should belong to you. A good agency builds with flexibility in mind, allowing you to change providers without losing control of your data or domain.",
+          q: "How long does an industrial website project take?",
+          a: "Most projects take around 8–12 weeks depending on the number of services, languages, integrations and approval stages. We define the technical scope before design starts.",
         },
         {
-          q: "How is pricing structured?",
-          a: "Pricing should be clear from the beginning. You should understand what is included, what happens if the project changes, and what future costs may appear.",
+          q: "What happens during discovery?",
+          a: "We analyse your current site, competitors and buyer vetting process. We map the decision-makers, technical proof points and procurement checkpoints your new site needs to support.",
         },
       ],
     },
     hero: {
-      tagline: "Websites for Industrial and Trade Businesses",
-      subheader: "You know your trade. We know how your customers judge you through a screen.",
-      body: "Over twenty years in international B2B sales taught me one thing. Industrial firms, scaffolding contractors, M&E engineers, haulage companies. They all deliver top quality work, but their websites look like relics from the dial up era. And that costs contracts. When a buyer checks three suppliers, the one with a slow, cluttered site drops off the list first. Not because the work is worse, but because trust starts online. We do not use templates. We do not use page builders. We build fast, clear websites that look serious and load instantly on a phone at a yard. Because in B2B business your website is not a brochure. It is your first employee, your pitch and your reference check rolled into one.",
-      cta: "Request a Quote",
+      tagline: "Web Systems for Heavy Industry",
+      subheader:
+        "No templates. No page builders. Just fast, secure sites that pass procurement checks.",
+      body: "You build infrastructure. We build the digital layer that proves you can deliver it. With more than twenty years in international B2B industrial sales across machinery, engineering and energy procurement, I know what happens when a buyer shortlists three suppliers and checks their websites. Forsa Design builds dedicated, hand-coded websites and web systems for offshore and energy contractors, engineering firms, industrial equipment suppliers and heavy logistics operators. Based in Banff, Aberdeenshire. Serving Scotland and UK-wide.",
+      cta: "Request a Technical Quote",
     },
     services: {
-      heading: "What We Do",
+      heading: "What We Build",
       card1: {
-        title: "Sites That Deliver Results",
-        desc: "No heavy templates. No unnecessary plugins. We build dedicated sites focused on performance, mobile usability and clear messaging. Your site opens quickly, works on every device and tells visitors why they should choose you, not the competition around the corner.",
+        title: "Industrial Web Presence",
+        desc: "Dedicated sites built from scratch for engineering and manufacturing firms. Fast load times, mobile performance for site offices and technical messaging that speaks to specifiers, not designers.",
       },
       card2: {
-        title: "E-Commerce and Sales Optimisation",
-        desc: "If you sell parts, tools or services online, we remove everything that kills orders. Better checkout flow, clear product pages and mobile design that turns browsers into buyers. Whether it is a full shop or a simple enquiry form, we make sure it earns its keep.",
+        title: "E-commerce for Parts and Equipment",
+        desc: "B2B catalogues and ordering systems for industrial components with account pricing, bulk quotes and integrations with ERP or stock systems. Built for procurement officers, not casual browsers.",
       },
       card3: {
-        title: "Bespoke Solutions",
-        desc: "Some businesses need more than a standard site. Dealer portals, technical spec generators, multilingual versions for export markets or integration with your existing systems. We build practical tools that grow with you.",
+        title: "Bespoke Web Systems",
+        desc: "Dealer portals, technical specification generators, multilingual quote engines and workflow integrations for export markets. Practical tools that fit your operation instead of disrupting it.",
       },
     },
     portfolio: {
@@ -100,28 +101,28 @@ const translations = {
       heading: "How We Work",
       steps: [
         {
-          title: "Discovery",
-          desc: "We start by understanding your business, your customers and how they actually find you. We analyse your current site, your competition and where the money leaks out. No guesswork.",
+          title: "Discovery & Audit",
+          desc: "We analyse your current site, competitors and where you lose credibility during the buyer's vetting process. We map decision-makers and the evidence they need to see.",
         },
         {
-          title: "Design and Build",
-          desc: "We create a clean, dedicated site built around your goals. Real photos of your work, not stock images of men in hard hats. Clear calls to action. Fast loading. Proper mobile experience.",
+          title: "Technical Spec & Design",
+          desc: "Clean architecture, hand-written code and no unnecessary plugins. Every page is built around a procurement checkpoint, with real proof of your facility, capabilities and work.",
         },
         {
-          title: "Testing and Launch",
-          desc: "Before anything goes to the server, we check every page, every form, every link. On phones, tablets, laptops and the old computer in the site office. It has to work everywhere.",
+          title: "Compliance, Testing & Launch",
+          desc: "GDPR, accessibility, SSL and performance benchmarks. Tested on the devices your clients actually use, from phones offshore to older PCs in site cabins.",
         },
         {
-          title: "Support and Growth",
-          desc: "After launch we do not disappear. We offer monthly care plans that keep your site secure, updated and improving. As your business grows, your site grows with it.",
+          title: "Support & Evolution",
+          desc: "Monthly care plans keep your site secure, updated and aligned with your contracts pipeline. As your capabilities grow, your site grows with them.",
         },
       ],
     },
     about: {
-      heading: "Founder of Forsa Design",
-      body: "My name is Miro. I started Forsa Design after more than 20 years in international B2B sales. I traded metalworking machinery, industrial equipment and engineering solutions across Europe and Asia. I sat on both sides of the procurement table. I know what the process looks like from the first email to the signed contract.",
+      heading: "Built by Someone Who Understood the Brief",
+      body: "My name is Miro. I started Forsa Design after more than 20 years in international B2B industrial sales. I traded metalworking machinery, industrial equipment and engineering solutions across Europe and Asia. I sat on both sides of the procurement table — selling to refineries, negotiating with plant engineers and vetting suppliers myself.",
       body2:
-        "That experience taught me one thing. Most industrial firms do excellent work, but their websites do not keep up with the standard of their services. And it costs contracts. Not because the work is poor it is because in B2B today, your website is the first stage of vetting. I am not a London agency with fifteen people on the team and a coffee bar in the office. I am someone who understands industry, logistics and international trade. I now build websites that speak your customers' language. No templates. No jargon. Just clean code and a clear message. Based in Banff, Aberdeenshire. Serving businesses across Scotland. Fluent in Polish and English.",
+        "That experience taught me one thing: most industrial firms deliver world-class work, but their digital presence does not reflect it. I am not a London agency with fifteen account managers. I am a developer who understands industry, logistics, international trade and contract deadlines. I write the code myself and answer the phone myself. Based in Banff, Aberdeenshire. Fluent in English and Polish. Serving UK-wide and EU export markets.",
     },
     pricing: {
       heading: "Transparent Pricing",
@@ -242,23 +243,24 @@ const translations = {
       ],
     },
     hero: {
-      tagline: "Strony internetowe dla firm przemys\u0142owych i handlowych",
-      subheader: "Znasz sw\u00f3j fach. My wiemy, jak klienci oceniaj\u0105 ci\u0119 przez ekran.",
+      tagline: "Systemy Webowe dla Przemys\u0142u Ci\u0119\u017ckiego",
+      subheader:
+        "\u017badnych szablon\u00f3w. \u017badnych kreator\u00f3w. Tylko szybki, bezpieczny kod, kt\u00f3ry przechodzi audyt zakupowy.",
       body: "Ponad dwadzieścia lat w międzynarodowej sprzedaży B2B nauczyło mnie jednego. Firmy przemysłowe, wykonawcy rusztowań, inżynierowie M&E, transportowcy. Wszyscy wykonują świetną robotę, ale ich strony wyglądają jak relikty czasów modemu. I to kosztuje kontrakty. Gdy kupujący sprawdza trzech dostawców, ten ze spowolnioną, przeładowaną stroną odpada pierwszy. Nie dlatego, że praca jest gorsza, ale dlatego, że zaufanie zaczyna się w internecie. Nie używamy szablonów. Nie używamy page builderów. Budujemy szybkie, przejrzyste strony, które wyglądają poważnie i ładują się natychmiast na telefonie na placu budowy. Bo w biznesie B2B twoja strona to nie folder reklamowy. To twój pierwszy pracownik, twoja oferta i twoja referencja w jednym.",
-      cta: "Popro\u015b o wycen\u0119",
+      cta: "Popro\u015b o wycen\u0119 techniczn\u0105",
     },
     services: {
-      heading: "Co Robimy",
+      heading: "Co budujemy",
       card1: {
-        title: "Strony, Kt\u00f3re Przynosz\u0105 Efekt",
+        title: "Strony dla przemys\u0142u",
         desc: "Bez ci\u0119\u017ckich szablon\u00f3w. Bez zb\u0119dnych wtyczek. Budujemy dedykowane witryny skupione na wydajno\u015bci, wygodzie na telefonie i jasnym przekazie. Twoja strona otwiera si\u0119 szybko, dzia\u0142a na ka\u017cdym urz\u0105dzeniu i m\u00f3wi odwiedzaj\u0105cym dlaczego maj\u0105 wybra\u0107 ciebie, a nie konkurencj\u0119 zza rogu.",
       },
       card2: {
-        title: "Sklepy i Optymalizacja Sprzeda\u017cy",
+        title: "E-commerce dla cz\u0119\u015bci i urz\u0105dze\u0144",
         desc: "Je\u015bli sprzedajesz cz\u0119\u015bci, narz\u0119dzia lub us\u0142ugi przez internet, usuwamy wszystko co zabija zam\u00f3wienia. Lepszy proces zakupu, przejrzyste karty produkt\u00f3w i design mobilny, kt\u00f3ry zamienia przegl\u0105daj\u0105cych w klient\u00f3w. Niezale\u017cnie od tego czy to pe\u0142ny sklep czy prosty formularz zapytania, dbamy o to \u017ceby zarabia\u0142.",
       },
       card3: {
-        title: "Rozwi\u0105zania na Miar\u0119 Potrzeb",
+        title: "Dedykowane systemy webowe",
         desc: "Niekt\u00f3re firmy potrzebuj\u0105 wi\u0119cej ni\u017c standardowej strony. Portale dla dealer\u00f3w, generatory kart technicznych, wersje wieloj\u0119zyczne na rynki eksportowe albo integracja z twoimi systemami. Budujemy praktyczne narz\u0119dzia, kt\u00f3re rosn\u0105 razem z tob\u0105.",
       },
     },
@@ -286,25 +288,25 @@ const translations = {
       heading: "Jak Pracujemy",
       steps: [
         {
-          title: "Odkrywanie",
+          title: "Audyt i odkrycie",
           desc: "Zaczynamy od zrozumienia twojego biznesu, twoich klient\u00f3w i tego jak ci\u0119 faktycznie znajduj\u0105. Analizujemy twoj\u0105 obecn\u0105 stron\u0119, konkurencj\u0119 i miejsca gdzie uciekaj\u0105 pieni\u0105dze. Bez zgadywania.",
         },
         {
-          title: "Projekt i Budowa",
+          title: "Specyfikacja techniczna i projekt",
           desc: "Tworzymy czyst\u0105, dedykowan\u0105 witryn\u0119 zbudowan\u0105 wok\u00f3\u0142 twoich cel\u00f3w. Prawdziwe zdj\u0119cia twojej pracy, a nie stockowe fotografie m\u0119\u017cczyzn w kaskach. Jasne wezwania do dzia\u0142ania. Szybkie \u0142adowanie. Porz\u0105dna wersja mobilna.",
         },
         {
-          title: "Testy i Start",
+          title: "Compliance, testy i uruchomienie",
           desc: "Zanim cokolwiek p\u00f3jdzie na serwer, sprawdzamy ka\u017cd\u0105 podstron\u0119, ka\u017cdy formularz, ka\u017cdy link. Na telefonach, tabletach, laptopach i starym komputerze w biurze budowy. Musi dzia\u0142a\u0107 wsz\u0119dzie.",
         },
         {
-          title: "Wsparcie i Rozw\u00f3j",
+          title: "Wsparcie i rozw\u00f3j",
           desc: "Po starcie nie znikamy. Oferujemy miesi\u0119czne plany opieki, kt\u00f3re utrzymuj\u0105 stron\u0119 bezpieczn\u0105, aktualn\u0105 i ulepszon\u0105. W miar\u0119 jak tw\u00f3j biznes ro\u015bnie, strona ro\u015bnie razem z nim.",
         },
       ],
     },
     about: {
-      heading: "Za\u0142o\u017cyciel Forsa Design",
+      heading: "Zbudowane przez kogo\u015b, kto rozumia\u0142 brief",
       body: "Nazywam si\u0119 Miro. Forsa Design za\u0142o\u017cy\u0142em po ponad 20 latach w mi\u0119dzynarodowej sprzeda\u017cy B2B. Handlowa\u0142em maszynami do obr\u00f3bki metalu, wyposa\u017ceniem przemys\u0142owym i rozwi\u0105zaniami in\u017cynieryjnymi w Europie i Azji. Siedzia\u0142em po obu stronach sto\u0142u zakupowego. Wiem jak wygl\u0105da proces od pierwszego maila po podpisany kontrakt.",
       body2:
         "To do\u015bwiadczenie nauczy\u0142o mnie jednej rzeczy. Wi\u0119kszo\u015b\u0107 firm przemys\u0142owych wykonuje \u015bwietn\u0105 robot\u0119, ale ich strony internetowe nie nad\u0105\u017caj\u0105 za poziomem ich us\u0142ug. I to kosztuje kontrakty. Nie dlatego \u017ce praca jest s\u0142aba, tylko dlatego \u017ce w dzisiejszym B2B strona to pierwszy etap weryfikacji. Nie jestem agencj\u0105 z Londynu z pi\u0119tnastoma osobami w zespole i kawiarni\u0105 w biurze. Jestem cz\u0142owiekiem, kt\u00f3ry rozumie przemys\u0142, logistyk\u0119 i handel mi\u0119dzynarodowy. Teraz buduj\u0119 strony, kt\u00f3re komunikuj\u0105 si\u0119 j\u0119zykiem Twoich klient\u00f3w. Bez szablon\u00f3w. Bez zb\u0119dnego \u017cargonu. Tylko czysty kod i jasny przekaz. Banff, Aberdeenshire. Obs\u0142uguj\u0119 firmy w ca\u0142ej Szkocji. M\u00f3wi\u0119 po polsku i po angielsku.",

@@ -136,24 +136,24 @@ function buildHomepageBodyEn() {
 </header>
 <main>
 <section id="home">
-<h1>Comprehensive Website Design &amp; Creation</h1>
-<p>Fast, custom-coded web platforms built to convert traffic into revenue.</p>
-<p>We build custom web systems for corporate clients who want results, not jargon. No fuss. No agency fluff. Just clean, fast, solid code that makes your business grow.</p>
-<a href="/en/#contact">Request a Quote</a>
+<h1>Web Systems for Heavy Industry</h1>
+<p>No templates. No page builders. Just fast, secure sites that pass procurement checks.</p>
+<p>You build infrastructure. We build the digital layer that proves you can deliver it. Forsa Design builds dedicated, hand-coded websites and web systems for offshore and energy contractors, engineering firms, industrial equipment suppliers and heavy logistics operators.</p>
+<a href="/en/#contact">Request a Technical Quote</a>
 </section>
 <section id="services">
-<h2>Our Services</h2>
+<h2>What We Build</h2>
 <div>
-<h3>Web Design &amp; Development</h3>
-<p>No heavy, bloated templates. No pre-made page builders. We write clean code from scratch to ensure your site is secure, loads instantly, and gives you full control over your layout.</p>
+<h3>Industrial Web Presence</h3>
+<p>Dedicated sites built from scratch for engineering and manufacturing firms. Fast load times, mobile performance for site offices and technical messaging that speaks to specifiers.</p>
 </div>
 <div>
-<h3>E-commerce &amp; Checkout Optimization</h3>
-<p>Scalable shops built to sell. From deep Shopify customization to custom checkout flows, we fix slow loading times and technical glitches that cause your customers to drop off before buying.</p>
+<h3>E-commerce for Parts and Equipment</h3>
+<p>B2B catalogues and ordering systems for industrial components with account pricing, bulk quotes and integrations with ERP or stock systems.</p>
 </div>
 <div>
-<h3>Bespoke Web Applications</h3>
-<p>Specialized web systems for complex industries. We handle database management, legacy software upgrades, and code optimization for businesses that cannot afford a single minute of downtime.</p>
+<h3>Bespoke Web Systems</h3>
+<p>Dealer portals, technical specification generators, multilingual quote engines and workflow integrations for export markets.</p>
 </div>
 </section>
 <section id="portfolio">
@@ -220,10 +220,10 @@ function buildHomepageBodyPl() {
 </header>
 <main>
 <section id="home">
-<h1>Kompleksowy Web Design i Tworzenie Stron</h1>
-<p>Szybkie, pisane od zera strony i sklepy, stworzone by zamienia&#263; ruch w realny zysk.</p>
+<h1>Systemy Webowe dla Przemysłu Ciężkiego</h1>
+<p>Żadnych szablonów. Żadnych kreatorów. Tylko szybki, bezpieczny kod, który przechodzi audyt zakupowy.</p>
 <p>Budujemy dedykowane systemy webowe dla firm, kt&#243;re oczekuj&#261; wynik&#243;w, a nie marketingu. Bez zb&#281;dnego &#380;argonu. Bez owijania w bawe&#322;n&#281;. Tylko czysty, szybki i stabilny kod, kt&#243;ry rozwija Tw&#243;j biznes.</p>
-<a href="/pl/#contact">Pro&#347; o wycen&#281;</a>
+<a href="/pl/#contact">Poproś o wycenę techniczną</a>
 </section>
 <section id="services">
 <h2>Nasze Us&#322;ugi</h2>
@@ -296,6 +296,35 @@ function buildHomepageBodyPl() {
 </div>
 <nav><a href="/pl/terms">Regulamin i Warunki</a> | <a href="/pl/privacy">Polityka Prywatno&#347;sci</a></nav>
 </footer>`;
+}
+
+function buildServicesBody(lang) {
+  const en = lang === "en";
+  return `<header>
+<nav><a href="/${lang}/">Forsa Design</a> | <a href="/${lang}/services">${en ? "Services" : "Usługi"}</a> | <a href="/${lang}/contact">${en ? "Contact" : "Kontakt"}</a></nav>
+</header>
+<main>
+<h1>${en ? "Web systems for heavy industry" : "Systemy webowe dla przemysłu ciężkiego"}</h1>
+<p>${en ? "Your website is part of the procurement process. We build the technical proof, clarity and speed that serious buyers expect." : "Twoja strona jest częścią procesu zakupowego. Budujemy techniczne dowody, jasność przekazu i szybkość, których oczekują poważni kupujący."}</p>
+<section><h2>${en ? "What We Build" : "Co budujemy"}</h2>
+<h3>${en ? "Industrial Web Presence" : "Strony dla przemysłu"}</h3>
+<p>${en ? "Dedicated sites for engineering and manufacturing firms, with fast load times, mobile performance and technical messaging for specifiers." : "Dedykowane witryny dla firm inżynieryjnych i produkcyjnych, z szybkim ładowaniem, wygodą mobilną i przekazem technicznym dla specyfikantów."}</p>
+<h3>${en ? "E-commerce for Parts and Equipment" : "E-commerce dla części i urządzeń"}</h3>
+<p>${en ? "B2B catalogues and ordering systems with account pricing, bulk quotes and ERP or stock integrations." : "Katalogi B2B i systemy zamówień z cenami dla klientów, wycenami hurtowymi i integracjami ERP lub magazynowymi."}</p>
+<h3>${en ? "Bespoke Web Systems" : "Dedykowane systemy webowe"}</h3>
+<p>${en ? "Dealer portals, technical specification generators, multilingual quote engines and workflow integrations." : "Portale dealerskie, generatory specyfikacji technicznych, wielojęzyczne silniki wycen i integracje procesów."}</p>
+</section>
+</main>`;
+}
+
+function buildContactBody(lang) {
+  const en = lang === "en";
+  return `<header><nav><a href="/${lang}/">Forsa Design</a> | <a href="/${lang}/services">${en ? "Services" : "Usługi"}</a></nav></header>
+<main><h1>${en ? "Start with the technical brief" : "Zacznijmy od briefu technicznego"}</h1>
+<p>${en ? "Tell us what you build, who buys it and where your current website falls short." : "Opowiedz, co budujesz, kto to kupuje i gdzie obecna strona nie spełnia swojej roli."}</p>
+<h2>${en ? "Contact Forsa Design" : "Skontaktuj się z Forsa Design"}</h2>
+<p>Email: <a href="mailto:hello@forsadesign.co.uk">hello@forsadesign.co.uk</a></p>
+<p>Phone: <a href="tel:07770110735">07770110735</a></p></main>`;
 }
 
 // ---------------------------------------------------------------------------
@@ -1469,8 +1498,8 @@ const routes = [
   {
     outDir: "en",
     lang: "en",
-    title: "Forsa Design | Comprehensive Website Design & Creation",
-    desc: "Forsa Design is a boutique web agency in Banff, Scotland. We build responsive websites, e-commerce platforms, and custom web applications — from concept to launch and beyond.",
+    title: "Industrial Web Design & Bespoke Web Systems | Forsa Design",
+    desc: "Forsa Design builds procurement-ready websites and bespoke web systems for offshore, energy, engineering, equipment, logistics and manufacturing businesses.",
     ogTitle: "Forsa Design | Web Design & Creation",
     locale: "en_US",
     canonical: `${SITE}/en/`,
@@ -1484,8 +1513,8 @@ const routes = [
   {
     outDir: "pl",
     lang: "pl",
-    title: "Forsa Design | Kompleksowy Web Design i Tworzenie Stron",
-    desc: "Forsa Design to agencja internetowa z Banff w Szkocji. Tworzymy responsywne strony, sklepy e-commerce i dedykowane aplikacje webowe — od koncepcji do uruchomienia.",
+    title: "Web Design dla Przemysłu i Dedykowane Systemy | Forsa Design",
+    desc: "Forsa Design tworzy strony gotowe na audyt zakupowy i dedykowane systemy webowe dla firm offshore, energetycznych, inżynieryjnych, logistycznych i produkcyjnych.",
     ogTitle: "Forsa Design | Web Design i Tworzenie Stron",
     locale: "pl_PL",
     canonical: `${SITE}/pl/`,
@@ -1579,6 +1608,62 @@ const routes = [
       { lang: "pl", href: `${SITE}/pl/about` },
     ],
     bodyHtml: buildAboutBodyPl(),
+  },
+  {
+    outDir: "en/services",
+    lang: "en",
+    title: "Industrial Web Design & Bespoke Web Systems | Forsa Design",
+    desc: "Procurement-ready websites, B2B e-commerce and bespoke web systems for offshore, energy, engineering, equipment, logistics and manufacturing businesses.",
+    ogTitle: "Industrial Web Services | Forsa Design",
+    locale: "en_US",
+    canonical: `${SITE}/en/services`,
+    alternates: [
+      { lang: "en", href: `${SITE}/en/services` },
+      { lang: "pl", href: `${SITE}/pl/services` },
+    ],
+    bodyHtml: buildServicesBody("en"),
+  },
+  {
+    outDir: "pl/services",
+    lang: "pl",
+    title: "Web Design dla Przemysłu i Dedykowane Systemy | Forsa Design",
+    desc: "Strony gotowe na audyt zakupowy, e-commerce B2B i dedykowane systemy webowe dla firm offshore, energetycznych, inżynieryjnych, logistycznych i produkcyjnych.",
+    ogTitle: "Usługi Webowe dla Przemysłu | Forsa Design",
+    locale: "pl_PL",
+    canonical: `${SITE}/pl/services`,
+    alternates: [
+      { lang: "en", href: `${SITE}/en/services` },
+      { lang: "pl", href: `${SITE}/pl/services` },
+    ],
+    bodyHtml: buildServicesBody("pl"),
+  },
+  {
+    outDir: "en/contact",
+    lang: "en",
+    title: "Contact Forsa Design | Industrial Web Projects",
+    desc: "Discuss an industrial website, B2B catalogue, e-commerce project or bespoke web system with Forsa Design in Banff, Aberdeenshire.",
+    ogTitle: "Contact Forsa Design",
+    locale: "en_US",
+    canonical: `${SITE}/en/contact`,
+    alternates: [
+      { lang: "en", href: `${SITE}/en/contact` },
+      { lang: "pl", href: `${SITE}/pl/contact` },
+    ],
+    bodyHtml: buildContactBody("en"),
+  },
+  {
+    outDir: "pl/contact",
+    lang: "pl",
+    title: "Kontakt z Forsa Design | Projekty Web dla Przemysłu",
+    desc: "Porozmawiaj o stronie przemysłowej, katalogu B2B, e-commerce lub dedykowanym systemie webowym z Forsa Design w Banff, Aberdeenshire.",
+    ogTitle: "Kontakt z Forsa Design",
+    locale: "pl_PL",
+    canonical: `${SITE}/pl/contact`,
+    alternates: [
+      { lang: "en", href: `${SITE}/en/contact` },
+      { lang: "pl", href: `${SITE}/pl/contact` },
+    ],
+    bodyHtml: buildContactBody("pl"),
   },
   {
     outDir: "en/comparison",
