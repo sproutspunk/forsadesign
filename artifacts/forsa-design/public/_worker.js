@@ -23,6 +23,11 @@ export default {
       !url.pathname.includes(".") &&
       (request.headers.get("Accept") || "").includes("text/html")
     ) {
+      const routeIndex = new URL(`${url.pathname.replace(/\/$/, "")}/index.html`, url.origin);
+      const prerenderedResponse = await env.ASSETS.fetch(new Request(routeIndex, request));
+      if (prerenderedResponse.status !== 404) {
+        return prerenderedResponse;
+      }
       return env.ASSETS.fetch(new Request(new URL("/", url.origin), request));
     }
     return assetResponse;
