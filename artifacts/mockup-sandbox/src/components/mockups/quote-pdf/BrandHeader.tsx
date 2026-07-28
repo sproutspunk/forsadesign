@@ -70,7 +70,7 @@ export default function BrandHeader() {
               Investment Breakdown
             </h2>
 
-            <div className="space-y-6">
+            <div className="space-y-4">
               {/* Item 1 */}
               <div className="group">
                 <div className="flex justify-between items-end mb-1">
