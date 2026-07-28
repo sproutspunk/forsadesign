@@ -120,7 +120,10 @@ function patch(html, meta) {
   // Inject static body HTML into <div id="root"> so AI crawlers see page copy
   // without executing JavaScript. React will overwrite this on the client.
   if (meta.bodyHtml) {
-    out = out.replace(/<div\s+id="root">\s*<\/div>/, `<div id="root">\n${meta.bodyHtml}\n</div>`);
+    out = out.replace(
+      /<div\s+id="root">\s*<\/div>/,
+      `<div id="root" data-prerendered="true">\n${meta.bodyHtml}\n</div>`,
+    );
   }
 
   return out;
