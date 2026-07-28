@@ -1,0 +1,454 @@
+ Oto kompletny redesign treści pod **heavy industry** — zbudowany na tym, co faktycznie masz (20 lat w B2B industrial, Banff, Aberdeenshire, jednoosobowa operacja z networkem specjalistów). Treści są gotowe do wklejenia. Daję wersję **angielską** (główny target: UK offshore, O&G, engineering, renewables) i **polską** (polskie firmy w UK/EU i eksport przemysłowy).
+
+---
+
+## 1. Nowa strategia przekazu (EN)
+
+**Zamiast:** *"Boutique web agency"*  
+**Bądź:** *"Industrial web specialist. Built by a former B2B machinery trader who knows how procurement actually works."*
+
+Twój unfair advantage nie jest "design" — to fakt, że **siedziałeś po obu stronach stołu zakupowego**. Heavy industry nie kupuje od "kreatywnych agencji". Kupuje od ludzi, którzy rozumieją łańcuch dostaw, compliance, ISO i to, że decyzję podejmuje 6 osób w ciągu 12 tygodni.
+
+---
+
+## 2. Strona główna — nowe treści (EN)
+
+### HERO
+
+```text
+H1: Web Systems for Heavy Industry
+H2: No templates. No page builders. Just fast, secure sites that pass procurement checks.
+
+Body:
+You build infrastructure. We build the digital layer that proves you can deliver it.
+
+Over twenty years in international B2B industrial sales — metalworking machinery, 
+engineering solutions, energy sector procurement across Europe and Asia. I know what 
+happens when a buyer shortlists three suppliers and checks their websites. 
+
+If your site is slow, vague or looks like a 2012 template, you are dropped before 
+the technical conversation even starts.
+
+Forsa Design builds dedicated, hand-coded websites and web systems for:
+• Offshore & energy contractors
+• Engineering and fabrication firms  
+• Industrial equipment suppliers
+• Heavy logistics and haulage operators
+
+Based in Banff, Aberdeenshire. Serving Scotland and UK-wide.
+[Request Technical Quote]
+```
+
+### SERVICES (3 pilarowe, zgodne z tym co oferujesz)
+
+```text
+H2: What We Build
+
+1. INDUSTRIAL WEB PRESENCE
+   Dedicated sites built from scratch for engineering and manufacturing firms.
+   Fast load times. Mobile-optimised for site offices. Clear technical messaging 
+   that speaks to specifiers, not designers.
+   
+2. E-COMMERCE FOR PARTS & EQUIPMENT
+   B2B catalogues and ordering systems for industrial components. Account-based 
+   pricing, bulk quotes, integration with your ERP or stock system. Built to convert 
+   procurement officers, not casual browsers.
+   
+3. BESPOKE WEB SYSTEMS
+   Dealer portals. Technical spec generators. Multilingual quote engines for export 
+   markets. Integration with existing workflows — not disruption of them.
+```
+
+### PROCESS (dla heavy industry — musi brzmieć jak projekt inżynieryjny, nie "creative journey")
+
+```text
+H2: How We Work
+
+1. DISCOVERY & AUDIT
+   We analyse your current site, your competitors, and where you lose credibility 
+   during the buyer's vetting process. We map your actual decision-makers and what 
+   they need to see.
+
+2. TECHNICAL SPEC & DESIGN
+   Clean architecture, hand-written code, no unnecessary plugins. Real photography 
+   of your facility and work — not stock images of men in hard hats. Every page 
+   built around a procurement checkpoint.
+
+3. COMPLIANCE, TESTING & LAUNCH
+   GDPR, accessibility, SSL, performance benchmarks. Tested on the devices your 
+   clients actually use — from iPhones on offshore rigs to old PCs in site cabins.
+
+4. SUPPORT & EVOLUTION
+   Monthly care plans that keep your site secure, updated, and aligned with your 
+   contracts pipeline. As your capabilities grow, your site grows with them.
+```
+
+### FOUNDER / ABOUT (to jest Twój najmocniejszy E-E-A-T)
+
+```text
+H2: Built by Someone Who Understood the Brief
+
+My name is Miro. I started Forsa Design after more than 20 years in international 
+B2B industrial sales. I traded metalworking machinery, industrial equipment and 
+engineering solutions across Europe and Asia. I sat on both sides of the procurement 
+table — selling to refineries, negotiating with plant engineers, and vetting suppliers 
+myself.
+
+That experience taught me one thing: most industrial firms deliver world-class work, 
+but their digital presence does not reflect it. And in B2B today, your website is the 
+first stage of technical vetting.
+
+I am not a London agency with a coffee bar and fifteen account managers. I am a 
+developer who understands industry, logistics, international trade, and the pressure 
+of contract deadlines. I write the code myself. I answer the phone myself. 
+
+Based in Banff, Aberdeenshire — the heart of the UK energy sector.
+Fluent in English and Polish. Serving UK-wide and EU export markets.
+```
+
+### SOCIAL PROOF / PORTFOLIO (przekuj to co masz w język heavy industry)
+
+```text
+H2: Recent Work
+
+[Platforma energetyczna]
+Custom lightweight framework and optimised user journey for an enterprise energy 
+sector platform. Built for high-traffic industrial data delivery.
+
+[System prawny]
+Secure, high-conversion web system designed for a legal sector client requiring 
+strict data handling and professional credibility.
+
+[Love Sprouts — e-commerce]
+Full Shopify rebuild. Load time reduced to 1.1s. Abandoned cart recovery 
+implemented. (Proof that we understand conversion mechanics, even in non-industrial 
+verticals — the same rigour applies to your parts catalogue.)
+
+[20% First Partner Discount]
+We are currently expanding our heavy industry portfolio. First partners receive 
+priority delivery and a 20% project discount in exchange for a case study and 
+testimonial. Strictly limited.
+```
+
+### FAQ (Schema.org ready — to jest kluczowe dla AI i GEO)
+
+```text
+H2: Common Questions
+
+Q: Do you work with offshore and energy sector contractors?
+A: Yes. Based in Aberdeenshire, we work with firms serving North Sea energy, 
+   renewables, and heavy engineering. We understand the compliance and credibility 
+   requirements of these sectors.
+
+Q: Can you integrate with our existing stock or ERP system?
+A: Where the API allows, yes. We build bridges between your web frontend and 
+   backend systems — not walled gardens that create extra admin work.
+
+Q: What does "hand-coded" actually mean for my business?
+A: It means no bloated templates, no unnecessary plugins that slow your site down 
+   or create security holes. It means your site loads in under 2 seconds and passes 
+   technical audits — including the ones your clients' IT departments run.
+
+Q: Do you offer support after launch?
+A: Yes. Monthly care plans cover security updates, backups, performance monitoring, 
+   and incremental improvements. Your site is a living asset, not a one-off brochure.
+
+Q: Do you work with Polish or EU-based industrial firms?
+A: Yes. Fluent in Polish. Experience in EU industrial trade and export markets.
+```
+
+### CTA / FOOTER
+
+```text
+H2: Ready for a Website That Matches Your Engineering Standards?
+
+Clean code. Clear technical strategy. No corporate jargon.
+
+[Request a Quote] → hello@forsadesign.co.uk / 07770 110 735
+
+—
+© 2026 Forsa Design. Banff, Aberdeenshire, Scotland.
+Company number: [wpisz Companies House number jeśli masz]
+VAT: [wpisz VAT ID jeśli masz]
+```
+
+---
+
+## 3. Strona główna — nowe treści (PL)
+
+Wersja polska powinna być skierowana do **polskich firm przemysłowych w UK, polskich eksporterów do UK/EU, oraz polskich oddziałów zachodnich firm**. Język: bezpośredni, techniczny, bez korpo-bullshitu.
+
+### HERO (PL)
+
+```text
+H1: Systemy Webowe dla Przemysłu Ciężkiego
+H2: Żadnych szablonów. Żadnych kreatorów. Tylko szybki, bezpieczny kod, który 
+    przechodzi audyt zakupowy.
+
+Body:
+Budujesz infrastrukturę. My budujemy warstwę cyfrową, która udowadnia, że dasz radę 
+to zrealizować.
+
+Ponad 20 lat w międzynarodowym B2B — handel obrabiarkami, wyposażenie przemysłowe, 
+zakupy dla sektora energetycznego w Europie i Azji. Wiem, co się dzieje, gdy kupujący 
+robi shortlistę trzech dostawców i sprawdza ich strony.
+
+Jeśli Twoja strona jest wolna, niejasna lub wygląda jak szablon z 2012 roku — 
+odpadasz zanim zacznie się rozmowa techniczna.
+
+Forsa Design tworzy dedykowane, pisane od podstaw strony i systemy webowe dla:
+• Kontraktorów offshore i energetycznych
+• Firm inżynieryjnych i produkcyjnych
+• Dostawców sprzętu przemysłowego
+• Operatorów ciężkiej logistyki
+
+Siedziba: Banff, Aberdeenshire, Szkocja. Obsługa: cała Wielka Brytania i eksport EU.
+[Poproś o wycenę techniczną]
+```
+
+### USŁUGI (PL)
+
+```text
+H2: Co budujemy
+
+1. STRONY DLA PRZEMYSŁU
+   Dedykowane witryny pisane od zera dla firm inżynieryjnych i produkcyjnych. 
+   Szybkie ładowanie. Zoptymalizowane pod telefony na budowie. Jasny przekaz 
+   techniczny dla specyfikantów, nie dla grafików.
+
+2. E-COMMERCE DLA CZĘŚCI I URZĄDZEŃ
+   Katalogi B2B i systemy zamówień dla komponentów przemysłowych. Ceny 
+   kontekstowe dla klientów, wyceny hurtowe, integracja z Twoim ERP lub 
+   magazynem. Zbudowane, żeby konwertować dział zakupów, nie przypadkowych 
+   odwiedzających.
+
+3. DEDYKOWANE SYSTEMY WEBOWE
+   Portale dealerskie. Generatory specyfikacji technicznych. Wielojęzyczne 
+   silniki wycen na rynki eksportowe. Integracja z istniejącymi procesami — 
+   nie ich zakłócanie.
+```
+
+### PROCES (PL)
+
+```text
+H2: Jak pracujemy
+
+1. AUDYT I ODKRYCIE
+   Analizujemy obecną stronę, konkurencję i gdzie tracisz wiarygodność podczas 
+   weryfikacji przez kupującego. Mapujemy realnych decydentów i to, co muszą zobaczyć.
+
+2. SPECYFIKACJA TECHNICZNA I PROJEKT
+   Czysta architektura, kod pisany ręcznie, zero zbędnych wtyczek. Prawdziwe 
+   zdjęcia Twojego zakładu i pracy — nie stockowe fotki facetów w kaskach. 
+   Każda strona zbudowana wokół punktu kontrolnego zakupowego.
+
+3. COMPLIANCE, TESTY I URUCHOMIENIE
+   GDPR, dostępność, SSL, benchmarki wydajności. Testowane na urządzeniach, 
+   których faktycznie używają Twoi klienci — od iPhone'ów na platformach 
+   offshore po stare komputery w kontenerach biurowych.
+
+4. WSPARCIE I ROZWÓJ
+   Miesięczne plany opieki: aktualizacje bezpieczeństwa, backupy, monitoring 
+   wydajności, drobne usprawnienia. Twoja strona to żywy asset, nie jednorazowa 
+   broszura.
+```
+
+### ZAŁOŻYCIEL (PL)
+
+```text
+H2: Zbudowane przez kogoś, kto rozumiał brief
+
+Nazywam się Miro. Założyłem Forsa Design po ponad 20 latach w międzynarodowym 
+B2B przemysłowym. Handlowałem obrabiarkami, wyposażeniem przemysłowym i rozwiązaniami 
+inżynieryjnymi w Europie i Azji. Siedziałem po obu stronach stołu zakupowego — 
+sprzedawałem do rafinerii, negocjowałem z inżynierami procesowymi i sam weryfikowałem 
+dostawców.
+
+To doświadczenie nauczyło mnie jednej rzeczy: większość firm przemysłowych dostarcza 
+pracę światowej klasy, ale ich obecność cyfrowa tego nie odzwierciedla. A w B2B 
+Twoja strona to pierwszy etap weryfikacji technicznej.
+
+Nie jestem londyńską agencją z barem kawowym i piętnastoma account managerami. 
+Jestem deweloperem, który rozumie przemysł, logistykę, handel międzynarodowy i 
+presję terminów kontraktowych. Sam piszę kod. Sam odbieram telefon.
+
+Siedziba: Banff, Aberdeenshire — serce brytyjskiego sektora energetycznego.
+Biegły angielski i polski. Obsługa UK i rynki eksportowe EU.
+```
+
+---
+
+## 4. Podstrony — co zmienić
+
+| URL | Obecny stan | Co zrobić |
+|-----|-------------|-----------|
+| `/en/` | Strona główna | Wkleić nowy hero + sekcje powyżej |
+| `/pl/` | Strona główna PL | Wkleić nowy hero PL + sekcje |
+| `/about` | Nie istnieje jako osobny HTML (SPA?) | Stworzyć statyczną podstronę `/en/about` z biogramem Miro |
+| `/services` | Nie istnieje jako osobny HTML | Stworzyć statyczną podstronę `/en/services` z rozwinięciem usług |
+| `/contact` | Nie istnieje jako osobny HTML | Stworzyć statyczną podstronę `/en/contact` z formularzem + danymi |
+| `/en/terms` | OK | Dodać firmowe dane (company number, VAT) |
+| `/en/privacy` | OK | Sprawdzić czy pasuje do nowego opisu |
+
+**Kluczowe:** Każda podstrona musi mieć **własny, unikalny** `title`, `meta description`, `canonical` wskazujący na siebie, oraz `og:url` wskazujący na siebie. Obecnie wszystkie wskazują na `/en/` — to katastrofa SEO.
+
+---
+
+## 5. Schema.org — co dodać (kod)
+
+Zamiast obecnych 3 bloków, użyj tej struktury:
+
+```json
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "LocalBusiness",
+      "name": "Forsa Design",
+      "description": "Custom web development for heavy industry, offshore, and engineering firms. Based in Banff, Aberdeenshire, Scotland.",
+      "url": "https://forsadesign.co.uk",
+      "telephone": "+447770110735",
+      "email": "hello@forsadesign.co.uk",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "[Twój adres jeśli chcesz]",
+        "addressLocality": "Banff",
+        "addressRegion": "Aberdeenshire",
+        "postalCode": "AB45",
+        "addressCountry": "GB"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "57.6667",
+        "longitude": "-2.5237"
+      },
+      "areaServed": [
+        { "@type": "AdministrativeArea", "name": "Aberdeenshire" },
+        { "@type": "AdministrativeArea", "name": "Scotland" },
+        { "@type": "Country", "name": "United Kingdom" }
+      ],
+      "serviceType": [
+        "Industrial Web Development",
+        "B2B E-commerce",
+        "Bespoke Web Systems"
+      ],
+      "knowsAbout": ["Heavy Industry", "Offshore Energy", "Engineering", "B2B Procurement"],
+      "founder": {
+        "@type": "Person",
+        "name": "Miro",
+        "jobTitle": "Founder & Lead Developer",
+        "knowsAbout": ["B2B Industrial Sales", "Web Development", "International Trade"]
+      }
+    },
+    {
+      "@type": "WebSite",
+      "name": "Forsa Design",
+      "url": "https://forsadesign.co.uk",
+      "inLanguage": ["en", "pl"]
+    }
+  ]
+}
+```
+
+Dla każdej podstrony usługowej osobny blok `Service` + `FAQPage`.
+
+---
+
+## 6. Robots.txt — co zrobić natychmiast
+
+Twój obecny `robots.txt` blokuje wszystkie boty AI. Jeśli chcesz być widoczny w ChatGPT, Claude, Perplexity:
+
+```text
+User-agent: *
+Allow: /
+Disallow: /en/blog/
+Disallow: /pl/blog/
+
+Sitemap: https://forsadesign.co.uk/sitemap.xml
+```
+
+Usuń te linie:
+```
+User-agent: ClaudeBot → Disallow
+User-agent: GPTBot → Disallow
+User-agent: Google-Extended → Disallow
+```
+
+Albo — jeśli boisz się scrapowania treningowego — zostaw tylko:
+```
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot  
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+```
+
+Ale blokowanie wszystkiego i jednocześnie płacenie za raport GEO to jak tankowanie dieslem do Tesli.
+
+---
+
+## 7. llms.txt — poprawiona wersja
+
+```text
+# Forsa Design
+
+> Custom web development for heavy industry, offshore energy, and engineering firms. 
+> Based in Banff, Aberdeenshire, Scotland. Built by a former B2B industrial sales 
+> specialist with 20+ years in machinery, equipment, and energy sector procurement.
+
+## Key Pages
+
+- [Homepage (English)](https://forsadesign.co.uk/en/)
+- [Homepage (Polish)](https://forsadesign.co.uk/pl/)
+- [About / Founder](https://forsadesign.co.uk/en/about)
+- [Services](https://forsadesign.co.uk/en/services)
+- [Contact](https://forsadesign.co.uk/en/contact)
+- [Terms & Conditions (EN)](https://forsadesign.co.uk/en/terms)
+- [Privacy Policy (EN)](https://forsadesign.co.uk/en/privacy)
+
+## Services
+
+- Custom-coded industrial websites (no templates, no page builders)
+- B2B e-commerce for parts, equipment, and industrial components
+- Bespoke web systems: dealer portals, spec generators, ERP integration
+- Performance optimisation for technical and procurement audiences
+- Monthly care plans and post-launch support
+
+## Industries Served
+
+- Offshore energy & renewables
+- Oil & gas contractors
+- Engineering & fabrication
+- Industrial equipment supply
+- Heavy logistics & haulage
+- Manufacturing & processing
+
+## Founder
+
+Miro — Founder & Lead Developer. 20+ years in international B2B industrial sales. 
+Fluent in English and Polish. Based in Banff, Aberdeenshire.
+
+## Contact
+
+- Email: hello@forsadesign.co.uk
+- Phone: +44 7770 110735
+- Location: Banff, Aberdeenshire, Scotland, UK
+
+## Sitemap
+
+https://forsadesign.co.uk/sitemap.xml
+```
+
+---
+
+## Podsumowanie — co zrobić w tej kolejności:
+
+1. **Dziś:** Popraw `robots.txt` (usuń blokady AI) i `canonical` na podstronach
+2. **Ten tydzień:** Wklej nowe treści hero + about na stronę główną EN i PL
+3. **W ciągu 2 tygodni:** Stwórz statyczne podstrony `/about`, `/services`, `/contact` z unikalnymi meta
+4. **W ciągu miesiąca:** Dodaj Schema.org `Service` + `FAQPage` + popraw `llms.txt`
+
+Chcesz, żebym rozwinął którąkolwiek sekcję — np. pełny tekst podstrony `/services` z nagłówkami H2/H3 gotowymi do wklejenia, lub wersję maila ofertowego w tym samym tonie?
