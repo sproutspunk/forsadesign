@@ -345,6 +345,10 @@ export async function generateQuotePdf(data: PdfData): Promise<void> {
     );
   }
 
+  const thanks = t(data, "Thank you for your enquiry.", "Dziekujemy za zapytanie ofertowe.");
+  const thanksW = textWidth(thanks, fontReg, 9);
+  drawText(page, thanks, (W - thanksW) / 2, 58, fontReg, 9, MID_GREY);
+
   // ── Footer ────────────────────────────────────────────────────────
   page.drawRectangle({ x: 0, y: 0, width: W, height: 38, color: LIGHT_GREY });
   const footer =

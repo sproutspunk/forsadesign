@@ -180,6 +180,10 @@ export default function BrandHeader() {
           </div>
         </section>
 
+        <div className="absolute bottom-28 left-0 right-0 text-center text-sm text-gray-500">
+          Thank you for your enquiry.
+        </div>
+
         {/* Footer */}
         <footer className="absolute bottom-0 left-0 right-0 h-24 bg-gray-50 flex items-center justify-between px-14 border-t border-gray-200">
           <div className="flex gap-8 text-xs text-gray-500">
