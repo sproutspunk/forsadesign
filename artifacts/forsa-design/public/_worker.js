@@ -1,15 +1,25 @@
 // Cloudflare Pages advanced-mode worker.
-// API requests are forwarded to the origin server (Replit API service).
+// API requests are proxied to the Replit autoscale backend.
 // Static assets and SPA fallback are handled via env.ASSETS.
+
+const API_ORIGIN = "https://attached-assets-1-sproutspunk.replit.app";
+
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
 
-    // Forward ALL /api/** requests to the origin server unchanged.
-    // Using fetch() instead of env.ASSETS bypasses the edge cache and
-    // reaches the Replit API artifact at its registered /api path.
+    // Proxy ALL /api/** requests to the Replit backend.
+    // fetch(request) on the same origin loops back through this worker (error 1019),
+    // so we rewrite the URL to the stable Replit deployment URL.
     if (url.pathname === "/api" || url.pathname.startsWith("/api/")) {
-      return fetch(request);
+      const targetUrl = new URL(url.pathname + url.search, API_ORIGIN);
+      const proxied = new Request(targetUrl, {
+        method: request.method,
+        headers: request.headers,
+        body: request.body,
+        redirect: "follow",
+      });
+      return fetch(proxied);
     }
 
     const assetResponse = await env.ASSETS.fetch(request);
