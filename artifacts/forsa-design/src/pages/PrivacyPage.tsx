@@ -111,7 +111,7 @@ const sections: SectionData[] = [
   {
     number: "4",
     title: "Personal Data We Collect",
-    body: `We collect Personal Data that you voluntarily provide, including: contact form submissions (name, email, phone, company, message), service enquiry and quotation request details (business information, project description, budget, timeline), client project data (full name, billing address, payment information processed by third-party providers, project materials), communication records (email correspondence, chat, call recordings with consent), and account or service registration details (login credentials, preferences, payment history).`,
+    body: `We collect Personal Data that you voluntarily provide, including: service enquiry and quotation request details (business information, project description, budget, timeline), client project data (full name, billing address, payment information processed by third-party providers, project materials), communication records (email correspondence, chat, call recordings with consent), and account or service registration details (login credentials, preferences, payment history).`,
     subsections: [
       {
         title: "Data Collected Automatically",
@@ -162,7 +162,7 @@ const sections: SectionData[] = [
     subsections: [
       {
         title: "Retention Periods",
-        body: `Contact Form Enquiries: 2 years (unless converted to a client). Project Clients: duration of project + 7 years. Marketing Lists: until you unsubscribe, plus 2 years evidence of unsubscription. Website Analytics: 26 months (Google Analytics default). Email Communications: 2 years or duration of business relationship, whichever is longer. Payment Records: 7 years (UK tax retention). Call Recordings: 1 year (if applicable). Server Logs and IP Data: 90 days.`,
+        body: `Email Communications: 2 years or duration of business relationship, whichever is longer. Project Clients: duration of project + 7 years. Marketing Lists: until you unsubscribe, plus 2 years evidence of unsubscription. Website Analytics: 26 months (Google Analytics default). Payment Records: 7 years (UK tax retention). Call Recordings: 1 year (if applicable). Server Logs and IP Data: 90 days.`,
       },
       {
         title: "Deletion",
@@ -295,6 +295,6 @@ const sections: SectionData[] = [
   {
     number: "20",
     title: "Legal Basis Summary Table",
-    body: `Contact form data: Consent + Contract (service enquiries). Project client data: Contract (service delivery). Email address: Consent (marketing communications). Website usage data: Legitimate interest (analytics, improvement). IP address, device info: Legitimate interest (security, fraud prevention). Payment information: Contract + Legal obligation (payment processing). Testimonials: Consent (marketing). Call recordings: Consent (service improvement). Cookies: Consent (essential cookies exempt) for website functionality and analytics.`,
+    body: `Service enquiry data: Consent + Contract. Project client data: Contract (service delivery). Email address: Consent (marketing communications). Website usage data: Legitimate interest (analytics, improvement). IP address, device info: Legitimate interest (security, fraud prevention). Payment information: Contract + Legal obligation (payment processing). Testimonials: Consent (marketing). Call recordings: Consent (service improvement). Cookies: Consent (essential cookies exempt) for website functionality and analytics.`,
   },
 ];

@@ -448,7 +448,7 @@ export const articles: Article[] = [
         },
         {
           heading: "How much does a website cost for a small business in Aberdeenshire?",
-          body: "Pricing varies quite a bit depending on what you need. Here is a rough sense of where things sit for Aberdeenshire businesses in 2026.\n\nA basic site of three to five pages starts from around £1,200. That covers a sole trader or small service business that needs a clean online presence: homepage, services, about, contact.\n\nA standard business website of five to ten pages typically runs from £2,500 to £5,000. That includes custom design, SEO setup, mobile optimisation, contact forms and basic analytics.\n\nE-commerce or more complex projects tend to start at £5,000 and go up from there depending on the scope.\n\nBe cautious with very cheap quotes. A website for £300 from a template platform will often cost more in lost business than it saves upfront. The right price reflects the actual complexity of the project and is delivered by someone who understands what you are trying to achieve, not just what it should look like.",
+          body: "Pricing varies quite a bit depending on what you need. Here is a rough sense of where things sit for Aberdeenshire businesses in 2026.\n\nA basic site of three to five pages starts from around £1,200. That covers a sole trader or small service business that needs a clean online presence: homepage, services, about and direct contact details.\n\nA standard business website of five to ten pages typically runs from £2,500 to £5,000. That includes custom design, SEO setup, mobile optimisation and basic analytics.\n\nE-commerce or more complex projects tend to start at £5,000 and go up from there depending on the scope.\n\nBe cautious with very cheap quotes. A website for £300 from a template platform will often cost more in lost business than it saves upfront. The right price reflects the actual complexity of the project and is delivered by someone who understands what you are trying to achieve, not just what it should look like.",
         },
         {
           heading: "What to look for when choosing a web designer in Aberdeenshire",
@@ -464,7 +464,7 @@ export const articles: Article[] = [
         },
         {
           heading: "Working with Forsa Design",
-          body: "We work from Banff, in Aberdeenshire, and take on projects across the region and further afield.\n\nEvery project starts with a proper conversation. We ask about your business, your customers, what you are trying to achieve and what is not working at the moment. We do not propose solutions before we understand the problem.\n\nNo templates. Everything we build is designed for the specific business we are working with, built to load fast and turn visitors into enquiries.\n\nIf you are based in Aberdeenshire and looking for a new site or a redesign, drop us a line at hello@forsadesign.co.uk or use the contact form on this site. First conversation is free.",
+          body: "We work from Banff, in Aberdeenshire, and take on projects across the region and further afield.\n\nEvery project starts with a proper conversation. We ask about your business, your customers, what you are trying to achieve and what is not working at the moment. We do not propose solutions before we understand the problem.\n\nNo templates. Everything we build is designed for the specific business we are working with, built to load fast and turn visitors into enquiries.\n\nIf you are based in Aberdeenshire and looking for a new site or a redesign, email hello@forsadesign.co.uk or call directly. First conversation is free.",
         },
         {
           heading: "Summary",
@@ -530,7 +530,7 @@ export const articles: Article[] = [
         },
         {
           heading: "Trust signals are not optional",
-          body: "Before someone fills in a form or calls you, they check you are real. Can you deliver what you promise?\n\nTrust is built on specific signals, not general claims. 'We are the best' is a claim. 'We have delivered 47 projects across Aberdeenshire over the past three years' is a signal.\n\nUse real client names where you have permission. Show actual results: 'This booking system reduced no-shows by 34%.' Put a direct phone number on every page, not a contact form buried in the footer. Show your location. For local businesses, being findable and reachable matters more than looking glossy.",
+          body: "Before someone emails or calls you, they check you are real. Can you deliver what you promise?\n\nTrust is built on specific signals, not general claims. 'We are the best' is a claim. 'We have delivered 47 projects across Aberdeenshire over the past three years' is a signal.\n\nUse real client names where you have permission. Show actual results: 'This booking system reduced no-shows by 34%.' Put a direct phone number on every page. Show your location. For local businesses, being findable and reachable matters more than looking glossy.",
         },
         {
           heading: "Friction kills conversions silently",
@@ -600,7 +600,7 @@ export const articles: Article[] = [
         },
         {
           heading: "1. Security updates are not optional",
-          body: "Every website runs on software: the server, the framework, the plugins, the contact forms. Developers find security flaws regularly and release patches. If those patches are not applied, your site becomes an easy target.\n\nA compromised site does not just affect you. It can be used to send spam, host phishing pages or infect visitors. Google will flag it in search results. Hosting providers may suspend it. The cleanup costs far more than routine maintenance ever would.\n\nMaintenance means applying updates promptly, monitoring for unusual activity and keeping backups that actually work.",
+          body: "Every website runs on software: the server, the framework and the plugins. Developers find security flaws regularly and release patches. If those patches are not applied, your site becomes an easy target.\n\nA compromised site does not just affect you. It can be used to send spam, host phishing pages or infect visitors. Google will flag it in search results. Hosting providers may suspend it. The cleanup costs far more than routine maintenance ever would.\n\nMaintenance means applying updates promptly, monitoring for unusual activity and keeping backups that actually work.",
         },
         {
           heading: "2. Performance degrades over time",
@@ -615,8 +615,8 @@ export const articles: Article[] = [
           body: "SEO is not a finish line. Competitors publish new content. Google updates its algorithms. Local business listings need verification. Backlinks decay. A site that ranked well in January can be invisible by October if nothing is done.\n\nMaintenance includes checking what still ranks, what has dropped and why. It means updating technical SEO as standards evolve. It means making sure local search signals such as your Google Business Profile, directory listings and local citations stay accurate and consistent.",
         },
         {
-          heading: "5. Broken links and forms cost real enquiries",
-          body: "A contact form that silently fails. A booking link that goes to a 404. An email address that no longer exists. These are invisible problems with visible consequences: lost enquiries, frustrated customers, missed revenue.\n\nRegular maintenance means testing forms, checking links and verifying that every path a visitor might take still works. It takes minutes to check and seconds to fix. The alternative is finding out from an angry customer.",
+          heading: "5. Broken links cost real enquiries",
+          body: "A booking link that goes to a 404. An email address that no longer exists. These are invisible problems with visible consequences: lost enquiries, frustrated customers, missed revenue.\n\nRegular maintenance means checking links and verifying that every path a visitor might take still works. It takes minutes to check and seconds to fix. The alternative is finding out from an angry customer.",
         },
         {
           heading: "What does good maintenance look like?",

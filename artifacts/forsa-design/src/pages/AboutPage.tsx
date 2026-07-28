@@ -134,7 +134,7 @@ const content = {
     comparisonCta: "See full comparison",
     comparisonHref: "/en/comparison",
     contactCta: "Start a Project",
-    contactHref: "#contact",
+    contactHref: "/en/contact",
   },
   pl: {
     seoTitle: "O Nas | Forsa Design, Agencja Web Design w Banff, Aberdeenshire",
@@ -271,7 +271,7 @@ const content = {
     comparisonCta: "Zobacz pełne porównanie",
     comparisonHref: "/pl/comparison",
     contactCta: "Rozpocznij Projekt",
-    contactHref: "#contact",
+    contactHref: "/pl/contact",
   },
 };
 

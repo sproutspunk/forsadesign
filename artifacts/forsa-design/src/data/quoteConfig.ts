@@ -89,7 +89,7 @@ export const packagePresets: PackagePreset[] = [
       hosting: "client",
       maintenance: "none",
       delivery: "standard",
-      selectedFeatures: ["contact-form"],
+      selectedFeatures: [],
       additionalPages: 0,
       discountPercent: 0,
       multilangCount: 1,
@@ -114,7 +114,7 @@ export const packagePresets: PackagePreset[] = [
       hosting: "managed",
       maintenance: "monthly",
       delivery: "standard",
-      selectedFeatures: ["contact-form", "google-maps", "testimonials"],
+      selectedFeatures: ["google-maps", "testimonials"],
       additionalPages: 2,
       discountPercent: 0,
       multilangCount: 1,
@@ -140,7 +140,6 @@ export const packagePresets: PackagePreset[] = [
       maintenance: "business",
       delivery: "priority",
       selectedFeatures: [
-        "contact-form",
         "google-maps",
         "testimonials",
         "newsletter",
@@ -285,7 +284,6 @@ export const photographyOptions: QuoteOption[] = [
 ];
 
 export const features: QuoteFeature[] = [
-  { value: "contact-form", labelEn: "Contact Form", labelPl: "Formularz kontaktowy", price: 180 },
   { value: "google-maps", labelEn: "Google Maps", labelPl: "Mapy Google", price: 120 },
   { value: "whatsapp", labelEn: "WhatsApp Chat", labelPl: "Czat WhatsApp", price: 120 },
   { value: "live-chat", labelEn: "Live Chat", labelPl: "Czat na żywo", price: 250 },

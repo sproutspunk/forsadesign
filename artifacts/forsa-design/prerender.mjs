@@ -760,7 +760,7 @@ const privacyEN = [
   {
     number: "4",
     title: "Personal Data We Collect",
-    body: `We collect Personal Data that you voluntarily provide, including: contact form submissions (name, email, phone, company, message), service enquiry and quotation request details, client project data, communication records, and account or service registration details.`,
+    body: `We collect Personal Data that you voluntarily provide, including: service enquiry and quotation request details, client project data, communication records, and account or service registration details.`,
     subsections: [
       {
         title: "Data Collected Automatically",
@@ -811,7 +811,7 @@ const privacyEN = [
     subsections: [
       {
         title: "Retention Periods",
-        body: `Contact Form Enquiries: 2 years. Project Clients: duration of project + 7 years. Marketing Lists: until you unsubscribe, plus 2 years. Website Analytics: 26 months. Email Communications: 2 years or duration of business relationship. Payment Records: 7 years. Server Logs and IP Data: 90 days.`,
+        body: `Email Communications: 2 years or duration of business relationship. Project Clients: duration of project + 7 years. Marketing Lists: until you unsubscribe, plus 2 years. Website Analytics: 26 months. Payment Records: 7 years. Server Logs and IP Data: 90 days.`,
       },
       {
         title: "Deletion",
@@ -944,7 +944,7 @@ const privacyEN = [
   {
     number: "20",
     title: "Legal Basis Summary Table",
-    body: `Contact form data: Consent + Contract. Project client data: Contract. Email address: Consent (marketing). Website usage data: Legitimate interest (analytics). IP address, device info: Legitimate interest (security). Payment information: Contract + Legal obligation. Testimonials: Consent. Call recordings: Consent. Cookies: Consent (essential cookies exempt).`,
+    body: `Service enquiry data: Consent + Contract. Project client data: Contract. Email address: Consent (marketing). Website usage data: Legitimate interest (analytics). IP address, device info: Legitimate interest (security). Payment information: Contract + Legal obligation. Testimonials: Consent. Call recordings: Consent. Cookies: Consent (essential cookies exempt).`,
   },
 ];
 
