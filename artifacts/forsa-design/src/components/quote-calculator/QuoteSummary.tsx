@@ -13,7 +13,6 @@ import {
   Send,
   Loader2,
 } from "lucide-react";
-import { generateQuotePdf } from "@/utils/generateQuotePdf";
 
 interface Breakdown {
   projectPrice: number;
@@ -129,6 +128,7 @@ export function QuoteSummary({
   const triggerPdf = async () => {
     setIsGenerating(true);
     try {
+      const { generateQuotePdf } = await import("@/utils/generateQuotePdf");
       await generateQuotePdf({
         quoteId: `FD-${Date.now().toString(36).toUpperCase()}`,
         dateStr: new Date().toLocaleDateString(isEn ? "en-GB" : "pl-PL"),

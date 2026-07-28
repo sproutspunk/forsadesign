@@ -1,20 +1,21 @@
 import { Switch, Route, Router as WouterRouter, useLocation } from "wouter";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { lazy, Suspense, useEffect } from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import NotFound from "@/pages/not-found";
 import HomePage from "@/pages/HomePage";
-import TermsPage from "@/pages/TermsPage";
-import TermsPagePL from "@/pages/TermsPagePL";
-import PrivacyPage from "@/pages/PrivacyPage";
-import PrivacyPagePL from "@/pages/PrivacyPagePL";
-import AboutPage from "@/pages/AboutPage";
-import ComparisonPage from "@/pages/ComparisonPage";
-import QuoteCalculatorPage from "@/pages/QuoteCalculatorPage";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import CookieConsent from "@/components/CookieConsent";
-import { useEffect } from "react";
 import { applyAnalyticsConsent, CONSENT_UPDATED_EVENT } from "@/lib/consentManager";
+
+const NotFound = lazy(() => import("@/pages/not-found"));
+const TermsPage = lazy(() => import("@/pages/TermsPage"));
+const TermsPagePL = lazy(() => import("@/pages/TermsPagePL"));
+const PrivacyPage = lazy(() => import("@/pages/PrivacyPage"));
+const PrivacyPagePL = lazy(() => import("@/pages/PrivacyPagePL"));
+const AboutPage = lazy(() => import("@/pages/AboutPage"));
+const ComparisonPage = lazy(() => import("@/pages/ComparisonPage"));
+const QuoteCalculatorPage = lazy(() => import("@/pages/QuoteCalculatorPage"));
 
 const queryClient = new QueryClient();
 
@@ -79,7 +80,7 @@ function RootLandingPage() {
 
 function Router() {
   return (
-    <>
+    <Suspense fallback={null}>
       <Redirector />
       <Switch>
         <Route path="/en/" component={() => <HomePage lang="en" />} />
@@ -103,7 +104,7 @@ function Router() {
         <Route path="/" component={RootLandingPage} />
         <Route component={NotFound} />
       </Switch>
-    </>
+    </Suspense>
   );
 }
 

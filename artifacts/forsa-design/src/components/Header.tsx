@@ -55,8 +55,10 @@ export default function Header() {
           className="flex items-center shrink-0"
         >
           <img
-            src="/logo-new-sm.png?v=3"
+            src="/logo-new-lg.webp?v=4"
             alt="Forsa Design"
+            width={640}
+            height={640}
             loading="eager"
             decoding="async"
             className="h-11 w-auto object-contain"

@@ -8,3 +8,4 @@
 - [Stale prerendered files on Cloudflare Pages](stale-prerender-files.md) — Cloudflare Pages preserves stale `index.html` files across deploys; if a route stops being prerendered, the old static file persists and overrides SPA fallback. Always prerender all routes, or use wrangler to purge.
 - [Node 24 strip-types for .ts imports](node-24-strip-types.md) — Node 24 natively supports `import('./file.ts')` without flag in ESM modules; `node --experimental-strip-types` works in CI for running `.mjs` scripts that import `.ts` data files.
 - [Hero logo on dark background](hero-logo-dark-bg.md) — white-bg logo on dark site: use CSS mask-image radial-gradient to fade white edges; keeps all text visible without background removal. Background removal makes dark tagline text invisible.
+- [Quote PDF lazy loading](quote-pdf-lazy-loading.md) — keep pdf-lib out of the initial bundle; load the generator only when the user downloads a quote.
