@@ -15,11 +15,11 @@ export default function ExecutiveSummary() {
         <div className="p-14 h-full flex flex-col">
           {/* Header */}
           <div className="flex justify-between items-start mb-14 mt-4">
-            <div className="flex items-center">
+            <div className="flex items-center rounded-sm bg-[#0D2540] px-3 py-2">
               <img
-                src="https://forsadesign.co.uk/logo-new-lg.png?v=2"
+                src="/__mockup/images/forsa-design-logo.png"
                 alt="Forsa Design"
-                className="h-24 w-36 object-contain object-left"
+                className="h-20 w-32 object-contain object-left"
               />
             </div>
             <div className="text-right text-xs text-gray-400 space-y-1">
