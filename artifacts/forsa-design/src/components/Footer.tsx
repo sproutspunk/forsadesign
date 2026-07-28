@@ -10,9 +10,9 @@ export default function Footer() {
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 mb-12">
           <div>
-            <h4 className="font-serif text-xl tracking-[0.2em] font-bold text-white uppercase mb-4">
+            <p className="font-serif text-xl tracking-[0.2em] font-bold text-white uppercase mb-4">
               Forsa Design
-            </h4>
+            </p>
             <p className="text-foreground/60 font-light mb-2">{t("footer.tagline")}</p>
             <p className="text-foreground/60 font-light mb-4">{t("footer.location")}</p>
             <div className="space-y-2">
