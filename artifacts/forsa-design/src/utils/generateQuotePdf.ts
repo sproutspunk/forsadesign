@@ -26,7 +26,6 @@ function pl(s: string): string {
 // Colours (pdf-lib uses 0-1 range)
 const NAVY = rgb(0.039, 0.102, 0.196); // #0A1A32
 const GOLD = rgb(0.784, 0.647, 0.255); // #C8A541
-const GOLD_LIGHT = rgb(0.98, 0.94, 0.82);
 const LIGHT_GREY = rgb(0.95, 0.95, 0.96);
 const MID_GREY = rgb(0.6, 0.6, 0.65);
 const DARK = rgb(0.1, 0.1, 0.13);
@@ -77,6 +76,43 @@ function textWidth(text: string, font: PDFFont, size: number) {
   return font.widthOfTextAtSize(pl(text), size);
 }
 
+function itemDescription(label: string, isEn: boolean) {
+  const key = label.toLowerCase();
+  const descriptions = isEn
+    ? [
+        ["project", "Strategic planning, discovery and project foundations."],
+        ["page", "Additional responsive page templates and content structure."],
+        ["design", "Custom visual direction, interface design and responsive layouts."],
+        ["content", "Content structure, editing support and conversion-focused copy."],
+        ["logo", "Professional brand mark and a practical visual identity system."],
+        ["phot", "Selected imagery and visual assets for the new website."],
+        ["feature", "Custom functionality tailored to the business requirements."],
+        ["seo", "Technical SEO foundations, metadata and search visibility setup."],
+        ["performance", "Performance optimisation, accessibility and quality checks."],
+        ["hosting", "Hosting setup, launch support and essential configuration."],
+        ["delivery", "Project coordination and delivery planning."],
+      ]
+    : [
+        ["projekt", "Strategia, analiza potrzeb i fundamenty realizacji projektu."],
+        ["stron", "Dodatkowe responsywne podstrony i struktura tresci."],
+        ["design", "Indywidualny kierunek wizualny i responsywny interfejs."],
+        ["tresc", "Struktura tresci, wsparcie redakcyjne i komunikacja sprzedazowa."],
+        ["logo", "Profesjonalny znak marki i praktyczny system identyfikacji."],
+        ["fotograf", "Dobor zdjec i materialow wizualnych dla nowej strony."],
+        ["funkcj", "Dedykowane funkcje dopasowane do wymagan biznesowych."],
+        ["seo", "Podstawy technicznego SEO, metadane i widocznosc w wyszukiwarce."],
+        ["wydajn", "Optymalizacja wydajnosci, dostepnosci i jakosci."],
+        ["hosting", "Konfiguracja hostingu, publikacja i wsparcie uruchomienia."],
+        ["czas", "Koordynacja projektu i planowanie realizacji."],
+      ];
+  return (
+    descriptions.find(([needle]) => key.includes(needle))?.[1] ??
+    (isEn
+      ? "Professional website delivery tailored to your business goals."
+      : "Profesjonalna realizacja strony dopasowana do celow biznesowych.")
+  );
+}
+
 export async function generateQuotePdf(data: PdfData): Promise<void> {
   const doc = await PDFDocument.create();
   const fontBold = await doc.embedFont(StandardFonts.HelveticaBold);
@@ -91,190 +127,239 @@ export async function generateQuotePdf(data: PdfData): Promise<void> {
 
   const page = doc.addPage([W, H]);
 
-  let y = H;
-
   // ── Brand Header ──────────────────────────────────────────────────
-  page.drawRectangle({ x: 0, y: H - 80, width: W, height: 80, color: NAVY });
-
-  // Official Forsa Design logo.
+  const headerH = 132;
+  page.drawRectangle({ x: 0, y: H - headerH, width: W, height: headerH, color: NAVY });
   page.drawImage(logo, {
     x: MARGIN,
-    y: H - 72,
-    width: 104,
-    height: 68,
+    y: H - 108,
+    width: 86,
+    height: 86,
   });
 
-  // "QUOTE" badge on the right
-  const badgeLabel = t(data, "WEBSITE QUOTE", "WYCENA STRONY");
-  const badgeW = textWidth(badgeLabel, fontBold, 11) + 20;
-  page.drawRectangle({ x: W - MARGIN - badgeW, y: H - 57, width: badgeW, height: 26, color: GOLD });
-  drawText(page, badgeLabel, W - MARGIN - badgeW + 10, H - 49, fontBold, 11, NAVY);
-
-  y = H - 100;
-
-  // ── Quote meta row ────────────────────────────────────────────────
-  const metaItems = [
-    { label: t(data, "Quote Ref", "Nr wyceny"), value: data.quoteId },
-    { label: t(data, "Date", "Data"), value: data.dateStr },
-    { label: t(data, "Project", "Projekt"), value: pl(data.projectLabel) },
-  ];
-
-  page.drawRectangle({ x: MARGIN, y: y - 38, width: COL, height: 46, color: LIGHT_GREY });
-  metaItems.forEach((item, i) => {
-    const colX = MARGIN + 8 + i * (COL / 3);
-    drawText(page, item.label.toUpperCase(), colX, y, fontBold, 7, MID_GREY);
-    drawText(page, item.value, colX, y - 16, fontBold, 10, DARK);
+  const badgeLabel = t(data, "PROJECT PROPOSAL", "OFERTA PROJEKTOWA");
+  const badgeW = textWidth(badgeLabel, fontBold, 9) + 22;
+  page.drawRectangle({
+    x: W - MARGIN - badgeW,
+    y: H - 55,
+    width: badgeW,
+    height: 22,
+    borderColor: GOLD,
+    borderWidth: 1,
   });
-
-  y -= 58;
-
-  // ── Section: Cost breakdown ───────────────────────────────────────
-  drawText(page, t(data, "COST BREAKDOWN", "ZESTAWIENIE KOSZTOW"), MARGIN, y, fontBold, 9, GOLD);
-  y -= 14;
-  page.drawLine({
-    start: { x: MARGIN, y },
-    end: { x: W - MARGIN, y },
-    thickness: 0.5,
-    color: rgb(0.85, 0.85, 0.88),
-  });
-  y -= 4;
-
-  const rowH = 16;
-  data.lineItems.forEach((item, i) => {
-    if (i % 2 === 0) {
-      page.drawRectangle({
-        x: MARGIN,
-        y: y - rowH + 3,
-        width: COL,
-        height: rowH,
-        color: LIGHT_GREY,
-      });
-    }
-    drawText(page, pl(item.label), MARGIN + 6, y - 4, fontReg, 9, DARK);
-    const valStr = `+${data.formatPrice(item.value)}`;
-    const vw = textWidth(valStr, fontBold, 9);
-    drawText(page, valStr, W - MARGIN - vw - 6, y - 4, fontBold, 9, DARK);
-    y -= rowH;
-  });
-
-  if (data.discountAmount > 0) {
-    drawText(page, t(data, "Discount", "Rabat"), MARGIN + 6, y - 4, fontReg, 9, rgb(0.1, 0.6, 0.3));
-    const valStr = `-${data.formatPrice(data.discountAmount)}`;
-    const vw = textWidth(valStr, fontBold, 9);
-    drawText(page, valStr, W - MARGIN - vw - 6, y - 4, fontBold, 9, rgb(0.1, 0.6, 0.3));
-    y -= rowH;
-  }
-
-  y -= 4;
-  page.drawLine({
-    start: { x: MARGIN, y },
-    end: { x: W - MARGIN, y },
-    thickness: 0.5,
-    color: rgb(0.85, 0.85, 0.88),
-  });
-  y -= 4;
-
-  // Total box
-  page.drawRectangle({ x: MARGIN, y: y - 28, width: COL, height: 36, color: NAVY });
+  drawText(page, badgeLabel, W - MARGIN - badgeW + 11, H - 48, fontBold, 9, GOLD);
   drawText(
     page,
-    t(data, "TOTAL", "ŁĄCZNIE"),
-    MARGIN + 10,
-    y - 9,
-    fontBold,
-    10,
-    rgb(0.75, 0.8, 0.9),
+    `${t(data, "Quote Reference", "Nr wyceny")}: ${data.quoteId}`,
+    W - MARGIN - 160,
+    H - 76,
+    fontReg,
+    8,
+    rgb(0.82, 0.85, 0.9),
   );
-  const totStr = data.formatPrice(data.total);
-  const totW = textWidth(totStr, fontBold, 16);
-  drawText(page, totStr, W - MARGIN - totW - 10, y - 13, fontBold, 16, GOLD);
-  // subtotal note under total (when discount applied)
-  if (data.discountAmount > 0) {
-    y -= 14;
-    const subStr = data.formatPrice(data.subtotal);
-    const subNote = `${data.isEn ? "Before discount" : "Przed rabatem"}: ${subStr}`;
-    const subW = textWidth(subNote, fontReg, 8);
-    drawText(page, subNote, W - MARGIN - subW - 10, y, fontReg, 8, MID_GREY);
-  }
-  y -= 46;
-
-  if (data.maintenanceMonthly > 0) {
-    y -= 4;
-    drawText(
-      page,
-      `${t(data, "Monthly Maintenance", "Miesięczna konserwacja")}: ${data.formatPrice(data.maintenanceMonthly)}/${t(data, "mo", "mies.")}`,
-      MARGIN,
-      y,
-      fontReg,
-      9,
-      MID_GREY,
-    );
-    y -= 14;
-  }
-
-  y -= 16;
-
-  // ── Section: Included ─────────────────────────────────────────────
   drawText(
     page,
-    t(data, "INCLUDED IN EVERY PROJECT", "W KAZDYM PROJEKCIE"),
+    `${t(data, "Date", "Data")}: ${data.dateStr}`,
+    W - MARGIN - 160,
+    H - 90,
+    fontReg,
+    8,
+    rgb(0.82, 0.85, 0.9),
+  );
+  drawText(
+    page,
+    `${t(data, "Valid Until", "Wazna do")}: ${t(data, "30 days", "30 dni")}`,
+    W - MARGIN - 160,
+    H - 104,
+    fontReg,
+    8,
+    rgb(0.82, 0.85, 0.9),
+  );
+
+  // ── Client and project ────────────────────────────────────────────
+  const y = H - headerH - 36;
+  drawText(page, t(data, "PREPARED FOR", "PRZYGOTOWANO DLA"), MARGIN, y, fontBold, 8, MID_GREY);
+  drawText(
+    page,
+    t(data, "Your organisation", "Twoja organizacja"),
     MARGIN,
-    y,
+    y - 19,
     fontBold,
+    14,
+    NAVY,
+  );
+  drawText(
+    page,
+    t(data, "Website project", "Projekt strony internetowej"),
+    MARGIN,
+    y - 34,
+    fontReg,
+    9,
+    MID_GREY,
+  );
+  drawText(
+    page,
+    pl(data.projectLabel),
+    W - MARGIN - textWidth(pl(data.projectLabel), fontBold, 21),
+    y - 10,
+    fontBold,
+    21,
+    NAVY,
+  );
+  drawText(
+    page,
+    `${t(data, "Estimated Timeline", "Szacowany czas realizacji")}: ${pl(data.estimatedWeeks)}`,
+    W - MARGIN - 176,
+    y - 32,
+    fontReg,
     9,
     GOLD,
   );
-  y -= 14;
   page.drawLine({
-    start: { x: MARGIN, y },
-    end: { x: W - MARGIN, y },
+    start: { x: 0, y: y - 55 },
+    end: { x: W, y: y - 55 },
     thickness: 0.5,
-    color: rgb(0.85, 0.85, 0.88),
+    color: LIGHT_GREY,
   });
-  y -= 6;
 
-  const halfCol = COL / 2;
-  data.includedItems.forEach((item, i) => {
-    const col2 = i % 2;
-    const row = Math.floor(i / 2);
-    const ix = MARGIN + col2 * halfCol;
-    const iy = y - row * 15;
-    // bullet circle
-    page.drawCircle({ x: ix + 5, y: iy - 3, size: 3, color: GOLD });
-    drawText(page, pl(item), ix + 14, iy - 7, fontReg, 9, DARK);
-  });
-  y -= Math.ceil(data.includedItems.length / 2) * 15 + 12;
-
-  // ── Section: Delivery ─────────────────────────────────────────────
-  page.drawRectangle({ x: MARGIN, y: y - 28, width: COL, height: 36, color: GOLD_LIGHT });
-  const delivLabel = t(data, "Estimated Delivery:", "Szacowany czas realizacji:");
-  drawText(page, delivLabel, MARGIN + 10, y - 9, fontBold, 10, NAVY);
-  const delivVal = pl(data.estimatedWeeks);
-  const dlw = textWidth(delivVal, fontBold, 10);
-  drawText(page, delivVal, W - MARGIN - dlw - 10, y - 9, fontBold, 10, NAVY);
-  y -= 46;
-
-  // ── Disclaimer ────────────────────────────────────────────────────
-  y -= 8;
+  // ── Two-column investment layout ──────────────────────────────────
+  const contentTop = y - 83;
+  const gap = 24;
+  const leftW = 290;
+  const rightX = MARGIN + leftW + gap;
+  const rightW = COL - leftW - gap;
   drawText(
     page,
-    t(
-      data,
-      "This is an indicative estimate. Final pricing confirmed after a discovery call.",
-      "To jest wstępna wycena. Ostateczna cena potwierdzona po rozmowie wstępnej.",
-    ),
-    MARGIN,
-    y,
-    fontReg,
+    t(data, "INVESTMENT BREAKDOWN", "ZESTAWIENIE INWESTYCJI"),
+    MARGIN + 18,
+    contentTop,
+    fontBold,
+    9,
+    NAVY,
+  );
+  page.drawLine({
+    start: { x: MARGIN, y: contentTop + 2 },
+    end: { x: MARGIN + 12, y: contentTop + 2 },
+    thickness: 1,
+    color: GOLD,
+  });
+
+  let leftY = contentTop - 28;
+  data.lineItems.forEach((item) => {
+    const label = pl(item.label);
+    drawText(page, label, MARGIN, leftY, fontBold, 10, NAVY);
+    const value = data.formatPrice(item.value);
+    drawText(page, value, MARGIN + leftW - textWidth(value, fontBold, 9), leftY, fontBold, 9, NAVY);
+    page.drawLine({
+      start: { x: MARGIN, y: leftY - 6 },
+      end: { x: MARGIN + leftW, y: leftY - 6 },
+      thickness: 0.4,
+      color: LIGHT_GREY,
+    });
+    drawText(
+      page,
+      itemDescription(item.label, data.isEn),
+      MARGIN,
+      leftY - 19,
+      fontReg,
+      7.5,
+      MID_GREY,
+    );
+    leftY -= 43;
+  });
+  if (data.discountAmount > 0) {
+    drawText(page, t(data, "Discount", "Rabat"), MARGIN, leftY, fontBold, 10, rgb(0.1, 0.6, 0.3));
+    const discount = `-${data.formatPrice(data.discountAmount)}`;
+    drawText(
+      page,
+      discount,
+      MARGIN + leftW - textWidth(discount, fontBold, 9),
+      leftY,
+      fontBold,
+      9,
+      rgb(0.1, 0.6, 0.3),
+    );
+  }
+
+  const totalH = 82;
+  page.drawRectangle({
+    x: rightX,
+    y: contentTop - totalH + 10,
+    width: rightW,
+    height: totalH,
+    color: NAVY,
+  });
+  drawText(
+    page,
+    t(data, "TOTAL INVESTMENT", "LACZNA INWESTYCJA"),
+    rightX + 16,
+    contentTop - 18,
+    fontBold,
     8,
-    MID_GREY,
+    GOLD,
+  );
+  drawText(
+    page,
+    data.formatPrice(data.total),
+    rightX + 16,
+    contentTop - 50,
+    fontBold,
+    24,
+    rgb(1, 1, 1),
+  );
+  drawText(
+    page,
+    t(data, "Exclusive of applicable taxes", "Cena koncowa, bez dodatkowego VAT"),
+    rightX + 16,
+    contentTop - 66,
+    fontReg,
+    7,
+    rgb(0.68, 0.72, 0.8),
   );
 
+  drawText(
+    page,
+    t(data, "PROJECT DELIVERABLES", "ZAKRES DOSTAWY"),
+    rightX,
+    contentTop - 120,
+    fontBold,
+    9,
+    NAVY,
+  );
+  let includeY = contentTop - 140;
+  data.includedItems.forEach((item) => {
+    page.drawCircle({ x: rightX + 3, y: includeY + 2, size: 2.2, color: GOLD });
+    drawText(page, pl(item), rightX + 13, includeY, fontReg, 8, MID_GREY);
+    includeY -= 16;
+  });
+
+  if (data.maintenanceMonthly > 0) {
+    drawText(
+      page,
+      `${t(data, "Monthly Maintenance", "Miesieczna konserwacja")}: ${data.formatPrice(data.maintenanceMonthly)}/${t(data, "mo", "mies.")}`,
+      MARGIN,
+      88,
+      fontReg,
+      8,
+      MID_GREY,
+    );
+  }
+
   // ── Footer ────────────────────────────────────────────────────────
-  page.drawRectangle({ x: 0, y: 0, width: W, height: 36, color: NAVY });
+  page.drawRectangle({ x: 0, y: 0, width: W, height: 38, color: LIGHT_GREY });
   const footer =
     "Forsa Design Ltd  |  Banff, Scotland  |  forsadesign.co.uk  |  hello@forsadesign.co.uk";
-  drawText(page, footer, MARGIN, 13, fontReg, 8, rgb(0.65, 0.7, 0.8));
+  drawText(page, footer, MARGIN, 14, fontReg, 7, MID_GREY);
+  const pageLabel = "Page 1 of 1";
+  drawText(
+    page,
+    pageLabel,
+    W - MARGIN - textWidth(pageLabel, fontReg, 7),
+    14,
+    fontReg,
+    7,
+    MID_GREY,
+  );
 
   // ── Save ──────────────────────────────────────────────────────────
   const pdfBytes = await doc.save();

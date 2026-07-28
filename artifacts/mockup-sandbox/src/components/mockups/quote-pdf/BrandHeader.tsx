@@ -15,13 +15,8 @@ export default function BrandHeader() {
             <img
               src="https://0aa85256-57de-4ead-95be-7bfcd3dbae86-00-3jwlwnc4qr5m6.spock.replit.dev/logo-hero-384.webp?v=12"
               alt="Forsa Design"
-              className="h-24 w-24 object-contain opacity-[1]"
+              className="h-32 w-32 object-contain opacity-[1]"
             />
-            <div className="flex flex-col">
-              <span className="font-sans text-sm tracking-[0.24em] uppercase text-[#C9A84C]">
-                Forsa Design
-              </span>
-            </div>
           </div>
 
           {/* Quote Badge & Details */}
@@ -202,7 +197,7 @@ export default function BrandHeader() {
                   d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
                 />
               </svg>
-              hello@forsadesign.com
+              hello@forsadesign.co.uk
             </span>
             <span className="flex items-center gap-2">
               <svg
@@ -218,7 +213,7 @@ export default function BrandHeader() {
                   d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"
                 />
               </svg>
-              forsadesign.com
+              forsadesign.co.uk
             </span>
           </div>
           <div className="text-xs text-gray-400">Page 1 of 1</div>
