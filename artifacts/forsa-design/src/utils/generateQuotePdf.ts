@@ -93,7 +93,7 @@ export async function generateQuotePdf(data: PdfData): Promise<void> {
 
   let y = H;
 
-  // ── Header banner ────────────────────────────────────────────────
+  // ── Full-width brand banner ──────────────────────────────────────
   page.drawRectangle({ x: 0, y: H - 80, width: W, height: 80, color: NAVY });
 
   // Actual company logo, kept compact so the full mark remains legible in print.

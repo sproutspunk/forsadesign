@@ -8,11 +8,11 @@ export default function ExecutiveSummary() {
         className="bg-white shadow-2xl relative overflow-hidden flex flex-col"
         style={{ width: "210mm", height: "297mm", boxSizing: "border-box" }}
       >
-        {/* Top Accent */}
-        <div className="absolute top-0 left-0 w-full h-4 bg-[#0D2540]"></div>
+        {/* Full-width brand banner */}
+        <div className="absolute top-0 left-0 w-full h-12 bg-[#0D2540]"></div>
 
         {/* Inner Padding */}
-        <div className="p-14 h-full flex flex-col">
+        <div className="p-14 pt-20 h-full flex flex-col">
           {/* Header */}
           <div className="flex justify-between items-start mb-14 mt-4">
             <div className="flex items-center rounded-sm bg-[#0D2540] px-3 py-2">
