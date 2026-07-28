@@ -13,9 +13,9 @@ export default function BrandHeader() {
           {/* Official Forsa Design logo */}
           <div className="flex items-center gap-5">
             <img
-              src="https://forsadesign.co.uk/logo-new-lg.png?v=2"
+              src="/__mockup/images/logo-forsa-design.PNG"
               alt="Forsa Design"
-              className="h-24 w-24 object-contain"
+              className="h-24 w-24 object-contain opacity-[1]"
             />
             <div className="flex flex-col">
               <span className="font-sans text-sm tracking-[0.24em] uppercase text-[#C9A84C]">
