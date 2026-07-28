@@ -1,5 +1,4 @@
 import { PDFDocument, StandardFonts, rgb, PDFFont, PDFPage } from "pdf-lib";
-import logoUrl from "@/assets/forsa-logo.png";
 
 // Transliterate Polish characters for standard PDF fonts (which only support cp1252/Latin-1)
 function pl(s: string): string {
@@ -82,7 +81,12 @@ export async function generateQuotePdf(data: PdfData): Promise<void> {
   const doc = await PDFDocument.create();
   const fontBold = await doc.embedFont(StandardFonts.HelveticaBold);
   const fontReg = await doc.embedFont(StandardFonts.Helvetica);
-  const logoBytes = await fetch(logoUrl).then((response) => response.arrayBuffer());
+  const logoBytes = await fetch("/logo-new-lg.png?v=2").then((response) => {
+    if (!response.ok) {
+      throw new Error(`Unable to load the Forsa Design logo (${response.status}).`);
+    }
+    return response.arrayBuffer();
+  });
   const logo = await doc.embedPng(logoBytes);
 
   const page = doc.addPage([W, H]);

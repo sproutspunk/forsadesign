@@ -15,13 +15,12 @@ export default function BrandHeader() {
             <img
               src="https://forsadesign.co.uk/logo-new-lg.png?v=2"
               alt="Forsa Design"
-              className="h-20 w-20 object-contain"
+              className="h-24 w-24 object-contain"
             />
             <div className="flex flex-col">
-              <span className="font-sans text-[0.65rem] tracking-[0.3em] uppercase text-[#C9A84C]">
+              <span className="font-sans text-sm tracking-[0.24em] uppercase text-[#C9A84C]">
                 Forsa Design
               </span>
-              <span className="text-xs text-gray-300 mt-2">Industrial &amp; Trade</span>
             </div>
           </div>
 
