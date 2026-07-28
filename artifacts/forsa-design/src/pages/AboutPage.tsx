@@ -310,7 +310,7 @@ export default function AboutPage({ lang }: AboutPageProps) {
           url: "https://forsadesign.co.uk",
           logo: {
             "@type": "ImageObject",
-            url: "https://forsadesign.co.uk/logo-new.png?v=4",
+            url: "https://forsadesign.co.uk/logo-new.png?v=5",
           },
           email: "hello@forsadesign.co.uk",
           description:

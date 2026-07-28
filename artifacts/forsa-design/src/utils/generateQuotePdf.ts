@@ -117,7 +117,7 @@ export async function generateQuotePdfBytes(data: PdfData): Promise<Uint8Array> 
   const doc = await PDFDocument.create();
   const fontBold = await doc.embedFont(StandardFonts.HelveticaBold);
   const fontReg = await doc.embedFont(StandardFonts.Helvetica);
-  const logoBytes = await fetch("/logo-new-lg.png?v=4").then((response) => {
+  const logoBytes = await fetch("/logo-new-lg.png?v=5").then((response) => {
     if (!response.ok) {
       throw new Error(`Unable to load the Forsa Design logo (${response.status}).`);
     }
