@@ -219,9 +219,45 @@ export default function BrandHeader() {
               </svg>
               forsadesign.co.uk
             </span>
-            <span className="flex items-center gap-2">Banff, Aberdeenshire, Scotland</span>
-            <span className="flex items-center gap-2">07770 110735</span>
-            <span className="flex items-center gap-2">linkedin.com/in/miroslaw-potaczek</span>
+            <span className="flex items-center gap-2">
+              <svg
+                className="h-4 w-4 text-[#C9A84C]"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="1.5"
+                  d="M12 21s7-6.2 7-12a7 7 0 10-14 0c0 5.8 7 12 7 12z"
+                />
+                <circle cx="12" cy="9" r="2.25" strokeWidth="1.5" />
+              </svg>
+              Banff, Aberdeenshire, Scotland
+            </span>
+            <span className="flex items-center gap-2">
+              <svg
+                className="h-4 w-4 text-[#C9A84C]"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="1.5"
+                  d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .4 2 .7 2.9a2 2 0 01-.5 2.1L8 9.9a16 16 0 006 6l1.2-1.2a2 2 0 012.1-.5c.9.3 1.9.6 2.9.7a2 2 0 011.8 2z"
+                />
+              </svg>
+              07770 110735
+            </span>
+            <span className="flex items-center gap-2">
+              <svg className="h-4 w-4 text-[#C9A84C]" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M4.5 3A1.5 1.5 0 003 4.5v15A1.5 1.5 0 004.5 21h15a1.5 1.5 0 001.5-1.5v-15A1.5 1.5 0 0019.5 3h-15zM8 18H5.5v-8H8v8zM6.75 8.9A1.45 1.45 0 116.75 6a1.45 1.45 0 010 2.9zM18.5 18H16v-4.2c0-1-.02-2.3-1.4-2.3s-1.6 1.1-1.6 2.2V18h-2.5v-8H13v1.1h.03c.35-.65 1.2-1.35 2.47-1.35 2.65 0 3 1.75 3 4V18z" />
+              </svg>
+              linkedin.com/in/miroslaw-potaczek
+            </span>
           </div>
           <div className="text-xs text-gray-400">Page 1 of 1</div>
         </footer>

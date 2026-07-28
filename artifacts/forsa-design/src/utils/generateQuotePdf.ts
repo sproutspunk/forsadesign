@@ -351,11 +351,71 @@ export async function generateQuotePdf(data: PdfData): Promise<void> {
 
   // ── Footer ────────────────────────────────────────────────────────
   page.drawRectangle({ x: 0, y: 0, width: W, height: 38, color: LIGHT_GREY });
-  const footerLine1 = "Forsa Design Ltd  |  Banff, Aberdeenshire, Scotland  |  07770 110735";
-  const footerLine2 =
-    "forsadesign.co.uk  |  hello@forsadesign.co.uk  |  linkedin.com/in/miroslaw-potaczek";
-  drawText(page, footerLine1, MARGIN, 21, fontReg, 6.5, MID_GREY);
-  drawText(page, footerLine2, MARGIN, 11, fontReg, 6.5, MID_GREY);
+  const footerLine1 = "Forsa Design Ltd  |  Banff, Aberdeenshire, Scotland";
+  const phoneLabel = "07770 110735";
+  const footerLine2 = "forsadesign.co.uk  |  hello@forsadesign.co.uk";
+  const linkedinLabel = "linkedin.com/in/miroslaw-potaczek";
+  page.drawCircle({ x: MARGIN + 2, y: 21, size: 2.2, borderColor: GOLD, borderWidth: 0.8 });
+  page.drawCircle({ x: MARGIN + 2, y: 21, size: 0.7, color: GOLD });
+  page.drawLine({
+    start: { x: MARGIN + 2, y: 18 },
+    end: { x: MARGIN + 2, y: 15 },
+    thickness: 0.8,
+    color: GOLD,
+  });
+  page.drawLine({
+    start: { x: MARGIN + 2, y: 18 },
+    end: { x: MARGIN, y: 15 },
+    thickness: 0.8,
+    color: GOLD,
+  });
+  page.drawLine({
+    start: { x: MARGIN + 2, y: 18 },
+    end: { x: MARGIN + 4, y: 15 },
+    thickness: 0.8,
+    color: GOLD,
+  });
+  drawText(page, footerLine1, MARGIN + 9, 21, fontReg, 6.5, MID_GREY);
+  const phoneX = MARGIN + 250;
+  page.drawCircle({ x: phoneX + 2, y: 21, size: 2.5, borderColor: GOLD, borderWidth: 0.8 });
+  page.drawLine({
+    start: { x: phoneX + 0.5, y: 21 },
+    end: { x: phoneX + 3.5, y: 21 },
+    thickness: 0.8,
+    color: GOLD,
+  });
+  drawText(page, phoneLabel, phoneX + 9, 21, fontReg, 6.5, MID_GREY);
+  page.drawCircle({ x: MARGIN + 2, y: 11, size: 2.5, borderColor: GOLD, borderWidth: 0.8 });
+  page.drawLine({
+    start: { x: MARGIN + 0.5, y: 11 },
+    end: { x: MARGIN + 3.5, y: 11 },
+    thickness: 0.8,
+    color: GOLD,
+  });
+  drawText(page, footerLine2, MARGIN + 9, 11, fontReg, 6.5, MID_GREY);
+  const linkedinX = MARGIN + 300;
+  page.drawRectangle({
+    x: linkedinX,
+    y: 8.5,
+    width: 5,
+    height: 5,
+    borderColor: GOLD,
+    borderWidth: 0.8,
+  });
+  page.drawCircle({ x: linkedinX + 1.5, y: 11.8, size: 0.55, color: GOLD });
+  page.drawLine({
+    start: { x: linkedinX + 1.5, y: 10 },
+    end: { x: linkedinX + 1.5, y: 8.8 },
+    thickness: 0.7,
+    color: GOLD,
+  });
+  page.drawLine({
+    start: { x: linkedinX + 2.8, y: 10.8 },
+    end: { x: linkedinX + 2.8, y: 8.8 },
+    thickness: 0.7,
+    color: GOLD,
+  });
+  drawText(page, linkedinLabel, linkedinX + 8, 11, fontReg, 6.5, MID_GREY);
   const pageLabel = "Page 1 of 1";
   drawText(
     page,
