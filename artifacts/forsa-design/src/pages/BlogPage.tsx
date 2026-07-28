@@ -78,7 +78,7 @@ export default function BlogPage({ lang }: BlogPageProps) {
         url: "https://forsadesign.co.uk",
         logo: {
           "@type": "ImageObject",
-          url: "https://forsadesign.co.uk/logo-new.png?v=5",
+          url: "https://forsadesign.co.uk/logo-new.png?v=6",
         },
       },
       blogPost: sortedArticles.map((article) => {
