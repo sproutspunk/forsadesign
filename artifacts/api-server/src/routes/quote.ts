@@ -34,11 +34,14 @@ function getTransporter() {
 }
 
 router.post("/quotes/email", quoteEmailLimiter, async (req, res) => {
-  const { email, pdfBase64, quoteId, projectLabel, total, estimatedWeeks, isEn } = req.body ?? {};
+  const { email, name, phone, pdfBase64, quoteId, projectLabel, total, estimatedWeeks, isEn } =
+    req.body ?? {};
 
   if (
     typeof email !== "string" ||
     !emailPattern.test(email) ||
+    (name !== undefined && (typeof name !== "string" || name.length > 100)) ||
+    (phone !== undefined && (typeof phone !== "string" || phone.length > 40)) ||
     typeof pdfBase64 !== "string" ||
     typeof quoteId !== "string" ||
     typeof projectLabel !== "string" ||
@@ -63,6 +66,9 @@ router.post("/quotes/email", quoteEmailLimiter, async (req, res) => {
     const body = [
       greeting,
       "",
+      ...(name ? [`${isEn ? "Name" : "Imie"}: ${name}`] : []),
+      ...(phone ? [`${isEn ? "Phone" : "Telefon"}: ${phone}`] : []),
+      ...(name || phone ? [""] : []),
       `${isEn ? "Project" : "Projekt"}: ${projectLabel}`,
       `${isEn ? "Total" : "Razem"}: ${total}`,
       `${isEn ? "Estimated time" : "Szacowany czas"}: ${estimatedWeeks}`,

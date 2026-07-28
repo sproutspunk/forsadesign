@@ -83,6 +83,8 @@ export function QuoteSummary({
   const [showLineItems, setShowLineItems] = useState(false);
   const [emailStep, setEmailStep] = useState<"idle" | "capturing" | "done">("idle");
   const [email, setEmail] = useState("");
+  const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
   const [isGenerating, setIsGenerating] = useState(false);
   const [emailError, setEmailError] = useState("");
 
@@ -201,6 +203,8 @@ export function QuoteSummary({
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           email: email.trim(),
+          name: name.trim(),
+          phone: phone.trim(),
           pdfBase64: btoa(binary),
           quoteId,
           projectLabel,
@@ -362,6 +366,26 @@ export function QuoteSummary({
                   placeholder="your@email.com"
                   className="w-full px-3 py-2 text-sm rounded-lg border border-border bg-background focus:outline-none focus:border-primary transition-colors"
                 />
+                <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
+                  <input
+                    type="text"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    placeholder={t("Name (optional)", "Imię (opcjonalnie)")}
+                    maxLength={100}
+                    autoComplete="name"
+                    className="w-full px-3 py-2 text-sm rounded-lg border border-border bg-background focus:outline-none focus:border-primary transition-colors"
+                  />
+                  <input
+                    type="tel"
+                    value={phone}
+                    onChange={(e) => setPhone(e.target.value)}
+                    placeholder={t("Phone (optional)", "Telefon (opcjonalnie)")}
+                    maxLength={40}
+                    autoComplete="tel"
+                    className="w-full px-3 py-2 text-sm rounded-lg border border-border bg-background focus:outline-none focus:border-primary transition-colors"
+                  />
+                </div>
                 {emailError && <p className="text-xs text-red-500">{emailError}</p>}
                 <button
                   type="submit"
