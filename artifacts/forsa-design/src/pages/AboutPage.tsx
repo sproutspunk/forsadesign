@@ -12,9 +12,9 @@ interface AboutPageProps {
 
 const content = {
   en: {
-    seoTitle: "About Us | Forsa Design, Web Agency in Banff, Aberdeenshire",
+    seoTitle: "About Forsa Design | Industrial Web Specialist",
     seoDesc:
-      "Learn about Forsa Design, a web agency based in Banff, Aberdeenshire, Scotland, building custom websites for businesses across Aberdeenshire and Scotland.",
+      "Meet Forsa Design's founder with 20 years of international B2B sales experience, building industrial websites and bespoke web systems in Scotland.",
     heading: "Meet the Founder of Forsa Design",
     intro:
       "My name is Miro. I started Forsa Design after more than 20 years in international B2B sales. I traded metalworking machinery, industrial equipment and engineering solutions across Europe and Asia. I sat on both sides of the procurement table. I know what the process looks like from the first email to the signed contract. That experience taught me one thing: most industrial firms do excellent work, but their websites do not keep up. And it costs contracts. I now build websites that speak your customers' language. No templates. No jargon. Just clean code and a clear message.",
@@ -137,9 +137,9 @@ const content = {
     contactHref: "/en/contact",
   },
   pl: {
-    seoTitle: "O Nas | Forsa Design, Agencja Web Design w Banff, Aberdeenshire",
+    seoTitle: "O Forsa Design | Web dla Przemysłu",
     seoDesc:
-      "Poznaj Forsa Design, agencję web design z Banff w Aberdeenshire w Szkocji, specjalizującą się w autorskich stronach internetowych dla firm z Aberdeenshire i całej Szkocji.",
+      "Poznaj założyciela Forsa Design z 20-letnim doświadczeniem w sprzedaży B2B i tworzeniu stron oraz systemów webowych dla przemysłu.",
     heading: "Poznaj Założyciela Forsa Design",
     intro:
       "Nazywam się Miro. Forsa Design założyłem po ponad 20 latach w międzynarodowej sprzedaży B2B. Handlowałem maszynami do obróbki metalu, wyposażeniem przemysłowym i rozwiązaniami inżynieryjnymi w Europie i Azji. Siedziałem po obu stronach stołu zakupowego. Wiem jak wygląda proces od pierwszego maila po podpisany kontrakt. To doświadczenie nauczyło mnie jednej rzeczy: większość firm przemysłowych wykonuje świetną robotę, ale ich strony nie nadążają za poziomem usług. I to kosztuje kontrakty. Teraz buduję strony, które komunikują się językiem Twoich klientów. Bez szablonów. Bez żargonu. Tylko czysty kod i jasny przekaz.",

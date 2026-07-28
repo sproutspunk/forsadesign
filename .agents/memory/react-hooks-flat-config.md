@@ -14,6 +14,14 @@ The full recommended rule set (set-state-in-effect, purity, immutability, refs, 
 
 **How to apply:** scope it to the React artifacts only (forsa-design, mockup-sandbox); the Express api-server must not get React-hooks rules.
 
+## SEO metadata hook stability
+
+Keep derived hreflang normalization inside the existing effect rather than adding a conditional or newly introduced hook around `useSeoMeta` during hot reload-sensitive work.
+
+**Why:** changing the hook count/order while a page is HMR-updating can produce React “Rendered more/fewer hooks than expected” runtime errors even when a clean production build passes.
+
+**How to apply:** preserve unconditional hook calls in page components; use a serialized metadata key and normalize `x-default` inside the stable effect.
+
 ## Fixing the two violation shapes the recommended set surfaces (set-state-in-effect = error)
 - A `matchMedia` "use-mobile" hook that calls setState inside an effect → rewrite with `useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot)`; keeps the same boolean public API and removes the synchronous setState.
 - An effect that resets state synchronously when a prop changes (e.g. clearing a loaded component when the path changes) → drop the reset and remount the child with `key={changingProp}` instead (idiomatic "reset state on prop change").

@@ -55,7 +55,7 @@ function RedirectTo({ to }: { to: string }) {
 function RootLandingPage() {
   return (
     <div className="min-h-[100dvh] bg-background text-foreground flex flex-col items-center justify-center gap-6 p-8">
-      <h1 className="font-serif text-3xl font-bold text-white">Forsa Design</h1>
+      <p className="font-serif text-3xl font-bold text-white">Forsa Design</p>
       <p className="text-foreground/70 text-center max-w-md">
         Web Design &amp; Development Agency — Banff, Scotland
       </p>

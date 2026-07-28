@@ -101,12 +101,25 @@ export function useSeoMeta(meta: SeoMeta) {
     setCanonical(meta.canonical);
 
     clearAlternates();
-    if (meta.alternates) {
-      for (const alt of meta.alternates) {
+    const alternates = meta.alternates
+      ? meta.alternates.some((alt) => alt.lang === "x-default")
+        ? meta.alternates
+        : [
+            ...meta.alternates,
+            {
+              lang: "x-default",
+              href:
+                meta.alternates.find((alt) => alt.lang === "en")?.href ??
+                meta.alternates[0]?.href ??
+                meta.canonical,
+            },
+          ]
+      : undefined;
+    if (alternates) {
+      for (const alt of alternates) {
         addAlternate(alt.lang, alt.href);
       }
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [
     meta.title,
     meta.description,
@@ -116,6 +129,7 @@ export function useSeoMeta(meta: SeoMeta) {
     meta.twitterDescription,
     meta.ogLocale,
     meta.canonical,
+    meta.alternates,
     alternatesKey,
   ]);
 }

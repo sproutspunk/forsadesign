@@ -104,7 +104,7 @@ function patch(html, meta) {
   out = out.replace(/\s*<link\s+rel="alternate"\s+hreflang="[^"]*"\s+href="[^"]*"\s*\/>/gs, "");
 
   // Insert new alternates immediately after the canonical link
-  const altLines = meta.alternates
+  const altLines = ensureXDefault(meta.alternates, meta.canonical)
     .map((a) => `    <link rel="alternate" hreflang="${a.lang}" href="${a.href}" />`)
     .join("\n");
   out = out.replace(/(rel="canonical"[^>]*\/>)/, `$1\n${altLines}`);
@@ -124,6 +124,17 @@ function patch(html, meta) {
   }
 
   return out;
+}
+
+function ensureXDefault(alternates, fallback) {
+  if (alternates.some((a) => a.lang === "x-default")) return alternates;
+  return [
+    ...alternates,
+    {
+      lang: "x-default",
+      href: alternates.find((a) => a.lang === "en")?.href ?? fallback,
+    },
+  ];
 }
 
 // ---------------------------------------------------------------------------
@@ -1584,8 +1595,8 @@ const routes = [
   {
     outDir: "en/about",
     lang: "en",
-    title: "About Us | Forsa Design, Web Agency in Banff, Aberdeenshire",
-    desc: "Learn about Forsa Design, a web agency based in Banff, Aberdeenshire, Scotland, building custom websites for businesses across Aberdeenshire and Scotland.",
+    title: "About Forsa Design | Industrial Web Specialist",
+    desc: "Meet Forsa Design's founder with 20 years of international B2B sales experience, building industrial websites and bespoke web systems in Scotland.",
     ogTitle: "About Us | Forsa Design",
     locale: "en_US",
     canonical: `${SITE}/en/about`,
@@ -1598,8 +1609,8 @@ const routes = [
   {
     outDir: "pl/about",
     lang: "pl",
-    title: "O Nas | Forsa Design, Agencja Web Design w Banff, Aberdeenshire",
-    desc: "Poznaj Forsa Design, agencj\u0119 web design z Banff w Aberdeenshire w Szkocji, specjalizuj\u0105c\u0105 si\u0119 w autorskich stronach internetowych dla firm z Aberdeenshire i ca\u0142ej Szkocji.",
+    title: "O Forsa Design | Web dla Przemysłu",
+    desc: "Poznaj założyciela Forsa Design z 20-letnim doświadczeniem w sprzedaży B2B i tworzeniu stron oraz systemów webowych dla przemysłu.",
     ogTitle: "O Nas | Forsa Design",
     locale: "pl_PL",
     canonical: `${SITE}/pl/about`,
@@ -1668,8 +1679,8 @@ const routes = [
   {
     outDir: "en/comparison",
     lang: "en",
-    title: "Web Design Options in Aberdeenshire | Forsa Design vs. Templates & Agencies",
-    desc: "Comparing web design options in Aberdeenshire and Scotland: custom agency vs. CMS templates, generalist agencies, and freelancers. Find the right fit for your business.",
+    title: "Industrial Web Design Options | Forsa Design",
+    desc: "Compare industrial web design options in Aberdeenshire: custom builds, CMS templates, agencies and freelancers. Choose the right fit for your business.",
     ogTitle: "Web Design Options Compared | Forsa Design",
     locale: "en_US",
     canonical: `${SITE}/en/comparison`,
@@ -1682,8 +1693,8 @@ const routes = [
   {
     outDir: "pl/comparison",
     lang: "pl",
-    title: "Opcje Web Design w Aberdeenshire | Forsa Design vs. Szablony i Agencje",
-    desc: "Por\u00f3wnanie opcji web design w Aberdeenshire i Szkocji: agencja custom vs. szablony CMS, agencje og\u00f3lne i freelancerzy. Znajd\u017a najlepsz\u0105 opcj\u0119 dla swojego biznesu.",
+    title: "Opcje Web Design dla Przemysłu | Forsa Design",
+    desc: "Por\u00f3wnaj opcje web design dla przemys\u0142u: autorskie strony, szablony CMS, agencje i freelancerzy. Wybierz rozwi\u0105zanie dla swojej firmy.",
     ogTitle: "Por\u00f3wnanie Opcji Web Design | Forsa Design",
     locale: "pl_PL",
     canonical: `${SITE}/pl/comparison`,
@@ -1766,7 +1777,10 @@ const sitemapEntries = [];
 
 for (const route of routes) {
   const loc = route.canonical;
-  const alternates = route.alternates.map((a) => ({ lang: a.lang, href: a.href }));
+  const alternates = ensureXDefault(
+    route.alternates.map((a) => ({ lang: a.lang, href: a.href })),
+    loc,
+  );
   const isHome = route.outDir === "en" || route.outDir === "pl";
   const isAbout = route.outDir === "en/about" || route.outDir === "pl/about";
   const isComparison = route.outDir === "en/comparison" || route.outDir === "pl/comparison";
