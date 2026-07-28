@@ -110,10 +110,10 @@ function patch(html, meta) {
   out = out.replace(/(rel="canonical"[^>]*\/>)/, `$1\n${altLines}`);
 
   // Preload the actual hero LCP image on every prerendered page.
-  if (!out.includes('href="/logo-hero.webp"')) {
+  if (!out.includes('href="/logo-hero-384.webp"')) {
     out = out.replace(
       /(<link rel="preconnect" href="https:\/\/fonts\.googleapis\.com" \/>)/,
-      `$1\n    <link rel="preload" as="image" href="/logo-hero.webp" type="image/webp" fetchpriority="high" />`,
+      `$1\n    <link rel="preload" as="image" href="/logo-hero-384.webp" type="image/webp" fetchpriority="high" />`,
     );
   }
 
@@ -207,7 +207,7 @@ function buildHomepageBodyEn() {
 <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:12px;">
 <p>&#169; 2026 Forsa Design. All rights reserved.</p>
 <a href="https://marketingplatform.google.com/about/analytics/" target="_blank" rel="noopener noreferrer" aria-label="Measured with Google Analytics">
-<img src="/analytics-badge.png" alt="Measured with Google Analytics" style="height:24px;opacity:0.8;">
+<img src="/analytics-badge.webp" alt="Measured with Google Analytics" width="182" height="48" loading="lazy" decoding="async" style="height:24px;width:auto;opacity:0.8;">
 </a>
 </div>
 <nav><a href="/en/terms">Terms &amp; Conditions</a> | <a href="/en/privacy">Privacy Policy</a></nav>
@@ -291,7 +291,7 @@ function buildHomepageBodyPl() {
 <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:12px;">
 <p>&#169; 2026 Forsa Design. Wszystkie prawa zastrze&#380;one.</p>
 <a href="https://marketingplatform.google.com/about/analytics/" target="_blank" rel="noopener noreferrer" aria-label="Measured with Google Analytics">
-<img src="/analytics-badge.png" alt="Measured with Google Analytics" style="height:24px;opacity:0.8;">
+<img src="/analytics-badge.webp" alt="Measured with Google Analytics" width="182" height="48" loading="lazy" decoding="async" style="height:24px;width:auto;opacity:0.8;">
 </a>
 </div>
 <nav><a href="/pl/terms">Regulamin i Warunki</a> | <a href="/pl/privacy">Polityka Prywatno&#347;sci</a></nav>
