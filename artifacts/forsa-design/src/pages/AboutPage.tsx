@@ -12,9 +12,9 @@ interface AboutPageProps {
 
 const content = {
   en: {
-    seoTitle: "About Forsa Design | Industrial Web Specialist",
+    seoTitle: "About Miro — Industrial Web Developer | Forsa Design",
     seoDesc:
-      "Meet Forsa Design's founder with 20 years of international B2B sales experience, building industrial websites and bespoke web systems in Scotland.",
+      "Miro, founder of Forsa Design. 20+ years in B2B industrial sales, now building procurement-ready websites for offshore and engineering firms in Scotland.",
     heading: "Meet the Founder of Forsa Design",
     intro:
       "My name is Miro. I started Forsa Design after more than 20 years in international B2B sales. I traded metalworking machinery, industrial equipment and engineering solutions across Europe and Asia. I sat on both sides of the procurement table. I know what the process looks like from the first email to the signed contract. That experience taught me one thing: most industrial firms do excellent work, but their websites do not keep up. And it costs contracts. I now build websites that speak your customers' language. No templates. No jargon. Just clean code and a clear message.",

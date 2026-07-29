@@ -11,11 +11,11 @@ export default function ServicesPage({ lang }: { lang: "en" | "pl" }) {
   const { syncLanguage } = useLanguage();
   const en = lang === "en";
   const title = en
-    ? "Industrial Web Design & Bespoke Web Systems | Forsa Design"
-    : "Web Design dla Przemysłu i Dedykowane Systemy | Forsa Design";
+    ? "Services — Custom Web Systems for Heavy Industry | Forsa Design"
+    : "Usługi — Dedykowane Systemy Web dla Przemysłu Ciężkiego | Forsa Design";
   const description = en
-    ? "Procurement-ready websites, B2B e-commerce and bespoke web systems for offshore, energy, engineering, equipment, logistics and manufacturing businesses."
-    : "Strony gotowe na audyt zakupowy, e-commerce B2B i dedykowane systemy webowe dla firm offshore, energetycznych, inżynieryjnych, logistycznych i produkcyjnych.";
+    ? "Hand-coded websites, B2B e-commerce for parts, and bespoke web systems for offshore, energy, and engineering firms. Based in Scotland."
+    : "Strony kodowane od podstaw, e-commerce B2B na części i dedykowane systemy webowe dla firm offshore, energetycznych i inżynieryjnych. Bazujemy w Szkocji.";
 
   useEffect(() => syncLanguage(lang), [lang, syncLanguage]);
   useSeoMeta({
@@ -32,6 +32,19 @@ export default function ServicesPage({ lang }: { lang: "en" | "pl" }) {
       { lang: "pl", href: buildHref("/pl/services") },
     ],
   });
+  const serviceProvider = {
+    "@type": "LocalBusiness",
+    name: "Forsa Design",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Banff",
+      addressRegion: "Aberdeenshire",
+      postalCode: "AB45",
+      addressCountry: "GB",
+    },
+  };
+  const areaServed = { "@type": "AdministrativeArea", name: "Scotland" };
+
   useJsonLd(
     {
       "@context": "https://schema.org",
@@ -42,6 +55,45 @@ export default function ServicesPage({ lang }: { lang: "en" | "pl" }) {
       provider: { "@type": "Organization", name: "Forsa Design", url: buildHref("/") },
     },
     "services-page-schema",
+  );
+  useJsonLd(
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      serviceType: en ? "Industrial Web Presence" : "Strona dla Przemysłu",
+      provider: serviceProvider,
+      areaServed,
+      description: en
+        ? "Dedicated websites built from scratch for engineering and manufacturing firms. Fast load times, mobile-optimised for site offices, clear technical messaging."
+        : "Dedykowane strony budowane od podstaw dla firm inżynieryjnych i produkcyjnych. Szybkie ładowanie, zoptymalizowane mobilnie, przejrzysty przekaz techniczny.",
+    },
+    "services-schema-web",
+  );
+  useJsonLd(
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      serviceType: en ? "E-commerce for Parts & Equipment" : "E-commerce dla Części i Urządzeń",
+      provider: serviceProvider,
+      areaServed,
+      description: en
+        ? "Online catalogues and B2B e-commerce stores for industrial parts, equipment and consumables. Integrates with existing inventory where the API allows."
+        : "Katalogi online i sklepy B2B dla części przemysłowych, urządzeń i materiałów eksploatacyjnych. Integracja z istniejącymi systemami magazynowymi.",
+    },
+    "services-schema-ecommerce",
+  );
+  useJsonLd(
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      serviceType: en ? "Bespoke Web Systems" : "Dedykowane Systemy Webowe",
+      provider: serviceProvider,
+      areaServed,
+      description: en
+        ? "Custom web applications and portals built around your business logic — quotation tools, ERP bridges, client portals, and procurement dashboards."
+        : "Dedykowane aplikacje webowe i portale dopasowane do logiki Twojej firmy — narzędzia wycenowe, mosty ERP, portale klienta, dashboardy zakupowe.",
+    },
+    "services-schema-bespoke",
   );
 
   return (

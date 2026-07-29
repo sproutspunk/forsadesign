@@ -110,6 +110,27 @@ export default function Footer() {
         </div>
 
         <div className="pt-8 border-t border-border/20 text-sm text-foreground/40 font-light">
+          <p className="mb-4 font-light">
+            {language === "en" ? "Member of " : "Członek "}
+            <a
+              href="https://oeuk.org.uk"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-primary transition-colors underline underline-offset-2"
+            >
+              OEUK
+            </a>
+            {language === "en" ? ". Based in " : ". Siedziba w "}
+            <a
+              href="https://www.aberdeenshire.gov.uk"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-primary transition-colors underline underline-offset-2"
+            >
+              Aberdeenshire
+            </a>
+            {language === "en" ? ", Scotland." : ", Szkocja."}
+          </p>
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-4">
             <p className="text-center md:text-left">{t("footer.copyright")}</p>
           </div>

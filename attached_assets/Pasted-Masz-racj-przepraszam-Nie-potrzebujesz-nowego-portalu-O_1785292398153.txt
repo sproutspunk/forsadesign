@@ -1,0 +1,275 @@
+Masz rację — przepraszam. Nie potrzebujesz nowego portalu. Oto **konkretne zmiany do wprowadzenia w istniejącym kodzie**, punkt po punkcie.
+
+---
+
+## 1. ROBOTS.TXT — usuń blokady AI
+
+**Obecnie masz (źle):**
+```text
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ClaudeBot
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+```
+
+**Zamień na:**
+```text
+User-agent: *
+Allow: /
+Disallow: /en/blog/
+Disallow: /pl/blog/
+
+Sitemap: https://forsadesign.co.uk/sitemap.xml
+```
+
+Usuń wszystkie linie `Disallow: /` pod botami AI. Jeśli boisz się scrapowania treningowego, zostaw tylko `ai-train=no` w nagłówkach HTTP — ale nie blokuj dostępu.
+
+---
+
+## 2. HSTS — włącz w Cloudflare (nie w kodzie)
+
+To nie jest zmiana w kodzie. Wejdź w panel Cloudflare:
+- **SSL/TLS → Edge Certificates → HSTS**
+- Włącz: **Enabled**
+- max-age: **31536000** (1 rok)
+- **Include subdomains: ON**
+- **Preload: ON**
+- Usuń ręczny nagłówek `Strict-Transport-Security: max-age=0` jeśli go wstrzykujesz w kodzie.
+
+---
+
+## 3. PODSSTRONY — unikalne canonical i treści
+
+**Obecnie masz (źle):**
+```html
+<!-- na /about, /services, /contact -->
+<link rel="canonical" href="https://forsadesign.co.uk/en/" />
+```
+
+**Zmień na:**
+
+### /en/about/
+```html
+<title>About Miro — Industrial Web Developer | Forsa Design</title>
+<meta name="description" content="Miro, founder of Forsa Design. 20+ years in B2B industrial sales, now building procurement-ready websites for offshore and engineering firms.">
+<link rel="canonical" href="https://forsadesign.co.uk/en/about/" />
+```
+
+### /en/services/
+```html
+<title>Services — Custom Web Systems for Heavy Industry | Forsa Design</title>
+<meta name="description" content="Hand-coded websites, B2B e-commerce for parts, and bespoke web systems for offshore, energy, and engineering firms. Based in Scotland.">
+<link rel="canonical" href="https://forsadesign.co.uk/en/services/" />
+```
+
+### /en/contact/
+```html
+<title>Contact — Get a Technical Quote | Forsa Design</title>
+<meta name="description" content="Request a quote for custom web development. Serving offshore, energy, and engineering firms across Scotland and UK.">
+<link rel="canonical" href="https://forsadesign.co.uk/en/contact/" />
+```
+
+**Treść:** Nie kopiuj hero ze strony głównej. Każda podstrona musi mieć **własny** `<main>` z unikalnym H1 i treścią.
+
+---
+
+## 4. SCHEMA.ORG — dodaj FAQPage + Service
+
+**Dodaj ten blok JSON-LD na stronę główną** (obok istniejących 3 bloków):
+
+```html
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Do you work with offshore and energy sector contractors?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Based in Aberdeenshire, we work with firms serving North Sea energy, renewables, and heavy engineering. We understand the compliance and credibility requirements of these sectors."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you integrate with our existing stock or ERP system?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Where the API allows, yes. We build bridges between your web frontend and backend systems — not walled gardens that create extra admin work."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does hand-coded mean for my business?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It means no bloated templates, no unnecessary plugins that slow your site down or create security holes. It means your site loads in under 2 seconds and passes technical audits."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you offer support after launch?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Monthly care plans cover security updates, backups, performance monitoring, and incremental improvements. Your site is a living asset, not a one-off brochure."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you work with Polish or EU-based industrial firms?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Fluent in Polish. Experience in EU industrial trade and export markets."
+      }
+    }
+  ]
+}
+</script>
+```
+
+**Dodaj na /en/services/ (3 bloki Service):**
+
+```html
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Industrial Web Presence",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "Forsa Design",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Banff",
+      "addressRegion": "Aberdeenshire",
+      "postalCode": "AB45",
+      "addressCountry": "GB"
+    }
+  },
+  "areaServed": {
+    "@type": "AdministrativeArea",
+    "name": "Scotland"
+  },
+  "description": "Dedicated websites built from scratch for engineering and manufacturing firms. Fast load times, mobile-optimised for site offices, clear technical messaging."
+}
+</script>
+```
+
+Powtórz dla "E-commerce for Parts & Equipment" i "Bespoke Web Systems".
+
+---
+
+## 5. BLOCKING SCRIPTS — dodaj defer
+
+**Znajdź w kodzie:**
+```html
+<script src="..."></script>
+```
+
+**Zmień na:**
+```html
+<script src="..." defer></script>
+```
+
+Wszystkie skrypty, które nie są potrzebne do pierwszego renderu (analytics, cookies, etc.), muszą mieć `defer`. Jeśli masz inline JS w `<head>` — przenieś go przed zamykający `</body>`.
+
+---
+
+## 6. CSP — usuń unsafe-inline
+
+**Obecnie masz (źle):**
+```text
+script-src 'self' 'unsafe-inline' https://...
+style-src 'self' 'unsafe-inline' https://...
+```
+
+**Krok 1:** Przenieś cały inline JS do zewnętrznego pliku `main.js` i załaduj:
+```html
+<script src="/main.js" defer></script>
+```
+
+**Krok 2:** Przenieś inline CSS (jeśli masz w `<style>`) do `style.css` i załaduj:
+```html
+<link rel="stylesheet" href="/style.css">
+```
+
+**Krok 3:** Zmień CSP na:
+```text
+Content-Security-Policy: default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; img-src 'self' data: https://www.google-analytics.com https://www.googletagmanager.com; font-src 'self' https://fonts.gstatic.com; style-src 'self' https://fonts.googleapis.com; script-src 'self' https://www.googletagmanager.com https://static.cloudflareinsights.com; connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://cloudflareinsights.com; form-action 'self';
+```
+
+**Usunięte:** `'unsafe-inline'` z `script-src` i `style-src`.
+
+---
+
+## 7. CACHE — dłuższy max-age dla assetów
+
+**Obecnie:** `Cache-Control: public, max-age=3600` (1 godzina)
+
+**Dla plików statycznych** (CSS, JS, obrazy) zmień na:
+```
+Cache-Control: public, max-age=31536000, immutable
+```
+
+W Cloudflare: **Caching → Configuration → Browser Cache TTL → 1 year** dla rozszerzeń `.css`, `.js`, `.webp`, `.png`, `.jpg`.
+
+Dla HTML pozostaw krótszy cache (np. 1 godzina).
+
+---
+
+## 8. EXTERNAL LINKS — dodaj 2-3 outbound
+
+W treści strony głównej lub w stopce dodaj:
+```html
+<p>Member of <a href="https://oeuk.org.uk" rel="noopener noreferrer">OEUK</a>. 
+Based in <a href=\"https://www.aberdeenshire.gov.uk\" rel=\"noopener noreferrer\">Aberdeenshire</a>, Scotland.</p>
+```
+
+To buduje E-E-A-T i daje sygnał lokalizacyjny.
+
+---
+
+## 9. FORMULARZ — zastąp mailto: (gdy zmienisz email)
+
+Zamiast:
+```html
+<a href="mailto:hello@forsadesign.co.uk">Request a Quote</a>
+```
+
+Użyj Formspree (darmowe):
+```html
+<form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+  <input type="text" name="name" placeholder="Name" required>
+  <input type="email" name="email" placeholder="Email" required>
+  <input type="text" name="company" placeholder="Company">
+  <select name="project_type">
+    <option>Industrial Website</option>
+    <option>E-commerce</option>
+    <option>Bespoke System</option>
+  </select>
+  <textarea name="message" placeholder="Project details" required></textarea>
+  <label><input type="checkbox" name="gdpr" required> I agree to processing my data</label>
+  <button type="submit">Request Quote</button>
+</form>
+```
+
+---
+
+## Checklista — co zrobić dziś
+
+- [ ] `robots.txt` — usunąć Disallow dla AI botów
+- [ ] Cloudflare HSTS — max-age=31536000
+- [ ] `/about`, `/services`, `/contact` — unikalny title, meta, canonical, treść
+- [ ] Dodać Schema.org FAQPage na homepage
+- [ ] Dodać Schema.org Service na /services/
+- [ ] `defer` na wszystkich skryptach niekrytycznych
+- [ ] CSP bez `unsafe-inline` (przenieść inline JS/CSS do plików)
+- [ ] Cache TTL 1 rok dla assetów statycznych
+- [ ] 2-3 external links do authoritative sources
+
+Który punkt chcesz, żebym rozwinął z gotowym kodem do wklejenia?
