@@ -5,7 +5,6 @@ const links = ["Services", "Pricing", "Portfolio", "Process", "About", "Contact"
 export function HeaderBanner() {
   return (
     <main className="min-h-screen bg-[hsl(var(--background))]">
-
       {/* Nav — identyczny z obecnym headerem strony */}
       <header className="bg-[hsl(var(--background))]/90 backdrop-blur-md border-b border-white/10 px-6 py-4 shadow-sm">
         <div className="mx-auto flex max-w-[1200px] items-center justify-between gap-8">
@@ -60,8 +59,8 @@ export function HeaderBanner() {
           Web Systems for Heavy Industry
         </h1>
         <p className="mt-6 max-w-2xl text-lg font-light leading-relaxed text-white/60">
-          Procurement-ready websites, B2B e-commerce and bespoke web systems for offshore,
-          energy, engineering, and manufacturing businesses.
+          Procurement-ready websites, B2B e-commerce and bespoke web systems for offshore, energy,
+          engineering, and manufacturing businesses.
         </p>
       </section>
     </main>
