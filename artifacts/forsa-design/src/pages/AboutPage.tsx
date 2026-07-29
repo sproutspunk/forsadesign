@@ -142,7 +142,7 @@ const content = {
       "Poznaj założyciela Forsa Design z 20-letnim doświadczeniem w sprzedaży B2B i tworzeniu stron oraz systemów webowych dla przemysłu.",
     heading: "Poznaj Założyciela Forsa Design",
     intro:
-      "Nazywam się Miro. Forsa Design założyłem po ponad 20 latach w międzynarodowej sprzedaży B2B. Handlowałem maszynami do obróbki metalu, wyposażeniem przemysłowym i rozwiązaniami inżynieryjnymi w Europie i Azji. Siedziałem po obu stronach stołu zakupowego. Wiem jak wygląda proces od pierwszego maila po podpisany kontrakt. To doświadczenie nauczyło mnie jednej rzeczy. Większość firm przemysłowych wykonuje świetną robotę, ale ich strony internetowe nie nadążają za poziomem ich usług. I to kosztuje kontrakty. Nie dlatego, że praca jest słaba, tylko dlatego, że w dzisiejszym B2B strona to pierwszy etap weryfikacji. Nie jestem agencją z Londynu z piętnastoma osobami w zespole i kawiarnią w biurze. Jestem człowiekiem, który rozumie przemysł, logistykę i handel międzynarodowy. Teraz buduję strony, które komunikują się językiem Twoich klientów. Bez szablonów. Bez zbędnego żargonu. Tylko czysty kod i jasny przekaz. Banff, Aberdeenshire. Obsługuję firmy w całej Szkocji. Mówię po polsku i po angielsku.",
+      "Nazywam się Miro. Forsa Design założyłem po ponad 20 latach w międzynarodowej sprzedaży B2B. Handlowałem maszynami do obróbki metalu, wyposażeniem przemysłowym i rozwiązaniami inżynieryjnymi w Europie i Azji. Siedziałem po obu stronach stołu zakupowego. Wiem jak wygląda proces od pierwszego maila po podpisany kontrakt. To doświadczenie nauczyło mnie jednej rzeczy. Większość firm przemysłowych wykonuje świetną robotę, ale ich strony internetowe nie nadążają za poziomem ich usług. I to kosztuje kontrakty. Nie dlatego, że praca jest słaba, tylko dlatego, że w dzisiejszym B2B strona to pierwszy etap weryfikacji. Nie jestem agencją z Londynu z piętnastoma osobami w zespole i kawiarnią w biurze. Jestem człowiekiem, który rozumie przemysł, logistykę i handel międzynarodowy. Teraz buduję strony, które komunikują się językiem Twoich klientów. Bez szablonów. Bez zbędnego żargonu. Tylko czysty kod i jasny przekaz.\n\nBanff, Aberdeenshire. Obsługuję firmy w całej Szkocji. Mówię po polsku i po angielsku.",
     whatWeDoHeading: "Dlaczego To Doświadczenie Ma Znaczenie",
     services: [
       {
@@ -397,9 +397,11 @@ export default function AboutPage({ lang }: AboutPageProps) {
             <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
               {c.heading}
             </h1>
-            <p className="text-xl text-foreground/70 font-light leading-relaxed max-w-2xl text-justify">
-              {c.intro}
-            </p>
+            <div className="text-xl text-foreground/70 font-light leading-relaxed max-w-2xl text-justify space-y-6">
+              {c.intro.split("\n\n").map((paragraph) => (
+                <p key={paragraph}>{paragraph}</p>
+              ))}
+            </div>
           </motion.div>
         </div>
       </section>
