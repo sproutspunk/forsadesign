@@ -30,6 +30,7 @@ export default function ContactForm() {
       if (!widgetRef.current || !window.turnstile || widgetIdRef.current) return;
       widgetIdRef.current = window.turnstile.render(widgetRef.current, {
         sitekey: siteKey,
+        size: "normal",
         theme: "dark",
         callback: (token: string) => setTurnstileToken(token),
         "expired-callback": () => setTurnstileToken(""),
