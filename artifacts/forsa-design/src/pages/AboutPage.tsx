@@ -17,7 +17,9 @@ const content = {
       "Miro, founder of Forsa Design. 20+ years in B2B industrial sales, now building procurement-ready websites for offshore and engineering firms in Scotland.",
     heading: "Meet the Founder of Forsa Design",
     intro:
-      "My name is Miro. I started Forsa Design after more than 20 years in international B2B sales. I traded metalworking machinery, industrial equipment and engineering solutions across Europe and Asia. I sat on both sides of the procurement table. I know what the process looks like from the first email to the signed contract. That experience taught me one thing: most industrial firms do excellent work, but their websites do not keep up. And it costs contracts. I now build websites that speak your customers' language. No templates. No jargon. Just clean code and a clear message.",
+      "My name is Miro. I started Forsa Design after more than 20 years in international B2B sales. I traded metalworking machinery, industrial equipment and engineering solutions across Europe and Asia. I sat on both sides of the procurement table. I know what the process looks like from the first email to the signed contract.",
+    body2:
+      "That experience taught me one thing: most industrial firms do excellent work, but their websites do not keep up. And it costs contracts. I am not a London agency with fifteen people and a coffee shop in the office. I am someone who understands industry, logistics and international trade. I now build websites that speak your customers' language. No templates. No unnecessary jargon. Just clean code and a clear message. Based in Banff, Aberdeenshire. Serving businesses across Scotland. Fluent in Polish and English.",
     whatWeDoHeading: "Why This Background Matters",
     services: [
       {
@@ -142,7 +144,9 @@ const content = {
       "Poznaj założyciela Forsa Design z 20-letnim doświadczeniem w sprzedaży B2B i tworzeniu stron oraz systemów webowych dla przemysłu.",
     heading: "Poznaj Założyciela Forsa Design",
     intro:
-      "Nazywam się Miro. Forsa Design założyłem po ponad 20 latach w międzynarodowej sprzedaży B2B. Handlowałem maszynami do obróbki metalu, wyposażeniem przemysłowym i rozwiązaniami inżynieryjnymi w Europie i Azji. Siedziałem po obu stronach stołu zakupowego. Wiem jak wygląda proces od pierwszego maila po podpisany kontrakt. To doświadczenie nauczyło mnie jednej rzeczy. Większość firm przemysłowych wykonuje świetną robotę, ale ich strony internetowe nie nadążają za poziomem ich usług. I to kosztuje kontrakty. Nie dlatego, że praca jest słaba, tylko dlatego, że w dzisiejszym B2B strona to pierwszy etap weryfikacji. Nie jestem agencją z Londynu z piętnastoma osobami w zespole i kawiarnią w biurze. Jestem człowiekiem, który rozumie przemysł, logistykę i handel międzynarodowy. Teraz buduję strony, które komunikują się językiem Twoich klientów. Bez szablonów. Bez zbędnego żargonu. Tylko czysty kod i jasny przekaz.\n\nBanff, Aberdeenshire. Obsługuję firmy w całej Szkocji. Mówię po polsku i po angielsku.",
+      "Nazywam się Miro. Forsa Design założyłem po ponad 20 latach w międzynarodowej sprzedaży B2B. Handlowałem maszynami do obróbki metalu, wyposażeniem przemysłowym i rozwiązaniami inżynieryjnymi w Europie i Azji. Siedziałem po obu stronach stołu zakupowego. Wiem jak wygląda proces od pierwszego maila po podpisany kontrakt.",
+    body2:
+      "To doświadczenie nauczyło mnie jednej rzeczy. Większość firm przemysłowych wykonuje świetną robotę, ale ich strony internetowe nie nadążają za poziomem ich usług. I to kosztuje kontrakty. Nie dlatego, że praca jest słaba, tylko dlatego, że w dzisiejszym B2B strona to pierwszy etap weryfikacji. Nie jestem agencją z Londynu z piętnastoma osobami w zespole i kawiarnią w biurze. Jestem człowiekiem, który rozumie przemysł, logistykę i handel międzynarodowy. Teraz buduję strony, które komunikują się językiem Twoich klientów. Bez szablonów. Bez zbędnego żargonu. Tylko czysty kod i jasny przekaz. Banff, Aberdeenshire. Obsługuję firmy w całej Szkocji. Mówię po polsku i po angielsku.",
     whatWeDoHeading: "Dlaczego To Doświadczenie Ma Znaczenie",
     services: [
       {
@@ -398,9 +402,8 @@ export default function AboutPage({ lang }: AboutPageProps) {
               {c.heading}
             </h1>
             <div className="text-xl text-foreground/70 font-light leading-relaxed max-w-2xl text-justify space-y-6">
-              {c.intro.split("\n\n").map((paragraph) => (
-                <p key={paragraph}>{paragraph}</p>
-              ))}
+              <p>{c.intro}</p>
+              <p>{c.body2}</p>
             </div>
           </motion.div>
         </div>
