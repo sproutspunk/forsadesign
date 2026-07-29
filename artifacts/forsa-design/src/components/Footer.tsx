@@ -59,6 +59,12 @@ export default function Footer() {
               {t("nav.services")}
             </a>
             <a
+              href={`/${language}/#pricing`}
+              className="text-sm font-medium text-foreground/70 hover:text-primary transition-colors w-fit"
+            >
+              {t("nav.pricing")}
+            </a>
+            <a
               href={`/${language}/#portfolio`}
               className="text-sm font-medium text-foreground/70 hover:text-primary transition-colors w-fit"
             >
@@ -81,6 +87,12 @@ export default function Footer() {
               className="text-sm font-medium text-foreground/70 hover:text-primary transition-colors w-fit"
             >
               {t("nav.contact")}
+            </a>
+            <a
+              href={`/${language}/#faq`}
+              className="text-sm font-medium text-foreground/70 hover:text-primary transition-colors w-fit"
+            >
+              {t("nav.faq")}
             </a>
             <a
               href={`/${language}/comparison`}
