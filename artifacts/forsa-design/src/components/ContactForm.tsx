@@ -11,6 +11,7 @@ declare global {
 }
 
 const TURNSTILE_SCRIPT_ID = "cloudflare-turnstile-script";
+const TURNSTILE_SITE_KEY = "0x4AAAAAADiKDRnpi0TNeGeS";
 
 export default function ContactForm() {
   const { language } = useLanguage();
@@ -23,13 +24,12 @@ export default function ContactForm() {
   const [errorMessage, setErrorMessage] = useState("");
 
   useEffect(() => {
-    const siteKey = import.meta.env.FORSA_CONTACT;
-    if (!siteKey || !widgetRef.current) return;
+    if (!widgetRef.current) return;
 
     const renderWidget = () => {
       if (!widgetRef.current || !window.turnstile || widgetIdRef.current) return;
       widgetIdRef.current = window.turnstile.render(widgetRef.current, {
-        sitekey: siteKey,
+        sitekey: TURNSTILE_SITE_KEY,
         size: "normal",
         theme: "dark",
         callback: (token: string) => setTurnstileToken(token),
