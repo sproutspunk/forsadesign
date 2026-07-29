@@ -1,19 +1,17 @@
-import { useEffect, lazy, Suspense } from "react";
+import { useEffect } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useSeoMeta, useJsonLd, buildHref } from "@/hooks/useSeoMeta";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
-
-// Below-the-fold sections — deferred to cut initial bundle and TBT
-const Services = lazy(() => import("@/components/Services"));
-const PricingSection = lazy(() => import("@/components/PricingSection"));
-const Portfolio = lazy(() => import("@/components/Portfolio"));
-const Process = lazy(() => import("@/components/Process"));
-const About = lazy(() => import("@/components/About"));
-const CTA = lazy(() => import("@/components/CTA"));
-const ContactInfo = lazy(() => import("@/components/ContactInfo"));
-const FAQ = lazy(() => import("@/components/FAQ"));
-const Footer = lazy(() => import("@/components/Footer"));
+import Services from "@/components/Services";
+import PricingSection from "@/components/PricingSection";
+import Portfolio from "@/components/Portfolio";
+import Process from "@/components/Process";
+import About from "@/components/About";
+import CTA from "@/components/CTA";
+import ContactInfo from "@/components/ContactInfo";
+import FAQ from "@/components/FAQ";
+import Footer from "@/components/Footer";
 
 interface HomePageProps {
   lang: "en" | "pl";
@@ -212,20 +210,16 @@ export default function HomePage({ lang }: HomePageProps) {
       <Header />
       <main>
         <Hero />
-        <Suspense fallback={null}>
-          <Services />
-          <PricingSection />
-          <Portfolio />
-          <Process />
-          <About />
-          <FAQ />
-          <CTA />
-          <ContactInfo />
-        </Suspense>
+        <Services />
+        <PricingSection />
+        <Portfolio />
+        <Process />
+        <About />
+        <FAQ />
+        <CTA />
+        <ContactInfo />
       </main>
-      <Suspense fallback={null}>
-        <Footer />
-      </Suspense>
+      <Footer />
     </div>
   );
 }
