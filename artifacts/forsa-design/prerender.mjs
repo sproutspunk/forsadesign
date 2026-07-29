@@ -356,7 +356,14 @@ function buildContactBody(lang) {
 <p>${en ? "Tell us what you build, who buys it and where your current website falls short." : "Opowiedz, co budujesz, kto to kupuje i gdzie obecna strona nie spełnia swojej roli."}</p>
 <h2>${en ? "Contact Forsa Design" : "Skontaktuj się z Forsa Design"}</h2>
 <p>Email: <a href="mailto:hello@forsadesign.co.uk">hello@forsadesign.co.uk</a></p>
-<p>Phone: <a href="tel:07770110735">07770110735</a></p></main>`;
+<p>Phone: <a href="tel:07770110735">07770110735</a></p>
+<form>
+<label>${en ? "Name" : "Imię i nazwisko"} <input name="name" required /></label>
+<label>${en ? "Email" : "Adres email"} <input name="email" type="email" required /></label>
+<label>${en ? "Message" : "Wiadomość"} <textarea name="message" required></textarea></label>
+<div data-turnstile-widget="true" aria-label="${en ? "Security verification" : "Weryfikacja bezpieczeństwa"}"></div>
+<button type="submit">${en ? "Send message" : "Wyślij wiadomość"}</button>
+</form></main>`;
 }
 
 // ---------------------------------------------------------------------------
