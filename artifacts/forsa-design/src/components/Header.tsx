@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useLocation } from "wouter";
 import { Menu, X } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
 
 export default function Header() {
   const { language, syncLanguage, t } = useLanguage();
@@ -150,85 +149,81 @@ export default function Header() {
         </button>
       </div>
 
-      {/* Mobile Nav */}
-      <AnimatePresence>
-        {isMobileMenuOpen && (
-          <motion.div
-            id="mobile-nav"
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-card border-b border-border overflow-hidden"
+      {/* Mobile Nav — CSS transition, no framer-motion */}
+      <div
+        id="mobile-nav"
+        aria-hidden={!isMobileMenuOpen}
+        className={`md:hidden bg-card border-b border-border overflow-hidden transition-all duration-200 ease-in-out ${
+          isMobileMenuOpen ? "max-h-[100vh] opacity-100" : "max-h-0 opacity-0"
+        }`}
+      >
+        <div className="px-6 py-4 flex flex-col gap-4">
+          {navLinks.map((link) => (
+            <a
+              key={link.name}
+              href={link.href}
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="text-lg font-medium text-foreground hover:text-primary transition-colors"
+            >
+              {link.name}
+            </a>
+          ))}
+          <a
+            href={`${base}search`}
+            onClick={() => setIsMobileMenuOpen(false)}
+            className="text-lg font-medium text-foreground hover:text-primary transition-colors"
+            data-testid="link-nav-search-mobile"
           >
-            <div className="px-6 py-4 flex flex-col gap-4">
-              {navLinks.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="text-lg font-medium text-foreground hover:text-primary transition-colors"
-                >
-                  {link.name}
-                </a>
-              ))}
-              <a
-                href={`${base}search`}
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="text-lg font-medium text-foreground hover:text-primary transition-colors"
-                data-testid="link-nav-search-mobile"
-              >
-                {t("nav.search")}
-              </a>
-              <div className="flex flex-col gap-3 pt-2 border-t border-border">
-                <a
-                  href={quoteHref}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="text-center text-base font-bold px-4 py-3 rounded-sm bg-primary text-primary-foreground hover:bg-primary/90 transition-colors"
-                >
-                  {t("nav.quote")}
-                </a>
-                <a
-                  href={`/${language}/about`}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  data-testid="link-about-page-mobile"
-                  className="text-center text-sm font-semibold px-4 py-2.5 rounded-sm border border-primary/40 text-primary hover:bg-primary/10 transition-colors"
-                >
-                  {t("nav.aboutPage")}
-                </a>
-              </div>
-              <div className="flex items-center gap-4 pt-2 border-t border-border">
-                <a
-                  href="/en/"
-                  hrefLang="en"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    switchLang("en");
-                    setIsMobileMenuOpen(false);
-                  }}
-                  className={`text-lg font-semibold transition-colors ${language === "en" ? "text-primary" : "text-foreground/60 hover:text-foreground"}`}
-                >
-                  EN
-                </a>
-                <span className="text-foreground/30" aria-hidden="true">
-                  |
-                </span>
-                <a
-                  href="/pl/"
-                  hrefLang="pl"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    switchLang("pl");
-                    setIsMobileMenuOpen(false);
-                  }}
-                  className={`text-lg font-semibold transition-colors ${language === "pl" ? "text-primary" : "text-foreground/60 hover:text-foreground"}`}
-                >
-                  PL
-                </a>
-              </div>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+            {t("nav.search")}
+          </a>
+          <div className="flex flex-col gap-3 pt-2 border-t border-border">
+            <a
+              href={quoteHref}
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="text-center text-base font-bold px-4 py-3 rounded-sm bg-primary text-primary-foreground hover:bg-primary/90 transition-colors"
+            >
+              {t("nav.quote")}
+            </a>
+            <a
+              href={`/${language}/about`}
+              onClick={() => setIsMobileMenuOpen(false)}
+              data-testid="link-about-page-mobile"
+              className="text-center text-sm font-semibold px-4 py-2.5 rounded-sm border border-primary/40 text-primary hover:bg-primary/10 transition-colors"
+            >
+              {t("nav.aboutPage")}
+            </a>
+          </div>
+          <div className="flex items-center gap-4 pt-2 border-t border-border">
+            <a
+              href="/en/"
+              hrefLang="en"
+              onClick={(e) => {
+                e.preventDefault();
+                switchLang("en");
+                setIsMobileMenuOpen(false);
+              }}
+              className={`text-lg font-semibold transition-colors ${language === "en" ? "text-primary" : "text-foreground/60 hover:text-foreground"}`}
+            >
+              EN
+            </a>
+            <span className="text-foreground/30" aria-hidden="true">
+              |
+            </span>
+            <a
+              href="/pl/"
+              hrefLang="pl"
+              onClick={(e) => {
+                e.preventDefault();
+                switchLang("pl");
+                setIsMobileMenuOpen(false);
+              }}
+              className={`text-lg font-semibold transition-colors ${language === "pl" ? "text-primary" : "text-foreground/60 hover:text-foreground"}`}
+            >
+              PL
+            </a>
+          </div>
+        </div>
+      </div>
     </header>
   );
 }

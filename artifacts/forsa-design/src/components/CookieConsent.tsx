@@ -1,5 +1,4 @@
 import { useState, useEffect, useCallback } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 import { X, ChevronUp, ChevronDown } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import {
@@ -39,6 +38,7 @@ export default function CookieConsent() {
   const { t } = useLanguage();
 
   const [visible, setVisible] = useState(false);
+  const [entered, setEntered] = useState(false);
   const [expanded, setExpanded] = useState(false);
   const [analytics, setAnalytics] = useState(false);
   const [marketing, setMarketing] = useState(false);
@@ -49,6 +49,12 @@ export default function CookieConsent() {
     const timer = setTimeout(() => setVisible(true), 600);
     return () => clearTimeout(timer);
   }, []);
+
+  // Trigger CSS slide transition one frame after visible changes
+  useEffect(() => {
+    const id = requestAnimationFrame(() => setEntered(visible));
+    return () => cancelAnimationFrame(id);
+  }, [visible]);
 
   const handleReopen = useCallback(() => {
     const saved = loadConsent();
@@ -83,121 +89,112 @@ export default function CookieConsent() {
   if (!visible) return null;
 
   return (
-    <AnimatePresence>
-      <motion.div
-        initial={{ y: "100%", opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        exit={{ y: "100%", opacity: 0 }}
-        transition={{ type: "spring", stiffness: 260, damping: 28 }}
-        className="fixed bottom-0 left-0 right-0 z-50 px-4 pb-4 md:px-6 md:pb-6"
-        role="dialog"
-        aria-label={t("cookies.bannerTitle")}
-        aria-modal="false"
-      >
-        <div className="mx-auto max-w-3xl bg-card border border-border/30 rounded-2xl shadow-2xl overflow-hidden">
-          <div className="p-5 md:p-6">
-            <div className="flex items-start justify-between gap-4 mb-3">
-              <h2 className="font-serif text-xl font-bold text-white leading-snug">
-                {t("cookies.bannerTitle")}
-              </h2>
-              <button
-                onClick={reject}
-                aria-label="Close"
-                className="text-foreground/40 hover:text-foreground/70 transition-colors shrink-0 mt-0.5"
-              >
-                <X size={18} />
-              </button>
-            </div>
+    <div
+      className={`fixed bottom-0 left-0 right-0 z-50 px-4 pb-4 md:px-6 md:pb-6 transition-all duration-300 ease-out ${
+        entered ? "translate-y-0 opacity-100" : "translate-y-full opacity-0"
+      }`}
+      role="dialog"
+      aria-label={t("cookies.bannerTitle")}
+      aria-modal="false"
+    >
+      <div className="mx-auto max-w-3xl bg-card border border-border/30 rounded-2xl shadow-2xl overflow-hidden">
+        <div className="p-5 md:p-6">
+          <div className="flex items-start justify-between gap-4 mb-3">
+            <h2 className="font-serif text-xl font-bold text-white leading-snug">
+              {t("cookies.bannerTitle")}
+            </h2>
+            <button
+              onClick={reject}
+              aria-label="Close"
+              className="text-foreground/40 hover:text-foreground/70 transition-colors shrink-0 mt-0.5"
+            >
+              <X size={18} />
+            </button>
+          </div>
 
-            <p className="text-sm text-foreground/60 font-light leading-relaxed mb-5">
-              {t("cookies.bannerDesc")}
-            </p>
+          <p className="text-sm text-foreground/60 font-light leading-relaxed mb-5">
+            {t("cookies.bannerDesc")}
+          </p>
 
-            <AnimatePresence>
-              {expanded && (
-                <motion.div
-                  initial={{ height: 0, opacity: 0 }}
-                  animate={{ height: "auto", opacity: 1 }}
-                  exit={{ height: 0, opacity: 0 }}
-                  transition={{ duration: 0.25 }}
-                  className="overflow-hidden"
-                >
-                  <div className="space-y-3 mb-5">
-                    <CategoryRow
-                      label={t("cookies.essential")}
-                      description={t("cookies.essentialDesc")}
-                      checked={true}
-                      disabled={true}
-                      alwaysOnLabel={t("cookies.alwaysOn")}
-                    />
-                    <CategoryRow
-                      label={t("cookies.analytics")}
-                      description={t("cookies.analyticsDesc")}
-                      checked={analytics}
-                      onChange={setAnalytics}
-                    />
-                    <CategoryRow
-                      label={t("cookies.marketing")}
-                      description={t("cookies.marketingDesc")}
-                      checked={marketing}
-                      onChange={setMarketing}
-                    />
-                  </div>
-                </motion.div>
-              )}
-            </AnimatePresence>
-
-            <div className="flex flex-wrap items-center gap-2">
-              {expanded ? (
-                <>
-                  <button
-                    onClick={saveCustom}
-                    className="flex-1 min-w-[140px] bg-primary text-primary-foreground text-sm font-medium px-4 py-2.5 rounded-lg hover:bg-primary/90 transition-colors"
-                  >
-                    {t("cookies.savePreferences")}
-                  </button>
-                  <button
-                    onClick={accept}
-                    className="flex-1 min-w-[120px] bg-card border border-border/40 text-foreground/80 text-sm font-medium px-4 py-2.5 rounded-lg hover:border-primary/50 hover:text-white transition-colors"
-                  >
-                    {t("cookies.acceptAll")}
-                  </button>
-                  <button
-                    onClick={() => setExpanded(false)}
-                    className="flex items-center gap-1 text-sm text-foreground/50 hover:text-foreground/80 transition-colors px-2 py-2.5"
-                    aria-label="Collapse"
-                  >
-                    <ChevronDown size={15} />
-                  </button>
-                </>
-              ) : (
-                <>
-                  <button
-                    onClick={accept}
-                    className="flex-1 min-w-[120px] bg-primary text-primary-foreground text-sm font-medium px-4 py-2.5 rounded-lg hover:bg-primary/90 transition-colors"
-                  >
-                    {t("cookies.acceptAll")}
-                  </button>
-                  <button
-                    onClick={reject}
-                    className="flex-1 min-w-[140px] bg-card border border-border/40 text-foreground/80 text-sm font-medium px-4 py-2.5 rounded-lg hover:border-primary/50 hover:text-white transition-colors"
-                  >
-                    {t("cookies.rejectNonEssential")}
-                  </button>
-                  <button
-                    onClick={() => setExpanded(true)}
-                    className="flex items-center gap-1 text-sm text-foreground/50 hover:text-foreground/80 transition-colors px-2 py-2.5"
-                  >
-                    {t("cookies.customise")}
-                    <ChevronUp size={15} />
-                  </button>
-                </>
-              )}
+          {/* Expanded categories — CSS max-h transition */}
+          <div
+            className={`overflow-hidden transition-all duration-250 ease-in-out ${
+              expanded ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+            }`}
+          >
+            <div className="space-y-3 mb-5">
+              <CategoryRow
+                label={t("cookies.essential")}
+                description={t("cookies.essentialDesc")}
+                checked={true}
+                disabled={true}
+                alwaysOnLabel={t("cookies.alwaysOn")}
+              />
+              <CategoryRow
+                label={t("cookies.analytics")}
+                description={t("cookies.analyticsDesc")}
+                checked={analytics}
+                onChange={setAnalytics}
+              />
+              <CategoryRow
+                label={t("cookies.marketing")}
+                description={t("cookies.marketingDesc")}
+                checked={marketing}
+                onChange={setMarketing}
+              />
             </div>
           </div>
+
+          <div className="flex flex-wrap items-center gap-2">
+            {expanded ? (
+              <>
+                <button
+                  onClick={saveCustom}
+                  className="flex-1 min-w-[140px] bg-primary text-primary-foreground text-sm font-medium px-4 py-2.5 rounded-lg hover:bg-primary/90 transition-colors"
+                >
+                  {t("cookies.savePreferences")}
+                </button>
+                <button
+                  onClick={accept}
+                  className="flex-1 min-w-[120px] bg-card border border-border/40 text-foreground/80 text-sm font-medium px-4 py-2.5 rounded-lg hover:border-primary/50 hover:text-white transition-colors"
+                >
+                  {t("cookies.acceptAll")}
+                </button>
+                <button
+                  onClick={() => setExpanded(false)}
+                  className="flex items-center gap-1 text-sm text-foreground/50 hover:text-foreground/80 transition-colors px-2 py-2.5"
+                  aria-label="Collapse"
+                >
+                  <ChevronDown size={15} />
+                </button>
+              </>
+            ) : (
+              <>
+                <button
+                  onClick={accept}
+                  className="flex-1 min-w-[120px] bg-primary text-primary-foreground text-sm font-medium px-4 py-2.5 rounded-lg hover:bg-primary/90 transition-colors"
+                >
+                  {t("cookies.acceptAll")}
+                </button>
+                <button
+                  onClick={reject}
+                  className="flex-1 min-w-[140px] bg-card border border-border/40 text-foreground/80 text-sm font-medium px-4 py-2.5 rounded-lg hover:border-primary/50 hover:text-white transition-colors"
+                >
+                  {t("cookies.rejectNonEssential")}
+                </button>
+                <button
+                  onClick={() => setExpanded(true)}
+                  className="flex items-center gap-1 text-sm text-foreground/50 hover:text-foreground/80 transition-colors px-2 py-2.5"
+                >
+                  {t("cookies.customise")}
+                  <ChevronUp size={15} />
+                </button>
+              </>
+            )}
+          </div>
         </div>
-      </motion.div>
-    </AnimatePresence>
+      </div>
+    </div>
   );
 }
 
