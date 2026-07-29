@@ -126,5 +126,5 @@ packages = ["freetype", "gumbo", "harfbuzz", "jbig2dec", "libjpeg_turbo", "mupdf
 PROTON_SMTP_USER = "hello@forsadesign.co.uk"
 PROTON_SMTP_HOST = "smtp.protonmail.ch"
 PROTON_SMTP_PORT = "587"
-TURNSTILE_SITE_KEY = "0x4AAAAAAEBHtEdfH7FOfwDN"
-VITE_TURNSTILE_SITE_KEY = "0x4AAAAAAEBHtEdfH7FOfwDN"
+TURNSTILE_SITE_KEY = "0x4AAAAAADiKDRnpi0TNeGeS"
+VITE_TURNSTILE_SITE_KEY = "0x4AAAAAADiKDRnpi0TNeGeS"
