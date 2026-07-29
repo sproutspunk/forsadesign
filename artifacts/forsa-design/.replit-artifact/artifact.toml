@@ -26,3 +26,4 @@ serve = "static"
 [services.env]
 PORT = "20815"
 BASE_PATH = "/"
+FORSA_CONTACT = "0x4AAAAAADiKDRnpi0TNeGeS"
