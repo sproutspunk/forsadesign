@@ -23,7 +23,7 @@ export default function ContactForm() {
   const [errorMessage, setErrorMessage] = useState("");
 
   useEffect(() => {
-    const siteKey = import.meta.env.VITE_TURNSTILE_SITE_KEY;
+    const siteKey = import.meta.env.FORSA_CONTACT;
     if (!siteKey || !widgetRef.current) return;
 
     const renderWidget = () => {
