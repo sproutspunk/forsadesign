@@ -123,8 +123,11 @@ export default function About() {
             <p className="text-lg text-foreground/80 font-light leading-relaxed mb-6 text-justify">
               {t("about.body")}
             </p>
-            <p className="text-lg text-foreground/80 font-light leading-relaxed text-justify">
+            <p className="text-lg text-foreground/80 font-light leading-relaxed mb-6 text-justify">
               {t("about.body2")}
+            </p>
+            <p className="text-lg text-foreground/80 font-light leading-relaxed text-justify">
+              {t("about.body3")}
             </p>
           </motion.div>
         </div>
