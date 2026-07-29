@@ -3,6 +3,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { useSeoMeta, useJsonLd, buildHref } from "@/hooks/useSeoMeta";
 import Header from "@/components/Header";
 import ContactInfo from "@/components/ContactInfo";
+import ContactForm from "@/components/ContactForm";
 import Footer from "@/components/Footer";
 
 export default function ContactPage({ lang }: { lang: "en" | "pl" }) {
@@ -56,12 +57,13 @@ export default function ContactPage({ lang }: { lang: "en" | "pl" }) {
             </h1>
             <p className="text-xl text-foreground/70 font-light leading-relaxed">
               {en
-                ? "Email or call Miro to discuss your industrial website, B2B catalogue or bespoke web system."
-                : "Napisz lub zadzwoń do Miro, aby omówić stronę przemysłową, katalog B2B lub dedykowany system webowy."}
+                ? "Email, call or send a message to discuss your industrial website, B2B catalogue or bespoke web system."
+                : "Napisz, zadzwoń lub wyślij wiadomość, aby omówić stronę przemysłową, katalog B2B lub dedykowany system webowy."}
             </p>
           </div>
         </section>
         <ContactInfo />
+        <ContactForm />
       </main>
       <Footer />
     </div>
