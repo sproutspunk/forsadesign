@@ -79,7 +79,11 @@ export default function ContactForm() {
     setStatus("sending");
     setErrorMessage("");
 
-    const form = new FormData(event.currentTarget);
+    const formData = new FormData(event.currentTarget);
+    const form = new URLSearchParams();
+    formData.forEach((value, key) => {
+      if (typeof value === "string") form.set(key, value);
+    });
     form.set("language", language);
     if (!turnstileToken) {
       setStatus("error");
@@ -93,7 +97,11 @@ export default function ContactForm() {
     form.set("cf-turnstile-response", turnstileToken);
 
     try {
-      const response = await fetch("/api/contact", { method: "POST", body: form });
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "content-type": "application/x-www-form-urlencoded" },
+        body: form,
+      });
       const result = (await response.json().catch(() => ({}))) as { error?: string };
       if (!response.ok) throw new Error(result.error);
       setStatus("success");
