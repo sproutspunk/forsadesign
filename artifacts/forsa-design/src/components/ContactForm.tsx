@@ -11,7 +11,7 @@ declare global {
 }
 
 const TURNSTILE_SCRIPT_ID = "cloudflare-turnstile-script";
-const TURNSTILE_SITE_KEY = "0x4AAAAAAEBHtEdfH7FOfwDN";
+const TURNSTILE_SITE_KEY = "0x4AAAAAADiKDRnpi0TNeGeS";
 
 export default function ContactForm() {
   const { language } = useLanguage();
