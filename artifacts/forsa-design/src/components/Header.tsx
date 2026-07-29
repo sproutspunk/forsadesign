@@ -57,9 +57,10 @@ export default function Header() {
           <img
             src="/logo-header.webp?v=9"
             alt="Forsa Design"
-            width={96}
-            height={96}
+            width={160}
+            height={132}
             loading="eager"
+            fetchPriority="high"
             decoding="async"
             className="h-11 w-auto object-contain"
           />

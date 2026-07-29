@@ -15,7 +15,7 @@ export default function Hero() {
             src="/logo-hero-384.webp?v=17"
             alt="Forsa Design"
             width={384}
-            height={384}
+            height={317}
             loading="eager"
             fetchPriority="high"
             decoding="async"
