@@ -1,6 +1,7 @@
 import { Router, type IRouter } from "express";
-import rateLimit from "express-rate-limit";
+import rateLimit, { ipKeyGenerator } from "express-rate-limit";
 import nodemailer from "nodemailer";
+import { realClientIp } from "./contact";
 
 const router: IRouter = Router();
 const OWNER_EMAIL = "hello@forsadesign.co.uk";
@@ -12,6 +13,7 @@ const quoteEmailLimiter = rateLimit({
   limit: 5,
   standardHeaders: true,
   legacyHeaders: false,
+  keyGenerator: (req) => ipKeyGenerator(realClientIp(req)),
   message: { error: "Too many quote email requests. Please try again later." },
 });
 
