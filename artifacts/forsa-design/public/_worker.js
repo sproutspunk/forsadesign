@@ -30,77 +30,104 @@ const escapeHtml = (value) =>
 
 async function sendViaProton(env, mail) {
   const host = (env.PROTON_SMTP_HOST || "smtp.protonmail.ch").trim();
-  const port = parseInt((env.PROTON_SMTP_PORT || "465").trim(), 10) || 465;
-  const user = env.PROTON_SMTP_USER;
-  const pass = env.PROTON_SMTP_PASS;
+  const port = parseInt((env.PROTON_SMTP_PORT || "587").trim(), 10) || 587;
+  const user = (env.PROTON_SMTP_USER || "").trim();
+  const pass = (env.PROTON_SMTP_PASS || "").trim();
 
   if (!user || !pass) {
     throw new Error("SMTP service is not configured");
   }
 
-  const socket = connect({ hostname: host, port }, { secureTransport: "on", allowHalfOpen: false });
-  const writer = socket.writable.getWriter();
-  const reader = socket.readable.getReader();
   const encoder = new TextEncoder();
   const decoder = new TextDecoder();
-  let buffer = "";
+  const socket = connect(
+    { hostname: host, port },
+    { secureTransport: "starttls", allowHalfOpen: true },
+  );
 
-  async function readMore() {
-    let timer;
-    const timeout = new Promise((_, reject) => {
-      timer = setTimeout(() => reject(new Error("SMTP connection timed out")), 20000);
-    });
-    try {
-      const result = await Promise.race([reader.read(), timeout]);
-      if (result.done) throw new Error("SMTP connection closed unexpectedly");
-      buffer += decoder.decode(result.value, { stream: true });
-    } finally {
-      clearTimeout(timer);
-    }
+  let incoming = "";
+  let readerDone = false;
+  let activeWriter = socket.writable.getWriter();
+
+  function startReadLoop(readable) {
+    return (async () => {
+      readerDone = false;
+      const reader = readable.getReader();
+      try {
+        for (;;) {
+          const { value, done } = await reader.read();
+          if (done) {
+            readerDone = true;
+            break;
+          }
+          incoming += decoder.decode(value, { stream: true });
+        }
+      } catch {
+        readerDone = true;
+      }
+    })();
   }
 
-  async function expect(code) {
+  let readLoop = startReadLoop(socket.readable);
+
+  async function waitFor(code, timeoutMs = 20000) {
+    const deadline = Date.now() + timeoutMs;
     for (;;) {
-      if (buffer.endsWith("\r\n")) {
-        const lines = buffer.split("\r\n").filter(Boolean);
-        const last = lines[lines.length - 1];
-        if (last && /^\d{3}/.test(last) && last.charAt(3) !== "-") {
-          if (last.startsWith(code)) return;
-          throw new Error(`SMTP rejected request: ${last.slice(0, 120)}`);
+      const lines = incoming.split("\r\n");
+      for (let i = lines.length - 1; i >= 0; i -= 1) {
+        const line = lines[i];
+        if (!line) continue;
+        if (/^\d{3}[- ]/.test(line) && line.charAt(3) === " ") {
+          if (line.startsWith(code)) return;
+          throw new Error(`SMTP rejected request: ${line.slice(0, 120)}`);
         }
+        break;
       }
-      await readMore();
+      if (readerDone) throw new Error(`SMTP connection closed before receiving ${code}`);
+      if (Date.now() > deadline) throw new Error(`SMTP timeout waiting for ${code}`);
+      await new Promise((resolve) => setTimeout(resolve, 25));
     }
   }
 
   async function send(line) {
-    buffer = "";
-    await writer.write(encoder.encode(`${line}\r\n`));
+    incoming = "";
+    await activeWriter.write(encoder.encode(`${line}\r\n`));
   }
 
   try {
-    await expect("220");
-    await send(`EHLO ${host}`);
-    await expect("250");
+    await waitFor("220");
+    await send("EHLO forsadesign.co.uk");
+    await waitFor("250");
+    await send("STARTTLS");
+    await waitFor("220");
+
+    activeWriter.releaseLock();
+    const secureSocket = socket.startTls();
+    incoming = "";
+    readLoop = startReadLoop(secureSocket.readable);
+    activeWriter = secureSocket.writable.getWriter();
+
+    await send("EHLO forsadesign.co.uk");
+    await waitFor("250");
     await send("AUTH LOGIN");
-    await expect("334");
+    await waitFor("334");
     await send(btoa(user));
-    await expect("334");
+    await waitFor("334");
     await send(btoa(pass));
-    await expect("235");
+    await waitFor("235");
     await send(`MAIL FROM:<${mail.from}>`);
-    await expect("250");
+    await waitFor("250");
     await send(`RCPT TO:<${mail.to}>`);
-    await expect("250");
+    await waitFor("250");
     await send("DATA");
-    await expect("354");
+    await waitFor("354");
 
     const escapedBody = mail.text
       .split("\n")
       .map((line) => (line.startsWith(".") ? `.${line}` : line))
       .join("\r\n");
     const headers = [
-      `From: ${mail.from}`,
+      `From: Forsa Design <${mail.from}>`,
       `To: ${mail.to}`,
       `Reply-To: ${mail.replyTo}`,
       `Subject: ${mail.subject}`,
@@ -109,13 +136,17 @@ async function sendViaProton(env, mail) {
       "Content-Transfer-Encoding: 8bit",
     ];
     await send([...headers, "", escapedBody, "."].join("\r\n"));
-    await expect("250");
-    await send("QUIT");
+    await waitFor("250");
+    incoming = "";
+    await activeWriter.write(encoder.encode("QUIT\r\n"));
+    await activeWriter.close().catch(() => {});
+    await waitFor("221", 5000).catch(() => {});
   } finally {
+    await readLoop.catch(() => {});
     try {
       socket.close();
     } catch {
-      // The socket may already be closed by the SMTP server.
+      /* already closed */
     }
   }
 }
