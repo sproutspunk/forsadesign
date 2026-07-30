@@ -1,0 +1,54 @@
+To normalne — obecny kod wysyła maila tylko do Ciebie (`hello@forsadesign.co.uk`). Nadawca dostaje tylko `reply_to`, co oznacza że jak odpiszesz, to trafi do niego.
+
+Chcesz, żeby nadawca dostał **automatyczne potwierdzenie** ("Dziękujemy za kontakt") czy **kopię** wysłanej wiadomości?
+
+---
+
+## Rozwiązanie — potwierdzenie dla nadawcy
+
+Wklej to do `functions/api/contact.js` **pod** pierwszym mailem (przed `return Response.redirect`):
+
+```js
+    // Potwierdzenie dla nadawcy
+    await fetch("https://api.resend.com/emails", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+        Authorization: `Bearer ${env.RESEND_API_KEY}`
+      },
+      body: JSON.stringify({
+        from: "Forsa Design <hello@forsadesign.co.uk>",
+        to: [email],
+        subject: "Thank you for contacting Forsa Design",
+        text: `Hi ${name},\n\nThank you for reaching out. I've received your message and will reply within 24 hours.\n\nYour message:\n${message}\n\n—\nMiro\nForsa Design\nhello@forsadesign.co.uk\n07770 110 735`,
+        html: `<p>Hi ${name},</p>
+               <p>Thank you for reaching out. I've received your message and will reply within 24 hours.</p>
+               <hr style="border:none;border-top:1px solid #e5e5e5;margin:24px 0;">
+               <p style="color:#666;font-size:14px;"><strong>Your message:</strong></p>
+               <blockquote style="border-left:3px solid #d4af55;padding-left:16px;margin:0;color:#333;">
+                 ${message.replace(/</g, "&lt;").replace(/\n/g, "<br>")}
+               </blockquote>
+               <hr style="border:none;border-top:1px solid #e5e5e5;margin:24px 0;">
+               <p style="font-size:14px;color:#666;">
+                 —<br>
+                 <strong>Miro</strong><br>
+                 Forsa Design<br>
+                 <a href="mailto:hello@forsadesign.co.uk">hello@forsadesign.co.uk</a><br>
+                 07770 110 735
+               </p>`
+      })
+    });
+```
+
+To wyśle nadawcy maila z podziękowaniem i kopią jego wiadomości.
+
+---
+
+## Albo wersja polska
+
+```js
+        subject: "Dziękuję za kontakt — Forsa Design",
+        text: `Cześć ${name},\n\nDostałem Twoją wiadomość. Odpowiadam zazwyczaj w ciągu 24 godzin.\n\nTwoja wiadomość:\n${message}\n\n—\nMiro\nForsa Design`,
+```
+
+Pushnij i testuj — nadawca dostanie potwierdzenie, Ty dostaniesz oryginał. Chcesz wersję dwujęzyczną (PL/EN w zależności od ścieżki `/pl/` vs `/en/`)?
