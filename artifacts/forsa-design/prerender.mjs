@@ -208,7 +208,7 @@ function buildHomepageBodyEn() {
 <section id="about">
 <h2>About Forsa Design</h2>
 <p>We are an independent web development agency based in Scotland, building bespoke systems and websites for the corporate sector. We completely cut out corporate jargon, useless meetings, and artificially inflated management costs.</p>
-<p>We design for revenue, not empty aesthetics. High-end visual design is our absolute baseline &#8211; we deliver fast, stable digital assets that actually drive conversions and protect your corporate data. We handle everything from clean code to server architecture. You collaborate directly with the engineers writing your project, eliminating miscommunication and guaranteeing technical precision from day one.</p>
+<p>We design for revenue, not empty aesthetics. High-end visual design is our absolute baseline: we deliver fast, stable digital assets that actually drive conversions and protect your corporate data. We handle everything from clean code to server architecture. You collaborate directly with the engineers writing your project, eliminating miscommunication and guaranteeing technical precision from day one.</p>
 </section>
 <section id="contact">
 <h2>Get In Touch</h2>
@@ -258,7 +258,7 @@ function buildHomepageBodyPl() {
 <h2>Nasze Prace</h2>
 <p>Szybkie, pisane od zera strony i sklepy, stworzone by zamienia&#263; ruch w realny zysk.</p>
 <div>
-<h3>Love Sprouts &#8212; Przebudowa E-commerce</h3>
+<h3>Love Sprouts: Przebudowa E-commerce</h3>
 <p>Stworzenie nowej strony Shopify od zera. Skr&#243;cenie &#322;adowania do 1.1s i zatrzymanie porzuconych koszyk&#243;w.</p>
 </div>
 <div>
@@ -292,7 +292,7 @@ function buildHomepageBodyPl() {
 <section id="about">
 <h2>O Forsa Design</h2>
 <p>Jeste&#347;my niezale&#380;n&#261; agencj&#261; web developmentu ze Szkocji, tworz&#261;c&#261; dedykowane systemy i strony dla sektora biznesowego. Ca&#322;kowicie rezygnujemy z korporacyjnego be&#322;kotu, bezu&#380;ytecznych spotka&#324; i sztucznie nadmuchanych koszt&#243;w obs&#322;ugi.</p>
-<p>Projektujemy z my&#347;l&#261; o zysku, a nie o pustej estetyce. Dobry wygl&#261;d to absolutne minimum &#8211; my dostarczamy szybkie, stabilne narz&#281;dzie, kt&#243;re realnie sprzedaje i chroni dane Twojej firmy. Robimy wszystko: od czystego kodu po architektur&#281; serwera. Rozmawiasz bezpo&#347;rednio z programistami, kt&#243;rzy pisz&#261; Tw&#243;j projekt, co eliminuje b&#322;&#281;dy w ustaleniach i gwarantuje precyzj&#281; od samego pocz&#261;tku.</p>
+<p>Projektujemy z my&#347;l&#261; o zysku, a nie o pustej estetyce. Dobry wygl&#261;d to absolutne minimum. My dostarczamy szybkie, stabilne narz&#281;dzie, kt&#243;re realnie sprzedaje i chroni dane Twojej firmy. Robimy wszystko: od czystego kodu po architektur&#281; serwera. Rozmawiasz bezpo&#347;rednio z programistami, kt&#243;rzy pisz&#261; Tw&#243;j projekt, co eliminuje b&#322;&#281;dy w ustaleniach i gwarantuje precyzj&#281; od samego pocz&#261;tku.</p>
 </section>
 <section id="contact">
 <h2>Skontaktuj Si&#281; Z Nami</h2>
@@ -1196,7 +1196,7 @@ function buildTermsBodyEn() {
 </header>
 <main>
 <h1>Terms and Conditions</h1>
-<p>Forsa Design &#8211; Art &amp; Web Design</p>
+<p>Forsa Design, Art &amp; Web Design</p>
 <p>Last Updated: June 2026</p>
 ${buildSectionsHtml(termsEN)}
 </main>`;
@@ -1208,7 +1208,7 @@ function buildTermsBodyPl() {
 </header>
 <main>
 <h1>Regulamin i Warunki &#346;wiadczenia Us&#322;ug</h1>
-<p>Forsa Design &#8211; Art &amp; Web Design</p>
+<p>Forsa Design, Art &amp; Web Design</p>
 <p>Ostatnia aktualizacja: Czerwiec 2026</p>
 ${buildSectionsHtml(termsPL)}
 </main>`;
@@ -1304,11 +1304,11 @@ function buildAboutBodyPl() {
 </section>
 <section>
 <h2>Nasz Proces</h2>
-<div><h3>01 &#8212; Odkrywanie i Strategia (Tygodnie 1-2)</h3><p>Przeprowadzamy wywiady, analizujemy Twoj&#261; bran&#380;&#281;, konkurencj&#281;, u&#380;ytkownik&#243;w, definiujemy cele biznesowe.</p></div>
-<div><h3>02 &#8212; Projektowanie (Tygodnie 3-4)</h3><p>Tworzymy wireframe'y, mockupy i strategi&#281; wizualn&#261;. Wszystko zatwierdzone przez Ciebie zanim zaczynamy kod.</p></div>
-<div><h3>03 &#8212; Rozw&#243;j (Tygodnie 5-8)</h3><p>Budujemy stron&#281; z fokusem na wydajno&#347;&#263;, bezpiecze&#324;stwo, SEO i konwersj&#281;.</p></div>
-<div><h3>04 &#8212; Testowanie i Optymalizacja (Tydzie&#324; 9)</h3><p>Testy na wszystkich urz&#261;dzeniach, przegl&#261;darkach, analiza wydajno&#347;ci, bezpiecze&#324;stwa, SEO.</p></div>
-<div><h3>05 &#8212; Uruchomienie i Wsparcie (Na bie&#380;&#261;co)</h3><p>Wdra&#380;amy stron&#281; live. Pierwszych kilka tygodni mamy &#347;cis&#322;y kontakt, potem przystupujemy do wsparcia.</p></div>
+<div><h3>01: Odkrywanie i Strategia (Tygodnie 1-2)</h3><p>Przeprowadzamy wywiady, analizujemy Twoj&#261; bran&#380;&#281;, konkurencj&#281;, u&#380;ytkownik&#243;w, definiujemy cele biznesowe.</p></div>
+<div><h3>02: Projektowanie (Tygodnie 3-4)</h3><p>Tworzymy wireframe'y, mockupy i strategi&#281; wizualn&#261;. Wszystko zatwierdzone przez Ciebie zanim zaczynamy kod.</p></div>
+<div><h3>03: Rozw&#243;j (Tygodnie 5-8)</h3><p>Budujemy stron&#281; z fokusem na wydajno&#347;&#263;, bezpiecze&#324;stwo, SEO i konwersj&#281;.</p></div>
+<div><h3>04: Testowanie i Optymalizacja (Tydzie&#324; 9)</h3><p>Testy na wszystkich urz&#261;dzeniach, przegl&#261;darkach, analiza wydajno&#347;ci, bezpiecze&#324;stwa, SEO.</p></div>
+<div><h3>05: Uruchomienie i Wsparcie (Na bie&#380;&#261;co)</h3><p>Wdra&#380;amy stron&#281; live. Pierwszych kilka tygodni mamy &#347;cis&#322;y kontakt, potem przystupujemy do wsparcia.</p></div>
 </section>
 <section>
 <h2>Co Nas Wyr&#243;&#380;nia</h2>
@@ -1387,22 +1387,22 @@ function buildComparisonBodyPl() {
 <section>
 <h2>Przegl&#261;d Opcji</h2>
 <div>
-<h3>Szablon CMS &#8212; Szybki i przyst&#281;pny cenowo</h3>
+<h3>Szablon CMS: Szybki i przyst&#281;pny cenowo</h3>
 <p>Zalety: Ni&#380;szy koszt pocz&#261;tkowy. Szybkie uruchomienie. &#321;atwe aktualizacje tre&#347;ci.</p>
 <p>Wady: Cz&#281;sto oparte na istniej&#261;cych motywach. Mo&#380;e spowalnia&#263; przy zbyt wielu wtyczkach. Ograniczona kontrola nad SEO i wydajno&#347;ci&#261;.</p>
 </div>
 <div>
-<h3>Agencja bez specjalizacji &#8212; Og&#243;lny dostawca rozwi&#261;za&#324;</h3>
+<h3>Agencja bez specjalizacji: Og&#243;lny dostawca rozwi&#261;za&#324;</h3>
 <p>Zalety: Do&#347;wiadczone zespo&#322;y. Zarz&#261;dzanie projektem. Istniej&#261;ce portfolio.</p>
 <p>Wady: Cz&#281;sto szablonowe. Wy&#380;sze koszty przez wi&#281;ksze struktury. Mo&#380;e brakowa&#263; do&#347;wiadczenia bran&#380;owego.</p>
 </div>
 <div>
-<h3>Freelancer &#8212; Elastyczny i osobisty</h3>
+<h3>Freelancer: Elastyczny i osobisty</h3>
 <p>Zalety: Bezpo&#347;rednia komunikacja. Elastyczne ceny. Szeroki zakres umiej&#281;tno&#347;ci.</p>
 <p>Wady: Jedna osoba odpowiedzialna za ca&#322;y projekt. Dost&#281;pno&#347;&#263; mo&#380;e by&#263; wyzwaniem. Jako&#347;&#263; r&#243;&#380;ni si&#281; mi&#281;dzy dostawcami.</p>
 </div>
 <div>
-<h3>Forsa Design &#8212; Strona, kt&#243;ra pracuje dla Twojego biznesu</h3>
+<h3>Forsa Design: Strona, kt&#243;ra pracuje dla Twojego biznesu</h3>
 <p>Zbudowana wok&#243;&#322; Twoich klient&#243;w i cel&#243;w biznesowych. Szybkie do&#347;wiadczenia szanuj&#261;ce czas klient&#243;w. Zbudowana by by&#263; znajdowana i obdarzana zaufaniem online. Procesy uproszczone przez m&#261;dr&#261; automatyzacj&#281;. D&#322;ugoterminowy partner gdy Tw&#243;j biznes si&#281; rozwija. Brak uzale&#380;nie&#324;. Brak zale&#380;no&#347;ci od jednego dostawcy.</p>
 </div>
 </section>
@@ -1413,11 +1413,11 @@ function buildComparisonBodyPl() {
 <tbody>
 <tr><td>Czas</td><td>Samoobs&#322;uga</td><td>Niezale&#380;ny developer</td><td>Dostarczanie zespo&#322;owe</td><td>Wi&#281;cej czasu na prowadzenie biznesu</td></tr>
 <tr><td>Wydajno&#347;&#263;</td><td>Cz&#281;sto wolna</td><td>R&#243;&#380;nie</td><td>Generalnie dobra</td><td>Zoptymalizowana pod Core Web Vitals</td></tr>
-<tr><td>SEO</td><td>Podstawowe</td><td>R&#243;&#380;nie</td><td>&#346;rednie</td><td>Zaawansowane &#8212; Schema, E-E-A-T, techniczne SEO</td></tr>
-<tr><td>Bezpiecze&#324;stwo</td><td>Zale&#380;y od platformy</td><td>R&#243;&#380;nie</td><td>Generalnie tak</td><td>Tak &#8212; SSL, RODO, pe&#322;na dokumentacja</td></tr>
+<tr><td>SEO</td><td>Podstawowe</td><td>R&#243;&#380;nie</td><td>&#346;rednie</td><td>Zaawansowane: Schema, E-E-A-T, techniczne SEO</td></tr>
+<tr><td>Bezpiecze&#324;stwo</td><td>Zale&#380;y od platformy</td><td>R&#243;&#380;nie</td><td>Generalnie tak</td><td>Tak: SSL, RODO, pe&#322;na dokumentacja</td></tr>
 <tr><td>Skalowanie</td><td>Ograniczone</td><td>Mo&#380;liwe</td><td>Mo&#380;liwe</td><td>Proste (custom kod)</td></tr>
-<tr><td>Przeno&#347;no&#347;&#263;</td><td>Niska &#8212; uzale&#380;nienie od platformy</td><td>Wysoka</td><td>Wysoka</td><td>Wysoka &#8212; pe&#322;na w&#322;asno&#347;&#263;</td></tr>
-<tr><td>Wsparcie po uruchomieniu</td><td>Fora spo&#322;eczno&#347;ciowe</td><td>Cz&#281;sto ograniczone</td><td>Opcjonalnie extra op&#322;ata</td><td>Zawarte &#8212; d&#322;ugoterminowe partnerstwo</td></tr>
+<tr><td>Przeno&#347;no&#347;&#263;</td><td>Niska: uzale&#380;nienie od platformy</td><td>Wysoka</td><td>Wysoka</td><td>Wysoka: pe&#322;na w&#322;asno&#347;&#263;</td></tr>
+<tr><td>Wsparcie po uruchomieniu</td><td>Fora spo&#322;eczno&#347;ciowe</td><td>Cz&#281;sto ograniczone</td><td>Opcjonalnie extra op&#322;ata</td><td>Zawarte: d&#322;ugoterminowe partnerstwo</td></tr>
 </tbody>
 </table>
 </section>
@@ -1510,7 +1510,7 @@ function buildPrivacyBodyEn() {
 </header>
 <main>
 <h1>Privacy Policy</h1>
-<p>Forsa Design &#8211; Art &amp; Web Design</p>
+<p>Forsa Design, Art &amp; Web Design</p>
 <p>Last Updated: June 2026</p>
 ${buildSectionsHtml(privacyEN)}
 </main>`;
@@ -1522,7 +1522,7 @@ function buildPrivacyBodyPl() {
 </header>
 <main>
 <h1>Polityka Prywatno&#347;ci</h1>
-<p>Forsa Design &#8211; Art &amp; Web Design</p>
+<p>Forsa Design, Art &amp; Web Design</p>
 <p>Ostatnia aktualizacja: Czerwiec 2026</p>
 ${buildSectionsHtml(privacyPL)}
 </main>`;
