@@ -181,8 +181,8 @@ export default function ContactForm() {
           {status === "success" && (
             <p role="status" className="mt-4 text-sm text-primary">
               {en
-                ? "Thanks — your message has been sent. We will be in touch shortly."
-                : "Dziękujemy — wiadomość została wysłana. Wkrótce się odezwiemy."}
+                ? "Thanks! Your message has been sent. We will be in touch shortly."
+                : "Dziękujemy! Wiadomość została wysłana. Wkrótce się odezwiemy."}
             </p>
           )}
           {status === "error" && (

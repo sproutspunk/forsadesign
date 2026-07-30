@@ -11,8 +11,8 @@ export default function ServicesPage({ lang }: { lang: "en" | "pl" }) {
   const { syncLanguage } = useLanguage();
   const en = lang === "en";
   const title = en
-    ? "Services — Custom Web Systems for Heavy Industry | Forsa Design"
-    : "Usługi — Dedykowane Systemy Web dla Przemysłu Ciężkiego | Forsa Design";
+    ? "Services: Custom Web Systems for Heavy Industry | Forsa Design"
+    : "Usługi: Dedykowane Systemy Web dla Przemysłu Ciężkiego | Forsa Design";
   const description = en
     ? "Hand-coded websites, B2B e-commerce for parts, and bespoke web systems for offshore, energy, and engineering firms. Based in Scotland."
     : "Strony kodowane od podstaw, e-commerce B2B na części i dedykowane systemy webowe dla firm offshore, energetycznych i inżynieryjnych. Bazujemy w Szkocji.";
@@ -90,8 +90,8 @@ export default function ServicesPage({ lang }: { lang: "en" | "pl" }) {
       provider: serviceProvider,
       areaServed,
       description: en
-        ? "Custom web applications and portals built around your business logic — quotation tools, ERP bridges, client portals, and procurement dashboards."
-        : "Dedykowane aplikacje webowe i portale dopasowane do logiki Twojej firmy — narzędzia wycenowe, mosty ERP, portale klienta, dashboardy zakupowe.",
+        ? "Custom web applications and portals built around your business logic: quotation tools, ERP bridges, client portals, and procurement dashboards."
+        : "Dedykowane aplikacje webowe i portale dopasowane do logiki Twojej firmy: narzędzia wycenowe, mosty ERP, portale klienta, dashboardy zakupowe.",
     },
     "services-schema-bespoke",
   );

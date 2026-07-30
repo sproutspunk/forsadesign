@@ -150,7 +150,7 @@ export default function Header() {
         </button>
       </div>
 
-      {/* Mobile Nav — CSS transition, no framer-motion */}
+      {/* Mobile Nav - CSS transition, no framer-motion */}
       <div
         id="mobile-nav"
         aria-hidden={!isMobileMenuOpen}

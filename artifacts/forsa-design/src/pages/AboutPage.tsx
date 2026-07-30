@@ -12,7 +12,7 @@ interface AboutPageProps {
 
 const content = {
   en: {
-    seoTitle: "About Miro — Industrial Web Developer | Forsa Design",
+    seoTitle: "About Miro: Industrial Web Developer | Forsa Design",
     seoDesc:
       "Miro, founder of Forsa Design. 20+ years in B2B industrial sales, now building procurement-ready websites for offshore and engineering firms in Scotland.",
     heading: "Meet the Founder of Forsa Design",

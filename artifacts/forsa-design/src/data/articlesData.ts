@@ -62,7 +62,7 @@ export const articles: Article[] = [
         },
         {
           heading: "7. How is pricing structured?",
-          body: "Get the full picture upfront: what is included, how revisions work, what triggers extra cost, what ongoing fees look like. A clear quote with no ambiguity is a good sign. Lots of 'it depends' before you have even agreed on scope is a warning.",
+          body: 'Get the full picture upfront: what is included, how revisions work, what triggers extra cost, what ongoing fees look like. A clear quote with no ambiguity is a good sign. Lots of "it depends" before you have even agreed on scope is a warning.',
         },
         {
           heading: "Summary",
@@ -104,7 +104,7 @@ export const articles: Article[] = [
         },
         {
           heading: "7. Jak wygląda wycena projektu?",
-          body: "Poznaj pełny obraz z góry: co jest zawarte, jak działają rewizje, co powoduje dodatkowy koszt, jak wyglądają opłaty bieżące. Jasna wycena bez niejednoznaczności to dobry znak. Dużo 'to zależy' zanim uzgodniono nawet zakres to ostrzeżenie.",
+          body: 'Poznaj pełny obraz z góry: co jest zawarte, jak działają rewizje, co powoduje dodatkowy koszt, jak wyglądają opłaty bieżące. Jasna wycena bez niejednoznaczności to dobry znak. Dużo "to zależy" zanim uzgodniono nawet zakres to ostrzeżenie.',
         },
         {
           heading: "Podsumowanie",
@@ -440,11 +440,11 @@ export const articles: Article[] = [
         },
         {
           heading: "Why a professional website matters for Aberdeenshire businesses",
-          body: "Most customers in Aberdeenshire, whether they're searching in Banff, Macduff, Huntly, Keith, Turriff, Inverurie, Ellon, Peterhead, Fraserburgh or Aberdeen, will check a business online before making contact. If your site is slow, hard to use on a phone, or simply doesn't exist, they'll go with whoever shows up next.\n\nPeople make quick decisions about whether to trust a business based on how its website looks and works. A site built with that in mind turns visitors into calls, bookings and enquiries. A well-optimised site can also put you in front of someone searching 'electrician Inverurie' or 'accountant Huntly' at exactly the right moment.",
+          body: 'Most customers in Aberdeenshire, whether they\'re searching in Banff, Macduff, Huntly, Keith, Turriff, Inverurie, Ellon, Peterhead, Fraserburgh or Aberdeen, will check a business online before making contact. If your site is slow, hard to use on a phone, or simply doesn\'t exist, they\'ll go with whoever shows up next.\n\nPeople make quick decisions about whether to trust a business based on how its website looks and works. A site built with that in mind turns visitors into calls, bookings and enquiries. A well-optimised site can also put you in front of someone searching "electrician Inverurie" or "accountant Huntly" at exactly the right moment.',
         },
         {
           heading: "What makes a good small business website in 2026",
-          body: "A good website for a small Aberdeenshire business is not about features. It is about getting the basics right.\n\nSpeed matters more than most people think. The majority of your visitors will be on a mobile phone, possibly on a rural 4G connection. If the site takes more than a few seconds to load, a large portion of those visitors will leave before they see anything.\n\nYour phone number should be on every page. Not buried in the footer. Right there at the top, with a tap-to-call button on mobile.\n\nThe words on your pages should reflect what you do and where you do it. Not just 'Services' but 'Plumbing in Banff and Aberdeenshire'. Google reads this when deciding when to show your site.\n\nAnd every page should make it obvious what you want the visitor to do next. Call, book, enquire, or buy. One clear action per page.",
+          body: 'A good website for a small Aberdeenshire business is not about features. It is about getting the basics right.\n\nSpeed matters more than most people think. The majority of your visitors will be on a mobile phone, possibly on a rural 4G connection. If the site takes more than a few seconds to load, a large portion of those visitors will leave before they see anything.\n\nYour phone number should be on every page. Not buried in the footer. Right there at the top, with a tap-to-call button on mobile.\n\nThe words on your pages should reflect what you do and where you do it. Not just "Services" but "Plumbing in Banff and Aberdeenshire". Google reads this when deciding when to show your site.\n\nAnd every page should make it obvious what you want the visitor to do next. Call, book, enquire, or buy. One clear action per page.',
         },
         {
           heading: "How much does a website cost for a small business in Aberdeenshire?",
@@ -482,11 +482,11 @@ export const articles: Article[] = [
         },
         {
           heading: "Dlaczego profesjonalna strona ma znaczenie dla firm z Aberdeenshire",
-          body: "Większość klientów w Aberdeenshire, czy szukają w Banff, Macduff, Huntly, Keith, Turriff, Inverurie, Ellon, Peterhead, Fraserburgh czy Aberdeen, sprawdza firmę online przed nawiązaniem kontaktu. Jeśli Twoja strona jest wolna, trudna do obsługi na telefonie lub po prostu nie istnieje, klient trafi do konkurenta, który ma działającą witrynę.\n\nLudzie szybko oceniają wiarygodność firmy na podstawie tego, jak wygląda i działa jej strona. Strona zbudowana z myślą o konwersji zamienia odwiedzających w telefony, rezerwacje i zapytania. Dobrze zoptymalizowana witryna może też trafić do kogoś szukającego 'elektryk Inverurie' lub 'księgowy Huntly' dokładnie w odpowiednim momencie.",
+          body: 'Większość klientów w Aberdeenshire, czy szukają w Banff, Macduff, Huntly, Keith, Turriff, Inverurie, Ellon, Peterhead, Fraserburgh czy Aberdeen, sprawdza firmę online przed nawiązaniem kontaktu. Jeśli Twoja strona jest wolna, trudna do obsługi na telefonie lub po prostu nie istnieje, klient trafi do konkurenta, który ma działającą witrynę.\n\nLudzie szybko oceniają wiarygodność firmy na podstawie tego, jak wygląda i działa jej strona. Strona zbudowana z myślą o konwersji zamienia odwiedzających w telefony, rezerwacje i zapytania. Dobrze zoptymalizowana witryna może też trafić do kogoś szukającego "elektryk Inverurie" lub "księgowy Huntly" dokładnie w odpowiednim momencie.',
         },
         {
           heading: "Co tworzy dobrą stronę dla małej firmy w 2026",
-          body: "Dobra strona dla małej firmy z Aberdeenshire to nie kwestia funkcji. Chodzi o dobre wykonanie podstaw.\n\nSzybkość ma większe znaczenie niż większość ludzi myśli. Większość odwiedzających będzie na telefonie, być może na wiejskim połączeniu 4G. Jeśli strona ładuje się dłużej niż kilka sekund, duża część tych osób odejdzie zanim cokolwiek zobaczą.\n\nNumer telefonu powinien być na każdej stronie. Nie ukryty w stopce. Dobrze widoczny na górze, z przyciskiem click-to-call na telefonie.\n\nTreść strony powinna odzwierciedlać co robisz i gdzie to robisz. Nie tylko 'Usługi', ale 'Usługi hydrauliczne w Banff i Aberdeenshire'. Google to czyta, gdy decyduje kiedy pokazać Twoją stronę.\n\nKażda strona powinna jasno wskazywać co odwiedzający ma zrobić dalej. Zadzwonić, zarezerwować, wysłać zapytanie, kupić. Jedna czytelna akcja na stronę.",
+          body: 'Dobra strona dla małej firmy z Aberdeenshire to nie kwestia funkcji. Chodzi o dobre wykonanie podstaw.\n\nSzybkość ma większe znaczenie niż większość ludzi myśli. Większość odwiedzających będzie na telefonie, być może na wiejskim połączeniu 4G. Jeśli strona ładuje się dłużej niż kilka sekund, duża część tych osób odejdzie zanim cokolwiek zobaczą.\n\nNumer telefonu powinien być na każdej stronie. Nie ukryty w stopce. Dobrze widoczny na górze, z przyciskiem click-to-call na telefonie.\n\nTreść strony powinna odzwierciedlać co robisz i gdzie to robisz. Nie tylko "Usługi", ale "Usługi hydrauliczne w Banff i Aberdeenshire". Google to czyta, gdy decyduje kiedy pokazać Twoją stronę.\n\nKażda strona powinna jasno wskazywać co odwiedzający ma zrobić dalej. Zadzwonić, zarezerwować, wysłać zapytanie, kupić. Jedna czytelna akcja na stronę.',
         },
         {
           heading: "Ile kosztuje strona internetowa dla małej firmy w Aberdeenshire?",
@@ -526,11 +526,11 @@ export const articles: Article[] = [
         },
         {
           heading: "Clarity beats cleverness every time",
-          body: "A visitor needs to know within three seconds what you do, who you do it for, and what to do next. Not after reading your mission statement. Not after scrolling through a carousel.\n\nWe see this mistake over and over: vague headlines like 'Innovative Solutions for Forward-Thinking Businesses.' That means nothing. Compare it to 'Web Design for Small Businesses in Aberdeenshire: Fixed Quotes, No Surprises.' One is forgettable. The other tells the right person immediately that they are in the right place.\n\nEvery headline, subheading and button on your site needs to pass this test: would a first-time visitor, scanning quickly, understand what you offer and why it matters to them? If not, rewrite it.",
+          body: 'A visitor needs to know within three seconds what you do, who you do it for, and what to do next. Not after reading your mission statement. Not after scrolling through a carousel.\n\nWe see this mistake over and over: vague headlines like "Innovative Solutions for Forward-Thinking Businesses." That means nothing. Compare it to "Web Design for Small Businesses in Aberdeenshire: Fixed Quotes, No Surprises." One is forgettable. The other tells the right person immediately that they are in the right place.\n\nEvery headline, subheading and button on your site needs to pass this test: would a first-time visitor, scanning quickly, understand what you offer and why it matters to them? If not, rewrite it.',
         },
         {
           heading: "Trust signals are not optional",
-          body: "Before someone emails or calls you, they check you are real. Can you deliver what you promise?\n\nTrust is built on specific signals, not general claims. 'We are the best' is a claim. A specific line like '47 projects delivered across Aberdeenshire in the past three years' is a signal — use your own real numbers, never invented ones.\n\nUse real client names where you have permission. Show actual results: a concrete figure like '34% fewer no-shows after the new booking system went live' beats any adjective. Put a direct phone number on every page. Show your location. For local businesses, being findable and reachable matters more than looking glossy.",
+          body: 'Before someone emails or calls you, they check you are real. Can you deliver what you promise?\n\nTrust is built on specific signals, not general claims. "We are the best" is a claim. A specific line like "47 projects delivered across Aberdeenshire in the past three years" is a signal. Use your own real numbers, never invented ones.\n\nUse real client names where you have permission. Show actual results: a concrete figure like "34% fewer no-shows after the new booking system went live" beats any adjective. Put a direct phone number on every page. Show your location. For local businesses, being findable and reachable matters more than looking glossy.',
         },
         {
           heading: "Friction kills conversions silently",
@@ -538,7 +538,7 @@ export const articles: Article[] = [
         },
         {
           heading: "One action per page",
-          body: "Every page needs one clear purpose and one prominent action. Contact pages need to make contacting easy. Service pages need to explain the service and offer a clear next step. Homepages need to orient the visitor and direct them to the right place.\n\nMultiple competing calls to action, 'Call us', 'Download our brochure', 'Sign up for the newsletter', 'Read our blog', dilute attention and reduce the chance of any one action being taken. Pick the most important action for that page and make it impossible to miss.",
+          body: 'Every page needs one clear purpose and one prominent action. Contact pages need to make contacting easy. Service pages need to explain the service and offer a clear next step. Homepages need to orient the visitor and direct them to the right place.\n\nMultiple competing calls to action, "Call us", "Download our brochure", "Sign up for the newsletter", "Read our blog", dilute attention and reduce the chance of any one action being taken. Pick the most important action for that page and make it impossible to miss.',
         },
         {
           heading: "Mobile is not a separate version. It is the version.",
@@ -560,11 +560,11 @@ export const articles: Article[] = [
         },
         {
           heading: "Jasność bije spryt za każdym razem",
-          body: "Gość musi wiedzieć w ciągu trzech sekund co robisz, dla kogo to robisz i co ma zrobić dalej. Nie po przeczytaniu misji firmy. Nie po przewinięciu karuzeli.\n\nTen błąd widzimy ciągle: niejasne nagłówki typu 'Innowacyjne Rozwiązania dla Biznesów Przyszłościowych.' To nic nie znaczy. Porównaj to z 'Web Design dla Małych Firm w Aberdeenshire: Stałe Wyceny, Żadnych Niespodzianek.' Jedno jest niezapamiętywalne. Drugie od razu mówi właściwemu człowiekowi, że trafił we właściwe miejsce.\n\nKażdy nagłówek, podtytuł i przycisk na stronie musi przejść ten test: czy nowy odwiedzający, przeglądający szybko, zrozumie co oferujesz i dlaczego to dla niego ważne? Jeśli nie, przepisz to.",
+          body: 'Gość musi wiedzieć w ciągu trzech sekund co robisz, dla kogo to robisz i co ma zrobić dalej. Nie po przeczytaniu misji firmy. Nie po przewinięciu karuzeli.\n\nTen błąd widzimy ciągle: niejasne nagłówki typu "Innowacyjne Rozwiązania dla Biznesów Przyszłościowych." To nic nie znaczy. Porównaj to z "Web Design dla Małych Firm w Aberdeenshire: Stałe Wyceny, Żadnych Niespodzianek." Jedno jest niezapamiętywalne. Drugie od razu mówi właściwemu człowiekowi, że trafił we właściwe miejsce.\n\nKażdy nagłówek, podtytuł i przycisk na stronie musi przejść ten test: czy nowy odwiedzający, przeglądający szybko, zrozumie co oferujesz i dlaczego to dla niego ważne? Jeśli nie, przepisz to.',
         },
         {
           heading: "Sygnały zaufania nie są opcjonalne",
-          body: "Zanim ktoś wypełni formularz lub zadzwoni, chce się upewnić że jesteś prawdziwy. Czy dasz radę dostarczyć to, co obiecujesz?\n\nZaufanie budujemy na konkretnych sygnałach, nie ogólnych twierdzeniach. 'Jesteśmy najlepsi' to twierdzenie. Konkretne zdanie w stylu '47 projektów zrealizowanych w Aberdeenshire w ciągu ostatnich trzech lat' to sygnał — podaj swoje prawdziwe liczby, nigdy zmyślone.\n\nUżywaj prawdziwych nazw klientów, gdzie masz zgodę. Pokazuj faktyczne wyniki: konkretna liczba w stylu '34% mniej nieobecności po wdrożeniu nowego systemu rezerwacji' bije na głowę każdy przymiotnik. Daj bezpośredni numer telefonu na każdej stronie, nie formularz kontaktowy ukryty w stopce. Pokaż gdzie jesteś. Dla firm lokalnych bycie widocznym i osiągalnym ma większe znaczenie niż ładny wygląd.",
+          body: 'Zanim ktoś wypełni formularz lub zadzwoni, chce się upewnić że jesteś prawdziwy. Czy dasz radę dostarczyć to, co obiecujesz?\n\nZaufanie budujemy na konkretnych sygnałach, nie ogólnych twierdzeniach. "Jesteśmy najlepsi" to twierdzenie. Konkretne zdanie w stylu "47 projektów zrealizowanych w Aberdeenshire w ciągu ostatnich trzech lat" to sygnał. Podaj swoje prawdziwe liczby, nigdy zmyślone.\n\nUżywaj prawdziwych nazw klientów, gdzie masz zgodę. Pokazuj faktyczne wyniki: konkretna liczba w stylu "34% mniej nieobecności po wdrożeniu nowego systemu rezerwacji" bije na głowę każdy przymiotnik. Daj bezpośredni numer telefonu na każdej stronie, nie formularz kontaktowy ukryty w stopce. Pokaż gdzie jesteś. Dla firm lokalnych bycie widocznym i osiągalnym ma większe znaczenie niż ładny wygląd.',
         },
         {
           heading: "Tarcie cicho zabija konwersję",
@@ -572,7 +572,7 @@ export const articles: Article[] = [
         },
         {
           heading: "Jedna akcja na stronę",
-          body: "Każda strona potrzebuje jednego jasnego celu i jednego widocznego wezwania do działania. Strona kontaktowa ułatwia kontakt. Strona usługowa tłumaczy usługę i oferuje jasny następny krok. Strona główna orientuje odwiedzającego i kieruje go we właściwe miejsce.\n\nWiele konkurujących wezwań do działania, 'Zadzwoń do nas', 'Pobierz naszą broszurę', 'Zapisz się do newslettera', 'Przeczytaj nasz blog', rozprasza uwagę i zmniejsza szansę, że którekolwiek zostanie podjęte. Wybierz najważniejszą akcję dla danej strony i spraw, żeby była niemożliwa do przeoczenia.",
+          body: 'Każda strona potrzebuje jednego jasnego celu i jednego widocznego wezwania do działania. Strona kontaktowa ułatwia kontakt. Strona usługowa tłumaczy usługę i oferuje jasny następny krok. Strona główna orientuje odwiedzającego i kieruje go we właściwe miejsce.\n\nWiele konkurujących wezwań do działania, "Zadzwoń do nas", "Pobierz naszą broszurę", "Zapisz się do newslettera", "Przeczytaj nasz blog", rozprasza uwagę i zmniejsza szansę, że którekolwiek zostanie podjęte. Wybierz najważniejszą akcję dla danej strony i spraw, żeby była niemożliwa do przeoczenia.',
         },
         {
           heading: "Mobile to nie osobna wersja. To główna wersja.",

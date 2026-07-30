@@ -116,7 +116,7 @@ export default function CookieConsent() {
             {t("cookies.bannerDesc")}
           </p>
 
-          {/* Expanded categories — CSS max-h transition */}
+          {/* Expanded categories - CSS max-h transition */}
           <div
             aria-hidden={!expanded}
             className={`overflow-hidden transition-all duration-250 ease-in-out ${

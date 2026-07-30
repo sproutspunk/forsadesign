@@ -24,8 +24,8 @@ function pl(s: string): string {
 }
 
 // Colours (pdf-lib uses 0-1 range)
-const NAVY = rgb(0.039, 0.102, 0.196); // #0A1A32 – text / accent boxes
-const HEADER_BG = rgb(0.051, 0.153, 0.243); // #0D273E – matches logo-new-lg.png background
+const NAVY = rgb(0.039, 0.102, 0.196); // #0A1A32 - text / accent boxes
+const HEADER_BG = rgb(0.051, 0.153, 0.243); // #0D273E - matches logo-new-lg.png background
 const GOLD = rgb(0.784, 0.647, 0.255); // #C8A541
 const LIGHT_GREY = rgb(0.95, 0.95, 0.96);
 const MID_GREY = rgb(0.6, 0.6, 0.65);

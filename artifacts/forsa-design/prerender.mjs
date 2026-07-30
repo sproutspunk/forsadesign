@@ -212,7 +212,7 @@ function buildHomepageBodyEn() {
 </section>
 <section id="contact">
 <h2>Get In Touch</h2>
-<p>Ready to start your next project? Let&#8217;s talk.</p>
+<p>Ready to start your next project? Let's talk.</p>
 <p>Email: <!--email_off--><a href="mailto:hello@forsadesign.co.uk">hello@forsadesign.co.uk</a><!--/email_off--></p>
 <p>Phone: <a href="tel:07770110735">07770110735</a></p>
 </section>
