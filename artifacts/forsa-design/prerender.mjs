@@ -22,6 +22,7 @@
 import { readFileSync, writeFileSync, mkdirSync } from "fs";
 import { join, dirname } from "path";
 import { fileURLToPath } from "url";
+import { articles } from "./src/data/articlesData.ts";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const distDir = join(__dirname, "dist/public");
@@ -349,51 +350,11 @@ function buildSearchBody(lang) {
 </main>`;
 }
 
+// Blog index entries derived from src/data/articlesData.ts so the prerendered
+// blog listing, the article routes, and the sitemap can never drift apart.
 const blogArticleIndex = {
-  en: [
-    ["how-to-choose-a-web-agency", "How to Choose a Web Agency: 7 Questions You Should Ask"],
-    ["responsiveness-vs-speed", "Responsiveness vs Speed: Why Both Matter for Conversions"],
-    ["cms-template-vs-custom-site", "Why a CMS Template Is Not the Same as a Custom Website"],
-    ["ecommerce-speed-and-ux", "E-commerce: Why Speed and User Experience Drive Sales"],
-    ["seo-2026-website-is-just-the-start", "SEO: Why Your Website Is Only the Beginning"],
-    [
-      "web-design-aberdeenshire",
-      "Web Design for Small Businesses in Aberdeenshire: What to Expect in 2026",
-    ],
-    [
-      "website-conversion-what-actually-works",
-      "What Makes a Website Actually Convert Visitors into Customers",
-    ],
-    ["website-maintenance-matters", "Why Website Maintenance Matters More Than the Build Itself"],
-  ],
-  pl: [
-    ["jak-wybrac-agencje-webowa", "Jak wybrać agencję webową: 7 pytań, które powinieneś zadać"],
-    [
-      "responsywnosc-vs-szybkosc",
-      "Responsywność vs Szybkość: Dlaczego oba mają znaczenie dla konwersji",
-    ],
-    [
-      "szablon-cms-vs-strona-na-zamowienie",
-      "Dlaczego szablon CMS to nie to samo co dedykowana strona",
-    ],
-    [
-      "ecommerce-szybkosc-i-ux",
-      "E-commerce: Dlaczego szybkość i doświadczenie użytkownika napędzają sprzedaż",
-    ],
-    ["seo-2026-strona-to-dopiero-poczatek", "SEO: Dlaczego strona to dopiero początek"],
-    [
-      "web-design-aberdeenshire-szkocja",
-      "Web Design dla Małych Firm w Aberdeenshire: Czego Się Spodziewać w 2026",
-    ],
-    [
-      "konwersja-strony-co-dziala-naprawde",
-      "Co Sprawia, że Strona Naprawdę Zamienia Odwiedzających w Klientów",
-    ],
-    [
-      "dlaczego-utrzymanie-strony-ma-znaczenie",
-      "Dlaczego Utrzymanie Strony Jest Ważniejsze Niż Samo Zbudowanie",
-    ],
-  ],
+  en: articles.map((a) => [a.slugEn, a.en.title]),
+  pl: articles.map((a) => [a.slugPl, a.pl.title]),
 };
 
 function buildBlogBody(lang) {
@@ -410,6 +371,41 @@ function buildBlogBody(lang) {
 <ul>
 ${items}
 </ul>
+</main>`;
+}
+
+/**
+ * Truncate text to a maximum length for meta descriptions without cutting
+ * a word in half.
+ */
+function truncateDesc(text, max = 158) {
+  if (text.length <= max) return text;
+  const cut = text.slice(0, max);
+  return `${cut.slice(0, cut.lastIndexOf(" "))}…`;
+}
+
+/** Render a full blog article as static HTML for crawlers. */
+function buildArticleBody(lang, article) {
+  const en = lang === "en";
+  const content = article[lang];
+  const slug = en ? article.slugEn : article.slugPl;
+  const sectionsHtml = content.sections
+    .map((s) => {
+      const heading = s.heading ? `<h2>${ht(s.heading)}</h2>\n` : "";
+      return `${heading}<p>${ht(s.body)}</p>`;
+    })
+    .join("\n");
+  return `<header>
+<nav><a href="/${lang}/">Forsa Design</a> | <a href="/${lang}/#services">${en ? "Services" : "Usługi"}</a> | <a href="/${lang}/#faq">FAQ</a> | <a href="/${lang}/#contact">${en ? "Contact" : "Kontakt"}</a> | <a href="/${lang}/blog">Blog</a></nav>
+</header>
+<main>
+<article>
+<p><a href="/${lang}/blog">${en ? "← Back to blog" : "← Wróć do bloga"}</a></p>
+<h1>${ht(content.title)}</h1>
+<p><time datetime="${article.dateIso}">${article.dateIso}</time> · ${article.readingTimeMin} min</p>
+${sectionsHtml}
+<p><a href="/${lang}/blog/${slug}">${en ? "Read on Forsa Design" : "Czytaj na Forsa Design"}</a></p>
+</article>
 </main>`;
 }
 
@@ -1882,6 +1878,33 @@ const routes = [
   },
 ];
 
+// Blog article routes — one per article per language, derived from
+// src/data/articlesData.ts so slugs and content never drift.
+for (const article of articles) {
+  for (const lang of ["en", "pl"]) {
+    const en = lang === "en";
+    const content = article[lang];
+    const slug = en ? article.slugEn : article.slugPl;
+    const canonical = `${SITE}/${lang}/blog/${slug}`;
+    routes.push({
+      outDir: `${lang}/blog/${slug}`,
+      lang,
+      title: `${content.title} | Forsa Design`,
+      desc: truncateDesc(content.excerpt),
+      ogTitle: content.title,
+      locale: en ? "en_US" : "pl_PL",
+      canonical,
+      alternates: [
+        { lang: "en", href: `${SITE}/en/blog/${article.slugEn}` },
+        { lang: "pl", href: `${SITE}/pl/blog/${article.slugPl}` },
+      ],
+      bodyHtml: buildArticleBody(lang, article),
+      isArticle: true,
+      lastmod: article.dateIso,
+    });
+  }
+}
+
 let template = readFileSync(join(distDir, "index.html"), "utf-8");
 
 // Inline the built stylesheet into every prerendered page. PageSpeed flagged
@@ -1964,7 +1987,11 @@ for (const route of routes) {
             ? "0.4"
             : "0.7";
   const changefreq = isHome ? "monthly" : isLegal ? "yearly" : "monthly";
-  sitemapEntries.push(buildSitemapEntry(loc, alternates, priority, changefreq, null));
+  const articlePriority = route.isArticle ? "0.6" : priority;
+  const articleChangefreq = route.isArticle ? "yearly" : changefreq;
+  sitemapEntries.push(
+    buildSitemapEntry(loc, alternates, articlePriority, articleChangefreq, route.lastmod ?? null),
+  );
 }
 
 for (const cfg of spaMarketingRoutes) {
