@@ -154,8 +154,10 @@ export default function Header() {
       <div
         id="mobile-nav"
         aria-hidden={!isMobileMenuOpen}
-        className={`md:hidden bg-card border-b border-border overflow-hidden transition-all duration-200 ease-in-out ${
-          isMobileMenuOpen ? "max-h-[100vh] opacity-100" : "max-h-0 opacity-0"
+        className={`md:hidden bg-card border-b border-border overflow-y-auto overscroll-contain transition-all duration-200 ease-in-out ${
+          isMobileMenuOpen
+            ? "max-h-[calc(100dvh-6rem)] opacity-100"
+            : "max-h-0 overflow-hidden opacity-0"
         }`}
       >
         <div className="px-6 py-4 flex flex-col gap-4">
