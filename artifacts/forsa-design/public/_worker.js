@@ -30,7 +30,9 @@ const escapeHtml = (value) =>
 
 async function sendViaProton(env, mail) {
   const host = (env.PROTON_SMTP_HOST || "smtp.protonmail.ch").trim();
-  const port = parseInt((env.PROTON_SMTP_PORT || "587").trim(), 10) || 587;
+  // Cloudflare Workers must use Proton's STARTTLS endpoint. Do not inherit a
+  // legacy 465 value from the shared SMTP secret used by the API server.
+  const port = 587;
   const user = (env.PROTON_SMTP_USER || "").trim();
   const pass = (env.PROTON_SMTP_PASS || "").trim();
 
@@ -216,6 +218,17 @@ export default {
         );
         return json({ error: "Message delivery failed." }, 500);
       }
+    }
+
+    if (url.pathname === "/api/contact-health") {
+      return json({
+        status: "ok",
+        turnstileConfigured: Boolean(env.TURNSTILE_SECRET_KEY),
+        smtpUserConfigured: Boolean(env.PROTON_SMTP_USER),
+        smtpPasswordConfigured: Boolean(env.PROTON_SMTP_PASS),
+        smtpPort: 587,
+        socketsAvailable: typeof connect === "function",
+      });
     }
 
     // Proxy ALL /api/** requests to the Replit backend.
