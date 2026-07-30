@@ -120,6 +120,43 @@ router.post("/contact", contactLimiter, async (req, res) => {
       return;
     }
 
+    // Confirmation to the sender. Best-effort: if this fails, the owner copy
+    // has already been delivered, so the submission still counts as sent.
+    const confirmation =
+      language === "pl"
+        ? {
+            subject: "Dziękuję za wiadomość — Forsa Design",
+            text: `Cześć ${name},\n\nDziękuję za kontakt. Otrzymałem Twoją wiadomość i odpowiem zazwyczaj w ciągu 24 godzin.\n\nTwoja wiadomość:\n${message}\n\n—\nMiro\nForsa Design\nhello@forsadesign.co.uk\n07770 110 735`,
+            html: `<p>Cześć ${escapeHtml(name)},</p><p>Dziękuję za kontakt. Otrzymałem Twoją wiadomość i odpowiem zazwyczaj w ciągu 24 godzin.</p><hr style="border:none;border-top:1px solid #e5e5e5;margin:24px 0;"><p style="color:#666;font-size:14px;"><strong>Twoja wiadomość:</strong></p><blockquote style="border-left:3px solid #d4af55;padding-left:16px;margin:0;color:#333;">${escapeHtml(message).replace(/\n/g, "<br>")}</blockquote><hr style="border:none;border-top:1px solid #e5e5e5;margin:24px 0;"><p style="font-size:14px;color:#666;">—<br><strong>Miro</strong><br>Forsa Design<br><a href="mailto:hello@forsadesign.co.uk">hello@forsadesign.co.uk</a><br>07770 110 735</p>`,
+          }
+        : {
+            subject: "Thank you for your message — Forsa Design",
+            text: `Hi ${name},\n\nThank you for reaching out. I've received your message and will reply within 24 hours.\n\nYour message:\n${message}\n\n—\nMiro\nForsa Design\nhello@forsadesign.co.uk\n07770 110 735`,
+            html: `<p>Hi ${escapeHtml(name)},</p><p>Thank you for reaching out. I've received your message and will reply within 24 hours.</p><hr style="border:none;border-top:1px solid #e5e5e5;margin:24px 0;"><p style="color:#666;font-size:14px;"><strong>Your message:</strong></p><blockquote style="border-left:3px solid #d4af55;padding-left:16px;margin:0;color:#333;">${escapeHtml(message).replace(/\n/g, "<br>")}</blockquote><hr style="border:none;border-top:1px solid #e5e5e5;margin:24px 0;"><p style="font-size:14px;color:#666;">—<br><strong>Miro</strong><br>Forsa Design<br><a href="mailto:hello@forsadesign.co.uk">hello@forsadesign.co.uk</a><br>07770 110 735</p>`,
+          };
+    try {
+      const confirmationResponse = await fetch("https://api.resend.com/emails", {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+          Authorization: `Bearer ${resendApiKey}`,
+        },
+        body: JSON.stringify({
+          from: "Forsa Design <hello@forsadesign.co.uk>",
+          to: [email],
+          reply_to: OWNER_EMAIL,
+          subject: confirmation.subject,
+          text: confirmation.text,
+          html: confirmation.html,
+        }),
+      });
+      if (!confirmationResponse.ok) {
+        req.log?.warn("Contact confirmation email was rejected by Resend");
+      }
+    } catch (confirmationError) {
+      req.log?.warn({ err: confirmationError }, "Contact confirmation email failed");
+    }
+
     res.json({ ok: true });
   } catch (error) {
     req.log?.error({ err: error }, "Contact message delivery failed");
