@@ -146,7 +146,7 @@ function ensureXDefault(alternates, fallback) {
 
 function buildHomepageBodyEn() {
   return `<header>
-<nav><a href="/en/">Forsa Design</a> | <a href="/en/#services">Services</a> | <a href="/en/#portfolio">Portfolio</a> | <a href="/en/#about">About</a> | <a href="/en/#faq">FAQ</a> | <a href="/en/#contact">Contact</a> | <a href="/en/search">Search</a></nav>
+<nav><a href="/en/">Forsa Design</a> | <a href="/en/#services">Services</a> | <a href="/en/#portfolio">Portfolio</a> | <a href="/en/#about">About</a> | <a href="/en/#faq">FAQ</a> | <a href="/en/#contact">Contact</a> | <a href="/en/blog">Blog</a></nav>
 </header>
 <main>
 <section id="home">
@@ -345,6 +345,70 @@ function buildSearchBody(lang) {
 <li><a href="/${lang}/services">${en ? "Industrial web design and bespoke web systems" : "Web design dla przemysłu i dedykowane systemy"}</a></li>
 <li><a href="/${lang}/about">${en ? "About Forsa Design" : "O Forsa Design"}</a></li>
 <li><a href="/${lang}/#faq">FAQ</a></li>
+</ul>
+</main>`;
+}
+
+const blogArticleIndex = {
+  en: [
+    ["how-to-choose-a-web-agency", "How to Choose a Web Agency: 7 Questions You Should Ask"],
+    ["responsiveness-vs-speed", "Responsiveness vs Speed: Why Both Matter for Conversions"],
+    ["cms-template-vs-custom-site", "Why a CMS Template Is Not the Same as a Custom Website"],
+    ["ecommerce-speed-and-ux", "E-commerce: Why Speed and User Experience Drive Sales"],
+    ["seo-2026-website-is-just-the-start", "SEO: Why Your Website Is Only the Beginning"],
+    [
+      "web-design-aberdeenshire",
+      "Web Design for Small Businesses in Aberdeenshire: What to Expect in 2026",
+    ],
+    [
+      "website-conversion-what-actually-works",
+      "What Makes a Website Actually Convert Visitors into Customers",
+    ],
+    ["website-maintenance-matters", "Why Website Maintenance Matters More Than the Build Itself"],
+  ],
+  pl: [
+    ["jak-wybrac-agencje-webowa", "Jak wybrać agencję webową: 7 pytań, które powinieneś zadać"],
+    [
+      "responsywnosc-vs-szybkosc",
+      "Responsywność vs Szybkość: Dlaczego oba mają znaczenie dla konwersji",
+    ],
+    [
+      "szablon-cms-vs-strona-na-zamowienie",
+      "Dlaczego szablon CMS to nie to samo co dedykowana strona",
+    ],
+    [
+      "ecommerce-szybkosc-i-ux",
+      "E-commerce: Dlaczego szybkość i doświadczenie użytkownika napędzają sprzedaż",
+    ],
+    ["seo-2026-strona-to-dopiero-poczatek", "SEO: Dlaczego strona to dopiero początek"],
+    [
+      "web-design-aberdeenshire-szkocja",
+      "Web Design dla Małych Firm w Aberdeenshire: Czego Się Spodziewać w 2026",
+    ],
+    [
+      "konwersja-strony-co-dziala-naprawde",
+      "Co Sprawia, że Strona Naprawdę Zamienia Odwiedzających w Klientów",
+    ],
+    [
+      "dlaczego-utrzymanie-strony-ma-znaczenie",
+      "Dlaczego Utrzymanie Strony Jest Ważniejsze Niż Samo Zbudowanie",
+    ],
+  ],
+};
+
+function buildBlogBody(lang) {
+  const en = lang === "en";
+  const items = blogArticleIndex[lang]
+    .map(([slug, title]) => `<li><a href="/${lang}/blog/${slug}">${title}</a></li>`)
+    .join("\n");
+  return `<header>
+<nav><a href="/${lang}/">Forsa Design</a> | <a href="/${lang}/#services">${en ? "Services" : "Usługi"}</a> | <a href="/${lang}/#faq">FAQ</a> | <a href="/${lang}/#contact">${en ? "Contact" : "Kontakt"}</a> | <a href="/${lang}/blog">Blog</a></nav>
+</header>
+<main>
+<h1>Blog</h1>
+<p>${en ? "Expert insights on web design, SEO, e-commerce, and digital strategy from the Forsa Design team." : "Wiedza ekspercka o web designie, SEO, e-commerce i strategii cyfrowej od zespołu Forsa Design."}</p>
+<ul>
+${items}
 </ul>
 </main>`;
 }
@@ -1787,6 +1851,34 @@ const routes = [
       { lang: "pl", href: `${SITE}/pl/search` },
     ],
     bodyHtml: buildSearchBody("pl"),
+  },
+  {
+    outDir: "en/blog",
+    lang: "en",
+    title: "Blog | Forsa Design",
+    desc: "Expert insights on web design, SEO, e-commerce, and digital strategy from the Forsa Design team.",
+    ogTitle: "Blog | Forsa Design",
+    locale: "en_US",
+    canonical: `${SITE}/en/blog`,
+    alternates: [
+      { lang: "en", href: `${SITE}/en/blog` },
+      { lang: "pl", href: `${SITE}/pl/blog` },
+    ],
+    bodyHtml: buildBlogBody("en"),
+  },
+  {
+    outDir: "pl/blog",
+    lang: "pl",
+    title: "Blog | Forsa Design",
+    desc: "Wiedza ekspercka o web designie, SEO, e-commerce i strategii cyfrowej od zespołu Forsa Design.",
+    ogTitle: "Blog | Forsa Design",
+    locale: "pl_PL",
+    canonical: `${SITE}/pl/blog`,
+    alternates: [
+      { lang: "en", href: `${SITE}/en/blog` },
+      { lang: "pl", href: `${SITE}/pl/blog` },
+    ],
+    bodyHtml: buildBlogBody("pl"),
   },
 ];
 
