@@ -10,6 +10,7 @@ import Process from "@/components/Process";
 import About from "@/components/About";
 import CTA from "@/components/CTA";
 import ContactInfo from "@/components/ContactInfo";
+import ContactForm from "@/components/ContactForm";
 import FAQ from "@/components/FAQ";
 import Footer from "@/components/Footer";
 
@@ -218,6 +219,7 @@ export default function HomePage({ lang }: HomePageProps) {
         <FAQ />
         <CTA />
         <ContactInfo />
+        <ContactForm />
       </main>
       <Footer />
     </div>
