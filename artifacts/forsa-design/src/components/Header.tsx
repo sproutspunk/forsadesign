@@ -79,11 +79,11 @@ export default function Header() {
             </a>
           ))}
           <a
-            href={`${base}search`}
-            data-testid="link-nav-search"
+            href={`${base}blog`}
+            data-testid="link-nav-blog"
             className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors"
           >
-            {t("nav.search")}
+            {t("nav.blog")}
           </a>
           <a
             href={quoteHref}
@@ -170,12 +170,12 @@ export default function Header() {
             </a>
           ))}
           <a
-            href={`${base}search`}
+            href={`${base}blog`}
             onClick={() => setIsMobileMenuOpen(false)}
             className="text-lg font-medium text-foreground hover:text-primary transition-colors"
-            data-testid="link-nav-search-mobile"
+            data-testid="link-nav-blog-mobile"
           >
-            {t("nav.search")}
+            {t("nav.blog")}
           </a>
           <div className="flex flex-col gap-3 pt-2 border-t border-border">
             <a

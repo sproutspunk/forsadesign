@@ -16,7 +16,7 @@ const translations = {
       quote: "Quote",
       pricing: "Pricing",
       aboutPage: "About Us",
-      search: "Search",
+      blog: "Blog",
       faq: "FAQ",
     },
     faq: {
@@ -184,7 +184,7 @@ const translations = {
       quote: "Wycena",
       pricing: "Ceny",
       aboutPage: "O Nas",
-      search: "Szukaj",
+      blog: "Blog",
       faq: "FAQ",
     },
     faq: {

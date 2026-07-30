@@ -230,7 +230,7 @@ function buildHomepageBodyEn() {
 
 function buildHomepageBodyPl() {
   return `<header>
-<nav><a href="/pl/">Forsa Design</a> | <a href="/pl/#services">Us&#322;ugi</a> | <a href="/pl/#portfolio">Portfolio</a> | <a href="/pl/#about">O Nas</a> | <a href="/pl/#faq">FAQ</a> | <a href="/pl/#contact">Kontakt</a> | <a href="/pl/search">Szukaj</a></nav>
+<nav><a href="/pl/">Forsa Design</a> | <a href="/pl/#services">Us&#322;ugi</a> | <a href="/pl/#portfolio">Portfolio</a> | <a href="/pl/#about">O Nas</a> | <a href="/pl/#faq">FAQ</a> | <a href="/pl/#contact">Kontakt</a> | <a href="/pl/blog">Blog</a></nav>
 </header>
 <main>
 <section id="home">
@@ -334,7 +334,7 @@ function buildServicesBody(lang) {
 function buildSearchBody(lang) {
   const en = lang === "en";
   return `<header>
-<nav><a href="/${lang}/">Forsa Design</a> | <a href="/${lang}/#services">${en ? "Services" : "Usługi"}</a> | <a href="/${lang}/#faq">FAQ</a> | <a href="/${lang}/#contact">${en ? "Contact" : "Kontakt"}</a> | <a href="/${lang}/search">${en ? "Search" : "Szukaj"}</a></nav>
+<nav><a href="/${lang}/">Forsa Design</a> | <a href="/${lang}/#services">${en ? "Services" : "Usługi"}</a> | <a href="/${lang}/#faq">FAQ</a> | <a href="/${lang}/#contact">${en ? "Contact" : "Kontakt"}</a> | <a href="/${lang}/blog">Blog</a></nav>
 </header>
 <main>
 <h1>${en ? "Search Forsa Design" : "Szukaj w Forsa Design"}</h1>
