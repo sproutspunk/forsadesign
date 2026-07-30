@@ -28,11 +28,10 @@ const escapeHtml = (value) =>
       })[character],
   );
 
-async function sendViaProton(env, mail) {
-  const host = (env.PROTON_SMTP_HOST || "smtp.protonmail.ch").trim();
-  // Cloudflare Workers must use Proton's STARTTLS endpoint. Do not inherit a
-  // legacy 465 value from the shared SMTP secret used by the API server.
-  const port = 587;
+async function sendViaProton(env, mail, options = {}) {
+  const host = (options.host || env.PROTON_SMTP_HOST || "smtp.protonmail.ch").trim();
+  const port = options.port || 587;
+  const useStartTls = options.mode !== "implicit";
   const user = (env.PROTON_SMTP_USER || "").trim();
   const pass = (env.PROTON_SMTP_PASS || "").trim();
 
@@ -44,7 +43,7 @@ async function sendViaProton(env, mail) {
   const decoder = new TextDecoder();
   const socket = connect(
     { hostname: host, port },
-    { secureTransport: "starttls", allowHalfOpen: true },
+    { secureTransport: useStartTls ? "starttls" : "on", allowHalfOpen: true },
   );
 
   let incoming = "";
@@ -98,16 +97,18 @@ async function sendViaProton(env, mail) {
 
   try {
     await waitFor("220");
-    await send("EHLO forsadesign.co.uk");
-    await waitFor("250");
-    await send("STARTTLS");
-    await waitFor("220");
+    if (useStartTls) {
+      await send("EHLO forsadesign.co.uk");
+      await waitFor("250");
+      await send("STARTTLS");
+      await waitFor("220");
 
-    activeWriter.releaseLock();
-    const secureSocket = socket.startTls();
-    incoming = "";
-    readLoop = startReadLoop(secureSocket.readable);
-    activeWriter = secureSocket.writable.getWriter();
+      activeWriter.releaseLock();
+      const secureSocket = socket.startTls();
+      incoming = "";
+      readLoop = startReadLoop(secureSocket.readable);
+      activeWriter = secureSocket.writable.getWriter();
+    }
 
     await send("EHLO forsadesign.co.uk");
     await waitFor("250");
@@ -227,15 +228,29 @@ export default {
       // Temporary diagnostic: runs the SMTP handshake through AUTH without
       // sending mail, and reports the exact failing step. No secret values
       // are ever included in the response.
-      try {
-        await sendViaProton(env, null);
-        return json({ ok: true, step: "auth-succeeded" });
-      } catch (error) {
-        return json(
-          { ok: false, detail: error instanceof Error ? error.message : String(error) },
-          500,
-        );
+      const attempts = [
+        { label: "default-587-starttls", options: { host: "smtp.protonmail.ch", port: 587 } },
+        {
+          label: "default-465-implicit",
+          options: { host: "smtp.protonmail.ch", port: 465, mode: "implicit" },
+        },
+        { label: "env-587-starttls", options: { port: 587 } },
+      ];
+      const results = [];
+      for (const attempt of attempts) {
+        try {
+          await sendViaProton(env, null, attempt.options);
+          results.push({ attempt: attempt.label, ok: true });
+          break;
+        } catch (error) {
+          results.push({
+            attempt: attempt.label,
+            ok: false,
+            detail: error instanceof Error ? error.message : String(error),
+          });
+        }
       }
+      return json({ results }, results.some((r) => r.ok) ? 200 : 500);
     }
 
     if (url.pathname === "/api/contact-health") {
