@@ -404,7 +404,7 @@ export default function AboutPage({ lang }: AboutPageProps) {
             <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
               {c.heading}
             </h1>
-            <div className="text-xl text-foreground/70 font-light leading-relaxed max-w-2xl text-justify space-y-6">
+            <div className="w-full text-xl text-foreground/70 font-light leading-relaxed text-justify space-y-6">
               <p>{c.intro}</p>
               <p>{c.body2}</p>
               <p>{c.body3}</p>
