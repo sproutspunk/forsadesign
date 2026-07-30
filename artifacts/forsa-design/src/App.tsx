@@ -1,5 +1,6 @@
 import { Switch, Route, Router as WouterRouter, useLocation, useRoute } from "wouter";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { LazyMotion, domAnimation } from "framer-motion";
 import { lazy, Suspense, useEffect } from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -139,16 +140,18 @@ function AnalyticsGate() {
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <TooltipProvider>
-        <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, "")}>
-          <LanguageProvider>
-            <Router />
-            <CookieConsent />
-            <AnalyticsGate />
-          </LanguageProvider>
-        </WouterRouter>
-        <Toaster />
-      </TooltipProvider>
+      <LazyMotion features={domAnimation}>
+        <TooltipProvider>
+          <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, "")}>
+            <LanguageProvider>
+              <Router />
+              <CookieConsent />
+              <AnalyticsGate />
+            </LanguageProvider>
+          </WouterRouter>
+          <Toaster />
+        </TooltipProvider>
+      </LazyMotion>
     </QueryClientProvider>
   );
 }

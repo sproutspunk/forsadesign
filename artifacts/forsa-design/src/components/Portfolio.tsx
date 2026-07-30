@@ -1,5 +1,5 @@
 import { useLanguage } from "@/contexts/LanguageContext";
-import { motion } from "framer-motion";
+import { m as motion } from "framer-motion";
 
 export default function Portfolio() {
   const { t } = useLanguage();

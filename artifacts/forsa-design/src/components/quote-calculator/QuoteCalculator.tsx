@@ -1,5 +1,5 @@
 import { useState, useCallback, useMemo, useContext, createContext } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { m as motion, AnimatePresence } from "framer-motion";
 import { useLanguage } from "@/contexts/LanguageContext";
 import {
   projectTypes,

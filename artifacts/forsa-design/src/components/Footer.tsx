@@ -136,21 +136,21 @@ export default function Footer() {
           </div>
           <a
             href={`/${language}/terms`}
-            className="hover:text-primary transition-colors mr-4"
+            className="hover:text-primary transition-colors mr-4 inline-block py-3 -my-2"
             data-testid="footer-link-terms"
           >
             {t("footer.terms")}
           </a>
           <a
             href={`/${language}/privacy`}
-            className="hover:text-primary transition-colors mr-4"
+            className="hover:text-primary transition-colors mr-4 inline-block py-3 -my-2"
             data-testid="footer-link-privacy"
           >
             {t("footer.privacy")}
           </a>
           <button
             onClick={openCookiePreferences}
-            className="hover:text-primary transition-colors"
+            className="hover:text-primary transition-colors inline-block py-3 -my-2"
             data-testid="footer-link-cookie-preferences"
           >
             {t("footer.cookiePreferences")}

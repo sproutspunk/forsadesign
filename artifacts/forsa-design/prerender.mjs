@@ -112,8 +112,8 @@ function patch(html, meta) {
   // Preload the actual hero LCP image on every prerendered page.
   if (!out.includes('href="/logo-hero-384.webp"')) {
     out = out.replace(
-      /(<link rel="preconnect" href="https:\/\/fonts\.googleapis\.com" \/>)/,
-      `$1\n    <link rel="preload" as="image" href="/logo-header.webp" type="image/webp" fetchpriority="high" />\n    <link rel="preload" as="image" href="/logo-hero-384.webp" type="image/webp" fetchpriority="high" />`,
+      /(\s*<\/head>)/,
+      `\n    <link rel="preload" as="image" href="/logo-header.webp" type="image/webp" fetchpriority="high" />\n    <link rel="preload" as="image" href="/logo-hero-384.webp" type="image/webp" fetchpriority="high" />$1`,
     );
   }
 
@@ -1790,7 +1790,25 @@ const routes = [
   },
 ];
 
-const template = readFileSync(join(distDir, "index.html"), "utf-8");
+let template = readFileSync(join(distDir, "index.html"), "utf-8");
+
+// Inline the built stylesheet into every prerendered page. PageSpeed flagged
+// the blocking /assets/index-*.css request (~1.1s on throttled 4G); inlining
+// removes it from the critical path entirely.
+const cssLinkMatch = template.match(
+  /<link rel="stylesheet" crossorigin href="(\/assets\/[^"]+\.css)"[^>]*>/,
+);
+if (cssLinkMatch) {
+  const builtCss = readFileSync(join(distDir, cssLinkMatch[1]), "utf-8").replace(
+    /<\/style/gi,
+    "<\\/style",
+  );
+  template = template.replace(cssLinkMatch[0], () => `<style>${builtCss}</style>`);
+  console.log(`  \u2713 inlined ${cssLinkMatch[1]} (${builtCss.length} bytes)`);
+} else {
+  console.warn("  ! built stylesheet link not found; CSS left external");
+}
+
 console.log("Prerendering public routes...");
 
 for (const route of routes) {

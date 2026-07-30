@@ -4,7 +4,7 @@ import { useSeoMeta, useJsonLd, buildHref } from "@/hooks/useSeoMeta";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { getArticleBySlug } from "@/data/articlesData";
-import { motion } from "framer-motion";
+import { m as motion } from "framer-motion";
 import { ArrowLeft, Clock } from "lucide-react";
 
 interface ArticlePageProps {

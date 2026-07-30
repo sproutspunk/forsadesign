@@ -1,6 +1,6 @@
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Monitor, ShoppingCart, Layers } from "lucide-react";
-import { motion } from "framer-motion";
+import { m as motion } from "framer-motion";
 
 export default function Services() {
   const { t } = useLanguage();
