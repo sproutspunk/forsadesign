@@ -117,28 +117,31 @@ async function sendViaProton(env, mail) {
     await waitFor("334");
     await send(btoa(pass));
     await waitFor("235");
-    await send(`MAIL FROM:<${mail.from}>`);
-    await waitFor("250");
-    await send(`RCPT TO:<${mail.to}>`);
-    await waitFor("250");
-    await send("DATA");
-    await waitFor("354");
 
-    const escapedBody = mail.text
-      .split("\n")
-      .map((line) => (line.startsWith(".") ? `.${line}` : line))
-      .join("\r\n");
-    const headers = [
-      `From: Forsa Design <${mail.from}>`,
-      `To: ${mail.to}`,
-      `Reply-To: ${mail.replyTo}`,
-      `Subject: ${mail.subject}`,
-      "MIME-Version: 1.0",
-      "Content-Type: text/plain; charset=UTF-8",
-      "Content-Transfer-Encoding: 8bit",
-    ];
-    await send([...headers, "", escapedBody, "."].join("\r\n"));
-    await waitFor("250");
+    if (mail) {
+      await send(`MAIL FROM:<${mail.from}>`);
+      await waitFor("250");
+      await send(`RCPT TO:<${mail.to}>`);
+      await waitFor("250");
+      await send("DATA");
+      await waitFor("354");
+
+      const escapedBody = mail.text
+        .split("\n")
+        .map((line) => (line.startsWith(".") ? `.${line}` : line))
+        .join("\r\n");
+      const headers = [
+        `From: Forsa Design <${mail.from}>`,
+        `To: ${mail.to}`,
+        `Reply-To: ${mail.replyTo}`,
+        `Subject: ${mail.subject}`,
+        "MIME-Version: 1.0",
+        "Content-Type: text/plain; charset=UTF-8",
+        "Content-Transfer-Encoding: 8bit",
+      ];
+      await send([...headers, "", escapedBody, "."].join("\r\n"));
+      await waitFor("250");
+    }
     incoming = "";
     await activeWriter.write(encoder.encode("QUIT\r\n"));
     await activeWriter.close().catch(() => {});
@@ -217,6 +220,21 @@ export default {
           error instanceof Error ? error.message : String(error),
         );
         return json({ error: "Message delivery failed." }, 500);
+      }
+    }
+
+    if (url.pathname === "/api/contact-smtp-check") {
+      // Temporary diagnostic: runs the SMTP handshake through AUTH without
+      // sending mail, and reports the exact failing step. No secret values
+      // are ever included in the response.
+      try {
+        await sendViaProton(env, null);
+        return json({ ok: true, step: "auth-succeeded" });
+      } catch (error) {
+        return json(
+          { ok: false, detail: error instanceof Error ? error.message : String(error) },
+          500,
+        );
       }
     }
 
