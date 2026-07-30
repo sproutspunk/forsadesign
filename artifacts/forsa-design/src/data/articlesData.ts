@@ -530,7 +530,7 @@ export const articles: Article[] = [
         },
         {
           heading: "Trust signals are not optional",
-          body: "Before someone emails or calls you, they check you are real. Can you deliver what you promise?\n\nTrust is built on specific signals, not general claims. 'We are the best' is a claim. 'We have delivered 47 projects across Aberdeenshire over the past three years' is a signal.\n\nUse real client names where you have permission. Show actual results: 'This booking system reduced no-shows by 34%.' Put a direct phone number on every page. Show your location. For local businesses, being findable and reachable matters more than looking glossy.",
+          body: "Before someone emails or calls you, they check you are real. Can you deliver what you promise?\n\nTrust is built on specific signals, not general claims. 'We are the best' is a claim. A specific line like '47 projects delivered across Aberdeenshire in the past three years' is a signal — use your own real numbers, never invented ones.\n\nUse real client names where you have permission. Show actual results: a concrete figure like '34% fewer no-shows after the new booking system went live' beats any adjective. Put a direct phone number on every page. Show your location. For local businesses, being findable and reachable matters more than looking glossy.",
         },
         {
           heading: "Friction kills conversions silently",
@@ -564,7 +564,7 @@ export const articles: Article[] = [
         },
         {
           heading: "Sygnały zaufania nie są opcjonalne",
-          body: "Zanim ktoś wypełni formularz lub zadzwoni, chce się upewnić że jesteś prawdziwy. Czy dasz radę dostarczyć to, co obiecujesz?\n\nZaufanie budujemy na konkretnych sygnałach, nie ogólnych twierdzeniach. 'Jesteśmy najlepsi' to twierdzenie. 'Dostarczyliśmy 47 projektów w Aberdeenshire w ciągu ostatnich trzech lat' to sygnał.\n\nUżywaj prawdziwych nazw klientów, gdzie masz zgodę. Pokazuj faktyczne wyniki: 'Ten system rezerwacji zmniejszył nieobecności o 34%.' Daj bezpośredni numer telefonu na każdej stronie, nie formularz kontaktowy ukryty w stopce. Pokaż gdzie jesteś. Dla firm lokalnych bycie widocznym i osiągalnym ma większe znaczenie niż ładny wygląd.",
+          body: "Zanim ktoś wypełni formularz lub zadzwoni, chce się upewnić że jesteś prawdziwy. Czy dasz radę dostarczyć to, co obiecujesz?\n\nZaufanie budujemy na konkretnych sygnałach, nie ogólnych twierdzeniach. 'Jesteśmy najlepsi' to twierdzenie. Konkretne zdanie w stylu '47 projektów zrealizowanych w Aberdeenshire w ciągu ostatnich trzech lat' to sygnał — podaj swoje prawdziwe liczby, nigdy zmyślone.\n\nUżywaj prawdziwych nazw klientów, gdzie masz zgodę. Pokazuj faktyczne wyniki: konkretna liczba w stylu '34% mniej nieobecności po wdrożeniu nowego systemu rezerwacji' bije na głowę każdy przymiotnik. Daj bezpośredni numer telefonu na każdej stronie, nie formularz kontaktowy ukryty w stopce. Pokaż gdzie jesteś. Dla firm lokalnych bycie widocznym i osiągalnym ma większe znaczenie niż ładny wygląd.",
         },
         {
           heading: "Tarcie cicho zabija konwersję",
