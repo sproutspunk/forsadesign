@@ -16,9 +16,16 @@ export default {
     // so we rewrite the URL to the stable Replit deployment URL.
     if (url.pathname === "/api" || url.pathname.startsWith("/api/")) {
       const targetUrl = new URL(url.pathname + url.search, API_ORIGIN);
+      // Forward the real visitor IP under a dedicated header so the backend
+      // can key rate limits and Turnstile on it. Overwrite (never trust) any
+      // client-supplied value.
+      const headers = new Headers(request.headers);
+      headers.delete("x-real-client-ip");
+      const clientIp = request.headers.get("CF-Connecting-IP");
+      if (clientIp) headers.set("x-real-client-ip", clientIp);
       const proxied = new Request(targetUrl, {
         method: request.method,
-        headers: request.headers,
+        headers,
         body: request.body,
         redirect: "follow",
       });

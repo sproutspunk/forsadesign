@@ -32,7 +32,9 @@ app.use(
 );
 app.use(cors());
 app.use(express.json({ limit: "12mb" }));
-app.use(express.urlencoded({ extended: true }));
+// The contact form posts urlencoded data; keep this cap small so oversized
+// bodies are rejected during parsing rather than trusting Content-Length.
+app.use(express.urlencoded({ extended: true, limit: "16kb" }));
 
 app.use("/api", router);
 

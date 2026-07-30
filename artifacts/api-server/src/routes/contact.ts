@@ -1,7 +1,16 @@
-import { Router, type IRouter } from "express";
-import rateLimit from "express-rate-limit";
+import { Router, type IRouter, type Request } from "express";
+import rateLimit, { ipKeyGenerator } from "express-rate-limit";
 
 const router: IRouter = Router();
+
+// Behind the Cloudflare Worker -> Replit proxy chain, req.ip resolves to a
+// proxy address. The Worker sets X-Real-Client-IP from CF-Connecting-IP (and
+// strips any client-supplied value), so prefer it when present.
+export const realClientIp = (req: Request): string => {
+  const header = req.headers["x-real-client-ip"];
+  const value = Array.isArray(header) ? header[0] : header;
+  return (value ?? "").trim() || req.ip || "";
+};
 const OWNER_EMAIL = "hello@forsadesign.co.uk";
 const CONTACT_MAX_BODY_BYTES = 12_000;
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -11,6 +20,7 @@ const contactLimiter = rateLimit({
   limit: 5,
   standardHeaders: true,
   legacyHeaders: false,
+  keyGenerator: (req) => ipKeyGenerator(realClientIp(req)),
   message: { error: "Too many contact requests. Please try again later." },
 });
 
@@ -78,7 +88,7 @@ router.post("/contact", contactLimiter, async (req, res) => {
         body: JSON.stringify({
           secret: turnstileSecret,
           response: token,
-          remoteip: req.ip,
+          remoteip: realClientIp(req),
         }),
       },
     );
