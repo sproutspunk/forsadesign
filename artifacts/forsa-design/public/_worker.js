@@ -239,7 +239,12 @@ export default {
       const results = [];
       for (const attempt of attempts) {
         try {
-          await sendViaProton(env, null, attempt.options);
+          await Promise.race([
+            sendViaProton(env, null, attempt.options),
+            new Promise((_, reject) =>
+              setTimeout(() => reject(new Error("attempt timed out after 20s")), 20000),
+            ),
+          ]);
           results.push({ attempt: attempt.label, ok: true });
           break;
         } catch (error) {
