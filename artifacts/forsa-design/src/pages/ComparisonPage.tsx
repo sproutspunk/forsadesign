@@ -186,7 +186,7 @@ const content = {
       },
       {
         name: "Forsa Design",
-        tagline: "Strona, kt\u00f3ra pracuje dla Twojego biznesu \u2014 nie na odwr\u00f3t",
+        tagline: "Strona, kt\u00f3ra pracuje dla Twojego biznesu: nie na odwr\u00f3t",
         pros: [
           "Dostosowana do cel\u00f3w i klient\u00f3w, nie do szablon\u00f3w",
           "Szybkie do\u015bwiadczenia, kt\u00f3re szanuj\u0105 czas u\u017cytkownik\u00f3w",

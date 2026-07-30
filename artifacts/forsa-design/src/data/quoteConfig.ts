@@ -171,8 +171,8 @@ export const projectTypes: QuoteOption[] = [
   },
   {
     value: "business",
-    labelEn: "Business Website (6\u201315 pages)",
-    labelPl: "Strona firmowa (6\u201315 stron)",
+    labelEn: "Business Website (6-15 pages)",
+    labelPl: "Strona firmowa (6-15 stron)",
     price: 4000,
   },
   {
@@ -472,26 +472,26 @@ export const maintenanceOptions: MaintenanceOption[] = [
 export const deliveryOptions: DeliveryOption[] = [
   {
     value: "standard",
-    labelEn: "Standard (6\u201310 weeks)",
-    labelPl: "Standard (6\u201310 tygodni)",
+    labelEn: "Standard (6-10 weeks)",
+    labelPl: "Standard (6-10 tygodni)",
     multiplier: 0,
   },
   {
     value: "priority",
-    labelEn: "Priority (4\u20136 weeks)",
-    labelPl: "Priorytet (4\u20136 tygodni)",
+    labelEn: "Priority (4-6 weeks)",
+    labelPl: "Priorytet (4-6 tygodni)",
     multiplier: 0.2,
   },
   {
     value: "fast",
-    labelEn: "Fast Track (2\u20133 weeks)",
-    labelPl: "Szybka ścieżka (2\u20133 tygodnie)",
+    labelEn: "Fast Track (2-3 weeks)",
+    labelPl: "Szybka ścieżka (2-3 tygodnie)",
     multiplier: 0.4,
   },
   {
     value: "express",
-    labelEn: "Express (1\u20132 weeks)",
-    labelPl: "Ekspres (1\u20132 tygodnie)",
+    labelEn: "Express (1-2 weeks)",
+    labelPl: "Ekspres (1-2 tygodnie)",
     multiplier: 0.7,
   },
 ];
