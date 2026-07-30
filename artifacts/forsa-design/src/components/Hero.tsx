@@ -6,7 +6,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-[70dvh] flex items-center justify-center pt-8 overflow-hidden"
+      className="relative min-h-[58dvh] flex items-center justify-center pt-8 overflow-hidden"
     >
       <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary/10 via-background to-background" />
       <div className="container mx-auto px-6 relative z-10">
@@ -28,7 +28,7 @@ export default function Hero() {
             {t("hero.tagline")}
           </h1>
 
-          <p className="text-lg md:text-xl text-foreground/70 font-light mb-3 max-w-3xl">
+          <p className="text-lg md:text-xl text-foreground/70 font-light mb-3 max-w-5xl text-balance">
             {t("hero.subheader")}
           </p>
 
