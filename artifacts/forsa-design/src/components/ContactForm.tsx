@@ -25,6 +25,7 @@ export default function ContactForm() {
 
   useEffect(() => {
     if (!widgetRef.current) return;
+    const container = widgetRef.current;
 
     const renderWidget = () => {
       if (!widgetRef.current || !window.turnstile || widgetIdRef.current) return;
@@ -45,21 +46,53 @@ export default function ContactForm() {
       });
     };
 
-    const existingScript = document.getElementById(TURNSTILE_SCRIPT_ID);
-    if (existingScript) {
-      renderWidget();
-      return;
+    // Defer the third-party Turnstile script until the form is close to the
+    // viewport or the user starts interacting with it, keeping it off the
+    // critical rendering path (page-speed optimisation).
+    let scriptRequested = false;
+    const loadScript = () => {
+      if (scriptRequested) return;
+      scriptRequested = true;
+
+      const existingScript = document.getElementById(TURNSTILE_SCRIPT_ID);
+      if (existingScript) {
+        if (window.turnstile) renderWidget();
+        else existingScript.addEventListener("load", renderWidget, { once: true });
+        return;
+      }
+
+      const script = document.createElement("script");
+      script.id = TURNSTILE_SCRIPT_ID;
+      script.src = "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit";
+      script.async = true;
+      script.defer = true;
+      script.onload = renderWidget;
+      document.head.appendChild(script);
+    };
+
+    let observer: IntersectionObserver | undefined;
+    if (typeof IntersectionObserver === "undefined") {
+      loadScript();
+    } else {
+      observer = new IntersectionObserver(
+        (entries) => {
+          if (entries.some((entry) => entry.isIntersecting)) {
+            observer?.disconnect();
+            loadScript();
+          }
+        },
+        { rootMargin: "400px" },
+      );
+      observer.observe(container);
     }
 
-    const script = document.createElement("script");
-    script.id = TURNSTILE_SCRIPT_ID;
-    script.src = "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit";
-    script.async = true;
-    script.defer = true;
-    script.onload = renderWidget;
-    document.head.appendChild(script);
+    const form = formRef.current;
+    const onFocus = () => loadScript();
+    form?.addEventListener("focusin", onFocus);
 
     return () => {
+      observer?.disconnect();
+      form?.removeEventListener("focusin", onFocus);
       if (widgetIdRef.current && window.turnstile) {
         window.turnstile.reset(widgetIdRef.current);
       }

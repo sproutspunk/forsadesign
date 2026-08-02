@@ -77,6 +77,27 @@ const GA_INLINE_ID = "forsa-ga-init";
  * Safe to call multiple times - skipped if already loaded.
  */
 export function loadAnalytics(): void {
+  // Defer injection until the page has loaded and the main thread is idle.
+  // The GA container (~170 KiB via Google Tag Gateway) must stay off the
+  // critical rendering path; analytics still fires for the full session.
+  const schedule = () => {
+    const w = window as unknown as {
+      requestIdleCallback?: (cb: () => void, opts?: { timeout: number }) => void;
+    };
+    if (typeof w.requestIdleCallback === "function") {
+      w.requestIdleCallback(injectAnalyticsScripts, { timeout: 3000 });
+    } else {
+      setTimeout(injectAnalyticsScripts, 1500);
+    }
+  };
+  if (document.readyState === "complete") {
+    schedule();
+  } else {
+    window.addEventListener("load", schedule, { once: true });
+  }
+}
+
+function injectAnalyticsScripts(): void {
   const measurementId = import.meta.env.VITE_GA_MEASUREMENT_ID as string | undefined;
   if (!measurementId) return;
   if (!hasAnalyticsConsent()) return;
