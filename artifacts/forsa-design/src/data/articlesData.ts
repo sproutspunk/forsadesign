@@ -667,4 +667,80 @@ export const articles: Article[] = [
       ],
     },
   },
+  {
+    slugEn: "from-template-to-shipyard",
+    slugPl: "od-szablonu-do-stoczni",
+    dateIso: "2026-08-04",
+    readingTimeMin: 5,
+    en: {
+      title:
+        "From template to shipyard. What actually works in web design for the marine industry.",
+      excerpt:
+        "A marine industry website needs to do more than look polished. It needs to pass procurement checks, work on weak connections and show buyers that your business can deliver.",
+      sections: [
+        {
+          body: "Most sites I audit look fine. Clean layout, decent typography, nice colours. But when I speak to shipyard and offshore business owners, I hear the same thing. The site exists, but it does not attract the right enquiries. It does not pass procurement checks. It does not show what needs to be shown.\n\nThis is not about pretty design. It is about whether the site convinces the buyer that you can deliver a vessel, platform or component on time and to standard.",
+        },
+        {
+          body: "A shipyard is not an online shop. A client looking for an offshore contractor or hull manufacturer does not browse a catalogue like Amazon. This is B2B (Business to Business) trade. They check whether you have certificates, references and whether your team understands classification rules. Your site needs to answer these questions before anyone even calls you.",
+        },
+        {
+          body: "In previous articles I wrote about speed and responsiveness. I wrote that every second of loading time costs visitors. In a shipyard this rule is even more brutal. Your potential client may be sitting in a site office container on the quayside with a connection that barely works. If the site takes five seconds to load, they do not wait. They go to the competition.",
+        },
+        {
+          body: "I also wrote about the difference between a CMS (Content Management System) template and a bespoke site. For a shipyard this difference is critical. A template does not account for technical documentation, vessel project cards or integration with an ERP (Enterprise Resource Planning) system. A bespoke site can. It can show a project portfolio in a way an engineer understands, not just a designer.",
+        },
+        {
+          body: "In the article about conversion I wrote about clarity and trust. In the shipyard industry trust is built differently than in retail. It is not about reviews from portals. It is about whether the site shows real projects, names of responsible people and a direct number to someone who understands technical specifications. Trust is concrete numbers. The tonnage you have built. The year of build. The name of the vessel that underwent refit in your dock.",
+        },
+        {
+          body: "I wrote that SEO (Search Engine Optimization) is not just the site. In the shipyard industry keywords are not just web design Aberdeen. It is offshore vessel fabrication Scotland, ship repair Banff, marine engineering procurement UK. Content must answer questions asked by buyers from platforms and design offices, not random internet users.",
+        },
+        {
+          body: "In the last article I wrote that maintaining a site matters more than building it. For a shipyard this means references from a project finished two years ago are not enough. The site must live. New projects, new certificates, up to date contact details. An old site with outdated information signals that the company may not be active. And in an industry where contracts are worth millions, that signal is fatal.",
+        },
+        {
+          body: "If you run a shipyard or offshore business in Scotland, you do not need a site that looks like it belongs in a creative agency portfolio. You need a site that passes procurement checks, works on a weak connection and shows you understand the industry. Because in this industry the buyer does not choose the prettiest site. They choose the company they can trust.",
+        },
+        {
+          body: "If you want to talk about a site for your shipyard or offshore business, email hello@forsadesign.co.uk. The first conversation is free.",
+        },
+      ],
+    },
+    pl: {
+      title:
+        "Od szablonu do stoczni. Co naprawdę sprawdza się w web designie dla przemysłu morskiego.",
+      excerpt:
+        "Strona dla przemysłu morskiego musi robić więcej niż dobrze wyglądać. Powinna przechodzić weryfikację zakupową, działać na słabym łączu i pokazywać kupującym, że firma potrafi dostarczyć projekt.",
+      sections: [
+        {
+          body: "Większość stron które audytuję wygląda w porządku. Czysty layout, porządna typografia, zgrabne kolory. Ale gdy rozmawiam z właścicielami firm stoczniowych i offshore, słyszę to samo. Strona jest, ale nie przyciąga właściwych zapytań. Nie przechodzi weryfikacji zakupowej. Nie pokazuje tego co trzeba.\n\nTo nie jest kwestia ładnego designu. To kwestia tego czy strona przekonuje kupującego że jesteś w stanie dostarczyć statek, platformę lub komponent na czas i zgodnie z normą.",
+        },
+        {
+          body: "Stocznia to nie sklep internetowy. Klient który szuka wykonawcy offshore lub producenta kadłuba nie przegląda katalogu jak Amazon. To jest handel B2B (Business to Business). On sprawdza czy masz certyfikaty, referencje i czy Twój zespół rozumie normy klasyfikacyjne. Twoja strona musi odpowiedzieć na te pytania zanim jeszcze ktoś do Ciebie zadzwoni.",
+        },
+        {
+          body: "W poprzednich artykułach pisałem o szybkości i responsywności. Pisałem że każda sekunda ładowania kosztuje odwiedzających. W stoczni ta zasada jest jeszcze bardziej brutalna. Twój potencjalny klient może siedzieć w kontenerze biurowym na nabrzeżu z połączeniem które ledwo działa. Jeśli strona ładuje się pięć sekund, on nie czeka. Idzie do konkurencji.",
+        },
+        {
+          body: "Pisałem też o różnicy między szablonem CMS (Content Management System) a dedykowaną stroną. Dla stoczni ta różnica jest kluczowa. Szablon nie przewiduje miejsca na dokumentację techniczną, karty projektów statków ani integrację z systemem ERP (Enterprise Resource Planning). Dedykowana strona może. Może pokazać portfolio projektów w sposób który rozumie inżynier, nie tylko grafik.",
+        },
+        {
+          body: "W artykule o konwersji pisałem o jasności i zaufaniu. W branży stoczniowej zaufanie buduje się inaczej niż w sklepie detalicznym. Nie chodzi o opinie z portali. Chodzi o to czy na stronie widać realne projekty, nazwiska osób odpowiedzialnych i bezpośredni numer do osoby która rozumie techniczne specyfikacje. Zaufanie to konkretne liczby. Tonaż który zbudowałeś. Rok budowy. Nazwa statku który przeszedł remont u Ciebie w doku.",
+        },
+        {
+          body: "Pisałem że SEO (Search Engine Optimization) to nie tylko strona. W branży stoczniowej słowa kluczowe to nie tylko web design Aberdeen. To offshore vessel fabrication Scotland, ship repair Banff, marine engineering procurement UK. Treść musi odpowiadać na pytania które zadają kupujący z platform i biur projektowych, nie losowi internauci.",
+        },
+        {
+          body: "W ostatnim artykule pisałem że utrzymanie strony jest ważniejsze niż jej zbudowanie. Dla stoczni oznacza to że referencje z projektu zakończonego dwa lata temu nie wystarczą. Strona musi żyć. Nowe projekty, nowe certyfikaty, aktualne dane kontaktowe. Stara strona z przestarzałymi informacjami sygnalizuje że firma może nie być aktywna. A w branży gdzie kontrakty są warte miliony, taki sygnał jest śmiertelny.",
+        },
+        {
+          body: "Jeśli prowadzisz firmę stoczniową lub offshore w Szkocji, nie potrzebujesz strony która wygląda jak z portfolio agencji kreatywnej. Potrzebujesz strony która przechodzi weryfikację zakupową, działa na słabym łączu i pokazuje że rozumiesz branżę. Bo w tej branży kupujący nie wybiera najładniejszej strony. Wybiera firmę której może zaufać.",
+        },
+        {
+          body: "Jeśli chcesz porozmawiać o stronie dla swojej firmy stoczniowej lub offshore, napisz na hello@forsadesign.co.uk. Pierwsza rozmowa jest bezpłatna.",
+        },
+      ],
+    },
+  },
 ];

@@ -137,4 +137,22 @@ export const articlesMeta: ArticleMeta[] = [
         "Strona internetowa to nie projekt jednorazowy. To aktyw biznesowy wymagaj\u0105cy sta\u0142ej opieki. Bezpiecze\u0144stwo, wydajno\u015b\u0107, tre\u015b\u0107 i pozycje w wyszukiwarce wszystko to ulega degradacji bez regularnej uwagi. Oto czego wymaga utrzymanie.",
     },
   },
+  {
+    slugEn: "from-template-to-shipyard",
+    slugPl: "od-szablonu-do-stoczni",
+    dateIso: "2026-08-04",
+    readingTimeMin: 5,
+    en: {
+      title:
+        "From template to shipyard. What actually works in web design for the marine industry.",
+      excerpt:
+        "A marine industry website needs to do more than look polished. It needs to pass procurement checks, work on weak connections and show buyers that your business can deliver.",
+    },
+    pl: {
+      title:
+        "Od szablonu do stoczni. Co naprawdę sprawdza się w web designie dla przemysłu morskiego.",
+      excerpt:
+        "Strona dla przemysłu morskiego musi robić więcej niż dobrze wyglądać. Powinna przechodzić weryfikację zakupową, działać na słabym łączu i pokazywać kupującym, że firma potrafi dostarczyć projekt.",
+    },
+  },
 ];
