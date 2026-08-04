@@ -7,25 +7,25 @@ export default function ContactInfo() {
 
   const items = [
     {
-      icon: <User size={32} />,
+      icon: <User size={32} aria-hidden="true" />,
       label: t("footer.contactPersonLabel") as string,
       value: t("footer.contactPerson") as string,
       href: undefined,
     },
     {
-      icon: <Mail size={32} />,
+      icon: <Mail size={32} aria-hidden="true" />,
       label: "Email",
       value: t("footer.email") as string,
       href: `mailto:${t("footer.email")}`,
     },
     {
-      icon: <Phone size={32} />,
+      icon: <Phone size={32} aria-hidden="true" />,
       label: "Phone",
       value: t("footer.phone") as string,
       href: `tel:${t("footer.phone")}`,
     },
     {
-      icon: <Linkedin size={32} />,
+      icon: <Linkedin size={32} aria-hidden="true" />,
       label: "LinkedIn",
       value: "",
       href: "https://www.linkedin.com/in/miroslaw-potaczek",

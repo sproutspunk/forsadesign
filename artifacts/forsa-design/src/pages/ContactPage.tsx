@@ -23,7 +23,7 @@ export default function ContactPage({ lang }: { lang: "en" | "pl" }) {
     ogDescription: description,
     twitterTitle: title,
     twitterDescription: description,
-    ogLocale: en ? "en_US" : "pl_PL",
+    ogLocale: en ? "en_GB" : "pl_PL",
     canonical: buildHref(`/${lang}/contact`),
     alternates: [
       { lang: "en", href: buildHref("/en/contact") },
@@ -48,7 +48,7 @@ export default function ContactPage({ lang }: { lang: "en" | "pl" }) {
   return (
     <div className="min-h-[100dvh] bg-background text-foreground">
       <Header />
-      <main>
+      <main id="main-content">
         <section className="pt-36 pb-12 bg-card">
           <div className="container mx-auto px-6 max-w-4xl">
             <div className="w-12 h-1 bg-primary mb-8" />

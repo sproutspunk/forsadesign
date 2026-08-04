@@ -146,7 +146,7 @@ export default function SearchPage({ lang }: { lang: Language }) {
     twitterDescription: isEn
       ? "Find information about industrial web design, bespoke web systems, FAQ and articles."
       : "Znajdź informacje o web design dla przemysłu, dedykowanych systemach, FAQ i artykułach.",
-    ogLocale: isEn ? "en_US" : "pl_PL",
+    ogLocale: isEn ? "en_GB" : "pl_PL",
     canonical: buildHref(`/${lang}/search`),
     alternates: [
       { lang: "en", href: buildHref("/en/search") },
@@ -187,7 +187,7 @@ export default function SearchPage({ lang }: { lang: Language }) {
   return (
     <div className="min-h-[100dvh] bg-background text-foreground">
       <Header />
-      <main className="pt-36 pb-24">
+      <main id="main-content" className="pt-36 pb-24">
         <div className="container mx-auto px-6 max-w-5xl">
           <div className="max-w-3xl mb-14">
             <div className="w-12 h-1 bg-primary mb-8" />

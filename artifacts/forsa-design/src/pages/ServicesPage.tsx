@@ -25,7 +25,7 @@ export default function ServicesPage({ lang }: { lang: "en" | "pl" }) {
     ogDescription: description,
     twitterTitle: title,
     twitterDescription: description,
-    ogLocale: en ? "en_US" : "pl_PL",
+    ogLocale: en ? "en_GB" : "pl_PL",
     canonical: buildHref(`/${lang}/services`),
     alternates: [
       { lang: "en", href: buildHref("/en/services") },
@@ -99,7 +99,7 @@ export default function ServicesPage({ lang }: { lang: "en" | "pl" }) {
   return (
     <div className="min-h-[100dvh] bg-background text-foreground">
       <Header />
-      <main>
+      <main id="main-content">
         <section className="pt-36 pb-20 bg-card border-b border-border/10">
           <div className="container mx-auto px-6 max-w-4xl">
             <div className="w-12 h-1 bg-primary mb-8" />

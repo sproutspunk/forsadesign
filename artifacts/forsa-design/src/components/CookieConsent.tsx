@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import { X, ChevronUp, ChevronDown } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import {
@@ -35,13 +35,15 @@ export function openCookiePreferences() {
 }
 
 export default function CookieConsent() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   const [visible, setVisible] = useState(false);
   const [entered, setEntered] = useState(false);
   const [expanded, setExpanded] = useState(false);
   const [analytics, setAnalytics] = useState(false);
   const [marketing, setMarketing] = useState(false);
+  const panelRef = useRef<HTMLDivElement>(null);
+  const restoreFocusRef = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
     const saved = loadConsent();
@@ -62,8 +64,13 @@ export default function CookieConsent() {
       setAnalytics(saved.analytics);
       setMarketing(saved.marketing);
     }
+    restoreFocusRef.current = document.activeElement as HTMLElement | null;
     setExpanded(true);
     setVisible(true);
+    // Move focus into the panel when the user explicitly opens preferences.
+    window.setTimeout(() => {
+      panelRef.current?.querySelector<HTMLElement>("button")?.focus();
+    }, 0);
   }, []);
 
   useEffect(() => {
@@ -71,19 +78,26 @@ export default function CookieConsent() {
     return () => window.removeEventListener(REOPEN_EVENT, handleReopen);
   }, [handleReopen]);
 
+  function close() {
+    setVisible(false);
+    // Return focus to the element that opened the preferences (e.g. footer link).
+    restoreFocusRef.current?.focus();
+    restoreFocusRef.current = null;
+  }
+
   function accept() {
     saveConsent({ decided: true, essential: true, analytics: true, marketing: true });
-    setVisible(false);
+    close();
   }
 
   function reject() {
     saveConsent({ decided: true, essential: true, analytics: false, marketing: false });
-    setVisible(false);
+    close();
   }
 
   function saveCustom() {
     saveConsent({ decided: true, essential: true, analytics, marketing });
-    setVisible(false);
+    close();
   }
 
   if (!visible) return null;
@@ -96,6 +110,10 @@ export default function CookieConsent() {
       role="dialog"
       aria-label={t("cookies.bannerTitle")}
       aria-modal="false"
+      ref={panelRef}
+      onKeyDown={(e) => {
+        if (e.key === "Escape" && expanded) setExpanded(false);
+      }}
     >
       <div className="mx-auto max-w-3xl bg-card border border-border/30 rounded-2xl shadow-2xl overflow-hidden">
         <div className="p-5 md:p-6">
@@ -105,10 +123,14 @@ export default function CookieConsent() {
             </h2>
             <button
               onClick={reject}
-              aria-label="Close"
+              aria-label={
+                language === "pl"
+                  ? "Odrzuć nieistotne pliki cookie"
+                  : "Reject non-essential cookies"
+              }
               className="text-foreground/40 hover:text-foreground/70 transition-colors shrink-0 mt-0.5"
             >
-              <X size={18} />
+              <X size={18} aria-hidden="true" />
             </button>
           </div>
 
@@ -164,9 +186,9 @@ export default function CookieConsent() {
                 <button
                   onClick={() => setExpanded(false)}
                   className="flex items-center gap-1 text-sm text-foreground/50 hover:text-foreground/80 transition-colors px-2 py-2.5"
-                  aria-label="Collapse"
+                  aria-label={language === "pl" ? "Zwiń ustawienia" : "Collapse settings"}
                 >
-                  <ChevronDown size={15} />
+                  <ChevronDown size={15} aria-hidden="true" />
                 </button>
               </>
             ) : (
@@ -188,7 +210,7 @@ export default function CookieConsent() {
                   className="flex items-center gap-1 text-sm text-foreground/50 hover:text-foreground/80 transition-colors px-2 py-2.5"
                 >
                   {t("cookies.customise")}
-                  <ChevronUp size={15} />
+                  <ChevronUp size={15} aria-hidden="true" />
                 </button>
               </>
             )}

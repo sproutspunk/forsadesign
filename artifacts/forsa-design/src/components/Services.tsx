@@ -7,17 +7,17 @@ export default function Services() {
 
   const services = [
     {
-      icon: <Monitor size={32} strokeWidth={1.5} />,
+      icon: <Monitor size={32} strokeWidth={1.5} aria-hidden="true" />,
       title: t("services.card1.title"),
       desc: t("services.card1.desc"),
     },
     {
-      icon: <ShoppingCart size={32} strokeWidth={1.5} />,
+      icon: <ShoppingCart size={32} strokeWidth={1.5} aria-hidden="true" />,
       title: t("services.card2.title"),
       desc: t("services.card2.desc"),
     },
     {
-      icon: <Layers size={32} strokeWidth={1.5} />,
+      icon: <Layers size={32} strokeWidth={1.5} aria-hidden="true" />,
       title: t("services.card3.title"),
       desc: t("services.card3.desc"),
     },

@@ -16,7 +16,7 @@ export default function PrivacyPage() {
     twitterTitle: "Privacy Policy | Forsa Design",
     twitterDescription:
       "Read Forsa Design's privacy policy to understand how we collect, use, and protect your personal data in compliance with UK GDPR and applicable data protection law.",
-    ogLocale: "en_US",
+    ogLocale: "en_GB",
     canonical: buildHref("/en/privacy"),
     alternates: [
       { lang: "en", href: buildHref("/en/privacy") },

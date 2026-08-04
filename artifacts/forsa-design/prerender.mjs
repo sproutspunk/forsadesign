@@ -89,6 +89,22 @@ function patch(html, meta) {
   // <meta property="og:locale" content="...">
   out = out.replace(/(property="og:locale"\s+content=")[^"]*(")/s, `$1${meta.locale}$2`);
 
+  // <meta property="og:type" content="...">  -  articles get og:type "article"
+  out = out.replace(
+    /(property="og:type"\s+content=")[^"]*(")/s,
+    `$1${meta.isArticle ? "article" : "website"}$2`,
+  );
+
+  // Article-specific Open Graph metadata (published/modified time, author)
+  if (meta.isArticle && meta.lastmod) {
+    const articleMetas = [
+      `<meta property="article:published_time" content="${meta.lastmod}" />`,
+      `<meta property="article:modified_time" content="${meta.lastmod}" />`,
+      `<meta property="article:author" content="Miro" />`,
+    ].join("\n    ");
+    out = out.replace(/(\s*<\/head>)/, `\n    ${articleMetas}$1`);
+  }
+
   // <meta property="og:url" content="...">  -  update if present
   out = out.replace(/(property="og:url"\s+content=")[^"]*(")/s, `$1${meta.canonical}$2`);
 
@@ -1600,7 +1616,7 @@ const routes = [
     title: "Industrial Web Design & Bespoke Web Systems | Forsa Design",
     desc: "Forsa Design builds procurement-ready websites and bespoke web systems for offshore, energy, engineering, equipment, logistics and manufacturing businesses.",
     ogTitle: "Forsa Design | Web Design & Creation",
-    locale: "en_US",
+    locale: "en_GB",
     canonical: `${SITE}/en/`,
     alternates: [
       { lang: "en", href: `${SITE}/en/` },
@@ -1630,7 +1646,7 @@ const routes = [
     title: "Terms and Conditions | Forsa Design",
     desc: "Read the terms and conditions for Forsa Design web design and development services, including project agreements, payment terms, intellectual property, and liability.",
     ogTitle: "Terms and Conditions | Forsa Design",
-    locale: "en_US",
+    locale: "en_GB",
     canonical: `${SITE}/en/terms`,
     alternates: [
       { lang: "en", href: `${SITE}/en/terms` },
@@ -1658,7 +1674,7 @@ const routes = [
     title: "Privacy Policy | Forsa Design",
     desc: "Read Forsa Design\u2019s privacy policy to understand how we collect, use, and protect your personal data in compliance with UK GDPR and applicable data protection law.",
     ogTitle: "Privacy Policy | Forsa Design",
-    locale: "en_US",
+    locale: "en_GB",
     canonical: `${SITE}/en/privacy`,
     alternates: [
       { lang: "en", href: `${SITE}/en/privacy` },
@@ -1686,7 +1702,7 @@ const routes = [
     title: "About Forsa Design | Industrial Web Specialist",
     desc: "Meet Forsa Design's founder with 20 years of international B2B sales experience, building industrial websites and bespoke web systems in Scotland.",
     ogTitle: "About Us | Forsa Design",
-    locale: "en_US",
+    locale: "en_GB",
     canonical: `${SITE}/en/about`,
     alternates: [
       { lang: "en", href: `${SITE}/en/about` },
@@ -1714,7 +1730,7 @@ const routes = [
     title: "Industrial Web Design & Bespoke Web Systems | Forsa Design",
     desc: "Procurement-ready websites, B2B e-commerce and bespoke web systems for offshore, energy, engineering, equipment, logistics and manufacturing businesses.",
     ogTitle: "Industrial Web Services | Forsa Design",
-    locale: "en_US",
+    locale: "en_GB",
     canonical: `${SITE}/en/services`,
     alternates: [
       { lang: "en", href: `${SITE}/en/services` },
@@ -1742,7 +1758,7 @@ const routes = [
     title: "Contact Forsa Design | Industrial Web Projects",
     desc: "Discuss an industrial website, B2B catalogue, e-commerce project or bespoke web system with Forsa Design in Banff, Aberdeenshire.",
     ogTitle: "Contact Forsa Design",
-    locale: "en_US",
+    locale: "en_GB",
     canonical: `${SITE}/en/contact`,
     alternates: [
       { lang: "en", href: `${SITE}/en/contact` },
@@ -1770,7 +1786,7 @@ const routes = [
     title: "Industrial Web Design Options | Forsa Design",
     desc: "Compare industrial web design options in Aberdeenshire: custom builds, CMS templates, agencies and freelancers. Choose the right fit for your business.",
     ogTitle: "Web Design Options Compared | Forsa Design",
-    locale: "en_US",
+    locale: "en_GB",
     canonical: `${SITE}/en/comparison`,
     alternates: [
       { lang: "en", href: `${SITE}/en/comparison` },
@@ -1798,7 +1814,7 @@ const routes = [
     title: "Quote Calculator | Forsa Design",
     desc: "Get an instant estimate for your website project. Custom pricing for landing pages, business sites, e-commerce and web applications.",
     ogTitle: "Website Quote Calculator | Forsa Design",
-    locale: "en_US",
+    locale: "en_GB",
     canonical: `${SITE}/en/quote`,
     alternates: [
       { lang: "en", href: `${SITE}/en/quote` },
@@ -1826,7 +1842,7 @@ const routes = [
     title: "Search | Forsa Design",
     desc: "Search Forsa Design services, industrial web design guidance, frequently asked questions and articles.",
     ogTitle: "Search Forsa Design",
-    locale: "en_US",
+    locale: "en_GB",
     canonical: `${SITE}/en/search`,
     alternates: [
       { lang: "en", href: `${SITE}/en/search` },
@@ -1854,7 +1870,7 @@ const routes = [
     title: "Blog | Forsa Design",
     desc: "Expert insights on web design, SEO, e-commerce, and digital strategy from the Forsa Design team.",
     ogTitle: "Blog | Forsa Design",
-    locale: "en_US",
+    locale: "en_GB",
     canonical: `${SITE}/en/blog`,
     alternates: [
       { lang: "en", href: `${SITE}/en/blog` },
@@ -1892,7 +1908,7 @@ for (const article of articles) {
       title: `${content.title} | Forsa Design`,
       desc: truncateDesc(content.excerpt),
       ogTitle: content.title,
-      locale: en ? "en_US" : "pl_PL",
+      locale: en ? "en_GB" : "pl_PL",
       canonical,
       alternates: [
         { lang: "en", href: `${SITE}/en/blog/${article.slugEn}` },
@@ -1902,6 +1918,26 @@ for (const article of articles) {
       isArticle: true,
       lastmod: article.dateIso,
     });
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Trailing-slash normalization  -  Cloudflare Pages serves /en/blog as a 308
+// redirect to /en/blog/, so canonicals, hreflang alternates, sitemap entries
+// and static internal links must all point at the final URL, not the source
+// of a redirect. Applied once, centrally, after every route is defined.
+// ---------------------------------------------------------------------------
+
+for (const route of routes) {
+  if (!route.canonical.endsWith("/")) route.canonical += "/";
+  for (const alt of route.alternates) {
+    if (!alt.href.endsWith("/")) alt.href += "/";
+  }
+  if (route.bodyHtml) {
+    route.bodyHtml = route.bodyHtml.replace(
+      /href="(\/(?:en|pl)\/[^"#?]*?)(\/?)([#?][^"]*)?"/g,
+      (m, path, _slash, suffix = "") => `href="${path.replace(/\/+$/, "")}/${suffix}"`,
+    );
   }
 }
 

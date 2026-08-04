@@ -298,7 +298,7 @@ export default function AboutPage({ lang }: AboutPageProps) {
     ogDescription: c.seoDesc,
     twitterTitle: c.seoTitle,
     twitterDescription: c.seoDesc,
-    ogLocale: lang === "en" ? "en_US" : "pl_PL",
+    ogLocale: lang === "en" ? "en_GB" : "pl_PL",
     canonical: buildHref(`/${lang}/about`),
     alternates: [
       { lang: "en", href: buildHref("/en/about") },
@@ -393,7 +393,7 @@ export default function AboutPage({ lang }: AboutPageProps) {
     <div className="min-h-[100dvh] bg-background text-foreground">
       <Header />
       {/* Hero */}
-      <section className="pt-36 pb-20 bg-card border-b border-border/10">
+      <section id="main-content" className="pt-36 pb-20 bg-card border-b border-border/10">
         <div className="container mx-auto px-6 max-w-4xl">
           <motion.div
             initial={{ opacity: 0, y: 30 }}

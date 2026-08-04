@@ -67,7 +67,7 @@ export default function QuoteCalculatorPage({ lang }: QuoteCalculatorPageProps) 
   return (
     <div className="min-h-[100dvh] bg-background text-foreground">
       <Header />
-      <main>
+      <main id="main-content">
         <QuoteCalculator />
       </main>
       <Footer />

@@ -64,7 +64,7 @@ export default function HomePage({ lang }: HomePageProps) {
     twitterDescription: isEn
       ? "Web design for industrial and trade businesses across Scotland. Custom websites, e-commerce stores and bespoke web solutions. Based in Banff, Aberdeenshire."
       : "Web design dla firm przemysłowych i handlowych w Szkocji. Dedykowane strony internetowe, sklepy i rozwiązania webowe. Siedziba w Banff, Aberdeenshire.",
-    ogLocale: isEn ? "en_US" : "pl_PL",
+    ogLocale: isEn ? "en_GB" : "pl_PL",
     canonical: buildHref(isEn ? "/en/" : "/pl/"),
     alternates: [
       { lang: "en", href: buildHref("/en/") },
@@ -209,7 +209,7 @@ export default function HomePage({ lang }: HomePageProps) {
   return (
     <div className="min-h-[100dvh] bg-background text-foreground selection:bg-primary selection:text-primary-foreground">
       <Header />
-      <main>
+      <main id="main-content">
         <Hero />
         <Services />
         <PricingSection />

@@ -20,6 +20,11 @@ const ui = {
     notFoundLink: "View all articles",
     by: "by",
     author: "Miro  |  Forsa Design",
+    ctaTitle: "Working on a similar project?",
+    ctaText:
+      "We design procurement-ready websites and bespoke web systems for industrial, marine and engineering businesses.",
+    ctaServices: "See our services",
+    ctaContact: "Start a conversation",
   },
   pl: {
     backToBlog: "Powrót do bloga",
@@ -28,6 +33,11 @@ const ui = {
     notFoundLink: "Zobacz wszystkie artykuły",
     by: "przez",
     author: "Miro  |  Forsa Design",
+    ctaTitle: "Pracujesz nad podobnym projektem?",
+    ctaText:
+      "Projektujemy strony gotowe na audyt zakupowy i dedykowane systemy webowe dla firm przemysłowych, morskich i inżynieryjnych.",
+    ctaServices: "Zobacz nasze usługi",
+    ctaContact: "Rozpocznij rozmowę",
   },
 };
 
@@ -59,7 +69,7 @@ export default function ArticlePage({ lang, slug }: ArticlePageProps) {
     ogDescription: a ? a.excerpt : "The requested article could not be found.",
     twitterTitle: a ? `${a.title} | Forsa Design` : "Article Not Found | Forsa Design",
     twitterDescription: a ? a.excerpt : "The requested article could not be found.",
-    ogLocale: lang === "en" ? "en_US" : "pl_PL",
+    ogLocale: lang === "en" ? "en_GB" : "pl_PL",
     canonical: a ? buildHref(`/${lang}/blog/${canonicalSlug}`) : buildHref(`/${lang}/blog`),
     alternates: article
       ? [
@@ -73,7 +83,7 @@ export default function ArticlePage({ lang, slug }: ArticlePageProps) {
     a && article
       ? {
           "@context": "https://schema.org",
-          "@type": "Article",
+          "@type": "BlogPosting",
           headline: a.title,
           description: a.excerpt,
           datePublished: article.dateIso,
@@ -128,7 +138,7 @@ export default function ArticlePage({ lang, slug }: ArticlePageProps) {
   return (
     <div className="min-h-[100dvh] bg-background text-foreground">
       <Header />
-      <article className="pt-36 pb-24">
+      <article id="main-content" className="pt-36 pb-24">
         <div className="container mx-auto px-6 max-w-3xl">
           <a
             href={`/${lang}/blog`}
@@ -183,6 +193,27 @@ export default function ArticlePage({ lang, slug }: ArticlePageProps) {
               </div>
             ))}
           </motion.div>
+
+          <div className="mt-16 rounded-sm border border-primary/20 bg-card p-8">
+            <h2 className="font-serif text-xl md:text-2xl font-bold text-white mb-3">
+              {u.ctaTitle}
+            </h2>
+            <p className="text-foreground/70 font-light leading-relaxed mb-6">{u.ctaText}</p>
+            <div className="flex flex-wrap gap-3">
+              <a
+                href={`/${lang}/services`}
+                className="inline-flex items-center justify-center px-6 py-3 bg-primary text-primary-foreground font-semibold text-sm rounded-sm transition-opacity hover:opacity-90"
+              >
+                {u.ctaServices}
+              </a>
+              <a
+                href={`/${lang}/contact`}
+                className="inline-flex items-center justify-center px-6 py-3 border border-primary/40 text-primary font-semibold text-sm rounded-sm transition-colors hover:bg-primary/10"
+              >
+                {u.ctaContact}
+              </a>
+            </div>
+          </div>
 
           <div className="mt-16 pt-8 border-t border-border/20">
             <p className="text-xs text-foreground/40 font-light">

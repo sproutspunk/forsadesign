@@ -56,7 +56,7 @@ export default function BlogPage({ lang }: BlogPageProps) {
     ogDescription: m.desc,
     twitterTitle: m.title,
     twitterDescription: m.desc,
-    ogLocale: lang === "en" ? "en_US" : "pl_PL",
+    ogLocale: lang === "en" ? "en_GB" : "pl_PL",
     canonical: buildHref(`/${lang}/blog`),
     alternates: [
       { lang: "en", href: buildHref("/en/blog") },
@@ -109,7 +109,7 @@ export default function BlogPage({ lang }: BlogPageProps) {
       <Header />
 
       {/* Hero */}
-      <section className="pt-36 pb-16 bg-card border-b border-border/10">
+      <section id="main-content" className="pt-36 pb-16 bg-card border-b border-border/10">
         <div className="container mx-auto px-6 max-w-4xl">
           <motion.div
             initial={{ opacity: 0, y: 24 }}

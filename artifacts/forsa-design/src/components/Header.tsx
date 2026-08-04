@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useLocation } from "wouter";
 import { Menu, X } from "lucide-react";
@@ -14,6 +14,23 @@ export default function Header() {
   };
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const menuToggleRef = useRef<HTMLButtonElement>(null);
+  const mobileNavRef = useRef<HTMLDivElement>(null);
+
+  // Focus management for the mobile nav: move focus into the menu on open,
+  // close on Escape and return focus to the toggle button.
+  useEffect(() => {
+    if (!isMobileMenuOpen) return;
+    mobileNavRef.current?.querySelector<HTMLElement>("a")?.focus();
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setIsMobileMenuOpen(false);
+        menuToggleRef.current?.focus();
+      }
+    };
+    document.addEventListener("keydown", handleKeyDown);
+    return () => document.removeEventListener("keydown", handleKeyDown);
+  }, [isMobileMenuOpen]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -43,169 +60,83 @@ export default function Header() {
   const quoteHref = `${base}quote`;
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "bg-background/90 backdrop-blur-md py-4 shadow-sm" : "bg-transparent py-6"
-      }`}
-    >
-      <div className="container mx-auto px-6 flex items-center justify-between">
-        <a
-          href={sectionHref("#home")}
-          data-testid="link-logo"
-          className="flex items-center shrink-0"
-        >
-          <img
-            src="/logo-header.webp?v=9"
-            alt="Forsa Design"
-            width={160}
-            height={132}
-            loading="eager"
-            fetchPriority="high"
-            decoding="async"
-            className="h-11 w-auto object-contain"
-          />
-        </a>
-
-        {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-8">
-          {navLinks.map((link) => (
-            <a
-              key={link.name}
-              href={link.href}
-              className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors"
-              data-testid={`link-nav-${link.name.toLowerCase()}`}
-            >
-              {link.name}
-            </a>
-          ))}
-          <a
-            href={`${base}blog`}
-            data-testid="link-nav-blog"
-            className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors"
-          >
-            {t("nav.blog")}
-          </a>
-          <a
-            href={quoteHref}
-            data-testid="link-nav-quote"
-            className="text-sm font-bold px-4 py-1.5 rounded-sm bg-primary text-primary-foreground hover:bg-primary/90 transition-colors"
-          >
-            {t("nav.quote")}
-          </a>
-        </nav>
-        {/* About Us page link (desktop) */}
-        <a
-          href={`/${language}/about`}
-          className="hidden md:inline-flex items-center border border-primary/40 text-primary text-xs font-semibold px-4 py-1.5 rounded-sm hover:bg-primary/10 transition-colors"
-          data-testid="link-about-page"
-        >
-          {t("nav.aboutPage")}
-        </a>
-
-        {/* Language Switcher */}
-        <div className="hidden md:flex items-center gap-2 text-sm font-semibold">
-          <a
-            href="/en/"
-            onClick={(e) => {
-              e.preventDefault();
-              switchLang("en");
-            }}
-            className={`transition-colors ${language === "en" ? "text-primary" : "text-foreground/60 hover:text-foreground"}`}
-            data-testid="btn-lang-en"
-            hrefLang="en"
-          >
-            EN
-          </a>
-          <span className="text-foreground/30" aria-hidden="true">
-            |
-          </span>
-          <a
-            href="/pl/"
-            onClick={(e) => {
-              e.preventDefault();
-              switchLang("pl");
-            }}
-            className={`transition-colors ${language === "pl" ? "text-primary" : "text-foreground/60 hover:text-foreground"}`}
-            data-testid="btn-lang-pl"
-            hrefLang="pl"
-          >
-            PL
-          </a>
-        </div>
-
-        {/* Mobile Menu Toggle */}
-        <button
-          className="md:hidden text-foreground"
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          aria-expanded={isMobileMenuOpen}
-          aria-controls="mobile-nav"
-          aria-label={isMobileMenuOpen ? "Zamknij menu" : "Otwórz menu"}
-          data-testid="btn-mobile-menu"
-        >
-          {isMobileMenuOpen ? (
-            <X size={24} aria-hidden="true" />
-          ) : (
-            <Menu size={24} aria-hidden="true" />
-          )}
-        </button>
-      </div>
-
-      {/* Mobile Nav - CSS transition, no framer-motion */}
-      <div
-        id="mobile-nav"
-        aria-hidden={!isMobileMenuOpen}
-        className={`md:hidden bg-card border-b border-border overflow-y-auto overscroll-contain transition-all duration-200 ease-in-out ${
-          isMobileMenuOpen
-            ? "max-h-[calc(100dvh-6rem)] opacity-100"
-            : "max-h-0 overflow-hidden opacity-0"
+    <>
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] focus:rounded-sm focus:bg-primary focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-primary-foreground"
+      >
+        {language === "pl" ? "Przejdź do treści" : "Skip to main content"}
+      </a>
+      <header
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+          isScrolled ? "bg-background/90 backdrop-blur-md py-4 shadow-sm" : "bg-transparent py-6"
         }`}
       >
-        <div className="px-6 py-4 flex flex-col gap-4">
-          {navLinks.map((link) => (
-            <a
-              key={link.name}
-              href={link.href}
-              onClick={() => setIsMobileMenuOpen(false)}
-              className="text-lg font-medium text-foreground hover:text-primary transition-colors"
-            >
-              {link.name}
-            </a>
-          ))}
+        <div className="container mx-auto px-6 flex items-center justify-between">
           <a
-            href={`${base}blog`}
-            onClick={() => setIsMobileMenuOpen(false)}
-            className="text-lg font-medium text-foreground hover:text-primary transition-colors"
-            data-testid="link-nav-blog-mobile"
+            href={sectionHref("#home")}
+            data-testid="link-logo"
+            className="flex items-center shrink-0"
           >
-            {t("nav.blog")}
+            <img
+              src="/logo-header.webp?v=9"
+              alt="Forsa Design"
+              width={160}
+              height={132}
+              loading="eager"
+              fetchPriority="high"
+              decoding="async"
+              className="h-11 w-auto object-contain"
+            />
           </a>
-          <div className="flex flex-col gap-3 pt-2 border-t border-border">
+
+          {/* Desktop Nav */}
+          <nav className="hidden md:flex items-center gap-8">
+            {navLinks.map((link) => (
+              <a
+                key={link.name}
+                href={link.href}
+                className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors"
+                data-testid={`link-nav-${link.name.toLowerCase()}`}
+              >
+                {link.name}
+              </a>
+            ))}
+            <a
+              href={`${base}blog`}
+              data-testid="link-nav-blog"
+              className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors"
+            >
+              {t("nav.blog")}
+            </a>
             <a
               href={quoteHref}
-              onClick={() => setIsMobileMenuOpen(false)}
-              className="text-center text-base font-bold px-4 py-3 rounded-sm bg-primary text-primary-foreground hover:bg-primary/90 transition-colors"
+              data-testid="link-nav-quote"
+              className="text-sm font-bold px-4 py-1.5 rounded-sm bg-primary text-primary-foreground hover:bg-primary/90 transition-colors"
             >
               {t("nav.quote")}
             </a>
-            <a
-              href={`/${language}/about`}
-              onClick={() => setIsMobileMenuOpen(false)}
-              data-testid="link-about-page-mobile"
-              className="text-center text-sm font-semibold px-4 py-2.5 rounded-sm border border-primary/40 text-primary hover:bg-primary/10 transition-colors"
-            >
-              {t("nav.aboutPage")}
-            </a>
-          </div>
-          <div className="flex items-center gap-4 pt-2 border-t border-border">
+          </nav>
+          {/* About Us page link (desktop) */}
+          <a
+            href={`/${language}/about`}
+            className="hidden md:inline-flex items-center border border-primary/40 text-primary text-xs font-semibold px-4 py-1.5 rounded-sm hover:bg-primary/10 transition-colors"
+            data-testid="link-about-page"
+          >
+            {t("nav.aboutPage")}
+          </a>
+
+          {/* Language Switcher */}
+          <div className="hidden md:flex items-center gap-2 text-sm font-semibold">
             <a
               href="/en/"
-              hrefLang="en"
               onClick={(e) => {
                 e.preventDefault();
                 switchLang("en");
-                setIsMobileMenuOpen(false);
               }}
-              className={`text-lg font-semibold transition-colors ${language === "en" ? "text-primary" : "text-foreground/60 hover:text-foreground"}`}
+              className={`transition-colors ${language === "en" ? "text-primary" : "text-foreground/60 hover:text-foreground"}`}
+              data-testid="btn-lang-en"
+              hrefLang="en"
             >
               EN
             </a>
@@ -214,19 +145,124 @@ export default function Header() {
             </span>
             <a
               href="/pl/"
-              hrefLang="pl"
               onClick={(e) => {
                 e.preventDefault();
                 switchLang("pl");
-                setIsMobileMenuOpen(false);
               }}
-              className={`text-lg font-semibold transition-colors ${language === "pl" ? "text-primary" : "text-foreground/60 hover:text-foreground"}`}
+              className={`transition-colors ${language === "pl" ? "text-primary" : "text-foreground/60 hover:text-foreground"}`}
+              data-testid="btn-lang-pl"
+              hrefLang="pl"
             >
               PL
             </a>
           </div>
+
+          {/* Mobile Menu Toggle */}
+          <button
+            ref={menuToggleRef}
+            className="md:hidden text-foreground"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-expanded={isMobileMenuOpen}
+            aria-controls="mobile-nav"
+            aria-label={
+              isMobileMenuOpen
+                ? language === "pl"
+                  ? "Zamknij menu"
+                  : "Close menu"
+                : language === "pl"
+                  ? "Otwórz menu"
+                  : "Open menu"
+            }
+            data-testid="btn-mobile-menu"
+          >
+            {isMobileMenuOpen ? (
+              <X size={24} aria-hidden="true" />
+            ) : (
+              <Menu size={24} aria-hidden="true" />
+            )}
+          </button>
         </div>
-      </div>
-    </header>
+
+        {/* Mobile Nav - CSS transition, no framer-motion */}
+        <div
+          ref={mobileNavRef}
+          id="mobile-nav"
+          aria-hidden={!isMobileMenuOpen}
+          inert={!isMobileMenuOpen ? true : undefined}
+          className={`md:hidden bg-card border-b border-border overflow-y-auto overscroll-contain transition-all duration-200 ease-in-out ${
+            isMobileMenuOpen
+              ? "max-h-[calc(100dvh-6rem)] opacity-100"
+              : "max-h-0 overflow-hidden opacity-0"
+          }`}
+        >
+          <div className="px-6 py-4 flex flex-col gap-4">
+            {navLinks.map((link) => (
+              <a
+                key={link.name}
+                href={link.href}
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="text-lg font-medium text-foreground hover:text-primary transition-colors"
+              >
+                {link.name}
+              </a>
+            ))}
+            <a
+              href={`${base}blog`}
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="text-lg font-medium text-foreground hover:text-primary transition-colors"
+              data-testid="link-nav-blog-mobile"
+            >
+              {t("nav.blog")}
+            </a>
+            <div className="flex flex-col gap-3 pt-2 border-t border-border">
+              <a
+                href={quoteHref}
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="text-center text-base font-bold px-4 py-3 rounded-sm bg-primary text-primary-foreground hover:bg-primary/90 transition-colors"
+              >
+                {t("nav.quote")}
+              </a>
+              <a
+                href={`/${language}/about`}
+                onClick={() => setIsMobileMenuOpen(false)}
+                data-testid="link-about-page-mobile"
+                className="text-center text-sm font-semibold px-4 py-2.5 rounded-sm border border-primary/40 text-primary hover:bg-primary/10 transition-colors"
+              >
+                {t("nav.aboutPage")}
+              </a>
+            </div>
+            <div className="flex items-center gap-4 pt-2 border-t border-border">
+              <a
+                href="/en/"
+                hrefLang="en"
+                onClick={(e) => {
+                  e.preventDefault();
+                  switchLang("en");
+                  setIsMobileMenuOpen(false);
+                }}
+                className={`text-lg font-semibold transition-colors ${language === "en" ? "text-primary" : "text-foreground/60 hover:text-foreground"}`}
+              >
+                EN
+              </a>
+              <span className="text-foreground/30" aria-hidden="true">
+                |
+              </span>
+              <a
+                href="/pl/"
+                hrefLang="pl"
+                onClick={(e) => {
+                  e.preventDefault();
+                  switchLang("pl");
+                  setIsMobileMenuOpen(false);
+                }}
+                className={`text-lg font-semibold transition-colors ${language === "pl" ? "text-primary" : "text-foreground/60 hover:text-foreground"}`}
+              >
+                PL
+              </a>
+            </div>
+          </div>
+        </div>
+      </header>
+    </>
   );
 }

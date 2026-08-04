@@ -59,7 +59,10 @@ function addAlternate(lang: string, href: string) {
 }
 
 export function buildHref(path: string) {
-  return `${SITE_BASE}${path}`;
+  // Canonical form is the trailing-slash URL: Cloudflare Pages 308-redirects
+  // /en/blog -> /en/blog/, so metadata must point at the final URL.
+  const normalized = path !== "/" && !path.endsWith("/") ? `${path}/` : path;
+  return `${SITE_BASE}${normalized}`;
 }
 
 export function useJsonLd(schema: Record<string, unknown> | null, id: string) {

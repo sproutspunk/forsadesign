@@ -105,7 +105,7 @@ export default function SitemapPage({ lang }: SitemapPageProps) {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Header />
-      <main className="pt-24 md:pt-32 pb-16 md:pb-24">
+      <main id="main-content" className="pt-24 md:pt-32 pb-16 md:pb-24">
         <div className="container mx-auto px-6 max-w-3xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

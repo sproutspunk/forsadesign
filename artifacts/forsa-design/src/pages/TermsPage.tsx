@@ -15,7 +15,7 @@ export default function TermsPage() {
     twitterTitle: "Terms and Conditions | Forsa Design",
     twitterDescription:
       "Read the terms and conditions for Forsa Design web design and development services, including project agreements, payment terms, intellectual property, and liability.",
-    ogLocale: "en_US",
+    ogLocale: "en_GB",
     canonical: buildHref("/en/terms"),
     alternates: [
       { lang: "en", href: buildHref("/en/terms") },

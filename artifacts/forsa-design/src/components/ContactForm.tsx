@@ -185,7 +185,7 @@ export default function ContactForm() {
                 required
                 maxLength={200}
                 autoComplete="name"
-                className="mt-2 w-full rounded-sm border border-border bg-background px-4 py-3 text-white outline-none transition-colors focus:border-primary"
+                className="mt-2 w-full rounded-sm border border-border bg-background px-4 py-3 text-white outline-none transition-colors focus:border-primary focus-visible:ring-2 focus-visible:ring-primary/60"
               />
             </label>
             <label className="text-sm text-foreground/70">
@@ -196,7 +196,7 @@ export default function ContactForm() {
                 required
                 maxLength={320}
                 autoComplete="email"
-                className="mt-2 w-full rounded-sm border border-border bg-background px-4 py-3 text-white outline-none transition-colors focus:border-primary"
+                className="mt-2 w-full rounded-sm border border-border bg-background px-4 py-3 text-white outline-none transition-colors focus:border-primary focus-visible:ring-2 focus-visible:ring-primary/60"
               />
             </label>
           </div>
@@ -230,8 +230,8 @@ export default function ContactForm() {
           >
             {status === "sending"
               ? en
-                ? "Sending..."
-                : "Wysyłanie..."
+                ? "Sending…"
+                : "Wysyłanie…"
               : en
                 ? "Send message"
                 : "Wyślij wiadomość"}
