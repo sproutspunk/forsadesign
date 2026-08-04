@@ -103,6 +103,35 @@ function patch(html, meta) {
       `<meta property="article:author" content="Miro" />`,
     ].join("\n    ");
     out = out.replace(/(\s*<\/head>)/, `\n    ${articleMetas}$1`);
+
+    // Static BlogPosting JSON-LD so crawlers see structured data without
+    // executing JavaScript (mirrors the client-side useJsonLd schema).
+    const jsonLd = {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      headline: meta.headline ?? meta.title,
+      description: meta.desc,
+      datePublished: meta.lastmod,
+      dateModified: meta.lastmod,
+      inLanguage: meta.lang === "en" ? "en-GB" : "pl-PL",
+      url: meta.canonical,
+      author: {
+        "@type": "Person",
+        name: "Miro",
+        worksFor: { "@type": "Organization", name: "Forsa Design", url: SITE },
+      },
+      publisher: {
+        "@type": "Organization",
+        name: "Forsa Design",
+        url: SITE,
+        logo: { "@type": "ImageObject", url: `${SITE}/logo-new.png?v=6` },
+      },
+      mainEntityOfPage: { "@type": "WebPage", "@id": meta.canonical },
+    };
+    out = out.replace(
+      /(\s*<\/head>)/,
+      `\n    <script type="application/ld+json">${JSON.stringify(jsonLd)}</script>$1`,
+    );
   }
 
   // <meta property="og:url" content="...">  -  update if present
@@ -136,10 +165,13 @@ function patch(html, meta) {
 
   // Inject static body HTML into <div id="root"> so AI crawlers see page copy
   // without executing JavaScript. React will overwrite this on the client.
+  // The skip link and #main-content wrapper mirror the client-rendered
+  // accessibility landmarks for no-JS users and crawlers.
   if (meta.bodyHtml) {
+    const skipText = meta.lang === "pl" ? "Przejdź do treści" : "Skip to main content";
     out = out.replace(
       /<div\s+id="root">\s*<\/div>/,
-      `<div id="root" data-prerendered="true">\n${meta.bodyHtml}\n</div>`,
+      `<div id="root" data-prerendered="true">\n<a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] focus:rounded-sm focus:bg-primary focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-primary-foreground">${skipText}</a>\n<div id="main-content">\n${meta.bodyHtml}\n</div>\n</div>`,
     );
   }
 
@@ -420,6 +452,11 @@ function buildArticleBody(lang, article) {
 <h1>${ht(content.title)}</h1>
 <p><time datetime="${article.dateIso}">${article.dateIso}</time> · ${article.readingTimeMin} min</p>
 ${sectionsHtml}
+<aside>
+<h2>${en ? "Working on a similar project?" : "Pracujesz nad podobnym projektem?"}</h2>
+<p>${en ? "We design procurement-ready websites and bespoke web systems for industrial, marine and engineering businesses." : "Projektujemy strony gotowe na audyt zakupowy i dedykowane systemy webowe dla firm przemysłowych, morskich i inżynieryjnych."}</p>
+<p><a href="/${lang}/services">${en ? "See our services" : "Zobacz nasze usługi"}</a> &middot; <a href="/${lang}/contact">${en ? "Start a conversation" : "Rozpocznij rozmowę"}</a></p>
+</aside>
 <p><a href="/${lang}/blog/${slug}">${en ? "Read on Forsa Design" : "Czytaj na Forsa Design"}</a></p>
 </article>
 </main>`;
@@ -1908,6 +1945,7 @@ for (const article of articles) {
       title: `${content.title} | Forsa Design`,
       desc: truncateDesc(content.excerpt),
       ogTitle: content.title,
+      headline: content.title,
       locale: en ? "en_GB" : "pl_PL",
       canonical,
       alternates: [
