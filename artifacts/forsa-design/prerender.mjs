@@ -255,7 +255,7 @@ function buildHomepageBodyEn() {
 <h3>How long does a project take?</h3>
 <p>Between four and eight weeks, depending on scope. Not because I work slowly. Because I do not start coding until I understand what your buyers need to see. That conversation takes time. The coding is the easy part.</p>
 <h3>What if I do not have any photos?</h3>
-<p>We work with what you have. A decent photo of your workshop taken on a phone is better than a stock image of a smiling engineer in a hard hat that you bought from a website called BusinessPeopleSmiling.com.</p>
+<p>We work with what you have. A decent photo of your workshop taken on a phone is better than a stock image of a smiling engineer in a hard hat that you bought from a random website.</p>
 <h3>Do you offer ongoing support?</h3>
 <p>Yes. Monthly care plans start at £150. That includes hosting, security updates, backups and the occasional panic email at 10 pm because you need a phone number changed before a tender deadline.</p>
 <h3>Can you integrate with our existing systems?</h3>

@@ -37,7 +37,7 @@ const translations = {
         },
         {
           q: "What if I do not have any photos?",
-          a: "We work with what you have. A decent photo of your workshop taken on a phone is better than a stock image of a smiling engineer in a hard hat that you bought from a website called BusinessPeopleSmiling.com.",
+          a: "We work with what you have. A decent photo of your workshop taken on a phone is better than a stock image of a smiling engineer in a hard hat that you bought from a random website.",
         },
         {
           q: "Do you offer ongoing support?",
