@@ -83,6 +83,7 @@ overrides:
   linkify-it: '>=5.0.2'
   brace-expansion: '>=5.0.7'
   body-parser: '>=2.3.0'
+  nodemailer: '>=9.0.3'
 
 importers:
 
@@ -143,7 +144,7 @@ importers:
         specifier: ^8.5.2
         version: 8.5.2(express@5.2.1)
       nodemailer:
-        specifier: ^9.0.3
+        specifier: '>=9.0.3'
         version: 9.0.3
       pino:
         specifier: ^9.14.0
