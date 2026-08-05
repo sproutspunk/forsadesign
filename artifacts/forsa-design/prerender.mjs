@@ -317,8 +317,7 @@ function buildHomepageBodyPl() {
 <p>Prowadzę trzy projekty na kwartał. Dwa są już w trakcie. Piszę kod sam. Odbieram telefony sam. Testuję na urządzeniach, których Twoi klienci faktycznie używają. To cały zespół.</p>
 <p>Nie wystawiamy ściany logotypów. Klienci przemysłowi nie wybierają dostawcy przez ładną galerię. Wybierają, bo strona odpowiada na jedno pytanie. Czy ta firma potrafi dostarczyć?</p>
 <p>Każdy projekt objęty jest NDA lub wciąż w użyciu. Jeśli chcesz zobaczyć nasze prace, pokazuję je podczas rozmowy. Nie dlatego, że to tajne. Dlatego, że kontekst ma znaczenie. Zrzut ekranu nic Ci nie powie. Musisz wiedzieć, dlaczego oficer ds. zakupów zostaje na stronie, zamiast wyłączyć ją po ośmiu sekundach.</p>
-<p>To nie jest sztuczka marketingowa. Po prostu tyle mogę. Jestem jedną osobą. Czasami śpię.</p>
-<p>Jeśli Twoja strona kosztuje Cię przetargów, o których nawet nie wiedziałeś, że je przegrałeś, powinniśmy porozmawiać.</p>
+<p>Jeśli Twoja strona nie generuje projektów, o których nawet nie wiedziałeś, że były, powinniśmy porozmawiać.</p>
 <a href="/pl/contact/">Poproś o rozmowę</a>
 </section>
 <section id="process">
