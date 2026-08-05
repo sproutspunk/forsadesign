@@ -201,7 +201,7 @@ function buildHomepageBodyEn() {
 <section id="home">
 <h1>Web Systems for Heavy Industry</h1>
 <p>No templates. No page builders. Just fast, secure sites that pass procurement checks.</p>
-<p>You build infrastructure. We build the digital layer that proves you can deliver it. Forsa Design builds dedicated, hand-coded websites and web systems for offshore and energy contractors, engineering firms, industrial equipment suppliers and heavy logistics operators.</p>
+<p>You build infrastructure. We build the digital layer that proves you can deliver it. With more than twenty years in international B2B industrial sales across machinery, engineering and energy procurement, I know what happens when a buyer shortlists three suppliers and checks their websites. Forsa Design builds dedicated, hand-coded websites and web systems for offshore and energy contractors, engineering firms, industrial equipment suppliers and heavy logistics operators. Based in Banff, Aberdeenshire. Serving Scotland and the UK.</p>
 <a href="/en/#contact">Request a Technical Quote</a>
 </section>
 <section id="services">
