@@ -2,9 +2,9 @@ import { Switch, Route, Router as WouterRouter, useLocation, useRoute } from "wo
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { LazyMotion, MotionConfig, domAnimation } from "framer-motion";
 import { lazy, Suspense, useEffect } from "react";
-import { Toaster } from "@/components/ui/toaster";
-import { TooltipProvider } from "@/components/ui/tooltip";
 import HomePage from "@/pages/HomePage";
+
+const Toaster = lazy(() => import("@/components/ui/toaster").then((m) => ({ default: m.Toaster })));
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import CookieConsent from "@/components/CookieConsent";
 import ErrorBoundary from "@/components/ErrorBoundary";
@@ -145,18 +145,18 @@ function App() {
         {/* reducedMotion="user" makes all framer-motion animations respect
             the OS-level prefers-reduced-motion setting. */}
         <MotionConfig reducedMotion="user">
-          <TooltipProvider>
-            <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, "")}>
-              <LanguageProvider>
-                <ErrorBoundary>
-                  <Router />
-                  <CookieConsent />
-                  <AnalyticsGate />
-                </ErrorBoundary>
-              </LanguageProvider>
-            </WouterRouter>
+          <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, "")}>
+            <LanguageProvider>
+              <ErrorBoundary>
+                <Router />
+                <CookieConsent />
+                <AnalyticsGate />
+              </ErrorBoundary>
+            </LanguageProvider>
+          </WouterRouter>
+          <Suspense fallback={null}>
             <Toaster />
-          </TooltipProvider>
+          </Suspense>
         </MotionConfig>
       </LazyMotion>
     </QueryClientProvider>
