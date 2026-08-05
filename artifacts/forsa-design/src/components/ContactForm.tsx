@@ -236,7 +236,7 @@ export default function ContactForm() {
                 ? "Send message"
                 : "Wyślij wiadomość"}
           </button>
-          <p className="mt-4 text-xs leading-relaxed text-foreground/45">
+          <p className="mt-4 text-xs leading-relaxed text-muted-foreground">
             {en
               ? "Your details are used only to respond to this enquiry."
               : "Twoje dane zostaną użyte wyłącznie do odpowiedzi na to zapytanie."}
