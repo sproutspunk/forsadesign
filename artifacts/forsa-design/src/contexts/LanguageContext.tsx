@@ -106,9 +106,9 @@ const translations = {
     },
     about: {
       heading: "Built by Someone Who Understood the Brief",
-      body: "My name is Miro. I started Forsa Design after more than 20 years in international B2B industrial sales. I traded metalworking machinery, industrial equipment and engineering solutions across Europe and Asia. I sat on both sides of the procurement table  -  selling to refineries, negotiating with plant engineers and vetting suppliers myself.",
+      body: "My name is Miro. I founded Forsa Design after more than 20 years in international B2B industrial sales. I traded in metalworking machinery, industrial equipment and engineering solutions across Europe and Asia. I sat on both sides of the procurement table, selling to refineries, negotiating with plant engineers and vetting suppliers myself.",
       body2:
-        "That experience taught me one thing: most industrial firms deliver world-class work, but their digital presence does not reflect it. I am not a London agency with fifteen account managers. I am a developer who understands industry, logistics, international trade and contract deadlines. I write the code myself and answer the phone myself.",
+        "That experience taught me one thing: most industrial firms deliver world-class work, but their digital presence does not reflect it. I am not a London agency with fifteen account managers. I am a developer who understands industry, logistics, international trade and contract deadlines. I write the code and answer the phone myself.",
       body3:
         "Based in Banff, Aberdeenshire. Fluent in English and Polish. Serving UK-wide and EU export markets.",
     },

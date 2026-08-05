@@ -262,9 +262,10 @@ function buildHomepageBodyEn() {
 <p>If it has an API, probably yes. If it runs on a spreadsheet from 2003 and a prayer, we will figure something out. I have seen worse.</p>
 </section>
 <section id="about">
-<h2>About Forsa Design</h2>
-<p>We are an independent web development agency based in Scotland, building bespoke systems and websites for the corporate sector. We completely cut out corporate jargon, useless meetings, and artificially inflated management costs.</p>
-<p>We design for revenue, not empty aesthetics. High-end visual design is our absolute baseline: we deliver fast, stable digital assets that actually drive conversions and protect your corporate data. We handle everything from clean code to server architecture. You collaborate directly with the engineers writing your project, eliminating miscommunication and guaranteeing technical precision from day one.</p>
+<h2>Built by Someone Who Understood the Brief</h2>
+<p>My name is Miro. I founded Forsa Design after more than 20 years in international B2B industrial sales. I traded in metalworking machinery, industrial equipment and engineering solutions across Europe and Asia. I sat on both sides of the procurement table, selling to refineries, negotiating with plant engineers and vetting suppliers myself.</p>
+<p>That experience taught me one thing: most industrial firms deliver world-class work, but their digital presence does not reflect it. I am not a London agency with fifteen account managers. I am a developer who understands industry, logistics, international trade and contract deadlines. I write the code and answer the phone myself.</p>
+<p>Based in Banff, Aberdeenshire. Fluent in English and Polish. Serving UK-wide and EU export markets.</p>
 </section>
 <section id="contact">
 <h2>Get In Touch</h2>
