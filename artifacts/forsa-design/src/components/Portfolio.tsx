@@ -23,7 +23,7 @@ export default function Portfolio() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
-          className="mx-auto max-w-4xl bg-card border-t-4 border-t-primary rounded-b-md p-8 md:p-12 shadow-sm"
+          className="mx-auto max-w-4xl bg-card border-t-4 border-t-primary rounded-b-md p-8 md:p-12 shadow-sm text-justify"
         >
           <div className="space-y-5 text-foreground/70 leading-relaxed font-light">
             {body.map((paragraph) => (
