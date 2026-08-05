@@ -225,8 +225,7 @@ function buildHomepageBodyEn() {
 <p>I take three projects per quarter. Two are already underway. I write the code. I take the calls. I test on the devices your clients actually use. That is the entire team.</p>
 <p>We do not display a wall of logos. Industrial clients do not choose suppliers because of a pretty gallery. They choose because the site answers one question. Can this firm deliver?</p>
 <p>Every project is under NDA or in active use. If you want to see our work, we show it on a call. Not because it is secret. Because context matters. A screenshot tells you nothing. You need to know why the procurement officer stays on the page instead of closing it after eight seconds.</p>
-<p>This is not a sales tactic. It is a capacity fact. I am one person. I sleep occasionally.</p>
-<p>If your website is losing you tenders you never knew you lost, we should talk.</p>
+<p>If your website isn't generating projects you didn't even know were there, we should talk.</p>
 <a href="/en/contact/">Request a Call</a>
 </section>
 <section id="process">
