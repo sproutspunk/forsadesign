@@ -3,24 +3,7 @@ import { m as motion } from "framer-motion";
 
 export default function Portfolio() {
   const { t } = useLanguage();
-
-  const cases = [
-    {
-      title: t("portfolio.case1.title"),
-      desc: t("portfolio.case1.desc"),
-      tag: t("portfolio.case1.tag"),
-    },
-    {
-      title: t("portfolio.case2.title"),
-      desc: t("portfolio.case2.desc"),
-      tag: t("portfolio.case2.tag"),
-    },
-    {
-      title: t("portfolio.case3.title"),
-      desc: t("portfolio.case3.desc"),
-      tag: t("portfolio.case3.tag"),
-    },
-  ];
+  const body = t("portfolio.body") as unknown as string[];
 
   return (
     <section id="portfolio" className="py-24 bg-background border-t border-border/10">
@@ -35,29 +18,25 @@ export default function Portfolio() {
           <div className="w-16 h-1 bg-primary md:mx-auto" />
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {cases.map((item, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              whileHover={{ y: -8 }}
-              className="bg-card border-t-4 border-t-primary rounded-b-md p-8 shadow-sm transition-all duration-300 hover:shadow-[0_10px_30px_rgba(201,168,76,0.12)]"
-            >
-              <span className="inline-block text-xs font-bold tracking-wider text-primary mb-4 border border-primary/30 px-3 py-1 rounded-sm">
-                {item.tag}
-              </span>
-              <h3 className="font-serif text-2xl font-bold text-white leading-tight mb-4 whitespace-pre-line">
-                {item.title}
-              </h3>
-              <p className="text-foreground/70 leading-relaxed font-light text-justify">
-                {item.desc}
-              </p>
-            </motion.div>
-          ))}
-        </div>
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6 }}
+          className="mx-auto max-w-4xl bg-card border-t-4 border-t-primary rounded-b-md p-8 md:p-12 shadow-sm"
+        >
+          <div className="space-y-5 text-foreground/70 leading-relaxed font-light">
+            {body.map((paragraph) => (
+              <p key={paragraph}>{paragraph}</p>
+            ))}
+          </div>
+          <a
+            href={t("portfolio.ctaHref") as string}
+            className="mt-8 inline-flex items-center justify-center rounded-sm bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90"
+          >
+            {t("portfolio.cta")}
+          </a>
+        </motion.div>
       </div>
     </section>
   );

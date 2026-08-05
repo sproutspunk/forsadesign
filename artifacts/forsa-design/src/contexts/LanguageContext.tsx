@@ -28,32 +28,24 @@ const translations = {
       comparisonHref: "/en/comparison",
       items: [
         {
-          q: "Do you work with offshore and energy contractors?",
-          a: "Yes. Based in Aberdeenshire, we work with firms serving North Sea energy, renewables and heavy engineering. We understand the compliance and credibility requirements these sectors place on a website.",
+          q: "Do you use WordPress or templates?",
+          a: "No. Every site is hand-coded. WordPress is fine for blogs. It is not fine for a firm that wants to pass a procurement audit without explaining why their site needs seventeen plugins and a security patch every Tuesday.",
         },
         {
-          q: "Can you integrate with our stock or ERP system?",
-          a: "Where the API allows, yes. We build bridges between your web frontend and backend systems  -  not walled gardens that create extra admin work for procurement and sales teams.",
+          q: "How long does a project take?",
+          a: "Between four and eight weeks, depending on scope. Not because I work slowly. Because I do not start coding until I understand what your buyers need to see. That conversation takes time. The coding is the easy part.",
         },
         {
-          q: "What does hand-coded mean for our business?",
-          a: "No bloated templates or unnecessary plugins that slow the site down and create security holes. The result is a fast, maintainable site that can pass technical audits and support a serious procurement process.",
+          q: "What if I do not have any photos?",
+          a: "We work with what you have. A decent photo of your workshop taken on a phone is better than a stock image of a smiling engineer in a hard hat that you bought from a website called BusinessPeopleSmiling.com.",
         },
         {
-          q: "Do you offer support after launch?",
-          a: "Yes. Monthly care plans cover security updates, backups, performance monitoring and incremental improvements. Your website is a living business asset, not a one-off brochure.",
+          q: "Do you offer ongoing support?",
+          a: "Yes. Monthly care plans start at £150. That includes hosting, security updates, backups and the occasional panic email at 10 pm because you need a phone number changed before a tender deadline.",
         },
         {
-          q: "Do you work with Polish or EU-based industrial firms?",
-          a: "Yes. Miro is fluent in English and Polish, with experience in EU industrial trade and export markets. We serve UK businesses and companies selling into UK and European markets.",
-        },
-        {
-          q: "How long does an industrial website project take?",
-          a: "Most projects take around 8-12 weeks depending on the number of services, languages, integrations and approval stages. We define the technical scope before design starts.",
-        },
-        {
-          q: "What happens during discovery?",
-          a: "We analyse your current site, competitors and buyer vetting process. We map the decision-makers, technical proof points and procurement checkpoints your new site needs to support.",
+          q: "Can you integrate with our existing systems?",
+          a: "If it has an API, probably yes. If it runs on a spreadsheet from 2003 and a prayer, we will figure something out. I have seen worse.",
         },
       ],
     },
@@ -80,24 +72,17 @@ const translations = {
       },
     },
     portfolio: {
-      heading: "Our Work",
-      subheading:
-        "We are currently building our portfolio in the industrial and trade sector. That means our first partners get first rate work at a sharp rate.",
-      case1: {
-        title: "Portfolio Building\nPhase",
-        desc: "We are currently building our portfolio in the industrial and trade sector. That means our first partners get first rate work at a sharp rate, with the understanding that we will be able to showcase the project after it goes live.",
-        tag: "[ 20% DISCOUNT ]",
-      },
-      case2: {
-        title: "First Partner\nOffer",
-        desc: "If you are willing to become one of our first case studies, we offer a twenty percent discount on the project in exchange for a testimonial, permission to feature your site in our portfolio and an introduction to two other business owners in your network when the time is right.",
-        tag: "[ NO PRESSURE ]",
-      },
-      case3: {
-        title: "Future\nProjects",
-        desc: "New case studies covering custom websites, optimisation, and business-focused digital solutions for industrial and trade businesses across Scotland.",
-        tag: "[ COMING SOON ]",
-      },
+      heading: "Current Availability",
+      subheading: "Q4 2026. One project slot remains.",
+      body: [
+        "I take three projects per quarter. Two are already underway. I write the code. I take the calls. I test on the devices your clients actually use. That is the entire team.",
+        "We do not display a wall of logos. Industrial clients do not choose suppliers because of a pretty gallery. They choose because the site answers one question. Can this firm deliver?",
+        "Every project is under NDA or in active use. If you want to see our work, we show it on a call. Not because it is secret. Because context matters. A screenshot tells you nothing. You need to know why the procurement officer stays on the page instead of closing it after eight seconds.",
+        "This is not a sales tactic. It is a capacity fact. I am one person. I sleep occasionally.",
+        "If your website is losing you tenders you never knew you lost, we should talk.",
+      ],
+      cta: "Request a Call",
+      ctaHref: "/en/contact/",
     },
     process: {
       heading: "How We Work",
@@ -188,40 +173,32 @@ const translations = {
       faq: "FAQ",
     },
     faq: {
-      heading: "FAQ",
-      subheading: "Odpowiedzi na najczęstsze pytania dotyczące współpracy z nami.",
+      heading: "Najczęstsze pytania",
+      subheading: "Proste odpowiedzi dla firm przemysłowych, inżynieryjnych i zespołów zakupowych.",
       searchPlaceholder: "Szukaj pytań...",
       noResults: "Brak pytań pasujących do wyszukiwania.",
       comparisonCta: "Zobacz pełne porównanie",
       comparisonHref: "/pl/comparison",
       items: [
         {
-          q: "Czy macie do\u015bwiadczenie w mojej bran\u017cy?",
-          a: "Agencja pracuj\u0105ca z ka\u017cdym typem biznesu nie zawsze ma g\u0142\u0119bokie do\u015bwiadczenie w konkretnej dziedzinie. Zapytaj, jakie projekty zrealizowali w Twojej bran\u017cy i jakie wyniki osi\u0105gn\u0119li. Patrz szerzej ni\u017c tylko na design, we\u017a pod uwag\u0119 wydajno\u015b\u0107, u\u017cyteczno\u015b\u0107, konwersje i wp\u0142yw na biznes.",
+          q: "Czy używacie WordPressa lub szablonów?",
+          a: "Nie. Każda strona pisana jest ręcznie. WordPress sprawdza się przy blogach. Nie sprawdza się przy firmie, która chce przejść audyt zakupowy bez tłumaczenia, dlaczego jej strona potrzebuje siedemnastu wtyczek i łatki bezpieczeństwa w każdy wtorek.",
         },
         {
-          q: "Jaki jest Wasz proces odkrywania projektu?",
-          a: "Profesjonalna agencja nie powinna zaczyna\u0107 budowania po kr\u00f3tkim spotkaniu. Pierwszy etap powinien obejmowa\u0107 zrozumienie Twoich cel\u00f3w, klient\u00f3w, konkurencji i aktualnych wyzwa\u0144. Je\u015bli proces zaczyna si\u0119 od wyboru szablonu, wa\u017cne szczeg\u00f3\u0142y mog\u0105 zosta\u0107 pomini\u0119te.",
+          q: "Ile trwa projekt?",
+          a: "Od czterech do ośmiu tygodni, w zależności od zakresu. Nie dlatego, że pracuję wolno. Dlatego, że nie zaczynam kodować, dopóki nie zrozumiem, co Twoi kupcy muszą zobaczyć. Ta rozmowa zajmuje czas. Kodowanie to najłatwiejsza część.",
         },
         {
-          q: "Czy skupiacie si\u0119 na SEO i wydajno\u015bci?",
-          a: "Strona internetowa musi robi\u0107 wi\u0119cej ni\u017c tylko dobrze wygl\u0105da\u0107. Powinna \u0142adowa\u0107 si\u0119 szybko, dzia\u0142a\u0107 dobrze na wszystkich urz\u0105dzeniach i pomaga\u0107 klientom znale\u017a\u0107 Tw\u00f3j biznes. Zapytaj, jak podchodz\u0105 do technicznego SEO, szybko\u015bci i mierzenia wynik\u00f3w.",
+          q: "A jeśli nie mam żadnych zdjęć?",
+          a: "Pracujemy z tym, co masz. Przeciętne zdjęcie Twojego warsztatu zrobione telefonem jest lepsze niż stockowe zdjęcie uśmiechniętego inżyniera w kasku, które kupiłeś na stronie o nazwie BusinessPeopleSmiling.com.",
         },
         {
-          q: "Kto b\u0119dzie zarz\u0105dza\u0142 moim projektem?",
-          a: "Jasna komunikacja ma znaczenie. Powiniene\u015b wiedzie\u0107, kto jest odpowiedzialny za Tw\u00f3j projekt i kto rozumie Twoje cele biznesowe. Dedykowana osoba kontaktowa utrzymuje proces w porz\u0105dku.",
+          q: "Czy oferujecie wsparcie po wdrożeniu?",
+          a: "Tak. Opieka miesięczna zaczyna się od 150 funtów. Obejmuje hosting, aktualizacje bezpieczeństwa, kopie zapasowe i ten sporadyczny mail o dziesiątej wieczorem, bo musisz zmienić numer telefonu przed terminem składania ofert.",
         },
         {
-          q: "Co si\u0119 dzieje po uruchomieniu?",
-          a: "Strona internetowa wymaga sta\u0142ej opieki. Zapytaj o aktualizacje, bezpiecze\u0144stwo, kopie zapasowe, wsparcie techniczne i przysz\u0142e ulepszenia. Uruchomienie powinno by\u0107 pocz\u0105tkiem, nie ko\u0144cem.",
-        },
-        {
-          q: "Czy mog\u0119 przenie\u015b\u0107 stron\u0119, je\u015bli moje potrzeby si\u0119 zmieni\u0105?",
-          a: "Twoja strona powinna nale\u017ce\u0107 do Ciebie. Dobra agencja buduje z my\u015bl\u0105 o elastyczno\u015bci, pozwalaj\u0105c Ci zmieni\u0107 dostawc\u0119 bez utraty kontroli nad danymi lub domen\u0105.",
-        },
-        {
-          q: "Jak wygl\u0105da wycena projektu?",
-          a: "Ceny powinny by\u0107 jasne od samego pocz\u0105tku. Powiniene\u015b rozumie\u0107, co jest zawarte, co si\u0119 stanie, je\u015bli projekt si\u0119 zmieni, i jakie przysz\u0142e koszty mog\u0105 si\u0119 pojawi\u0107.",
+          q: "Czy możecie zintegrować stronę z naszymi istniejącymi systemami?",
+          a: "Jeśli ma API, prawdopodobnie tak. Jeśli działa na arkuszu kalkulacyjnym z 2003 roku i modlitwie, coś wymyślimy. Widziałem gorsze rzeczy.",
         },
       ],
     },
@@ -248,24 +225,17 @@ const translations = {
       },
     },
     portfolio: {
-      heading: "Nasze Realizacje",
-      subheading:
-        "Obecnie budujemy portfolio w sektorze przemys\u0142owym i handlowym. Oznacza to, \u017ce nasi pierwsi partnerzy dostaj\u0105 pierwszorz\u0119dn\u0105 prac\u0119 w dobrej cenie.",
-      case1: {
-        title: "Faza Budowania\nPortfolio",
-        desc: "Obecnie budujemy portfolio w sektorze przemys\u0142owym i handlowym. Oznacza to, \u017ce nasi pierwsi partnerzy dostaj\u0105 pierwszorz\u0119dn\u0105 prac\u0119 w dobrej cenie, z zrozumieniem \u017ce b\u0119dziemy mogli pokaza\u0107 projekt po jego uruchomieniu.",
-        tag: "[ 20% ZNI\u017bKA ]",
-      },
-      case2: {
-        title: "Oferta\nPierwszego Partnera",
-        desc: "Je\u015bli jeste\u015b got\u00f3w zosta\u0107 jednym z pierwszych partner\u00f3w, oferujemy dwudziestoprocentow\u0105 zni\u017ck\u0119 na projekt w zamian za opini\u0119, zgod\u0119 na umieszczenie twojej strony w naszym portfolio oraz przedstawienie nas dw\u00f3m innym przedsi\u0119biorcom z twojej sieci, gdy nadejdzie odpowiedni moment.",
-        tag: "[ BEZ NACISKU ]",
-      },
-      case3: {
-        title: "Przysz\u0142e\nProjekty",
-        desc: "Nowe case studies obejmuj\u0105ce dedykowane strony, optymalizacj\u0119 i biznesowe rozwi\u0105zania cyfrowe dla firm przemys\u0142owych i handlowych w ca\u0142ej Szkocji.",
-        tag: "[ WKR\u00d3TCE ]",
-      },
+      heading: "Aktualna dostępność",
+      subheading: "Q4 2026. Zostało jedno miejsce.",
+      body: [
+        "Prowadzę trzy projekty na kwartał. Dwa są już w trakcie. Piszę kod sam. Odbieram telefony sam. Testuję na urządzeniach, których Twoi klienci faktycznie używają. To cały zespół.",
+        "Nie wystawiamy ściany logotypów. Klienci przemysłowi nie wybierają dostawcy przez ładną galerię. Wybierają, bo strona odpowiada na jedno pytanie. Czy ta firma potrafi dostarczyć?",
+        "Każdy projekt objęty jest NDA lub wciąż w użyciu. Jeśli chcesz zobaczyć nasze prace, pokazuję je podczas rozmowy. Nie dlatego, że to tajne. Dlatego, że kontekst ma znaczenie. Zrzut ekranu nic Ci nie powie. Musisz wiedzieć, dlaczego oficer ds. zakupów zostaje na stronie, zamiast wyłączyć ją po ośmiu sekundach.",
+        "To nie jest sztuczka marketingowa. Po prostu tyle mogę. Jestem jedną osobą. Czasami śpię.",
+        "Jeśli Twoja strona kosztuje Cię przetargów, o których nawet nie wiedziałeś, że je przegrałeś, powinniśmy porozmawiać.",
+      ],
+      cta: "Poproś o rozmowę",
+      ctaHref: "/pl/contact/",
     },
     process: {
       heading: "Jak Pracujemy",

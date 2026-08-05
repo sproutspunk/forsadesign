@@ -220,20 +220,14 @@ function buildHomepageBodyEn() {
 </div>
 </section>
 <section id="portfolio">
-<h2>Our Work</h2>
-<p>Fast, custom-coded web platforms built to convert traffic into revenue.</p>
-<div>
-<h3>Love Sprouts  -  E-commerce Redesign</h3>
-<p>Rebuilt a custom Shopify store from scratch. Cut page load times to 1.1s and stopped cart abandonment.</p>
-</div>
-<div>
-<h3>Corporate &amp; Legal Platform</h3>
-<p>High-security web systems built for conversions in the legal and financial sectors.</p>
-</div>
-<div>
-<h3>Energy Infrastructure Web App</h3>
-<p>Clean, custom framework integration and fast flows for enterprise scale clients.</p>
-</div>
+<h2>Current Availability</h2>
+<p>Q4 2026. One project slot remains.</p>
+<p>I take three projects per quarter. Two are already underway. I write the code. I take the calls. I test on the devices your clients actually use. That is the entire team.</p>
+<p>We do not display a wall of logos. Industrial clients do not choose suppliers because of a pretty gallery. They choose because the site answers one question. Can this firm deliver?</p>
+<p>Every project is under NDA or in active use. If you want to see our work, we show it on a call. Not because it is secret. Because context matters. A screenshot tells you nothing. You need to know why the procurement officer stays on the page instead of closing it after eight seconds.</p>
+<p>This is not a sales tactic. It is a capacity fact. I am one person. I sleep occasionally.</p>
+<p>If your website is losing you tenders you never knew you lost, we should talk.</p>
+<a href="/en/contact/">Request a Call</a>
 </section>
 <section id="process">
 <h2>How We Work</h2>
@@ -253,6 +247,20 @@ function buildHomepageBodyEn() {
 <h3>Monitoring &amp; Updates</h3>
 <p>We look after server scaling, security monitoring, and speed adjustments so your site never slows down as your company grows.</p>
 </div>
+</section>
+<section id="faq">
+<h2>Common Questions</h2>
+<p>Straight answers for industrial, engineering and procurement teams.</p>
+<h3>Do you use WordPress or templates?</h3>
+<p>No. Every site is hand-coded. WordPress is fine for blogs. It is not fine for a firm that wants to pass a procurement audit without explaining why their site needs seventeen plugins and a security patch every Tuesday.</p>
+<h3>How long does a project take?</h3>
+<p>Between four and eight weeks, depending on scope. Not because I work slowly. Because I do not start coding until I understand what your buyers need to see. That conversation takes time. The coding is the easy part.</p>
+<h3>What if I do not have any photos?</h3>
+<p>We work with what you have. A decent photo of your workshop taken on a phone is better than a stock image of a smiling engineer in a hard hat that you bought from a website called BusinessPeopleSmiling.com.</p>
+<h3>Do you offer ongoing support?</h3>
+<p>Yes. Monthly care plans start at £150. That includes hosting, security updates, backups and the occasional panic email at 10 pm because you need a phone number changed before a tender deadline.</p>
+<h3>Can you integrate with our existing systems?</h3>
+<p>If it has an API, probably yes. If it runs on a spreadsheet from 2003 and a prayer, we will figure something out. I have seen worse.</p>
 </section>
 <section id="about">
 <h2>About Forsa Design</h2>
@@ -304,20 +312,14 @@ function buildHomepageBodyPl() {
 </div>
 </section>
 <section id="portfolio">
-<h2>Nasze Prace</h2>
-<p>Szybkie, pisane od zera strony i sklepy, stworzone by zamienia&#263; ruch w realny zysk.</p>
-<div>
-<h3>Love Sprouts: Przebudowa E-commerce</h3>
-<p>Stworzenie nowej strony Shopify od zera. Skr&#243;cenie &#322;adowania do 1.1s i zatrzymanie porzuconych koszyk&#243;w.</p>
-</div>
-<div>
-<h3>System Web dla Sektora Prawnego</h3>
-<p>Bezpieczny i szybki system internetowy, zaprojektowany pod k&#261;tem konwersji dla bran&#380;y prawniczej.</p>
-</div>
-<div>
-<h3>Platforma Cyfrowa dla Bran&#380;y Energetycznej</h3>
-<p>Dedykowany, lekki framework i zoptymalizowana &#347;cie&#380;ka u&#380;ytkownika dla sektora enterprise.</p>
-</div>
+<h2>Aktualna dostępność</h2>
+<p>Q4 2026. Zostało jedno miejsce.</p>
+<p>Prowadzę trzy projekty na kwartał. Dwa są już w trakcie. Piszę kod sam. Odbieram telefony sam. Testuję na urządzeniach, których Twoi klienci faktycznie używają. To cały zespół.</p>
+<p>Nie wystawiamy ściany logotypów. Klienci przemysłowi nie wybierają dostawcy przez ładną galerię. Wybierają, bo strona odpowiada na jedno pytanie. Czy ta firma potrafi dostarczyć?</p>
+<p>Każdy projekt objęty jest NDA lub wciąż w użyciu. Jeśli chcesz zobaczyć nasze prace, pokazuję je podczas rozmowy. Nie dlatego, że to tajne. Dlatego, że kontekst ma znaczenie. Zrzut ekranu nic Ci nie powie. Musisz wiedzieć, dlaczego oficer ds. zakupów zostaje na stronie, zamiast wyłączyć ją po ośmiu sekundach.</p>
+<p>To nie jest sztuczka marketingowa. Po prostu tyle mogę. Jestem jedną osobą. Czasami śpię.</p>
+<p>Jeśli Twoja strona kosztuje Cię przetargów, o których nawet nie wiedziałeś, że je przegrałeś, powinniśmy porozmawiać.</p>
+<a href="/pl/contact/">Poproś o rozmowę</a>
 </section>
 <section id="process">
 <h2>Jak Pracujemy</h2>
@@ -337,6 +339,20 @@ function buildHomepageBodyPl() {
 <h3>Wsparcie i Rozw&#243;j</h3>
 <p>Reagujemy zanim co&#347; si&#281; zepsuje. Dbamy o serwery, bezpiecze&#324;stwo i regularne aktualizacje kodu, &#380;eby strona dzia&#322;a&#322;a idealnie podczas rozwoju firmy.</p>
 </div>
+</section>
+<section id="faq">
+<h2>Najczęstsze pytania</h2>
+<p>Proste odpowiedzi dla firm przemysłowych, inżynieryjnych i zespołów zakupowych.</p>
+<h3>Czy używacie WordPressa lub szablonów?</h3>
+<p>Nie. Każda strona pisana jest ręcznie. WordPress sprawdza się przy blogach. Nie sprawdza się przy firmie, która chce przejść audyt zakupowy bez tłumaczenia, dlaczego jej strona potrzebuje siedemnastu wtyczek i łatki bezpieczeństwa w każdy wtorek.</p>
+<h3>Ile trwa projekt?</h3>
+<p>Od czterech do ośmiu tygodni, w zależności od zakresu. Nie dlatego, że pracuję wolno. Dlatego, że nie zaczynam kodować, dopóki nie zrozumiem, co Twoi kupcy muszą zobaczyć. Ta rozmowa zajmuje czas. Kodowanie to najłatwiejsza część.</p>
+<h3>A jeśli nie mam żadnych zdjęć?</h3>
+<p>Pracujemy z tym, co masz. Przeciętne zdjęcie Twojego warsztatu zrobione telefonem jest lepsze niż stockowe zdjęcie uśmiechniętego inżyniera w kasku, które kupiłeś na stronie o nazwie BusinessPeopleSmiling.com.</p>
+<h3>Czy oferujecie wsparcie po wdrożeniu?</h3>
+<p>Tak. Opieka miesięczna zaczyna się od 150 funtów. Obejmuje hosting, aktualizacje bezpieczeństwa, kopie zapasowe i ten sporadyczny mail o dziesiątej wieczorem, bo musisz zmienić numer telefonu przed terminem składania ofert.</p>
+<h3>Czy możecie zintegrować stronę z naszymi istniejącymi systemami?</h3>
+<p>Jeśli ma API, prawdopodobnie tak. Jeśli działa na arkuszu kalkulacyjnym z 2003 roku i modlitwie, coś wymyślimy. Widziałem gorsze rzeczy.</p>
 </section>
 <section id="about">
 <h2>O Forsa Design</h2>
