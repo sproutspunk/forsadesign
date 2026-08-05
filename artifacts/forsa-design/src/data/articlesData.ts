@@ -596,31 +596,31 @@ export const articles: Article[] = [
         "A website is not a one-time project. It is a business asset that needs ongoing care. Security, performance, content and search rankings all degrade without regular attention. Here is what maintenance actually involves.",
       sections: [
         {
-          body: "Most businesses treat a website like a brochure: design it, print it, done. That mindset worked in 2005. It does not work now. A website is a living system. Software ages, vulnerabilities appear, search algorithms change and content goes stale. Without regular maintenance, even the best-built site quietly loses value.",
+          body: "Most businesses treat a website like a brochure: design it, print it, done. That mindset worked in 2005. It does not work now. A website is a living system. Software ages, vulnerabilities appear, search algorithms change, and content goes stale. Without regular maintenance, even the best-built site quietly loses value.",
         },
         {
           heading: "1. Security updates are not optional",
-          body: "Every website runs on software: the server, the framework and the plugins. Developers find security flaws regularly and release patches. If those patches are not applied, your site becomes an easy target.\n\nA compromised site does not just affect you. It can be used to send spam, host phishing pages or infect visitors. Google will flag it in search results. Hosting providers may suspend it. The cleanup costs far more than routine maintenance ever would.\n\nMaintenance means applying updates promptly, monitoring for unusual activity and keeping backups that actually work.",
+          body: "Every website runs on software: the server, the framework and the plugins. Developers regularly find security flaws and release patches. If those patches are not applied, your site becomes an easy target. A compromised site does not just affect you. It can be used to send spam, host phishing pages or infect visitors. Google will flag it in search results. Hosting providers may suspend it. The cleanup costs far more than routine maintenance ever would. Maintenance means applying updates promptly, monitoring for unusual activity and keeping backups that actually work.",
         },
         {
           heading: "2. Performance degrades over time",
-          body: "A fast site at launch can become slow within a year. New images get uploaded without compression. Third-party scripts accumulate. Analytics tools, chat widgets and social feeds each add requests. The database grows. Caches need refreshing.\n\nGoogle uses speed as a ranking factor. Visitors use speed as a trust signal. A site that loaded in two seconds at launch and now takes six is losing both search visibility and conversions. Regular performance audits catch this before it becomes a problem.",
+          body: "A fast site at launch can become slow within a year. New images are uploaded without compression. Third-party scripts accumulate. Analytics tools, chat widgets and social feeds each add requests. The database grows. Caches need refreshing. Google uses speed as a ranking factor. Visitors use speed as a trust signal. A site that loaded in two seconds at launch and now takes six is losing both search visibility and conversions. Regular performance audits catch this before it becomes a problem.",
         },
         {
           heading: "3. Content goes stale quickly",
-          body: "Opening hours change. Team members leave. Services get updated. Phone numbers change. If your site still shows last year's pricing or a team photo from two years ago, it quietly tells visitors you are not paying attention.\n\nSearch engines also prefer fresh content. A blog post from 2022 does not carry the same weight as one from this month. Regular small updates, like a new article, a refreshed service page or updated testimonials, keep the site alive in Google's eyes.",
+          body: "Opening hours change. Team members leave. Services are updated. Phone numbers change. If your site still shows last year's pricing or a team photo from two years ago, it quietly tells visitors you are not paying attention. Search engines also prefer fresh content. A blog post from 2022 does not carry the same weight as one from this month. Regular small updates, like a new article, a refreshed service page or updated testimonials, keep the site alive in Google's eyes.",
         },
         {
           heading: "4. Search rankings need defending",
-          body: "SEO is not a finish line. Competitors publish new content. Google updates its algorithms. Local business listings need verification. Backlinks decay. A site that ranked well in January can be invisible by October if nothing is done.\n\nMaintenance includes checking what still ranks, what has dropped and why. It means updating technical SEO as standards evolve. It means making sure local search signals such as your Google Business Profile, directory listings and local citations stay accurate and consistent.",
+          body: "SEO is not a finish line. Competitors publish new content. Google updates its algorithms. Local business listings need verification. Backlinks decay. A site that ranked well in January can be invisible by October if nothing is done. Maintenance includes checking what still ranks, what has dropped and why. It means updating technical SEO as standards evolve. It means making sure local search signals such as your Google Business Profile, directory listings and local citations stay accurate and consistent.",
         },
         {
           heading: "5. Broken links cost real enquiries",
-          body: "A booking link that goes to a 404. An email address that no longer exists. These are invisible problems with visible consequences: lost enquiries, frustrated customers, missed revenue.\n\nRegular maintenance means checking links and verifying that every path a visitor might take still works. It takes minutes to check and seconds to fix. The alternative is finding out from an angry customer.",
+          body: "A booking link that goes to a 404. An email address that no longer exists. These are invisible problems with visible consequences: lost enquiries, frustrated customers, missed revenue. Regular maintenance means checking links and verifying that every path a visitor might take still works. It takes minutes to check and seconds to fix. The alternative is finding out from an angry customer.",
         },
         {
           heading: "What does good maintenance look like?",
-          body: "It does not need to be expensive or complicated. A solid routine covers monthly software updates and security patches, quarterly performance checks and content reviews, and regular backups stored away from the server. Once a year the SEO deserves a proper audit and a strategy refresh. And anything broken gets fixed straight away, not next month.\n\nThe key is consistency. Small, regular attention prevents the big problems that cost time, money and reputation.",
+          body: "It does not need to be expensive or complicated. A solid routine covers monthly software updates and security patches, quarterly performance checks and content reviews, and regular backups stored away from the server. Once a year, the SEO deserves a proper audit and a strategy refresh. And anything broken gets fixed straight away, not next month. The key is consistency. Small, regular attention prevents the big problems that cost time, money and reputation.",
         },
         {
           heading: "Summary",
