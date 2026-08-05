@@ -1,0 +1,23 @@
+Expert insights on web design, SEO, and digital strategy.
+
+
+
+From template to shipyard. What actually works in web design for the marine industry.
+
+Most sites I audit look fine. Clean layout, decent typography, nice colours. But when I speak to shipyard and offshore business owners, I hear the same thing. The site exists, but it does not attract the right enquiries. It does not pass procurement checks. It does not show what needs to be shown. This is not about pretty design. It is about whether the site convinces the buyer that you can deliver a vessel, platform or component on time and to standard.
+
+A shipyard is not an online shop. A client looking for an offshore contractor or hull manufacturer does not browse a catalogue like Amazon. This is B2B (Business to Business) trade. They check whether you have certificates, references and whether your team understands classification rules. Your site needs to answer these questions before anyone even calls you.
+
+In previous articles, I wrote about speed and responsiveness. I wrote that every second of loading time costs visitors. In a shipyard, this rule is even more brutal. Your potential client may be sitting in a site office container on the quayside with a connection that barely works. If the site takes five seconds to load, they do not wait. They go to the competition.
+
+I also wrote about the difference between a CMS (Content Management System) template and a bespoke site. For a shipyard, this difference is critical. A template does not account for technical documentation, vessel project cards or integration with an ERP (Enterprise Resource Planning) system. A bespoke site can. It can show a project portfolio in a way an engineer understands, not just a designer.
+
+In the article about conversion, I wrote about clarity and trust. In the shipyard industry, trust is built differently than in retail. It is not about reviews from portals. It is about whether the site shows real projects, names of responsible people and a direct number to someone who understands technical specifications. Trust is concrete numbers. The tonnage you have built. The year of build. The name of the vessel that underwent refit in your dock.
+
+I wrote that SEO (Search Engine Optimisation) is not just the site. In the shipyard industry, keywords are not just web design Aberdeen. It is offshore vessel fabrication Scotland, ship repair Banff, marine engineering procurement UK. Content must answer questions asked by buyers from platforms and design offices, not random internet users.
+
+In the last article I wrote that maintaining a site matters more than building it. For a shipyard, this means references from a project finished two years ago are not enough. The site must live. New projects, new certificates, up-to-date contact details. An old site with outdated information signals that the company may not be active. And in an industry where contracts are worth millions, that signal is fatal.
+
+If you run a shipyard or offshore business in Scotland, you do not need a site that looks like it belongs in a creative agency portfolio. You need a site that passes procurement checks, works on a weak connection and shows you understand the industry. Because in this industry, the buyer does not choose the prettiest site. They choose the company they can trust.
+
+If you want to talk about a site for your shipyard or offshore business, email hello@forsadesign.co.uk. The first conversation is free.
