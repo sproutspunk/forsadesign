@@ -100,7 +100,7 @@ const translations = {
         },
         {
           title: "Support & Evolution",
-          desc: "Monthly care plans keep your site secure, updated and aligned with your contracts pipeline. As your capabilities grow, your site grows with them.",
+          desc: "Monthly care plans keep your site secure, up to date, and aligned with your contract pipeline. As your capabilities grow, your site grows with them.",
         },
       ],
     },
