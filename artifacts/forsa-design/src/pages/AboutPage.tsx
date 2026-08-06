@@ -21,7 +21,7 @@ const content = {
     body2:
       "That experience taught me one thing: most industrial firms do excellent work, but their websites do not keep up. And it costs contracts. I am not a London agency with fifteen people and a coffee shop in the office. I am someone who understands industry, logistics and international trade. I now build websites that speak your customers' language. No templates. No unnecessary jargon. Just clean code and a clear message.",
     body3:
-      "Based in Banff, Aberdeenshire. Serving businesses across Scotland. Fluent in Polish and English.",
+      "Based in Banff, Aberdeenshire. Fluent in English and Polish. Serving Scotland, the UK and selected EU export markets.",
     whatWeDoHeading: "Why This Background Matters",
     services: [
       {
@@ -149,7 +149,8 @@ const content = {
       "Nazywam się Miro. Forsa Design założyłem po ponad 20 latach w międzynarodowej sprzedaży B2B. Handlowałem maszynami do obróbki metalu, wyposażeniem przemysłowym i rozwiązaniami inżynieryjnymi w Europie i Azji. Siedziałem po obu stronach stołu zakupowego. Wiem, jak wygląda proces od pierwszego maila po podpisany kontrakt.",
     body2:
       "To doświadczenie nauczyło mnie jednej rzeczy. Większość firm przemysłowych wykonuje świetną robotę, ale ich strony internetowe nie nadążają za poziomem ich usług. I to kosztuje kontrakty. Nie dlatego, że praca jest słaba, tylko dlatego, że w dzisiejszym B2B strona to pierwszy etap weryfikacji. Nie jestem agencją z Londynu z piętnastoma osobami w zespole i kawiarnią w biurze. Jestem człowiekiem, który rozumie przemysł, logistykę i handel międzynarodowy. Teraz buduję strony, które komunikują się językiem Twoich klientów. Bez szablonów. Bez zbędnego żargonu. Tylko czysty kod i jasny przekaz.",
-    body3: "Banff, Aberdeenshire. Obsługuję firmy w całej Szkocji. Mówię po polsku i po angielsku.",
+    body3:
+      "Siedziba w Banff, Aberdeenshire. Biegły w językach angielskim i polskim. Obsługujemy klientów w Szkocji, w całej Wielkiej Brytanii oraz na wybranych rynkach eksportowych UE.",
     whatWeDoHeading: "Dlaczego To Doświadczenie Ma Znaczenie",
     services: [
       {
@@ -161,7 +162,7 @@ const content = {
         desc: "Pracowałem z klientami i interesariuszami z każdej dziedziny życia. To przekłada się na strony, które jasno komunikują się z odbiorcami, czy to lokalnymi klientami, czy międzynarodowymi partnerami.",
       },
       {
-        title: "Dostarczanie Wyników",
+        title: "Dostarczanie wyników",
         desc: "Cała moja kariera opierała się na zawieraniu umów, zarządzaniu projektami od A do Z i dostarczaniu mierzalnych rezultatów. Tę samą dyscyplinę przenoszę do web developmentu: jasne terminy, transparentna komunikacja i skupienie na tym, co naprawdę przynosi korzyść Twojej firmie.",
       },
     ],
@@ -187,7 +188,7 @@ const content = {
       },
       {
         num: "04",
-        title: "Testowanie i Optymalizacja",
+        title: "Testowanie i optymalizacja",
         period: "Tydzień 9",
         desc: "Testy na wszystkich urządzeniach i przeglądarkach, analiza wydajności, bezpieczeństwa, SEO.",
       },

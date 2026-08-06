@@ -107,8 +107,8 @@ const sections: SectionData[] = [
   },
   {
     number: "3",
-    title: "Administrator i Funkcjonariusz Ochrony Danych",
-    body: `Forsa Design, Art & Web Design, Banff, Szkocja jest Administratorem Danych. W związku ze wszystkimi pytaniami dotyczącymi ochrony danych i korzystaniem z Twoich praw, prosimy o kontakt z Funkcjonariuszem Ochrony Danych w Forsa Design.`,
+    title: "Administrator i Inspektor Ochrony Danych",
+    body: `Forsa Design, Art & Web Design, Banff, Szkocja jest Administratorem Danych. W związku ze wszystkimi pytaniami dotyczącymi ochrony danych i korzystaniem z Twoich praw, prosimy o kontakt z Inspektorem Ochrony Danych w Forsa Design.`,
   },
   {
     number: "4",

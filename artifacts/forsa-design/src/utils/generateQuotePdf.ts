@@ -102,7 +102,7 @@ function itemDescription(label: string, isEn: boolean) {
         ["fotograf", "Dobor zdjec i materialow wizualnych dla nowej strony."],
         ["funkcj", "Dedykowane funkcje dopasowane do wymagan biznesowych."],
         ["seo", "Podstawy technicznego SEO, metadane i widocznosc w wyszukiwarce."],
-        ["wydajn", "Optymalizacja wydajnosci, dostepnosci i jakosci."],
+        ["wydajn", "Optymalizacja wydajności, dostępności i jakości."],
         ["hosting", "Konfiguracja hostingu, publikacja i wsparcie uruchomienia."],
         ["czas", "Koordynacja projektu i planowanie realizacji."],
       ];

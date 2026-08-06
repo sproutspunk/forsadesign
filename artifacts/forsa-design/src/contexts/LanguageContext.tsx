@@ -53,7 +53,7 @@ const translations = {
       tagline: "Web Systems for Heavy Industry",
       subheader:
         "No templates. No page builders. Just fast, secure sites that pass procurement checks.",
-      body: "You build infrastructure. We build the digital layer that proves you can deliver it. With more than twenty years in international B2B industrial sales across machinery, engineering and energy procurement, I know what happens when a buyer shortlists three suppliers and checks their websites. Forsa Design builds dedicated, hand-coded websites and web systems for offshore and energy contractors, engineering firms, industrial equipment suppliers and heavy logistics operators. Based in Banff, Aberdeenshire. Serving Scotland and the UK.",
+      body: "You build infrastructure. We build the digital layer that proves you can deliver it. With more than twenty years in international B2B industrial sales across machinery, engineering and energy procurement, I know what happens when a buyer shortlists three suppliers and checks their websites. Forsa Design builds dedicated, hand-coded websites and web systems for offshore and energy contractors, engineering firms, industrial equipment suppliers and heavy logistics operators. Based in Banff, Aberdeenshire. Serving Scotland, the UK and selected EU export markets.",
       cta: "Request a Technical Quote",
     },
     services: {
@@ -87,19 +87,19 @@ const translations = {
       heading: "How We Work",
       steps: [
         {
-          title: "Discovery & Audit",
+          title: "Discovery and Audit",
           desc: "We analyse your current site, competitors and where you lose credibility during the buyer's vetting process. We map decision-makers and the evidence they need to see.",
         },
         {
-          title: "Technical Spec & Design",
-          desc: "Clean architecture, hand-written code and no unnecessary plug-ins. Every page is built around a procurement checkpoint, with real proof of your facility, capabilities and work.",
+          title: "Technical Spec and Design",
+          desc: "Clean architecture, hand-written code and no unnecessary plugins. Every page is built around a procurement checkpoint, with real proof of your facility, capabilities and work.",
         },
         {
-          title: "Compliance, Testing & Launch",
+          title: "Compliance, Testing and Launch",
           desc: "GDPR, accessibility, SSL and performance benchmarks. Tested on the devices your clients actually use, from phones offshore to older PCs in site cabins.",
         },
         {
-          title: "Support & Evolution",
+          title: "Support and Evolution",
           desc: "Monthly care plans keep your site secure, up to date, and aligned with your contract pipeline. As your capabilities grow, your site grows with them.",
         },
       ],
@@ -110,7 +110,7 @@ const translations = {
       body2:
         "That experience taught me one thing: most industrial firms deliver world-class work, but their digital presence does not reflect it. I am not a London agency with fifteen account managers. I am a developer who understands industry, logistics, international trade and contract deadlines. I write the code and answer the phone myself.",
       body3:
-        "Based in Banff, Aberdeenshire. Fluent in English and Polish. Serving UK-wide and EU export markets.",
+        "Based in Banff, Aberdeenshire. Fluent in English and Polish. Serving Scotland, the UK and selected EU export markets.",
     },
     pricing: {
       heading: "Transparent Pricing",
@@ -127,6 +127,9 @@ const translations = {
       location: "Banff, Aberdeenshire, Scotland",
       contactPersonLabel: "Contact person",
       contactPerson: "Miro",
+      emailLabel: "Email",
+      phoneLabel: "Phone",
+      linkedinLabel: "LinkedIn",
       email: "hello@forsadesign.co.uk",
       phone: "07770110735",
       copyright: "\u00A9 2026 Forsa Design. All rights reserved.",
@@ -205,22 +208,22 @@ const translations = {
       tagline: "Systemy Webowe dla Przemys\u0142u Ci\u0119\u017ckiego",
       subheader:
         "\u017badnych szablon\u00f3w. \u017badnych kreator\u00f3w stron. Tylko szybkie, bezpieczne strony, kt\u00f3re przechodz\u0105 kontrol\u0119 zam\u00f3wie\u0144.",
-      body: "Ty budujesz infrastruktur\u0119. My tworzymy warstw\u0119 cyfrow\u0105, kt\u00f3ra dowodzi, \u017ce potrafisz j\u0105 dostarczy\u0107. Dzi\u0119ki ponad dwudziestoletniemu do\u015bwiadczeniu w mi\u0119dzynarodowej sprzeda\u017cy B2B w przemy\u015ble, obejmuj\u0105cej maszyny, in\u017cynieri\u0119 i zaopatrzenie w energi\u0119, wiem, co si\u0119 dzieje, gdy kupuj\u0105cy wybiera trzech dostawc\u00f3w i sprawdza ich strony internetowe. Forsa Design tworzy dedykowane, r\u0119cznie kodowane strony internetowe i systemy internetowe dla wykonawc\u00f3w z bran\u017cy offshore i energetycznej, firm in\u017cynieryjnych, dostawc\u00f3w sprz\u0119tu przemys\u0142owego i operator\u00f3w logistyki ci\u0119\u017ckiej. Siedziba firmy znajduje si\u0119 w Banff w Aberdeenshire. Obs\u0142ugujemy Szkocj\u0119 i Wielk\u0105 Brytani\u0119.",
+      body: "Ty budujesz infrastrukturę. My tworzymy warstwę cyfrową, która dowodzi, że potrafisz ją dostarczyć. Dzięki ponad dwudziestoletniemu doświadczeniu w międzynarodowej sprzedaży B2B w przemyśle, obejmującej maszyny, inżynierię i zaopatrzenie w energię, wiem, co się dzieje, gdy kupujący wybiera trzech dostawców i sprawdza ich strony internetowe. Forsa Design tworzy dedykowane, ręcznie kodowane strony internetowe i systemy internetowe dla wykonawców z branży offshore i energetycznej, firm inżynieryjnych, dostawców sprzętu przemysłowego i operatorów logistyki ciężkiej. Siedziba firmy znajduje się w Banff w Aberdeenshire. Obsługujemy klientów w Szkocji, w całej Wielkiej Brytanii oraz na wybranych rynkach eksportowych UE.",
       cta: "Popro\u015b o wycen\u0119 techniczn\u0105",
     },
     services: {
       heading: "Co budujemy",
       card1: {
         title: "Strony dla przemys\u0142u",
-        desc: "Bez ci\u0119\u017ckich szablon\u00f3w. Bez zb\u0119dnych wtyczek. Budujemy dedykowane witryny skupione na wydajno\u015bci, wygodzie na telefonie i jasnym przekazie. Twoja strona otwiera si\u0119 szybko, dzia\u0142a na ka\u017cdym urz\u0105dzeniu i m\u00f3wi odwiedzaj\u0105cym, dlaczego maj\u0105 wybra\u0107 ciebie, a nie konkurencj\u0119 zza rogu.",
+        desc: "Dedykowane strony budowane od podstaw dla firm inżynieryjnych i produkcyjnych. Szybkie ładowanie, wydajność mobilna dla biur budowy i komunikacja techniczna skierowana do specyfikantów, nie do designerów.",
       },
       card2: {
         title: "E-commerce dla cz\u0119\u015bci i urz\u0105dze\u0144",
-        desc: "Je\u015bli sprzedajesz cz\u0119\u015bci, narz\u0119dzia lub us\u0142ugi przez internet, usuwamy wszystko, co zabija zam\u00f3wienia. Lepszy proces zakupu, przejrzyste karty produkt\u00f3w i design mobilny, kt\u00f3ry zamienia przegl\u0105daj\u0105cych w klient\u00f3w. Niezale\u017cnie od tego, czy to pe\u0142ny sklep czy prosty formularz zapytania, dbamy o to, \u017ceby zarabia\u0142.",
+        desc: "Katalogi B2B i systemy zamówień dla komponentów przemysłowych z cenami dla kont klientów, wycenami hurtowymi i integracjami z systemami ERP lub magazynowymi. Tworzone dla działów zakupów, nie dla przypadkowych odwiedzających.",
       },
       card3: {
         title: "Dedykowane systemy webowe",
-        desc: "Niekt\u00f3re firmy potrzebuj\u0105 wi\u0119cej ni\u017c standardowej strony. Portale dla dealer\u00f3w, generatory kart technicznych, wersje wieloj\u0119zyczne na rynki eksportowe albo integracja z twoimi systemami. Budujemy praktyczne narz\u0119dzia, kt\u00f3re rosn\u0105 razem z tob\u0105.",
+        desc: "Portale dealerskie, generatory specyfikacji technicznych, wielojęzyczne silniki wycen i integracje workflow dla rynków eksportowych. Praktyczne narzędzia dopasowane do Twojej operacji, a nie ją zakłócające.",
       },
     },
     portfolio: {
@@ -239,20 +242,20 @@ const translations = {
       heading: "Jak Pracujemy",
       steps: [
         {
-          title: "Audyt i odkrycie",
-          desc: "Zaczynamy od zrozumienia twojego biznesu, twoich klient\u00f3w i tego, jak ci\u0119 faktycznie znajduj\u0105. Analizujemy twoj\u0105 obecn\u0105 stron\u0119, konkurencj\u0119 i miejsca, gdzie uciekaj\u0105 pieni\u0105dze. Bez zgadywania.",
+          title: "Analiza i audyt",
+          desc: "Analizujemy Twoją obecną stronę, konkurencję i momenty, w których tracisz wiarygodność podczas weryfikacji przez kupującego. Mapujemy decydentów i dowody, które muszą zobaczyć.",
         },
         {
           title: "Specyfikacja techniczna i projekt",
-          desc: "Tworzymy czyst\u0105, dedykowan\u0105 witryn\u0119 zbudowan\u0105 wok\u00f3\u0142 twoich cel\u00f3w. Prawdziwe zdj\u0119cia twojej pracy, a nie stockowe fotografie m\u0119\u017cczyzn w kaskach. Jasne wezwania do dzia\u0142ania. Szybkie \u0142adowanie. Porz\u0105dna wersja mobilna.",
+          desc: "Czysta architektura, kod pisany ręcznie, bez zbędnych wtyczek. Każda strona budowana jest wokół punktu kontrolnego zakupowego z realnymi dowodami na Twoje zaplecze, możliwości i prace.",
         },
         {
-          title: "Compliance, testy i uruchomienie",
-          desc: "Zanim cokolwiek p\u00f3jdzie na serwer, sprawdzamy ka\u017cd\u0105 podstron\u0119, ka\u017cdy formularz, ka\u017cdy link. Na telefonach, tabletach, laptopach i starym komputerze w biurze budowy. Musi dzia\u0142a\u0107 wsz\u0119dzie.",
+          title: "Zgodność, testy i uruchomienie",
+          desc: "GDPR, dostępność, SSL i benchmarki wydajności. Testowane na urządzeniach, których faktycznie używają Twoi klienci, od telefonów na offshore po starsze komputery w kontenerach biurowych.",
         },
         {
           title: "Wsparcie i rozw\u00f3j",
-          desc: "Po starcie nie znikamy. Oferujemy miesi\u0119czne plany opieki, kt\u00f3re utrzymuj\u0105 stron\u0119 bezpieczn\u0105, aktualn\u0105 i ulepszon\u0105. W miar\u0119 jak tw\u00f3j biznes ro\u015bnie, strona ro\u015bnie razem z nim.",
+          desc: "Miesięczne plany opieki utrzymują stronę bezpieczną, zaktualizowaną i dopasowaną do Twojego pipeline'u kontraktowego. Wraz z rozwojem Twoich możliwości strona rozwija się razem z nimi.",
         },
       ],
     },
@@ -262,7 +265,7 @@ const translations = {
       body2:
         "To do\u015bwiadczenie nauczy\u0142o mnie jednej rzeczy. Wi\u0119kszo\u015b\u0107 firm przemys\u0142owych wykonuje \u015bwietn\u0105 robot\u0119, ale ich strony internetowe nie nad\u0105\u017caj\u0105 za poziomem ich us\u0142ug. I to kosztuje kontrakty. Nie dlatego, \u017ce praca jest s\u0142aba, tylko dlatego, \u017ce w dzisiejszym B2B strona to pierwszy etap weryfikacji. Nie jestem agencj\u0105 z Londynu z pi\u0119tnastoma osobami w zespole i kawiarni\u0105 w biurze. Jestem cz\u0142owiekiem, kt\u00f3ry rozumie przemys\u0142, logistyk\u0119 i handel mi\u0119dzynarodowy. Teraz buduj\u0119 strony, kt\u00f3re komunikuj\u0105 si\u0119 j\u0119zykiem Twoich klient\u00f3w. Bez szablon\u00f3w. Bez zb\u0119dnego \u017cargonu. Tylko czysty kod i jasny przekaz.",
       body3:
-        "Banff, Aberdeenshire. Obs\u0142uguj\u0119 firmy w ca\u0142ej Szkocji. M\u00f3wi\u0119 po polsku i po angielsku.",
+        "Siedziba w Banff, Aberdeenshire. Biegły w językach angielskim i polskim. Obsługujemy klientów w Szkocji, w całej Wielkiej Brytanii oraz na wybranych rynkach eksportowych UE.",
     },
     pricing: {
       heading: "Przejrzyste ceny",
@@ -279,6 +282,9 @@ const translations = {
       location: "Banff, Aberdeenshire, Szkocja",
       contactPersonLabel: "Osoba kontaktowa",
       contactPerson: "Miro",
+      emailLabel: "Email",
+      phoneLabel: "Telefon",
+      linkedinLabel: "LinkedIn",
       email: "hello@forsadesign.co.uk",
       phone: "07770110735",
       copyright: "\u00A9 2026 Forsa Design. Wszystkie prawa zastrze\u017cone.",

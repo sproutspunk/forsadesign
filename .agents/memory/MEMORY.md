@@ -16,3 +16,4 @@
 - [About page content sources](about-page-content-sources.md) — homepage About and dedicated About routes use separate copy sources; identify the rendered route before editing.
 - [Cloudflare URL conventions](cloudflare-url-conventions.md) — trailing slash is the canonical form; robots.txt has ~1h edge cache (verify with cache-buster); Cloudflare injects managed content signals into robots.txt.
 - [Prerendered homepage parity](prerendered-homepage-parity.md) — homepage copy changes must update both React translations and prerender.mjs bodyHtml; test EN and PL after changing translation shapes.
+- [Blog metadata parity](blog-metadata-parity.md) — articlesData is the source of truth; articlesMeta titles and excerpts must stay identical for cards and SEO.

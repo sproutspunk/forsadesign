@@ -103,7 +103,7 @@ const sections: SectionData[] = [
     body: `O ile nie uzgodniono inaczej na piśmie, wszystkie prawa autorskie i prawa własności intelektualnej dotyczące naszej strony internetowej, w tym między innymi tekst, grafiki, branding, elementy projektowe, layouty, kod i zawartość, należą wyłącznie do Forsa Design. Możesz przeglądać i drukować strony z naszej witryny wyłącznie do osobistego, niekomercyjnego użytku. Każde inne powielanie, rozpowszechnianie lub wykorzystanie zawartości strony jest surowo zakazane bez uprzedniej pisemnej zgody Forsa Design.`,
     subsections: [
       {
-        title: "Deliverable'e Projektów",
+        title: "Rezultaty projektu",
         body: `Prawo własności do niestandardowych rezultatów projektu (w tym stron internetowych, projektów, kodu i innych materiałów) stworzonych specjalnie dla klienta przechodzi na klienta po otrzymaniu 100% płatności całkowitej wartości projektu. Aż do otrzymania pełnej płatności wszystkie prawa autorskie i prawa własności intelektualnej, w tym kod źródłowy, pliki projektowe, bazy danych i wszystkie powiązane materiały, pozostają wyłączną własnością Forsa Design. Forsa Design zastrzega sobie prawo do wykorzystywania rezultatów projektów jako przykładów z portfolio i studiów przypadków z odpowiednią anonimizacją, jeśli będzie tego życzył klient.`,
       },
       {

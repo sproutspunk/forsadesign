@@ -49,19 +49,19 @@ interface QuoteSummaryProps {
 const INCLUDED_EN = [
   "Responsive Design",
   "SEO Foundation",
-  "Security Setup",
+  "Security Configuration",
   "Performance Optimisation",
   "Mobile Optimised",
-  "Cross-browser Testing",
+  "Cross-Browser Testing",
 ];
 
 const INCLUDED_PL = [
   "Responsywny design",
   "Podstawy SEO",
-  "Konfiguracja bezpieczenstwa",
-  "Optymalizacja wydajnosci",
+  "Konfiguracja bezpieczeństwa",
+  "Optymalizacja wydajności",
   "Optymalizacja mobilna",
-  "Testy cross-browser",
+  "Testy kompatybilności między przeglądarkami",
 ];
 
 function createQuoteId() {

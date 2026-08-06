@@ -14,19 +14,19 @@ export default function ContactInfo() {
     },
     {
       icon: <Mail size={32} aria-hidden="true" />,
-      label: "Email",
+      label: t("footer.emailLabel") as string,
       value: t("footer.email") as string,
       href: `mailto:${t("footer.email")}`,
     },
     {
       icon: <Phone size={32} aria-hidden="true" />,
-      label: "Phone",
+      label: t("footer.phoneLabel") as string,
       value: t("footer.phone") as string,
       href: `tel:${t("footer.phone")}`,
     },
     {
       icon: <Linkedin size={32} aria-hidden="true" />,
-      label: "LinkedIn",
+      label: t("footer.linkedinLabel") as string,
       value: "",
       href: "https://www.linkedin.com/in/miroslaw-potaczek",
     },
