@@ -29,7 +29,7 @@ const translations = {
       items: [
         {
           q: "Do you use WordPress or templates?",
-          a: "No. Every site is hand-coded. WordPress is fine for blogs. It is not fine for a firm that wants to pass a procurement audit without explaining why their site needs seventeen plugins and a security patch every Tuesday.",
+          a: "No. Every site is hand-coded. WordPress is fine for blogs. It is not fine for a firm that wants to pass a procurement audit without explaining why their site needs seventeen plug-ins and a security patch every Tuesday.",
         },
         {
           q: "How long does a project take?",
@@ -77,7 +77,7 @@ const translations = {
       body: [
         "I take three projects per quarter. Two are already underway. I write the code. I take the calls. I test on the devices your clients actually use. That is the entire team.",
         "We do not display a wall of logos. Industrial clients do not choose suppliers because of a pretty gallery. They choose because the site answers one question. Can this firm deliver?",
-        "Every project is under NDA or in active use. If you want to see our work, we show it on a call. Not because it is secret. Because context matters. A screenshot tells you nothing. You need to know why the procurement officer stays on the page instead of closing it after eight seconds.",
+        "Every project is under NDA or in active use. If you want to see our work, we show it on a call. Not because it is secret. Because context matters; a screenshot tells you nothing. You need to know why the procurement officer stays on the page instead of closing it after eight seconds.",
         "If your website isn't generating projects you didn't even know were there, we should talk.",
       ],
       cta: "Request a Call",
@@ -92,7 +92,7 @@ const translations = {
         },
         {
           title: "Technical Spec & Design",
-          desc: "Clean architecture, hand-written code and no unnecessary plugins. Every page is built around a procurement checkpoint, with real proof of your facility, capabilities and work.",
+          desc: "Clean architecture, hand-written code and no unnecessary plug-ins. Every page is built around a procurement checkpoint, with real proof of your facility, capabilities and work.",
         },
         {
           title: "Compliance, Testing & Launch",

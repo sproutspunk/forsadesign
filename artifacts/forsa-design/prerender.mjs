@@ -208,15 +208,15 @@ function buildHomepageBodyEn() {
 <h2>What We Build</h2>
 <div>
 <h3>Industrial Web Presence</h3>
-<p>Dedicated sites built from scratch for engineering and manufacturing firms. Fast load times, mobile performance for site offices and technical messaging that speaks to specifiers.</p>
+<p>Dedicated sites built from scratch for engineering and manufacturing firms. Fast load times, mobile performance for site offices and technical messaging that speaks to specifiers, not designers.</p>
 </div>
 <div>
 <h3>E-commerce for Parts and Equipment</h3>
-<p>B2B catalogues and ordering systems for industrial components with account pricing, bulk quotes and integrations with ERP or stock systems.</p>
+<p>B2B catalogues and ordering systems for industrial components with account pricing, bulk quotes and integrations with ERP or stock systems. Built for procurement officers, not casual browsers.</p>
 </div>
 <div>
 <h3>Bespoke Web Systems</h3>
-<p>Dealer portals, technical specification generators, multilingual quote engines and workflow integrations for export markets.</p>
+<p>Dealer portals, technical specification generators, multilingual quote engines and workflow integrations for export markets. Practical tools that fit your operation instead of disrupting it.</p>
 </div>
 </section>
 <section id="portfolio">
@@ -224,34 +224,34 @@ function buildHomepageBodyEn() {
 <p>Q4 2026. One project slot remains.</p>
 <p>I take three projects per quarter. Two are already underway. I write the code. I take the calls. I test on the devices your clients actually use. That is the entire team.</p>
 <p>We do not display a wall of logos. Industrial clients do not choose suppliers because of a pretty gallery. They choose because the site answers one question. Can this firm deliver?</p>
-<p>Every project is under NDA or in active use. If you want to see our work, we show it on a call. Not because it is secret. Because context matters. A screenshot tells you nothing. You need to know why the procurement officer stays on the page instead of closing it after eight seconds.</p>
+<p>Every project is under NDA or in active use. If you want to see our work, we show it on a call. Not because it is secret. Because context matters; a screenshot tells you nothing. You need to know why the procurement officer stays on the page instead of closing it after eight seconds.</p>
 <p>If your website isn't generating projects you didn't even know were there, we should talk.</p>
 <a href="/en/contact/">Request a Call</a>
 </section>
 <section id="process">
 <h2>How We Work</h2>
 <div>
-<h3>Technical Audit</h3>
-<p>We look at your business data, find what slows down your current site, and plan a fast layout focused on your sales targets.</p>
+<h3>Discovery &amp; Audit</h3>
+<p>We analyse your current site, competitors and where you lose credibility during the buyer's vetting process. We map decision-makers and the evidence they need to see.</p>
 </div>
 <div>
-<h3>Clean Coding</h3>
-<p>No templates used. We build your frontend and backend from scratch, keeping the code clean, minimal, and secure.</p>
+<h3>Technical Spec &amp; Design</h3>
+<p>Clean architecture, hand-written code and no unnecessary plug-ins. Every page is built around a procurement checkpoint, with real proof of your facility, capabilities and work.</p>
 </div>
 <div>
-<h3>Stress-Testing</h3>
-<p>We run security checks, cross-browser audits, and speed tests before your platform goes live to make sure it handles high traffic smoothly.</p>
+<h3>Compliance, Testing &amp; Launch</h3>
+<p>GDPR, accessibility, SSL and performance benchmarks. Tested on the devices your clients actually use, from phones offshore to older PCs in site cabins.</p>
 </div>
 <div>
-<h3>Monitoring &amp; Updates</h3>
-<p>We look after server scaling, security monitoring, and speed adjustments so your site never slows down as your company grows.</p>
+<h3>Support &amp; Evolution</h3>
+<p>Monthly care plans keep your site secure, up to date, and aligned with your contract pipeline. As your capabilities grow, your site grows with them.</p>
 </div>
 </section>
 <section id="faq">
 <h2>Common Questions</h2>
 <p>Straight answers for industrial, engineering and procurement teams.</p>
 <h3>Do you use WordPress or templates?</h3>
-<p>No. Every site is hand-coded. WordPress is fine for blogs. It is not fine for a firm that wants to pass a procurement audit without explaining why their site needs seventeen plugins and a security patch every Tuesday.</p>
+<p>No. Every site is hand-coded. WordPress is fine for blogs. It is not fine for a firm that wants to pass a procurement audit without explaining why their site needs seventeen plug-ins and a security patch every Tuesday.</p>
 <h3>How long does a project take?</h3>
 <p>Between four and eight weeks, depending on scope. Not because I work slowly. Because I do not start coding until I understand what your buyers need to see. That conversation takes time. The coding is the easy part.</p>
 <h3>What if I do not have any photos?</h3>
@@ -1348,7 +1348,9 @@ function buildAboutBodyEn() {
 </header>
 <main>
 <h1>Meet the Founder of Forsa Design</h1>
-<p>My name is Miro. I started Forsa Design after more than 20 years in international B2B sales. I traded metalworking machinery, industrial equipment and engineering solutions across Europe and Asia. I sat on both sides of the procurement table. I know what the process looks like from the first email to the signed contract. That experience taught me one thing: most industrial firms do excellent work, but their websites do not keep up. And it costs contracts. I now build websites that speak your customers' language. No templates. No jargon. Just clean code and a clear message.</p>
+<p>My name is Miro. I started Forsa Design after more than 20 years in international B2B sales. I traded metalworking machinery, industrial equipment and engineering solutions across Europe and Asia. I sat on both sides of the procurement table. I know what the process looks like from the first email to the signed contract.</p>
+<p>That experience taught me one thing: most industrial firms do excellent work, but their websites do not keep up. And it costs contracts. I am not a London agency with fifteen people and a coffee shop in the office. I am someone who understands industry, logistics and international trade. I now build websites that speak your customers' language. No templates. No unnecessary jargon. Just clean code and a clear message.</p>
+<p>Based in Banff, Aberdeenshire. Serving businesses across Scotland. Fluent in Polish and English.</p>
 <section>
 <h2>Why This Background Matters</h2>
 <div>
@@ -1366,7 +1368,7 @@ function buildAboutBodyEn() {
 </section>
 <section>
 <h2>Our Process</h2>
-<div><h3>01  -  Discovery &amp; Strategy (Weeks 1-2)</h3><p>We conduct interviews, analyse your industry, competition, users, and define business goals.</p></div>
+<div><h3>01  -  Discovery &amp; Strategy (Weeks 1-2)</h3><p>We conduct interviews, analyse your industry, competition, and users, and define business goals.</p></div>
 <div><h3>02  -  Design (Weeks 3-4)</h3><p>We create wireframes, mockups, and a visual strategy. Everything approved by you before we write a line of code.</p></div>
 <div><h3>03  -  Development (Weeks 5-8)</h3><p>We build the site with a focus on performance, security, SEO, and conversion.</p></div>
 <div><h3>04  -  Testing &amp; Optimisation (Week 9)</h3><p>Tests across all devices and browsers, performance analysis, security, SEO.</p></div>
@@ -1377,8 +1379,8 @@ function buildAboutBodyEn() {
 <p>No templates. Every project starts from scratch, tailored to your industry and goals.</p>
 <p>Focus on business results. We measure everything. Whether the site attracts users, converts, and supports sales.</p>
 <p>You own everything. Your domain, hosting and content are always in your control. No lock-in, no dependency on a single provider.</p>
-<p>Long-term partnership. We support you months and years after launch.</p>
-<p>Transparent communication. You know what's being done, why, and when it will be ready.</p>
+<p>Long-term partnership. We support you months and years after launch. This isn't a project, it's a collaboration.</p>
+<p>Transparent communication. You know what's being done, why, and when it will be ready. No hidden fees, no bureaucratic tricks.</p>
 </section>
 <section>
 <h2>How We Compare</h2>
@@ -1465,7 +1467,7 @@ function buildComparisonBodyEn() {
 <div>
 <h3>CMS Template  -  Fast and affordable</h3>
 <p>Pros: Lower initial cost. Quick to launch. Easy content updates.</p>
-<p>Cons: Often based on existing themes. Can become slower with too many plugins. Limited control over SEO and performance.</p>
+<p>Cons: Often based on existing themes. Can become slower with too many plug-ins. Limited control over SEO and performance.</p>
 </div>
 <div>
 <h3>Non-specialist Agency  -  General solution provider</h3>

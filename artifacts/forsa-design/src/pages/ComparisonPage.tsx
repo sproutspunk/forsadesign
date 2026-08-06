@@ -25,7 +25,7 @@ const content = {
         pros: ["Lower initial cost", "Quick to launch", "Easy content updates"],
         cons: [
           "Often based on existing themes",
-          "Can become slower with too many plugins",
+          "Can become slower with too many plug-ins",
           "Limited control over SEO and performance",
         ],
         highlight: false,

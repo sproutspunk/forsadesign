@@ -163,7 +163,7 @@ export default function ContactForm() {
           </h2>
           <p className="mt-5 leading-relaxed text-foreground/65">
             {en
-              ? "Share a few details and we will reply with a practical next step."
+              ? "Share a few details, and we will reply with a practical next step."
               : "Napisz kilka szczegółów, a odpowiemy z konkretną propozycją kolejnego kroku."}
           </p>
         </div>

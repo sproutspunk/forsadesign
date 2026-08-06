@@ -132,7 +132,7 @@ export const articles: Article[] = [
         },
         {
           heading: "What is loading speed?",
-          body: "Speed is how quickly the site loads and becomes usable. Most visitors will abandon a page that takes more than three seconds to load. Speed also feeds directly into Google's ranking signals, particularly for mobile searches. A slow site pays twice: it loses visitors and it ranks lower in search results.",
+          body: "Speed is how quickly the site loads and becomes usable. Most visitors will abandon a page that takes more than three seconds to load. Speed also feeds directly into Google's ranking signals, particularly for mobile searches. A slow site pays twice: it loses visitors, and it ranks lower in search results.",
         },
         {
           heading: "How do they work together?",
@@ -140,11 +140,11 @@ export const articles: Article[] = [
         },
         {
           heading: "How do you measure speed?",
-          body: "Google's Core Web Vitals are the benchmark worth knowing. LCP (Largest Contentful Paint) measures how quickly the main content loads, with a target of under 2.5 seconds. INP measures responsiveness to clicks and taps. CLS (Cumulative Layout Shift) measures whether the page shifts unexpectedly while loading. PageSpeed Insights and GTmetrix will show you how your site scores on all three.",
+          body: "Google's Core Web Vitals are the benchmark worth knowing. LCP (Largest Content Paint) measures how quickly the main content loads, with a target of under 2.5 seconds. INP measures responsiveness to clicks and taps. CLS (Cumulative Layout Shift) measures whether the page shifts unexpectedly while loading. Page Speed Insights and GTmetrix will show you how your site scores on all three.",
         },
         {
           heading: "How do you build a fast and responsive website?",
-          body: "The main levers are image optimisation (use modern formats, compress properly, load only what is visible), lean code without unnecessary plugins, and smart caching. Test on real mobile devices and real connections, not just a desktop emulator. A site that scores well in a lab but struggles on a rural 4G connection has a real problem for the people you most want to reach.",
+          body: "The main levers are image optimisation (use modern formats, compress properly, load only what is visible), lean code without unnecessary plug-ins, and smart caching. Test on real mobile devices and real connections, not just a desktop emulator. A site that scores well in a lab but struggles on a rural 4G connection has a real problem for the people you most want to reach.",
         },
         {
           heading: "Summary",
@@ -526,27 +526,27 @@ export const articles: Article[] = [
         },
         {
           heading: "Clarity beats cleverness every time",
-          body: 'A visitor needs to know within three seconds what you do, who you do it for, and what to do next. Not after reading your mission statement. Not after scrolling through a carousel.\n\nWe see this mistake over and over: vague headlines like "Innovative Solutions for Forward-Thinking Businesses." That means nothing. Compare it to "Web Design for Small Businesses in Aberdeenshire: Fixed Quotes, No Surprises." One is forgettable. The other tells the right person immediately that they are in the right place.\n\nEvery headline, subheading and button on your site needs to pass this test: would a first-time visitor, scanning quickly, understand what you offer and why it matters to them? If not, rewrite it.',
+          body: 'A visitor needs to know within three seconds what you do, who you do it for, and what to do next. Not after reading your mission statement. Not after scrolling through a carousel. We see this mistake over and over: vague headlines like "Innovative Solutions for Forward-Thinking Businesses." That means nothing. Compare it to "Web Design for Small Businesses in Aberdeenshire: Fixed Quotes, No Surprises." One is forgettable. The other tells the right person immediately that they are in the right place. Every headline, subheading and button on your site needs to pass this test: would a first-time visitor, scanning, understand what you offer and why it matters to them? If not, rewrite it.',
         },
         {
           heading: "Trust signals are not optional",
-          body: 'Before someone emails or calls you, they check you are real. Can you deliver what you promise?\n\nTrust is built on specific signals, not general claims. "We are the best" is a claim. A specific line like "47 projects delivered across Aberdeenshire in the past three years" is a signal. Use your own real numbers, never invented ones.\n\nUse real client names where you have permission. Show actual results: a concrete figure like "34% fewer no-shows after the new booking system went live" beats any adjective. Put a direct phone number on every page. Show your location. For local businesses, being findable and reachable matters more than looking glossy.',
+          body: 'Before someone emails or calls you, they check you are real. Can you deliver what you promise? Trust is built on specific signals, not general claims. "We are the best" is a claim. A specific line like "47 projects delivered across Aberdeenshire in the past three years" is a signal. Use your own real numbers, never invented ones. Use real client names where you have permission. Show actual results: a concrete figure like "34% fewer no-shows after the new booking system went live" beats any adjective. Put a direct phone number on every page. Show your location. For local businesses, being findable and reachable matters more than looking glossy.',
         },
         {
           heading: "Friction kills conversions silently",
-          body: "Every extra click, every unclear label, every form field that feels unnecessary removes a percentage of potential enquiries. The effect is cumulative.\n\nForms that ask for too much information upfront are the first culprit. Name, email, and what they need is enough. You can ask the rest on the call.\n\nNavigation with more than six items is another. Too many choices paralyse. Group related pages and make the path to contact obvious.\n\nSlow loading speeds cost real visitors, especially on mobile connections in rural areas. Compress images, lazy-load below the fold, and keep the critical path minimal.\n\nHidden pricing is the last one. If your service has a standard range, say so. Vague pricing does not create curiosity. It creates suspicion.",
+          body: "Every extra click, every unclear label, every form field that feels unnecessary removes a percentage of potential enquiries. The effect is cumulative. Forms that ask for too much information upfront are the first culprit. Name, email, and what they need is enough. You can ask the rest on the call. Navigation with more than six items is another. Too many choices paralyse. Group related pages and make the path to contact obvious. Slow loading speeds cost real visitors, especially on mobile connections in rural areas. Compress images, lazy-load below the fold, and keep the critical path minimal. Hidden pricing is the last one. If your service has a standard range, say so. Vague pricing does not create curiosity. It creates suspicion.",
         },
         {
           heading: "One action per page",
-          body: 'Every page needs one clear purpose and one prominent action. Contact pages need to make contacting easy. Service pages need to explain the service and offer a clear next step. Homepages need to orient the visitor and direct them to the right place.\n\nMultiple competing calls to action, "Call us", "Download our brochure", "Sign up for the newsletter", "Read our blog", dilute attention and reduce the chance of any one action being taken. Pick the most important action for that page and make it impossible to miss.',
+          body: 'Every page needs one clear purpose and one prominent action. Contact pages need to make contacting easy. Service pages need to explain the service and offer a clear next step. Homepages need to orient the visitor and direct them to the right place. Multiple competing calls to action, "Call us", "Download our brochure", "Sign up for the newsletter", "Read our blog", dilute attention and reduce the chance of any one action being taken. Pick the most important action for that page and make it impossible to miss.',
         },
         {
           heading: "Mobile is not a separate version. It is the version.",
-          body: "Most web traffic in the UK now comes from mobile. For many local businesses, the figure is higher. Your mobile experience is not a scaled-down desktop site. It is the primary experience for most of your visitors.\n\nTap targets need to be big enough. Text needs to be readable without zooming. Phone numbers need to be tap-to-call. Forms need to work with the native keyboard. If any of these are broken, you are losing enquiries before the visitor even reads your content.",
+          body: "Most web traffic in the UK now comes from mobile. For many local businesses, the figure is higher. Your mobile experience is not a scaled-down desktop site. It is the primary experience for most of your visitors. Tap targets need to be big enough. Text needs to be readable without zooming. Phone numbers need to be tap-to-call. Forms need to work with the native keyboard. If any of these are broken, you are losing enquiries before the visitor even reads your content.",
         },
         {
           heading: "Summary",
-          body: "Conversion is not a trick. It is the result of clarity, trust, and removing obstacles. Most improvements come from simplifying what is already there, not adding more.\n\nIf your website looks good but the enquiries are not coming in, the problem is usually one of these three things. Fix them and the numbers change.",
+          body: "Conversion is not a trick. It is the result of clarity, trust, and removing obstacles. Most improvements come from simplifying what is already there, not adding more. If your website looks good but the enquiries are not coming in, the problem is usually one of these three things. Fix them and the numbers change.",
         },
       ],
     },
@@ -600,7 +600,7 @@ export const articles: Article[] = [
         },
         {
           heading: "1. Security updates are not optional",
-          body: "Every website runs on software: the server, the framework and the plugins. Developers regularly find security flaws and release patches. If those patches are not applied, your site becomes an easy target. A compromised site does not just affect you. It can be used to send spam, host phishing pages or infect visitors. Google will flag it in search results. Hosting providers may suspend it. The cleanup costs far more than routine maintenance ever would. Maintenance means applying updates promptly, monitoring for unusual activity and keeping backups that actually work.",
+          body: "Every website runs on software: the server, the framework and the plug-ins. Developers regularly find security flaws and release patches. If those patches are not applied, your site becomes an easy target. A compromised site does not just affect you. It can be used to send spam, host phishing pages or infect visitors. Google will flag it in search results. Hosting providers may suspend it. The cleanup costs far more than routine maintenance ever would. Maintenance means applying updates promptly, monitoring for unusual activity and keeping backups that actually work.",
         },
         {
           heading: "2. Performance degrades over time",
@@ -697,7 +697,7 @@ export const articles: Article[] = [
           body: "I wrote that SEO (Search Engine Optimisation) is not just the site. In the shipyard industry, keywords are not just web design Aberdeen. It is offshore vessel fabrication Scotland, ship repair Banff, marine engineering procurement UK. Content must answer questions asked by buyers from platforms and design offices, not random internet users.",
         },
         {
-          body: "In the last article I wrote that maintaining a site matters more than building it. For a shipyard, this means references from a project finished two years ago are not enough. The site must live. New projects, new certificates, up-to-date contact details. An old site with outdated information signals that the company may not be active. And in an industry where contracts are worth millions, that signal is fatal.",
+          body: "In the last article, I wrote that maintaining a site matters more than building it. For a shipyard, this means references from a project finished two years ago are not enough. The site must live. New projects, new certificates, up-to-date contact details. An old site with outdated information signals that the company may not be active. And in an industry where contracts are worth millions, that signal is fatal.",
         },
         {
           body: "If you run a shipyard or offshore business in Scotland, you do not need a site that looks like it belongs in a creative agency portfolio. You need a site that passes procurement checks, works on a weak connection and shows you understand the industry. Because in this industry, the buyer does not choose the prettiest site. They choose the company they can trust.",
