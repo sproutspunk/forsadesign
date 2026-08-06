@@ -204,8 +204,8 @@ const translations = {
     hero: {
       tagline: "Systemy Webowe dla Przemys\u0142u Ci\u0119\u017ckiego",
       subheader:
-        "\u017badnych szablon\u00f3w. \u017badnych kreator\u00f3w. Tylko szybki, bezpieczny kod, kt\u00f3ry przechodzi audyt zakupowy.",
-      body: "Ponad dwadzieścia lat w międzynarodowej sprzedaży B2B nauczyło mnie jednego. Firmy przemysłowe, wykonawcy rusztowań, inżynierowie M&E, transportowcy. Wszyscy wykonują świetną robotę, ale ich strony wyglądają jak relikty czasów modemu. I to kosztuje kontrakty. Gdy kupujący sprawdza trzech dostawców, ten ze spowolnioną, przeładowaną stroną odpada pierwszy. Nie dlatego, że praca jest gorsza, ale dlatego, że zaufanie zaczyna się w internecie. Nie używamy szablonów. Nie używamy page builderów. Budujemy szybkie, przejrzyste strony, które wyglądają poważnie i ładują się natychmiast na telefonie na placu budowy. Bo w biznesie B2B twoja strona to nie folder reklamowy. To twój pierwszy pracownik, twoja oferta i twoja referencja w jednym.",
+        "\u017badnych szablon\u00f3w. \u017badnych kreator\u00f3w stron. Tylko szybkie, bezpieczne strony, kt\u00f3re przechodz\u0105 kontrol\u0119 zam\u00f3wie\u0144.",
+      body: "Ty budujesz infrastruktur\u0119. My tworzymy warstw\u0119 cyfrow\u0105, kt\u00f3ra dowodzi, \u017ce potrafisz j\u0105 dostarczy\u0107. Dzi\u0119ki ponad dwudziestoletniemu do\u015bwiadczeniu w mi\u0119dzynarodowej sprzeda\u017cy B2B w przemy\u015ble, obejmuj\u0105cej maszyny, in\u017cynieri\u0119 i zaopatrzenie w energi\u0119, wiem, co si\u0119 dzieje, gdy kupuj\u0105cy wybiera trzech dostawc\u00f3w i sprawdza ich strony internetowe. Forsa Design tworzy dedykowane, r\u0119cznie kodowane strony internetowe i systemy internetowe dla wykonawc\u00f3w z bran\u017cy offshore i energetycznej, firm in\u017cynieryjnych, dostawc\u00f3w sprz\u0119tu przemys\u0142owego i operator\u00f3w logistyki ci\u0119\u017ckiej. Siedziba firmy znajduje si\u0119 w Banff w Aberdeenshire. Obs\u0142ugujemy Szkocj\u0119 i Wielk\u0105 Brytani\u0119.",
       cta: "Popro\u015b o wycen\u0119 techniczn\u0105",
     },
     services: {
