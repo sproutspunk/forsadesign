@@ -293,50 +293,77 @@ function buildHomepageBodyPl() {
 <section id="home">
 <h1>Systemy Webowe dla Przemysłu Ciężkiego</h1>
 <p>Żadnych szablonów. Żadnych kreatorów. Tylko szybki, bezpieczny kod, który przechodzi audyt zakupowy.</p>
-<p>Budujemy dedykowane systemy webowe dla firm, kt&#243;re oczekuj&#261; wynik&#243;w, a nie marketingu. Bez zb&#281;dnego &#380;argonu. Bez owijania w bawe&#322;n&#281;. Tylko czysty, szybki i stabilny kod, kt&#243;ry rozwija Tw&#243;j biznes.</p>
+<p>Ponad dwadzieścia lat w międzynarodowej sprzedaży B2B nauczyło mnie jednego. Firmy przemysłowe, wykonawcy rusztowań, inżynierowie M&amp;E, transportowcy. Wszyscy wykonują świetną robotę, ale ich strony wyglądają jak relikty czasów modemu. I to kosztuje kontrakty. Gdy kupujący sprawdza trzech dostawców, ten ze spowolnioną, przeładowaną stroną odpada pierwszy. Nie dlatego, że praca jest gorsza, ale dlatego, że zaufanie zaczyna się w internecie. Nie używamy szablonów. Nie używamy page builderów. Budujemy szybkie, przejrzyste strony, które wyglądają poważnie i ładują się natychmiast na telefonie na placu budowy. Bo w biznesie B2B twoja strona to nie folder reklamowy. To twój pierwszy pracownik, twoja oferta i twoja referencja w jednym.</p>
 <a href="/pl/#contact">Poproś o wycenę techniczną</a>
 </section>
 <section id="services">
-<h2>Nasze Us&#322;ugi</h2>
+<h2>Co budujemy</h2>
 <div>
-<h3>Projektowanie i Kodowanie Stron</h3>
-<p>Zero ci&#281;&#380;kich, gotowych szablon&#243;w. Zero zamulaj&#261;cych wtyczek. Piszemy czysty kod od zera, &#380;eby Twoja strona by&#322;a bezpieczna, &#322;adowa&#322;a si&#281; natychmiast i dawa&#322;a Ci pe&#322;n&#261; kontrol&#281; nad wygl&#261;dem.</p>
+<h3>Strony dla przemysłu</h3>
+<p>Bez ciężkich szablonów. Bez zbędnych wtyczek. Budujemy dedykowane witryny skupione na wydajności, wygodzie na telefonie i jasnym przekazie. Twoja strona otwiera się szybko, działa na każdym urządzeniu i mówi odwiedzającym, dlaczego mają wybrać ciebie, a nie konkurencję zza rogu.</p>
 </div>
 <div>
-<h3>Sklepy Internetowe i P&#322;atno&#347;ci</h3>
-<p>Skalowalne sklepy nastawione na sprzeda&#380;. Od zaawansowanych modyfikacji Shopify po autorskie koszyki zakupowe. Likwidujemy b&#322;&#281;dy techniczne, przez kt&#243;re tracisz klient&#243;w na etapie p&#322;atno&#347;ci.</p>
+<h3>E-commerce dla części i urządzeń</h3>
+<p>Jeśli sprzedajesz części, narzędzia lub usługi przez internet, usuwamy wszystko, co zabija zamówienia. Lepszy proces zakupu, przejrzyste karty produktów i design mobilny, który zamienia przeglądających w klientów. Niezależnie od tego, czy to pełny sklep czy prosty formularz zapytania, dbamy o to, żeby zarabiał.</p>
 </div>
 <div>
-<h3>Dedykowane Aplikacje i Systemy</h3>
-<p>Z&#322;o&#380;one projekty oparte na bazach danych dla specjalistycznych bran&#380;. Tworzymy systemy od zera, od&#347;wie&#380;amy stary kod i dbamy o stabilno&#347;&#263; tam, gdzie liczy si&#281; bezwzgl&#281;dna precyzja i brak przestoj&#243;w.</p>
+<h3>Dedykowane systemy webowe</h3>
+<p>Niektóre firmy potrzebują więcej niż standardowej strony. Portale dla dealerów, generatory kart technicznych, wersje wielojęzyczne na rynki eksportowe albo integracja z twoimi systemami. Budujemy praktyczne narzędzia, które rosną razem z tobą.</p>
 </div>
+</section>
+<section id="pricing">
+<h2>Przejrzyste ceny</h2>
+<p>Trzy punkty wyjścia. Każdy projekt dopasowany do Twoich potrzeb.</p>
+<div>
+<h3>Starter</h3>
+<p>Idealny dla nowych firm</p>
+<p>Od 1200 GBP</p>
+<p>Strona docelowa lub mała witryna. Design oparty na szablonie. Responsywna na mobile. Podstawy SEO.</p>
+<a href="/pl/contact">Uzyskaj wycenę</a>
+</div>
+<div>
+<h3>Business</h3>
+<p>Najpopularniejszy</p>
+<p>Rozwijaj swoją obecność online</p>
+<p>Od 4000 GBP</p>
+<p>Do 5 stron. Design częściowo na zamówienie. Opinie klientów. Podstawowa konfiguracja SEO. Integracja z Mapami Google. Miesięczny plan opieki.</p>
+<a href="/pl/contact">Uzyskaj wycenę</a>
+</div>
+<div>
+<h3>Premium</h3>
+<p>Pełne rozwiązanie cyfrowe</p>
+<p>Od 8000 GBP</p>
+<p>Do 10 stron. Design w pełni na zamówienie. Profesjonalny copywriting. Zaawansowane SEO i analityka. Newsletter i konfiguracja GDPR. Priorytetowa realizacja. Biznesowy plan opieki.</p>
+<a href="/pl/contact">Uzyskaj wycenę</a>
+</div>
+<p>Wszystkie ceny są orientacyjne. Ostateczna wycena zależy od dokładnych wymagań. Użyj kalkulatora do precyzyjnej kalkulacji.</p>
 </section>
 <section id="portfolio">
 <h2>Aktualna dostępność</h2>
 <p>Q4 2026. Zostało jedno miejsce.</p>
 <p>Prowadzę trzy projekty na kwartał. Dwa są już w trakcie. Piszę kod sam. Odbieram telefony sam. Testuję na urządzeniach, których Twoi klienci faktycznie używają. To cały zespół.</p>
 <p>Nie wystawiamy ściany logotypów. Klienci przemysłowi nie wybierają dostawcy przez ładną galerię. Wybierają, bo strona odpowiada na jedno pytanie. Czy ta firma potrafi dostarczyć?</p>
-<p>Każdy projekt objęty jest NDA lub wciąż w użyciu. Jeśli chcesz zobaczyć nasze prace, pokazuję je podczas rozmowy. Nie dlatego, że to tajne. Dlatego, że kontekst ma znaczenie. Zrzut ekranu nic Ci nie powie. Musisz wiedzieć, dlaczego oficer ds. zakupów zostaje na stronie, zamiast wyłączyć ją po ośmiu sekundach.</p>
+<p>Każdy projekt objęty jest NDA lub jest wciąż w użyciu. Jeśli chcesz zobaczyć nasze prace, pokażę je podczas rozmowy. Nie dlatego, że to tajne. Dlatego że kontekst ma znaczenie. Zrzut ekranu nic Ci nie powie. Musisz wiedzieć, dlaczego oficer ds. Zakupu zostaje na stronie zamiast wyłączyć ją po ośmiu sekundach.</p>
 <p>Jeśli Twoja strona nie generuje projektów, o których nawet nie wiedziałeś, że były, powinniśmy porozmawiać.</p>
 <a href="/pl/contact/">Poproś o rozmowę</a>
 </section>
 <section id="process">
 <h2>Jak Pracujemy</h2>
 <div>
-<h3>Audyt Techniczny</h3>
-<p>Analizujemy Tw&#243;j obecny system, znajdujemy elementy, kt&#243;re spowalniaj&#261; stron&#281;, i planujemy struktur&#281; kodu pod Twoje cele sprzeda&#380;owe.</p>
+<h3>Audyt i odkrycie</h3>
+<p>Zaczynamy od zrozumienia twojego biznesu, twoich klientów i tego, jak cię faktycznie znajdują. Analizujemy twoją obecną stronę, konkurencję i miejsca, gdzie uciekają pieniądze. Bez zgadywania.</p>
 </div>
 <div>
-<h3>Pisanie Kodu</h3>
-<p>&#379;adnych gotowc&#243;w. Kodujemy dedykowany frontend i stabilny backend. Dbamy o to, by kod by&#322; lekki, szybki i odporny na ataki.</p>
+<h3>Specyfikacja techniczna i projekt</h3>
+<p>Tworzymy czystą, dedykowaną witrynę zbudowaną wokół twoich celów. Prawdziwe zdjęcia twojej pracy, a nie stockowe fotografie mężczyzn w kaskach. Jasne wezwania do działania. Szybkie ładowanie. Porządna wersja mobilna.</p>
 </div>
 <div>
-<h3>Testy Obci&#261;&#380;eniowe</h3>
-<p>Przed uruchomieniem sprawdzamy szybko&#347;&#263;, przeprowadzamy audyt bezpiecze&#324;stwa i testujemy system pod du&#380;ym ruchem. Dostajesz produkt gotowy do walki.</p>
+<h3>Compliance, testy i uruchomienie</h3>
+<p>Zanim cokolwiek pójdzie na serwer, sprawdzamy każdą podstronę, każdy formularz, każdy link. Na telefonach, tabletach, laptopach i starym komputerze w biurze budowy. Musi działać wszędzie.</p>
 </div>
 <div>
-<h3>Wsparcie i Rozw&#243;j</h3>
-<p>Reagujemy zanim co&#347; si&#281; zepsuje. Dbamy o serwery, bezpiecze&#324;stwo i regularne aktualizacje kodu, &#380;eby strona dzia&#322;a&#322;a idealnie podczas rozwoju firmy.</p>
+<h3>Wsparcie i rozwój</h3>
+<p>Po starcie nie znikamy. Oferujemy miesięczne plany opieki, które utrzymują stronę bezpieczną, aktualną i ulepszoną. W miarę jak twój biznes rośnie, strona rośnie razem z nim.</p>
 </div>
 </section>
 <section id="faq">
@@ -345,22 +372,24 @@ function buildHomepageBodyPl() {
 <h3>Czy używacie WordPressa lub szablonów?</h3>
 <p>Nie. Każda strona pisana jest ręcznie. WordPress sprawdza się przy blogach. Nie sprawdza się przy firmie, która chce przejść audyt zakupowy bez tłumaczenia, dlaczego jej strona potrzebuje siedemnastu wtyczek i łatki bezpieczeństwa w każdy wtorek.</p>
 <h3>Ile trwa projekt?</h3>
-<p>Od czterech do ośmiu tygodni, w zależności od zakresu. Nie dlatego, że pracuję wolno. Dlatego, że nie zaczynam kodować, dopóki nie zrozumiem, co Twoi kupcy muszą zobaczyć. Ta rozmowa zajmuje czas. Kodowanie to najłatwiejsza część.</p>
+<p>Od czterech do ośmiu tygodni, w zależności od zakresu. Nie dlatego, że pracuję wolno. Dlatego że nie zaczynam kodować, dopóki nie zrozumiem, co Twoi kupcy muszą zobaczyć. Ta rozmowa zajmuje czas. Kodowanie to najłatwiejsza część.</p>
 <h3>A jeśli nie mam żadnych zdjęć?</h3>
-<p>Pracujemy z tym, co masz. Przeciętne zdjęcie Twojego warsztatu zrobione telefonem jest lepsze niż stockowe zdjęcie uśmiechniętego inżyniera w kasku, które kupiłeś na stronie o nazwie BusinessPeopleSmiling.com.</p>
+<p>Pracujemy z tym, co masz. Przeciętne zdjęcie Twojego warsztatu zrobione telefonem jest lepsze niż stockowe zdjęcie uśmiechniętego inżyniera w kasku, które kupiłeś na randomowej stronie.</p>
 <h3>Czy oferujecie wsparcie po wdrożeniu?</h3>
 <p>Tak. Opieka miesięczna zaczyna się od 150 funtów. Obejmuje hosting, aktualizacje bezpieczeństwa, kopie zapasowe i ten sporadyczny mail o dziesiątej wieczorem, bo musisz zmienić numer telefonu przed terminem składania ofert.</p>
 <h3>Czy możecie zintegrować stronę z naszymi istniejącymi systemami?</h3>
 <p>Jeśli ma API, prawdopodobnie tak. Jeśli działa na arkuszu kalkulacyjnym z 2003 roku i modlitwie, coś wymyślimy. Widziałem gorsze rzeczy.</p>
 </section>
 <section id="about">
-<h2>O Forsa Design</h2>
-<p>Jeste&#347;my niezale&#380;n&#261; agencj&#261; web developmentu ze Szkocji, tworz&#261;c&#261; dedykowane systemy i strony dla sektora biznesowego. Ca&#322;kowicie rezygnujemy z korporacyjnego be&#322;kotu, bezu&#380;ytecznych spotka&#324; i sztucznie nadmuchanych koszt&#243;w obs&#322;ugi.</p>
-<p>Projektujemy z my&#347;l&#261; o zysku, a nie o pustej estetyce. Dobry wygl&#261;d to absolutne minimum. My dostarczamy szybkie, stabilne narz&#281;dzie, kt&#243;re realnie sprzedaje i chroni dane Twojej firmy. Robimy wszystko: od czystego kodu po architektur&#281; serwera. Rozmawiasz bezpo&#347;rednio z programistami, kt&#243;rzy pisz&#261; Tw&#243;j projekt, co eliminuje b&#322;&#281;dy w ustaleniach i gwarantuje precyzj&#281; od samego pocz&#261;tku.</p>
+<h2>Zbudowane przez kogoś, kto rozumiał brief</h2>
+<p>Nazywam się Miro. Forsa Design założyłem po ponad 20 latach w międzynarodowej sprzedaży B2B. Handlowałem maszynami do obróbki metalu, wyposażeniem przemysłowym i rozwiązaniami inżynieryjnymi w Europie i Azji. Siedziałem po obu stronach stołu zakupowego. Wiem, jak wygląda proces od pierwszego maila po podpisany kontrakt.</p>
+<p>To doświadczenie nauczyło mnie jednej rzeczy. Większość firm przemysłowych wykonuje świetną robotę, ale ich strony internetowe nie nadążają za poziomem ich usług. I to kosztuje kontrakty. Nie dlatego, że praca jest słaba, tylko dlatego, że w dzisiejszym B2B strona to pierwszy etap weryfikacji. Nie jestem agencją z Londynu z piętnastoma osobami w zespole i kawiarnią w biurze. Jestem człowiekiem, który rozumie przemysł, logistykę i handel międzynarodowy. Teraz buduję strony, które komunikują się językiem Twoich klientów. Bez szablonów. Bez zbędnego żargonu. Tylko czysty kod i jasny przekaz.</p>
+<p>Banff, Aberdeenshire. Obsługuję firmy w całej Szkocji. Mówię po polsku i po angielsku.</p>
 </section>
 <section id="contact">
-<h2>Skontaktuj Si&#281; Z Nami</h2>
-<p>Got&#243;w na nowy projekt? Porozmawiajmy.</p>
+<h2>Rozpocznij rozmowę</h2>
+<p>Opowiedz, co chcesz zbudować.</p>
+<p>Napisz kilka szczegółów, a odpowiemy z konkretną propozycją kolejnego kroku.</p>
 <p>Email: <!--email_off--><a href="mailto:hello@forsadesign.co.uk">hello@forsadesign.co.uk</a><!--/email_off--></p>
 <p>Telefon: <a href="tel:07770110735">07770110735</a></p>
 </section>
@@ -1416,7 +1445,9 @@ function buildAboutBodyPl() {
 </header>
 <main>
 <h1>Poznaj Za&#322;o&#380;yciela Forsa Design</h1>
-<p>Nazywam si&#281; Miro. Forsa Design za&#322;o&#380;y&#322;em po ponad 20 latach w mi&#281;dzynarodowej sprzeda&#380;y B2B. Handlowa&#322;em maszynami do obr&#243;bki metalu, wyposa&#380;eniem przemys&#322;owym i rozwi&#261;zaniami in&#380;ynieryjnymi w Europie i Azji. Siedzia&#322;em po obu stronach sto&#322;u zakupowego. Wiem jak wygl&#261;da proces od pierwszego maila po podpisany kontrakt. To do&#347;wiadczenie nauczy&#322;o mnie jednej rzeczy: wi&#281;kszo&#347;&#263; firm przemys&#322;owych wykonuje &#347;wietn&#261; robot&#281;, ale ich strony nie nad&#261;&#380;aj&#261; za poziomem us&#322;ug. I to kosztuje kontrakty. Teraz buduj&#281; strony, kt&#243;re komunikuj&#261; si&#281; j&#281;zykiem Twoich klient&#243;w. Bez szablon&#243;w. Bez &#380;argonu. Tylko czysty kod i jasny przekaz.</p>
+<p>Nazywam si&#281; Miro. Forsa Design za&#322;o&#380;y&#322;em po ponad 20 latach w mi&#281;dzynarodowej sprzeda&#380;y B2B. Handlowa&#322;em maszynami do obr&#243;bki metalu, wyposa&#380;eniem przemys&#322;owym i rozwi&#261;zaniami in&#380;ynieryjnymi w Europie i Azji. Siedzia&#322;em po obu stronach sto&#322;u zakupowego. Wiem, jak wygl&#261;da proces od pierwszego maila po podpisany kontrakt.</p>
+<p>To do&#347;wiadczenie nauczy&#322;o mnie jednej rzeczy. Wi&#281;kszo&#347;&#263; firm przemys&#322;owych wykonuje &#347;wietn&#261; robot&#281;, ale ich strony internetowe nie nad&#261;&#380;aj&#261; za poziomem ich us&#322;ug. I to kosztuje kontrakty. Nie dlatego, &#380;e praca jest s&#322;aba, tylko dlatego, &#380;e w dzisiejszym B2B strona to pierwszy etap weryfikacji. Nie jestem agencj&#261; z Londynu z pi&#281;tnastoma osobami w zespole i kawiarni&#261; w biurze. Jestem cz&#322;owiekiem, kt&#243;ry rozumie przemys&#322;, logistyk&#281; i handel mi&#281;dzynarodowy. Teraz buduj&#281; strony, kt&#243;re komunikuj&#261; si&#281; j&#281;zykiem Twoich klient&#243;w. Bez szablon&#243;w. Bez zb&#281;dnego &#380;argonu. Tylko czysty kod i jasny przekaz.</p>
+<p>Banff, Aberdeenshire. Obs&#322;uguj&#281; firmy w ca&#322;ej Szkocji. M&#243;wi&#281; po polsku i po angielsku.</p>
 <section>
 <h2>Dlaczego To Do&#347;wiadczenie Ma Znaczenie</h2>
 <div>
@@ -1424,7 +1455,7 @@ function buildAboutBodyPl() {
 <p>Prowadz&#261;c firm&#281; przez 20 lat, negocjuj&#261;c mi&#281;dzynarodowe kontrakty na trzech kontynentach i zarz&#261;dzaj&#261;c zespo&#322;ami w wielu krajach, rozumiem, co strona internetowa musi robi&#263; dla Twojego zysku. Ka&#380;da decyzja projektowa jest filtrowana przez pryzmat biznesowy, nie tylko estetyczny.</p>
 </div>
 <div>
-<h3>Komunikacja na Ka&#380;dym Poziomie</h3>
+<h3>Komunikacja na ka&#380;dym poziomie</h3>
 <p>Pracowa&#322;em z klientami i interesariuszami z ka&#380;dej dziedziny &#380;ycia. To przek&#322;ada si&#281; na strony, kt&#243;re jasno komunikuj&#261; si&#281; z odbiorcami, czy to lokalni klienci, czy mi&#281;dzynarodowi partnerzy.</p>
 </div>
 <div>
@@ -1436,14 +1467,14 @@ function buildAboutBodyPl() {
 <h2>Nasz Proces</h2>
 <div><h3>01: Odkrywanie i Strategia (Tygodnie 1-2)</h3><p>Przeprowadzamy wywiady, analizujemy Twoj&#261; bran&#380;&#281;, konkurencj&#281;, u&#380;ytkownik&#243;w, definiujemy cele biznesowe.</p></div>
 <div><h3>02: Projektowanie (Tygodnie 3-4)</h3><p>Tworzymy wireframe'y, mockupy i strategi&#281; wizualn&#261;. Wszystko zatwierdzone przez Ciebie zanim zaczynamy kod.</p></div>
-<div><h3>03: Rozw&#243;j (Tygodnie 5-8)</h3><p>Budujemy stron&#281; z fokusem na wydajno&#347;&#263;, bezpiecze&#324;stwo, SEO i konwersj&#281;.</p></div>
-<div><h3>04: Testowanie i Optymalizacja (Tydzie&#324; 9)</h3><p>Testy na wszystkich urz&#261;dzeniach, przegl&#261;darkach, analiza wydajno&#347;ci, bezpiecze&#324;stwa, SEO.</p></div>
-<div><h3>05: Uruchomienie i Wsparcie (Na bie&#380;&#261;co)</h3><p>Wdra&#380;amy stron&#281; live. Pierwszych kilka tygodni mamy &#347;cis&#322;y kontakt, potem przystupujemy do wsparcia.</p></div>
+<div><h3>03: Rozw&#243;j (Tygodnie 5-8)</h3><p>Budujemy stron&#281; z naciskiem na wydajno&#347;&#263;, bezpiecze&#324;stwo, SEO i konwersj&#281;.</p></div>
+<div><h3>04: Testowanie i Optymalizacja (Tydzie&#324; 9)</h3><p>Testy na wszystkich urz&#261;dzeniach i przegl&#261;darkach, analiza wydajno&#347;ci, bezpiecze&#324;stwa, SEO.</p></div>
+<div><h3>05: Uruchomienie i Wsparcie (Na bie&#380;&#261;co)</h3><p>Wdra&#380;amy stron&#281; live. Pierwszych kilka tygodni mamy &#347;cis&#322;y kontakt, potem przyst&#281;pujemy do wsparcia.</p></div>
 </section>
 <section>
 <h2>Co Nas Wyr&#243;&#380;nia</h2>
 <p>Nie szablony. Ka&#380;dy projekt zaczynamy od zera, dostosowany do Twojej bran&#380;y i cel&#243;w.</p>
-<p>Fokus na wyniki biznesowe. Mierzy si&#281; wszystko. Czy strona przyci&#261;ga u&#380;ytkownik&#243;w, konwertuje, wspiera sprzeda&#380;.</p>
+<p>Fokus na wyniki biznesowe. Mierzy si&#281; wszystko. Czy strona przyci&#261;ga u&#380;ytkownik&#243;w, konwertuje, wspiera sprzeda&#380;?</p>
 <p>Wszystko nale&#380;y do Ciebie. Domena, hosting i tre&#347;&#263; zawsze s&#261; pod Twoj&#261; kontrol&#261;. Bez uzale&#380;nienia od dostawcy.</p>
 <p>D&#322;ugoterminowe partnerstwo. Wspieramy Ci&#281; miesi&#261;ce i lata po uruchomieniu.</p>
 <p>Transparentna komunikacja. Wiesz, co si&#281; robi, dlaczego i kiedy b&#281;dzie gotowe.</p>
@@ -1512,14 +1543,14 @@ function buildComparisonBodyPl() {
 <nav><a href="/pl/">&#8592; Strona G&#322;&#243;wna</a> <span>|</span> <a href="/pl/about">O Nas</a> <span>|</span> <a href="/pl/quote">Uzyskaj Wycen&#281;</a></nav>
 </header>
 <main>
-<h1>Kt&#243;ra Opcja Jest Dla Ciebie Odpowiednia?</h1>
-<p>Nie ka&#380;dy biznes potrzebuje strony tworzonej od zera. W&#322;a&#347;ciwy wyb&#243;r zale&#380;y od Twoich cel&#243;w, bud&#380;etu, harmonogramu i tego, jak wa&#380;na jest elastyczno&#347;&#263;, wydajno&#347;&#263; i przysz&#322;y rozw&#243;j.</p>
+<h1>Kt&#243;ra Opcja Jest Dla Ciebie?</h1>
+<p>Nie ka&#380;dy biznes potrzebuje dedykowanej strony. Wyb&#243;r zale&#380;y od Twoich cel&#243;w, bud&#380;etu, harmonogramu i tego, jak wa&#380;ne s&#261; elastyczno&#347;&#263;, wydajno&#347;&#263; i przysz&#322;y wzrost. Poni&#380;ej znajdziesz praktyczne por&#243;wnanie najpopularniejszych rozwi&#261;za&#324; webowych.</p>
 <section>
 <h2>Przegl&#261;d Opcji</h2>
 <div>
-<h3>Szablon CMS: Szybki i przyst&#281;pny cenowo</h3>
-<p>Zalety: Ni&#380;szy koszt pocz&#261;tkowy. Szybkie uruchomienie. &#321;atwe aktualizacje tre&#347;ci.</p>
-<p>Wady: Cz&#281;sto oparte na istniej&#261;cych motywach. Mo&#380;e spowalnia&#263; przy zbyt wielu wtyczkach. Ograniczona kontrola nad SEO i wydajno&#347;ci&#261;.</p>
+<h3>Szablon CMS: Szybko i przyst&#281;pnie</h3>
+<p>Zalety: Ni&#380;szy koszt wej&#347;cia. Szybkie uruchomienie. &#321;atwa aktualizacja tre&#347;ci.</p>
+<p>Wady: Cz&#281;sto oparte na gotowych szablonach. Mo&#380;e spowalnia&#263; przy zbyt wielu wtyczkach. Ograniczona kontrola nad SEO i wydajno&#347;ci&#261;.</p>
 </div>
 <div>
 <h3>Agencja bez specjalizacji: Og&#243;lny dostawca rozwi&#261;za&#324;</h3>
@@ -1533,25 +1564,14 @@ function buildComparisonBodyPl() {
 </div>
 <div>
 <h3>Forsa Design: Strona, kt&#243;ra pracuje dla Twojego biznesu</h3>
-<p>Zbudowana wok&#243;&#322; Twoich klient&#243;w i cel&#243;w biznesowych. Szybkie do&#347;wiadczenia szanuj&#261;ce czas klient&#243;w. Zbudowana by by&#263; znajdowana i obdarzana zaufaniem online. Procesy uproszczone przez m&#261;dr&#261; automatyzacj&#281;. D&#322;ugoterminowy partner gdy Tw&#243;j biznes si&#281; rozwija. Brak uzale&#380;nie&#324;. Brak zale&#380;no&#347;ci od jednego dostawcy.</p>
+<p>Dostosowana do cel&#243;w i klient&#243;w, nie do szablon&#243;w. Szybkie do&#347;wiadczenia, kt&#243;re szanuj&#261; czas u&#380;ytkownik&#243;w. Zbudowana, by klienci znale&#378;li Ci&#281; i zaufali. Procesy uproszczone przez inteligentne systemy. Wsparcie, gdy Tw&#243;j biznes si&#281; zmienia. Gotowa na kolejny etap rozwoju. Brak lock-in. Brak zale&#380;no&#347;ci od jednego dostawcy.</p>
 </div>
 </section>
 <section>
-<h2>Pe&#322;ne Por&#243;wnanie</h2>
-<table>
-<thead><tr><th>Kryterium</th><th>Builder DIY</th><th>Freelancer</th><th>Agencja</th><th>Forsa Design</th></tr></thead>
-<tbody>
-<tr><td>Czas</td><td>Samoobs&#322;uga</td><td>Niezale&#380;ny developer</td><td>Dostarczanie zespo&#322;owe</td><td>Wi&#281;cej czasu na prowadzenie biznesu</td></tr>
-<tr><td>Wydajno&#347;&#263;</td><td>Cz&#281;sto wolna</td><td>R&#243;&#380;nie</td><td>Generalnie dobra</td><td>Zoptymalizowana pod Core Web Vitals</td></tr>
-<tr><td>SEO</td><td>Podstawowe</td><td>R&#243;&#380;nie</td><td>&#346;rednie</td><td>Zaawansowane: Schema, E-E-A-T, techniczne SEO</td></tr>
-<tr><td>Bezpiecze&#324;stwo</td><td>Zale&#380;y od platformy</td><td>R&#243;&#380;nie</td><td>Generalnie tak</td><td>Tak: SSL, RODO, pe&#322;na dokumentacja</td></tr>
-<tr><td>Skalowanie</td><td>Ograniczone</td><td>Mo&#380;liwe</td><td>Mo&#380;liwe</td><td>Proste (custom kod)</td></tr>
-<tr><td>Przeno&#347;no&#347;&#263;</td><td>Niska: uzale&#380;nienie od platformy</td><td>Wysoka</td><td>Wysoka</td><td>Wysoka: pe&#322;na w&#322;asno&#347;&#263;</td></tr>
-<tr><td>Wsparcie po uruchomieniu</td><td>Fora spo&#322;eczno&#347;ciowe</td><td>Cz&#281;sto ograniczone</td><td>Opcjonalnie extra op&#322;ata</td><td>Zawarte: d&#322;ugoterminowe partnerstwo</td></tr>
-</tbody>
-</table>
+<h2>Gotowy porozmawia&#263;?</h2>
+<p>W&#322;a&#347;ciwe podej&#347;cie zaczyna si&#281; od zrozumienia Twojego biznesu.</p>
+<p><a href="/pl/#contact">Popro&#347; o wycen&#281;</a></p>
 </section>
-<p><a href="/pl/quote">Uzyskaj Wycen&#281; &#8594;</a></p>
 </main>
 <footer>
 <nav><a href="/pl/terms">Regulamin</a> | <a href="/pl/privacy">Polityka Prywatno&#347;ci</a></nav>

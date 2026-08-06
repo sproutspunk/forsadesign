@@ -146,7 +146,7 @@ const content = {
       "Poznaj założyciela Forsa Design z 20-letnim doświadczeniem w sprzedaży B2B i tworzeniu stron oraz systemów webowych dla przemysłu.",
     heading: "Poznaj Założyciela Forsa Design",
     intro:
-      "Nazywam się Miro. Forsa Design założyłem po ponad 20 latach w międzynarodowej sprzedaży B2B. Handlowałem maszynami do obróbki metalu, wyposażeniem przemysłowym i rozwiązaniami inżynieryjnymi w Europie i Azji. Siedziałem po obu stronach stołu zakupowego. Wiem jak wygląda proces od pierwszego maila po podpisany kontrakt.",
+      "Nazywam się Miro. Forsa Design założyłem po ponad 20 latach w międzynarodowej sprzedaży B2B. Handlowałem maszynami do obróbki metalu, wyposażeniem przemysłowym i rozwiązaniami inżynieryjnymi w Europie i Azji. Siedziałem po obu stronach stołu zakupowego. Wiem, jak wygląda proces od pierwszego maila po podpisany kontrakt.",
     body2:
       "To doświadczenie nauczyło mnie jednej rzeczy. Większość firm przemysłowych wykonuje świetną robotę, ale ich strony internetowe nie nadążają za poziomem ich usług. I to kosztuje kontrakty. Nie dlatego, że praca jest słaba, tylko dlatego, że w dzisiejszym B2B strona to pierwszy etap weryfikacji. Nie jestem agencją z Londynu z piętnastoma osobami w zespole i kawiarnią w biurze. Jestem człowiekiem, który rozumie przemysł, logistykę i handel międzynarodowy. Teraz buduję strony, które komunikują się językiem Twoich klientów. Bez szablonów. Bez zbędnego żargonu. Tylko czysty kod i jasny przekaz.",
     body3: "Banff, Aberdeenshire. Obsługuję firmy w całej Szkocji. Mówię po polsku i po angielsku.",
@@ -157,8 +157,8 @@ const content = {
         desc: "Prowadząc firmę przez 20 lat, negocjując międzynarodowe kontrakty na trzech kontynentach i zarządzając zespołami w wielu krajach, rozumiem, co strona internetowa musi robić dla Twojego zysku. Każda decyzja projektowa jest filtrowana przez pryzmat biznesowy, nie tylko estetyczny.",
       },
       {
-        title: "Komunikacja na Każdym Poziomie",
-        desc: "Pracowałem z klientami i interesariuszami z każdej dziedziny życia. To przekłada się na strony, które jasno komunikują się z odbiorcami, czy to lokalni klienci, czy międzynarodowi partnerzy.",
+        title: "Komunikacja na każdym poziomie",
+        desc: "Pracowałem z klientami i interesariuszami z każdej dziedziny życia. To przekłada się na strony, które jasno komunikują się z odbiorcami, czy to lokalnymi klientami, czy międzynarodowymi partnerami.",
       },
       {
         title: "Dostarczanie Wyników",
@@ -177,19 +177,19 @@ const content = {
         num: "02",
         title: "Projektowanie",
         period: "Tygodnie 3-4",
-        desc: "Tworzymy wireframe'y, mockupy i strategię wizualną. Wszystko zatwierdzone przez Ciebie zanim zaczynamy kod.",
+        desc: "Tworzymy wireframe'y, mockupy i strategię wizualną. Wszystko zatwierdzone przez Ciebie, zanim zaczniemy kodować.",
       },
       {
         num: "03",
         title: "Rozwój",
         period: "Tygodnie 5-8",
-        desc: "Budujemy stronę z fokusem na wydajność, bezpieczeństwo, SEO i konwersję.",
+        desc: "Budujemy stronę z naciskiem na wydajność, bezpieczeństwo, SEO i konwersję.",
       },
       {
         num: "04",
         title: "Testowanie i Optymalizacja",
         period: "Tydzień 9",
-        desc: "Testy na wszystkich urządzeniach, przeglądarkach, analiza wydajności, bezpieczeństwa, SEO.",
+        desc: "Testy na wszystkich urządzeniach i przeglądarkach, analiza wydajności, bezpieczeństwa, SEO.",
       },
       {
         num: "05",
@@ -206,7 +206,7 @@ const content = {
       },
       {
         title: "Fokus na wyniki biznesowe.",
-        desc: "Mierzy się wszystko. Czy strona przyciąga użytkowników, konwertuje, wspiera sprzedaż.",
+        desc: "Mierzy się wszystko. Czy strona przyciąga użytkowników, konwertuje, wspiera sprzedaż?",
       },
       {
         title: "Wszystko należy do Ciebie.",
@@ -237,13 +237,13 @@ const content = {
       [
         "Unikalność designu",
         "Szablonowy (jak konkurencja)",
-        "Czasem template-based",
+        "Czasem oparty na szablonie",
         "Zależy",
         "Unikalny, dostosowany",
       ],
       [
         "Szybkość strony",
-        "Średnia (plugin-heavy)",
+        "Średnia (dużo wtyczek)",
         "Dobra (jeśli czysty kod)",
         "Zależy",
         "Wysoka (optymalizacja w cenie)",
@@ -258,21 +258,27 @@ const content = {
       ],
       [
         "Bezpieczeństwo (SSL, RODO, PCI)",
-        "Zależy od pluginów",
+        "Zależy od wtyczek",
         "Generalnie tak",
         "Zależy",
         "Tak, pełna dokumentacja",
       ],
       [
         "Integracje (CRM, ERP)",
-        "Ekosystem pluginów",
+        "Ekosystem wtyczek",
         "Mogą zrobić",
         "Zależy",
-        "Tak, custom development",
+        "Tak, dedykowane rozwiązanie",
       ],
-      ["Skalowanie", "Trudne (template lock-in)", "Możliwe", "Możliwe", "Proste (custom code)"],
+      [
+        "Skalowanie",
+        "Trudne (uzależnienie od szablonu)",
+        "Możliwe",
+        "Możliwe",
+        "Proste (dedykowany kod)",
+      ],
       ["Przenośność", "Średnia", "Wysoka", "Wysoka", "Wysoka (pełna kontrola)"],
-      ["Spójność marki", "Mała", "Średnia", "Zależy", "Wysoka (brand guidelines integrated)"],
+      ["Spójność marki", "Mała", "Średnia", "Zależy", "Wysoka (zintegrowane wytyczne marki)"],
     ],
     forsa: "Forsa Design",
     comparisonCta: "Zobacz pełne porównanie",
@@ -498,67 +504,69 @@ export default function AboutPage({ lang }: AboutPageProps) {
         </div>
       </section>
       {/* Comparison Table */}
-      <section className="py-24 bg-card">
-        <div className="container mx-auto px-6 max-w-6xl">
-          <h2 className="font-serif text-3xl md:text-4xl font-bold text-white mb-4">
-            {c.comparisonHeading}
-          </h2>
-          <p className="text-foreground/60 font-light mb-12 max-w-2xl">{c.comparisonSub}</p>
-          <div className="overflow-x-auto rounded-md border border-border/20">
-            <table className="w-full text-sm">
-              <thead>
-                <tr className="border-b border-border/20">
-                  {c.tableHeaders.map((h, i) => (
-                    <th
-                      key={i}
-                      className={`px-4 py-4 text-left font-medium ${
-                        i === c.tableHeaders.length - 1
-                          ? "text-primary"
-                          : i === 0
-                            ? "text-foreground/80 w-40"
-                            : "text-foreground/50"
-                      }`}
-                    >
-                      {h}
-                    </th>
-                  ))}
-                </tr>
-              </thead>
-              <tbody>
-                {c.tableRows.map((row, ri) => (
-                  <tr
-                    key={ri}
-                    className="border-b border-border/10 last:border-0 hover:bg-background/30 transition-colors"
-                  >
-                    {row.map((cell, ci) => (
-                      <td
-                        key={ci}
-                        className={`px-4 py-3 ${
-                          ci === 0
-                            ? "font-medium text-foreground/80"
-                            : ci === row.length - 1
-                              ? "text-primary font-medium"
+      {lang === "en" && (
+        <section className="py-24 bg-card">
+          <div className="container mx-auto px-6 max-w-6xl">
+            <h2 className="font-serif text-3xl md:text-4xl font-bold text-white mb-4">
+              {c.comparisonHeading}
+            </h2>
+            <p className="text-foreground/60 font-light mb-12 max-w-2xl">{c.comparisonSub}</p>
+            <div className="overflow-x-auto rounded-md border border-border/20">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="border-b border-border/20">
+                    {c.tableHeaders.map((h, i) => (
+                      <th
+                        key={i}
+                        className={`px-4 py-4 text-left font-medium ${
+                          i === c.tableHeaders.length - 1
+                            ? "text-primary"
+                            : i === 0
+                              ? "text-foreground/80 w-40"
                               : "text-foreground/50"
                         }`}
                       >
-                        {cell}
-                      </td>
+                        {h}
+                      </th>
                     ))}
                   </tr>
-                ))}
-              </tbody>
-            </table>
+                </thead>
+                <tbody>
+                  {c.tableRows.map((row, ri) => (
+                    <tr
+                      key={ri}
+                      className="border-b border-border/10 last:border-0 hover:bg-background/30 transition-colors"
+                    >
+                      {row.map((cell, ci) => (
+                        <td
+                          key={ci}
+                          className={`px-4 py-3 ${
+                            ci === 0
+                              ? "font-medium text-foreground/80"
+                              : ci === row.length - 1
+                                ? "text-primary font-medium"
+                                : "text-foreground/50"
+                          }`}
+                        >
+                          {cell}
+                        </td>
+                      ))}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <div className="mt-8 text-right">
+              <a
+                href={c.comparisonHref}
+                className="inline-flex items-center gap-2 text-primary font-medium hover:underline"
+              >
+                {c.comparisonCta} →
+              </a>
+            </div>
           </div>
-          <div className="mt-8 text-right">
-            <a
-              href={c.comparisonHref}
-              className="inline-flex items-center gap-2 text-primary font-medium hover:underline"
-            >
-              {c.comparisonCta} →
-            </a>
-          </div>
-        </div>
-      </section>
+        </section>
+      )}
       {/* CTA */}
       <section className="py-20 bg-background border-t border-border/10">
         <div className="container mx-auto px-6 text-center">

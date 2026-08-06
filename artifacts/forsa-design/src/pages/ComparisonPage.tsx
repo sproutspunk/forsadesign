@@ -448,71 +448,73 @@ export default function ComparisonPage({ lang }: ComparisonPageProps) {
         </div>
       </section>
       {/* Full Comparison Table */}
-      <section className="py-24 bg-card">
-        <div className="container mx-auto px-6 max-w-6xl">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-80px" }}
-            transition={{ duration: 0.6 }}
-          >
-            <h2 className="font-serif text-3xl md:text-4xl font-bold text-white mb-3">
-              {c.tableHeading}
-            </h2>
-            <p className="text-foreground/50 font-light mb-12 max-w-2xl">{c.tableSub}</p>
-          </motion.div>
+      {lang === "en" && (
+        <section className="py-24 bg-card">
+          <div className="container mx-auto px-6 max-w-6xl">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-80px" }}
+              transition={{ duration: 0.6 }}
+            >
+              <h2 className="font-serif text-3xl md:text-4xl font-bold text-white mb-3">
+                {c.tableHeading}
+              </h2>
+              <p className="text-foreground/50 font-light mb-12 max-w-2xl">{c.tableSub}</p>
+            </motion.div>
 
-          <div className="overflow-x-auto rounded-md border border-border/20">
-            <table className="w-full text-sm">
-              <thead>
-                <tr className="border-b border-border/20 bg-background/40">
-                  {c.tableHeaders.map((h, i) => (
-                    <th
-                      key={i}
-                      className={`px-4 py-4 text-left font-semibold ${
-                        i === c.tableHeaders.length - 1
-                          ? "text-primary"
-                          : i === 0
-                            ? "text-foreground/80 w-44"
-                            : "text-foreground/40 font-medium"
-                      }`}
-                    >
-                      {h}
-                    </th>
-                  ))}
-                </tr>
-              </thead>
-              <tbody>
-                {c.tableRows.map((row, ri) => (
-                  <motion.tr
-                    key={ri}
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    viewport={{ once: true, margin: "-40px" }}
-                    transition={{ duration: 0.35, delay: ri * 0.04 }}
-                    className="border-b border-border/10 last:border-0 hover:bg-background/20 transition-colors"
-                  >
-                    {row.map((cell, ci) => (
-                      <td key={ci} className={cellClass(ci, row.length, cell)}>
-                        {ci > 0 &&
-                        ci < row.length - 1 &&
-                        (cell.toLowerCase() === "varies" || cell.toLowerCase() === "zależy") ? (
-                          <span className="flex items-center gap-1">
-                            <NeutralIcon />
-                            {cell}
-                          </span>
-                        ) : (
-                          cell
-                        )}
-                      </td>
+            <div className="overflow-x-auto rounded-md border border-border/20">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="border-b border-border/20 bg-background/40">
+                    {c.tableHeaders.map((h, i) => (
+                      <th
+                        key={i}
+                        className={`px-4 py-4 text-left font-semibold ${
+                          i === c.tableHeaders.length - 1
+                            ? "text-primary"
+                            : i === 0
+                              ? "text-foreground/80 w-44"
+                              : "text-foreground/40 font-medium"
+                        }`}
+                      >
+                        {h}
+                      </th>
                     ))}
-                  </motion.tr>
-                ))}
-              </tbody>
-            </table>
+                  </tr>
+                </thead>
+                <tbody>
+                  {c.tableRows.map((row, ri) => (
+                    <motion.tr
+                      key={ri}
+                      initial={{ opacity: 0 }}
+                      whileInView={{ opacity: 1 }}
+                      viewport={{ once: true, margin: "-40px" }}
+                      transition={{ duration: 0.35, delay: ri * 0.04 }}
+                      className="border-b border-border/10 last:border-0 hover:bg-background/20 transition-colors"
+                    >
+                      {row.map((cell, ci) => (
+                        <td key={ci} className={cellClass(ci, row.length, cell)}>
+                          {ci > 0 &&
+                          ci < row.length - 1 &&
+                          (cell.toLowerCase() === "varies" || cell.toLowerCase() === "zależy") ? (
+                            <span className="flex items-center gap-1">
+                              <NeutralIcon />
+                              {cell}
+                            </span>
+                          ) : (
+                            cell
+                          )}
+                        </td>
+                      ))}
+                    </motion.tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
       {/* CTA */}
       <section className="py-24 bg-background border-t border-border/10">
         <div className="container mx-auto px-6 max-w-2xl text-center">

@@ -178,7 +178,7 @@ export default function PricingSection() {
         >
           {bi(
             "All prices are indicative. Final quote depends on your exact requirements. Use our calculator for a precise estimate.",
-            "Wszystkie ceny są orientacyjne. Ostateczna wycena zależy od dokładnych wymagań. Użyj kalkulatora dla precyzyjnej estymaty.",
+            "Wszystkie ceny są orientacyjne. Ostateczna wycena zależy od dokładnych wymagań. Użyj kalkulatora do precyzyjnej kalkulacji.",
           )}
         </motion.p>
       </div>

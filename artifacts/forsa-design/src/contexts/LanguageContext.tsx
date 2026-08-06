@@ -185,11 +185,11 @@ const translations = {
         },
         {
           q: "Ile trwa projekt?",
-          a: "Od czterech do ośmiu tygodni, w zależności od zakresu. Nie dlatego, że pracuję wolno. Dlatego, że nie zaczynam kodować, dopóki nie zrozumiem, co Twoi kupcy muszą zobaczyć. Ta rozmowa zajmuje czas. Kodowanie to najłatwiejsza część.",
+          a: "Od czterech do ośmiu tygodni, w zależności od zakresu. Nie dlatego, że pracuję wolno. Dlatego że nie zaczynam kodować, dopóki nie zrozumiem, co Twoi kupcy muszą zobaczyć. Ta rozmowa zajmuje czas. Kodowanie to najłatwiejsza część.",
         },
         {
           q: "A jeśli nie mam żadnych zdjęć?",
-          a: "Pracujemy z tym, co masz. Przeciętne zdjęcie Twojego warsztatu zrobione telefonem jest lepsze niż stockowe zdjęcie uśmiechniętego inżyniera w kasku, które kupiłeś na stronie o nazwie BusinessPeopleSmiling.com.",
+          a: "Pracujemy z tym, co masz. Przeciętne zdjęcie Twojego warsztatu zrobione telefonem jest lepsze niż stockowe zdjęcie uśmiechniętego inżyniera w kasku, które kupiłeś na randomowej stronie.",
         },
         {
           q: "Czy oferujecie wsparcie po wdrożeniu?",
@@ -212,11 +212,11 @@ const translations = {
       heading: "Co budujemy",
       card1: {
         title: "Strony dla przemys\u0142u",
-        desc: "Bez ci\u0119\u017ckich szablon\u00f3w. Bez zb\u0119dnych wtyczek. Budujemy dedykowane witryny skupione na wydajno\u015bci, wygodzie na telefonie i jasnym przekazie. Twoja strona otwiera si\u0119 szybko, dzia\u0142a na ka\u017cdym urz\u0105dzeniu i m\u00f3wi odwiedzaj\u0105cym dlaczego maj\u0105 wybra\u0107 ciebie, a nie konkurencj\u0119 zza rogu.",
+        desc: "Bez ci\u0119\u017ckich szablon\u00f3w. Bez zb\u0119dnych wtyczek. Budujemy dedykowane witryny skupione na wydajno\u015bci, wygodzie na telefonie i jasnym przekazie. Twoja strona otwiera si\u0119 szybko, dzia\u0142a na ka\u017cdym urz\u0105dzeniu i m\u00f3wi odwiedzaj\u0105cym, dlaczego maj\u0105 wybra\u0107 ciebie, a nie konkurencj\u0119 zza rogu.",
       },
       card2: {
         title: "E-commerce dla cz\u0119\u015bci i urz\u0105dze\u0144",
-        desc: "Je\u015bli sprzedajesz cz\u0119\u015bci, narz\u0119dzia lub us\u0142ugi przez internet, usuwamy wszystko co zabija zam\u00f3wienia. Lepszy proces zakupu, przejrzyste karty produkt\u00f3w i design mobilny, kt\u00f3ry zamienia przegl\u0105daj\u0105cych w klient\u00f3w. Niezale\u017cnie od tego czy to pe\u0142ny sklep czy prosty formularz zapytania, dbamy o to \u017ceby zarabia\u0142.",
+        desc: "Je\u015bli sprzedajesz cz\u0119\u015bci, narz\u0119dzia lub us\u0142ugi przez internet, usuwamy wszystko, co zabija zam\u00f3wienia. Lepszy proces zakupu, przejrzyste karty produkt\u00f3w i design mobilny, kt\u00f3ry zamienia przegl\u0105daj\u0105cych w klient\u00f3w. Niezale\u017cnie od tego, czy to pe\u0142ny sklep czy prosty formularz zapytania, dbamy o to, \u017ceby zarabia\u0142.",
       },
       card3: {
         title: "Dedykowane systemy webowe",
@@ -229,7 +229,7 @@ const translations = {
       body: [
         "Prowadzę trzy projekty na kwartał. Dwa są już w trakcie. Piszę kod sam. Odbieram telefony sam. Testuję na urządzeniach, których Twoi klienci faktycznie używają. To cały zespół.",
         "Nie wystawiamy ściany logotypów. Klienci przemysłowi nie wybierają dostawcy przez ładną galerię. Wybierają, bo strona odpowiada na jedno pytanie. Czy ta firma potrafi dostarczyć?",
-        "Każdy projekt objęty jest NDA lub wciąż w użyciu. Jeśli chcesz zobaczyć nasze prace, pokazuję je podczas rozmowy. Nie dlatego, że to tajne. Dlatego, że kontekst ma znaczenie. Zrzut ekranu nic Ci nie powie. Musisz wiedzieć, dlaczego oficer ds. zakupów zostaje na stronie, zamiast wyłączyć ją po ośmiu sekundach.",
+        "Każdy projekt objęty jest NDA lub jest wciąż w użyciu. Jeśli chcesz zobaczyć nasze prace, pokażę je podczas rozmowy. Nie dlatego, że to tajne. Dlatego że kontekst ma znaczenie. Zrzut ekranu nic Ci nie powie. Musisz wiedzieć, dlaczego oficer ds. Zakupu zostaje na stronie zamiast wyłączyć ją po ośmiu sekundach.",
         "Jeśli Twoja strona nie generuje projektów, o których nawet nie wiedziałeś, że były, powinniśmy porozmawiać.",
       ],
       cta: "Poproś o rozmowę",
@@ -240,7 +240,7 @@ const translations = {
       steps: [
         {
           title: "Audyt i odkrycie",
-          desc: "Zaczynamy od zrozumienia twojego biznesu, twoich klient\u00f3w i tego jak ci\u0119 faktycznie znajduj\u0105. Analizujemy twoj\u0105 obecn\u0105 stron\u0119, konkurencj\u0119 i miejsca gdzie uciekaj\u0105 pieni\u0105dze. Bez zgadywania.",
+          desc: "Zaczynamy od zrozumienia twojego biznesu, twoich klient\u00f3w i tego, jak ci\u0119 faktycznie znajduj\u0105. Analizujemy twoj\u0105 obecn\u0105 stron\u0119, konkurencj\u0119 i miejsca, gdzie uciekaj\u0105 pieni\u0105dze. Bez zgadywania.",
         },
         {
           title: "Specyfikacja techniczna i projekt",
@@ -258,7 +258,7 @@ const translations = {
     },
     about: {
       heading: "Zbudowane przez kogo\u015b, kto rozumia\u0142 brief",
-      body: "Nazywam si\u0119 Miro. Forsa Design za\u0142o\u017cy\u0142em po ponad 20 latach w mi\u0119dzynarodowej sprzeda\u017cy B2B. Handlowa\u0142em maszynami do obr\u00f3bki metalu, wyposa\u017ceniem przemys\u0142owym i rozwi\u0105zaniami in\u017cynieryjnymi w Europie i Azji. Siedzia\u0142em po obu stronach sto\u0142u zakupowego. Wiem jak wygl\u0105da proces od pierwszego maila po podpisany kontrakt.",
+      body: "Nazywam si\u0119 Miro. Forsa Design za\u0142o\u017cy\u0142em po ponad 20 latach w mi\u0119dzynarodowej sprzeda\u017cy B2B. Handlowa\u0142em maszynami do obr\u00f3bki metalu, wyposa\u017ceniem przemys\u0142owym i rozwi\u0105zaniami in\u017cynieryjnymi w Europie i Azji. Siedzia\u0142em po obu stronach sto\u0142u zakupowego. Wiem, jak wygl\u0105da proces od pierwszego maila po podpisany kontrakt.",
       body2:
         "To do\u015bwiadczenie nauczy\u0142o mnie jednej rzeczy. Wi\u0119kszo\u015b\u0107 firm przemys\u0142owych wykonuje \u015bwietn\u0105 robot\u0119, ale ich strony internetowe nie nad\u0105\u017caj\u0105 za poziomem ich us\u0142ug. I to kosztuje kontrakty. Nie dlatego, \u017ce praca jest s\u0142aba, tylko dlatego, \u017ce w dzisiejszym B2B strona to pierwszy etap weryfikacji. Nie jestem agencj\u0105 z Londynu z pi\u0119tnastoma osobami w zespole i kawiarni\u0105 w biurze. Jestem cz\u0142owiekiem, kt\u00f3ry rozumie przemys\u0142, logistyk\u0119 i handel mi\u0119dzynarodowy. Teraz buduj\u0119 strony, kt\u00f3re komunikuj\u0105 si\u0119 j\u0119zykiem Twoich klient\u00f3w. Bez szablon\u00f3w. Bez zb\u0119dnego \u017cargonu. Tylko czysty kod i jasny przekaz.",
       body3:
