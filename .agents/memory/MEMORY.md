@@ -12,6 +12,7 @@
 - [Direct-contact architecture](direct-contact-architecture.md) — Forsa Design contact is email/phone only; no form endpoint, SMTP, CAPTCHA, or generated submission contract.
 - [Quote email delivery](quote-email-delivery.md) — quote PDF download is gated on server-confirmed SMTP delivery to the client and owner copy.
 - [Cloudflare contact email transport](cloudflare-contact-email-transport.md) — Proton blocks SMTP from Cloudflare Workers (587 & 465); contact mail must go via Worker proxy → Replit backend → Resend.
+- [Cloudflare CSP injection](cloudflare-csp-injection.md) — Pages appends Analytics/challenge scripts; CSP must allow Cloudflare RUM and same-origin /cdn-cgi endpoints plus GA collection hosts.
 - [Logo transparency for PDF and site](logo-transparency.md) — transparent PNG logo works directly in pdf-lib embedPng and on-site; no background flattening needed if alpha=0 corners.
 - [About page content sources](about-page-content-sources.md) — homepage About and dedicated About routes use separate copy sources; identify the rendered route before editing.
 - [Cloudflare URL conventions](cloudflare-url-conventions.md) — trailing slash is the canonical form; robots.txt has ~1h edge cache (verify with cache-buster); Cloudflare injects managed content signals into robots.txt.
