@@ -1,5 +1,5 @@
 import { useLanguage } from "@/contexts/LanguageContext";
-import { m as motion } from "framer-motion";
+import { motion } from "framer-motion";
 
 export default function About() {
   const { t } = useLanguage();

@@ -1,10 +1,7 @@
 import { Switch, Route, Router as WouterRouter, useLocation, useRoute } from "wouter";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { LazyMotion, MotionConfig, domAnimation } from "framer-motion";
 import { lazy, Suspense, useEffect } from "react";
 import HomePage from "@/pages/HomePage";
 
-const Toaster = lazy(() => import("@/components/ui/toaster").then((m) => ({ default: m.Toaster })));
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import CookieConsent from "@/components/CookieConsent";
 import ErrorBoundary from "@/components/ErrorBoundary";
@@ -23,8 +20,6 @@ const ContactPage = lazy(() => import("@/pages/ContactPage"));
 const SearchPage = lazy(() => import("@/pages/SearchPage"));
 const BlogPage = lazy(() => import("@/pages/BlogPage"));
 const ArticlePage = lazy(() => import("@/pages/ArticlePage"));
-
-const queryClient = new QueryClient();
 
 function Redirector() {
   const [location, setLocation] = useLocation();
@@ -140,26 +135,17 @@ function AnalyticsGate() {
 
 function App() {
   return (
-    <QueryClientProvider client={queryClient}>
-      <LazyMotion features={domAnimation}>
-        {/* reducedMotion="user" makes all framer-motion animations respect
-            the OS-level prefers-reduced-motion setting. */}
-        <MotionConfig reducedMotion="user">
-          <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, "")}>
-            <LanguageProvider>
-              <ErrorBoundary>
-                <Router />
-                <CookieConsent />
-                <AnalyticsGate />
-              </ErrorBoundary>
-            </LanguageProvider>
-          </WouterRouter>
-          <Suspense fallback={null}>
-            <Toaster />
-          </Suspense>
-        </MotionConfig>
-      </LazyMotion>
-    </QueryClientProvider>
+    <>
+      <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, "")}>
+        <LanguageProvider>
+          <ErrorBoundary>
+            <Router />
+            <CookieConsent />
+            <AnalyticsGate />
+          </ErrorBoundary>
+        </LanguageProvider>
+      </WouterRouter>
+    </>
   );
 }
 

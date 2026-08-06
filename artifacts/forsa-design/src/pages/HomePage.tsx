@@ -1,21 +1,72 @@
-import { useEffect } from "react";
+import { lazy, Suspense, useEffect, useRef, useState } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useSeoMeta, useJsonLd, buildHref } from "@/hooks/useSeoMeta";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Services from "@/components/Services";
-import PricingSection from "@/components/PricingSection";
-import Portfolio from "@/components/Portfolio";
-import Process from "@/components/Process";
-import About from "@/components/About";
-import CTA from "@/components/CTA";
-import ContactInfo from "@/components/ContactInfo";
-import ContactForm from "@/components/ContactForm";
-import FAQ from "@/components/FAQ";
-import Footer from "@/components/Footer";
+
+const HomeSections = lazy(() => import("@/components/HomeSections"));
 
 interface HomePageProps {
   lang: "en" | "pl";
+}
+
+function DeferredHomeSections() {
+  const [shouldLoad, setShouldLoad] = useState(false);
+  const loadedRef = useRef(false);
+
+  useEffect(() => {
+    const loadSections = () => {
+      if (loadedRef.current) return;
+      loadedRef.current = true;
+      setShouldLoad(true);
+      window.removeEventListener("scroll", loadSections);
+      window.removeEventListener("touchstart", loadSections);
+      window.removeEventListener("wheel", loadSections);
+      window.removeEventListener("hashchange", loadSections);
+    };
+
+    // Hash navigation must work without waiting for a manual scroll gesture.
+    if (window.location.hash) {
+      loadSections();
+      return;
+    }
+
+    // Keep below-the-fold code out of the initial mobile page load. These
+    // events cover normal scrolling, touch gestures and anchor navigation.
+    window.addEventListener("scroll", loadSections, { passive: true });
+    window.addEventListener("touchstart", loadSections, { passive: true });
+    window.addEventListener("wheel", loadSections, { passive: true });
+    window.addEventListener("hashchange", loadSections);
+
+    return () => {
+      window.removeEventListener("scroll", loadSections);
+      window.removeEventListener("touchstart", loadSections);
+      window.removeEventListener("wheel", loadSections);
+      window.removeEventListener("hashchange", loadSections);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!shouldLoad || !window.location.hash) return;
+    const timer = window.setTimeout(() => {
+      document.getElementById(window.location.hash.slice(1))?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }, 0);
+    return () => window.clearTimeout(timer);
+  }, [shouldLoad]);
+
+  if (!shouldLoad) {
+    return <div className="min-h-[5600px]" aria-hidden="true" />;
+  }
+
+  return (
+    <Suspense fallback={<div className="min-h-[5600px]" aria-hidden="true" />}>
+      <HomeSections />
+    </Suspense>
+  );
 }
 
 export default function HomePage({ lang }: HomePageProps) {
@@ -212,16 +263,8 @@ export default function HomePage({ lang }: HomePageProps) {
       <main id="main-content">
         <Hero />
         <Services />
-        <PricingSection />
-        <Portfolio />
-        <Process />
-        <About />
-        <FAQ />
-        <CTA />
-        <ContactInfo />
-        <ContactForm />
+        <DeferredHomeSections />
       </main>
-      <Footer />
     </div>
   );
 }

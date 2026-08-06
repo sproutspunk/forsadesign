@@ -1,6 +1,5 @@
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Monitor, ShoppingCart, Layers } from "lucide-react";
-import { m as motion } from "framer-motion";
 
 export default function Services() {
   const { t } = useLanguage();
@@ -35,14 +34,9 @@ export default function Services() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {services.map((service, index) => (
-            <motion.div
+            <div
               key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              whileHover={{ y: -8 }}
-              className="bg-card border-t-4 border-t-primary p-8 rounded-b-md shadow-sm transition-all duration-300 hover:shadow-[0_10px_30px_rgba(201,168,76,0.12)]"
+              className="bg-card border-t-4 border-t-primary p-8 rounded-b-md shadow-sm transition-transform duration-300 hover:-translate-y-2 hover:shadow-[0_10px_30px_rgba(201,168,76,0.12)]"
             >
               <div className="text-primary mb-6">{service.icon}</div>
               <h3 className="font-serif text-2xl font-bold text-white leading-tight mb-4">
@@ -51,7 +45,7 @@ export default function Services() {
               <p className="text-foreground/70 leading-relaxed font-light whitespace-pre-line text-justify">
                 {service.desc}
               </p>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

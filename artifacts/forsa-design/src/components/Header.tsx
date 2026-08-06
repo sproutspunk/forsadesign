@@ -84,7 +84,7 @@ export default function Header() {
               width={160}
               height={132}
               loading="eager"
-              fetchPriority="high"
+              fetchPriority="low"
               decoding="async"
               className="h-11 w-auto object-contain"
             />

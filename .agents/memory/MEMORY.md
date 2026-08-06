@@ -8,6 +8,7 @@
 - [Stale prerendered files on Cloudflare Pages](stale-prerender-files.md) — Cloudflare Pages preserves stale `index.html` files across deploys; if a route stops being prerendered, the old static file persists and overrides SPA fallback. Always prerender all routes, or use wrangler to purge.
 - [Node 24 strip-types for .ts imports](node-24-strip-types.md) — Node 24 natively supports `import('./file.ts')` without flag in ESM modules; `node --experimental-strip-types` works in CI for running `.mjs` scripts that import `.ts` data files.
 - [Quote PDF lazy loading](quote-pdf-lazy-loading.md) — keep pdf-lib out of the initial bundle; load the generator only when the user downloads a quote.
+- [Mobile homepage loading](mobile-homepage-loading.md) — keep only Header, Hero and Services in initial JS; lazy-load below-fold homepage sections on interaction or hash navigation.
 - [Industrial marketing routes](industrial-marketing-routes.md) — keep React routes, prerendered HTML, SEO/schema, and sitemap entries aligned for every public marketing page.
 - [Direct-contact architecture](direct-contact-architecture.md) — Forsa Design contact is email/phone only; no form endpoint, SMTP, CAPTCHA, or generated submission contract.
 - [Quote email delivery](quote-email-delivery.md) — quote PDF download is gated on server-confirmed SMTP delivery to the client and owner copy.
