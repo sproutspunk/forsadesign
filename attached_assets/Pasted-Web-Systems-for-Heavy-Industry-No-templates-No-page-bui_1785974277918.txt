@@ -1,0 +1,436 @@
+Web Systems for Heavy Industry
+
+No templates. No page builders. Just fast, secure sites that pass procurement checks.
+
+You build infrastructure. We build the digital layer that proves you can deliver it. With more than twenty years in international B2B industrial sales across machinery, engineering and energy procurement, I know what happens when a buyer shortlists three suppliers and checks their websites. Fora Design builds dedicated, hand-coded websites and web systems for offshore and energy contractors, engineering firms, industrial equipment suppliers and heavy logistics operators. Based in Banff, Aberdeenshire. Serving Scotland and the UK.
+
+
+Industrial Web Presence
+
+Dedicated sites built from scratch for engineering and manufacturing firms. Fast load times, mobile performance for site offices and technical messaging that speaks to specifiers, not designers.
+
+
+E-commerce for Parts and Equipment
+
+B2B catalogues and ordering systems for industrial components with account pricing, bulk quotes and integrations with ERP or stock systems. Built for procurement officers, not casual browsers.
+
+Bespoke Web Systems
+
+Dealer portals, technical specification generators, multilingual quote engines and workflow integrations for export markets. Practical tools that fit your operation instead of disrupting it.
+
+
+I take three projects per quarter. Two are already underway. I write the code. I take the calls. I test on the devices your clients actually use. That is the entire team.
+
+We do not display a wall of logos. Industrial clients do not choose suppliers because of a pretty gallery. They choose because the site answers one question. Can this firm deliver?
+
+Every project is under NDA or in active use. If you want to see our work, we show it on a call. Not because it is secret. Because context matters; a screenshot tells you nothing. You need to know why the procurement officer stays on the page instead of closing it after eight seconds.
+
+If your website isn't generating projects you didn't even know were there, we should talk.
+
+
+Discovery & Audit
+
+We analyse your current site, competitors and where you lose credibility during the buyer's vetting process. We map decision-makers and the evidence they need to see.
+
+Technical Spec & Design
+
+Clean architecture, hand-written code and no unnecessary plug-ins. Every page is built around a procurement checkpoint, with real proof of your facility, capabilities and work.
+
+
+Compliance, Testing & Launch
+
+GDPR, accessibility, SSL and performance benchmarks. Tested on the devices your clients actually use, from phones offshore to older PCs in site cabins.
+
+
+Support & Evolution
+
+Monthly care plans keep your site secure, up to date, and aligned with your contract pipeline. As your capabilities grow, your site grows with them.
+
+Built by Someone Who Understood the Brief
+
+My name is Miro. I founded Forsa Design after more than 20 years in international B2B industrial sales. I traded in metalworking machinery, industrial equipment and engineering solutions across Europe and Asia. I sat on both sides of the procurement table, selling to refineries, negotiating with plant engineers and vetting suppliers myself.
+
+That experience taught me one thing: most industrial firms deliver world-class work, but their digital presence does not reflect it. I am not a London agency with fifteen account managers. I am a developer who understands industry, logistics, international trade and contract deadlines. I write the code and answer the phone myself.
+
+Based in Banff, Aberdeenshire. Fluent in English and Polish. Serving UK-wide and EU export markets.
+
+
+Common Questions
+
+Straight answers for industrial, engineering and procurement teams.
+
+
+
+
+No. Every site is hand-coded. WordPress is fine for blogs. It is not fine for a firm that wants to pass a procurement audit without explaining why their site needs seventeen plug-ins and a security patch every Tuesday.
+
+
+Between four and eight weeks, depending on scope. Not because I work slowly. Because I do not start coding until I understand what your buyers need to see. That conversation takes time. The coding is the easy part.
+
+
+We work with what you have. A decent photo of your workshop taken on a phone is better than a stock image of a smiling engineer in a hard hat that you bought from a random website.
+
+
+Yes. Monthly care plans start at £150. That includes hosting, security updates, backups and the occasional panic email at 10 pm because you need a phone number changed before a tender deadline.
+
+
+If it has an API, probably yes. If it runs on a spreadsheet from 2003 and a prayer, we will figure something out. I have seen worse.
+
+
+Ready to stop apologising for your website?
+
+Clean code. Clear strategy. Websites that work as hard as you do on site.
+
+
+Start a conversation
+Tell us what you are building.
+
+Share a few details, and we will reply with a practical next step.
+
+
+Which Option Is Right for You?
+
+Not every business needs a custom website. The right choice depends on your goals, budget, timeline, and how important flexibility, performance, and future growth are. Below is a practical comparison of the most common web solutions.
+
+
+CMS Template
+
+Fast and affordable
+
+Pros
+
+    Lower initial cost
+    Quick to launch
+    Easy content updates
+
+Cons
+
+    Often based on existing themes
+    Can become slower with too many plug-ins
+    Limited control over SEO and performance
+
+
+Non-specialist Agency
+
+General solution provider
+
+Pros
+
+    Experienced teams
+    Project management
+    Existing portfolio
+
+Cons
+
+    Often template-based
+    Higher costs due to larger structures
+    May lack industry-specific experience
+
+
+
+
+Freelancer
+
+Flexible and personal
+
+Pros
+
+    Direct communication
+    Flexible pricing
+    Wide range of skills
+
+Cons
+
+    One person responsible for the whole project
+    Availability can become a challenge
+    Quality varies between providers
+
+The right approach starts with understanding your business.
+
+
+Blog
+
+Expert insights on web design, SEO, and digital strategy.
+
+
+
+From template to shipyard. What actually works in web design for the marine industry.
+
+Most sites I audit look fine. Clean layout, decent typography, nice colours. But when I speak to shipyard and offshore business owners, I hear the same thing. The site exists, but it does not attract the right enquiries. It does not pass procurement checks. It does not show what needs to be shown. This is not about pretty design. It is about whether the site convinces the buyer that you can deliver a vessel, platform or component on time and to standard.
+
+A shipyard is not an online shop. A client looking for an offshore contractor or hull manufacturer does not browse a catalogue like Amazon. This is B2B (Business to Business) trade. They check whether you have certificates, references and whether your team understands classification rules. Your site needs to answer these questions before anyone even calls you.
+
+In previous articles, I wrote about speed and responsiveness. I wrote that every second of loading time costs visitors. In a shipyard, this rule is even more brutal. Your potential client may be sitting in a site office container on the quayside with a connection that barely works. If the site takes five seconds to load, they do not wait. They go to the competition.
+
+I also wrote about the difference between a CMS (Content Management System) template and a bespoke site. For a shipyard, this difference is critical. A template does not account for technical documentation, vessel project cards or integration with an ERP (Enterprise Resource Planning) system. A bespoke site can. It can show a project portfolio in a way an engineer understands, not just a designer.
+
+In the article about conversion, I wrote about clarity and trust. In the shipyard industry, trust is built differently than in retail. It is not about reviews from portals. It is about whether the site shows real projects, names of responsible people and a direct number to someone who understands technical specifications. Trust is concrete numbers. The tonnage you have built. The year of build. The name of the vessel that underwent refit in your dock.
+
+I wrote that SEO (Search Engine Optimisation) is not just the site. In the shipyard industry, keywords are not just web design Aberdeen. It is offshore vessel fabrication Scotland, ship repair Banff, marine engineering procurement UK. Content must answer questions asked by buyers from platforms and design offices, not random internet users.
+
+In the last article, I wrote that maintaining a site matters more than building it. For a shipyard, this means references from a project finished two years ago are not enough. The site must live. New projects, new certificates, up-to-date contact details. An old site with outdated information signals that the company may not be active. And in an industry where contracts are worth millions, that signal is fatal.
+
+If you run a shipyard or offshore business in Scotland, you do not need a site that looks like it belongs in a creative agency portfolio. You need a site that passes procurement checks, works on a weak connection and shows you understand the industry. Because in this industry, the buyer does not choose the prettiest site. They choose the company they can trust.
+
+If you want to talk about a site for your shipyard or offshore business, email hello@forsadesign.co.uk. The first conversation is free.
+
+
+
+Working on a similar project?
+
+We design procurement-ready websites and bespoke web systems for industrial, marine and engineering businesses.
+
+
+
+Why Website Maintenance Matters More Than the Build Itself
+
+Most businesses treat a website like a brochure: design it, print it, done. That mindset worked in 2005. It does not work now. A website is a living system. Software ages, vulnerabilities appear, search algorithms change, and content goes stale. Without regular maintenance, even the best-built site quietly loses value.
+1. Security updates are not optional
+
+Every website runs on software: the server, the framework and the plug-ins. Developers regularly find security flaws and release patches. If those patches are not applied, your site becomes an easy target. A compromised site does not just affect you. It can be used to send spam, host phishing pages or infect visitors. Google will flag it in search results. Hosting providers may suspend it. The cleanup costs far more than routine maintenance ever would. Maintenance means applying updates promptly, monitoring for unusual activity and keeping backups that actually work.
+2. Performance degrades over time
+
+A fast site at launch can become slow within a year. New images are uploaded without compression. Third-party scripts accumulate. Analytics tools, chat widgets and social feeds each add requests. The database grows. Caches need refreshing. Google uses speed as a ranking factor. Visitors use speed as a trust signal. A site that loaded in two seconds at launch and now takes six is losing both search visibility and conversions. Regular performance audits catch this before it becomes a problem.
+3. Content goes stale quickly
+
+Opening hours change. Team members leave. Services are updated. Phone numbers change. If your site still shows last year's pricing or a team photo from two years ago, it quietly tells visitors you are not paying attention. Search engines also prefer fresh content. A blog post from 2022 does not carry the same weight as one from this month. Regular small updates, like a new article, a refreshed service page or updated testimonials, keep the site alive in Google's eyes.
+4. Search rankings need defending
+
+SEO is not a finish line. Competitors publish new content. Google updates its algorithms. Local business listings need verification. Backlinks decay. A site that ranked well in January can be invisible by October if nothing is done. Maintenance includes checking what still ranks, what has dropped and why. It means updating technical SEO as standards evolve. It means making sure local search signals such as your Google Business Profile, directory listings and local citations stay accurate and consistent.
+5. Broken links cost real enquiries
+
+A booking link that goes to a 404. An email address that no longer exists. These are invisible problems with visible consequences: lost enquiries, frustrated customers, missed revenue. Regular maintenance means checking links and verifying that every path a visitor might take still works. It takes minutes to check and seconds to fix. The alternative is finding out from an angry customer.
+What does good maintenance look like?
+
+It does not need to be expensive or complicated. A solid routine covers monthly software updates and security patches, quarterly performance checks and content reviews, and regular backups stored away from the server. Once a year, the SEO deserves a proper audit and a strategy refresh. And anything broken gets fixed straight away, not next month. The key is consistency. Small, regular attention prevents the big problems that cost time, money and reputation.
+Summary
+
+Building a website is the beginning, not the end. The businesses that get the most value from their sites treat them as ongoing investments. Maintenance is not an extra cost. It is what protects the value of the build in the first place.
+
+
+What Makes a Website Actually Convert Visitors into Customers
+
+Most sites we audit look fine at a glance. Clean layout, decent typography, decent colours. But the numbers tell a different story: low enquiries, high bounce rates, short sessions. The gap between looking professional and actually turning visitors into customers is bigger than most business owners think.
+Clarity beats cleverness every time.
+
+A visitor needs to know within three seconds what you do, who you do it for, and what to do next. Not after reading your mission statement. Not after scrolling through a carousel. We see this mistake over and over: vague headlines like "Innovative Solutions for Forward-Thinking Businesses." That means nothing. Compare it to "Web Design for Small Businesses in Aberdeenshire: Fixed Quotes, No Surprises." One is forgettable. The other tells the right person immediately that they are in the right place. Every headline, subheading and button on your site needs to pass this test: would a first-time visitor, scanning, understand what you offer and why it matters to them? If not, rewrite it.
+Trust signals are not optional.
+
+Before someone emails or calls you, they check you are real. Can you deliver what you promise? Trust is built on specific signals, not general claims. "We are the best" is a claim. A specific line like "47 projects delivered across Aberdeenshire in the past three years" is a signal. Use your own real numbers, never invented ones. Use real client names where you have permission. Show actual results: a concrete figure like "34% fewer no-shows after the new booking system went live" beats any adjective. Put a direct phone number on every page. Show your location. For local businesses, being findable and reachable matters more than looking glossy.
+Friction kills conversions silently.
+
+Every extra click, every unclear label, every form field that feels unnecessary removes a percentage of potential enquiries. The effect is cumulative. Forms that ask for too much information upfront are the first culprit. Name, email, and what they need is enough. You can ask the rest on the call. Navigation with more than six items is another. Too many choices paralyse. Group related pages and make the path to contact obvious. Slow loading speeds cost real visitors, especially on mobile connections in rural areas. Compress images, lazy-load below the fold, and keep the critical path minimal. Hidden pricing is the last one. If your service has a standard range, say so. Vague pricing does not create curiosity. It creates suspicion.
+One action per page
+
+Every page needs one clear purpose and one prominent action. Contact pages need to make contacting easy. Service pages need to explain the service and offer a clear next step. Homepages need to orient the visitor and direct them to the right place. Multiple competing calls to action, "Call us", "Download our brochure", "Sign up for the newsletter", "Read our blog", dilute attention and reduce the chance of any one action being taken. Pick the most important action for that page and make it impossible to miss.
+Mobile is not a separate version. It is the version.
+
+Most web traffic in the UK now comes from mobile. For many local businesses, the figure is higher. Your mobile experience is not a scaled-down desktop site. It is the primary experience for most of your visitors. Tap targets need to be big enough. Text needs to be readable without zooming. Phone numbers need to be tap-to-call. Forms need to work with the native keyboard. If any of these are broken, you are losing enquiries before the visitor even reads your content.
+Summary
+
+Conversion is not a trick. It is the result of clarity, trust, and removing obstacles. Most improvements come from simplifying what is already there, not adding more. If your website looks good but the enquiries are not coming in, the problem is usually one of these three things. Fix them and the numbers change.
+
+SEO: Why Your Website Is Only the Beginning
+
+Launching a website does not automatically bring you customers from Google. A lot of people assume it does, and then wonder why the traffic never arrives. SEO is a combination of technical quality, content, user experience and online credibility. Your website is the foundation, but it is only the start.
+Website foundation
+
+Before anything else, your site needs to be technically sound. This means a clear structure that helps search engines understand what your pages are about and how they relate to each other. It means good performance, because speed affects both user experience and how search engines evaluate your site. And it means proper technical setup: clean code, correct indexing, structured data where relevant, and a solid mobile experience.
+Content matters
+
+Good content answers the questions your customers are actually asking. It should match what people search for and offer genuinely useful information, not filler padded out for length. A page that clearly and honestly answers a specific question will tend to outperform a page that mentions a lot of keywords but says little of value.
+Experience and trust
+
+Search engines pay attention to signals of credibility. Clear, accurate information, consistent business details across the web, genuine customer feedback and demonstrated expertise all build authority over time. This cannot be shortcut. It is the result of running a good business and representing it well online.
+Links and mentions
+
+When other reputable websites link to yours, it strengthens your standing in search. Quality matters far more than quantity. A single link from a relevant, trusted source is worth more than hundreds of low-quality ones. Guest posts, directory listings, press mentions and partnerships can all contribute over time.
+User behaviour
+
+How people interact with your site gives search engines signals about its quality. If visitors land and leave quickly without engaging, it suggests the page did not deliver what they were looking for. Improving the relevance, usability and clarity of your content directly improves this.
+Technical SEO basics
+
+robots.txt tells search engines which pages to access and index. A sitemap helps them discover all your content. Redirects protect your existing rankings when pages move or are removed. These are not complex, but they need to be set up correctly from the beginning.
+Summary
+
+SEO is ongoing work, not a one-time setup. Your website creates the foundation. Content, credibility and consistent effort build visibility over time.
+
+
+E-commerce: Why Speed and User Experience Drive Sales
+
+In online retail, the margin between a completed sale and an abandoned cart is thinner than most people think. Speed, trust and a simple buying process all play a role. Small problems anywhere in the journey add up, and customers who hit friction will often just go elsewhere.
+1. Speed affects conversions
+
+Customers browsing online have high expectations. A shop that takes too long to load creates doubt before they have even seen your products. The data consistently shows that every additional second of load time reduces conversion rates. When someone is ready to buy, they are not willing to wait.
+2. Checkout experience
+
+The buying process should be as short as possible. Too many steps, mandatory account creation, hidden costs revealed late in the process, or limited payment options are all common reasons customers abandon checkout. A clean, transparent process with minimal friction helps people complete what they came to do.
+3. Trust signals
+
+Before sharing payment details, customers need to feel confident in the shop they are buying from. Clear contact information, visible return policies, customer reviews, secure payment badges and a professional design all contribute to that confidence. A site that looks unfinished or hard to navigate creates doubt, and doubt kills sales.
+4. Mobile shopping
+
+A significant and growing share of e-commerce happens on mobile devices. Mobile shops need easy navigation, clear and well-sized buttons, fast-loading product images and a checkout that works well on touch. Mobile UX is not about shrinking a desktop layout. It needs to be designed for how people actually use a phone.
+5. Inventory and product management
+
+Accurate product information matters for trust and for reducing returns. Stock levels should update in real time, product descriptions should be clear and honest, and recommendations should be relevant. The small details of how products are presented directly influence whether someone decides to buy.
+Summary
+
+E-commerce success comes down to removing obstacles. Every part of the customer journey, from first load to final confirmation, affects whether a sale happens.
+
+
+Responsiveness vs Speed: Why Both Matter for Conversions
+
+Most people browse on their phones these days. So responsiveness sounds like the obvious priority. But responsiveness and speed are two separate problems, and you need both working well. A site that adjusts perfectly to mobile but takes five seconds to load will lose visitors just as quickly as one that is hard to navigate.
+What is responsiveness?
+
+A responsive site adjusts automatically to whatever screen it is viewed on. Text stays readable, buttons are tappable, images scale correctly. This is not a bonus feature any more. It is the starting point for any site built in the last ten years. If someone visits on a phone and has to pinch and zoom to read your content, they will leave.
+What is loading speed?
+
+Speed is how quickly the site loads and becomes usable. Most visitors will abandon a page that takes more than three seconds to load. Speed also feeds directly into Google's ranking signals, particularly for mobile searches. A slow site pays twice: it loses visitors, and it ranks lower in search results.
+How do they work together?
+
+A responsive site can still be slow if it was built with heavy images, unnecessary scripts or too many third-party tools. A fast site can still frustrate mobile users if buttons are tiny or navigation was designed for a desktop. The two problems need to be addressed together, not treated as separate checkboxes.
+How do you measure speed?
+
+Google's Core Web Vitals are the benchmark worth knowing. LCP (Largest Content Paint) measures how quickly the main content loads, with a target of under 2.5 seconds. INP measures responsiveness to clicks and taps. CLS (Cumulative Layout Shift) measures whether the page shifts unexpectedly while loading. Page Speed Insights and GTmetrix will show you how your site scores on all three.
+How do you build a fast and responsive website?
+
+The main levers are image optimisation (use modern formats, compress properly, load only what is visible), lean code without unnecessary plug-ins, and smart caching. Test on real mobile devices and real connections, not just a desktop emulator. A site that scores well in a lab but struggles on a rural 4G connection has a real problem for the people you most want to reach.
+Summary
+
+Responsiveness means people can use your site on any device. Speed means they are willing to wait for it. Both matter and both need attention.
+
+
+How to Choose a Web Agency: 7 Questions You Should Ask
+
+Choosing a web agency is one of those decisions that looks simple until you start looking. There are a lot of options, prices vary enormously, and most agencies will show you the same polished portfolio. These seven questions help cut through that and get to what actually matters.
+1. Do you have experience in my industry?
+
+Ask what they have actually built in your industry, not just general portfolio pieces. Design is easy to present. What you really want to know is whether the sites they built performed well. Did they improve enquiry rates? Did they rank well in local searches? That is harder to fake than a good-looking homepage.
+2. What is your discovery process?
+
+A good agency does not start building until they understand your business. The first meeting should feel like they are learning about you, not selling to you. If they arrive with design concepts before they have talked about your customers and goals, that is not a good sign.
+3. Do you focus on SEO and performance?
+
+A site that looks great but loads slowly or does not appear in search is missing most of its value. Ask specifically how they approach page speed, mobile optimisation and local search visibility. If the answer is vague, keep looking.
+4. Who will manage my project?
+
+You should know exactly who you will be speaking to and how often. Smaller studios and freelancers often work across several clients at once. A clear point of contact who knows your project makes a real difference when things need to move quickly.
+5. What happens after launch?
+
+Launch is the beginning, not the end. Ask what is covered after go-live: security updates, backups, performance monitoring, small content changes. Some agencies are very present during the project and hard to reach afterwards.
+6. Can I move my website if my needs change?
+
+You should own your domain, your hosting account and your content directly. If the agency or their platform controls those things, you are tied to them for as long as your site exists. Always check portability before you sign anything.
+7. How is pricing structured?
+
+Get the full picture upfront: what is included, how revisions work, what triggers extra cost, what ongoing fees look like. A clear quote with no ambiguity is a good sign. Lots of "it depends" before you have even agreed on scope is a warning.
+Summary
+
+The best agencies ask more questions than you do in the first conversation. They want to understand your business before they start talking about solutions.
+
+Meet the Founder of Forsa Design
+
+My name is Miro. I started Forsa Design after more than 20 years in international B2B sales. I traded metalworking machinery, industrial equipment and engineering solutions across Europe and Asia. I sat on both sides of the procurement table. I know what the process looks like from the first email to the signed contract.
+
+That experience taught me one thing: most industrial firms do excellent work, but their websites do not keep up. And it costs contracts. I am not a London agency with fifteen people and a coffee shop in the office. I am someone who understands industry, logistics and international trade. I now build websites that speak your customers' language. No templates. No unnecessary jargon. Just clean code and a clear message.
+
+Based in Banff, Aberdeenshire. Serving businesses across Scotland. Fluent in Polish and English.
+
+
+Real Business Perspective
+
+Having run a company for 20 years, negotiated international contracts across three continents, and managed teams in multiple countries, I understand what a website needs to do for your bottom line. Every design decision is filtered through a business lens, not just an aesthetic one.
+
+Communication at Every Level
+
+I've worked with clients and stakeholders from all walks of life. This translates into websites that speak clearly to your audience, whether they are local customers or international partners.
+
+
+Results-Focused Delivery
+
+My career has been built on closing deals, managing projects end-to-end, and delivering measurable outcomes. I bring the same discipline to web development: clear timelines, transparent communication, and a focus on what actually moves the needle for your business.
+
+
+Our Process
+01
+Discovery & Strategy
+Weeks 1-2
+
+We conduct interviews, analyse your industry, competition, and users, and define business goals.
+02
+Design
+Weeks 3-4
+
+We create wireframes, mockups, and a visual strategy. Everything approved by you before we write a line of code.
+03
+Development
+Weeks 5-8
+
+We build the site with a focus on performance, security, SEO, and conversion.
+04
+Testing & Optimisation
+Week 9
+
+Tests across all devices and browsers, performance analysis, security, SEO.
+05
+Launch & Support
+Ongoing
+
+We deploy the site live. The first few weeks we're in close contact, then we transition to ongoing support.
+
+
+What Sets Us Apart
+No templates. Every project starts from scratch, tailored to your industry and goals.
+Focus on business results. We measure everything. Whether the site attracts users, converts, and supports sales.
+You own everything. Your domain, hosting and content are always in your control. No lock-in, no dependency on a single provider.
+Long-term partnership. We support you months and years after launch. This isn't a project, it's a collaboration.
+Transparent communication. You know what's being done, why, and when it will be ready. No hidden fees, no bureaucratic tricks.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
