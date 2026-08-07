@@ -19,3 +19,4 @@
 - [Cloudflare URL conventions](cloudflare-url-conventions.md) — trailing slash is the canonical form; robots.txt has ~1h edge cache (verify with cache-buster); Cloudflare injects managed content signals into robots.txt.
 - [Prerendered homepage parity](prerendered-homepage-parity.md) — homepage copy changes must update both React translations and prerender.mjs bodyHtml; test EN and PL after changing translation shapes.
 - [Blog metadata parity](blog-metadata-parity.md) — articlesData is the source of truth; articlesMeta titles and excerpts must stay identical for cards and SEO.
+- [LazyMotion required for m components](lazy-motion-provider.md) — App.tsx must wrap app in LazyMotion+domAnimation; without it all m.* components render null (silent blank page, no console error).
