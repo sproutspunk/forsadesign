@@ -203,6 +203,15 @@ function buildHomepageBodyEn() {
 <p>No templates. No page builders. Just fast, secure sites that pass procurement checks.</p>
 <p>You build infrastructure. We build the digital layer that proves you can deliver it. With more than twenty years in international B2B industrial sales across machinery, engineering and energy procurement, I know what happens when a buyer shortlists three suppliers and checks their websites. Forsa Design builds dedicated, hand-coded websites and web systems for offshore and energy contractors, engineering firms, industrial equipment suppliers and heavy logistics operators. Based in Banff, Aberdeenshire. Serving Scotland, the UK and selected EU export markets.</p>
 <a href="/en/#contact">Request a Technical Quote</a>
+<ul aria-label="Performance metrics">
+<li>PageSpeed desktop: 100/100</li>
+<li>PageSpeed mobile: 95/100</li>
+<li>SSL Labs: Grade A+</li>
+<li>Mozilla Observatory: 105/100</li>
+<li>CO&#x2082; per visit: 0.07 g</li>
+<li>Accessibility: 100/100</li>
+</ul>
+<a href="https://digitalbeacon.co/" rel="noopener">Low emission &#x2014; 0.07 g CO&#x2082; per visit</a>
 </section>
 <section id="services">
 <h2>What We Build</h2>
@@ -322,6 +331,15 @@ function buildHomepageBodyPl() {
 <p>Bez szablonów. Bez kreatorów. Tylko szybkie, bezpieczne strony gotowe na weryfikację zakupową.</p>
 <p>Budujesz infrastrukturę. My tworzymy cyfrową warstwę, która pokazuje, że potrafisz ją dostarczyć. Dzięki ponad 20 latom doświadczenia w międzynarodowej sprzedaży B2B wiem, jak kupujący oceniają dostawców i ich strony. Tworzymy ręcznie kodowane strony i systemy dla firm offshore, energetycznych, inżynieryjnych, przemysłowych i logistycznych. Z Banff obsługujemy Szkocję, Wielką Brytanię i wybrane rynki UE.</p>
 <a href="/pl/#contact">Poproś o wycenę techniczną</a>
+<ul aria-label="Metryki wydajności">
+<li>PageSpeed desktop: 100/100</li>
+<li>PageSpeed mobile: 95/100</li>
+<li>SSL Labs: Grade A+</li>
+<li>Mozilla Observatory: 105/100</li>
+<li>CO&#x2082; na wizytę: 0.07 g</li>
+<li>Dostępność: 100/100</li>
+</ul>
+<a href="https://digitalbeacon.co/" rel="noopener">Niskie emisje &#x2014; 0.07 g CO&#x2082; per visit</a>
 </section>
 <section id="services">
 <h2>Co budujemy</h2>

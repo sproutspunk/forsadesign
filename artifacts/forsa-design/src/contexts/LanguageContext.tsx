@@ -49,6 +49,15 @@ const translations = {
         },
       ],
     },
+    trustBar: {
+      desktop: "PageSpeed desktop",
+      mobile: "PageSpeed mobile",
+      ssl: "SSL Labs",
+      observatory: "Mozilla Observatory",
+      co2: "CO\u2082 per visit",
+      a11y: "Accessibility",
+      lowEmission: "Low emission",
+    },
     hero: {
       tagline: "Web Systems for Heavy Industry",
       subheader:
@@ -203,6 +212,15 @@ const translations = {
           a: "Jeśli ma API, prawdopodobnie tak. Jeśli działa na arkuszu kalkulacyjnym z 2003 roku i modlitwie, coś wymyślimy. Widziałem gorsze rzeczy.",
         },
       ],
+    },
+    trustBar: {
+      desktop: "PageSpeed desktop",
+      mobile: "PageSpeed mobile",
+      ssl: "SSL Labs",
+      observatory: "Mozilla Observatory",
+      co2: "CO\u2082 na wizyt\u0119",
+      a11y: "Dost\u0119pno\u015b\u0107",
+      lowEmission: "Niskie emisje",
     },
     hero: {
       tagline: "Systemy Webowe dla Przemys\u0142u Ci\u0119\u017ckiego",

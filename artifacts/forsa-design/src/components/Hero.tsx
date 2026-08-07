@@ -1,4 +1,5 @@
 import { useLanguage } from "@/contexts/LanguageContext";
+import TrustBar from "@/components/TrustBar";
 
 export default function Hero() {
   const { t } = useLanguage();
@@ -43,6 +44,8 @@ export default function Hero() {
           >
             {t("hero.cta")}
           </a>
+
+          <TrustBar />
         </div>
       </div>
     </section>
