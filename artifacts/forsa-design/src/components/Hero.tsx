@@ -1,5 +1,7 @@
+import { lazy, Suspense } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
-import TrustBar from "@/components/TrustBar";
+
+const TrustBar = lazy(() => import("@/components/TrustBar"));
 
 export default function Hero() {
   const { t } = useLanguage();
@@ -45,7 +47,9 @@ export default function Hero() {
             {t("hero.cta")}
           </a>
 
-          <TrustBar />
+          <Suspense fallback={null}>
+            <TrustBar />
+          </Suspense>
         </div>
       </div>
     </section>
