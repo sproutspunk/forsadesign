@@ -155,4 +155,21 @@ export const articlesMeta: ArticleMeta[] = [
         "Strona dla przemysłu morskiego musi robić więcej niż dobrze wyglądać. Powinna przechodzić weryfikację zakupową, działać na słabym łączu i pokazywać kupującym, że firma potrafi dostarczyć projekt.",
     },
   },
+  {
+    slugEn: "how-we-improved-performance-polish-version",
+    slugPl: "jak-podnieslismy-wydajnosc-polskiej-wersji-strony",
+    dateIso: "2026-08-07",
+    readingTimeMin: 4,
+    en: {
+      title:
+        "How We Improved the Performance of the Polish Version Without Rebuilding the Entire Application",
+      excerpt:
+        "The Polish version of Forsa Design was lagging behind the English site in PageSpeed. We matched the performance without rebuilding the application by fixing above-the-fold content and keeping React, prerendered HTML and CDN cache in sync.",
+    },
+    pl: {
+      title: "Jak podnieśliśmy wydajność polskiej wersji strony bez przebudowy całej aplikacji",
+      excerpt:
+        "Polska wersja Forsa Design zostawała w tyle za angielską w PageSpeed. Wyrównaliśmy wydajność bez przebudowy aplikacji, skracając treść nad pierwszym ekranem i pilnując spójności React, prerenderowanego HTML oraz cache CDN.",
+    },
+  },
 ];

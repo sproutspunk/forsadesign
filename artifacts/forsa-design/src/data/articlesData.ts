@@ -743,4 +743,87 @@ export const articles: Article[] = [
       ],
     },
   },
+  {
+    slugEn: "how-we-improved-performance-polish-version",
+    slugPl: "jak-podnieslismy-wydajnosc-polskiej-wersji-strony",
+    dateIso: "2026-08-07",
+    readingTimeMin: 4,
+    en: {
+      title:
+        "How We Improved the Performance of the Polish Version Without Rebuilding the Entire Application",
+      excerpt:
+        "The Polish version of Forsa Design was lagging behind the English site in PageSpeed. We matched the performance without rebuilding the application by fixing above-the-fold content and keeping React, prerendered HTML and CDN cache in sync.",
+      sections: [
+        {
+          body: "The goal was straightforward. The English version of forsadesign.co.uk was hitting 95/100 on mobile and 100/100 on desktop. The Polish version was lagging behind. We wanted to level the scores without touching the architecture, bundles, or server.\n\nIt worked. And we did not have to rewrite the application.",
+        },
+        {
+          heading: "Baseline Results",
+          body: "The English version had stable PageSpeed Insights scores for some time:\n\n• 95/100 mobile\n• 100/100 desktop\n• remaining categories: 100/100\n\nThe root domain without a language path redirects 301 to /en/, so its score was slightly lower due to the extra hop. The canonical address is /en/.\n\nThe Polish version, despite running on the same application, the same infrastructure, and the same code, was not reaching those numbers.",
+        },
+        {
+          heading: "What We Checked",
+          body: "We started with the standard list. Preloads, JavaScript bundling, font loading, the Hero image, lazy loading of sections below the fold, number of scripts and images, server response time, prerendered HTML. We compared the EN and PL versions at every point.\n\nThe result was clear. Both versions loaded the same resources. They used the same preloads, the same main bundle, the same lazy loading mechanism. Server response time was practically identical.\n\nThe problem was not in the architecture of the Polish site. It was not a separate, heavier version.",
+        },
+        {
+          heading: "The Main Difference",
+          body: "The Polish version had a significantly longer text in the Hero section. On a phone, this made a difference.\n\nGreater content height above the fold meant more text to render. This affected the conditions for measuring LCP and caused a larger visual difference between the PL and EN first screens. PageSpeed measures what the user sees in the first moments. When the Hero takes up too much space, the metrics react.",
+        },
+        {
+          heading: "The Fix Applied",
+          body: "We shortened the Polish Hero text. We kept the same meaning, the same technical and calm style, natural language, and the Forsa Design brand character. We removed verbose fragments, but did not change the appearance of the page, layout, SEO, or remaining content.\n\nThe change touched two places: React translations and the prerendered HTML used by SEO and users without JavaScript. This kept both versions consistent.",
+        },
+        {
+          heading: "Validation",
+          body: "After the change, the following passed correctly:\n\n• 12/12 Forsa Design tests\n• full build\n• prerender of all EN and PL routes\n• typecheck\n• lint\n• format check\n• file diff check\n\nThe size of the Polish prerendered HTML decreased by about 350 bytes. While preserving the same set of resources as the English version.",
+        },
+        {
+          heading: "Deployment and Cache",
+          body: "The change was committed to the repository, pushed to GitHub, and deployed to Cloudflare Pages. The new version was immediately available at the Pages technical address.\n\nHowever, the custom domain forsadesign.co.uk was still serving the older HTML. The Cloudflare cache runs with a TTL of about two hours. The final step was therefore manual cache clearing for /pl/, /en/, and preferably the root domain HTML as well.",
+        },
+        {
+          heading: "The Key Takeaway",
+          body: "Website performance is not only about code size. Equally important are:\n\n• content length above the fold\n• prerendering approach\n• CDN cache\n• redirects\n• correct synchronisation of React and HTML versions for SEO\n\nIn this case, the code was already well optimised. The greatest factors were the length of the Polish Hero and stale Cloudflare cache.\n\nSometimes it is enough to look at what is visible before reaching for another bundler.",
+        },
+      ],
+    },
+    pl: {
+      title: "Jak podnieśliśmy wydajność polskiej wersji strony bez przebudowy całej aplikacji",
+      excerpt:
+        "Polska wersja Forsa Design zostawała w tyle za angielską w PageSpeed. Wyrównaliśmy wydajność bez przebudowy aplikacji, skracając treść nad pierwszym ekranem i pilnując spójności React, prerenderowanego HTML oraz cache CDN.",
+      sections: [
+        {
+          body: "Cel był prosty. Wersja angielska forsadesign.co.uk osiągała 95/100 na mobile i 100/100 na desktop. Wersja polska zostawała w tyle. Chcieliśmy wyrównać wyniki bez dotykania architektury, bundli ani serwera.\n\nTo się udało. I wcale nie musieliśmy przepisywać aplikacji.",
+        },
+        {
+          heading: "Wyniki wyjściowe",
+          body: "Wersja angielska od dawna miała stabilne wyniki w PageSpeed Insights:\n\n• 95/100 mobile\n• 100/100 desktop\n• pozostałe kategorie: 100/100\n\nGłówna domena bez ścieżki językowej przekierowuje 301 do /en/, więc jej wynik był nieco gorszy z powodu dodatkowego skoku. Kanonicznym adresem jest /en/.\n\nWersja polska, pomimo że działa na tej samej aplikacji, tej samej infrastrukturze i tym samym kodzie, nie osiągała tych liczb.",
+        },
+        {
+          heading: "Co sprawdziliśmy",
+          body: "Zaczęliśmy od standardowej listy. Preloady, bundlowanie JavaScriptu, ładowanie fontów, obraz Hero, lazy loading sekcji poniżej pierwszego ekranu, liczba skryptów i obrazów, czas odpowiedzi serwera, prerenderowany HTML. Porównaliśmy wersję EN i PL w każdym z tych punktów.\n\nWynik był jednoznaczny. Obie wersje ładowały te same zasoby. Korzystały z tych samych preloadów, tego samego głównego bundla, tego samego mechanizmu lazy loadingu. Czas odpowiedzi serwera był praktycznie identyczny.\n\nProblem nie leżał więc w architekturze polskiej strony. Nie była ona osobną, cięższą wersją.",
+        },
+        {
+          heading: "Główna różnica",
+          body: "Polska wersja miała znacznie dłuższy tekst w sekcji Hero. Na telefonie robiło to różnicę.\n\nWiększa wysokość treści nad pierwszym ekranem oznaczała więcej tekstu do wyrenderowania. To wpływało na warunki pomiaru LCP i powodowało większą różnicę wizualną między pierwszym ekranem PL i EN. PageSpeed mierzy to, co widzi użytkownik w pierwszych chwilach. Gdy Hero zajmuje za dużo przestrzeni, metryki reagują.",
+        },
+        {
+          heading: "Wprowadzona poprawka",
+          body: "Skróciliśmy polski tekst Hero. Zachowaliśmy ten sam sens, ten sam techniczny i spokojny styl, naturalny język i charakter marki Forsa Design. Usunęliśmy rozwlekłe fragmenty, ale nie zmienialiśmy wyglądu strony, układu, SEO ani pozostałych treści.\n\nZmiana dotknęła dwóch miejsc: tłumaczeń React oraz prerenderowanego HTML używanego przez SEO i użytkowników bez JavaScriptu. Dzięki temu obie wersje pozostały spójne.",
+        },
+        {
+          heading: "Walidacja",
+          body: "Po zmianie przeszły poprawnie:\n\n• 12/12 testów Forsa Design\n• pełny build\n• prerender wszystkich tras EN i PL\n• typecheck\n• lint\n• format check\n• kontrola różnic w plikach\n\nRozmiar polskiego prerenderowanego HTML zmalał o około 350 bajtów. Przy zachowaniu tego samego zestawu zasobów co wersja angielska.",
+        },
+        {
+          heading: "Wdrożenie i cache",
+          body: "Zmiana trafiła do repozytorium, na GitHub i została wdrożona na Cloudflare Pages. Nowa wersja była od razu dostępna pod technicznym adresem Pages.\n\nWłasna domena forsadesign.co.uk nadal serwowała jednak starszy HTML. Cache Cloudflare działa z czasem życia około dwóch godzin. Końcowym krokiem było więc ręczne wyczyszczenie cache dla /pl/, /en/ oraz głównego HTML domeny.",
+        },
+        {
+          heading: "Najważniejszy wniosek",
+          body: "Wydajność strony to nie tylko rozmiar kodu. Równie ważne są:\n\n• długość treści nad pierwszym ekranem\n• sposób prerenderowania\n• cache CDN\n• przekierowania\n• poprawna synchronizacja wersji React i HTML dla SEO\n\nW tym przypadku kod był już dobrze zoptymalizowany. Największe znaczenie miała długość polskiego Hero oraz stary cache Cloudflare.\n\nCzasami wystarczy spojrzeć na to, co jest widoczne, zanim sięgnie się po kolejny bundler.",
+        },
+      ],
+    },
+  },
 ];
