@@ -319,8 +319,8 @@ function buildHomepageBodyPl() {
 <main>
 <section id="home">
 <h1>Systemy Webowe dla Przemysłu Ciężkiego</h1>
-<p>Żadnych szablonów. Żadnych kreatorów stron. Tylko szybkie, bezpieczne strony, które przechodzą kontrolę zamówień.</p>
-<p>Ty budujesz infrastrukturę. My tworzymy warstwę cyfrową, która dowodzi, że potrafisz ją dostarczyć. Dzięki ponad dwudziestoletniemu doświadczeniu w międzynarodowej sprzedaży B2B w przemyśle, obejmującej maszyny, inżynierię i zaopatrzenie w energię, wiem, co się dzieje, gdy kupujący wybiera trzech dostawców i sprawdza ich strony internetowe. Forsa Design tworzy dedykowane, ręcznie kodowane strony internetowe i systemy internetowe dla wykonawców z branży offshore i energetycznej, firm inżynieryjnych, dostawców sprzętu przemysłowego i operatorów logistyki ciężkiej. Siedziba firmy znajduje się w Banff w Aberdeenshire. Obsługujemy klientów w Szkocji, w całej Wielkiej Brytanii oraz na wybranych rynkach eksportowych UE.</p>
+<p>Bez szablonów. Bez kreatorów. Tylko szybkie, bezpieczne strony gotowe na weryfikację zakupową.</p>
+<p>Budujesz infrastrukturę. My tworzymy cyfrową warstwę, która pokazuje, że potrafisz ją dostarczyć. Dzięki ponad 20 latom doświadczenia w międzynarodowej sprzedaży B2B wiem, jak kupujący oceniają dostawców i ich strony. Tworzymy ręcznie kodowane strony i systemy dla firm offshore, energetycznych, inżynieryjnych, przemysłowych i logistycznych. Z Banff obsługujemy Szkocję, Wielką Brytanię i wybrane rynki UE.</p>
 <a href="/pl/#contact">Poproś o wycenę techniczną</a>
 </section>
 <section id="services">

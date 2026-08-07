@@ -207,8 +207,8 @@ const translations = {
     hero: {
       tagline: "Systemy Webowe dla Przemys\u0142u Ci\u0119\u017ckiego",
       subheader:
-        "\u017badnych szablon\u00f3w. \u017badnych kreator\u00f3w stron. Tylko szybkie, bezpieczne strony, kt\u00f3re przechodz\u0105 kontrol\u0119 zam\u00f3wie\u0144.",
-      body: "Ty budujesz infrastrukturę. My tworzymy warstwę cyfrową, która dowodzi, że potrafisz ją dostarczyć. Dzięki ponad dwudziestoletniemu doświadczeniu w międzynarodowej sprzedaży B2B w przemyśle, obejmującej maszyny, inżynierię i zaopatrzenie w energię, wiem, co się dzieje, gdy kupujący wybiera trzech dostawców i sprawdza ich strony internetowe. Forsa Design tworzy dedykowane, ręcznie kodowane strony internetowe i systemy internetowe dla wykonawców z branży offshore i energetycznej, firm inżynieryjnych, dostawców sprzętu przemysłowego i operatorów logistyki ciężkiej. Siedziba firmy znajduje się w Banff w Aberdeenshire. Obsługujemy klientów w Szkocji, w całej Wielkiej Brytanii oraz na wybranych rynkach eksportowych UE.",
+        "Bez szablonów. Bez kreatorów. Tylko szybkie, bezpieczne strony gotowe na weryfikację zakupową.",
+      body: "Budujesz infrastrukturę. My tworzymy cyfrową warstwę, która pokazuje, że potrafisz ją dostarczyć. Dzięki ponad 20 latom doświadczenia w międzynarodowej sprzedaży B2B wiem, jak kupujący oceniają dostawców i ich strony. Tworzymy ręcznie kodowane strony i systemy dla firm offshore, energetycznych, inżynieryjnych, przemysłowych i logistycznych. Z Banff obsługujemy Szkocję, Wielką Brytanię i wybrane rynki UE.",
       cta: "Popro\u015b o wycen\u0119 techniczn\u0105",
     },
     services: {

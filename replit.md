@@ -49,7 +49,7 @@ _Describe the high-level user-facing capabilities of this app once they exist._
 
 ## User preferences
 
-_Populate as you build — explicit user instructions worth remembering across sessions._
+- Polish copy should stay natural and human, without AI-style markers or long semicolon-heavy constructions.
 
 ## Gotchas
 
