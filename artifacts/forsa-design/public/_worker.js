@@ -7,6 +7,19 @@
 
 const API_ORIGIN = "https://attached-assets-1-sproutspunk.replit.app";
 
+function withFreshHtmlHeaders(response) {
+  const contentType = response.headers.get("content-type") || "";
+  if (!contentType.toLowerCase().includes("text/html")) return response;
+
+  const headers = new Headers(response.headers);
+  headers.set("Cache-Control", "public, max-age=0, must-revalidate");
+  return new Response(response.body, {
+    status: response.status,
+    statusText: response.statusText,
+    headers,
+  });
+}
+
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
@@ -42,10 +55,12 @@ export default {
       const routeIndex = new URL(`${url.pathname.replace(/\/$/, "")}/index.html`, url.origin);
       const prerenderedResponse = await env.ASSETS.fetch(new Request(routeIndex, request));
       if (prerenderedResponse.status !== 404) {
-        return prerenderedResponse;
+        return withFreshHtmlHeaders(prerenderedResponse);
       }
-      return env.ASSETS.fetch(new Request(new URL("/", url.origin), request));
+      return withFreshHtmlHeaders(
+        await env.ASSETS.fetch(new Request(new URL("/", url.origin), request)),
+      );
     }
-    return assetResponse;
+    return withFreshHtmlHeaders(assetResponse);
   },
 };
