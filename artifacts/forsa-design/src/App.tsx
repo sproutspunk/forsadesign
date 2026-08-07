@@ -1,6 +1,8 @@
 import { Switch, Route, Router as WouterRouter, useLocation, useRoute } from "wouter";
 import { lazy, Suspense, useEffect } from "react";
-import { LazyMotion, domAnimation } from "framer-motion";
+import { LazyMotion } from "framer-motion";
+
+const loadMotionFeatures = () => import("@/lib/motionFeatures").then((m) => m.default);
 import HomePage from "@/pages/HomePage";
 
 import { LanguageProvider } from "@/contexts/LanguageContext";
@@ -136,7 +138,7 @@ function AnalyticsGate() {
 
 function App() {
   return (
-    <LazyMotion features={domAnimation} strict>
+    <LazyMotion features={loadMotionFeatures} strict>
       <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, "")}>
         <LanguageProvider>
           <ErrorBoundary>
