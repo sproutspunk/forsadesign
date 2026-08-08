@@ -1,10 +1,10 @@
 import { Router, type IRouter } from "express";
 import rateLimit, { ipKeyGenerator } from "express-rate-limit";
-import nodemailer from "nodemailer";
 import { realClientIp } from "./contact";
 
 const router: IRouter = Router();
 const OWNER_EMAIL = "hello@forsadesign.co.uk";
+const FROM = "Forsa Design <hello@forsadesign.co.uk>";
 const MAX_PDF_BYTES = 8 * 1024 * 1024;
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -17,22 +17,19 @@ const quoteEmailLimiter = rateLimit({
   message: { error: "Too many quote email requests. Please try again later." },
 });
 
-function getTransporter() {
-  const host = process.env["PROTON_SMTP_HOST"];
-  const port = Number(process.env["PROTON_SMTP_PORT"]);
-  const user = process.env["PROTON_SMTP_USER"];
-  const pass = process.env["PROTON_SMTP_PASS"];
-
-  if (!host || !Number.isInteger(port) || !user || !pass) {
-    throw new Error("SMTP configuration is incomplete.");
-  }
-
-  return nodemailer.createTransport({
-    host,
-    port,
-    secure: port === 465,
-    auth: { user, pass },
+async function sendViaResend(apiKey: string, payload: Record<string, unknown>): Promise<void> {
+  const response = await fetch("https://api.resend.com/emails", {
+    method: "POST",
+    headers: {
+      "content-type": "application/json",
+      Authorization: `Bearer ${apiKey}`,
+    },
+    body: JSON.stringify(payload),
   });
+  if (!response.ok) {
+    const text = await response.text().catch(() => "");
+    throw new Error(`Resend error ${response.status}: ${text}`);
+  }
 }
 
 router.post("/quotes/email", quoteEmailLimiter, async (req, res) => {
@@ -61,8 +58,13 @@ router.post("/quotes/email", quoteEmailLimiter, async (req, res) => {
     return;
   }
 
+  const resendApiKey = process.env["RESEND_API_KEY"];
+  if (!resendApiKey) {
+    res.status(503).json({ error: "Email service is not configured." });
+    return;
+  }
+
   try {
-    const transporter = getTransporter();
     const subject = isEn ? `Forsa Design quote ${quoteId}` : `Wycena Forsa Design ${quoteId}`;
     const greeting = isEn ? "Thank you for your enquiry." : "Dziekujemy za zapytanie.";
     const body = [
@@ -82,22 +84,23 @@ router.post("/quotes/email", quoteEmailLimiter, async (req, res) => {
 
     const attachment = {
       filename: `forsa-quote-${quoteId}.pdf`,
-      content: pdf,
-      contentType: "application/pdf",
+      content: pdfBase64,
     };
 
-    await transporter.sendMail({
-      from: process.env["PROTON_SMTP_USER"],
-      to: email,
+    // Client copy
+    await sendViaResend(resendApiKey, {
+      from: FROM,
+      to: [email],
       subject,
       text: body,
       attachments: [attachment],
     });
 
-    await transporter.sendMail({
-      from: process.env["PROTON_SMTP_USER"],
-      to: OWNER_EMAIL,
-      replyTo: email,
+    // Owner copy
+    await sendViaResend(resendApiKey, {
+      from: FROM,
+      to: [OWNER_EMAIL],
+      reply_to: email,
       subject: `${subject} - copy`,
       text: `${body}\n\nClient email: ${email}`,
       attachments: [attachment],
