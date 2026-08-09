@@ -47,3 +47,4 @@ Thumbs.db
 # Replit
 .cache/
 .local/
+\n# Replit uploaded files - do not commit\nattached_assets/
