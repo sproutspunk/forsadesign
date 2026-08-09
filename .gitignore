@@ -48,3 +48,7 @@ Thumbs.db
 .cache/
 .local/
 \n# Replit uploaded files - do not commit\nattached_assets/
+
+# Agent audit outputs and screenshots - do not commit
+.agents/outputs/
+screenshots/
