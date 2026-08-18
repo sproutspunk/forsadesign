@@ -1,8 +1,6 @@
 // Cloudflare Pages advanced-mode worker.
 // All /api/** requests (including the contact form) are proxied to the API
-// server configured by the API_ORIGIN Worker binding.
-// Direct SMTP from Cloudflare Workers is not possible: Proton drops
-// connections from Cloudflare egress IPs on both 587 (STARTTLS) and 465.
+// Worker configured by the API_ORIGIN Worker binding.
 // Static assets and SPA fallback are handled via env.ASSETS.
 
 function withFreshHtmlHeaders(response) {
@@ -22,9 +20,9 @@ export default {
   async fetch(request, env) {
     const url = new URL(request.url);
 
-    // Proxy API requests to the configured backend.
+    // Proxy API requests to the configured Worker.
     // fetch(request) on the same origin loops back through this worker (error 1019),
-    // so we rewrite the URL to the configured external API URL.
+    // so we rewrite the URL to the configured external Worker URL.
     if (url.pathname === "/api" || url.pathname.startsWith("/api/")) {
       if (!env.API_ORIGIN) {
         return new Response("API service is not configured.", { status: 503 });
