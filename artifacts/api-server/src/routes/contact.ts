@@ -3,7 +3,7 @@ import rateLimit, { ipKeyGenerator } from "express-rate-limit";
 
 const router: IRouter = Router();
 
-// Behind the Cloudflare Worker -> Replit proxy chain, req.ip resolves to a
+// Behind the Cloudflare Worker -> API proxy chain, req.ip resolves to a
 // proxy address. The Worker sets X-Real-Client-IP from CF-Connecting-IP (and
 // strips any client-supplied value), so prefer it when present.
 export const realClientIp = (req: Request): string => {

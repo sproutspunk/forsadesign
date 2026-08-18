@@ -23,7 +23,7 @@ lib/api-client-react/src/generated
 # Lockfiles
 pnpm-lock.yaml
 
-# Replit / local
+# Local platform files
 .local
 .agents
 .config

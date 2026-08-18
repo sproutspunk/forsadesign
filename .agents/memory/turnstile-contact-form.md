@@ -7,13 +7,13 @@ description: How Cloudflare Turnstile is wired into the Forsa Design contact for
 
 The contact form uses Cloudflare Turnstile (managed mode) as a bot check, layered on top of the existing per-IP rate limit and honeypot.
 
-- Frontend reads `VITE_TURNSTILE_SITE_KEY`; backend reads `TURNSTILE_SECRET_KEY`. Both are set in process env (not visible in Replit secrets UI — they come from a different source).
+- Frontend reads `VITE_TURNSTILE_SITE_KEY`; backend reads `TURNSTILE_SECRET_KEY`. Both are configured as deployment environment variables.
 - **Graceful degradation is intentional and implemented end-to-end:** if `TURNSTILE_SECRET_KEY` is unset the server skips verification; if `VITE_TURNSTILE_SITE_KEY` is unset the widget is not rendered and no token is required.
 
 ## Domain-allowlist gotcha
 **Turnstile error `400020` on the widget means "domain not in the site key's allowed hostnames", not a code bug.**
 
-The Replit dev preview domain is not registered in the Cloudflare dashboard for this site key, so the widget fires `onError` there and no token is ever generated.
+An unregistered development preview domain causes the widget to fire `onError` and prevents token generation.
 
 ## Frontend graceful degradation (captchaWidgetFailed state)
 `Contact.tsx` tracks a `captchaWidgetFailed` boolean state:

@@ -6,7 +6,7 @@ import { logger } from "./lib/logger";
 
 const app: Express = express();
 
-// Requests reach this server through the Replit proxy, so the real client IP is
+// Requests can reach this server through a reverse proxy, so the real client IP is
 // in the X-Forwarded-For header. Trust the first hop so per-IP rate limiting
 // keys on the actual visitor rather than the proxy address.
 app.set("trust proxy", 1);

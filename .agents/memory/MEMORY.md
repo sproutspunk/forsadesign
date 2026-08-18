@@ -4,7 +4,6 @@
 - [Wouter v3 routing pitfalls](wouter-v3-routing.md) — Switch partial-match (specific routes before /en/), setLanguage redirects to homepage (use syncLanguage in sub-pages), Polish curly quotes break esbuild (use Python to fix).
 - [Bilingual pricing helpers](bilingual-pricing.md) — PricingSection uses dual-argument `bi(en, pl)` instead of single `t(key)` because prices/presets are static arrays without translation keys.
 - [VAT disabled in quotes](vat-disabled.md) — `VAT_RATE=0` in quoteConfig.ts; all prices shown as final gross; PdfData uses `subtotal` (not subtotalExVat/vat); keep interface synced with caller.
-- [deploymentTarget static vs autoscale](deployment-target-static-pitfall.md) — `deploymentTarget = "static"` in `.replit` breaks multi-artifact setups; never change it without verifying artifact topology.
 - [Stale prerendered files on Cloudflare Pages](stale-prerender-files.md) — Cloudflare Pages preserves stale `index.html` files across deploys; if a route stops being prerendered, the old static file persists and overrides SPA fallback. Always prerender all routes, or use wrangler to purge.
 - [Node 24 strip-types for .ts imports](node-24-strip-types.md) — Node 24 natively supports `import('./file.ts')` without flag in ESM modules; `node --experimental-strip-types` works in CI for running `.mjs` scripts that import `.ts` data files.
 - [Quote PDF lazy loading](quote-pdf-lazy-loading.md) — keep pdf-lib out of the initial bundle; load the generator only when the user downloads a quote.
@@ -12,7 +11,7 @@
 - [Industrial marketing routes](industrial-marketing-routes.md) — keep React routes, prerendered HTML, SEO/schema, and sitemap entries aligned for every public marketing page.
 - [Direct-contact architecture](direct-contact-architecture.md) — Forsa Design contact is email/phone only; no form endpoint, SMTP, CAPTCHA, or generated submission contract.
 - [Quote email delivery](quote-email-delivery.md) — quote PDF download is gated on server-confirmed SMTP delivery to the client and owner copy.
-- [Cloudflare contact email transport](cloudflare-contact-email-transport.md) — Proton blocks SMTP from Cloudflare Workers (587 & 465); contact mail must go via Worker proxy → Replit backend → Resend.
+- [Cloudflare contact email transport](cloudflare-contact-email-transport.md) — Proton blocks SMTP from Cloudflare Workers (587 & 465); contact mail must go via Worker proxy → API backend → Resend.
 - [Cloudflare CSP injection](cloudflare-csp-injection.md) — Pages appends Analytics/challenge scripts; CSP must allow Cloudflare RUM and same-origin /cdn-cgi endpoints plus GA collection hosts.
 - [Logo transparency for PDF and site](logo-transparency.md) — transparent PNG logo works directly in pdf-lib embedPng and on-site; no background flattening needed if alpha=0 corners.
 - [About page content sources](about-page-content-sources.md) — homepage About and dedicated About routes use separate copy sources; identify the rendered route before editing.

@@ -6,10 +6,10 @@ This project is a pnpm monorepo for Forsa Design, a brochure-style marketing sit
 
 Production assumptions for future scans:
 
-- Replit provides TLS for deployed traffic.
+- The production hosting provider provides TLS for deployed traffic.
 - `NODE_ENV` is `production` in deployed builds.
 - `artifacts/mockup-sandbox` is development-only and out of scope unless production routing starts exposing it.
-- The deployment is public on Replit autoscale.
+- The deployment is publicly accessible through the configured hosting provider.
 - Live deployment behavior matters for prioritization: on 2026-06-10 the public deployment served `GET /api/healthz` but returned `404` for `POST /api/contact`, even though the current source tree and artifact config define a contact endpoint.
 
 ## Assets
@@ -17,14 +17,14 @@ Production assumptions for future scans:
 - **Frontend integrity** — the public site must not be modified by untrusted input in a way that causes script execution, phishing, or deceptive navigation.
 - **Outbound email reputation and contact workflow integrity** — if the contact route is deployed, the business inbox, confirmation emails, and related connector usage become abuse-sensitive assets because they can affect reputation and enable spam or phishing from a trusted brand.
 - **API availability and integrity** — the Express service must only expose intended routes and must not grow unsafe middleware or unauthenticated sensitive operations.
-- **Secrets and integration credentials** — `TURNSTILE_SECRET_KEY`, any Gmail connector credentials handled via Replit, `DATABASE_URL`, and future auth/session material must not leak through code, logs, or client bundles.
+- **Secrets and integration credentials** — `TURNSTILE_SECRET_KEY`, `RESEND_API_KEY`, `DATABASE_URL`, and future auth/session material must not leak through code, logs, or client bundles.
 - **Future customer/contact data** — submitted names, email addresses, project details, and any future stored records would be sensitive business and personal data.
 
 ## Trust Boundaries
 
 - **Browser to frontend assets** — users receive static content from `artifacts/forsa-design/dist/public`; all browser-controlled state such as `localStorage`, URL paths, and DOM events is untrusted.
 - **Browser to API** — requests to `/api/*` cross into server-controlled code in `artifacts/api-server/src`; every future non-public route must enforce authn/authz server-side, and public write routes must account for abuse from arbitrary internet clients.
-- **API to external services** — the contact flow posts to Cloudflare Turnstile and the Replit Gmail connector. Failures, spoofing, or abuse at this boundary can affect email delivery and trust in the brand.
+- **API to external services** — the contact flow posts to Cloudflare Turnstile and Resend. Failures, spoofing, or abuse at this boundary can affect email delivery and trust in the brand.
 - **API to database** — `lib/db/src/index.ts` creates a privileged PostgreSQL connection from `DATABASE_URL`; any future raw query construction here would directly affect confidentiality and integrity.
 - **Build-time/generated-code boundary** — `lib/api-spec`, `lib/api-zod`, and `lib/api-client-react` are trusted build artifacts and should not be treated as direct user-input channels, but production consumers of the generated client can still create security issues if they configure token forwarding or cross-origin fetches unsafely.
 - **Production vs development tooling** — `artifacts/mockup-sandbox` and related preview code are dev-only and should remain excluded from production routing and deployment.

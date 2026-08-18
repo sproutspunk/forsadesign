@@ -44,10 +44,10 @@ Thumbs.db
 .cursor/rules/nx-rules.mdc
 .github/instructions/nx.instructions.md
 
-# Replit
+# Local platform files
 .cache/
 .local/
-\n# Replit uploaded files - do not commit\nattached_assets/
+attached_assets/
 
 # Agent audit outputs and screenshots - do not commit
 .agents/outputs/
