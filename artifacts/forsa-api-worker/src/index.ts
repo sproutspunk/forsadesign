@@ -83,6 +83,9 @@ async function sendViaResend(apiKey: string, payload: Record<string, unknown>): 
     },
     body: JSON.stringify(payload),
   });
+  if (!response.ok) {
+    console.error("Resend email request failed", { status: response.status });
+  }
   return response.ok;
 }
 
@@ -122,8 +125,17 @@ async function handleContact(request: Request, env: Env): Promise<Response> {
       remoteip: clientIp(request),
     }),
   });
-  const turnstile = (await verification.json().catch(() => null)) as { success?: boolean } | null;
-  if (!turnstile?.success) return json({ error: "Security verification failed." }, 400);
+  const turnstile = (await verification.json().catch(() => null)) as {
+    success?: boolean;
+    "error-codes"?: string[];
+  } | null;
+  if (!turnstile?.success) {
+    console.error("Turnstile verification failed", {
+      status: verification.status,
+      errorCodes: turnstile?.["error-codes"] ?? [],
+    });
+    return json({ error: "Security verification failed." }, 400);
+  }
 
   const subject = language === "pl" ? `Nowa wiadomość od ${name}` : `New enquiry from ${name}`;
   const textBody = `Name: ${name}\nEmail: ${email}\n\n${message}`;

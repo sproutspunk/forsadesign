@@ -136,16 +136,25 @@ export default function ContactForm() {
         body: form,
       });
       const result = (await response.json().catch(() => ({}))) as { error?: string };
-      if (!response.ok) throw new Error(result.error);
+      if (!response.ok) {
+        throw new Error(
+          result.error ||
+            (en
+              ? "We could not send your message. Please try again or email hello@forsadesign.co.uk."
+              : "Nie udało się wysłać wiadomości. Spróbuj ponownie lub napisz na hello@forsadesign.co.uk."),
+        );
+      }
       setStatus("success");
       formRef.current?.reset();
       resetWidget();
-    } catch {
+    } catch (error) {
       setStatus("error");
       setErrorMessage(
-        en
-          ? "We could not send your message. Please try again or email hello@forsadesign.co.uk."
-          : "Nie udało się wysłać wiadomości. Spróbuj ponownie lub napisz na hello@forsadesign.co.uk.",
+        error instanceof Error
+          ? error.message
+          : en
+            ? "We could not send your message. Please try again or email hello@forsadesign.co.uk."
+            : "Nie udało się wysłać wiadomości. Spróbuj ponownie lub napisz na hello@forsadesign.co.uk.",
       );
       resetWidget();
     }
