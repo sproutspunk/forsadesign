@@ -1,44 +1,27 @@
 ---
 name: Feature request
-about: Report a bug or unexpected behavior
-title: ''
-labels: ''
-assignees: ''
-
----
-
----
-name: Bug report
-about: Report a bug or unexpected behavior
-title: "[Bug]: "
-labels: bug
+about: Suggest an idea or enhancement
+title: "[Feature]: "
+labels: enhancement
 assignees: ""
 ---
 
 ## Summary
 
-Describe the bug briefly.
+Describe the feature you would like.
 
-## Steps to reproduce
+## Problem
 
-1. Go to ...
-2. Click ...
-3. See ...
+What problem does this solve?
 
-## Expected behavior
+## Proposed solution
 
-What did you expect to happen?
+Describe your idea.
 
-## Actual behavior
+## Alternatives considered
 
-What actually happened?
+List any alternatives you considered.
 
-## Screenshots / logs
+## Additional context
 
-Add any relevant screenshots, logs, or error messages.
-
-## Environment
-
-- Browser:
-- OS:
-- Device:
+Add any extra context, screenshots, or references.
