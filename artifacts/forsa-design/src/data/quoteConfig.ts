@@ -211,20 +211,20 @@ export const projectTypes: QuoteOption[] = [
 export const designOptions: QuoteOption[] = [
   {
     value: "template",
-    labelEn: "Template Design",
-    labelPl: "Szablon",
+    labelEn: "Custom Design",
+    labelPl: "Projekt na zamówienie",
     price: 0,
   },
   {
     value: "semi-custom",
-    labelEn: "Semi-Custom Design",
-    labelPl: "Projekt częściowo na zamówienie",
+    labelEn: "Custom Design",
+    labelPl: "Projekt na zamówienie",
     price: 900,
   },
   {
     value: "fully-custom",
-    labelEn: "Fully Custom Design",
-    labelPl: "Projekt w pełni na zamówienie",
+    labelEn: "Custom Design",
+    labelPl: "Projekt na zamówienie",
     price: 2500,
   },
   {
