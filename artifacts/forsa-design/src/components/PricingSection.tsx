@@ -12,13 +12,13 @@ const presets = [
     taglinePl: "Idealny dla nowych firm",
     featuresEn: [
       "Landing page or small website",
-      "Template-based design",
+      "Fully custom project",
       "Mobile responsive",
       "SEO foundation",
     ],
     featuresPl: [
       "Strona docelowa lub mała witryna",
-      "Design oparty na szablonie",
+      "Projekt w pełni na zamówienie",
       "Responsywna na mobile",
       "Podstawy SEO",
     ],
@@ -33,7 +33,7 @@ const presets = [
     popular: true,
     featuresEn: [
       "Up to 5 pages",
-      "Semi-custom design",
+      "Fully custom project",
       "Testimonials",
       "Basic SEO setup",
       "Google Maps integration",
@@ -41,7 +41,7 @@ const presets = [
     ],
     featuresPl: [
       "Do 5 stron",
-      "Design częściowo na zamówienie",
+      "Projekt w pełni na zamówienie",
       "Opinie klientów",
       "Podstawowa konfiguracja SEO",
       "Integracja z Mapami Google",
@@ -57,7 +57,7 @@ const presets = [
     taglinePl: "Pełne rozwiązanie cyfrowe",
     featuresEn: [
       "Up to 10 pages",
-      "Fully custom design",
+      "Fully custom project",
       "Professional copywriting",
       "Advanced SEO & analytics",
       "Newsletter & GDPR setup",
@@ -66,7 +66,7 @@ const presets = [
     ],
     featuresPl: [
       "Do 10 stron",
-      "Design w pełni na zamówienie",
+      "Projekt w pełni na zamówienie",
       "Profesjonalny copywriting",
       "Zaawansowane SEO i analityka",
       "Newsletter i konfiguracja GDPR",

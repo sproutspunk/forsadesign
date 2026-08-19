@@ -235,7 +235,7 @@ function buildHomepageBodyEn() {
 <h3>Starter</h3>
 <p>Perfect for new businesses</p>
 <p>From £1,200</p>
-<p>Landing page or small website. Template-based design. Mobile responsive. SEO foundation.</p>
+<p>Landing page or small website. Fully custom project. Mobile responsive. SEO foundation.</p>
 <a href="/en/contact">Get a custom quote</a>
 </div>
 <div>
@@ -243,14 +243,14 @@ function buildHomepageBodyEn() {
 <p>Most Popular</p>
 <p>Grow your online presence</p>
 <p>From £4,000</p>
-<p>Up to 5 pages. Semi-custom design. Testimonials. Basic SEO setup. Google Maps integration. Monthly care plan.</p>
+<p>Up to 5 pages. Fully custom project. Testimonials. Basic SEO setup. Google Maps integration. Monthly care plan.</p>
 <a href="/en/contact">Get a custom quote</a>
 </div>
 <div>
 <h3>Premium</h3>
 <p>Full-scale digital solution</p>
 <p>From £8,000</p>
-<p>Up to 10 pages. Fully custom design. Professional copywriting. Advanced SEO and analytics. Newsletter and GDPR setup. Priority delivery. Business care plan.</p>
+<p>Up to 10 pages. Fully custom project. Professional copywriting. Advanced SEO and analytics. Newsletter and GDPR setup. Priority delivery. Business care plan.</p>
 <a href="/en/contact">Get a custom quote</a>
 </div>
 <p>All prices are indicative. Final quote depends on your exact requirements. Use our calculator for a precise estimate.</p>
@@ -363,7 +363,7 @@ function buildHomepageBodyPl() {
 <h3>Starter</h3>
 <p>Idealny dla nowych firm</p>
 <p>Od 1200 GBP</p>
-<p>Strona docelowa lub mała witryna. Design oparty na szablonie. Responsywna na mobile. Podstawy SEO.</p>
+<p>Strona docelowa lub mała witryna. Projekt w pełni na zamówienie. Responsywna na mobile. Podstawy SEO.</p>
 <a href="/pl/contact">Uzyskaj wycenę</a>
 </div>
 <div>
@@ -371,14 +371,14 @@ function buildHomepageBodyPl() {
 <p>Najpopularniejszy</p>
 <p>Rozwijaj swoją obecność online</p>
 <p>Od 4000 GBP</p>
-<p>Do 5 stron. Design częściowo na zamówienie. Opinie klientów. Podstawowa konfiguracja SEO. Integracja z Mapami Google. Miesięczny plan opieki.</p>
+<p>Do 5 stron. Projekt w pełni na zamówienie. Opinie klientów. Podstawowa konfiguracja SEO. Integracja z Mapami Google. Miesięczny plan opieki.</p>
 <a href="/pl/contact">Uzyskaj wycenę</a>
 </div>
 <div>
 <h3>Premium</h3>
 <p>Pełne rozwiązanie cyfrowe</p>
 <p>Od 8000 GBP</p>
-<p>Do 10 stron. Design w pełni na zamówienie. Profesjonalny copywriting. Zaawansowane SEO i analityka. Newsletter i konfiguracja GDPR. Priorytetowa realizacja. Biznesowy plan opieki.</p>
+<p>Do 10 stron. Projekt w pełni na zamówienie. Profesjonalny copywriting. Zaawansowane SEO i analityka. Newsletter i konfiguracja GDPR. Priorytetowa realizacja. Biznesowy plan opieki.</p>
 <a href="/pl/contact">Uzyskaj wycenę</a>
 </div>
 <p>Wszystkie ceny są orientacyjne. Ostateczna wycena zależy od dokładnych wymagań. Użyj kalkulatora do precyzyjnej kalkulacji.</p>
