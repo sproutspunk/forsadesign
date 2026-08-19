@@ -17,7 +17,6 @@ import {
 interface Breakdown {
   projectPrice: number;
   pagesPrice: number;
-  designPrice: number;
   contentPrice: number;
   logoPrice: number;
   photoPrice: number;
@@ -121,7 +120,6 @@ export function QuoteSummary({
   const lineItems = [
     { label: t("Project", "Projekt"), value: breakdown.projectPrice },
     { label: t("Additional Pages", "Dodatkowe strony"), value: breakdown.pagesPrice },
-    { label: t("Design", "Design"), value: breakdown.designPrice },
     { label: t("Content", "Treść"), value: breakdown.contentPrice },
     { label: t("Logo", "Logo"), value: breakdown.logoPrice },
     { label: t("Photography", "Fotografia"), value: breakdown.photoPrice },

@@ -53,7 +53,6 @@ export interface PackagePreset {
   fromPrice: number;
   state: {
     projectType: string;
-    design: string;
     content: string;
     logo: string;
     photography: string;
@@ -80,7 +79,6 @@ export const packagePresets: PackagePreset[] = [
     fromPrice: 1200,
     state: {
       projectType: "landing",
-      design: "template",
       content: "client",
       logo: "existing",
       photography: "client",
@@ -105,7 +103,6 @@ export const packagePresets: PackagePreset[] = [
     fromPrice: 4000,
     state: {
       projectType: "small-business",
-      design: "semi-custom",
       content: "copy",
       logo: "simple",
       photography: "stock",
@@ -130,7 +127,6 @@ export const packagePresets: PackagePreset[] = [
     fromPrice: 8000,
     state: {
       projectType: "business",
-      design: "fully-custom",
       content: "professional",
       logo: "professional",
       photography: "stock",
@@ -205,33 +201,6 @@ export const projectTypes: QuoteOption[] = [
     labelEn: "Custom Web Application",
     labelPl: "Dedykowana aplikacja webowa",
     price: 10000,
-  },
-];
-
-export const designOptions: QuoteOption[] = [
-  {
-    value: "template",
-    labelEn: "Custom Design",
-    labelPl: "Projekt na zamówienie",
-    price: 0,
-  },
-  {
-    value: "semi-custom",
-    labelEn: "Custom Design",
-    labelPl: "Projekt na zamówienie",
-    price: 900,
-  },
-  {
-    value: "fully-custom",
-    labelEn: "Custom Design",
-    labelPl: "Projekt na zamówienie",
-    price: 2500,
-  },
-  {
-    value: "premium-brand",
-    labelEn: "Premium Brand Identity Design",
-    labelPl: "Premium identyfikacja wizualna",
-    price: 4500,
   },
 ];
 

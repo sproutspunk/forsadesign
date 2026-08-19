@@ -3,7 +3,6 @@ import { m as motion, AnimatePresence } from "framer-motion";
 import { useLanguage } from "@/contexts/LanguageContext";
 import {
   projectTypes,
-  designOptions,
   contentOptions,
   logoOptions,
   photographyOptions,
@@ -24,7 +23,6 @@ import {
   ChevronUp,
   Check,
   Layers,
-  Palette,
   FileText as _FileText,
   Image,
   Camera,
@@ -45,7 +43,6 @@ import {
 interface QuoteState {
   projectType: string;
   additionalPages: number;
-  design: string;
   content: string;
   logo: string;
   photography: string;
@@ -63,7 +60,6 @@ interface QuoteState {
 const initialState: QuoteState = {
   projectType: "landing",
   additionalPages: 0,
-  design: "template",
   content: "client",
   logo: "existing",
   photography: "client",
@@ -81,7 +77,6 @@ const initialState: QuoteState = {
 const sectionIcons: Record<string, React.ReactNode> = {
   project: <CalcIcon className="w-5 h-5" />,
   pages: <Layers className="w-5 h-5" />,
-  design: <Palette className="w-5 h-5" />,
   content: <_FileText className="w-5 h-5" />,
   logo: <Image className="w-5 h-5" />,
   photos: <Camera className="w-5 h-5" />,
@@ -249,7 +244,6 @@ export default function QuoteCalculator() {
         new Set([
           "project",
           "pages",
-          "design",
           "content",
           "logo",
           "photos",
@@ -281,7 +275,6 @@ export default function QuoteCalculator() {
   const breakdown = useMemo(() => {
     const projectPrice = projectTypes.find((p) => p.value === state.projectType)?.price ?? 0;
     const pagesPrice = state.additionalPages * ADDITIONAL_PAGE_PRICE;
-    const designPrice = designOptions.find((d) => d.value === state.design)?.price ?? 0;
     const contentPrice = contentOptions.find((c) => c.value === state.content)?.price ?? 0;
     const logoPrice = logoOptions.find((l) => l.value === state.logo)?.price ?? 0;
     const photoPrice = photographyOptions.find((p) => p.value === state.photography)?.price ?? 0;
@@ -305,7 +298,6 @@ export default function QuoteCalculator() {
     const subtotal =
       projectPrice +
       pagesPrice +
-      designPrice +
       contentPrice +
       logoPrice +
       photoPrice +
@@ -330,7 +322,6 @@ export default function QuoteCalculator() {
     return {
       projectPrice,
       pagesPrice,
-      designPrice,
       contentPrice,
       logoPrice,
       photoPrice,
@@ -352,7 +343,6 @@ export default function QuoteCalculator() {
   const progress = useMemo(() => {
     const sections = [
       state.projectType,
-      state.design,
       state.content,
       state.logo,
       state.photography,
@@ -524,20 +514,6 @@ export default function QuoteCalculator() {
                       `£${ADDITIONAL_PAGE_PRICE} za dodatkową stronę`,
                     )}
                   </p>
-                </div>
-              </Section>
-
-              <Section id="design" titleEn="Design Quality" titlePl="Jakość designu">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                  {designOptions.map((d) => (
-                    <OptionCard
-                      key={d.value}
-                      selected={state.design === d.value}
-                      onClick={() => update("design", d.value)}
-                      label={t(d.labelEn, d.labelPl)}
-                      price={d.price}
-                    />
-                  ))}
                 </div>
               </Section>
 
