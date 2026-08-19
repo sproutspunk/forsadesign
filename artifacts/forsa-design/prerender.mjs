@@ -363,7 +363,7 @@ function buildHomepageBodyPl() {
 <h3>Starter</h3>
 <p>Idealny dla nowych firm</p>
 <p>Od 1200 GBP</p>
-<p>Strona docelowa lub mała witryna. Design oparty na szablonie. Responsywna na mobile. Podstawy SEO.</p>
+<p>Strona docelowa lub mała witryna. Design w pełni na zamówienie. Responsywna na mobile. Podstawy SEO.</p>
 <a href="/pl/contact">Uzyskaj wycenę</a>
 </div>
 <div>

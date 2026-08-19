@@ -41,16 +41,21 @@ jobs:
           NODE_ENV: production
           VITE_TURNSTILE_SITE_KEY: ${{ secrets.VITE_TURNSTILE_SITE_KEY }}
 
-      - name: Sync secrets to Cloudflare Pages
+      - name: Deploy API Worker
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
         run: |
-          printf '%s' "${{ secrets.PROTON_SMTP_USER }}"     | pnpm exec wrangler pages secret put PROTON_SMTP_USER     --project-name=forsadesign
-          printf '%s' "${{ secrets.PROTON_SMTP_PASS }}"     | pnpm exec wrangler pages secret put PROTON_SMTP_PASS     --project-name=forsadesign
-          printf '%s' "${{ secrets.PROTON_SMTP_HOST }}"     | pnpm exec wrangler pages secret put PROTON_SMTP_HOST     --project-name=forsadesign
-          printf '%s' "${{ secrets.PROTON_SMTP_PORT }}"     | pnpm exec wrangler pages secret put PROTON_SMTP_PORT     --project-name=forsadesign
-          printf '%s' "${{ secrets.TURNSTILE_SECRET_KEY }}" | pnpm exec wrangler pages secret put TURNSTILE_SECRET_KEY --project-name=forsadesign
+          printf '%s' "${{ secrets.RESEND_API_KEY }}" | pnpm --dir artifacts/forsa-api-worker exec wrangler secret put RESEND_API_KEY --name=forsa-api
+          printf '%s' "${{ secrets.TURNSTILE_SECRET_KEY }}" | pnpm --dir artifacts/forsa-api-worker exec wrangler secret put TURNSTILE_SECRET_KEY --name=forsa-api
+          pnpm --dir artifacts/forsa-api-worker exec wrangler deploy --config wrangler.toml
+
+      - name: Sync Pages secret for API origin
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          printf '%s' "${{ secrets.API_ORIGIN }}" | pnpm exec wrangler pages secret put API_ORIGIN --project-name=forsadesign
 
       - name: Deploy to Cloudflare Pages
         env:
