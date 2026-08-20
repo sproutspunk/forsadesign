@@ -264,7 +264,7 @@ export default function AboutPage({ lang }: AboutPageProps) {
       <main id="main-content" className="pt-28">
         <section className="about-hero container mx-auto max-w-6xl px-6 py-12 md:py-20">
           <div
-            className="about-image relative h-[440px] overflow-hidden rounded-md border border-border/20 md:h-[560px]"
+            className="about-image relative h-[260px] overflow-hidden rounded-md border border-border/20 md:h-[560px]"
             style={{
               maskImage: "radial-gradient(ellipse 70% 75% at 50% 50%, black 50%, transparent 100%)",
               WebkitMaskImage:

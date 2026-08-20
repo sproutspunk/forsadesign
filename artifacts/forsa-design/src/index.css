@@ -60,7 +60,7 @@
      shrink-to-fit and the canvas collapses to a thin vertical stripe. */
   .about-hero .about-image {
     width: 100%;
-    max-width: 320px;
+    max-width: 260px;
     margin: 0 auto;
   }
 }
