@@ -103,6 +103,7 @@ function Router() {
         <Route path="/privacy" component={() => <RedirectTo to="/en/privacy" />} />
         <Route path="/en/about" component={() => <AboutPage lang="en" />} />
         <Route path="/pl/about" component={() => <AboutPage lang="pl" />} />
+        <Route path="/pl/o-nas" component={() => <AboutPage lang="pl" />} />
         <Route path="/en/services" component={() => <ServicesPage lang="en" />} />
         <Route path="/pl/services" component={() => <ServicesPage lang="pl" />} />
         <Route path="/en/contact" component={() => <ContactPage lang="en" />} />

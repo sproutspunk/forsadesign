@@ -53,3 +53,12 @@ Use active voice as default. A control should say exactly what happens when it's
 Treat failure and emptiness as moments for direction, not mood. Explain what went wrong and how to fix it, in the interface's voice rather than a person's. Errors don't apologize, and they are never vague about what happened. An empty screen is an invitation to act.
 
 Keep the register conversational and tuned: plain verbs, sentence case, no filler, with tone matched to the brand and the audience. Let each element do exactly one job. A label labels, an example demonstrates, and nothing quietly does double duty.
+
+## Responsive 3D / canvas animations
+
+Canvas and WebGL scenes do not automatically zoom to fit a narrow viewport the way images or SVGs do. On a small smartphone screen, an animated 3D element that keeps its absolute pixel size will simply be clipped by its container; if the container collapses to a very small width, the scene can degrade to a thin vertical stripe or disappear entirely. When placing a Three.js / React Three Fiber scene in a responsive layout:
+
+- Make the renderer and camera react to the container's dimensions, not the window alone, so the scene rescales when the CSS grid or flex column narrows.
+- Ensure the wrapper has a defined minimum width/height on mobile and does not collapse to zero when its flex/grid sibling grows.
+- Test the breakpoint visually: if the animation turns into a vertical line, the container is too narrow, not the animation itself.
+- Provide a graceful fallback (simpler shape, reduced particle count, or static frame) rather than letting the canvas clip to a few pixels.

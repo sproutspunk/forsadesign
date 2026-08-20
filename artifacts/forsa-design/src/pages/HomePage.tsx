@@ -26,20 +26,26 @@ function DeferredHomeSections() {
       window.removeEventListener("hashchange", loadSections);
     };
 
-    // Hash navigation must work without waiting for a manual scroll gesture.
+    // Load below-the-fold sections on mount. The code remains lazy-chunked so
+    // the initial paint is not blocked, but #contact / #about anchors and CTAs
+    // must resolve immediately after the page becomes interactive.
+    const timer = window.setTimeout(loadSections, 0);
+
+    // Hash navigation must work without waiting for the timeout.
     if (window.location.hash) {
+      window.clearTimeout(timer);
       loadSections();
-      return;
     }
 
-    // Keep below-the-fold code out of the initial mobile page load. These
-    // events cover normal scrolling, touch gestures and anchor navigation.
+    // Keep gesture listeners as a safety net for interactions before the chunk
+    // finishes loading.
     window.addEventListener("scroll", loadSections, { passive: true });
     window.addEventListener("touchstart", loadSections, { passive: true });
     window.addEventListener("wheel", loadSections, { passive: true });
     window.addEventListener("hashchange", loadSections);
 
     return () => {
+      window.clearTimeout(timer);
       window.removeEventListener("scroll", loadSections);
       window.removeEventListener("touchstart", loadSections);
       window.removeEventListener("wheel", loadSections);

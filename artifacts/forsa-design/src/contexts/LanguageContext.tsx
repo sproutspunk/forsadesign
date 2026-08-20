@@ -8,7 +8,6 @@ const translations = {
     nav: {
       home: "Home",
       services: "Services",
-      portfolio: "Portfolio",
       process: "Process",
       about: "About",
       contact: "Contact",
@@ -80,18 +79,6 @@ const translations = {
         desc: "Dealer portals, technical specification generators, multilingual quote engines and workflow integrations for export markets. Practical tools that fit your operation instead of disrupting it.",
       },
     },
-    portfolio: {
-      heading: "Current Availability",
-      subheading: "Q4 2026. One project slot remains.",
-      body: [
-        "I take three projects per quarter. Two are already underway. I write the code. I take the calls. I test on the devices your clients actually use. That is the entire team.",
-        "We do not display a wall of logos. Industrial clients do not choose suppliers because of a pretty gallery. They choose because the site answers one question. Can this firm deliver?",
-        "Every project is under NDA or in active use. If you want to see our work, we show it on a call. Not because it is secret. Because context matters; a screenshot tells you nothing. You need to know why the procurement officer stays on the page instead of closing it after eight seconds.",
-        "If your website isn't generating projects you didn't even know were there, we should talk.",
-      ],
-      cta: "Request a Call",
-      ctaHref: "/en/contact/",
-    },
     process: {
       heading: "How We Work",
       steps: [
@@ -114,12 +101,49 @@ const translations = {
       ],
     },
     about: {
-      heading: "Built by Someone Who Understood the Brief",
-      body: "My name is Miro. I founded Forsa Design after more than 20 years in international B2B industrial sales. I traded in metalworking machinery, industrial equipment and engineering solutions across Europe and Asia. I sat on both sides of the procurement table, selling to refineries, negotiating with plant engineers and vetting suppliers myself.",
+      heading: "Who’s behind this",
+      body: "I’m Miro. I founded Forsa Design after more than 20 years in international B2B sales. I traded metalworking machinery, industrial equipment and engineering solutions across Europe and Asia. I’ve sat on both sides of the procurement table. I know what the process looks like from the first email to the signed contract.",
       body2:
-        "That experience taught me one thing: most industrial firms deliver world-class work, but their digital presence does not reflect it. I am not a London agency with fifteen account managers. I am a developer who understands industry, logistics, international trade and contract deadlines. I write the code and answer the phone myself.",
+        "That experience taught me one thing. Most industrial companies do excellent work, but their websites do not keep up with the level of their services. And it costs them contracts. Not because the work is poor. In today’s B2B, your website is the first stage of verification.",
       body3:
-        "Based in Banff, Aberdeenshire. Fluent in English and Polish. Serving Scotland, the UK and selected EU export markets.",
+        "I’m not a London agency with fifteen people on the team and a coffee bar in the office. I’m someone who understands industry, logistics and international trade. Now I build websites that speak your clients’ language. No templates. No unnecessary jargon. Just clean code and a clear message.",
+      body4:
+        "Based in Banff, Aberdeenshire. Fluent in English and Polish. Serving clients in Scotland, across the UK and in selected EU export markets.",
+      highlightsTitle: "Why this experience matters",
+      paragraphs: [
+        "Real business perspective",
+        "Having run a business for over 20 years, negotiated international contracts across three continents and managed teams in multiple countries, I understand what a website needs to do for your bottom line. Every design decision is filtered through a business lens, not just an aesthetic one.",
+        "Communication at every level",
+        "I’ve worked with clients and stakeholders from every walk of life. That translates into websites that communicate clearly with audiences, whether local clients or international partners.",
+        "Delivering results",
+        "My whole career has been built on closing deals, managing projects from A to Z and delivering measurable results. I bring that same discipline to web development: clear deadlines, transparent communication and a focus on what actually benefits your business.",
+      ],
+      processTitle: "How we work",
+      processList: [
+        "Discovery and strategy (weeks 1–2)",
+        "We conduct interviews, analyse your industry, competition and users, and define business goals.",
+        "Design (weeks 3–4)",
+        "We create wireframes, mockups and a visual strategy. Everything is approved by you before we start coding.",
+        "Development (weeks 5–8)",
+        "We build the site with a focus on performance, security, SEO and conversion.",
+        "Testing and optimisation (week 9)",
+        "Testing across all devices and browsers. Performance, security and SEO analysis.",
+        "Launch and support (ongoing)",
+        "We deploy the site live. The first few weeks we keep in close contact, then move into ongoing support.",
+      ],
+      valuesTitle: "What sets us apart",
+      values: [
+        "No templates",
+        "Every project starts from scratch, tailored to your industry and goals.",
+        "Focus on business results",
+        "We measure everything. Does the site attract users, convert, support sales?",
+        "You own everything",
+        "Domain, hosting and content are always under your control. No vendor lock-in.",
+        "Long-term partnership",
+        "We support you months and years after launch. This isn’t a project, it’s a partnership.",
+        "Transparent communication",
+        "You know what’s being done, why and when it will be ready. No hidden fees, no bureaucratic tricks.",
+      ],
     },
     pricing: {
       heading: "Transparent Pricing",
@@ -172,7 +196,6 @@ const translations = {
     nav: {
       home: "Strona Główna",
       services: "Usługi",
-      portfolio: "Portfolio",
       process: "Proces",
       about: "O Nas",
       contact: "Kontakt",
@@ -243,18 +266,6 @@ const translations = {
         title: "Dedykowane systemy webowe",
         desc: "Portale dealerskie, generatory specyfikacji technicznych, wielojęzyczne silniki wycen i integracje workflow dla rynków eksportowych. Praktyczne narzędzia dopasowane do Twojej operacji, a nie ją zakłócające.",
       },
-    },
-    portfolio: {
-      heading: "Aktualna dostępność",
-      subheading: "Q4 2026. Zostało jedno miejsce.",
-      body: [
-        "Prowadzę trzy projekty na kwartał. Dwa są już w trakcie. Piszę kod sam. Odbieram telefony sam. Testuję na urządzeniach, których Twoi klienci faktycznie używają. To cały zespół.",
-        "Nie wystawiamy ściany logotypów. Klienci przemysłowi nie wybierają dostawcy przez ładną galerię. Wybierają, bo strona odpowiada na jedno pytanie. Czy ta firma potrafi dostarczyć?",
-        "Każdy projekt objęty jest NDA lub jest wciąż w użyciu. Jeśli chcesz zobaczyć nasze prace, pokażę je podczas rozmowy. Nie dlatego, że to tajne. Dlatego że kontekst ma znaczenie. Zrzut ekranu nic Ci nie powie. Musisz wiedzieć, dlaczego oficer ds. Zakupu zostaje na stronie zamiast wyłączyć ją po ośmiu sekundach.",
-        "Jeśli Twoja strona nie generuje projektów, o których nawet nie wiedziałeś, że były, powinniśmy porozmawiać.",
-      ],
-      cta: "Poproś o rozmowę",
-      ctaHref: "/pl/contact/",
     },
     process: {
       heading: "Jak Pracujemy",

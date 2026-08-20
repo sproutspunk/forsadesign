@@ -2,133 +2,81 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { motion } from "framer-motion";
 
 export default function About() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
+  const isEn = language === "en";
+
+  const highlighted = isEn
+    ? [
+        [
+          "Real business perspective",
+          "Having run a business for over 20 years, negotiated international contracts across three continents and managed teams in multiple countries, I understand what a website needs to do for your bottom line. Every design decision is filtered through a business lens, not just an aesthetic one.",
+        ],
+        [
+          "Communication at every level",
+          "I’ve worked with clients and stakeholders from every walk of life. That translates into websites that communicate clearly with audiences, whether local clients or international partners.",
+        ],
+        [
+          "Delivering results",
+          "My whole career has been built on closing deals, managing projects from A to Z and delivering measurable results. I bring that same discipline to web development: clear deadlines, transparent communication and a focus on what actually benefits your business.",
+        ],
+      ]
+    : [
+        [
+          "Prawdziwa perspektywa biznesowa",
+          "Prowadząc firmę przez ponad 20 lat, negocjując międzynarodowe kontrakty na trzech kontynentach i zarządzając zespołami w wielu krajach, rozumiem, co strona internetowa musi robić dla Twojego zysku. Każda decyzja projektowa jest filtrowana przez pryzmat biznesowy, nie tylko estetyczny.",
+        ],
+        [
+          "Komunikacja na każdym poziomie",
+          "Pracowałem z klientami i interesariuszami z każdej dziedziny życia. To przekłada się na strony, które jasno komunikują się z odbiorcami, czy to lokalnymi klientami, czy międzynarodowymi partnerami.",
+        ],
+        [
+          "Dostarczanie wyników",
+          "Cała moja kariera opierała się na zawieraniu umów, zarządzaniu projektami od A do Z i dostarczaniu mierzalnych rezultatów. Tę samą dyscyplinę przenoszę do web developmentu: jasne terminy, transparentna komunikacja i skupienie na tym, co naprawdę przynosi korzyść Twojej firmie.",
+        ],
+      ];
 
   return (
     <section id="about" className="py-24 bg-background">
       <div className="container mx-auto px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.8 }}
-            className="relative h-[400px] lg:h-[500px] rounded-md overflow-hidden bg-card border border-border/20 flex items-center justify-center group"
-          >
-            <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent" />
-
-            {/* 3D Cube - a regular solid with equal sides, tumbling in 3D space */}
-            <div
-              className="relative w-48 h-48 md:w-64 md:h-64 flex items-center justify-center"
-              style={{ perspective: "1000px" }}
-            >
-              {/* Static sphere silhouette + soft gold glow (always faces the camera) */}
-              <div
-                className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[16rem] h-[16rem] rounded-full border-2 border-primary/70 shadow-[0_0_50px_rgba(201,168,76,0.3)]"
-                style={{
-                  background: "radial-gradient(circle, rgba(201,168,76,0.10) 0%, transparent 70%)",
-                }}
-              />
-
-              {/* 3D scene: wireframe globe rings + cube share the same space so the cube reads as ENCLOSED */}
-              <motion.div
-                className="absolute left-1/2 top-1/2"
-                style={{
-                  transformStyle: "preserve-3d",
-                  width: "16rem",
-                  height: "16rem",
-                  marginLeft: "-8rem",
-                  marginTop: "-8rem",
-                }}
-                animate={{ rotateY: 360 }}
-                transition={{ rotateY: { repeat: Infinity, duration: 26, ease: "linear" } }}
-              >
-                {/* meridians (vertical great circles through the poles) */}
-                {[0, 45, 90, 135].map((deg, i) => (
-                  <div
-                    key={`mer-${i}`}
-                    className="absolute inset-0 rounded-full border border-primary/30"
-                    style={{ transform: `rotateY(${deg}deg)` }}
-                  />
-                ))}
-                {/* equator + parallels (horizontal rings at different heights) */}
-                {[
-                  { h: 0, s: 1 },
-                  { h: 4, s: 0.866 },
-                  { h: -4, s: 0.866 },
-                  { h: 6.93, s: 0.5 },
-                  { h: -6.93, s: 0.5 },
-                ].map((p, i) => (
-                  <div
-                    key={`par-${i}`}
-                    className="absolute inset-0 rounded-full border border-primary/30"
-                    style={{
-                      transform: `translateY(${-p.h}rem) rotateX(90deg) scale(${p.s})`,
-                    }}
-                  />
-                ))}
-
-                {/* Rotating cube nested at the centre of the sphere */}
-                <motion.div
-                  className="absolute left-1/2 top-1/2"
-                  style={{
-                    transformStyle: "preserve-3d",
-                    width: "5rem",
-                    height: "5rem",
-                    marginLeft: "-2.5rem",
-                    marginTop: "-2.5rem",
-                  }}
-                  animate={{ rotateX: -360, rotateY: -360 }}
-                  transition={{
-                    rotateX: { repeat: Infinity, duration: 20, ease: "linear" },
-                    rotateY: { repeat: Infinity, duration: 13, ease: "linear" },
-                  }}
-                >
-                  {/* 6 equal square faces - translateZ is half the edge length (2.5rem) */}
-                  {[
-                    "rotateY(0deg)",
-                    "rotateY(90deg)",
-                    "rotateY(180deg)",
-                    "rotateY(-90deg)",
-                    "rotateX(90deg)",
-                    "rotateX(-90deg)",
-                  ].map((rot, i) => (
-                    <div
-                      key={i}
-                      className="absolute inset-0 border-2 border-primary/50 bg-primary/[0.08] backdrop-blur-sm"
-                      style={{ transform: `${rot} translateZ(2.5rem)` }}
-                    />
-                  ))}
-                  {/* glowing gold core at the centre */}
-                  <div className="absolute inset-[42%] rounded-full bg-primary shadow-[0_0_28px_rgba(201,168,76,0.9)]" />
-                </motion.div>
-              </motion.div>
-            </div>
-
-            {/* Gold Accent Line */}
-            <div className="absolute left-0 top-1/4 bottom-1/4 w-1 bg-primary/50" />
-          </motion.div>
-
+        <div className="max-w-3xl">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8, delay: 0.2 }}
+            className="space-y-7"
           >
-            <h2 className="font-serif text-4xl md:text-5xl font-bold text-white leading-tight mb-6">
-              {t("about.heading")}
-            </h2>
-            <div className="w-16 h-1 bg-primary mb-8" />
+            <div>
+              <h2 className="font-serif text-4xl md:text-5xl font-bold text-white leading-tight mb-6">
+                {t("about.heading")}
+              </h2>
+              <div className="w-16 h-1 bg-primary mb-8" />
+            </div>
 
-            <p className="text-lg text-foreground/80 font-light leading-relaxed mb-6 text-justify">
+            <p className="text-lg text-foreground/80 font-light leading-relaxed text-justify">
               {t("about.body")}
             </p>
-            <p className="text-lg text-foreground/80 font-light leading-relaxed mb-6 text-justify">
+            <p className="text-lg text-foreground/80 font-light leading-relaxed text-justify">
               {t("about.body2")}
             </p>
             <p className="text-lg text-foreground/80 font-light leading-relaxed text-justify">
               {t("about.body3")}
             </p>
+            <p className="text-lg text-foreground/80 font-light leading-relaxed text-justify">
+              {t("about.body4")}
+            </p>
+
+            <div className="pt-4 space-y-6">
+              <h3 className="font-serif text-2xl font-bold text-white">
+                {t("about.highlightsTitle")}
+              </h3>
+              {highlighted.map(([title, desc]) => (
+                <div key={title} className="space-y-1">
+                  <p className="text-base font-semibold text-primary">{title}</p>
+                  <p className="text-base text-foreground/75 leading-relaxed">{desc}</p>
+                </div>
+              ))}
+            </div>
           </motion.div>
         </div>
       </div>

@@ -1,18 +1,19 @@
 ---
 name: Feature request
 about: Report a bug or unexpected behavior
-title: ''
-labels: ''
-assignees: ''
-
+title: ""
+labels: ""
+assignees: ""
 ---
 
 ---
+
 name: Bug report
 about: Report a bug or unexpected behavior
 title: "[Bug]: "
 labels: bug
 assignees: ""
+
 ---
 
 ## Summary

@@ -36,7 +36,8 @@ export default function Services() {
           {services.map((service, index) => (
             <div
               key={index}
-              className="bg-card border-t-4 border-t-primary p-8 rounded-b-md shadow-sm transition-transform duration-300 hover:-translate-y-2 hover:shadow-[0_10px_30px_rgba(201,168,76,0.12)]"
+              id={["industrial-websites", "b2b-e-commerce", "web-systems"][index]}
+              className="scroll-mt-28 bg-card border-t-4 border-t-primary p-8 rounded-b-md shadow-sm transition-transform duration-300 hover:-translate-y-2 hover:shadow-[0_10px_30px_rgba(201,168,76,0.12)]"
             >
               <div className="text-primary mb-6">{service.icon}</div>
               <h3 className="font-serif text-2xl font-bold text-white leading-tight mb-4">

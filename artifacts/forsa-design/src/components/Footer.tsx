@@ -65,19 +65,13 @@ export default function Footer() {
               {t("nav.pricing")}
             </a>
             <a
-              href={`/${language}/#portfolio`}
-              className="text-sm font-medium text-foreground/70 hover:text-primary transition-colors w-fit"
-            >
-              {t("nav.portfolio")}
-            </a>
-            <a
               href={`/${language}/#process`}
               className="text-sm font-medium text-foreground/70 hover:text-primary transition-colors w-fit"
             >
               {t("nav.process")}
             </a>
             <a
-              href={`/${language}/#about`}
+              href={language === "pl" ? "/pl/o-nas/" : "/en/about/"}
               className="text-sm font-medium text-foreground/70 hover:text-primary transition-colors w-fit"
             >
               {t("nav.about")}

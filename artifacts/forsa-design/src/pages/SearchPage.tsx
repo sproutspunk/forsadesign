@@ -90,7 +90,7 @@ const pageEntries: Record<Language, SearchEntry[]> = {
       title: "O Forsa Design",
       excerpt:
         "Poznaj założyciela z ponad 20-letnim doświadczeniem w międzynarodowej sprzedaży B2B.",
-      href: "/pl/about",
+      href: "/pl/o-nas/",
       category: "O nas",
     },
     {
