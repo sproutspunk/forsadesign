@@ -8,7 +8,8 @@
     "build": "vite build --config vite.config.ts && tsx prerender.mjs",
     "serve": "vite preview --config vite.config.ts --host 0.0.0.0",
     "typecheck": "tsc -p tsconfig.json --noEmit",
-    "test": "vitest run"
+    "test": "vitest run",
+    "generate:audit-checklist-pdf": "node scripts/generate-audit-checklist-pdf.mjs"
   },
   "devDependencies": {
     "@playwright/test": "^1.60.0",

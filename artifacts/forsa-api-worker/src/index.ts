@@ -11,6 +11,7 @@ const OWNER_EMAIL = "hello@forsadesign.co.uk";
 const FROM = "Forsa Design <hello@forsadesign.co.uk>";
 const CONTACT_MAX_BODY_BYTES = 12_000;
 const QUOTE_MAX_BODY_BYTES = 17 * 1024 * 1024;
+const LEAD_MAGNET_MAX_BODY_BYTES = 4_000;
 const MAX_PDF_BYTES = 8 * 1024 * 1024;
 const RATE_LIMIT_WINDOW_MS = 15 * 60 * 1000;
 const RATE_LIMIT_MAX_REQUESTS = 5;
@@ -163,6 +164,57 @@ function isQuotePayload(value: unknown): value is Record<string, unknown> {
   return typeof value === "object" && value !== null;
 }
 
+async function handleLeadMagnet(request: Request, env: Env): Promise<Response> {
+  if (isRateLimited(request, "lead-magnet")) {
+    return json({ error: "Too many requests. Please try again later." }, 429);
+  }
+
+  const text = await readBody(request, LEAD_MAGNET_MAX_BODY_BYTES);
+  if (text === null) return json({ error: "Request too large." }, 413);
+  const payload = await Promise.resolve()
+    .then(() => JSON.parse(text))
+    .catch(() => null);
+  if (!isQuotePayload(payload)) return json({ error: "A valid email is required." }, 400);
+
+  const email = typeof payload.email === "string" ? payload.email.trim() : "";
+  const company = typeof payload.company === "string" ? payload.company.trim().slice(0, 200) : "";
+  const language = payload.language === "pl" ? "pl" : "en";
+  if (!email || !emailPattern.test(email) || email.length > 320) {
+    return json({ error: "A valid email address is required." }, 400);
+  }
+  if (!env.RESEND_API_KEY) return json({ error: "Email service is not configured." }, 503);
+
+  const checklistUrl = "https://forsadesign.co.uk/audit-checklist.pdf";
+  const content =
+    language === "pl"
+      ? {
+          subject: "Twoja checklista audytu strony - Forsa Design",
+          text: `Czesc,\n\nDzieki za pobranie checklisty. Oto Twoj PDF:\n${checklistUrl}\n\nJesli Twoja strona zdobyla ponizej 7 punktow, odpowiedz na tego maila - nagram 2-minutowy audyt wideo Twojej obecnej strony, bez oplat.\n\nMiro\nForsa Design\nhello@forsadesign.co.uk`,
+        }
+      : {
+          subject: "Your Procurement Website Audit Checklist - Forsa Design",
+          text: `Hi,\n\nThanks for downloading the checklist. Here's your PDF:\n${checklistUrl}\n\nIf your site scores below 7, reply to this email - I'll send a 2-minute video audit of your current site, no charge.\n\nMiro\nForsa Design\nhello@forsadesign.co.uk`,
+        };
+
+  const delivered = await sendViaResend(env.RESEND_API_KEY, {
+    from: FROM,
+    to: [email],
+    reply_to: OWNER_EMAIL,
+    subject: content.subject,
+    text: content.text,
+  });
+  if (!delivered) return json({ error: "We could not send the checklist. Please try again." }, 502);
+
+  await sendViaResend(env.RESEND_API_KEY, {
+    from: FROM,
+    to: [OWNER_EMAIL],
+    reply_to: email,
+    subject: `New lead magnet download: ${email}`,
+    text: `Email: ${email}\nCompany: ${company || "N/A"}\nLanguage: ${language}\nTime: ${new Date().toISOString()}`,
+  });
+  return json({ ok: true });
+}
+
 function decodedBase64Length(value: string): number | null {
   try {
     return atob(value).length;
@@ -263,6 +315,8 @@ export default {
       if (request.method === "POST" && path === "/api/contact") return handleContact(request, env);
       if (request.method === "POST" && path === "/api/quotes/email")
         return handleQuote(request, env);
+      if (request.method === "POST" && path === "/api/lead-magnet")
+        return handleLeadMagnet(request, env);
       return json({ error: "Not found." }, 404);
     } catch {
       return json({ error: "Unable to process the request." }, 500);
