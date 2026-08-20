@@ -16,16 +16,8 @@ import {
 import { trackEvent } from "@/lib/consentManager";
 
 interface Breakdown {
-  projectPrice: number;
-  pagesPrice: number;
-  contentPrice: number;
-  logoPrice: number;
-  photoPrice: number;
-  featuresPrice: number;
-  seoPrice: number;
-  perfPrice: number;
-  hostingPrice: number;
-  deliveryFee: number;
+  packagePrice: number;
+  addOnsPrice: number;
   discountAmount: number;
   subtotal: number;
   vat: number;
@@ -121,16 +113,8 @@ export function QuoteSummary({
   };
 
   const lineItems = [
-    { label: t("Project", "Projekt"), value: breakdown.projectPrice },
-    { label: t("Additional Pages", "Dodatkowe strony"), value: breakdown.pagesPrice },
-    { label: t("Content", "Treść"), value: breakdown.contentPrice },
-    { label: t("Logo", "Logo"), value: breakdown.logoPrice },
-    { label: t("Photography", "Fotografia"), value: breakdown.photoPrice },
-    { label: t("Features", "Funkcje"), value: breakdown.featuresPrice },
-    { label: t("SEO", "SEO"), value: breakdown.seoPrice },
-    { label: t("Performance", "Wydajność"), value: breakdown.perfPrice },
-    { label: t("Hosting", "Hosting"), value: breakdown.hostingPrice },
-    { label: t("Delivery", "Czas realizacji"), value: breakdown.deliveryFee },
+    { label: t("Package", "Pakiet"), value: breakdown.packagePrice },
+    { label: t("Additional Options", "Opcje dodatkowe"), value: breakdown.addOnsPrice },
   ].filter((item) => item.value > 0);
 
   const createPdf = async (quoteId: string) => {
@@ -442,10 +426,22 @@ export function QuoteSummary({
                 animate={{ opacity: 1 }}
                 className="space-y-2"
               >
+                <a
+                  href={t("/en/contact", "/pl/contact")}
+                  onClick={() =>
+                    trackEvent("quote_discovery_call_click", {
+                      language: isEn ? "en" : "pl",
+                      total: breakdown.total,
+                    })
+                  }
+                  className="w-full flex items-center justify-center gap-2 px-4 py-2.5 text-sm font-semibold rounded-lg bg-primary text-primary-foreground hover:bg-primary/90 transition-colors"
+                >
+                  {t("Request a Discovery Call", "Um\u00f3w rozmow\u0119 wst\u0119pn\u0105")}
+                </a>
                 <button
                   onClick={handleDownloadClick}
                   disabled={isGenerating}
-                  className="w-full flex items-center justify-center gap-2 px-4 py-2.5 text-sm font-semibold rounded-lg bg-primary text-primary-foreground hover:bg-primary/90 transition-colors disabled:opacity-70 disabled:cursor-not-allowed"
+                  className="w-full flex items-center justify-center gap-2 px-4 py-2.5 text-sm font-semibold rounded-lg border-2 border-border/60 text-foreground hover:border-primary hover:text-primary transition-colors disabled:opacity-70 disabled:cursor-not-allowed"
                 >
                   {isGenerating ? (
                     <>
@@ -455,7 +451,7 @@ export function QuoteSummary({
                   ) : (
                     <>
                       <Download className="w-4 h-4" />
-                      {t("Download PDF Quote", "Pobierz wycen\u0119 PDF")}
+                      {t("Download PDF Estimate", "Pobierz wycen\u0119 PDF")}
                     </>
                   )}
                 </button>

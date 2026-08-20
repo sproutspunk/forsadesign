@@ -1,91 +1,40 @@
 import { useState, useCallback, useMemo, useContext, createContext } from "react";
 import { m as motion, AnimatePresence } from "framer-motion";
 import { useLanguage } from "@/contexts/LanguageContext";
-import {
-  projectTypes,
-  contentOptions,
-  logoOptions,
-  photographyOptions,
-  features,
-  seoOptions,
-  performanceOptions,
-  hostingOptions,
-  maintenanceOptions,
-  deliveryOptions,
-  packagePresets,
-  VAT_RATE,
-  ADDITIONAL_PAGE_PRICE,
-  MAX_ADDITIONAL_PAGES,
-} from "@/data/quoteConfig";
+import { packagePresets, addOns, maintenanceOptions, VAT_RATE } from "@/data/quoteConfig";
 import { QuoteSummary } from "./QuoteSummary";
 import {
   ChevronDown,
   ChevronUp,
   Check,
-  Layers,
-  FileText as _FileText,
-  Image,
-  Camera,
-  Wrench,
-  Search,
-  Gauge,
-  Server,
   Wrench as WrenchIcon,
-  Clock,
   Tag,
-  Calculator as CalcIcon,
   TrendingUp,
   ShieldCheck,
   BadgeCheck,
   Sparkles,
+  Boxes,
 } from "lucide-react";
 
 interface QuoteState {
-  projectType: string;
-  additionalPages: number;
-  content: string;
-  logo: string;
-  photography: string;
-  selectedFeatures: string[];
-  seo: string;
-  performance: string;
-  hosting: string;
+  packageId: string;
+  selectedAddOns: string[];
+  extraLanguageCount: number;
   maintenance: string;
-  delivery: string;
-  multilangCount: number;
-  apiCount: number;
   discountPercent: number;
 }
 
 const initialState: QuoteState = {
-  projectType: "landing",
-  additionalPages: 0,
-  content: "client",
-  logo: "existing",
-  photography: "client",
-  selectedFeatures: [],
-  seo: "none",
-  performance: "standard",
-  hosting: "client",
+  packageId: "business",
+  selectedAddOns: [],
+  extraLanguageCount: 1,
   maintenance: "none",
-  delivery: "standard",
-  multilangCount: 1,
-  apiCount: 1,
   discountPercent: 0,
 };
 
 const sectionIcons: Record<string, React.ReactNode> = {
-  project: <CalcIcon className="w-5 h-5" />,
-  pages: <Layers className="w-5 h-5" />,
-  content: <_FileText className="w-5 h-5" />,
-  logo: <Image className="w-5 h-5" />,
-  photos: <Camera className="w-5 h-5" />,
-  features: <Wrench className="w-5 h-5" />,
-  seo: <Search className="w-5 h-5" />,
-  performance: <Gauge className="w-5 h-5" />,
-  hosting: <Server className="w-5 h-5" />,
+  addons: <Boxes className="w-5 h-5" />,
   maintenance: <WrenchIcon className="w-5 h-5" />,
-  delivery: <Clock className="w-5 h-5" />,
   discount: <Tag className="w-5 h-5" />,
   roi: <TrendingUp className="w-5 h-5" />,
 };
@@ -147,60 +96,6 @@ function Section({
   );
 }
 
-function OptionCard({
-  selected,
-  onClick,
-  label,
-  price,
-  highlight = false,
-  isBasePrice = false,
-}: {
-  selected: boolean;
-  onClick: () => void;
-  label: string;
-  price: number;
-  highlight?: boolean;
-  isBasePrice?: boolean;
-}) {
-  const { isEn, formatPrice } = useContext(CalcCtx);
-  return (
-    <button
-      onClick={onClick}
-      className={`relative w-full text-left p-3 md:p-4 rounded-lg border-2 transition-all duration-200 ${
-        selected
-          ? "border-primary bg-primary/5 shadow-sm"
-          : "border-border/40 hover:border-border/80 bg-card/30 hover:bg-card/50"
-      } ${highlight && selected ? "ring-1 ring-primary/30" : ""}`}
-    >
-      <div className="flex items-center justify-between gap-2">
-        <span className={`text-sm md:text-base ${selected ? "font-semibold" : "font-medium"}`}>
-          {label}
-        </span>
-        <span
-          className={`text-sm font-semibold whitespace-nowrap ${selected ? "text-primary" : "text-foreground/60"}`}
-        >
-          {price === 0
-            ? isEn
-              ? "Included"
-              : "W cenie"
-            : isBasePrice
-              ? formatPrice(price)
-              : `+${formatPrice(price)}`}
-        </span>
-      </div>
-      {selected && (
-        <motion.div
-          initial={{ scale: 0 }}
-          animate={{ scale: 1 }}
-          className="absolute top-2 right-2"
-        >
-          <Check className="w-4 h-4 text-primary" />
-        </motion.div>
-      )}
-    </button>
-  );
-}
-
 // ─────────────────────────────────────────────────────────────────────────────
 export default function QuoteCalculator() {
   const { language } = useLanguage();
@@ -208,9 +103,8 @@ export default function QuoteCalculator() {
   const t = useCallback((en: string, pl: string) => (isEn ? en : pl), [isEn]);
 
   const [state, setState] = useState<QuoteState>(initialState);
-  const [openSections, setOpenSections] = useState<Set<string>>(new Set(["project"]));
+  const [openSections, setOpenSections] = useState<Set<string>>(new Set(["addons"]));
   const [showSuccess, setShowSuccess] = useState(false);
-  const [activePreset, setActivePreset] = useState<string | null>(null);
 
   const [roiVisitors, setRoiVisitors] = useState(5000);
   const [roiConversion, setRoiConversion] = useState(2);
@@ -227,135 +121,73 @@ export default function QuoteCalculator() {
 
   const update = useCallback(<K extends keyof QuoteState>(key: K, value: QuoteState[K]) => {
     setState((prev) => ({ ...prev, [key]: value }));
-    setActivePreset(null);
   }, []);
 
-  const applyPreset = useCallback((presetId: string) => {
-    setActivePreset((current) => {
-      if (current === presetId) {
-        // Toggle off: reset to defaults
-        setState(initialState);
-        setOpenSections(new Set(["project"]));
-        return null;
-      }
-      // Toggle on: apply preset and expand all sections
-      const preset = packagePresets.find((p) => p.id === presetId);
-      if (!preset) return current;
-      setState(preset.state);
-      setOpenSections(
-        new Set([
-          "project",
-          "pages",
-          "content",
-          "logo",
-          "photos",
-          "features",
-          "seo",
-          "performance",
-          "hosting",
-          "maintenance",
-          "delivery",
-        ]),
-      );
-      return presetId;
-    });
+  const selectPackage = useCallback((packageId: string) => {
+    setState((prev) => ({ ...prev, packageId }));
+    setOpenSections(new Set(["addons", "maintenance"]));
   }, []);
 
-  const toggleFeature = useCallback((value: string) => {
+  const toggleAddOn = useCallback((value: string) => {
     setState((prev) => {
-      const has = prev.selectedFeatures.includes(value);
-      return {
-        ...prev,
-        selectedFeatures: has
-          ? prev.selectedFeatures.filter((f) => f !== value)
-          : [...prev.selectedFeatures, value],
-      };
+      const has = prev.selectedAddOns.includes(value);
+      const addon = addOns.find((a) => a.value === value);
+      let next = has
+        ? prev.selectedAddOns.filter((f) => f !== value)
+        : [...prev.selectedAddOns, value];
+      // delivery add-ons are mutually exclusive: only one speed tier at a time
+      if (!has && addon?.group === "delivery") {
+        next = next.filter(
+          (v) => v === value || addOns.find((a) => a.value === v)?.group !== "delivery",
+        );
+      }
+      return { ...prev, selectedAddOns: next };
     });
-    setActivePreset(null);
   }, []);
 
   const breakdown = useMemo(() => {
-    const projectPrice = projectTypes.find((p) => p.value === state.projectType)?.price ?? 0;
-    const pagesPrice = state.additionalPages * ADDITIONAL_PAGE_PRICE;
-    const contentPrice = contentOptions.find((c) => c.value === state.content)?.price ?? 0;
-    const logoPrice = logoOptions.find((l) => l.value === state.logo)?.price ?? 0;
-    const photoPrice = photographyOptions.find((p) => p.value === state.photography)?.price ?? 0;
+    const pkg = packagePresets.find((p) => p.id === state.packageId) ?? packagePresets[1];
+    const packagePrice = pkg.price;
 
-    let featuresPrice = 0;
-    for (const f of state.selectedFeatures) {
-      const feat = features.find((x) => x.value === f);
-      if (!feat) continue;
-      let price = feat.price;
-      if (f === "multilang") price *= state.multilangCount;
-      if (f === "api") price *= state.apiCount;
-      featuresPrice += price;
+    let addOnsPrice = 0;
+    for (const value of state.selectedAddOns) {
+      const addon = addOns.find((a) => a.value === value);
+      if (!addon) continue;
+      let price = addon.price;
+      if (value === "extra-language") price *= state.extraLanguageCount;
+      addOnsPrice += price;
     }
 
-    const seoPrice = seoOptions.find((s) => s.value === state.seo)?.price ?? 0;
-    const perfPrice = performanceOptions.find((p) => p.value === state.performance)?.price ?? 0;
-    const hostingPrice = hostingOptions.find((h) => h.value === state.hosting)?.price ?? 0;
-
-    const deliveryMult = deliveryOptions.find((d) => d.value === state.delivery)?.multiplier ?? 0;
-
-    const subtotal =
-      projectPrice +
-      pagesPrice +
-      contentPrice +
-      logoPrice +
-      photoPrice +
-      featuresPrice +
-      seoPrice +
-      perfPrice +
-      hostingPrice;
-
-    const deliveryFee = Math.round(subtotal * deliveryMult);
-    const beforeDiscount = subtotal + deliveryFee;
-    const discountAmount = Math.round(beforeDiscount * (state.discountPercent / 100));
-    const discounted = beforeDiscount - discountAmount;
+    const subtotal = packagePrice + addOnsPrice;
+    const discountAmount = Math.round(subtotal * (state.discountPercent / 100));
+    const discounted = subtotal - discountAmount;
     const vat = Math.round(discounted * VAT_RATE);
     const total = discounted + vat;
 
     const maintenanceMonthly =
       maintenanceOptions.find((m) => m.value === state.maintenance)?.monthlyPrice ?? 0;
 
-    const deliveryLabel =
-      deliveryOptions.find((d) => d.value === state.delivery) || deliveryOptions[0];
+    let estimatedWeeks = pkg.weeksEn;
+    let estimatedWeeksPl = pkg.weeksPl;
+    if (state.selectedAddOns.includes("express-fasttrack")) {
+      estimatedWeeks = "2-3 weeks (Express Fast Track)";
+      estimatedWeeksPl = "2-3 tygodnie (Express Fast Track)";
+    } else if (state.selectedAddOns.includes("express-priority")) {
+      estimatedWeeks = "4-6 weeks (Express Priority)";
+      estimatedWeeksPl = "4-6 tygodni (Express Priority)";
+    }
 
     return {
-      projectPrice,
-      pagesPrice,
-      contentPrice,
-      logoPrice,
-      photoPrice,
-      featuresPrice,
-      seoPrice,
-      perfPrice,
-      hostingPrice,
-      deliveryFee,
+      packagePrice,
+      addOnsPrice,
       discountAmount,
-      subtotal: beforeDiscount,
+      subtotal,
       vat,
       total,
       maintenanceMonthly,
-      estimatedWeeks: deliveryLabel.labelEn,
-      estimatedWeeksPl: deliveryLabel.labelPl,
+      estimatedWeeks,
+      estimatedWeeksPl,
     };
-  }, [state]);
-
-  const progress = useMemo(() => {
-    const sections = [
-      state.projectType,
-      state.content,
-      state.logo,
-      state.photography,
-      state.seo,
-      state.performance,
-      state.hosting,
-      state.maintenance,
-      state.delivery,
-    ];
-    const filled = sections.filter(Boolean).length;
-    return Math.round((filled / sections.length) * 100);
   }, [state]);
 
   const formatPrice = (n: number) =>
@@ -366,10 +198,15 @@ export default function QuoteCalculator() {
       maximumFractionDigits: 0,
     });
 
-  const projectLabel = useMemo(() => {
-    const pt = projectTypes.find((p) => p.value === state.projectType);
-    return pt ? t(pt.labelEn, pt.labelPl) : "";
-  }, [state.projectType, t]);
+  const selectedPackage = useMemo(
+    () => packagePresets.find((p) => p.id === state.packageId) ?? packagePresets[1],
+    [state.packageId],
+  );
+
+  const projectLabel = useMemo(
+    () => t(selectedPackage.labelEn, selectedPackage.labelPl),
+    [selectedPackage, t],
+  );
 
   const roiEnquiries = Math.round(roiVisitors * (roiConversion / 100));
   const roiRevLow = roiEnquiries * roiAvgValue * 0.2;
@@ -389,27 +226,27 @@ export default function QuoteCalculator() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 md:pt-32 pb-24 md:pb-12">
         <div className="mb-8 md:mb-10">
           <h1 className="font-serif text-4xl md:text-5xl font-bold text-white leading-tight tracking-tight mb-3">
-            {t("Website Quote Calculator", "Kalkulator wyceny strony")}
+            {t("B2B Industrial Project Estimator", "Estymator Projektów B2B dla Przemysłu")}
           </h1>
           <p className="text-foreground/60 max-w-2xl text-sm md:text-base">
             {t(
-              "Select the options that match your project requirements. The estimate updates instantly.",
-              "Wybierz opcje odpowiadające Twoim wymaganiom. Wycena aktualizuje się na bieżąco.",
+              "Choose a package designed for engineering and manufacturing firms. The estimate updates instantly.",
+              "Wybierz pakiet zaprojektowany dla firm inżynieryjnych i produkcyjnych. Wycena aktualizuje się na bieżąco.",
             )}
           </p>
         </div>
 
         <div className="mb-8">
           <p className="text-xs font-semibold uppercase tracking-widest text-foreground/40 mb-3">
-            {t("Quick start: choose your level", "Szybki start: wybierz poziom")}
+            {t("Step 1: Choose your package", "Krok 1: Wybierz pakiet")}
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-4">
             {packagePresets.map((preset, i) => (
               <button
                 key={preset.id}
-                onClick={() => applyPreset(preset.id)}
+                onClick={() => selectPackage(preset.id)}
                 className={`relative text-left p-4 md:p-5 rounded-xl border-2 transition-all duration-200 group ${
-                  activePreset === preset.id
+                  state.packageId === preset.id
                     ? "border-primary bg-primary/5 shadow-md"
                     : "border-border/40 hover:border-primary/50 bg-card/50 hover:bg-primary/5"
                 }`}
@@ -423,15 +260,30 @@ export default function QuoteCalculator() {
                   <span className="font-bold text-sm md:text-base">
                     {t(preset.labelEn, preset.labelPl)}
                   </span>
-                  {activePreset === preset.id && (
+                  {state.packageId === preset.id && (
                     <Sparkles className="w-4 h-4 text-primary flex-shrink-0" />
                   )}
                 </div>
                 <div className="text-lg md:text-xl font-bold text-primary">
-                  {t("From", "Od")} {formatPrice(preset.fromPrice)}
+                  {preset.isFromPrice ? `${t("From", "Od")} ` : ""}
+                  {formatPrice(preset.price)}
                 </div>
-                <div className="text-xs text-foreground/50 mt-0.5">
+                <div className="text-xs text-foreground/50 mt-0.5 mb-3">
                   {t(preset.taglineEn, preset.taglinePl)}
+                </div>
+                <ul className="space-y-1.5">
+                  {(isEn ? preset.featuresEn : preset.featuresPl).map((feature) => (
+                    <li
+                      key={feature}
+                      className="flex items-start gap-1.5 text-xs text-foreground/70"
+                    >
+                      <Check className="w-3.5 h-3.5 text-primary flex-shrink-0 mt-0.5" />
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+                <div className="mt-3 pt-3 border-t border-border/20 text-xs text-foreground/50">
+                  {t(preset.weeksEn, preset.weeksPl)}
                 </div>
               </button>
             ))}
@@ -442,20 +294,6 @@ export default function QuoteCalculator() {
           <div className="flex flex-col lg:flex-row gap-6 lg:gap-8">
             <div className="flex-1 space-y-4">
               <div className="space-y-3 mb-2">
-                <div className="flex items-center gap-3">
-                  <div className="flex-1 h-2 bg-muted rounded-full overflow-hidden">
-                    <motion.div
-                      className="h-full bg-primary rounded-full"
-                      initial={{ width: 0 }}
-                      animate={{ width: `${progress}%` }}
-                      transition={{ duration: 0.5 }}
-                    />
-                  </div>
-                  <span className="text-xs font-medium text-foreground/50 whitespace-nowrap">
-                    {progress}%
-                  </span>
-                </div>
-
                 <div className="flex flex-wrap gap-x-4 gap-y-1">
                   {trustItems.map((item) => (
                     <div
@@ -469,108 +307,19 @@ export default function QuoteCalculator() {
                 </div>
               </div>
 
-              <Section id="project" titleEn="Project Type" titlePl="Typ projektu">
+              <Section
+                id="addons"
+                titleEn="Step 2: Additional Options"
+                titlePl="Krok 2: Opcje dodatkowe"
+              >
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                  {projectTypes.map((p) => (
-                    <OptionCard
-                      key={p.value}
-                      selected={state.projectType === p.value}
-                      onClick={() => update("projectType", p.value)}
-                      label={t(p.labelEn, p.labelPl)}
-                      price={p.price}
-                      highlight={p.value === "custom-app"}
-                      isBasePrice
-                    />
-                  ))}
-                </div>
-              </Section>
-
-              <Section id="pages" titleEn="Additional Pages" titlePl="Dodatkowe strony">
-                <div className="space-y-4">
-                  <div className="flex items-center justify-between">
-                    <span className="text-sm text-foreground/60">
-                      {t("Pages", "Strony")}: {state.additionalPages}
-                    </span>
-                    <span className="text-sm font-semibold text-primary">
-                      {state.additionalPages > 0
-                        ? `+${formatPrice(state.additionalPages * ADDITIONAL_PAGE_PRICE)}`
-                        : t("Included", "W cenie")}
-                    </span>
-                  </div>
-                  <input
-                    type="range"
-                    min={0}
-                    max={MAX_ADDITIONAL_PAGES}
-                    step={1}
-                    value={state.additionalPages}
-                    onChange={(e) => update("additionalPages", parseInt(e.target.value))}
-                    className="w-full h-2 bg-muted rounded-full appearance-none cursor-pointer accent-primary"
-                  />
-                  <div className="flex justify-between text-xs text-foreground/40">
-                    <span>0</span>
-                    <span>{MAX_ADDITIONAL_PAGES}</span>
-                  </div>
-                  <p className="text-xs text-foreground/50">
-                    {t(
-                      `£${ADDITIONAL_PAGE_PRICE} per additional page`,
-                      `£${ADDITIONAL_PAGE_PRICE} za dodatkową stronę`,
-                    )}
-                  </p>
-                </div>
-              </Section>
-
-              <Section id="content" titleEn="Content Writing" titlePl="Pisanie treści">
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                  {contentOptions.map((c) => (
-                    <OptionCard
-                      key={c.value}
-                      selected={state.content === c.value}
-                      onClick={() => update("content", c.value)}
-                      label={t(c.labelEn, c.labelPl)}
-                      price={c.price}
-                    />
-                  ))}
-                </div>
-              </Section>
-
-              <Section id="logo" titleEn="Logo" titlePl="Logo">
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                  {logoOptions.map((l) => (
-                    <OptionCard
-                      key={l.value}
-                      selected={state.logo === l.value}
-                      onClick={() => update("logo", l.value)}
-                      label={t(l.labelEn, l.labelPl)}
-                      price={l.price}
-                    />
-                  ))}
-                </div>
-              </Section>
-
-              <Section id="photos" titleEn="Photography" titlePl="Fotografia">
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                  {photographyOptions.map((p) => (
-                    <OptionCard
-                      key={p.value}
-                      selected={state.photography === p.value}
-                      onClick={() => update("photography", p.value)}
-                      label={t(p.labelEn, p.labelPl)}
-                      price={p.price}
-                    />
-                  ))}
-                </div>
-              </Section>
-
-              <Section id="features" titleEn="Features" titlePl="Funkcje">
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-                  {features.map((f) => {
-                    const selected = state.selectedFeatures.includes(f.value);
-                    const isMultilang = f.value === "multilang" && selected;
-                    const isApi = f.value === "api" && selected;
+                  {addOns.map((addon) => {
+                    const selected = state.selectedAddOns.includes(addon.value);
+                    const isLanguage = addon.value === "extra-language" && selected;
                     return (
                       <button
-                        key={f.value}
-                        onClick={() => toggleFeature(f.value)}
+                        key={addon.value}
+                        onClick={() => toggleAddOn(addon.value)}
                         className={`relative text-left p-3 rounded-lg border-2 transition-all duration-200 ${
                           selected
                             ? "border-primary bg-primary/5 shadow-sm"
@@ -579,15 +328,16 @@ export default function QuoteCalculator() {
                       >
                         <div className="flex items-start justify-between gap-2">
                           <span className={`text-sm ${selected ? "font-semibold" : "font-medium"}`}>
-                            {t(f.labelEn, f.labelPl)}
+                            {t(addon.labelEn, addon.labelPl)}
                           </span>
                           <span
                             className={`text-sm font-semibold whitespace-nowrap ${selected ? "text-primary" : "text-foreground/60"}`}
                           >
-                            {f.price === 0 ? t("Included", "W cenie") : `+${formatPrice(f.price)}`}
+                            +{formatPrice(addon.price)}
+                            {addon.perUnit ? t(" / language", " / język") : ""}
                           </span>
                         </div>
-                        {isMultilang && (
+                        {isLanguage && (
                           <div className="mt-2 flex items-center gap-2">
                             <span className="text-xs text-foreground/50">
                               {t("Languages", "Języki")}:
@@ -596,30 +346,26 @@ export default function QuoteCalculator() {
                               type="number"
                               min={1}
                               max={10}
-                              value={state.multilangCount}
+                              value={state.extraLanguageCount}
                               onChange={(e) =>
-                                update("multilangCount", Math.max(1, parseInt(e.target.value) || 1))
+                                update(
+                                  "extraLanguageCount",
+                                  Math.max(1, parseInt(e.target.value) || 1),
+                                )
                               }
                               onClick={(e) => e.stopPropagation()}
                               className="w-16 px-2 py-1 text-xs rounded border border-border bg-background text-center"
                             />
                           </div>
                         )}
-                        {isApi && (
-                          <div className="mt-2 flex items-center gap-2">
-                            <span className="text-xs text-foreground/50">{t("APIs", "API")}:</span>
-                            <input
-                              type="number"
-                              min={1}
-                              max={10}
-                              value={state.apiCount}
-                              onChange={(e) =>
-                                update("apiCount", Math.max(1, parseInt(e.target.value) || 1))
-                              }
-                              onClick={(e) => e.stopPropagation()}
-                              className="w-16 px-2 py-1 text-xs rounded border border-border bg-background text-center"
-                            />
-                          </div>
+                        {selected && (
+                          <motion.div
+                            initial={{ scale: 0 }}
+                            animate={{ scale: 1 }}
+                            className="absolute top-2 right-2"
+                          >
+                            <Check className="w-4 h-4 text-primary" />
+                          </motion.div>
                         )}
                       </button>
                     );
@@ -627,77 +373,45 @@ export default function QuoteCalculator() {
                 </div>
               </Section>
 
-              <Section id="seo" titleEn="SEO" titlePl="SEO">
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
-                  {seoOptions.map((s) => (
-                    <OptionCard
-                      key={s.value}
-                      selected={state.seo === s.value}
-                      onClick={() => update("seo", s.value)}
-                      label={t(s.labelEn, s.labelPl)}
-                      price={s.price}
-                    />
-                  ))}
-                </div>
-              </Section>
-
-              <Section id="performance" titleEn="Performance" titlePl="Wydajność">
+              <Section id="maintenance" titleEn="Step 3: Maintenance" titlePl="Krok 3: Konserwacja">
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                  {performanceOptions.map((p) => (
-                    <OptionCard
-                      key={p.value}
-                      selected={state.performance === p.value}
-                      onClick={() => update("performance", p.value)}
-                      label={t(p.labelEn, p.labelPl)}
-                      price={p.price}
-                    />
-                  ))}
-                </div>
-              </Section>
-
-              <Section id="hosting" titleEn="Hosting" titlePl="Hosting">
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                  {hostingOptions.map((h) => (
-                    <OptionCard
-                      key={h.value}
-                      selected={state.hosting === h.value}
-                      onClick={() => update("hosting", h.value)}
-                      label={t(h.labelEn, h.labelPl)}
-                      price={h.price}
-                    />
-                  ))}
-                </div>
-              </Section>
-
-              <Section id="maintenance" titleEn="Maintenance" titlePl="Konserwacja">
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
                   {maintenanceOptions.map((m) => (
-                    <OptionCard
+                    <button
                       key={m.value}
-                      selected={state.maintenance === m.value}
                       onClick={() => update("maintenance", m.value)}
-                      label={t(m.labelEn, m.labelPl)}
-                      price={m.monthlyPrice}
-                    />
-                  ))}
-                </div>
-                <p className="text-xs text-foreground/50 mt-2">
-                  {t("Prices shown are monthly", "Ceny są miesięczne")}
-                </p>
-              </Section>
-
-              <Section id="delivery" titleEn="Delivery Time" titlePl="Czas realizacji">
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
-                  {deliveryOptions.map((d) => (
-                    <OptionCard
-                      key={d.value}
-                      selected={state.delivery === d.value}
-                      onClick={() => update("delivery", d.value)}
-                      label={t(d.labelEn, d.labelPl)}
-                      price={Math.round(
-                        (breakdown.subtotal - breakdown.deliveryFee) * d.multiplier,
+                      className={`relative text-left p-3 md:p-4 rounded-lg border-2 transition-all duration-200 ${
+                        state.maintenance === m.value
+                          ? "border-primary bg-primary/5 shadow-sm"
+                          : "border-border/40 hover:border-border/80 bg-card/30 hover:bg-card/50"
+                      }`}
+                    >
+                      <div className="flex items-center justify-between gap-2 mb-1">
+                        <span
+                          className={`text-sm ${state.maintenance === m.value ? "font-semibold" : "font-medium"}`}
+                        >
+                          {t(m.labelEn, m.labelPl)}
+                        </span>
+                        <span
+                          className={`text-sm font-semibold whitespace-nowrap ${state.maintenance === m.value ? "text-primary" : "text-foreground/60"}`}
+                        >
+                          {m.monthlyPrice === 0
+                            ? t("Included", "W cenie")
+                            : `${formatPrice(m.monthlyPrice)}/${t("mo", "mies.")}`}
+                        </span>
+                      </div>
+                      <p className="text-xs text-foreground/50">
+                        {t(m.descriptionEn, m.descriptionPl)}
+                      </p>
+                      {state.maintenance === m.value && (
+                        <motion.div
+                          initial={{ scale: 0 }}
+                          animate={{ scale: 1 }}
+                          className="absolute top-2 right-2"
+                        >
+                          <Check className="w-4 h-4 text-primary" />
+                        </motion.div>
                       )}
-                    />
+                    </button>
                   ))}
                 </div>
               </Section>
@@ -855,10 +569,7 @@ export default function QuoteCalculator() {
                 showSuccess={showSuccess}
                 setShowSuccess={setShowSuccess}
                 state={state}
-                onReset={() => {
-                  setState(initialState);
-                  setActivePreset(null);
-                }}
+                onReset={() => setState(initialState)}
                 projectLabel={projectLabel}
               />
             </div>
@@ -887,7 +598,7 @@ export default function QuoteCalculator() {
           }}
           className="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-primary text-primary-foreground text-sm font-semibold hover:bg-primary/90 transition-colors whitespace-nowrap"
         >
-          {t("Get Quote", "Pobierz wycenę")}
+          {t("View Estimate", "Zobacz wycenę")}
         </button>
       </div>
     </div>
