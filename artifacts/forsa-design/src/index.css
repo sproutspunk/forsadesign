@@ -56,7 +56,7 @@
   }
 
   /* Keep this rule scoped to the standalone About page portrait layout.
-     width:100% is required — without it the auto margins make the grid item
+     width:100% is required; without it the auto margins make the grid item
      shrink-to-fit and the canvas collapses to a thin vertical stripe. */
   .about-hero .about-image {
     width: 100%;

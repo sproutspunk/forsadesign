@@ -34,7 +34,7 @@ export default function Scene3D() {
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     renderer.toneMapping = THREE.ReinhardToneMapping;
 
-    // Canvas pokrywa kontener dokładnie — wyśrodkowanie w pionie i poziomie
+    // Canvas pokrywa kontener dokładnie: wyśrodkowanie w pionie i poziomie
     renderer.domElement.style.cssText =
       "position:absolute;top:0;left:0;width:100%;height:100%;display:block;";
     renderer.domElement.setAttribute("role", "img");
@@ -44,20 +44,20 @@ export default function Scene3D() {
     );
     container.appendChild(renderer.domElement);
 
-    // === BLOOM — zmniejszony, subtelniejszy ===
+    // === BLOOM: zmniejszony, subtelniejszy ===
     const composer = new EffectComposer(renderer);
     composer.addPass(new RenderPass(scene, camera));
     const bloomPass = new UnrealBloomPass(
       new THREE.Vector2(container.clientWidth, container.clientHeight),
       0.6, // strength: o połowę słabszy
       0.4,
-      0.3, // threshold: wyższy — tylko jasne krawędzie świecą
+      0.3, // threshold: wyższy, tylko jasne krawędzie świecą
     );
     composer.addPass(bloomPass);
 
     const gold = 0xc9a96e;
 
-    // === MATERIALS — słabsze opacity ===
+    // === MATERIALS: słabsze opacity ===
     const wireMat = new THREE.MeshBasicMaterial({
       color: gold,
       wireframe: true,
@@ -77,7 +77,7 @@ export default function Scene3D() {
     sphereGroup.add(new THREE.Mesh(new THREE.SphereGeometry(1.7, 32, 32), glowMat));
     scene.add(sphereGroup);
 
-    // === CUBE — wyraźne krawędzie, ale nie jaskrawe ===
+    // === CUBE: wyraźne krawędzie, ale nie jaskrawe ===
     const cubeGroup = new THREE.Group();
     const cubeSize = 1.2;
     const half = cubeSize / 2;
@@ -146,11 +146,11 @@ export default function Scene3D() {
     );
     scene.add(cubeGroup);
 
-    // === CORE LIGHT — słabszy ===
+    // === CORE LIGHT: słabszy ===
     const coreLight = new THREE.PointLight(gold, 1.2, 10);
     scene.add(coreLight);
 
-    // === HALFTONE — rzadsze, słabsze kropki ===
+    // === HALFTONE: rzadsze, słabsze kropki ===
     const halftoneVertex = `
       varying vec2 vUv;
       void main() {

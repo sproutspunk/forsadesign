@@ -178,7 +178,7 @@ export default function TrustBar() {
         </svg>
         <span>
           <strong className="font-medium text-slate-100">{t("trustBar.lowEmission")}</strong>{" "}
-          <span className="text-foreground/40">— 0.07 g CO₂ per visit</span>
+          <span className="text-foreground/40">0.07 g CO₂ per visit</span>
         </span>
       </a>
     </div>

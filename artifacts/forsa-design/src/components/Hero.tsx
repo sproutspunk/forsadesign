@@ -59,7 +59,7 @@ export default function Hero() {
               setShowLeadMagnet(next);
               if (next) trackEvent("lead_magnet_form_open", { section: "hero", language });
             }}
-            className="mt-4 text-sm font-medium text-foreground/60 hover:text-primary transition-colors underline underline-offset-4"
+            className="mt-4 text-sm font-medium text-foreground/60 hover:text-primary transition-colors underline underline-offset-4 cursor-pointer"
           >
             {isEn
               ? "Not ready? Download our free 5-min audit checklist"

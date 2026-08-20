@@ -27,8 +27,7 @@ const ui = {
     ctaServices: "See our services",
     ctaContact: "Start a conversation",
     checklistTitle: "Not ready to talk yet?",
-    checklistText:
-      "Free PDF: The 5-Minute Procurement Website Audit — 10 checks every buyer makes.",
+    checklistText: "Free PDF: The 5-Minute Procurement Website Audit. 10 checks every buyer makes.",
   },
   pl: {
     backToBlog: "Powrót do bloga",
@@ -44,7 +43,7 @@ const ui = {
     ctaContact: "Rozpocznij rozmowę",
     checklistTitle: "Jeszcze nie gotowy na rozmowę?",
     checklistText:
-      "Darmowy PDF: 5-minutowy audyt strony pod kątem zakupów — 10 punktów kontrolnych.",
+      "Darmowy PDF: 5-minutowy audyt strony pod kątem zakupów. 10 punktów kontrolnych.",
   },
 };
 
