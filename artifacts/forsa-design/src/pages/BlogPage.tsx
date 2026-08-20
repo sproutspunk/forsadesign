@@ -13,18 +13,20 @@ interface BlogPageProps {
 
 const meta = {
   en: {
-    title: "Blog | Forsa Design",
-    desc: "Expert insights on web design, SEO, e-commerce, and digital strategy from the Forsa Design team.",
-    heading: "Blog",
-    subheading: "Expert insights on web design, SEO, and digital strategy.",
+    title: "Industrial Web Design Blog | Forsa Design",
+    desc: "Practical guides on industrial web design, manufacturing websites, SEO for engineers, B2B e-commerce and procurement-ready digital strategy.",
+    heading: "Industrial Web Design Blog",
+    subheading:
+      "Practical guides on industrial web design, manufacturing websites, SEO and B2B digital strategy.",
     readMore: "Read article",
     minRead: "min read",
   },
   pl: {
-    title: "Blog | Forsa Design",
-    desc: "Wiedza ekspercka o web designie, SEO, e-commerce i strategii cyfrowej od zespołu Forsa Design.",
-    heading: "Blog",
-    subheading: "Wiedza ekspercka o web designie, SEO i strategii cyfrowej.",
+    title: "Blog Web Design dla Przemysłu | Forsa Design",
+    desc: "Praktyczne poradniki o web designie dla przemysłu, stronach dla produkcji, SEO dla inżynierów, e-commerce B2B i strategii cyfrowej.",
+    heading: "Blog Web Design dla Przemysłu",
+    subheading:
+      "Praktyczne poradniki o web designie dla przemysłu, stronach produkcyjnych, SEO i strategii B2B.",
     readMore: "Czytaj artykuł",
     minRead: "min czytania",
   },

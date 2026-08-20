@@ -83,7 +83,16 @@ async function sendViaResend(apiKey: string, payload: Record<string, unknown>): 
     body: JSON.stringify(payload),
   });
   if (!response.ok) {
-    console.error("Resend email request failed", { status: response.status });
+    const bodyText = await response.text().catch(() => "unknown");
+    console.error(
+      JSON.stringify({
+        event: "resend_request_failed",
+        status: response.status,
+        body: bodyText.slice(0, 500),
+        to: payload.to,
+        subject: payload.subject,
+      }),
+    );
   }
   return response.ok;
 }
@@ -194,6 +203,14 @@ async function handleQuote(request: Request, env: Env): Promise<Response> {
 
   const pdfLength = decodedBase64Length(pdfBase64);
   if (pdfLength === null || pdfLength === 0 || pdfLength > MAX_PDF_BYTES) {
+    console.log(
+      JSON.stringify({
+        event: "quote_pdf_invalid",
+        pdfLength,
+        maxBytes: MAX_PDF_BYTES,
+        email,
+      }),
+    );
     return json({ error: "The quote PDF is invalid or too large." }, 400);
   }
   if (!env.RESEND_API_KEY) return json({ error: "Email service is not configured." }, 503);

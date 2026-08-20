@@ -104,23 +104,23 @@ export default function HomePage({ lang }: HomePageProps) {
   const isEn = lang === "en";
   useSeoMeta({
     title: isEn
-      ? "Websites for Industrial and Trade Businesses | Forsa Design, Aberdeenshire"
-      : "Strony dla Firm Przemysłowych i Handlowych | Forsa Design, Aberdeenshire",
+      ? "Industrial Web Design UK | Web Design for Manufacturing & Engineering"
+      : "Web Design dla Przemysłu UK | Strony dla Produkcji i Inżynierii",
     description: isEn
-      ? "Web design for industrial and trade businesses across Scotland. Custom websites, e-commerce stores and bespoke web solutions. Based in Banff, Aberdeenshire."
-      : "Web design dla firm przemysłowych i handlowych w Szkocji. Dedykowane strony internetowe, sklepy i rozwiązania webowe. Siedziba w Banff, Aberdeenshire.",
+      ? "Industrial web design for manufacturing, engineering and offshore businesses across the UK. Custom websites, B2B e-commerce and bespoke web systems from Banff, Aberdeenshire."
+      : "Projektowanie stron dla przemysłu, produkcji i inżynierii w UK. Dedykowane strony, e-commerce B2B i systemy webowe. Siedziba w Banff, Aberdeenshire.",
     ogTitle: isEn
-      ? "Forsa Design | Web Design for Industrial and Trade Businesses"
-      : "Forsa Design | Web Design dla Firm Przemysłowych i Handlowych",
+      ? "Forsa Design | Industrial Web Design for Manufacturing & Engineering"
+      : "Forsa Design | Web Design dla Przemysłu i Produkcji",
     ogDescription: isEn
-      ? "Web design for industrial and trade businesses across Scotland. Custom websites, e-commerce stores and bespoke web solutions. Based in Banff, Aberdeenshire."
-      : "Web design dla firm przemysłowych i handlowych w Szkocji. Dedykowane strony internetowe, sklepy i rozwiązania webowe. Siedziba w Banff, Aberdeenshire.",
+      ? "Industrial web design for manufacturing, engineering and offshore businesses across the UK. Custom websites, B2B e-commerce and bespoke web systems."
+      : "Projektowanie stron dla przemysłu, produkcji i inżynierii w UK. Dedykowane strony, e-commerce B2B i systemy webowe.",
     twitterTitle: isEn
-      ? "Forsa Design | Web Design for Industrial and Trade Businesses"
-      : "Forsa Design | Web Design dla Firm Przemysłowych i Handlowych",
+      ? "Forsa Design | Industrial Web Design for Manufacturing & Engineering"
+      : "Forsa Design | Web Design dla Przemysłu i Produkcji",
     twitterDescription: isEn
-      ? "Web design for industrial and trade businesses across Scotland. Custom websites, e-commerce stores and bespoke web solutions. Based in Banff, Aberdeenshire."
-      : "Web design dla firm przemysłowych i handlowych w Szkocji. Dedykowane strony internetowe, sklepy i rozwiązania webowe. Siedziba w Banff, Aberdeenshire.",
+      ? "Industrial web design for manufacturing, engineering and offshore businesses across the UK. Custom websites, B2B e-commerce and bespoke web systems."
+      : "Projektowanie stron dla przemysłu, produkcji i inżynierii w UK. Dedykowane strony, e-commerce B2B i systemy webowe.",
     ogLocale: isEn ? "en_GB" : "pl_PL",
     canonical: buildHref(isEn ? "/en/" : "/pl/"),
     alternates: [

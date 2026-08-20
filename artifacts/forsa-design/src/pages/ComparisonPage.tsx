@@ -12,9 +12,9 @@ interface ComparisonPageProps {
 
 const content = {
   en: {
-    seoTitle: "Industrial Web Design Options | Forsa Design",
+    seoTitle: "Custom Website vs Template UK | Industrial Web Design Comparison",
     seoDesc:
-      "Compare industrial web design options in Aberdeenshire: custom builds, CMS templates, agencies and freelancers. Choose the right fit for your business.",
+      "Compare custom websites, CMS templates, agencies and freelancers for industrial web design in the UK. Find the right fit for manufacturing and engineering businesses.",
     heading: "Which Option Is Right for You?",
     intro:
       "Not every business needs a custom website. The right choice depends on your goals, budget, timeline, and how important flexibility, performance, and future growth are. Below is a practical comparison of the most common web solutions.",
@@ -355,7 +355,9 @@ export default function ComparisonPage({ lang }: ComparisonPageProps) {
           >
             <div className="w-12 h-1 bg-primary mb-8" />
             <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
-              {c.heading}
+              {lang === "en"
+                ? "Custom Website vs Template, Agency or Freelancer for Industrial Web Design"
+                : c.heading}
             </h1>
             <p className="text-xl text-foreground/70 font-light leading-relaxed max-w-2xl text-justify">
               {c.intro}

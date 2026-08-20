@@ -18,22 +18,24 @@ export default function QuoteCalculatorPage({ lang }: QuoteCalculatorPageProps) 
   }, [lang, syncLanguage]);
 
   useSeoMeta({
-    title: isEn ? "Quote Calculator | Forsa Design" : "Kalkulator wyceny | Forsa Design",
+    title: isEn
+      ? "Website Design Quote UK | Instant Estimate for Industrial Projects"
+      : "Wycena Strony Internetowej UK | Szybki Kalkulator dla Przemysłu",
     description: isEn
-      ? "Get an instant estimate for your website project. Custom pricing for landing pages, business sites, e-commerce and web applications."
-      : "Uzyskaj natychmiastow\u0105 wycen\u0119 swojego projektu strony. Ceny dla stron docelowych, firmowych, sklep\u00f3w i aplikacji webowych.",
+      ? "Get an instant website design quote for your industrial, manufacturing or engineering project. Custom pricing for UK businesses. No email required."
+      : "Uzyskaj natychmiastową wycenę strony dla projektu przemysłowego, produkcyjnego lub inżynieryjnego. Ceny dla firm w UK.",
     ogTitle: isEn
-      ? "Website Quote Calculator | Forsa Design"
-      : "Kalkulator wyceny strony | Forsa Design",
+      ? "Website Design Quote Calculator | Forsa Design"
+      : "Kalkulator Wyceny Strony | Forsa Design",
     ogDescription: isEn
-      ? "Get an instant estimate for your website project. Custom pricing for landing pages, business sites, e-commerce and web applications."
-      : "Uzyskaj natychmiastow\u0105 wycen\u0119 swojego projektu strony. Ceny dla stron docelowych, firmowych, sklep\u00f3w i aplikacji webowych.",
+      ? "Get an instant website design quote for your industrial, manufacturing or engineering project. Custom pricing for UK businesses."
+      : "Uzyskaj natychmiastową wycenę strony dla projektu przemysłowego, produkcyjnego lub inżynieryjnego. Ceny dla firm w UK.",
     twitterTitle: isEn
-      ? "Website Quote Calculator | Forsa Design"
-      : "Kalkulator wyceny strony | Forsa Design",
+      ? "Website Design Quote Calculator | Forsa Design"
+      : "Kalkulator Wyceny Strony | Forsa Design",
     twitterDescription: isEn
-      ? "Get an instant estimate for your website project. Custom pricing for landing pages, business sites, e-commerce and web applications."
-      : "Uzyskaj natychmiastow\u0105 wycen\u0119 swojego projektu strony. Ceny dla stron docelowych, firmowych, sklep\u00f3w i aplikacji webowych.",
+      ? "Get an instant website design quote for your industrial, manufacturing or engineering project. Custom pricing for UK businesses."
+      : "Uzyskaj natychmiastową wycenę strony dla projektu przemysłowego, produkcyjnego lub inżynieryjnego. Ceny dla firm w UK.",
     ogLocale: isEn ? "en_GB" : "pl_PL",
     canonical: buildHref(isEn ? "/en/quote" : "/pl/quote"),
     alternates: [

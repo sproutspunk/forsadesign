@@ -10,11 +10,11 @@ export default function ContactPage({ lang }: { lang: "en" | "pl" }) {
   const { syncLanguage } = useLanguage();
   const en = lang === "en";
   const title = en
-    ? "Contact: Get a Technical Quote | Forsa Design"
-    : "Kontakt: Zapytanie o Wycenę Techniczną | Forsa Design";
+    ? "Contact Industrial Web Design UK | Forsa Design, Aberdeenshire"
+    : "Kontakt Web Design dla Przemysłu UK | Forsa Design, Aberdeenshire";
   const description = en
-    ? "Request a quote for custom web development. Serving offshore, energy, and engineering firms across Scotland and UK."
-    : "Zapytaj o wycenę dedykowanego projektu webowego. Obsługujemy firmy offshore, energetyczne i inżynieryjne w całym UK i EU.";
+    ? "Contact Forsa Design for industrial web design, manufacturing websites and B2B web systems in Scotland and across the UK. Based in Banff, Aberdeenshire."
+    : "Skontaktuj się z Forsa Design w sprawie projektowania stron dla przemysłu, produkcji i systemów B2B w Szkocji i UK. Siedziba w Banff, Aberdeenshire.";
   useEffect(() => syncLanguage(lang), [lang, syncLanguage]);
   useSeoMeta({
     title,

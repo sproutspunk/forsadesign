@@ -11,11 +11,11 @@ export default function ServicesPage({ lang }: { lang: "en" | "pl" }) {
   const { syncLanguage } = useLanguage();
   const en = lang === "en";
   const title = en
-    ? "Services: Custom Web Systems for Heavy Industry | Forsa Design"
-    : "Usługi: Dedykowane Systemy Web dla Przemysłu Ciężkiego | Forsa Design";
+    ? "Industrial Web Design Services UK | Manufacturing, Offshore & Engineering"
+    : "Usługi Web Design dla Przemysłu UK | Produkcja, Offshore, Inżynieria";
   const description = en
-    ? "Hand-coded websites, B2B e-commerce for parts, and bespoke web systems for offshore, energy, and engineering firms. Based in Scotland."
-    : "Strony kodowane od podstaw, e-commerce B2B na części i dedykowane systemy webowe dla firm offshore, energetycznych i inżynieryjnych. Bazujemy w Szkocji.";
+    ? "Industrial web design services for manufacturing, offshore, energy and engineering firms in the UK. Custom websites, B2B e-commerce for parts, and bespoke web systems."
+    : "Usługi projektowania stron dla przemysłu, produkcji, offshore, energetyki i inżynierii w UK. Dedykowane strony, e-commerce B2B i systemy webowe.";
 
   useEffect(() => syncLanguage(lang), [lang, syncLanguage]);
   useSeoMeta({
@@ -104,7 +104,9 @@ export default function ServicesPage({ lang }: { lang: "en" | "pl" }) {
           <div className="container mx-auto px-6 max-w-4xl">
             <div className="w-12 h-1 bg-primary mb-8" />
             <h1 className="font-serif text-4xl md:text-6xl font-bold text-white mb-6">
-              {en ? "Web systems for heavy industry" : "Systemy webowe dla przemysłu ciężkiego"}
+              {en
+                ? "Industrial web design services for manufacturing, offshore and engineering"
+                : "Usługi web designu dla przemysłu produkcyjnego, offshore i inżynieryjnego"}
             </h1>
             <p className="text-xl text-foreground/70 font-light leading-relaxed max-w-3xl">
               {en
