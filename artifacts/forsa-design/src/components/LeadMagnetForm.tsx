@@ -69,8 +69,8 @@ export default function LeadMagnetForm({ isEn, source, className }: LeadMagnetFo
       <div className={`flex items-center gap-2 text-sm text-emerald-500 ${className ?? ""}`}>
         <CheckCircle2 className="w-4 h-4 flex-shrink-0" />
         {t(
-          "Check your inbox \u2014 the checklist is on its way.",
-          "Sprawd\u017a skrzynk\u0119 \u2014 checklista ju\u017c leci.",
+          "Check your inbox, the checklist is on its way.",
+          "Sprawd\u017a skrzynk\u0119, checklista ju\u017c leci.",
         )}
       </div>
     );

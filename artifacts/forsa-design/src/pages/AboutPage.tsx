@@ -187,7 +187,7 @@ const content: Record<"en" | "pl", AboutContent> = {
     heading: "Who's Behind This?",
     intro: [
       "My name is Miro. I founded Forsa Design after more than 20 years in international B2B sales. I traded in metalworking machinery, industrial equipment and engineering solutions across Europe and Asia. I sat on both sides of the procurement table. I know what the process looks like from the first email to the signed contract.",
-      "That experience taught me one thing: most industrial firms do excellent work, but their websites do not keep up with the quality of their service. And that costs contracts. Not because the work is poor \u2014 in today's B2B, the website is the first stage of verification.",
+      "That experience taught me one thing: most industrial firms do excellent work, but their websites do not keep up with the quality of their service. And that costs contracts. Not because the work is poor: in today's B2B, the website is the first stage of verification.",
       "I am not a London agency with fifteen people on the team and a coffee machine in the office. I am someone who understands industry, logistics and international trade. I now build websites that speak your customers' language. No templates. No unnecessary jargon. Just clean code and a clear message.",
       "Based in Banff, Aberdeenshire. Fluent in English and Polish. Serving clients in Scotland, across the UK and in selected EU export markets.",
     ],
