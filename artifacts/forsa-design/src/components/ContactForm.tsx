@@ -1,5 +1,6 @@
 import { useRef, useState } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { trackEvent } from "@/lib/consentManager";
 
 export default function ContactForm() {
   const { language } = useLanguage();
@@ -15,6 +16,20 @@ export default function ContactForm() {
     setErrorMessage("");
 
     const formData = new FormData(event.currentTarget);
+
+    // Honeypot check on the client so we can log bot attempts in analytics.
+    const gotcha = formData.get("_gotcha");
+    if (typeof gotcha === "string" && gotcha.trim() !== "") {
+      trackEvent("contact_form_bot_honeypot", { language });
+      setStatus("error");
+      setErrorMessage(
+        en
+          ? "We could not send your message. Please try again or email hello@forsadesign.co.uk."
+          : "Nie udało się wysłać wiadomości. Spróbuj ponownie lub napisz na hello@forsadesign.co.uk.",
+      );
+      return;
+    }
+
     const form = new URLSearchParams();
     formData.forEach((value, key) => {
       if (typeof value === "string") form.set(key, value);
@@ -29,6 +44,8 @@ export default function ContactForm() {
       });
       const result = (await response.json().catch(() => ({}))) as { error?: string };
       if (!response.ok) {
+        const errorCode = response.status.toString();
+        trackEvent("contact_form_error", { status: errorCode, language });
         throw new Error(
           result.error ||
             (en
@@ -36,6 +53,7 @@ export default function ContactForm() {
               : "Nie udało się wysłać wiadomości. Spróbuj ponownie lub napisz na hello@forsadesign.co.uk."),
         );
       }
+      trackEvent("contact_form_success", { language });
       setStatus("success");
       formRef.current?.reset();
     } catch (error) {

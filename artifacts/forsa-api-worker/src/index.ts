@@ -90,6 +90,7 @@ async function sendViaResend(apiKey: string, payload: Record<string, unknown>): 
 
 async function handleContact(request: Request, env: Env): Promise<Response> {
   if (isRateLimited(request, "contact")) {
+    console.log(JSON.stringify({ event: "contact_rate_limited", ip: clientIp(request) }));
     return json({ error: "Too many contact requests. Please try again later." }, 429);
   }
 
@@ -97,7 +98,10 @@ async function handleContact(request: Request, env: Env): Promise<Response> {
   if (text === null) return json({ error: "Request too large." }, 413);
 
   const body = new URLSearchParams(text);
-  if (body.get("_gotcha")) return json({ ok: true });
+  if (body.get("_gotcha")) {
+    console.log(JSON.stringify({ event: "contact_honeypot", ip: clientIp(request) }));
+    return json({ ok: true });
+  }
 
   const name = body.get("name")?.trim() ?? "";
   const email = body.get("email")?.trim() ?? "";

@@ -183,7 +183,7 @@ const content: Record<"en" | "pl", AboutContent> = {
     seoTitle: "About Miro: Industrial Web Developer | Forsa Design",
     seoDesc:
       "Miro, founder of Forsa Design. 20+ years in B2B industrial sales, now building procurement-ready websites for industrial firms in Scotland.",
-    heading: "Who's Behind This",
+    heading: "Who's Behind This?",
     intro: [
       "My name is Miro. I founded Forsa Design after more than 20 years in international B2B sales. I traded in metalworking machinery, industrial equipment and engineering solutions across Europe and Asia. I sat on both sides of the procurement table. I know what the process looks like from the first email to the signed contract.",
       "That experience taught me one thing: most industrial firms do excellent work, but their websites do not keep up with the quality of their service. And that costs contracts. Not because the work is poor \u2014 in today's B2B, the website is the first stage of verification.",
@@ -205,7 +205,7 @@ const content: Record<"en" | "pl", AboutContent> = {
     seoTitle: "O Forsa Design | Web dla Przemysłu",
     seoDesc:
       "Poznaj założyciela Forsa Design z 20-letnim doświadczeniem w sprzedaży B2B i tworzeniu stron dla przemysłu.",
-    heading: "Kto za tym stoi",
+    heading: "Kto za tym stoi?",
     intro: [
       "Nazywam się Miro. Forsa Design założyłem po ponad 20 latach w międzynarodowej sprzedaży B2B. Handlowałem maszynami do obróbki metalu, wyposażeniem przemysłowym i rozwiązaniami inżynieryjnymi w Europie i Azji. Siedziałem po obu stronach stołu zakupowego. Wiem, jak wygląda proces od pierwszego maila po podpisany kontrakt.",
       "To doświadczenie nauczyło mnie jednej rzeczy. Większość firm przemysłowych wykonuje świetną robotę, ale ich strony internetowe nie nadążają za poziomem ich usług. I to kosztuje kontrakty. Nie dlatego, że praca jest słaba. W dzisiejszym B2B strona to pierwszy etap weryfikacji.",

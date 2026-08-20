@@ -147,3 +147,20 @@ export function applyAnalyticsConsent(): void {
     removeAnalytics();
   }
 }
+
+// ── GA4 event helpers ───────────────────────────────────────────────────────
+// These helpers are safe to call even when analytics is not loaded. They rely
+// on the same consent gate as GA4 itself: events are only forwarded when the
+// user has accepted analytics cookies and the gtag global is available.
+
+/** Safe wrapper around gtag('event', ...) that respects analytics consent. */
+export function trackEvent(
+  eventName: string,
+  params?: Record<string, string | number | boolean>,
+): void {
+  if (typeof window === "undefined") return;
+  if (!hasAnalyticsConsent()) return;
+  const win = window as unknown as { gtag?: (...args: unknown[]) => void };
+  if (typeof win.gtag !== "function") return;
+  win.gtag("event", eventName, params);
+}
