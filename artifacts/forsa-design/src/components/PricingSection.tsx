@@ -1,6 +1,7 @@
 import { useLanguage } from "@/contexts/LanguageContext";
 import { motion } from "framer-motion";
 import { Check, ArrowRight, Sparkles } from "lucide-react";
+import { trackEvent } from "@/lib/consentManager";
 
 const presets = [
   {
@@ -156,6 +157,13 @@ export default function PricingSection() {
 
               <a
                 href={isEn ? "/en/quote" : "/pl/quote"}
+                onClick={() =>
+                  trackEvent("pricing_quote_click", {
+                    package: preset.id,
+                    price: preset.price,
+                    language,
+                  })
+                }
                 className={`w-full flex items-center justify-center gap-2 px-6 py-3 rounded-lg font-semibold text-sm transition-all ${
                   preset.popular
                     ? "bg-primary text-primary-foreground hover:bg-primary/90 hover:shadow-[0_0_20px_rgba(201,168,76,0.35)]"

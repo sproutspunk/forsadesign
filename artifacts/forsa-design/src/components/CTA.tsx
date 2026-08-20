@@ -1,8 +1,9 @@
 import { useLanguage } from "@/contexts/LanguageContext";
 import { motion } from "framer-motion";
+import { trackEvent } from "@/lib/consentManager";
 
 export default function CTA() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   return (
     <section className="py-24 bg-card border-t border-border/10">
@@ -22,6 +23,7 @@ export default function CTA() {
           </p>
           <motion.a
             href="#contact"
+            onClick={() => trackEvent("cta_click", { section: "cta", language })}
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.98 }}
             className="inline-flex items-center justify-center px-8 py-4 bg-primary text-primary-foreground font-semibold text-lg rounded-sm transition-shadow hover:shadow-[0_0_20px_rgba(201,168,76,0.45)]"

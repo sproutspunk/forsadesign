@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useLocation } from "wouter";
 import { ChevronDown, Menu, X } from "lucide-react";
+import { trackEvent } from "@/lib/consentManager";
 
 type DropdownKey = "services" | "work" | "about" | null;
 
@@ -51,6 +52,7 @@ export default function Header() {
   };
 
   const switchLang = (lang: "en" | "pl") => {
+    trackEvent("language_switched", { from: language, to: lang, path: location });
     syncLanguage(lang);
     let newPath = location.replace(/^\/(en|pl)/, `/${lang}`);
     if (lang === "pl" && /\/about\/?$/.test(newPath))

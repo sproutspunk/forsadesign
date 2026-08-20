@@ -13,6 +13,7 @@ import {
   Send,
   Loader2,
 } from "lucide-react";
+import { trackEvent } from "@/lib/consentManager";
 
 interface Breakdown {
   projectPrice: number;
@@ -97,6 +98,7 @@ export function QuoteSummary({
     };
     quotes.unshift(quote);
     localStorage.setItem("forsa-quotes", JSON.stringify(quotes.slice(0, 50)));
+    trackEvent("quote_saved", { language: isEn ? "en" : "pl", total: breakdown.total });
     setSaved(true);
     setShowSuccess(true);
     setTimeout(() => {
@@ -108,6 +110,7 @@ export function QuoteSummary({
   const handlePrint = () => window.print();
 
   const handleEmail = () => {
+    trackEvent("quote_email_client_open", { language: isEn ? "en" : "pl", total: breakdown.total });
     const subject = encodeURIComponent(
       t("Website Quote Request", "Zapytanie o wycen\u0119 strony"),
     );
@@ -163,6 +166,7 @@ export function QuoteSummary({
     try {
       const quoteId = createQuoteId();
       const pdfBytes = await createPdf(quoteId);
+      trackEvent("quote_downloaded", { language: isEn ? "en" : "pl", total: breakdown.total });
       downloadPdfBytes(pdfBytes, quoteId);
     } finally {
       setIsGenerating(false);
@@ -226,10 +230,17 @@ export function QuoteSummary({
         }
       }
       if (!response.ok || !result.ok) {
+        const statusCode = response.status.toString();
+        trackEvent("quote_email_error", { status: statusCode, language: isEn ? "en" : "pl" });
         throw new Error(
           result.error || t("Could not send the quote.", "Nie udalo sie wyslac wyceny."),
         );
       }
+      trackEvent("quote_email_sent", {
+        language: isEn ? "en" : "pl",
+        total: breakdown.total,
+        project: projectLabel,
+      });
       setEmailStep("done");
       downloadPdfBytes(pdfBytes, quoteId);
     } catch (error) {
@@ -304,7 +315,18 @@ export function QuoteSummary({
 
           <div className="border-t border-border/20 pt-4">
             <button
-              onClick={() => setShowLineItems((v) => !v)}
+              onClick={() => {
+                setShowLineItems((v) => {
+                  const next = !v;
+                  if (next) {
+                    trackEvent("quote_breakdown_expanded", {
+                      language: isEn ? "en" : "pl",
+                      total: breakdown.total,
+                    });
+                  }
+                  return next;
+                });
+              }}
               className="w-full flex items-center justify-between text-xs text-foreground/50 hover:text-foreground/80 transition-colors"
             >
               <span>{t("View cost breakdown", "Zestawienie koszt\u00f3w")}</span>
@@ -461,7 +483,10 @@ export function QuoteSummary({
                   </button>
                 </div>
                 <button
-                  onClick={onReset}
+                  onClick={() => {
+                    trackEvent("quote_reset", { language: isEn ? "en" : "pl" });
+                    onReset();
+                  }}
                   className="w-full flex items-center justify-center gap-2 px-4 py-3 text-sm font-bold rounded-lg border-2 border-red-400/60 text-red-300 bg-red-400/5 hover:border-red-400 hover:text-red-200 hover:bg-red-400/15 active:scale-[0.98] transition-all"
                 >
                   <RotateCcw className="w-4 h-4" />

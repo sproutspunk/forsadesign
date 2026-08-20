@@ -1,10 +1,11 @@
 import { lazy, Suspense } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { trackEvent } from "@/lib/consentManager";
 
 const TrustBar = lazy(() => import("@/components/TrustBar"));
 
 export default function Hero() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   return (
     <section
@@ -41,6 +42,7 @@ export default function Hero() {
 
           <a
             href="#contact"
+            onClick={() => trackEvent("cta_click", { section: "hero", language })}
             className="inline-flex items-center justify-center px-8 py-4 bg-primary text-primary-foreground font-semibold text-lg rounded-sm transition-shadow hover:shadow-[0_0_20px_rgba(201,168,76,0.45)]"
             data-testid="btn-hero-cta"
           >

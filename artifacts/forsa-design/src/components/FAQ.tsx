@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { motion, AnimatePresence } from "framer-motion";
 import { Plus, Minus, Search, ArrowRight } from "lucide-react";
+import { trackEvent } from "@/lib/consentManager";
 
 interface FaqItem {
   q: string;
@@ -44,7 +45,16 @@ export default function FAQ() {
     return () => clearTimeout(timer);
   }, []);
 
-  const toggle = (idx: number) => setOpenIndex((prev) => (prev === idx ? null : idx));
+  const toggle = (idx: number) => {
+    setOpenIndex((prev) => {
+      const next = prev === idx ? null : idx;
+      if (next !== null) {
+        const question = items[next]?.q.slice(0, 80);
+        trackEvent("faq_expanded", { question });
+      }
+      return next;
+    });
+  };
 
   return (
     <section id="faq" className="py-24 bg-background">
