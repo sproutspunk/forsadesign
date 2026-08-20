@@ -337,8 +337,8 @@ export default function AboutPage({ lang }: AboutPageProps) {
                   <tbody>
                     {c.comparison.slice(1).map((row) => (
                       <tr key={row[0]}>
-                        {row.map((cell) => (
-                          <td key={cell}>{cell}</td>
+                        {row.map((cell, i) => (
+                          <td key={`${row[0]}-${i}`}>{cell}</td>
                         ))}
                       </tr>
                     ))}
