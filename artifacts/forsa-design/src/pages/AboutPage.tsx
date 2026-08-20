@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import Scene3D from "@/components/Scene3D";
+import PlasmaBlob from "@/components/PlasmaBlob";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useSeoMeta, useJsonLd, buildHref } from "@/hooks/useSeoMeta";
 import Header from "@/components/Header";
@@ -263,16 +264,9 @@ export default function AboutPage({ lang }: AboutPageProps) {
       <Header />
       <main id="main-content" className="pt-28">
         <section className="about-hero container mx-auto max-w-6xl px-6 py-12 md:py-20">
-          <div
-            className="about-image relative h-[260px] overflow-hidden rounded-md border border-border/20 md:h-[560px]"
-            style={{
-              maskImage: "radial-gradient(ellipse 70% 75% at 50% 50%, black 50%, transparent 100%)",
-              WebkitMaskImage:
-                "radial-gradient(ellipse 70% 75% at 50% 50%, black 50%, transparent 100%)",
-            }}
-          >
+          <PlasmaBlob className="about-image relative h-[260px] overflow-hidden md:h-[560px]">
             <Scene3D />
-          </div>
+          </PlasmaBlob>
           <div className="about-intro">
             <h1 className="font-serif text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
               {c.heading}
