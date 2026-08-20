@@ -1,291 +1,227 @@
 import { useEffect } from "react";
+import Scene3D from "@/components/Scene3D";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useSeoMeta, useJsonLd, buildHref } from "@/hooks/useSeoMeta";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { m as motion } from "framer-motion";
-import { CheckCircle2 } from "lucide-react";
 
 interface AboutPageProps {
   lang: "en" | "pl";
 }
+type Pair = [string, string];
+type AboutContent = {
+  seoTitle: string;
+  seoDesc: string;
+  heading: string;
+  intro: string[];
+  backgroundHeading: string;
+  background: Pair[];
+  processHeading: string;
+  process: Pair[];
+  differentHeading: string;
+  different: Pair[];
+  comparison: string[][];
+  comparisonHref: string;
+  comparisonCta: string;
+  contactCta: string;
+};
 
-const content = {
+const shared = {
+  background: {
+    en: [
+      [
+        "Real business perspective",
+        "Having run a company for more than 20 years, negotiated international contracts across three continents and managed teams in multiple countries, I understand what a website needs to do for your bottom line. Every design decision is filtered through a business lens, not just an aesthetic one.",
+      ],
+      [
+        "Communication at every level",
+        "I have worked with clients and stakeholders from all walks of life. That translates into websites that speak clearly to your audience, whether they are local customers or international partners.",
+      ],
+      [
+        "Results-focused delivery",
+        "My career has been built on closing deals, managing projects end to end and delivering measurable outcomes. I bring that same discipline to web development: clear timelines, transparent communication and a focus on what actually moves the needle for your business.",
+      ],
+    ],
+    pl: [
+      [
+        "Prawdziwa perspektywa biznesowa",
+        "Prowadząc firmę przez ponad 20 lat, negocjując międzynarodowe kontrakty na trzech kontynentach i zarządzając zespołami w wielu krajach, rozumiem, co strona internetowa musi robić dla Twojego zysku. Każda decyzja projektowa jest filtrowana przez pryzmat biznesowy, nie tylko estetyczny.",
+      ],
+      [
+        "Komunikacja na każdym poziomie",
+        "Pracowałem z klientami i interesariuszami z każdej dziedziny życia. To przekłada się na strony, które jasno komunikują się z odbiorcami, czy to lokalnymi klientami, czy międzynarodowymi partnerami.",
+      ],
+      [
+        "Dostarczanie wyników",
+        "Cała moja kariera opierała się na zawieraniu umów, zarządzaniu projektami od A do Z i dostarczaniu mierzalnych rezultatów. Tę samą dyscyplinę przenoszę do web developmentu: jasne terminy, transparentna komunikacja i skupienie na tym, co naprawdę przynosi korzyść Twojej firmie.",
+      ],
+    ],
+  },
+  process: {
+    en: [
+      [
+        "1. Discovery and strategy (weeks 1-2)",
+        "We conduct interviews, analyse your industry, competition and users, and define business goals.",
+      ],
+      [
+        "2. Design (weeks 3-4)",
+        "We create wireframes, mockups and a visual strategy. Everything is approved by you before we write a line of code.",
+      ],
+      [
+        "3. Development (weeks 5-8)",
+        "We build the site with a focus on performance, security, SEO and conversion.",
+      ],
+      [
+        "4. Testing and optimisation (week 9)",
+        "Tests across all devices and browsers. Performance analysis, security and SEO.",
+      ],
+      [
+        "5. Launch and support (ongoing)",
+        "We deploy the site live. The first few weeks we are in close contact, then we transition to ongoing support.",
+      ],
+    ],
+    pl: [
+      [
+        "1. Analiza i strategia (tygodnie 1-2)",
+        "Przeprowadzamy wywiady, analizujemy Twoją branżę, konkurencję, użytkowników, definiujemy cele biznesowe.",
+      ],
+      [
+        "2. Projektowanie (tygodnie 3-4)",
+        "Tworzymy wireframe'y, mockupy i strategię wizualną. Wszystko zatwierdzone przez Ciebie, zanim zaczniemy kodować.",
+      ],
+      [
+        "3. Rozwój (tygodnie 5-8)",
+        "Budujemy stronę z naciskiem na wydajność, bezpieczeństwo, SEO i konwersję.",
+      ],
+      [
+        "4. Testowanie i optymalizacja (tydzień 9)",
+        "Testy na wszystkich urządzeniach i przeglądarkach, analiza wydajności, bezpieczeństwa, SEO.",
+      ],
+      [
+        "5. Uruchomienie i wsparcie (na bieżąco)",
+        "Wdrażamy stronę live. Pierwszych kilka tygodni mamy ścisły kontakt, potem przystępujemy do wsparcia.",
+      ],
+    ],
+  },
+  different: {
+    en: [
+      ["No templates", "Every project starts from scratch, tailored to your industry and goals."],
+      [
+        "Focus on business results",
+        "We measure everything. Does the site attract users, convert and support sales?",
+      ],
+      [
+        "You own everything",
+        "Your domain, hosting and content are always under your control. No lock-in, no dependency on a single provider.",
+      ],
+      [
+        "Long-term partnership",
+        "We support you months and years after launch. This is not a project, it is a collaboration.",
+      ],
+      [
+        "Transparent communication",
+        "You know what is being done, why and when it will be ready. No hidden fees, no bureaucratic tricks.",
+      ],
+    ],
+    pl: [
+      ["Bez szablonów", "Każdy projekt zaczynamy od zera, dostosowany do Twojej branży i celów."],
+      [
+        "Fokus na wyniki biznesowe",
+        "Mierzymy wszystko. Czy strona przyciąga użytkowników, konwertuje, wspiera sprzedaż?",
+      ],
+      [
+        "Wszystko należy do Ciebie",
+        "Domena, hosting i treść zawsze są pod Twoją kontrolą. Bez uzależnienia od dostawcy.",
+      ],
+      [
+        "Długoterminowe partnerstwo",
+        "Wspieramy Cię miesiące i lata po uruchomieniu. To nie projekt, to współpraca.",
+      ],
+      [
+        "Transparentna komunikacja",
+        "Wiesz, co się robi, dlaczego i kiedy będzie gotowe. Brak ukrytych opłat, brak biurokratycznych sztuczek.",
+      ],
+    ],
+  },
+};
+
+const comparison = [
+  ["Aspect", "CMS template", "Non-specialist agency", "Freelancer", "Forsa Design"],
+  ["Price", "£800-2,000", "£3,000-8,000", "£1,500-4,000", "£1,200-12,000+"],
+  ["Turnaround", "2-4 weeks", "6-12 weeks", "4-8 weeks", "8-12 weeks"],
+  [
+    "Design uniqueness",
+    "Looks like competition",
+    "Sometimes template-based",
+    "Varies",
+    "Unique, tailored",
+  ],
+  ["Site speed", "Average (plugin-heavy)", "Good (if clean code)", "Varies", "High (optimised)"],
+  ["SEO and optimisation", "Basic", "Average", "Varies", "Advanced (Schema, E-E-A-T)"],
+  ["Technical support", "Plugins required", "Optional (extra cost)", "Limited", "Included"],
+  [
+    "Security (SSL, GDPR, PCI)",
+    "Depends on plugins",
+    "Generally yes",
+    "Varies",
+    "Yes, full documentation",
+  ],
+  [
+    "Integrations (CRM, ERP)",
+    "Plugin ecosystem",
+    "Can be done",
+    "Varies",
+    "Yes, custom development",
+  ],
+  ["Scalability", "Difficult (template lock-in)", "Possible", "Possible", "Easy (custom code)"],
+  ["Portability", "Medium", "High", "High", "High (full control)"],
+  ["Brand consistency", "Low", "Medium", "Varies", "High (guidelines integrated)"],
+];
+
+const content: Record<"en" | "pl", AboutContent> = {
   en: {
     seoTitle: "About Miro: Industrial Web Developer | Forsa Design",
     seoDesc:
-      "Miro, founder of Forsa Design. 20+ years in B2B industrial sales, now building procurement-ready websites for offshore and engineering firms in Scotland.",
-    heading: "Meet the Founder of Forsa Design",
-    intro:
-      "My name is Miro. I started Forsa Design after more than 20 years in international B2B sales. I traded metalworking machinery, industrial equipment and engineering solutions across Europe and Asia. I sat on both sides of the procurement table. I know what the process looks like from the first email to the signed contract.",
-    body2:
-      "That experience taught me one thing: most industrial firms do excellent work, but their websites do not keep up. And it costs contracts. I am not a London agency with fifteen people and a coffee shop in the office. I am someone who understands industry, logistics and international trade. I now build websites that speak your customers' language. No templates. No unnecessary jargon. Just clean code and a clear message.",
-    body3:
-      "Based in Banff, Aberdeenshire. Fluent in English and Polish. Serving Scotland, the UK and selected EU export markets.",
-    whatWeDoHeading: "Why This Background Matters",
-    services: [
-      {
-        title: "Real Business Perspective",
-        desc: "Having run a company for 20 years, negotiated international contracts across three continents, and managed teams in multiple countries, I understand what a website needs to do for your bottom line. Every design decision is filtered through a business lens, not just an aesthetic one.",
-      },
-      {
-        title: "Communication at Every Level",
-        desc: "I've worked with clients and stakeholders from all walks of life. This translates into websites that speak clearly to your audience, whether they are local customers or international partners.",
-      },
-      {
-        title: "Results-Focused Delivery",
-        desc: "My career has been built on closing deals, managing projects end-to-end, and delivering measurable outcomes. I bring the same discipline to web development: clear timelines, transparent communication, and a focus on what actually moves the needle for your business.",
-      },
+      "Miro, founder of Forsa Design. 20+ years in B2B industrial sales, now building procurement-ready websites for industrial firms in Scotland.",
+    heading: "Meet the Founder",
+    intro: [
+      "My name is Miro. I founded Forsa Design after more than 20 years in international B2B sales. I traded in metalworking machinery, industrial equipment and engineering solutions across Europe and Asia. I sat on both sides of the procurement table. I know what the process looks like from the first email to the signed contract.",
+      "That experience taught me one thing: most industrial firms do excellent work, but their websites do not keep up with the quality of their service. And that costs contracts. Not because the work is poor \u2014 in today's B2B, the website is the first stage of verification.",
+      "I am not a London agency with fifteen people on the team and a coffee machine in the office. I am someone who understands industry, logistics and international trade. I now build websites that speak your customers' language. No templates. No unnecessary jargon. Just clean code and a clear message.",
+      "Based in Banff, Aberdeenshire. Fluent in English and Polish. Serving clients in Scotland, across the UK and in selected EU export markets.",
     ],
-    processHeading: "Our Process",
-    steps: [
-      {
-        num: "01",
-        title: "Discovery & Strategy",
-        period: "Weeks 1-2",
-        desc: "We conduct interviews, analyse your industry, competition, and users, and define business goals.",
-      },
-      {
-        num: "02",
-        title: "Design",
-        period: "Weeks 3-4",
-        desc: "We create wireframes, mockups, and a visual strategy. Everything approved by you before we write a line of code.",
-      },
-      {
-        num: "03",
-        title: "Development",
-        period: "Weeks 5-8",
-        desc: "We build the site with a focus on performance, security, SEO, and conversion.",
-      },
-      {
-        num: "04",
-        title: "Testing & Optimisation",
-        period: "Week 9",
-        desc: "Tests across all devices and browsers, performance analysis, security, SEO.",
-      },
-      {
-        num: "05",
-        title: "Launch & Support",
-        period: "Ongoing",
-        desc: "We deploy the site live. The first few weeks we're in close contact, then we transition to ongoing support.",
-      },
-    ],
-    differentiatorHeading: "What Sets Us Apart",
-    differentiators: [
-      {
-        title: "No templates.",
-        desc: "Every project starts from scratch, tailored to your industry and goals.",
-      },
-      {
-        title: "Focus on business results.",
-        desc: "We measure everything. Whether the site attracts users, converts, and supports sales.",
-      },
-      {
-        title: "You own everything.",
-        desc: "Your domain, hosting and content are always in your control. No lock-in, no dependency on a single provider.",
-      },
-      {
-        title: "Long-term partnership.",
-        desc: "We support you months and years after launch. This isn't a project, it's a collaboration.",
-      },
-      {
-        title: "Transparent communication.",
-        desc: "You know what's being done, why, and when it will be ready. No hidden fees, no bureaucratic tricks.",
-      },
-    ],
-    comparisonHeading: "How We Compare",
-    comparisonSub:
-      "An honest look at the options available to you, so you can make the right decision for your business.",
-    tableHeaders: ["Aspect", "CMS Template", "Non-specialist Agency", "Freelancer", "Forsa Design"],
-    tableRows: [
-      ["Price", "£800-2,000", "£3,000-8,000", "£1,500-4,000", "£1,200-12,000+"],
-      ["Turnaround", "2-4 weeks", "6-12 weeks", "4-8 weeks", "8-12 weeks"],
-      [
-        "Design uniqueness",
-        "Looks like competition",
-        "Sometimes template-based",
-        "Varies",
-        "Unique, tailored",
-      ],
-      [
-        "Site speed",
-        "Average (plug-in-heavy)",
-        "Good (if clean code)",
-        "Varies",
-        "High (optimised)",
-      ],
-      ["SEO + Optimisation", "Basic", "Average", "Varies", "Advanced (Schema, E-E-A-T)"],
-      ["Technical support", "Plug-ins required", "Optional (extra cost)", "Limited", "Included"],
-      [
-        "Security (SSL, GDPR, PCI)",
-        "Depends on plug-ins",
-        "Generally yes",
-        "Varies",
-        "Yes, full documentation",
-      ],
-      [
-        "Integrations (CRM, ERP)",
-        "Plug-in ecosystem",
-        "Can be done",
-        "Varies",
-        "Yes, custom development",
-      ],
-      ["Scalability", "Difficult (template lock-in)", "Possible", "Possible", "Easy (custom code)"],
-      ["Portability", "Medium", "High", "High", "High (full control)"],
-      ["Brand consistency", "Low", "Medium", "Varies", "High (guidelines integrated)"],
-    ],
-    forsa: "Forsa Design",
+    backgroundHeading: "Why this background matters",
+    background: shared.background.en as Pair[],
+    processHeading: "How we work",
+    process: shared.process.en as Pair[],
+    differentHeading: "What sets us apart",
+    different: shared.different.en as Pair[],
+    comparison,
+    comparisonHref: "/en/comparison/",
     comparisonCta: "See full comparison",
-    comparisonHref: "/en/comparison",
     contactCta: "Start a Project",
-    contactHref: "/en/contact",
   },
   pl: {
     seoTitle: "O Forsa Design | Web dla Przemysłu",
     seoDesc:
-      "Poznaj założyciela Forsa Design z 20-letnim doświadczeniem w sprzedaży B2B i tworzeniu stron oraz systemów webowych dla przemysłu.",
-    heading: "Poznaj Założyciela Forsa Design",
-    intro:
+      "Poznaj założyciela Forsa Design z 20-letnim doświadczeniem w sprzedaży B2B i tworzeniu stron dla przemysłu.",
+    heading: "Kto za tym stoi",
+    intro: [
       "Nazywam się Miro. Forsa Design założyłem po ponad 20 latach w międzynarodowej sprzedaży B2B. Handlowałem maszynami do obróbki metalu, wyposażeniem przemysłowym i rozwiązaniami inżynieryjnymi w Europie i Azji. Siedziałem po obu stronach stołu zakupowego. Wiem, jak wygląda proces od pierwszego maila po podpisany kontrakt.",
-    body2:
-      "To doświadczenie nauczyło mnie jednej rzeczy. Większość firm przemysłowych wykonuje świetną robotę, ale ich strony internetowe nie nadążają za poziomem ich usług. I to kosztuje kontrakty. Nie dlatego, że praca jest słaba, tylko dlatego, że w dzisiejszym B2B strona to pierwszy etap weryfikacji. Nie jestem agencją z Londynu z piętnastoma osobami w zespole i kawiarnią w biurze. Jestem człowiekiem, który rozumie przemysł, logistykę i handel międzynarodowy. Teraz buduję strony, które komunikują się językiem Twoich klientów. Bez szablonów. Bez zbędnego żargonu. Tylko czysty kod i jasny przekaz.",
-    body3:
-      "Siedziba w Banff, Aberdeenshire. Biegły w językach angielskim i polskim. Obsługujemy klientów w Szkocji, w całej Wielkiej Brytanii oraz na wybranych rynkach eksportowych UE.",
-    whatWeDoHeading: "Dlaczego To Doświadczenie Ma Znaczenie",
-    services: [
-      {
-        title: "Perspektywa Prawdziwego Biznesu",
-        desc: "Prowadząc firmę przez 20 lat, negocjując międzynarodowe kontrakty na trzech kontynentach i zarządzając zespołami w wielu krajach, rozumiem, co strona internetowa musi robić dla Twojego zysku. Każda decyzja projektowa jest filtrowana przez pryzmat biznesowy, nie tylko estetyczny.",
-      },
-      {
-        title: "Komunikacja na każdym poziomie",
-        desc: "Pracowałem z klientami i interesariuszami z każdej dziedziny życia. To przekłada się na strony, które jasno komunikują się z odbiorcami, czy to lokalnymi klientami, czy międzynarodowymi partnerami.",
-      },
-      {
-        title: "Dostarczanie wyników",
-        desc: "Cała moja kariera opierała się na zawieraniu umów, zarządzaniu projektami od A do Z i dostarczaniu mierzalnych rezultatów. Tę samą dyscyplinę przenoszę do web developmentu: jasne terminy, transparentna komunikacja i skupienie na tym, co naprawdę przynosi korzyść Twojej firmie.",
-      },
+      "To doświadczenie nauczyło mnie jednej rzeczy. Większość firm przemysłowych wykonuje świetną robotę, ale ich strony internetowe nie nadążają za poziomem ich usług. I to kosztuje kontrakty. Nie dlatego, że praca jest słaba. W dzisiejszym B2B strona to pierwszy etap weryfikacji.",
+      "Nie jestem agencją z Londynu z piętnastoma osobami w zespole i kawiarnią w biurze. Jestem człowiekiem, który rozumie przemysł, logistykę i handel międzynarodowy. Teraz buduję strony, które komunikują się językiem Twoich klientów. Bez szablonów. Bez zbędnego żargonu. Tylko czysty kod i jasny przekaz.",
+      "Siedziba w Banff, Aberdeenshire. Pracuję po angielsku i polsku. Obsługuję klientów w Szkocji, w całej Wielkiej Brytanii oraz na wybranych rynkach eksportowych UE.",
     ],
-    processHeading: "Nasz Proces",
-    steps: [
-      {
-        num: "01",
-        title: "Odkrywanie i Strategia",
-        period: "Tygodnie 1-2",
-        desc: "Przeprowadzamy wywiady, analizujemy Twoją branżę, konkurencję, użytkowników, definiujemy cele biznesowe.",
-      },
-      {
-        num: "02",
-        title: "Projektowanie",
-        period: "Tygodnie 3-4",
-        desc: "Tworzymy wireframe'y, mockupy i strategię wizualną. Wszystko zatwierdzone przez Ciebie, zanim zaczniemy kodować.",
-      },
-      {
-        num: "03",
-        title: "Rozwój",
-        period: "Tygodnie 5-8",
-        desc: "Budujemy stronę z naciskiem na wydajność, bezpieczeństwo, SEO i konwersję.",
-      },
-      {
-        num: "04",
-        title: "Testowanie i optymalizacja",
-        period: "Tydzień 9",
-        desc: "Testy na wszystkich urządzeniach i przeglądarkach, analiza wydajności, bezpieczeństwa, SEO.",
-      },
-      {
-        num: "05",
-        title: "Uruchomienie i Wsparcie",
-        period: "Na bieżąco",
-        desc: "Wdrażamy stronę live. Pierwszych kilka tygodni mamy ścisły kontakt, potem przystępujemy do wsparcia.",
-      },
-    ],
-    differentiatorHeading: "Co Nas Wyróżnia",
-    differentiators: [
-      {
-        title: "Nie szablony.",
-        desc: "Każdy projekt zaczynamy od zera, dostosowany do Twojej branży i celów.",
-      },
-      {
-        title: "Fokus na wyniki biznesowe.",
-        desc: "Mierzy się wszystko. Czy strona przyciąga użytkowników, konwertuje, wspiera sprzedaż?",
-      },
-      {
-        title: "Wszystko należy do Ciebie.",
-        desc: "Domena, hosting i treść zawsze są pod Twoją kontrolą. Bez uzależnienia od dostawcy.",
-      },
-      {
-        title: "Długoterminowe partnerstwo.",
-        desc: "Wspieramy Cię miesiące i lata po uruchomieniu. To nie projekt, to współpraca.",
-      },
-      {
-        title: "Transparentna komunikacja.",
-        desc: "Wiesz, co się robi, dlaczego i kiedy będzie gotowe. Brak ukrytych opłat, brak biurokratycznych sztuczek.",
-      },
-    ],
-    comparisonHeading: "Jak Wypadamy na Tle Rynku",
-    comparisonSub:
-      "Uczciwe zestawienie dostępnych opcji, żebyś mógł podjąć właściwą decyzję dla swojego biznesu.",
-    tableHeaders: [
-      "Aspekt",
-      "Szablon CMS",
-      "Agencja bez specjalizacji",
-      "Freelancer",
-      "Forsa Design",
-    ],
-    tableRows: [
-      ["Cena", "800-2 000 £", "3 000-8 000 £", "1 500-4 000 £", "1 200-12 000 £+"],
-      ["Czas realizacji", "2-4 tygodnie", "6-12 tygodni", "4-8 tygodni", "8-12 tygodni"],
-      [
-        "Unikalność designu",
-        "Szablonowy (jak konkurencja)",
-        "Czasem oparty na szablonie",
-        "Zależy",
-        "Unikalny, dostosowany",
-      ],
-      [
-        "Szybkość strony",
-        "Średnia (dużo wtyczek)",
-        "Dobra (jeśli czysty kod)",
-        "Zależy",
-        "Wysoka (optymalizacja w cenie)",
-      ],
-      ["SEO + Optymalizacja", "Podstawowa", "Średnia", "Zależy", "Zaawansowana (Schema, E-E-A-T)"],
-      [
-        "Wsparcie techniczne",
-        "Wymaga wtyczek",
-        "Opcjonalnie (extra opłata)",
-        "Ograniczone",
-        "Zawarte w pakiecie",
-      ],
-      [
-        "Bezpieczeństwo (SSL, RODO, PCI)",
-        "Zależy od wtyczek",
-        "Generalnie tak",
-        "Zależy",
-        "Tak, pełna dokumentacja",
-      ],
-      [
-        "Integracje (CRM, ERP)",
-        "Ekosystem wtyczek",
-        "Mogą zrobić",
-        "Zależy",
-        "Tak, dedykowane rozwiązanie",
-      ],
-      [
-        "Skalowanie",
-        "Trudne (uzależnienie od szablonu)",
-        "Możliwe",
-        "Możliwe",
-        "Proste (dedykowany kod)",
-      ],
-      ["Przenośność", "Średnia", "Wysoka", "Wysoka", "Wysoka (pełna kontrola)"],
-      ["Spójność marki", "Mała", "Średnia", "Zależy", "Wysoka (zintegrowane wytyczne marki)"],
-    ],
-    forsa: "Forsa Design",
-    comparisonCta: "Zobacz pełne porównanie",
-    comparisonHref: "/pl/comparison",
-    contactCta: "Rozpocznij Projekt",
-    contactHref: "/pl/contact",
+    backgroundHeading: "Dlaczego to doświadczenie ma znaczenie",
+    background: shared.background.pl as Pair[],
+    processHeading: "Jak pracujemy",
+    process: shared.process.pl as Pair[],
+    differentHeading: "Co nas wyróżnia",
+    different: shared.different.pl as Pair[],
+    comparison: [],
+    comparisonHref: "",
+    comparisonCta: "",
+    contactCta: "Rozpocznij projekt",
   },
 };
 
@@ -293,11 +229,8 @@ export default function AboutPage({ lang }: AboutPageProps) {
   const { syncLanguage } = useLanguage();
   const c = content[lang];
   const homeHref = lang === "en" ? "/en/" : "/pl/";
-
-  useEffect(() => {
-    syncLanguage(lang);
-  }, [lang, syncLanguage]);
-
+  const aboutPath = lang === "en" ? "/en/about" : "/pl/o-nas";
+  useEffect(() => syncLanguage(lang), [lang, syncLanguage]);
   useSeoMeta({
     title: c.seoTitle,
     description: c.seoDesc,
@@ -306,279 +239,129 @@ export default function AboutPage({ lang }: AboutPageProps) {
     twitterTitle: c.seoTitle,
     twitterDescription: c.seoDesc,
     ogLocale: lang === "en" ? "en_GB" : "pl_PL",
-    canonical: buildHref(`/${lang}/about`),
+    canonical: buildHref(aboutPath),
     alternates: [
       { lang: "en", href: buildHref("/en/about") },
-      { lang: "pl", href: buildHref("/pl/about") },
+      { lang: "pl", href: buildHref("/pl/o-nas") },
     ],
   });
-
   useJsonLd(
     {
       "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "Organization",
-          "@id": "https://forsadesign.co.uk/#organization",
-          name: "Forsa Design",
-          url: "https://forsadesign.co.uk",
-          logo: {
-            "@type": "ImageObject",
-            url: "https://forsadesign.co.uk/logo-new.png?v=6",
-          },
-          email: "hello@forsadesign.co.uk",
-          description:
-            "Industrial web design studio based in Banff, Aberdeenshire, building procurement-ready websites and bespoke web systems for UK and EU businesses.",
-          areaServed: ["GB", "EU"],
-          knowsAbout: [
-            "Web Design",
-            "Web Development",
-            "SEO",
-            "Brand Strategy",
-            "E-commerce",
-            "Industrial Web Design",
-            "B2B Procurement",
-            "Offshore Energy",
-            "Engineering",
-            "Industrial Equipment",
-            "Manufacturing",
-          ],
-        },
-        {
-          "@type": "LocalBusiness",
-          "@id": "https://forsadesign.co.uk/#localbusiness",
-          name: "Forsa Design",
-          url: "https://forsadesign.co.uk",
-          email: "hello@forsadesign.co.uk",
-          description:
-            "Industrial web design studio based in Banff, Aberdeenshire, building procurement-ready websites and bespoke web systems for UK and EU businesses.",
-          address: {
-            "@type": "PostalAddress",
-            addressLocality: "Banff",
-            addressRegion: "Scotland",
-            addressCountry: "GB",
-          },
-          areaServed: ["Scotland", "United Kingdom", "European Union"],
-          priceRange: "££",
-          knowsAbout: [
-            "Web Design",
-            "Web Development",
-            "SEO",
-            "Brand Strategy",
-            "E-commerce",
-            "Industrial Web Design",
-            "B2B Procurement",
-            "Offshore Energy",
-            "Engineering",
-            "Industrial Equipment",
-            "Manufacturing",
-          ],
-        },
-        {
-          "@type": "BreadcrumbList",
-          itemListElement: [
-            {
-              "@type": "ListItem",
-              position: 1,
-              name: lang === "en" ? "Home" : "Strona Główna",
-              item: `https://forsadesign.co.uk/${lang}/`,
-            },
-            {
-              "@type": "ListItem",
-              position: 2,
-              name: lang === "en" ? "About" : "O Nas",
-              item: `https://forsadesign.co.uk/${lang}/about`,
-            },
-          ],
-        },
-      ],
+      "@type": "AboutPage",
+      name: c.heading,
+      url: `https://forsadesign.co.uk${aboutPath}`,
+      inLanguage: lang === "en" ? "en-GB" : "pl-PL",
+      about: { "@type": "Organization", name: "Forsa Design" },
     },
     "about-page",
   );
-
+  const sectionClass = "py-20 md:py-24 bg-background";
+  const headingClass = "font-serif text-3xl md:text-4xl font-bold text-white mb-10";
   return (
     <div className="min-h-[100dvh] bg-background text-foreground">
       <Header />
-      {/* Hero */}
-      <section id="main-content" className="pt-36 pb-20 bg-card border-b border-border/10">
-        <div className="container mx-auto px-6 max-w-4xl">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
+      <main id="main-content" className="pt-28">
+        <section className="about-hero container mx-auto max-w-6xl px-6 py-12 md:py-20">
+          <div
+            className="about-image relative h-[440px] overflow-hidden rounded-md border border-border/20 md:h-[560px]"
+            style={{
+              maskImage: "radial-gradient(ellipse 70% 75% at 50% 50%, black 50%, transparent 100%)",
+              WebkitMaskImage:
+                "radial-gradient(ellipse 70% 75% at 50% 50%, black 50%, transparent 100%)",
+            }}
           >
-            <div className="w-12 h-1 bg-primary mb-8" />
-            <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+            <Scene3D />
+          </div>
+          <div className="about-intro">
+            <h1 className="font-serif text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
               {c.heading}
             </h1>
-            <div className="w-full text-xl text-foreground/70 font-light leading-relaxed text-justify space-y-6">
-              <p>{c.intro}</p>
-              <p>{c.body2}</p>
-              <p>{c.body3}</p>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-      {/* What We Do */}
-      <section className="py-24 bg-background">
-        <div className="container mx-auto px-6 max-w-5xl">
-          <h2 className="font-serif text-3xl md:text-4xl font-bold text-white mb-12">
-            {c.whatWeDoHeading}
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {c.services.map((service, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-80px" }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="bg-card border border-border/20 rounded-md p-8"
-              >
-                <div className="w-8 h-1 bg-primary mb-6" />
-                <h3 className="font-serif text-xl font-bold text-white mb-4">{service.title}</h3>
-                <p className="text-foreground/70 font-light leading-relaxed text-justify">
-                  {service.desc}
-                </p>
-              </motion.div>
+            {c.intro.map((paragraph) => (
+              <p key={paragraph}>{paragraph}</p>
             ))}
           </div>
-        </div>
-      </section>
-      {/* Process */}
-      <section className="py-24 bg-card">
-        <div className="container mx-auto px-6 max-w-5xl">
-          <h2 className="font-serif text-3xl md:text-4xl font-bold text-white mb-12">
-            {c.processHeading}
-          </h2>
-          <div className="space-y-6">
-            {c.steps.map((step, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-60px" }}
-                transition={{ duration: 0.5, delay: i * 0.08 }}
-                className="flex gap-8 items-start border-b border-border/10 pb-6 last:border-0 last:pb-0"
-              >
-                <span className="font-serif text-4xl font-bold text-primary/30 leading-none shrink-0 w-14">
-                  {step.num}
-                </span>
-                <div>
-                  <div className="flex items-center gap-3 mb-2">
-                    <h3 className="font-serif text-lg font-bold text-white">{step.title}</h3>
-                    <span className="text-xs text-primary/70 font-medium border border-primary/20 rounded px-2 py-0.5">
-                      {step.period}
-                    </span>
-                  </div>
-                  <p className="text-foreground/70 font-light leading-relaxed">{step.desc}</p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-      {/* Differentiators */}
-      <section className="py-24 bg-background">
-        <div className="container mx-auto px-6 max-w-5xl">
-          <h2 className="font-serif text-3xl md:text-4xl font-bold text-white mb-12">
-            {c.differentiatorHeading}
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {c.differentiators.map((d, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-60px" }}
-                transition={{ duration: 0.5, delay: i * 0.08 }}
-                className="flex gap-4"
-              >
-                <CheckCircle2 className="text-primary mt-0.5 shrink-0" size={20} />
-                <div>
-                  <span className="font-medium text-white">{d.title}</span>{" "}
-                  <span className="text-foreground/70 font-light">{d.desc}</span>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-      {/* Comparison Table */}
-      {lang === "en" && (
-        <section className="py-24 bg-card">
-          <div className="container mx-auto px-6 max-w-6xl">
-            <h2 className="font-serif text-3xl md:text-4xl font-bold text-white mb-4">
-              {c.comparisonHeading}
-            </h2>
-            <p className="text-foreground/60 font-light mb-12 max-w-2xl">{c.comparisonSub}</p>
-            <div className="overflow-x-auto rounded-md border border-border/20">
-              <table className="w-full text-sm">
-                <thead>
-                  <tr className="border-b border-border/20">
-                    {c.tableHeaders.map((h, i) => (
-                      <th
-                        key={i}
-                        className={`px-4 py-4 text-left font-medium ${
-                          i === c.tableHeaders.length - 1
-                            ? "text-primary"
-                            : i === 0
-                              ? "text-foreground/80 w-40"
-                              : "text-foreground/50"
-                        }`}
-                      >
-                        {h}
-                      </th>
-                    ))}
-                  </tr>
-                </thead>
-                <tbody>
-                  {c.tableRows.map((row, ri) => (
-                    <tr
-                      key={ri}
-                      className="border-b border-border/10 last:border-0 hover:bg-background/30 transition-colors"
-                    >
-                      {row.map((cell, ci) => (
-                        <td
-                          key={ci}
-                          className={`px-4 py-3 ${
-                            ci === 0
-                              ? "font-medium text-foreground/80"
-                              : ci === row.length - 1
-                                ? "text-primary font-medium"
-                                : "text-foreground/50"
-                          }`}
-                        >
-                          {cell}
-                        </td>
-                      ))}
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-            <div className="mt-8 text-right">
-              <a
-                href={c.comparisonHref}
-                className="inline-flex items-center gap-2 text-primary font-medium hover:underline"
-              >
-                {c.comparisonCta} →
-              </a>
+        </section>
+        <section className={`${sectionClass} about-background`}>
+          <div className="container mx-auto max-w-5xl px-6">
+            <h2 className={headingClass}>{c.backgroundHeading}</h2>
+            <div className="grid gap-8 md:grid-cols-3">
+              {c.background.map(([title, description]) => (
+                <article key={title}>
+                  <h3 className="font-serif text-xl font-bold text-white mb-4">{title}</h3>
+                  <p className="text-foreground/70 leading-relaxed">{description}</p>
+                </article>
+              ))}
             </div>
           </div>
         </section>
-      )}
-      {/* CTA */}
-      <section className="py-20 bg-background border-t border-border/10">
-        <div className="container mx-auto px-6 text-center">
+        <section className={`${sectionClass} about-process bg-card`}>
+          <div className="container mx-auto max-w-5xl px-6">
+            <h2 className={headingClass}>{c.processHeading}</h2>
+            <div className="space-y-6">
+              {c.process.map(([title, description]) => (
+                <article key={title} className="border-b border-border/10 pb-6 last:border-0">
+                  <h3 className="font-serif text-xl font-bold text-white mb-2">{title}</h3>
+                  <p className="text-foreground/70 leading-relaxed">{description}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+        <section className={`${sectionClass} about-different`}>
+          <div className="container mx-auto max-w-5xl px-6">
+            <h2 className={headingClass}>{c.differentHeading}</h2>
+            <div className="grid gap-6 md:grid-cols-2">
+              {c.different.map(([title, description]) => (
+                <article key={title}>
+                  <h3 className="font-serif text-xl font-bold text-white mb-2">{title}</h3>
+                  <p className="text-foreground/70 leading-relaxed">{description}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+        {lang === "en" && (
+          <section className={`${sectionClass} about-comparison bg-card`}>
+            <div className="container mx-auto max-w-6xl px-6">
+              <h2 className={headingClass}>How we compare</h2>
+              <div className="overflow-x-auto">
+                <table>
+                  <thead>
+                    <tr>
+                      {c.comparison[0].map((cell) => (
+                        <th key={cell}>{cell}</th>
+                      ))}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {c.comparison.slice(1).map((row) => (
+                      <tr key={row[0]}>
+                        {row.map((cell) => (
+                          <td key={cell}>{cell}</td>
+                        ))}
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <p className="mt-8 text-right">
+                <a className="text-primary font-medium hover:underline" href={c.comparisonHref}>
+                  {c.comparisonCta} →
+                </a>
+              </p>
+            </div>
+          </section>
+        )}
+        <section className="py-20 bg-background border-t border-border/10 text-center">
           <a
-            href={homeHref + "#contact"}
-            className="inline-flex items-center gap-2 bg-primary text-background font-semibold px-8 py-4 rounded-sm hover:bg-primary/90 transition-colors"
+            href={`${homeHref}#contact`}
+            className="inline-flex bg-primary text-background font-semibold px-8 py-4 rounded-sm hover:bg-primary/90 transition-colors"
           >
             {c.contactCta}
           </a>
-        </div>
-      </section>
+        </section>
+      </main>
       <Footer />
     </div>
   );
