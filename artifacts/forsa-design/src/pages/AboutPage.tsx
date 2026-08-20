@@ -183,7 +183,7 @@ const content: Record<"en" | "pl", AboutContent> = {
     seoTitle: "About Miro: Industrial Web Developer | Forsa Design",
     seoDesc:
       "Miro, founder of Forsa Design. 20+ years in B2B industrial sales, now building procurement-ready websites for industrial firms in Scotland.",
-    heading: "Meet the Founder",
+    heading: "Who's Behind This",
     intro: [
       "My name is Miro. I founded Forsa Design after more than 20 years in international B2B sales. I traded in metalworking machinery, industrial equipment and engineering solutions across Europe and Asia. I sat on both sides of the procurement table. I know what the process looks like from the first email to the signed contract.",
       "That experience taught me one thing: most industrial firms do excellent work, but their websites do not keep up with the quality of their service. And that costs contracts. Not because the work is poor \u2014 in today's B2B, the website is the first stage of verification.",
