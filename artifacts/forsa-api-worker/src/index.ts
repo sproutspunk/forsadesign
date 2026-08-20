@@ -1,10 +1,29 @@
+interface KVNamespace {
+  get(key: string): Promise<string | null>;
+  put(key: string, value: string): Promise<void>;
+  delete(key: string): Promise<void>;
+  list(options?: {
+    prefix?: string;
+    cursor?: string;
+  }): Promise<{ keys: { name: string }[]; list_complete: boolean; cursor?: string }>;
+}
+
 interface Env {
   RESEND_API_KEY?: string;
+  LEADS?: KVNamespace;
 }
 
 interface RateLimitEntry {
   count: number;
   resetAt: number;
+}
+
+interface LeadRecord {
+  email: string;
+  company: string;
+  language: "en" | "pl";
+  signupAt: number;
+  stepsSent: number[];
 }
 
 const OWNER_EMAIL = "hello@forsadesign.co.uk";
@@ -17,6 +36,9 @@ const RATE_LIMIT_WINDOW_MS = 15 * 60 * 1000;
 const RATE_LIMIT_MAX_REQUESTS = 5;
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const rateLimits = new Map<string, RateLimitEntry>();
+const DAY_MS = 24 * 60 * 60 * 1000;
+// step -> minimum days since signup before it is due
+const FOLLOW_UP_SCHEDULE: Record<number, number> = { 2: 3, 3: 7, 4: 14 };
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -212,6 +234,18 @@ async function handleLeadMagnet(request: Request, env: Env): Promise<Response> {
     subject: `New lead magnet download: ${email}`,
     text: `Email: ${email}\nCompany: ${company || "N/A"}\nLanguage: ${language}\nTime: ${new Date().toISOString()}`,
   });
+
+  if (env.LEADS) {
+    const record: LeadRecord = {
+      email,
+      company,
+      language,
+      signupAt: Date.now(),
+      stepsSent: [1],
+    };
+    await env.LEADS.put(`lead:${email}`, JSON.stringify(record));
+  }
+
   return json({ ok: true });
 }
 
@@ -221,6 +255,85 @@ function decodedBase64Length(value: string): number | null {
   } catch {
     return null;
   }
+}
+
+interface FollowUpContent {
+  subject: string;
+  text: string;
+}
+
+function followUpContent(step: number, language: "en" | "pl"): FollowUpContent {
+  const checklistUrl = "https://forsadesign.co.uk/audit-checklist.pdf";
+  const en: Record<number, FollowUpContent> = {
+    2: {
+      subject: "Did you run the audit?",
+      text:
+        "Did you run the audit? Here's what most Aberdeen engineering firms fail on: mobile speed and SSL grade. Both take under 10 minutes to check.\n\nChecklist: " +
+        checklistUrl +
+        "\n\nMiro\nForsa Design",
+    },
+    3: {
+      subject: "A free 2-minute video audit, no pitch",
+      text: "If your site scored below 7, I record a free 2-minute video audit - no call needed, no pitch. Just reply with your URL.\n\nMiro\nForsa Design",
+    },
+    4: {
+      subject: "4.2s to 0.8s: a recent rebuild",
+      text: "Last month we rebuilt a site for a local contractor. Load time: 4.2s -> 0.8s. Here's what we changed: https://forsadesign.co.uk/en/blog\n\nMiro\nForsa Design",
+    },
+  };
+  const pl: Record<number, FollowUpContent> = {
+    2: {
+      subject: "Sprawdziles juz checkliste?",
+      text:
+        "Sprawdziles juz checkliste? Oto na czym najczesciej wypadaja firmy inzynieryjne: szybkosc na mobile i ocena SSL. Obie rzeczy sprawdzisz w mniej niz 10 minut.\n\nChecklista: " +
+        checklistUrl +
+        "\n\nMiro\nForsa Design",
+    },
+    3: {
+      subject: "Darmowy 2-minutowy audyt wideo, bez sprzedazy",
+      text: "Jesli Twoja strona zdobyla ponizej 7 punktow, nagram darmowy 2-minutowy audyt wideo - bez rozmowy, bez sprzedazy. Wystarczy, ze odpiszesz z adresem URL.\n\nMiro\nForsa Design",
+    },
+    4: {
+      subject: "4.2s do 0.8s: niedawna przebudowa strony",
+      text: "W zeszlym miesiacu przebudowalismy strone dla lokalnego kontrahenta. Czas ladowania: 4.2s -> 0.8s. Zobacz co zmienilismy: https://forsadesign.co.uk/pl/blog\n\nMiro\nForsa Design",
+    },
+  };
+  return (language === "pl" ? pl : en)[step];
+}
+
+/** Daily cron: send the day-3 / day-7 / day-14 lead-magnet follow-up emails. */
+async function runLeadFollowUps(env: Env): Promise<void> {
+  if (!env.LEADS || !env.RESEND_API_KEY) return;
+  const apiKey = env.RESEND_API_KEY;
+  let cursor: string | undefined;
+  do {
+    const page = await env.LEADS.list({ prefix: "lead:", cursor });
+    for (const key of page.keys) {
+      const raw = await env.LEADS.get(key.name);
+      if (!raw) continue;
+      const record = JSON.parse(raw) as LeadRecord;
+      const daysSince = (Date.now() - record.signupAt) / DAY_MS;
+      let changed = false;
+      for (const [stepStr, minDays] of Object.entries(FOLLOW_UP_SCHEDULE)) {
+        const step = Number(stepStr);
+        if (record.stepsSent.includes(step) || daysSince < minDays) continue;
+        const content = followUpContent(step, record.language);
+        const sent = await sendViaResend(apiKey, {
+          from: FROM,
+          to: [record.email],
+          reply_to: OWNER_EMAIL,
+          subject: content.subject,
+          text: content.text,
+        });
+        if (sent) {
+          record.stepsSent.push(step);
+          changed = true;
+        }
+      }
+      if (changed) await env.LEADS.put(key.name, JSON.stringify(record));
+    }
+    cursor = page.list_complete ? undefined : page.cursor;
+  } while (cursor);
 }
 
 async function handleQuote(request: Request, env: Env): Promise<Response> {
@@ -321,5 +434,9 @@ export default {
     } catch {
       return json({ error: "Unable to process the request." }, 500);
     }
+  },
+
+  async scheduled(_event: unknown, env: Env): Promise<void> {
+    await runLeadFollowUps(env);
   },
 };
