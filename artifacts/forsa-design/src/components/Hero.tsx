@@ -27,15 +27,15 @@ export default function Hero() {
 
           <div className="w-20 h-px bg-primary mb-4 mt-3" />
 
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold tracking-tight leading-tight mb-3 max-w-4xl">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold tracking-tight leading-tight mb-3 max-w-4xl">
             {t("hero.tagline")}
           </h1>
 
-          <p className="text-lg md:text-xl text-foreground/70 font-light mb-3 max-w-5xl text-balance">
+          <p className="text-lg md:text-xl text-foreground/80 font-medium mb-4 max-w-3xl text-balance">
             {t("hero.subheader")}
           </p>
 
-          <p className="text-base md:text-lg text-foreground/60 font-light leading-relaxed mb-6 max-w-5xl text-center">
+          <p className="text-base md:text-lg text-foreground/60 font-light leading-relaxed mb-6 max-w-[65ch] text-left">
             {t("hero.body")}
           </p>
 

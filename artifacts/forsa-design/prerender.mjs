@@ -195,7 +195,7 @@ function ensureXDefault(alternates, fallback) {
 
 function buildHomepageBodyEn() {
   return `<header>
-<nav><a href="/en/">Forsa Design</a> | <a href="/en/#services">Services</a> | <a href="/en/#portfolio">Portfolio</a> | <a href="/en/#about">About</a> | <a href="/en/#faq">FAQ</a> | <a href="/en/#contact">Contact</a> | <a href="/en/blog">Blog</a></nav>
+<nav><a href="/en/">Forsa Design</a> | <a href="/en/#services">Services</a> | <a href="/en/about/">About</a> | <a href="/en/#faq">FAQ</a> | <a href="/en/#contact">Contact</a> | <a href="/en/blog">Blog</a></nav>
 </header>
 <main>
 <section id="home">
@@ -255,15 +255,6 @@ function buildHomepageBodyEn() {
 </div>
 <p>All prices are indicative. Final quote depends on your exact requirements. Use our calculator for a precise estimate.</p>
 </section>
-<section id="portfolio">
-<h2>Current Availability</h2>
-<p>Q4 2026. One project slot remains.</p>
-<p>I take three projects per quarter. Two are already underway. I write the code. I take the calls. I test on the devices your clients actually use. That is the entire team.</p>
-<p>We do not display a wall of logos. Industrial clients do not choose suppliers because of a pretty gallery. They choose because the site answers one question. Can this firm deliver?</p>
-<p>Every project is under NDA or in active use. If you want to see our work, we show it on a call. Not because it is secret. Because context matters; a screenshot tells you nothing. You need to know why the procurement officer stays on the page instead of closing it after eight seconds.</p>
-<p>If your website isn't generating projects you didn't even know were there, we should talk.</p>
-<a href="/en/contact/">Request a Call</a>
-</section>
 <section id="process">
 <h2>How We Work</h2>
 <div>
@@ -297,12 +288,6 @@ function buildHomepageBodyEn() {
 <h3>Can you integrate with our existing systems?</h3>
 <p>If it has an API, probably yes. If it runs on a spreadsheet from 2003 and a prayer, we will figure something out. I have seen worse.</p>
 </section>
-<section id="about">
-<h2>Built by Someone Who Understood the Brief</h2>
-<p>My name is Miro. I founded Forsa Design after more than 20 years in international B2B industrial sales. I traded in metalworking machinery, industrial equipment and engineering solutions across Europe and Asia. I sat on both sides of the procurement table, selling to refineries, negotiating with plant engineers and vetting suppliers myself.</p>
-<p>That experience taught me one thing: most industrial firms deliver world-class work, but their digital presence does not reflect it. I am not a London agency with fifteen account managers. I am a developer who understands industry, logistics, international trade and contract deadlines. I write the code and answer the phone myself.</p>
-<p>Based in Banff, Aberdeenshire. Fluent in English and Polish. Serving Scotland, the UK and selected EU export markets.</p>
-</section>
 <section id="contact">
 <h2>Get In Touch</h2>
 <p>Ready to start your next project? Let's talk.</p>
@@ -323,7 +308,7 @@ function buildHomepageBodyEn() {
 
 function buildHomepageBodyPl() {
   return `<header>
-<nav><a href="/pl/">Forsa Design</a> | <a href="/pl/#services">Us&#322;ugi</a> | <a href="/pl/#portfolio">Portfolio</a> | <a href="/pl/#about">O Nas</a> | <a href="/pl/#faq">FAQ</a> | <a href="/pl/#contact">Kontakt</a> | <a href="/pl/blog">Blog</a></nav>
+<nav><a href="/pl/">Forsa Design</a> | <a href="/pl/#services">Us&#322;ugi</a> | <a href="/pl/about/">O Nas</a> | <a href="/pl/#faq">FAQ</a> | <a href="/pl/#contact">Kontakt</a> | <a href="/pl/blog">Blog</a></nav>
 </header>
 <main>
 <section id="home">
@@ -383,15 +368,6 @@ function buildHomepageBodyPl() {
 </div>
 <p>Wszystkie ceny są orientacyjne. Ostateczna wycena zależy od dokładnych wymagań. Użyj kalkulatora do precyzyjnej kalkulacji.</p>
 </section>
-<section id="portfolio">
-<h2>Aktualna dostępność</h2>
-<p>Q4 2026. Zostało jedno miejsce.</p>
-<p>Prowadzę trzy projekty na kwartał. Dwa są już w trakcie. Piszę kod sam. Odbieram telefony sam. Testuję na urządzeniach, których Twoi klienci faktycznie używają. To cały zespół.</p>
-<p>Nie wystawiamy ściany logotypów. Klienci przemysłowi nie wybierają dostawcy przez ładną galerię. Wybierają, bo strona odpowiada na jedno pytanie. Czy ta firma potrafi dostarczyć?</p>
-<p>Każdy projekt objęty jest NDA lub jest wciąż w użyciu. Jeśli chcesz zobaczyć nasze prace, pokażę je podczas rozmowy. Nie dlatego, że to tajne. Dlatego że kontekst ma znaczenie. Zrzut ekranu nic Ci nie powie. Musisz wiedzieć, dlaczego oficer ds. Zakupu zostaje na stronie zamiast wyłączyć ją po ośmiu sekundach.</p>
-<p>Jeśli Twoja strona nie generuje projektów, o których nawet nie wiedziałeś, że były, powinniśmy porozmawiać.</p>
-<a href="/pl/contact/">Poproś o rozmowę</a>
-</section>
 <section id="process">
 <h2>Jak Pracujemy</h2>
 <div>
@@ -424,12 +400,6 @@ function buildHomepageBodyPl() {
 <p>Tak. Opieka miesięczna zaczyna się od 150 funtów. Obejmuje hosting, aktualizacje bezpieczeństwa, kopie zapasowe i ten sporadyczny mail o dziesiątej wieczorem, bo musisz zmienić numer telefonu przed terminem składania ofert.</p>
 <h3>Czy możecie zintegrować stronę z naszymi istniejącymi systemami?</h3>
 <p>Jeśli ma API, prawdopodobnie tak. Jeśli działa na arkuszu kalkulacyjnym z 2003 roku i modlitwie, coś wymyślimy. Widziałem gorsze rzeczy.</p>
-</section>
-<section id="about">
-<h2>Zbudowane przez kogoś, kto rozumiał brief</h2>
-<p>Nazywam się Miro. Forsa Design założyłem po ponad 20 latach w międzynarodowej sprzedaży B2B. Handlowałem maszynami do obróbki metalu, wyposażeniem przemysłowym i rozwiązaniami inżynieryjnymi w Europie i Azji. Siedziałem po obu stronach stołu zakupowego. Wiem, jak wygląda proces od pierwszego maila po podpisany kontrakt.</p>
-<p>To doświadczenie nauczyło mnie jednej rzeczy. Większość firm przemysłowych wykonuje świetną robotę, ale ich strony internetowe nie nadążają za poziomem ich usług. I to kosztuje kontrakty. Nie dlatego, że praca jest słaba, tylko dlatego, że w dzisiejszym B2B strona to pierwszy etap weryfikacji. Nie jestem agencją z Londynu z piętnastoma osobami w zespole i kawiarnią w biurze. Jestem człowiekiem, który rozumie przemysł, logistykę i handel międzynarodowy. Teraz buduję strony, które komunikują się językiem Twoich klientów. Bez szablonów. Bez zbędnego żargonu. Tylko czysty kod i jasny przekaz.</p>
-<p>Siedziba w Banff, Aberdeenshire. Biegły w językach angielskim i polskim. Obsługujemy klientów w Szkocji, w całej Wielkiej Brytanii oraz na wybranych rynkach eksportowych UE.</p>
 </section>
 <section id="contact">
 <h2>Rozpocznij rozmowę</h2>
@@ -563,7 +533,6 @@ function buildContactBody(lang) {
 <label>${en ? "Name" : "Imię i nazwisko"} <input name="name" required /></label>
 <label>${en ? "Email" : "Adres email"} <input name="email" type="email" required /></label>
 <label>${en ? "Message" : "Wiadomość"} <textarea name="message" required></textarea></label>
-<div data-turnstile-widget="true" aria-label="${en ? "Security verification" : "Weryfikacja bezpieczeństwa"}"></div>
 <button type="submit">${en ? "Send message" : "Wyślij wiadomość"}</button>
 </form></main>`;
 }
@@ -1416,7 +1385,7 @@ ${buildSectionsHtml(termsPL)}
 </main>`;
 }
 
-function buildAboutBodyEn() {
+function _buildLegacyAboutBodyEn() {
   return `<header>
 <nav><a href="/en/">&#8592; Home</a> <span>|</span> <a href="/en/about">About</a> <span>|</span> <a href="/en/comparison">Compare Options</a></nav>
 </header>
@@ -1484,7 +1453,7 @@ function buildAboutBodyEn() {
 </footer>`;
 }
 
-function buildAboutBodyPl() {
+function _buildLegacyAboutBodyPl() {
   return `<header>
 <nav><a href="/pl/">&#8592; Strona G&#322;&#243;wna</a> <span>|</span> <a href="/pl/about">O Nas</a> <span>|</span> <a href="/pl/comparison">Por&#243;wnanie</a></nav>
 </header>
@@ -1724,6 +1693,14 @@ ${buildSectionsHtml(privacyPL)}
 }
 
 // ---------------------------------------------------------------------------
+function buildAboutBodyEn() {
+  return `<main><section class="about-hero"><div class="about-image"><img src="/images/miro-portrait.webp" alt="Miro, founder of Forsa Design" width="600" height="750" loading="eager" decoding="async"></div><div class="about-intro"><h1>Built by someone who understood the brief</h1><p>My name is Miro. I founded Forsa Design after more than 20 years in international B2B industrial sales. I traded in metalworking machinery, industrial equipment and engineering solutions across Europe and Asia. I sat on both sides of the procurement table, selling to refineries, negotiating with plant engineers and vetting suppliers myself.</p><p>That experience taught me one thing: most industrial firms deliver world-class work, but their digital presence does not reflect it. I am not a London agency with fifteen account managers. I am a developer who understands industry, logistics, international trade and contract deadlines. I write the code and answer the phone myself.</p><p>Based in Banff, Aberdeenshire. Fluent in English and Polish. Serving Scotland, the UK and selected EU export markets.</p></div></section><section class="about-background"><h2>Why this background matters</h2><h3>Real business perspective</h3><p>Having run a company for more than 20 years, negotiated international contracts across three continents and managed teams in multiple countries, I understand what a website needs to do for your bottom line. Every design decision is filtered through a business lens, not just an aesthetic one.</p><h3>Communication at every level</h3><p>I have worked with clients and stakeholders from all walks of life. That translates into websites that speak clearly to your audience, whether they are local customers or international partners.</p><h3>Results-focused delivery</h3><p>My career has been built on closing deals, managing projects end to end and delivering measurable outcomes. I bring that same discipline to web development: clear timelines, transparent communication and a focus on what actually moves the needle for your business.</p></section><section class="about-process"><h2>How we work</h2><p>Discovery and strategy, design, development, testing and optimisation, then launch and ongoing support.</p></section><section class="about-different"><h2>What sets us apart</h2><p>No templates. Focus on business results. You own everything. Long-term partnership. Transparent communication.</p></section><section class="about-comparison"><h2>How we compare</h2><table><thead><tr><th>Aspect</th><th>CMS template</th><th>Non-specialist agency</th><th>Freelancer</th><th>Forsa Design</th></tr></thead><tbody><tr><td>Price</td><td>£800-2,000</td><td>£3,000-8,000</td><td>£1,500-4,000</td><td>£1,200-12,000+</td></tr></tbody></table></section></main>`;
+}
+
+function buildAboutBodyPl() {
+  return `<main><section class="about-hero"><div class="about-image"><img src="/images/miro-portrait.webp" alt="Miro, założyciel Forsa Design" width="600" height="750" loading="eager" decoding="async"></div><div class="about-intro"><h1>Kto za tym stoi</h1><p>Nazywam się Miro. Forsa Design założyłem po ponad 20 latach w międzynarodowej sprzedaży B2B. Handlowałem maszynami do obróbki metalu, wyposażeniem przemysłowym i rozwiązaniami inżynieryjnymi w Europie i Azji. Siedziałem po obu stronach stołu zakupowego. Wiem, jak wygląda proces od pierwszego maila po podpisany kontrakt.</p><p>To doświadczenie nauczyło mnie jednej rzeczy. Większość firm przemysłowych wykonuje świetną robotę, ale ich strony internetowe nie nadążają za poziomem ich usług. I to kosztuje kontrakty. Nie dlatego, że praca jest słaba. W dzisiejszym B2B strona to pierwszy etap weryfikacji.</p><p>Nie jestem agencją z Londynu z piętnastoma osobami w zespole i kawiarnią w biurze. Jestem człowiekiem, który rozumie przemysł, logistykę i handel międzynarodowy. Teraz buduję strony, które komunikują się językiem Twoich klientów. Bez szablonów. Bez zbędnego żargonu. Tylko czysty kod i jasny przekaz.</p><p>Siedziba w Banff, Aberdeenshire. Pracuję po angielsku i polsku. Obsługuję klientów w Szkocji, w całej Wielkiej Brytanii oraz na wybranych rynkach eksportowych UE.</p></div></section><section class="about-background"><h2>Dlaczego to doświadczenie ma znaczenie</h2><h3>Prawdziwa perspektywa biznesowa</h3><p>Prowadząc firmę przez ponad 20 lat, negocjując międzynarodowe kontrakty na trzech kontynentach i zarządzając zespołami w wielu krajach, rozumiem, co strona internetowa musi robić dla Twojego zysku.</p><h3>Komunikacja na każdym poziomie</h3><p>Pracowałem z klientami i interesariuszami z każdej dziedziny życia. To przekłada się na strony, które jasno komunikują się z odbiorcami.</p><h3>Dostarczanie wyników</h3><p>Cała moja kariera opierała się na zawieraniu umów, zarządzaniu projektami od A do Z i dostarczaniu mierzalnych rezultatów.</p></section><section class="about-process"><h2>Jak pracujemy</h2><p>Analiza i strategia, projektowanie, rozwój, testowanie i optymalizacja, a następnie uruchomienie i wsparcie.</p></section><section class="about-different"><h2>Co nas wyróżnia</h2><p>Bez szablonów. Fokus na wyniki biznesowe. Wszystko należy do Ciebie. Długoterminowe partnerstwo. Transparentna komunikacja.</p></section></main>`;
+}
+
 // Route definitions  -  one entry per public URL
 // ---------------------------------------------------------------------------
 
@@ -1830,16 +1807,16 @@ const routes = [
     bodyHtml: buildAboutBodyEn(),
   },
   {
-    outDir: "pl/about",
+    outDir: "pl/o-nas",
     lang: "pl",
     title: "O Forsa Design | Web dla Przemysłu",
     desc: "Poznaj założyciela Forsa Design z 20-letnim doświadczeniem w sprzedaży B2B i tworzeniu stron oraz systemów webowych dla przemysłu.",
     ogTitle: "O Nas | Forsa Design",
     locale: "pl_PL",
-    canonical: `${SITE}/pl/about`,
+    canonical: `${SITE}/pl/o-nas`,
     alternates: [
       { lang: "en", href: `${SITE}/en/about` },
-      { lang: "pl", href: `${SITE}/pl/about` },
+      { lang: "pl", href: `${SITE}/pl/o-nas` },
     ],
     bodyHtml: buildAboutBodyPl(),
   },
@@ -2127,7 +2104,7 @@ for (const route of routes) {
     loc,
   );
   const isHome = route.outDir === "en" || route.outDir === "pl";
-  const isAbout = route.outDir === "en/about" || route.outDir === "pl/about";
+  const isAbout = route.outDir === "en/about" || route.outDir === "pl/o-nas";
   const isComparison = route.outDir === "en/comparison" || route.outDir === "pl/comparison";
   const isQuote = route.outDir === "en/quote" || route.outDir === "pl/quote";
   const isLegal = route.outDir.includes("terms") || route.outDir.includes("privacy");

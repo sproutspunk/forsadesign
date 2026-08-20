@@ -2,6 +2,69 @@
 @import "tw-animate-css";
 @plugin "@tailwindcss/typography";
 
+.about-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 3rem;
+  align-items: center;
+}
+
+.about-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+
+.about-intro p {
+  margin-bottom: 1rem;
+  color: hsl(var(--foreground) / 0.7);
+  font-weight: 300;
+  line-height: 1.75;
+}
+
+.about-intro p:last-child {
+  margin-bottom: 0;
+}
+
+.about-comparison table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+
+.about-comparison th,
+.about-comparison td {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  white-space: nowrap;
+  border-bottom: 1px solid hsl(var(--foreground) / 0.08);
+}
+
+.about-comparison th {
+  font-weight: 600;
+}
+
+.about-comparison td:first-child {
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .about-hero {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  /* Keep this rule scoped to the standalone About page portrait layout.
+     width:100% is required — without it the auto margins make the grid item
+     shrink-to-fit and the canvas collapses to a thin vertical stripe. */
+  .about-hero .about-image {
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+}
+
 /* Self-hosted variable fonts (latin + latin-ext for Polish diacritics).
    font-display: swap keeps text visible with a system fallback while loading. */
 @font-face {
@@ -241,6 +304,13 @@
   --shadow-2xl: 0px 2px 0px 0px hsl(43 58% 54% / 0.1);
 }
 
+:root {
+  --font-size-base: clamp(1rem, 0.5vw + 0.875rem, 1.25rem);
+  --heading-1: clamp(2.5rem, 5vw + 1rem, 5rem);
+  --heading-2: clamp(1.75rem, 3vw + 0.5rem, 3rem);
+  --heading-3: clamp(1.25rem, 2vw + 0.5rem, 1.75rem);
+}
+
 @layer base {
   * {
     @apply border-border;
@@ -248,6 +318,7 @@
 
   html {
     scroll-behavior: smooth;
+    font-size: 100%;
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -266,6 +337,32 @@
 
   body {
     @apply font-sans antialiased bg-background text-foreground;
+    font-size: var(--font-size-base);
+    line-height: 1.6;
+  }
+
+  h1 {
+    font-size: var(--heading-1);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+  }
+
+  h2 {
+    font-size: var(--heading-2);
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    text-wrap: balance;
+  }
+
+  h3 {
+    font-size: var(--heading-3);
+    line-height: 1.3;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
   }
 }
 

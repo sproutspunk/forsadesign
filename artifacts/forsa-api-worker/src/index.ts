@@ -1,6 +1,5 @@
 interface Env {
   RESEND_API_KEY?: string;
-  TURNSTILE_SECRET_KEY?: string;
 }
 
 interface RateLimitEntry {
@@ -103,38 +102,16 @@ async function handleContact(request: Request, env: Env): Promise<Response> {
   const name = body.get("name")?.trim() ?? "";
   const email = body.get("email")?.trim() ?? "";
   const message = body.get("message")?.trim() ?? "";
-  const token = body.get("cf-turnstile-response")?.trim() ?? "";
   const language = body.get("language") === "pl" ? "pl" : "en";
-  if (!name || !email || !message || !token) {
+  if (!name || !email || !message) {
     return json({ error: "Please complete all fields." }, 400);
   }
   if (name.length > 200 || email.length > 320 || message.length > 5000) {
     return json({ error: "Submitted data is too long." }, 400);
   }
   if (!emailPattern.test(email)) return json({ error: "Invalid email address." }, 400);
-  if (!env.TURNSTILE_SECRET_KEY || !env.RESEND_API_KEY) {
+  if (!env.RESEND_API_KEY) {
     return json({ error: "Contact service is not configured." }, 503);
-  }
-
-  const verification = await fetch("https://challenges.cloudflare.com/turnstile/v0/siteverify", {
-    method: "POST",
-    headers: { "content-type": "application/json" },
-    body: JSON.stringify({
-      secret: env.TURNSTILE_SECRET_KEY,
-      response: token,
-      remoteip: clientIp(request),
-    }),
-  });
-  const turnstile = (await verification.json().catch(() => null)) as {
-    success?: boolean;
-    "error-codes"?: string[];
-  } | null;
-  if (!turnstile?.success) {
-    console.error("Turnstile verification failed", {
-      status: verification.status,
-      errorCodes: turnstile?.["error-codes"] ?? [],
-    });
-    return json({ error: "Security verification failed." }, 400);
   }
 
   const subject = language === "pl" ? `Nowa wiadomość od ${name}` : `New enquiry from ${name}`;

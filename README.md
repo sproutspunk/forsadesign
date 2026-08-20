@@ -2,7 +2,7 @@
 
 Forsa Design is the production website and quote workflow for an industrial web-design studio. It is maintained as a pnpm monorepo with a React/Vite frontend and a Cloudflare Workers API.
 
-The public site is hosted on Cloudflare Pages. Contact enquiries and quote-email delivery are handled by the `forsa-api` Worker, protected by Cloudflare Turnstile and delivered through Resend.
+The public site is hosted on Cloudflare Pages. Contact enquiries and quote-email delivery are handled by the `forsa-api` Worker and delivered through Resend. The contact form is protected by a honeypot field and per-IP rate limiting instead of a captcha.
 
 ## Architecture
 
@@ -10,14 +10,14 @@ The public site is hosted on Cloudflare Pages. Contact enquiries and quote-email
 Browser
   |
   v
-Cloudflare Pages (React/Vite site)
+Cloudflare Pages (React/Vite site, advanced-mode Worker)
   |
   | /api/*
   v
 forsa-api Cloudflare Worker
-  |                  |
-  v                  v
-Cloudflare Turnstile Resend
+  |
+  v
+Resend
 ```
 
 ## Repository Layout
@@ -26,7 +26,7 @@ Cloudflare Turnstile Resend
 | ---------------------------- | ------------------------------------------------------- |
 | `artifacts/forsa-design`     | Public React/Vite marketing website                     |
 | `artifacts/forsa-api-worker` | Cloudflare Worker for contact and quote-email endpoints |
-| `artifacts/api-server`       | Legacy Express API implementation                       |
+| `artifacts/api-server`       | Legacy Express API implementation (kept for reference)  |
 | `artifacts/mockup-sandbox`   | Internal component-preview environment                  |
 | `lib/api-spec`               | OpenAPI contract                                        |
 | `lib/api-zod`                | Generated Zod schemas                                   |
@@ -37,8 +37,8 @@ Cloudflare Turnstile Resend
 ## Requirements
 
 - Node.js 24+
-- pnpm 10+
-- Cloudflare account with Pages, Workers, and Turnstile access
+- pnpm 10.26.1+
+- Cloudflare account with Pages and Workers
 - Resend account with a verified sender domain
 
 ## Installation
@@ -77,6 +77,19 @@ pnpm run build
 
 `pnpm run check` runs linting, type checking, and formatting validation.
 
+## Typography
+
+The frontend uses a custom fluid typography scale defined in `artifacts/forsa-design/src/index.css`:
+
+| Element | Scale                                    | Line-height | Notes                                            |
+| ------- | ---------------------------------------- | ----------- | ------------------------------------------------ |
+| Body    | `clamp(1rem, 0.5vw + 0.875rem, 1.25rem)` | 1.6         | Inter sans                                       |
+| H1      | `clamp(2.5rem, 5vw + 1rem, 5rem)`        | 1.1         | Playfair Display serif, `-0.02em` letter-spacing |
+| H2      | `clamp(1.75rem, 3vw + 0.5rem, 3rem)`     | 1.2         | Playfair Display serif, `-0.01em` letter-spacing |
+| H3      | `clamp(1.25rem, 2vw + 0.5rem, 1.75rem)`  | 1.3         | Playfair Display serif                           |
+
+All headings use `text-wrap: balance` and paragraphs use `text-wrap: pretty`. Fonts are self-hosted as variable WOFF2 files for Latin and Latin-Extended subsets (`public/fonts/`).
+
 ## API Endpoints
 
 | Method | Endpoint            | Purpose                              |
@@ -85,7 +98,7 @@ pnpm run build
 | `POST` | `/api/contact`      | Contact form submission              |
 | `POST` | `/api/quotes/email` | Sends a generated quote PDF by email |
 
-Public write endpoints validate incoming data and are rate-limited. Contact submissions require a valid Cloudflare Turnstile token.
+Public write endpoints validate incoming data and are rate-limited (5 requests per 15 minutes per IP). The contact form uses an invisible honeypot field (`_gotcha`) to filter naive bots.
 
 ## Cloudflare Configuration
 
@@ -93,15 +106,14 @@ Public write endpoints validate incoming data and are rate-limited. Contact subm
 
 Required Worker secrets:
 
-| Secret                 | Purpose                                       |
-| ---------------------- | --------------------------------------------- |
-| `TURNSTILE_SECRET_KEY` | Verifies contact-form Turnstile tokens        |
-| `RESEND_API_KEY`       | Sends contact and quote emails through Resend |
+| Secret           | Purpose                                       |
+| ---------------- | --------------------------------------------- |
+| `RESEND_API_KEY` | Sends contact and quote emails through Resend |
 
 Set a secret from the Windows clipboard:
 
 ```powershell
-Get-Clipboard | pnpm --filter @workspace/forsa-api-worker exec wrangler versions secret put TURNSTILE_SECRET_KEY --name=forsa-api
+Get-Clipboard | pnpm --filter @workspace/forsa-api-worker exec wrangler versions secret put RESEND_API_KEY --name=forsa-api
 ```
 
 Deploy the Worker:
@@ -118,7 +130,7 @@ curl https://forsa-api.sproutspunk.workers.dev/api/healthz
 
 ### Cloudflare Pages
 
-The `forsadesign` Pages project serves the frontend. Its advanced-mode Worker proxies `/api/*` to the API Worker.
+The `forsadesign` Pages project serves the frontend. Its advanced-mode Worker proxies `/api/*` to the API Worker and injects the real visitor IP via `x-real-client-ip`.
 
 Required Pages secret:
 
@@ -145,9 +157,7 @@ Expected response:
 { "status": "ok" }
 ```
 
-## Turnstile and Resend
-
-The public Turnstile site key is used by the browser widget. The matching Turnstile secret key must be stored only in the `forsa-api` Worker. A mismatched secret causes Turnstile verification to fail with `invalid-input-secret`.
+## Resend
 
 Resend must have a verified sender for:
 
@@ -155,12 +165,12 @@ Resend must have a verified sender for:
 Forsa Design <hello@forsadesign.co.uk>
 ```
 
-Never store API keys, Turnstile secrets, Cloudflare tokens, or database URLs in source files, Git history, or client-side variables.
+Never store API keys, Cloudflare tokens, or database URLs in source files, Git history, or client-side variables.
 
 ## Deployment Order
 
 1. Deploy `forsa-api`.
-2. Configure or confirm Worker secrets.
+2. Configure or confirm the `RESEND_API_KEY` Worker secret.
 3. Confirm `API_ORIGIN` in Cloudflare Pages.
 4. Build and deploy `forsa-design`.
 5. Verify `/api/healthz`.

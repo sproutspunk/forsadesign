@@ -1,26 +1,26 @@
+import { Suspense, lazy } from "react";
 import { MotionConfig } from "framer-motion";
 import PricingSection from "@/components/PricingSection";
-import Portfolio from "@/components/Portfolio";
-import Process from "@/components/Process";
-import About from "@/components/About";
-import CTA from "@/components/CTA";
-import ContactInfo from "@/components/ContactInfo";
-import ContactForm from "@/components/ContactForm";
-import FAQ from "@/components/FAQ";
-import Footer from "@/components/Footer";
+
+const Process = lazy(() => import("@/components/Process"));
+const FAQ = lazy(() => import("@/components/FAQ"));
+const CTA = lazy(() => import("@/components/CTA"));
+const ContactInfo = lazy(() => import("@/components/ContactInfo"));
+const ContactForm = lazy(() => import("@/components/ContactForm"));
+const Footer = lazy(() => import("@/components/Footer"));
 
 export default function HomeSections() {
   return (
     <MotionConfig reducedMotion="user">
       <PricingSection />
-      <Portfolio />
-      <Process />
-      <About />
-      <FAQ />
-      <CTA />
-      <ContactInfo />
-      <ContactForm />
-      <Footer />
+      <Suspense fallback={null}>
+        <Process />
+        <FAQ />
+        <CTA />
+        <ContactInfo />
+        <ContactForm />
+        <Footer />
+      </Suspense>
     </MotionConfig>
   );
 }

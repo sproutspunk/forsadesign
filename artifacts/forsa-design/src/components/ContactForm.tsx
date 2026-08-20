@@ -1,110 +1,12 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
-
-declare global {
-  interface Window {
-    turnstile?: {
-      render: (container: HTMLElement, options: Record<string, unknown>) => string;
-      reset: (widgetId?: string) => void;
-    };
-  }
-}
-
-const TURNSTILE_SCRIPT_ID = "cloudflare-turnstile-script";
-const TURNSTILE_SITE_KEY = "0x4AAAAAADiKDRnpi0TNeGeS";
 
 export default function ContactForm() {
   const { language } = useLanguage();
   const en = language === "en";
   const formRef = useRef<HTMLFormElement>(null);
-  const widgetRef = useRef<HTMLDivElement>(null);
-  const widgetIdRef = useRef<string | undefined>(undefined);
-  const [turnstileToken, setTurnstileToken] = useState("");
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
   const [errorMessage, setErrorMessage] = useState("");
-
-  useEffect(() => {
-    if (!widgetRef.current) return;
-    const container = widgetRef.current;
-
-    const renderWidget = () => {
-      if (!widgetRef.current || !window.turnstile || widgetIdRef.current) return;
-      widgetIdRef.current = window.turnstile.render(widgetRef.current, {
-        sitekey: TURNSTILE_SITE_KEY,
-        size: "normal",
-        theme: "dark",
-        callback: (token: string) => setTurnstileToken(token),
-        "expired-callback": () => setTurnstileToken(""),
-        "error-callback": () => {
-          setTurnstileToken("");
-          setErrorMessage(
-            en
-              ? "Security verification could not load. Please try again."
-              : "Weryfikacja bezpieczeństwa nie załadowała się. Spróbuj ponownie.",
-          );
-        },
-      });
-    };
-
-    // Defer the third-party Turnstile script until the form is close to the
-    // viewport or the user starts interacting with it, keeping it off the
-    // critical rendering path (page-speed optimisation).
-    let scriptRequested = false;
-    const loadScript = () => {
-      if (scriptRequested) return;
-      scriptRequested = true;
-
-      const existingScript = document.getElementById(TURNSTILE_SCRIPT_ID);
-      if (existingScript) {
-        if (window.turnstile) renderWidget();
-        else existingScript.addEventListener("load", renderWidget, { once: true });
-        return;
-      }
-
-      const script = document.createElement("script");
-      script.id = TURNSTILE_SCRIPT_ID;
-      script.src = "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit";
-      script.async = true;
-      script.defer = true;
-      script.onload = renderWidget;
-      document.head.appendChild(script);
-    };
-
-    let observer: IntersectionObserver | undefined;
-    if (typeof IntersectionObserver === "undefined") {
-      loadScript();
-    } else {
-      observer = new IntersectionObserver(
-        (entries) => {
-          if (entries.some((entry) => entry.isIntersecting)) {
-            observer?.disconnect();
-            loadScript();
-          }
-        },
-        { rootMargin: "400px" },
-      );
-      observer.observe(container);
-    }
-
-    const form = formRef.current;
-    const onFocus = () => loadScript();
-    form?.addEventListener("focusin", onFocus);
-
-    return () => {
-      observer?.disconnect();
-      form?.removeEventListener("focusin", onFocus);
-      if (widgetIdRef.current && window.turnstile) {
-        window.turnstile.reset(widgetIdRef.current);
-      }
-    };
-  }, [en]);
-
-  const resetWidget = () => {
-    setTurnstileToken("");
-    if (widgetIdRef.current && window.turnstile) {
-      window.turnstile.reset(widgetIdRef.current);
-    }
-  };
 
   const submit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -118,16 +20,6 @@ export default function ContactForm() {
       if (typeof value === "string") form.set(key, value);
     });
     form.set("language", language);
-    if (!turnstileToken) {
-      setStatus("error");
-      setErrorMessage(
-        en
-          ? "Please complete the security check before sending."
-          : "Przed wysłaniem ukończ weryfikację bezpieczeństwa.",
-      );
-      return;
-    }
-    form.set("cf-turnstile-response", turnstileToken);
 
     try {
       const response = await fetch("/api/contact", {
@@ -146,7 +38,6 @@ export default function ContactForm() {
       }
       setStatus("success");
       formRef.current?.reset();
-      resetWidget();
     } catch (error) {
       setStatus("error");
       setErrorMessage(
@@ -156,7 +47,6 @@ export default function ContactForm() {
             ? "We could not send your message. Please try again or email hello@forsadesign.co.uk."
             : "Nie udało się wysłać wiadomości. Spróbuj ponownie lub napisz na hello@forsadesign.co.uk.",
       );
-      resetWidget();
     }
   };
 
@@ -219,7 +109,6 @@ export default function ContactForm() {
               className="mt-2 w-full resize-y rounded-sm border border-border bg-background px-4 py-3 text-white outline-none transition-colors focus:border-primary"
             />
           </label>
-          <div ref={widgetRef} className="mt-6 min-h-[65px]" />
           {status === "success" && (
             <p role="status" className="mt-4 text-sm text-primary">
               {en

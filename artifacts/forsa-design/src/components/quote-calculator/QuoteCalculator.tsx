@@ -120,7 +120,9 @@ function Section({
       >
         <div className="flex items-center gap-3">
           <span className="text-primary">{sectionIcons[id]}</span>
-          <span className="font-semibold text-sm md:text-base">{isEn ? titleEn : titlePl}</span>
+          <span className="font-serif font-bold text-white text-base md:text-lg">
+            {isEn ? titleEn : titlePl}
+          </span>
         </div>
         {open ? (
           <ChevronUp className="w-5 h-5 text-foreground/50" />
@@ -386,7 +388,7 @@ export default function QuoteCalculator() {
     <div className="min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 md:pt-32 pb-24 md:pb-12">
         <div className="mb-8 md:mb-10">
-          <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight mb-3">
+          <h1 className="font-serif text-4xl md:text-5xl font-bold text-white leading-tight tracking-tight mb-3">
             {t("Website Quote Calculator", "Kalkulator wyceny strony")}
           </h1>
           <p className="text-foreground/60 max-w-2xl text-sm md:text-base">
