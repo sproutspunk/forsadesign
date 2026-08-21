@@ -10,7 +10,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-[58dvh] flex items-center justify-center pt-8 overflow-hidden"
+      className="relative min-h-[62dvh] flex items-center justify-center py-16 md:py-20 overflow-hidden"
     >
       <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary/10 via-background to-background" />
       <div className="container mx-auto px-6 relative z-10">
@@ -26,17 +26,17 @@ export default function Hero() {
             className="w-64 md:w-80 lg:w-96 h-auto object-contain block mx-auto mb-2"
           />
 
-          <div className="w-20 h-px bg-primary mb-4 mt-3" />
+          <div className="w-20 h-px bg-primary mb-6 mt-4" />
 
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold tracking-tight leading-tight mb-3 max-w-4xl">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold tracking-tight leading-tight mb-4 max-w-4xl">
             {t("hero.tagline")}
           </h1>
 
-          <p className="text-lg md:text-xl text-foreground/80 font-medium mb-4 max-w-3xl text-balance">
+          <p className="text-lg md:text-xl text-foreground/80 font-medium mb-5 max-w-3xl text-balance">
             {t("hero.subheader")}
           </p>
 
-          <p className="text-base md:text-lg text-foreground/60 font-light leading-relaxed mb-6 max-w-[65ch] text-left">
+          <p className="text-base md:text-lg text-foreground/60 font-light leading-relaxed mb-8 max-w-[65ch] text-left">
             {t("hero.body")}
           </p>
 

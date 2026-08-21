@@ -135,52 +135,36 @@ export default function TrustBar() {
   const { t } = useLanguage();
 
   return (
-    <div className="mt-8 flex flex-col items-center gap-3">
+    <div className="mt-10 flex flex-col items-center gap-4">
       {/* metric badges */}
-      <div className="flex flex-wrap justify-center gap-2" role="list">
-        {metrics.map(({ key, labelKey, value, icon }) => (
-          <div
-            key={key}
-            role="listitem"
-            className="flex items-center gap-2.5 px-3.5 py-2.5 border border-slate-400/15 rounded-lg"
-          >
-            {icon}
-            <div>
-              <div className="text-[10px] text-foreground/40 uppercase tracking-[0.07em] leading-none mb-0.5">
-                {t(labelKey)}
+      <div className="flex flex-wrap justify-center gap-3" role="list">
+        {metrics.map(({ key, labelKey, value, icon }) => {
+          const isCo2 = key === "co2";
+          const Tag = isCo2 ? "a" : "div";
+          return (
+            <Tag
+              key={key}
+              role="listitem"
+              {...(isCo2
+                ? {
+                    href: "https://digitalbeacon.co/",
+                    target: "_blank",
+                    rel: "noopener noreferrer",
+                  }
+                : {})}
+              className={`flex items-center gap-2.5 px-4 py-3 border border-slate-400/15 rounded-lg${isCo2 ? " hover:border-slate-400/30 transition-colors" : ""}`}
+            >
+              {icon}
+              <div>
+                <div className="text-[11px] text-foreground/40 uppercase tracking-[0.07em] leading-none mb-1">
+                  {t(labelKey)}
+                </div>
+                <div className="text-[15px] font-medium text-slate-100 leading-none">{value}</div>
               </div>
-              <div className="text-[15px] font-medium text-slate-100 leading-none">{value}</div>
-            </div>
-          </div>
-        ))}
+            </Tag>
+          );
+        })}
       </div>
-
-      {/* eco badge */}
-      <a
-        href="https://digitalbeacon.co/"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="inline-flex items-center gap-2 px-3.5 py-2 border border-slate-400/15 rounded-lg text-[13px] text-foreground/80 hover:border-slate-400/30 transition-colors"
-      >
-        <svg
-          width="16"
-          height="16"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke={GREEN}
-          strokeWidth="1.8"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          aria-hidden="true"
-        >
-          <path d="M12 22c4.97-4.97 8-9.5 8-13.5A7.5 7.5 0 0 0 4.5 8.5C4.5 12.5 7.53 17.03 12 22z" />
-          <path d="M12 22V8.5" />
-        </svg>
-        <span>
-          <strong className="font-medium text-slate-100">{t("trustBar.lowEmission")}</strong>{" "}
-          <span className="text-foreground/40">0.07 g CO₂ per visit</span>
-        </span>
-      </a>
     </div>
   );
 }

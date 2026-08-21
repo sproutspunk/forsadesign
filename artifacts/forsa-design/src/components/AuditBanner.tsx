@@ -18,7 +18,7 @@ export default function AuditBanner({ source }: AuditBannerProps) {
   const [activePanel, setActivePanel] = useState<ActivePanel>("none");
 
   return (
-    <section className="w-full bg-background border-t-2 border-primary py-12 px-5 md:py-16">
+    <section className="w-full bg-background border-t border-primary/40 py-16 px-5 md:py-24">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
