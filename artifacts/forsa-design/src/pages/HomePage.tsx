@@ -4,6 +4,7 @@ import { useSeoMeta, useJsonLd, buildHref } from "@/hooks/useSeoMeta";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Services from "@/components/Services";
+import AuditBanner from "@/components/AuditBanner";
 
 const HomeSections = lazy(() => import("@/components/HomeSections"));
 
@@ -268,6 +269,7 @@ export default function HomePage({ lang }: HomePageProps) {
       <Header />
       <main id="main-content">
         <Hero />
+        <AuditBanner source="homepage-hero" />
         <Services />
         <DeferredHomeSections />
       </main>

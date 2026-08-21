@@ -3,7 +3,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { useSeoMeta, useJsonLd, buildHref } from "@/hooks/useSeoMeta";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import LeadMagnetForm from "@/components/LeadMagnetForm";
+import AuditBanner from "@/components/AuditBanner";
 import { getArticleBySlug } from "@/data/articlesData";
 import { m as motion } from "framer-motion";
 import { ArrowLeft, Clock } from "lucide-react";
@@ -26,8 +26,6 @@ const ui = {
       "We design procurement-ready websites and bespoke web systems for industrial, marine and engineering businesses.",
     ctaServices: "See our services",
     ctaContact: "Start a conversation",
-    checklistTitle: "Not ready to talk yet?",
-    checklistText: "Free PDF: The 5-Minute Procurement Website Audit. 10 checks every buyer makes.",
   },
   pl: {
     backToBlog: "Powrót do bloga",
@@ -41,9 +39,6 @@ const ui = {
       "Projektujemy strony gotowe na audyt zakupowy i dedykowane systemy webowe dla firm przemysłowych, morskich i inżynieryjnych.",
     ctaServices: "Zobacz nasze usługi",
     ctaContact: "Rozpocznij rozmowę",
-    checklistTitle: "Jeszcze nie gotowy na rozmowę?",
-    checklistText:
-      "Darmowy PDF: 5-minutowy audyt strony pod kątem zakupów. 10 punktów kontrolnych.",
   },
 };
 
@@ -221,12 +216,8 @@ export default function ArticlePage({ lang, slug }: ArticlePageProps) {
             </div>
           </div>
 
-          <div className="mt-6 rounded-sm border border-border/20 bg-card/50 p-8">
-            <h2 className="font-serif text-lg font-bold text-white mb-2">{u.checklistTitle}</h2>
-            <p className="text-foreground/70 font-light leading-relaxed mb-4 text-sm">
-              {u.checklistText}
-            </p>
-            <LeadMagnetForm isEn={lang === "en"} source="article" />
+          <div className="mt-6 -mx-6">
+            <AuditBanner source="article" />
           </div>
 
           <div className="mt-16 pt-8 border-t border-border/20">

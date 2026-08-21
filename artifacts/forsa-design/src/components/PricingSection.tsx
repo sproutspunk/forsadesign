@@ -2,7 +2,6 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { motion } from "framer-motion";
 import { Check, ArrowRight, Sparkles } from "lucide-react";
 import { trackEvent } from "@/lib/consentManager";
-import LeadMagnetForm from "@/components/LeadMagnetForm";
 
 const presets = [
   {
@@ -191,25 +190,6 @@ export default function PricingSection() {
             "Wszystkie ceny są orientacyjne. Ostateczna wycena zależy od dokładnych wymagań. Użyj kalkulatora do precyzyjnej kalkulacji.",
           )}
         </motion.p>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.5 }}
-          className="mt-12 max-w-xl mx-auto text-center rounded-xl border border-border/30 bg-card/50 p-6"
-        >
-          <h3 className="font-serif text-lg font-bold text-white mb-1">
-            {bi("Not ready to talk yet?", "Jeszcze nie gotowy na rozmowę?")}
-          </h3>
-          <p className="text-sm text-foreground/60 mb-4">
-            {bi(
-              "Compare your current site against procurement standards. Free PDF checklist.",
-              "Porównaj swoją obecną stronę ze standardami procurementu. Darmowa checklista PDF.",
-            )}
-          </p>
-          <LeadMagnetForm isEn={isEn} source="pricing" className="text-left" />
-        </motion.div>
       </div>
     </section>
   );

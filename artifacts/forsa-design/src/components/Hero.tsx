@@ -1,14 +1,11 @@
-import { lazy, Suspense, useState } from "react";
+import { lazy, Suspense } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { trackEvent } from "@/lib/consentManager";
-import LeadMagnetForm from "@/components/LeadMagnetForm";
 
 const TrustBar = lazy(() => import("@/components/TrustBar"));
 
 export default function Hero() {
   const { t, language } = useLanguage();
-  const isEn = language === "en";
-  const [showLeadMagnet, setShowLeadMagnet] = useState(false);
 
   return (
     <section
@@ -51,24 +48,6 @@ export default function Hero() {
           >
             {t("hero.cta")}
           </a>
-
-          <button
-            type="button"
-            onClick={() => {
-              const next = !showLeadMagnet;
-              setShowLeadMagnet(next);
-              if (next) trackEvent("lead_magnet_form_open", { section: "hero", language });
-            }}
-            className="mt-4 text-sm font-medium text-foreground/60 hover:text-primary transition-colors underline underline-offset-4 cursor-pointer"
-          >
-            {isEn
-              ? "Not ready? Download our free 5-min audit checklist"
-              : "Jeszcze nie teraz? Pobierz darmowa checkliste (5 min)"}
-          </button>
-
-          {showLeadMagnet && (
-            <LeadMagnetForm isEn={isEn} source="hero" className="mt-4 w-full max-w-xl" />
-          )}
 
           <Suspense fallback={null}>
             <TrustBar />

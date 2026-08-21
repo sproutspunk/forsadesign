@@ -3,6 +3,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { useLocation } from "wouter";
 import { ChevronDown, Menu, X } from "lucide-react";
 import { trackEvent } from "@/lib/consentManager";
+import AnnouncementBanner from "@/components/AnnouncementBanner";
 
 type DropdownKey = "services" | "work" | "about" | null;
 
@@ -147,9 +148,12 @@ export default function Header() {
         {language === "pl" ? "Przejdź do treści" : "Skip to main content"}
       </a>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? "bg-background/90 backdrop-blur-md py-4 shadow-sm" : "bg-transparent py-6"}`}
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? "bg-background/90 backdrop-blur-md shadow-sm" : "bg-transparent"}`}
       >
-        <div className="container mx-auto flex items-center gap-6 px-6">
+        <AnnouncementBanner language={language} />
+        <div
+          className={`container mx-auto flex items-center gap-6 px-6 transition-all duration-300 ${isScrolled ? "py-4" : "py-6"}`}
+        >
           <a
             href={sectionHref("#home")}
             data-testid="link-logo"

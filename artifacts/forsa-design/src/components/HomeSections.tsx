@@ -1,6 +1,7 @@
 import { Suspense, lazy } from "react";
 import { MotionConfig } from "framer-motion";
 import PricingSection from "@/components/PricingSection";
+import AuditBanner from "@/components/AuditBanner";
 
 const Process = lazy(() => import("@/components/Process"));
 const FAQ = lazy(() => import("@/components/FAQ"));
@@ -12,6 +13,7 @@ const Footer = lazy(() => import("@/components/Footer"));
 export default function HomeSections() {
   return (
     <MotionConfig reducedMotion="user">
+      <AuditBanner source="homepage-pricing" />
       <PricingSection />
       <Suspense fallback={null}>
         <Process />
