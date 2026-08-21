@@ -30,7 +30,7 @@ export default function Process() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="relative flex md:flex-col items-start md:items-center gap-6 md:gap-8 md:text-center"
+                className="relative flex md:flex-col items-start gap-6 md:gap-8"
               >
                 {/* Numbered Circle */}
                 <div className="relative z-10 flex-shrink-0 w-12 h-12 rounded-full border-2 border-primary bg-background flex items-center justify-center text-primary font-serif font-bold text-xl shadow-[0_0_15px_rgba(201,168,76,0.18)]">
@@ -41,7 +41,7 @@ export default function Process() {
                   <h3 className="font-serif text-xl font-bold text-white leading-tight mb-3">
                     {step.title}
                   </h3>
-                  <p className="text-foreground/70 font-light leading-relaxed text-justify">
+                  <p className="text-foreground/70 font-light leading-relaxed text-left">
                     {step.desc}
                   </p>
                 </div>
