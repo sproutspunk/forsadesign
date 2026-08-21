@@ -188,7 +188,7 @@ export default function ArticlePage({ lang, slug }: ArticlePageProps) {
                     {section.heading}
                   </h2>
                 )}
-                <p className="text-foreground/75 font-light leading-relaxed text-justify">
+                <p className="text-foreground/75 font-light leading-relaxed text-left">
                   {section.body}
                 </p>
               </div>
