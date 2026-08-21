@@ -249,6 +249,65 @@ async function handleLeadMagnet(request: Request, env: Env): Promise<Response> {
   return json({ ok: true });
 }
 
+const WAITLIST_MAX_BODY_BYTES = 2_000;
+
+async function handleWaitlist(request: Request, env: Env): Promise<Response> {
+  if (isRateLimited(request, "waitlist")) {
+    return json({ error: "Too many requests. Please try again later." }, 429);
+  }
+
+  const text = await readBody(request, WAITLIST_MAX_BODY_BYTES);
+  if (text === null) return json({ error: "Request too large." }, 413);
+  const payload = await Promise.resolve()
+    .then(() => JSON.parse(text))
+    .catch(() => null);
+  if (!isQuotePayload(payload)) return json({ error: "A valid email is required." }, 400);
+
+  const email = typeof payload.email === "string" ? payload.email.trim() : "";
+  const language = payload.language === "pl" ? "pl" : "en";
+  if (!email || !emailPattern.test(email) || email.length > 320) {
+    return json({ error: "A valid email address is required." }, 400);
+  }
+  if (!env.RESEND_API_KEY) return json({ error: "Email service is not configured." }, 503);
+
+  const content =
+    language === "pl"
+      ? {
+          subject: "Jestes na liscie - Forsa Design",
+          text: "Czesc,\n\nDzieki za zapis. Odezwiemy sie do Ciebie jako pierwszego, gdy tylko uruchomimy demo samoobslugowego edytora strony.\n\nMiro\nForsa Design\nhello@forsadesign.co.uk",
+        }
+      : {
+          subject: "You're on the list - Forsa Design",
+          text: "Hi,\n\nThanks for signing up. We'll let you know first as soon as the self-service website editor demo goes live.\n\nMiro\nForsa Design\nhello@forsadesign.co.uk",
+        };
+
+  const delivered = await sendViaResend(env.RESEND_API_KEY, {
+    from: FROM,
+    to: [email],
+    reply_to: OWNER_EMAIL,
+    subject: content.subject,
+    text: content.text,
+  });
+  if (!delivered) return json({ error: "We could not sign you up. Please try again." }, 502);
+
+  await sendViaResend(env.RESEND_API_KEY, {
+    from: FROM,
+    to: [OWNER_EMAIL],
+    reply_to: email,
+    subject: `New editor demo waitlist signup: ${email}`,
+    text: `Email: ${email}\nLanguage: ${language}\nTime: ${new Date().toISOString()}`,
+  });
+
+  if (env.LEADS) {
+    await env.LEADS.put(
+      `waitlist:${email}`,
+      JSON.stringify({ email, language, signupAt: Date.now() }),
+    );
+  }
+
+  return json({ ok: true });
+}
+
 function decodedBase64Length(value: string): number | null {
   try {
     return atob(value).length;
@@ -430,6 +489,8 @@ export default {
         return handleQuote(request, env);
       if (request.method === "POST" && path === "/api/lead-magnet")
         return handleLeadMagnet(request, env);
+      if (request.method === "POST" && path === "/api/waitlist")
+        return handleWaitlist(request, env);
       return json({ error: "Not found." }, 404);
     } catch {
       return json({ error: "Unable to process the request." }, 500);
