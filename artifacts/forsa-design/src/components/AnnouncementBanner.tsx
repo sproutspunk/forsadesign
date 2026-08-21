@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Sparkles, X } from "lucide-react";
+import { Megaphone, X } from "lucide-react";
 import { trackEvent } from "@/lib/consentManager";
 import WaitlistForm from "@/components/WaitlistForm";
 
@@ -27,7 +27,7 @@ export default function AnnouncementBanner({ language }: AnnouncementBannerProps
   return (
     <div className="relative flex flex-wrap items-center justify-center gap-x-3 gap-y-2 bg-primary px-4 py-2.5 pr-10 text-center text-xs sm:text-sm font-medium text-primary-foreground">
       <div className="flex items-center gap-2">
-        <Sparkles className="w-4 h-4 flex-shrink-0" aria-hidden="true" />
+        <Megaphone className="w-4 h-4 flex-shrink-0 text-red-600" aria-hidden="true" />
         <p className="leading-snug">
           {isEn ? (
             <>
