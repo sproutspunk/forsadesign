@@ -39,6 +39,7 @@ jobs:
         run: pnpm --filter @workspace/forsa-design run build
         env:
           NODE_ENV: production
+          VITE_GA_MEASUREMENT_ID: G-9QKVVE4QXE
 
       - name: Sync secrets to Cloudflare Pages
         env:
