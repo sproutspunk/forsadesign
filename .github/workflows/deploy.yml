@@ -39,6 +39,14 @@ jobs:
         run: pnpm --filter @workspace/forsa-design run build
         env:
           NODE_ENV: production
+          # GA4 Measurement ID for this property: G-9QKVVE4QXE.
+          # Set as a GitHub Actions *variable* (Settings > Secrets and
+          # variables > Actions > Variables) named VITE_GA_MEASUREMENT_ID.
+          # It is not a secret - it is publicly visible in the shipped client
+          # bundle. Vite inlines it at build time; without it the GA4 script
+          # is never injected and no events (cookie banner, contact/quote/
+          # waitlist forms) reach GA4.
+          VITE_GA_MEASUREMENT_ID: ${{ vars.VITE_GA_MEASUREMENT_ID }}
 
       - name: Sync secrets to Cloudflare Pages
         env:
