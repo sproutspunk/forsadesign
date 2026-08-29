@@ -12,7 +12,8 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "check": "pnpm run lint && pnpm run typecheck && pnpm run format:check",
-    "prepare": "husky"
+    "prepare": "husky",
+    "deploy:local": "bash scripts/deploy-local.sh"
   },
   "private": true,
   "lint-staged": {
