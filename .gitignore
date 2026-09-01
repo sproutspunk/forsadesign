@@ -52,3 +52,5 @@ attached_assets/
 # Agent audit outputs and screenshots - do not commit
 .agents/outputs/
 screenshots/
+# Kimi project memory
+.kimi-memory/
