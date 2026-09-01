@@ -1,11 +1,5 @@
 - [Turnstile CAPTCHA on contact form](turnstile-contact-form.md) — managed-mode bot check; graceful degradation by design; error 400020 = domain not in site-key allowlist, not a code bug.
 - [react-hooks v7 flat config](react-hooks-flat-config.md) — use `reactHooks.configs.flat.recommended` (not `.recommended`, which is legacy eslintrc & crashes flat config); fix set-state-in-effect via useSyncExternalStore / `key` remount.
-- [Security scan task recurrence](security-scan-recurrence.md) — scanner checks the LIVE deployment, not source; a merged fix only clears the finding after re-publish; probe prod safely before re-fixing.
-- [Wouter v3 routing pitfalls](wouter-v3-routing.md) — Switch partial-match (specific routes before /en/), setLanguage redirects to homepage (use syncLanguage in sub-pages), Polish curly quotes break esbuild (use Python to fix).
-- [Bilingual pricing helpers](bilingual-pricing.md) — PricingSection uses dual-argument `bi(en, pl)` instead of single `t(key)` because prices/presets are static arrays without translation keys.
-- [VAT disabled in quotes](vat-disabled.md) — `VAT_RATE=0` in quoteConfig.ts; all prices shown as final gross; PdfData uses `subtotal` (not subtotalExVat/vat); keep interface synced with caller.
-- [Stale prerendered files on Cloudflare Pages](stale-prerender-files.md) — Cloudflare Pages preserves stale `index.html` files across deploys; if a route stops being prerendered, the old static file persists and overrides SPA fallback. Always prerender all routes, or use wrangler to purge.
-- [Node 24 strip-types for .ts imports](node-24-strip-types.md) — Node 24 natively supports `import('./file.ts')` without flag in ESM modules; `node --experimental-strip-types` works in CI for running `.mjs` scripts that import `.ts` data files.
 - [Quote PDF lazy loading](quote-pdf-lazy-loading.md) — keep pdf-lib out of the initial bundle; load the generator only when the user downloads a quote.
 - [Mobile homepage loading](mobile-homepage-loading.md) — keep only Header, Hero and Services in initial JS; lazy-load below-fold homepage sections on interaction or hash navigation.
 - [Industrial marketing routes](industrial-marketing-routes.md) — keep React routes, prerendered HTML, SEO/schema, and sitemap entries aligned for every public marketing page.
@@ -13,7 +7,6 @@
 - [Quote email delivery](quote-email-delivery.md) — quote PDF download is gated on server-confirmed SMTP delivery to the client and owner copy.
 - [Cloudflare contact email transport](cloudflare-contact-email-transport.md) — Proton blocks SMTP from Cloudflare Workers (587 & 465); contact mail must go via Worker proxy → API backend → Resend.
 - [Cloudflare CSP injection](cloudflare-csp-injection.md) — Pages appends Analytics/challenge scripts; CSP must allow Cloudflare RUM and same-origin /cdn-cgi endpoints plus GA collection hosts.
-- [Logo transparency for PDF and site](logo-transparency.md) — transparent PNG logo works directly in pdf-lib embedPng and on-site; no background flattening needed if alpha=0 corners.
 - [About page content sources](about-page-content-sources.md) — homepage About and dedicated About routes use separate copy sources; identify the rendered route before editing.
 - [Cloudflare URL conventions](cloudflare-url-conventions.md) — trailing slash is the canonical form; robots.txt has ~1h edge cache (verify with cache-buster); Cloudflare injects managed content signals into robots.txt.
 - [Prerendered homepage parity](prerendered-homepage-parity.md) — homepage copy changes must update both React translations and prerender.mjs bodyHtml; test EN and PL after changing translation shapes.
