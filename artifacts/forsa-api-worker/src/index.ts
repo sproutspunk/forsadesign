@@ -484,13 +484,14 @@ export default {
     if (request.method === "GET" && path === "/api/healthz") return json({ status: "ok" });
 
     try {
-      if (request.method === "POST" && path === "/api/contact") return handleContact(request, env);
+      if (request.method === "POST" && path === "/api/contact")
+        return await handleContact(request, env);
       if (request.method === "POST" && path === "/api/quotes/email")
-        return handleQuote(request, env);
+        return await handleQuote(request, env);
       if (request.method === "POST" && path === "/api/lead-magnet")
-        return handleLeadMagnet(request, env);
+        return await handleLeadMagnet(request, env);
       if (request.method === "POST" && path === "/api/waitlist")
-        return handleWaitlist(request, env);
+        return await handleWaitlist(request, env);
       return json({ error: "Not found." }, 404);
     } catch {
       return json({ error: "Unable to process the request." }, 500);
