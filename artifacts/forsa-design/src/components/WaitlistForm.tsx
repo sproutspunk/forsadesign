@@ -42,7 +42,12 @@ export default function WaitlistForm({ isEn, className }: WaitlistFormProps) {
       const response = await fetch("/api/waitlist", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email: email.trim(), language: isEn ? "en" : "pl", turnstileToken, _gotcha: gotcha }),
+        body: JSON.stringify({
+          email: email.trim(),
+          language: isEn ? "en" : "pl",
+          turnstileToken,
+          _gotcha: gotcha,
+        }),
       });
       const responseText = await response.text();
       let result: { ok?: boolean; error?: string } = {};

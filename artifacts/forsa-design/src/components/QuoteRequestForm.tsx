@@ -35,7 +35,9 @@ export default function QuoteRequestForm({ isEn, source, className }: QuoteReque
 
     if (SITE_KEY && !turnstileToken) {
       setStatus("error");
-      setErrorMessage(t("Please complete the security check.", "Uzupełnij weryfikację bezpieczeństwa."));
+      setErrorMessage(
+        t("Please complete the security check.", "Uzupełnij weryfikację bezpieczeństwa."),
+      );
       return;
     }
 

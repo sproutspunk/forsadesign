@@ -175,7 +175,10 @@ async function handleContact(request: Request, env: Env, origin: string | null):
   }
 
   const turnstileToken = body.get("cf-turnstile-response")?.trim() ?? "";
-  if (env.TURNSTILE_SECRET_KEY && !await verifyTurnstile(turnstileToken, env.TURNSTILE_SECRET_KEY, clientIp(request))) {
+  if (
+    env.TURNSTILE_SECRET_KEY &&
+    !(await verifyTurnstile(turnstileToken, env.TURNSTILE_SECRET_KEY, clientIp(request)))
+  ) {
     return json({ error: "Security check failed." }, 403, origin);
   }
 
@@ -230,7 +233,11 @@ function isQuotePayload(value: unknown): value is Record<string, unknown> {
   return typeof value === "object" && value !== null;
 }
 
-async function handleLeadMagnet(request: Request, env: Env, origin: string | null): Promise<Response> {
+async function handleLeadMagnet(
+  request: Request,
+  env: Env,
+  origin: string | null,
+): Promise<Response> {
   if (isRateLimited(request, "lead-magnet")) {
     return json({ error: "Too many requests. Please try again later." }, 429, origin);
   }
@@ -247,8 +254,12 @@ async function handleLeadMagnet(request: Request, env: Env, origin: string | nul
     return json({ ok: true }, 200, origin);
   }
 
-  const turnstileToken = typeof payload.turnstileToken === "string" ? payload.turnstileToken.trim() : "";
-  if (env.TURNSTILE_SECRET_KEY && !await verifyTurnstile(turnstileToken, env.TURNSTILE_SECRET_KEY, clientIp(request))) {
+  const turnstileToken =
+    typeof payload.turnstileToken === "string" ? payload.turnstileToken.trim() : "";
+  if (
+    env.TURNSTILE_SECRET_KEY &&
+    !(await verifyTurnstile(turnstileToken, env.TURNSTILE_SECRET_KEY, clientIp(request)))
+  ) {
     return json({ error: "Security check failed." }, 403, origin);
   }
 
@@ -279,7 +290,8 @@ async function handleLeadMagnet(request: Request, env: Env, origin: string | nul
     subject: content.subject,
     text: content.text,
   });
-  if (!delivered) return json({ error: "We could not send the checklist. Please try again." }, 502, origin);
+  if (!delivered)
+    return json({ error: "We could not send the checklist. Please try again." }, 502, origin);
 
   await sendViaResend(env.RESEND_API_KEY, {
     from: FROM,
@@ -305,7 +317,11 @@ async function handleLeadMagnet(request: Request, env: Env, origin: string | nul
 
 const WAITLIST_MAX_BODY_BYTES = 2_000;
 
-async function handleWaitlist(request: Request, env: Env, origin: string | null): Promise<Response> {
+async function handleWaitlist(
+  request: Request,
+  env: Env,
+  origin: string | null,
+): Promise<Response> {
   if (isRateLimited(request, "waitlist")) {
     return json({ error: "Too many requests. Please try again later." }, 429, origin);
   }
@@ -322,8 +338,12 @@ async function handleWaitlist(request: Request, env: Env, origin: string | null)
     return json({ ok: true }, 200, origin);
   }
 
-  const turnstileToken = typeof payload.turnstileToken === "string" ? payload.turnstileToken.trim() : "";
-  if (env.TURNSTILE_SECRET_KEY && !await verifyTurnstile(turnstileToken, env.TURNSTILE_SECRET_KEY, clientIp(request))) {
+  const turnstileToken =
+    typeof payload.turnstileToken === "string" ? payload.turnstileToken.trim() : "";
+  if (
+    env.TURNSTILE_SECRET_KEY &&
+    !(await verifyTurnstile(turnstileToken, env.TURNSTILE_SECRET_KEY, clientIp(request)))
+  ) {
     return json({ error: "Security check failed." }, 403, origin);
   }
 
@@ -352,7 +372,8 @@ async function handleWaitlist(request: Request, env: Env, origin: string | null)
     subject: content.subject,
     text: content.text,
   });
-  if (!delivered) return json({ error: "We could not sign you up. Please try again." }, 502, origin);
+  if (!delivered)
+    return json({ error: "We could not sign you up. Please try again." }, 502, origin);
 
   await sendViaResend(env.RESEND_API_KEY, {
     from: FROM,
@@ -477,8 +498,12 @@ async function handleQuote(request: Request, env: Env, origin: string | null): P
     return json({ ok: true }, 200, origin);
   }
 
-  const turnstileToken = typeof payload.turnstileToken === "string" ? payload.turnstileToken.trim() : "";
-  if (env.TURNSTILE_SECRET_KEY && !await verifyTurnstile(turnstileToken, env.TURNSTILE_SECRET_KEY, clientIp(request))) {
+  const turnstileToken =
+    typeof payload.turnstileToken === "string" ? payload.turnstileToken.trim() : "";
+  if (
+    env.TURNSTILE_SECRET_KEY &&
+    !(await verifyTurnstile(turnstileToken, env.TURNSTILE_SECRET_KEY, clientIp(request)))
+  ) {
     return json({ error: "Security check failed." }, 403, origin);
   }
 
@@ -556,7 +581,8 @@ export default {
     const origin = request.headers.get("origin");
     if (request.method === "OPTIONS") return new Response(null, { headers: corsHeaders(origin) });
     const path = new URL(request.url).pathname;
-    if (request.method === "GET" && path === "/api/healthz") return json({ status: "ok" }, 200, origin);
+    if (request.method === "GET" && path === "/api/healthz")
+      return json({ status: "ok" }, 200, origin);
 
     try {
       if (request.method === "POST" && path === "/api/contact")

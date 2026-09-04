@@ -173,7 +173,10 @@ export function QuoteSummary({
   const handleEmailSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (gotcha.trim() !== "") {
-      trackEvent("quote_email_bot_honeypot", { language: isEn ? "en" : "pl", project: projectLabel });
+      trackEvent("quote_email_bot_honeypot", {
+        language: isEn ? "en" : "pl",
+        project: projectLabel,
+      });
       setEmailError(t("Could not send the quote.", "Nie udalo sie wyslac wyceny."));
       return;
     }
@@ -182,7 +185,9 @@ export function QuoteSummary({
       return;
     }
     if (SITE_KEY && !turnstileToken) {
-      setEmailError(t("Please complete the security check.", "Uzupełnij weryfikację bezpieczeństwa."));
+      setEmailError(
+        t("Please complete the security check.", "Uzupełnij weryfikację bezpieczeństwa."),
+      );
       return;
     }
     setEmailError("");
