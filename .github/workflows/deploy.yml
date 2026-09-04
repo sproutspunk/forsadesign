@@ -41,6 +41,7 @@ jobs:
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
         run: |
+          set -euo pipefail
           zone_id="$(curl --fail-with-body --silent --show-error \
             --header "Authorization: Bearer $CLOUDFLARE_API_TOKEN" \
             'https://api.cloudflare.com/client/v4/zones?name=forsadesign.co.uk' \
@@ -56,13 +57,40 @@ jobs:
             --data '{"value":"essentially_off"}' \
             "https://api.cloudflare.com/client/v4/zones/$zone_id/settings/security_level" \
             | jq --exit-status '.success == true' > /dev/null
-          curl --fail-with-body --silent --show-error \
+
+          curl --silent --show-error \
             --request PATCH \
             --header "Authorization: Bearer $CLOUDFLARE_API_TOKEN" \
             --header 'Content-Type: application/json' \
             --data '{"value":"off"}' \
             "https://api.cloudflare.com/client/v4/zones/$zone_id/settings/bot_fight_mode" \
-            | jq --exit-status '.success == true' > /dev/null
+            | jq --exit-status 'if .success == true then true else ("Bot Fight Mode setting was not changed: " + (.errors | tostring) | stderr | false) end' \
+            || true
+
+          rulesets="$(curl --fail-with-body --silent --show-error \
+            --header "Authorization: Bearer $CLOUDFLARE_API_TOKEN" \
+            "https://api.cloudflare.com/client/v4/zones/$zone_id/rulesets")"
+          printf '%s' "$rulesets" \
+            | jq --raw-output '.result[] | select(.phase == "http_request_firewall_custom") | .id' \
+            | while read -r ruleset_id; do
+                [[ -n "$ruleset_id" ]] || continue
+                ruleset="$(curl --fail-with-body --silent --show-error \
+                  --header "Authorization: Bearer $CLOUDFLARE_API_TOKEN" \
+                  "https://api.cloudflare.com/client/v4/zones/$zone_id/rulesets/$ruleset_id")"
+                printf '%s' "$ruleset" \
+                  | jq --raw-output '.result.rules[]? | select(.enabled != false and (.action == "managed_challenge" or .action == "challenge" or .action == "js_challenge")) | .id' \
+                  | while read -r rule_id; do
+                      [[ -n "$rule_id" ]] || continue
+                      curl --fail-with-body --silent --show-error \
+                        --request PATCH \
+                        --header "Authorization: Bearer $CLOUDFLARE_API_TOKEN" \
+                        --header 'Content-Type: application/json' \
+                        --data '{"enabled":false}' \
+                        "https://api.cloudflare.com/client/v4/zones/$zone_id/rulesets/$ruleset_id/rules/$rule_id" \
+                        | jq --exit-status '.success == true' > /dev/null
+                      echo "Disabled Cloudflare WAF challenge rule $rule_id."
+                    done
+              done
 
       - name: Deploy API Worker
         if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
