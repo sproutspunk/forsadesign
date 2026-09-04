@@ -13,7 +13,6 @@ interface TurnstileWindow {
     ) => string;
     reset: (widgetId: string) => void;
     remove: (widgetId: string) => void;
-    ready?: (cb: () => void) => void;
   };
 }
 
@@ -39,8 +38,6 @@ function ensureTurnstileScript(onReady: () => void): () => void {
     script = document.createElement("script");
     script.id = SCRIPT_ID;
     script.src = SCRIPT_SRC;
-    script.async = true;
-    script.defer = true;
     document.head.appendChild(script);
   }
   script.addEventListener("load", onReady, { once: true });
@@ -67,16 +64,7 @@ export default function Turnstile({ siteKey, onVerify, onError, className }: Tur
       });
     };
 
-    const onReady = () => {
-      const win = window as unknown as TurnstileWindow;
-      if (win.turnstile?.ready) {
-        win.turnstile.ready(render);
-      } else {
-        render();
-      }
-    };
-
-    const removeLoadListener = ensureTurnstileScript(onReady);
+    const removeLoadListener = ensureTurnstileScript(render);
 
     return () => {
       cancelled = true;
