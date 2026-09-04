@@ -1,9 +1,6 @@
 import { useRef, useState } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { trackEvent } from "@/lib/consentManager";
-import Turnstile from "@/components/Turnstile";
-
-const SITE_KEY = import.meta.env.VITE_TURNSTILE_SITE_KEY as string | undefined;
 
 export default function ContactForm() {
   const { language } = useLanguage();
@@ -11,18 +8,10 @@ export default function ContactForm() {
   const formRef = useRef<HTMLFormElement>(null);
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
   const [errorMessage, setErrorMessage] = useState("");
-  const [turnstileToken, setTurnstileToken] = useState("");
 
   const submit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     if (status === "sending") return;
-    if (SITE_KEY && !turnstileToken) {
-      setStatus("error");
-      setErrorMessage(
-        en ? "Please complete the security check." : "Uzupełnij weryfikację bezpieczeństwa.",
-      );
-      return;
-    }
 
     setStatus("sending");
     setErrorMessage("");
@@ -46,7 +35,6 @@ export default function ContactForm() {
       if (typeof value === "string") form.set(key, value);
     });
     form.set("language", language);
-    if (turnstileToken) form.set("cf-turnstile-response", turnstileToken);
 
     try {
       const response = await fetch("/api/contact", {
@@ -68,7 +56,6 @@ export default function ContactForm() {
       trackEvent("contact_form_success", { language });
       setStatus("success");
       formRef.current?.reset();
-      setTurnstileToken("");
     } catch (error) {
       setStatus("error");
       setErrorMessage(
@@ -140,11 +127,6 @@ export default function ContactForm() {
               className="mt-2 w-full resize-y rounded-sm border border-border bg-background px-4 py-3 text-white outline-none transition-colors focus:border-primary"
             />
           </label>
-          {SITE_KEY && (
-            <div className="mt-5">
-              <Turnstile siteKey={SITE_KEY} onVerify={setTurnstileToken} />
-            </div>
-          )}
           {status === "success" && (
             <p role="status" className="mt-4 text-sm text-primary">
               {en

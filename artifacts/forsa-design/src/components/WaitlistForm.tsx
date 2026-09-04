@@ -2,9 +2,6 @@ import { useState } from "react";
 import type { FormEvent } from "react";
 import { Send, Loader2, CheckCircle2 } from "lucide-react";
 import { trackEvent } from "@/lib/consentManager";
-import Turnstile from "@/components/Turnstile";
-
-const SITE_KEY = import.meta.env.TURNSTILE_SITE_KEY as string | undefined;
 
 interface WaitlistFormProps {
   isEn: boolean;
@@ -19,7 +16,6 @@ export default function WaitlistForm({ isEn, className }: WaitlistFormProps) {
   const [gotcha, setGotcha] = useState("");
   const [status, setStatus] = useState<"idle" | "sending" | "done">("idle");
   const [error, setError] = useState("");
-  const [turnstileToken, setTurnstileToken] = useState("");
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
@@ -32,10 +28,6 @@ export default function WaitlistForm({ isEn, className }: WaitlistFormProps) {
       setError(t("Enter a valid email address.", "Podaj poprawny adres email."));
       return;
     }
-    if (SITE_KEY && !turnstileToken) {
-      setError(t("Please complete the security check.", "Uzupełnij weryfikację bezpieczeństwa."));
-      return;
-    }
     setError("");
     setStatus("sending");
     try {
@@ -45,7 +37,6 @@ export default function WaitlistForm({ isEn, className }: WaitlistFormProps) {
         body: JSON.stringify({
           email: email.trim(),
           language: isEn ? "en" : "pl",
-          turnstileToken,
           _gotcha: gotcha,
         }),
       });
@@ -65,7 +56,6 @@ export default function WaitlistForm({ isEn, className }: WaitlistFormProps) {
       }
       trackEvent("editor_waitlist_signup", { language: isEn ? "en" : "pl" });
       setStatus("done");
-      setTurnstileToken("");
     } catch (err) {
       setError(
         err instanceof Error
@@ -119,7 +109,6 @@ export default function WaitlistForm({ isEn, className }: WaitlistFormProps) {
         )}
         {t("Notify Me", "Powiadom mnie")}
       </button>
-      {SITE_KEY && <Turnstile siteKey={SITE_KEY} onVerify={setTurnstileToken} className="mt-2" />}
       {error && (
         <p className="absolute top-full left-0 mt-1 text-xs text-red-100 bg-red-900/80 px-2 py-1 rounded">
           {error}

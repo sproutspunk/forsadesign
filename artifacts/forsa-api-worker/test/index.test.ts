@@ -12,7 +12,6 @@ interface TestKV {
 
 interface TestEnv {
   RESEND_API_KEY?: string;
-  TURNSTILE_SECRET_KEY?: string;
   LEADS?: TestKV;
 }
 
@@ -33,7 +32,6 @@ function createKV(): TestKV {
 function createEnv(overrides: Partial<TestEnv> = {}): TestEnv {
   return {
     RESEND_API_KEY: "re_test_key",
-    TURNSTILE_SECRET_KEY: "1x0000000000000000000000000000000AA",
     LEADS: createKV(),
     ...overrides,
   };
@@ -110,13 +108,12 @@ describe("Worker", () => {
       email: "miro@example.com",
       message: "Hello",
       language: "en",
-      "cf-turnstile-response": "dummy-token",
     }).toString();
 
     it("returns 400 when fields are missing", async () => {
       const res = await worker.fetch(
         request("/api/contact", { method: "POST", body: new URLSearchParams({}).toString() }),
-        createEnv({ TURNSTILE_SECRET_KEY: undefined }),
+        createEnv(),
       );
       expect(res.status).toBe(400);
     });
@@ -139,29 +136,14 @@ describe("Worker", () => {
     it("returns 503 when RESEND_API_KEY is missing", async () => {
       const res = await worker.fetch(
         request("/api/contact", { method: "POST", body: validBody }),
-        createEnv({ RESEND_API_KEY: undefined, TURNSTILE_SECRET_KEY: undefined }),
+        createEnv({ RESEND_API_KEY: undefined }),
       );
       expect(res.status).toBe(503);
-    });
-
-    it("returns 403 when Turnstile verification fails", async () => {
-      mockFetch(async (url) => {
-        if (url.includes("challenges.cloudflare.com")) {
-          return Response.json({ success: false, "error-codes": ["timeout-or-duplicate"] });
-        }
-        return undefined;
-      });
-      const res = await worker.fetch(
-        request("/api/contact", { method: "POST", body: validBody }),
-        createEnv(),
-      );
-      expect(res.status).toBe(403);
     });
 
     it("sends contact email and confirmation", async () => {
       const sent: { url: string; init: RequestInit }[] = [];
       mockFetch(async (url, init) => {
-        if (url.includes("challenges.cloudflare.com")) return Response.json({ success: true });
         if (url.includes("api.resend.com")) {
           sent.push({ url, init });
           return Response.json({ id: "email-id" });
@@ -181,7 +163,6 @@ describe("Worker", () => {
 
     it("returns 502 when Resend fails", async () => {
       mockFetch(async (url) => {
-        if (url.includes("challenges.cloudflare.com")) return Response.json({ success: true });
         if (url.includes("api.resend.com")) return new Response("Internal error", { status: 500 });
         return undefined;
       });
@@ -194,7 +175,6 @@ describe("Worker", () => {
 
     it("rate limits repeated requests", async () => {
       mockFetch(async (url) => {
-        if (url.includes("challenges.cloudflare.com")) return Response.json({ success: true });
         if (url.includes("api.resend.com")) return Response.json({ id: "x" });
         return undefined;
       });
@@ -229,7 +209,7 @@ describe("Worker", () => {
     it("returns 400 for invalid email", async () => {
       const res = await worker.fetch(
         request("/api/lead-magnet", { method: "POST", body: JSON.stringify({ email: "bad" }) }),
-        createEnv({ TURNSTILE_SECRET_KEY: undefined }),
+        createEnv(),
       );
       expect(res.status).toBe(400);
     });
@@ -238,7 +218,6 @@ describe("Worker", () => {
       const sent: string[] = [];
       const kv = createKV();
       mockFetch(async (url) => {
-        if (url.includes("challenges.cloudflare.com")) return Response.json({ success: true });
         if (url.includes("api.resend.com")) {
           sent.push(url);
           return Response.json({ id: "x" });
@@ -252,7 +231,6 @@ describe("Worker", () => {
             email: "lead@example.com",
             company: "Acme",
             language: "en",
-            turnstileToken: "dummy",
           }),
         }),
         createEnv({ LEADS: kv }),
@@ -278,14 +256,13 @@ describe("Worker", () => {
     it("sends waitlist confirmation and stores signup", async () => {
       const kv = createKV();
       mockFetch(async (url) => {
-        if (url.includes("challenges.cloudflare.com")) return Response.json({ success: true });
         if (url.includes("api.resend.com")) return Response.json({ id: "x" });
         return undefined;
       });
       const res = await worker.fetch(
         request("/api/waitlist", {
           method: "POST",
-          body: JSON.stringify({ email: "user@example.com", language: "pl", turnstileToken: "t" }),
+          body: JSON.stringify({ email: "user@example.com", language: "pl" }),
         }),
         createEnv({ LEADS: kv }),
       );
@@ -324,7 +301,7 @@ describe("Worker", () => {
       const body = JSON.stringify({ ...payload, pdfBase64: "" });
       const res = await worker.fetch(
         request("/api/quotes/email", { method: "POST", body }),
-        createEnv({ TURNSTILE_SECRET_KEY: undefined }),
+        createEnv(),
       );
       expect(res.status).toBe(400);
     });
@@ -341,7 +318,7 @@ describe("Worker", () => {
       const body = JSON.stringify(payload);
       const res = await worker.fetch(
         request("/api/quotes/email", { method: "POST", body }),
-        createEnv({ TURNSTILE_SECRET_KEY: undefined }),
+        createEnv(),
       );
       expect(res.status).toBe(200);
       expect(await res.json()).toEqual({ ok: true });

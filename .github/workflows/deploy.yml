@@ -36,19 +36,6 @@ jobs:
       - name: Install dependencies
         run: pnpm install --no-frozen-lockfile
 
-      - name: Sync Turnstile secret to API Worker
-        if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
-        env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          TURNSTILE_SECRET_KEY: ${{ secrets.TURNSTILE_SECRET_KEY }}
-        run: |
-          if [[ -z "$TURNSTILE_SECRET_KEY" ]]; then
-            echo "::error::TURNSTILE_SECRET_KEY is not configured in GitHub Actions secrets."
-            exit 1
-          fi
-          printf '%s' "$TURNSTILE_SECRET_KEY" | pnpm --filter @workspace/forsa-api-worker exec wrangler secret put TURNSTILE_SECRET_KEY
-
       - name: Deploy API Worker
         if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
         env:
@@ -66,9 +53,6 @@ jobs:
           # is never injected and no events (cookie banner, contact/quote/
           # waitlist forms) reach GA4.
           VITE_GA_MEASUREMENT_ID: G-9QKVVE4QXE
-          # Cloudflare Turnstile site key (public). Vite inlines it so the
-          # Turnstile widget can render in production.
-          VITE_TURNSTILE_SITE_KEY: ${{ secrets.VITE_TURNSTILE_SITE_KEY }}
 
       - name: Sync secrets to Cloudflare Pages
         env:

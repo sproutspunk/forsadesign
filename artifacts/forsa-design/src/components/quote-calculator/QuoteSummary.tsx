@@ -14,9 +14,6 @@ import {
   Loader2,
 } from "lucide-react";
 import { trackEvent } from "@/lib/consentManager";
-import Turnstile from "@/components/Turnstile";
-
-const SITE_KEY = import.meta.env.TURNSTILE_SITE_KEY as string | undefined;
 
 interface Breakdown {
   packagePrice: number;
@@ -83,7 +80,6 @@ export function QuoteSummary({
   const [gotcha, setGotcha] = useState("");
   const [isGenerating, setIsGenerating] = useState(false);
   const [emailError, setEmailError] = useState("");
-  const [turnstileToken, setTurnstileToken] = useState("");
 
   const handleSave = () => {
     const quotes = JSON.parse(localStorage.getItem("forsa-quotes") || "[]");
@@ -184,12 +180,6 @@ export function QuoteSummary({
       setEmailError(t("Enter a valid email address.", "Podaj poprawny adres email."));
       return;
     }
-    if (SITE_KEY && !turnstileToken) {
-      setEmailError(
-        t("Please complete the security check.", "Uzupełnij weryfikację bezpieczeństwa."),
-      );
-      return;
-    }
     setEmailError("");
     setIsGenerating(true);
     const quotes = JSON.parse(localStorage.getItem("forsa-quotes") || "[]");
@@ -216,7 +206,6 @@ export function QuoteSummary({
           total: formatPrice(breakdown.total),
           estimatedWeeks: isEn ? breakdown.estimatedWeeks : breakdown.estimatedWeeksPl,
           isEn,
-          turnstileToken,
           _gotcha: gotcha,
         }),
       });
@@ -247,7 +236,6 @@ export function QuoteSummary({
         project: projectLabel,
       });
       setEmailStep("done");
-      setTurnstileToken("");
       downloadPdfBytes(pdfBytes, quoteId);
     } catch (error) {
       setEmailError(
@@ -438,7 +426,6 @@ export function QuoteSummary({
                   />
                 </div>
                 {emailError && <p className="text-xs text-red-500">{emailError}</p>}
-                {SITE_KEY && <Turnstile siteKey={SITE_KEY} onVerify={setTurnstileToken} />}
                 <button
                   type="submit"
                   disabled={isGenerating}

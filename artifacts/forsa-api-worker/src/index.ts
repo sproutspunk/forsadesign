@@ -10,7 +10,6 @@ interface KVNamespace {
 
 interface Env {
   RESEND_API_KEY?: string;
-  TURNSTILE_SECRET_KEY?: string;
   LEADS?: KVNamespace;
 }
 
@@ -129,36 +128,6 @@ async function sendViaResend(apiKey: string, payload: Record<string, unknown>): 
   return response.ok;
 }
 
-async function verifyTurnstile(token: string, secret: string, remoteip: string): Promise<boolean> {
-  if (!token || token.length > 2048) return false;
-  const response = await fetch("https://challenges.cloudflare.com/turnstile/v0/siteverify", {
-    method: "POST",
-    headers: { "content-type": "application/x-www-form-urlencoded" },
-    body: new URLSearchParams({ secret, response: token, remoteip }),
-  });
-  const result = (await response.json().catch(() => ({}))) as {
-    success?: boolean;
-    "error-codes"?: string[];
-    hostname?: string;
-    action?: string;
-    cdata?: string;
-  };
-  if (result.success !== true) {
-    console.log(
-      JSON.stringify({
-        event: "turnstile_verify_failed",
-        ip: remoteip,
-        success: result.success ?? null,
-        errorCodes: result["error-codes"] ?? [],
-        hostname: result.hostname ?? null,
-        action: result.action ?? null,
-        tokenLength: token.length,
-      }),
-    );
-  }
-  return result.success === true;
-}
-
 async function handleContact(request: Request, env: Env, origin: string | null): Promise<Response> {
   if (isRateLimited(request, "contact")) {
     console.log(JSON.stringify({ event: "contact_rate_limited", ip: clientIp(request) }));
@@ -172,14 +141,6 @@ async function handleContact(request: Request, env: Env, origin: string | null):
   if (body.get("_gotcha")) {
     console.log(JSON.stringify({ event: "contact_honeypot", ip: clientIp(request) }));
     return json({ ok: true }, 200, origin);
-  }
-
-  const turnstileToken = body.get("cf-turnstile-response")?.trim() ?? "";
-  if (
-    env.TURNSTILE_SECRET_KEY &&
-    !(await verifyTurnstile(turnstileToken, env.TURNSTILE_SECRET_KEY, clientIp(request)))
-  ) {
-    return json({ error: "Security check failed." }, 403, origin);
   }
 
   const name = body.get("name")?.trim() ?? "";
@@ -252,15 +213,6 @@ async function handleLeadMagnet(
   if (typeof payload._gotcha === "string" && payload._gotcha.trim() !== "") {
     console.log(JSON.stringify({ event: "lead_magnet_honeypot", ip: clientIp(request) }));
     return json({ ok: true }, 200, origin);
-  }
-
-  const turnstileToken =
-    typeof payload.turnstileToken === "string" ? payload.turnstileToken.trim() : "";
-  if (
-    env.TURNSTILE_SECRET_KEY &&
-    !(await verifyTurnstile(turnstileToken, env.TURNSTILE_SECRET_KEY, clientIp(request)))
-  ) {
-    return json({ error: "Security check failed." }, 403, origin);
   }
 
   const email = typeof payload.email === "string" ? payload.email.trim() : "";
@@ -336,15 +288,6 @@ async function handleWaitlist(
   if (typeof payload._gotcha === "string" && payload._gotcha.trim() !== "") {
     console.log(JSON.stringify({ event: "waitlist_honeypot", ip: clientIp(request) }));
     return json({ ok: true }, 200, origin);
-  }
-
-  const turnstileToken =
-    typeof payload.turnstileToken === "string" ? payload.turnstileToken.trim() : "";
-  if (
-    env.TURNSTILE_SECRET_KEY &&
-    !(await verifyTurnstile(turnstileToken, env.TURNSTILE_SECRET_KEY, clientIp(request)))
-  ) {
-    return json({ error: "Security check failed." }, 403, origin);
   }
 
   const email = typeof payload.email === "string" ? payload.email.trim() : "";
@@ -496,15 +439,6 @@ async function handleQuote(request: Request, env: Env, origin: string | null): P
   if (typeof payload._gotcha === "string" && payload._gotcha.trim() !== "") {
     console.log(JSON.stringify({ event: "quote_email_honeypot", ip: clientIp(request) }));
     return json({ ok: true }, 200, origin);
-  }
-
-  const turnstileToken =
-    typeof payload.turnstileToken === "string" ? payload.turnstileToken.trim() : "";
-  if (
-    env.TURNSTILE_SECRET_KEY &&
-    !(await verifyTurnstile(turnstileToken, env.TURNSTILE_SECRET_KEY, clientIp(request)))
-  ) {
-    return json({ error: "Security check failed." }, 403, origin);
   }
 
   const { email, name, phone, pdfBase64, quoteId, projectLabel, total, estimatedWeeks, isEn } =

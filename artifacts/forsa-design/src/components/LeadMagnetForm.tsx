@@ -2,9 +2,6 @@ import { useState } from "react";
 import type { FormEvent } from "react";
 import { Download, Loader2, CheckCircle2 } from "lucide-react";
 import { trackEvent } from "@/lib/consentManager";
-import Turnstile from "@/components/Turnstile";
-
-const SITE_KEY = import.meta.env.TURNSTILE_SITE_KEY as string | undefined;
 
 interface LeadMagnetFormProps {
   isEn: boolean;
@@ -21,7 +18,6 @@ export default function LeadMagnetForm({ isEn, source, className }: LeadMagnetFo
   const [gotcha, setGotcha] = useState("");
   const [status, setStatus] = useState<"idle" | "sending" | "done">("idle");
   const [error, setError] = useState("");
-  const [turnstileToken, setTurnstileToken] = useState("");
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
@@ -34,10 +30,6 @@ export default function LeadMagnetForm({ isEn, source, className }: LeadMagnetFo
       setError(t("Enter a valid email address.", "Podaj poprawny adres email."));
       return;
     }
-    if (SITE_KEY && !turnstileToken) {
-      setError(t("Please complete the security check.", "Uzupełnij weryfikację bezpieczeństwa."));
-      return;
-    }
     setError("");
     setStatus("sending");
     try {
@@ -48,7 +40,6 @@ export default function LeadMagnetForm({ isEn, source, className }: LeadMagnetFo
           email: email.trim(),
           company: company.trim(),
           language: isEn ? "en" : "pl",
-          turnstileToken,
           _gotcha: gotcha,
         }),
       });
@@ -70,7 +61,6 @@ export default function LeadMagnetForm({ isEn, source, className }: LeadMagnetFo
       }
       trackEvent("lead_magnet_download", { source, language: isEn ? "en" : "pl" });
       setStatus("done");
-      setTurnstileToken("");
     } catch (err) {
       setError(
         err instanceof Error
@@ -137,7 +127,6 @@ export default function LeadMagnetForm({ isEn, source, className }: LeadMagnetFo
           {t("Download checklist", "Pobierz checklist\u0119")}
         </button>
       </div>
-      {SITE_KEY && <Turnstile siteKey={SITE_KEY} onVerify={setTurnstileToken} className="mt-3" />}
       {error && <p className="text-xs text-red-400 mt-1.5">{error}</p>}
     </form>
   );
