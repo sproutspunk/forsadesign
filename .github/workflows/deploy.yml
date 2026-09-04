@@ -69,14 +69,22 @@ jobs:
 
           rulesets="$(curl --fail-with-body --silent --show-error \
             --header "Authorization: Bearer $CLOUDFLARE_API_TOKEN" \
-            "https://api.cloudflare.com/client/v4/zones/$zone_id/rulesets")"
+            "https://api.cloudflare.com/client/v4/zones/$zone_id/rulesets")" \
+            || {
+              echo "::warning::Could not read Cloudflare rulesets; continuing with deployment."
+              rulesets='{"result":[]}'
+            }
           printf '%s' "$rulesets" \
             | jq --raw-output '.result[] | select(.phase == "http_request_firewall_custom") | .id' \
             | while read -r ruleset_id; do
                 [[ -n "$ruleset_id" ]] || continue
                 ruleset="$(curl --fail-with-body --silent --show-error \
                   --header "Authorization: Bearer $CLOUDFLARE_API_TOKEN" \
-                  "https://api.cloudflare.com/client/v4/zones/$zone_id/rulesets/$ruleset_id")"
+                  "https://api.cloudflare.com/client/v4/zones/$zone_id/rulesets/$ruleset_id")" \
+                  || {
+                    echo "::warning::Could not read Cloudflare ruleset $ruleset_id; continuing."
+                    continue
+                  }
                 printf '%s' "$ruleset" \
                   | jq --raw-output '.result.rules[]? | select(.enabled != false and (.action == "managed_challenge" or .action == "challenge" or .action == "js_challenge")) | .id' \
                   | while read -r rule_id; do
@@ -87,8 +95,9 @@ jobs:
                         --header 'Content-Type: application/json' \
                         --data '{"enabled":false}' \
                         "https://api.cloudflare.com/client/v4/zones/$zone_id/rulesets/$ruleset_id/rules/$rule_id" \
-                        | jq --exit-status '.success == true' > /dev/null
-                      echo "Disabled Cloudflare WAF challenge rule $rule_id."
+                        | jq --exit-status '.success == true' > /dev/null \
+                        && echo "Disabled Cloudflare WAF challenge rule $rule_id." \
+                        || echo "::warning::Could not disable Cloudflare WAF challenge rule $rule_id; continuing."
                     done
               done
 
