@@ -2,6 +2,7 @@ import { useRef, useState } from "react";
 import type { FormEvent } from "react";
 import { Send, Loader2, CheckCircle2 } from "lucide-react";
 import { trackEvent } from "@/lib/consentManager";
+import { API_BASE_URL } from "@/lib/api";
 
 interface QuoteRequestFormProps {
   isEn: boolean;
@@ -44,7 +45,7 @@ export default function QuoteRequestForm({ isEn, source, className }: QuoteReque
     form.set("language", isEn ? "en" : "pl");
 
     try {
-      const response = await fetch("/api/contact", {
+      const response = await fetch(`${API_BASE_URL}/api/contact`, {
         method: "POST",
         headers: { "content-type": "application/x-www-form-urlencoded" },
         body: form,

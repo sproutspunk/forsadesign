@@ -2,6 +2,7 @@ import { useState } from "react";
 import type { FormEvent } from "react";
 import { Send, Loader2, CheckCircle2 } from "lucide-react";
 import { trackEvent } from "@/lib/consentManager";
+import { API_BASE_URL } from "@/lib/api";
 
 interface WaitlistFormProps {
   isEn: boolean;
@@ -31,7 +32,7 @@ export default function WaitlistForm({ isEn, className }: WaitlistFormProps) {
     setError("");
     setStatus("sending");
     try {
-      const response = await fetch("/api/waitlist", {
+      const response = await fetch(`${API_BASE_URL}/api/waitlist`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

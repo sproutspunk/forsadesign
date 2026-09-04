@@ -1,6 +1,7 @@
 import { useRef, useState } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { trackEvent } from "@/lib/consentManager";
+import { API_BASE_URL } from "@/lib/api";
 
 export default function ContactForm() {
   const { language } = useLanguage();
@@ -37,7 +38,7 @@ export default function ContactForm() {
     form.set("language", language);
 
     try {
-      const response = await fetch("/api/contact", {
+      const response = await fetch(`${API_BASE_URL}/api/contact`, {
         method: "POST",
         headers: { "content-type": "application/x-www-form-urlencoded" },
         body: form,

@@ -2,6 +2,7 @@ import { useState } from "react";
 import type { FormEvent } from "react";
 import { Download, Loader2, CheckCircle2 } from "lucide-react";
 import { trackEvent } from "@/lib/consentManager";
+import { API_BASE_URL } from "@/lib/api";
 
 interface LeadMagnetFormProps {
   isEn: boolean;
@@ -33,7 +34,7 @@ export default function LeadMagnetForm({ isEn, source, className }: LeadMagnetFo
     setError("");
     setStatus("sending");
     try {
-      const response = await fetch("/api/lead-magnet", {
+      const response = await fetch(`${API_BASE_URL}/api/lead-magnet`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

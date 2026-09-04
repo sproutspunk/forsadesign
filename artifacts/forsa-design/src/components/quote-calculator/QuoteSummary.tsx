@@ -14,6 +14,7 @@ import {
   Loader2,
 } from "lucide-react";
 import { trackEvent } from "@/lib/consentManager";
+import { API_BASE_URL } from "@/lib/api";
 
 interface Breakdown {
   packagePrice: number;
@@ -193,7 +194,7 @@ export function QuoteSummary({
       const pdfBytes = await createPdf(quoteId);
       let binary = "";
       for (const byte of pdfBytes) binary += String.fromCharCode(byte);
-      const response = await fetch("/api/quotes/email", {
+      const response = await fetch(`${API_BASE_URL}/api/quotes/email`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
