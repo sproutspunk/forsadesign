@@ -43,8 +43,7 @@ function mockFetch(
   mock: (url: string, init: RequestInit) => Promise<Response | undefined> | Response | undefined,
 ) {
   return vi.spyOn(globalThis, "fetch").mockImplementation(async (input, init) => {
-    const url =
-      typeof input === "string" ? input : input instanceof URL ? input.href : input.url;
+    const url = typeof input === "string" ? input : input instanceof URL ? input.href : input.url;
     const response = await Promise.resolve(mock(url, init as RequestInit));
     if (response) return response;
     return new Response("not mocked", { status: 500 });
@@ -84,12 +83,18 @@ describe("Worker", () => {
 
   describe("CORS", () => {
     it("allows configured origins", async () => {
-      const res = await worker.fetch(request("/api/healthz", { origin: "http://localhost:3000" }), createEnv());
+      const res = await worker.fetch(
+        request("/api/healthz", { origin: "http://localhost:3000" }),
+        createEnv(),
+      );
       expect(res.headers.get("Access-Control-Allow-Origin")).toBe("http://localhost:3000");
     });
 
     it("falls back to production origin for unknown origins", async () => {
-      const res = await worker.fetch(request("/api/healthz", { origin: "https://evil.com" }), createEnv());
+      const res = await worker.fetch(
+        request("/api/healthz", { origin: "https://evil.com" }),
+        createEnv(),
+      );
       expect(res.headers.get("Access-Control-Allow-Origin")).toBe("https://forsadesign.co.uk");
     });
 
@@ -123,7 +128,10 @@ describe("Worker", () => {
         message: "Spam",
         _gotcha: "filled",
       }).toString();
-      const res = await worker.fetch(request("/api/contact", { method: "POST", body }), createEnv());
+      const res = await worker.fetch(
+        request("/api/contact", { method: "POST", body }),
+        createEnv(),
+      );
       expect(res.status).toBe(200);
       expect(await res.json()).toEqual({ ok: true });
     });
@@ -143,7 +151,10 @@ describe("Worker", () => {
         }
         return undefined;
       });
-      const res = await worker.fetch(request("/api/contact", { method: "POST", body: validBody }), createEnv());
+      const res = await worker.fetch(
+        request("/api/contact", { method: "POST", body: validBody }),
+        createEnv(),
+      );
       expect(res.status).toBe(403);
     });
 
@@ -157,7 +168,10 @@ describe("Worker", () => {
         }
         return undefined;
       });
-      const res = await worker.fetch(request("/api/contact", { method: "POST", body: validBody }), createEnv());
+      const res = await worker.fetch(
+        request("/api/contact", { method: "POST", body: validBody }),
+        createEnv(),
+      );
       expect(res.status).toBe(200);
       expect(await res.json()).toEqual({ ok: true });
       expect(sent).toHaveLength(2);
@@ -171,7 +185,10 @@ describe("Worker", () => {
         if (url.includes("api.resend.com")) return new Response("Internal error", { status: 500 });
         return undefined;
       });
-      const res = await worker.fetch(request("/api/contact", { method: "POST", body: validBody }), createEnv());
+      const res = await worker.fetch(
+        request("/api/contact", { method: "POST", body: validBody }),
+        createEnv(),
+      );
       expect(res.status).toBe(502);
     });
 
@@ -201,7 +218,10 @@ describe("Worker", () => {
   describe("/api/lead-magnet", () => {
     it("catches honeypot", async () => {
       const body = JSON.stringify({ email: "lead@example.com", _gotcha: "x" });
-      const res = await worker.fetch(request("/api/lead-magnet", { method: "POST", body }), createEnv());
+      const res = await worker.fetch(
+        request("/api/lead-magnet", { method: "POST", body }),
+        createEnv(),
+      );
       expect(res.status).toBe(200);
       expect(await res.json()).toEqual({ ok: true });
     });
@@ -247,7 +267,10 @@ describe("Worker", () => {
   describe("/api/waitlist", () => {
     it("catches honeypot", async () => {
       const body = JSON.stringify({ email: "user@example.com", _gotcha: "x" });
-      const res = await worker.fetch(request("/api/waitlist", { method: "POST", body }), createEnv());
+      const res = await worker.fetch(
+        request("/api/waitlist", { method: "POST", body }),
+        createEnv(),
+      );
       expect(res.status).toBe(200);
       expect(await res.json()).toEqual({ ok: true });
     });
@@ -289,7 +312,10 @@ describe("Worker", () => {
 
     it("catches honeypot", async () => {
       const body = JSON.stringify({ ...payload, _gotcha: "x" });
-      const res = await worker.fetch(request("/api/quotes/email", { method: "POST", body }), createEnv());
+      const res = await worker.fetch(
+        request("/api/quotes/email", { method: "POST", body }),
+        createEnv(),
+      );
       expect(res.status).toBe(200);
       expect(await res.json()).toEqual({ ok: true });
     });

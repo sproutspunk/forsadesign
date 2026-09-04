@@ -106,10 +106,10 @@ Public write endpoints validate incoming data and are rate-limited (5 requests p
 
 Required Worker secrets:
 
-| Secret                 | Purpose                                                   |
-| ---------------------- | --------------------------------------------------------- |
-| `RESEND_API_KEY`       | Sends contact and quote emails through Resend             |
-| `TURNSTILE_SECRET_KEY` | Verifies Cloudflare Turnstile tokens from public forms    |
+| Secret                 | Purpose                                                |
+| ---------------------- | ------------------------------------------------------ |
+| `RESEND_API_KEY`       | Sends contact and quote emails through Resend          |
+| `TURNSTILE_SECRET_KEY` | Verifies Cloudflare Turnstile tokens from public forms |
 
 Set a secret from the Windows clipboard:
 
@@ -149,8 +149,8 @@ Required Pages secret:
 
 Required build environment variable (must be available when `vite build` runs):
 
-| Variable             | Description                                                                 |
-| -------------------- | --------------------------------------------------------------------------- |
+| Variable             | Description                                                                              |
+| -------------------- | ---------------------------------------------------------------------------------------- |
 | `TURNSTILE_SITE_KEY` | Cloudflare Turnstile site key (public). Inlined by Vite; widget won't render without it. |
 
 Build and deploy the frontend:

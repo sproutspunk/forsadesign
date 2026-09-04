@@ -23,7 +23,11 @@ async function testTurnstile() {
   const response = await fetch("https://challenges.cloudflare.com/turnstile/v0/siteverify", {
     method: "POST",
     headers: { "content-type": "application/x-www-form-urlencoded" },
-    body: new URLSearchParams({ secret: TURNSTILE_SECRET, response: testToken, remoteip: "127.0.0.1" }),
+    body: new URLSearchParams({
+      secret: TURNSTILE_SECRET,
+      response: testToken,
+      remoteip: "127.0.0.1",
+    }),
   });
   const result = await response.json().catch(() => ({}));
   if (!response.ok) return fail("Turnstile HTTP", `status ${response.status}`);

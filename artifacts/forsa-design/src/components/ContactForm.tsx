@@ -19,9 +19,7 @@ export default function ContactForm() {
     if (SITE_KEY && !turnstileToken) {
       setStatus("error");
       setErrorMessage(
-        en
-          ? "Please complete the security check."
-          : "Uzupełnij weryfikację bezpieczeństwa.",
+        en ? "Please complete the security check." : "Uzupełnij weryfikację bezpieczeństwa.",
       );
       return;
     }
