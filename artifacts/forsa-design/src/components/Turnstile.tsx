@@ -24,17 +24,41 @@ interface TurnstileProps {
   className?: string;
 }
 
+const SCRIPT_ID = "forsa-turnstile-script";
+const SCRIPT_SRC = "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit";
+
+/** Loads the Turnstile api.js script once and invokes the callback when ready. */
+function ensureTurnstileScript(onReady: () => void): () => void {
+  const win = window as unknown as TurnstileWindow;
+  if (win.turnstile) {
+    onReady();
+    return () => {};
+  }
+  let script = document.getElementById(SCRIPT_ID) as HTMLScriptElement | null;
+  if (!script) {
+    script = document.createElement("script");
+    script.id = SCRIPT_ID;
+    script.src = SCRIPT_SRC;
+    script.async = true;
+    script.defer = true;
+    document.head.appendChild(script);
+  }
+  script.addEventListener("load", onReady, { once: true });
+  return () => script?.removeEventListener("load", onReady);
+}
+
 export default function Turnstile({ siteKey, onVerify, onError, className }: TurnstileProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const widgetIdRef = useRef<string | null>(null);
 
   useEffect(() => {
-    const container = containerRef.current;
-    if (!container) return;
+    let cancelled = false;
 
     const render = () => {
+      const container = containerRef.current;
       const win = window as unknown as TurnstileWindow;
-      if (!win.turnstile) return;
+      if (cancelled || !container || !win.turnstile) return;
+      if (widgetIdRef.current) return; // already rendered
       widgetIdRef.current = win.turnstile.render(container, {
         sitekey: siteKey,
         callback: onVerify,
@@ -43,16 +67,24 @@ export default function Turnstile({ siteKey, onVerify, onError, className }: Tur
       });
     };
 
-    const win = window as unknown as TurnstileWindow;
-    if (win.turnstile?.ready) {
-      win.turnstile.ready(render);
-    } else {
-      render();
-    }
+    const onReady = () => {
+      const win = window as unknown as TurnstileWindow;
+      if (win.turnstile?.ready) {
+        win.turnstile.ready(render);
+      } else {
+        render();
+      }
+    };
+
+    const removeLoadListener = ensureTurnstileScript(onReady);
 
     return () => {
+      cancelled = true;
+      removeLoadListener();
+      const win = window as unknown as TurnstileWindow;
       if (widgetIdRef.current && win.turnstile) {
         win.turnstile.remove(widgetIdRef.current);
+        widgetIdRef.current = null;
       }
     };
   }, [siteKey, onVerify, onError]);
