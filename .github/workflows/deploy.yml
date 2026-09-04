@@ -54,9 +54,8 @@ jobs:
           # waitlist forms) reach GA4.
           VITE_GA_MEASUREMENT_ID: G-9QKVVE4QXE
           # Cloudflare Turnstile site key (public). Vite inlines it so the
-          # Turnstile widget can render in production. This must match the
-          # TURNSTILE_SITE_KEY Pages secret used by the proxy Worker.
-          TURNSTILE_SITE_KEY: ${{ secrets.TURNSTILE_SITE_KEY }}
+          # Turnstile widget can render in production.
+          VITE_TURNSTILE_SITE_KEY: ${{ secrets.VITE_TURNSTILE_SITE_KEY }}
 
       - name: Sync secrets to Cloudflare Pages
         env:

@@ -4,7 +4,7 @@ import { Send, Loader2, CheckCircle2 } from "lucide-react";
 import { trackEvent } from "@/lib/consentManager";
 import Turnstile from "@/components/Turnstile";
 
-const SITE_KEY = import.meta.env.TURNSTILE_SITE_KEY as string | undefined;
+const SITE_KEY = import.meta.env.VITE_TURNSTILE_SITE_KEY as string | undefined;
 
 interface QuoteRequestFormProps {
   isEn: boolean;
