@@ -2,6 +2,9 @@ import { useState } from "react";
 import type { FormEvent } from "react";
 import { Send, Loader2, CheckCircle2 } from "lucide-react";
 import { trackEvent } from "@/lib/consentManager";
+import Turnstile from "@/components/Turnstile";
+
+const SITE_KEY = import.meta.env.TURNSTILE_SITE_KEY as string | undefined;
 
 interface WaitlistFormProps {
   isEn: boolean;
@@ -13,13 +16,24 @@ const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 export default function WaitlistForm({ isEn, className }: WaitlistFormProps) {
   const t = (en: string, plStr: string) => (isEn ? en : plStr);
   const [email, setEmail] = useState("");
+  const [gotcha, setGotcha] = useState("");
   const [status, setStatus] = useState<"idle" | "sending" | "done">("idle");
   const [error, setError] = useState("");
+  const [turnstileToken, setTurnstileToken] = useState("");
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
+    if (gotcha.trim() !== "") {
+      trackEvent("editor_waitlist_bot_honeypot", { language: isEn ? "en" : "pl" });
+      setError(t("Could not sign you up.", "Nie udalo sie zapisac."));
+      return;
+    }
     if (!emailPattern.test(email.trim())) {
       setError(t("Enter a valid email address.", "Podaj poprawny adres email."));
+      return;
+    }
+    if (SITE_KEY && !turnstileToken) {
+      setError(t("Please complete the security check.", "Uzupełnij weryfikację bezpieczeństwa."));
       return;
     }
     setError("");
@@ -28,7 +42,7 @@ export default function WaitlistForm({ isEn, className }: WaitlistFormProps) {
       const response = await fetch("/api/waitlist", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email: email.trim(), language: isEn ? "en" : "pl" }),
+        body: JSON.stringify({ email: email.trim(), language: isEn ? "en" : "pl", turnstileToken, _gotcha: gotcha }),
       });
       const responseText = await response.text();
       let result: { ok?: boolean; error?: string } = {};
@@ -46,6 +60,7 @@ export default function WaitlistForm({ isEn, className }: WaitlistFormProps) {
       }
       trackEvent("editor_waitlist_signup", { language: isEn ? "en" : "pl" });
       setStatus("done");
+      setTurnstileToken("");
     } catch (err) {
       setError(
         err instanceof Error
@@ -67,6 +82,18 @@ export default function WaitlistForm({ isEn, className }: WaitlistFormProps) {
 
   return (
     <form onSubmit={handleSubmit} className={`flex items-center gap-2 ${className ?? ""}`}>
+      <div className="absolute -left-[9999px]" aria-hidden="true">
+        <label htmlFor="waitlist-company">Company</label>
+        <input
+          id="waitlist-company"
+          name="_gotcha"
+          type="text"
+          tabIndex={-1}
+          autoComplete="off"
+          value={gotcha}
+          onChange={(e) => setGotcha(e.target.value)}
+        />
+      </div>
       <input
         type="email"
         required
@@ -87,6 +114,7 @@ export default function WaitlistForm({ isEn, className }: WaitlistFormProps) {
         )}
         {t("Notify Me", "Powiadom mnie")}
       </button>
+      {SITE_KEY && <Turnstile siteKey={SITE_KEY} onVerify={setTurnstileToken} className="mt-2" />}
       {error && (
         <p className="absolute top-full left-0 mt-1 text-xs text-red-100 bg-red-900/80 px-2 py-1 rounded">
           {error}

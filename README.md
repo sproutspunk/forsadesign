@@ -106,14 +106,23 @@ Public write endpoints validate incoming data and are rate-limited (5 requests p
 
 Required Worker secrets:
 
-| Secret           | Purpose                                       |
-| ---------------- | --------------------------------------------- |
-| `RESEND_API_KEY` | Sends contact and quote emails through Resend |
+| Secret                 | Purpose                                                   |
+| ---------------------- | --------------------------------------------------------- |
+| `RESEND_API_KEY`       | Sends contact and quote emails through Resend             |
+| `TURNSTILE_SECRET_KEY` | Verifies Cloudflare Turnstile tokens from public forms    |
 
 Set a secret from the Windows clipboard:
 
 ```powershell
 Get-Clipboard | pnpm --filter @workspace/forsa-api-worker exec wrangler versions secret put RESEND_API_KEY --name=forsa-api
+Get-Clipboard | pnpm --filter @workspace/forsa-api-worker exec wrangler versions secret put TURNSTILE_SECRET_KEY --name=forsa-api
+```
+
+Validate the real keys before deploying:
+
+```bash
+cd artifacts/forsa-api-worker
+TURNSTILE_SECRET_KEY=xxx RESEND_API_KEY=xxx pnpm run test:secrets
 ```
 
 Deploy the Worker:
@@ -138,10 +147,16 @@ Required Pages secret:
 | ------------ | ------------------------------------------- |
 | `API_ORIGIN` | `https://forsa-api.sproutspunk.workers.dev` |
 
+Required build environment variable (must be available when `vite build` runs):
+
+| Variable             | Description                                                                 |
+| -------------------- | --------------------------------------------------------------------------- |
+| `TURNSTILE_SITE_KEY` | Cloudflare Turnstile site key (public). Inlined by Vite; widget won't render without it. |
+
 Build and deploy the frontend:
 
 ```bash
-pnpm --filter @workspace/forsa-design run build
+TURNSTILE_SITE_KEY=0x4AAAAAAEm_toGJr8CEp9xl pnpm --filter @workspace/forsa-design run build
 pnpm exec wrangler pages deploy artifacts/forsa-design/dist/public --project-name=forsadesign
 ```
 
@@ -171,10 +186,33 @@ Never store API keys, Cloudflare tokens, or database URLs in source files, Git h
 
 1. Deploy `forsa-api`.
 2. Configure or confirm the `RESEND_API_KEY` Worker secret.
-3. Confirm `API_ORIGIN` in Cloudflare Pages.
-4. Build and deploy `forsa-design`.
-5. Verify `/api/healthz`.
-6. Submit a real contact-form test and confirm delivery.
+3. Configure or confirm the `TURNSTILE_SECRET_KEY` Worker secret.
+4. Confirm `API_ORIGIN` in Cloudflare Pages.
+5. Build `forsa-design` with `TURNSTILE_SITE_KEY` exported.
+6. Deploy `forsa-design`.
+7. Verify `/api/healthz`.
+8. Submit a real contact-form test and confirm delivery.
+
+## Troubleshooting
+
+### "Security check failed." on form submit
+
+The Worker's `TURNSTILE_SECRET_KEY` is invalid or does not match the frontend `TURNSTILE_SITE_KEY`.
+
+1. Get the correct secret key from the Cloudflare Turnstile dashboard (not the site key).
+2. Re-set the Worker secret:
+   ```bash
+   cd artifacts/forsa-api-worker
+   echo -n "YOUR_TURNSTILE_SECRET_KEY" | pnpm exec wrangler secret put TURNSTILE_SECRET_KEY
+   ```
+3. Stream logs and reproduce the failure to confirm the error code:
+   ```bash
+   pnpm exec wrangler tail
+   ```
+   Look for `event: turnstile_verify_failed` and the `errorCodes` array:
+   - `invalid-input-secret` — wrong secret key on the Worker.
+   - `400020` / `hostname-mismatch` — the site key's domain allowlist does not include the production domain.
+   - `invalid-input-response` — token is malformed or expired; usually a frontend/widget issue.
 
 ## License
 

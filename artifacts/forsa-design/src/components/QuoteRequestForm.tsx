@@ -2,6 +2,9 @@ import { useRef, useState } from "react";
 import type { FormEvent } from "react";
 import { Send, Loader2, CheckCircle2 } from "lucide-react";
 import { trackEvent } from "@/lib/consentManager";
+import Turnstile from "@/components/Turnstile";
+
+const SITE_KEY = import.meta.env.TURNSTILE_SITE_KEY as string | undefined;
 
 interface QuoteRequestFormProps {
   isEn: boolean;
@@ -14,6 +17,7 @@ export default function QuoteRequestForm({ isEn, source, className }: QuoteReque
   const formRef = useRef<HTMLFormElement>(null);
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
   const [errorMessage, setErrorMessage] = useState("");
+  const [turnstileToken, setTurnstileToken] = useState("");
 
   const submit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -26,6 +30,12 @@ export default function QuoteRequestForm({ isEn, source, className }: QuoteReque
     if (typeof gotcha === "string" && gotcha.trim() !== "") {
       trackEvent("quote_request_bot_honeypot", { language: isEn ? "en" : "pl", source });
       setStatus("success");
+      return;
+    }
+
+    if (SITE_KEY && !turnstileToken) {
+      setStatus("error");
+      setErrorMessage(t("Please complete the security check.", "Uzupełnij weryfikację bezpieczeństwa."));
       return;
     }
 
@@ -42,6 +52,7 @@ export default function QuoteRequestForm({ isEn, source, className }: QuoteReque
     form.set("email", email);
     form.set("message", message || t("Request a quote.", "Prośba o wycenę."));
     form.set("language", isEn ? "en" : "pl");
+    if (turnstileToken) form.set("cf-turnstile-response", turnstileToken);
 
     try {
       const response = await fetch("/api/contact", {
@@ -62,6 +73,7 @@ export default function QuoteRequestForm({ isEn, source, className }: QuoteReque
       trackEvent("quote_request_submitted", { language: isEn ? "en" : "pl", source });
       setStatus("success");
       formRef.current?.reset();
+      setTurnstileToken("");
     } catch (error) {
       setStatus("error");
       setErrorMessage(
@@ -128,6 +140,7 @@ export default function QuoteRequestForm({ isEn, source, className }: QuoteReque
         className="w-full px-3 py-2.5 text-sm rounded-lg border border-border bg-background focus:outline-none focus:border-primary transition-colors resize-y"
       />
       {errorMessage && <p className="text-xs text-red-400">{errorMessage}</p>}
+      {SITE_KEY && <Turnstile siteKey={SITE_KEY} onVerify={setTurnstileToken} />}
       <button
         type="submit"
         disabled={status === "sending"}
