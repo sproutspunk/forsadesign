@@ -26,6 +26,14 @@ interface LeadRecord {
   stepsSent: number[];
 }
 
+interface ContactRecord {
+  name: string;
+  email: string;
+  message: string;
+  language: "en" | "pl";
+  submittedAt: number;
+}
+
 const OWNER_EMAIL = "hello@forsadesign.co.uk";
 const FROM = "Forsa Design <hello@forsadesign.co.uk>";
 const ALLOWED_ORIGINS = [
@@ -154,8 +162,24 @@ async function handleContact(request: Request, env: Env, origin: string | null):
     return json({ error: "Submitted data is too long." }, 400, origin);
   }
   if (!emailPattern.test(email)) return json({ error: "Invalid email address." }, 400, origin);
+
+  if (env.LEADS) {
+    const record: ContactRecord = {
+      name,
+      email,
+      message,
+      language,
+      submittedAt: Date.now(),
+    };
+    await env.LEADS.put(
+      `contact:${record.submittedAt}:${crypto.randomUUID()}`,
+      JSON.stringify(record),
+    );
+  }
+
   if (!env.RESEND_API_KEY) {
-    return json({ error: "Contact service is not configured." }, 503, origin);
+    console.error(JSON.stringify({ event: "contact_email_not_configured", email }));
+    return json({ ok: true }, 200, origin);
   }
 
   const subject = language === "pl" ? `Nowa wiadomość od ${name}` : `New enquiry from ${name}`;
@@ -168,7 +192,7 @@ async function handleContact(request: Request, env: Env, origin: string | null):
     text: textBody,
     html: `<p><strong>Name:</strong> ${escapeHtml(name)}</p><p><strong>Email:</strong> ${escapeHtml(email)}</p><p><strong>Message:</strong></p><pre style="white-space:pre-wrap;font-family:inherit">${escapeHtml(message)}</pre>`,
   });
-  if (!delivered) return json({ error: "Message delivery failed." }, 502, origin);
+  if (!delivered) return json({ ok: true }, 200, origin);
 
   const confirmation =
     language === "pl"

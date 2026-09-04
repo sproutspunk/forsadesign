@@ -25,7 +25,10 @@ function createKV(): TestKV {
     delete: async (key) => {
       store.delete(key);
     },
-    list: async () => ({ keys: [], list_complete: true }),
+    list: async () => ({
+      keys: [...store.keys()].map((name) => ({ name })),
+      list_complete: true,
+    }),
   };
 }
 
@@ -133,12 +136,16 @@ describe("Worker", () => {
       expect(await res.json()).toEqual({ ok: true });
     });
 
-    it("returns 503 when RESEND_API_KEY is missing", async () => {
+    it("stores contact and returns ok when RESEND_API_KEY is missing", async () => {
+      const kv = createKV();
       const res = await worker.fetch(
         request("/api/contact", { method: "POST", body: validBody }),
-        createEnv({ RESEND_API_KEY: undefined }),
+        createEnv({ RESEND_API_KEY: undefined, LEADS: kv }),
       );
-      expect(res.status).toBe(503);
+      expect(res.status).toBe(200);
+      expect(await res.json()).toEqual({ ok: true });
+      const stored = await kv.list();
+      expect(stored.keys.some((key) => key.name.startsWith("contact:"))).toBe(true);
     });
 
     it("sends contact email and confirmation", async () => {
@@ -161,16 +168,20 @@ describe("Worker", () => {
       expect((sent[1].init.body as string).includes("miro@example.com")).toBe(true);
     });
 
-    it("returns 502 when Resend fails", async () => {
+    it("stores contact and returns ok when Resend fails", async () => {
+      const kv = createKV();
       mockFetch(async (url) => {
         if (url.includes("api.resend.com")) return new Response("Internal error", { status: 500 });
         return undefined;
       });
       const res = await worker.fetch(
         request("/api/contact", { method: "POST", body: validBody }),
-        createEnv(),
+        createEnv({ LEADS: kv }),
       );
-      expect(res.status).toBe(502);
+      expect(res.status).toBe(200);
+      expect(await res.json()).toEqual({ ok: true });
+      const stored = await kv.list();
+      expect(stored.keys.some((key) => key.name.startsWith("contact:"))).toBe(true);
     });
 
     it("rate limits repeated requests", async () => {
