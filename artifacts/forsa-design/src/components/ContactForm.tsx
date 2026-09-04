@@ -18,6 +18,18 @@ export default function ContactForm() {
 
     const formData = new FormData(event.currentTarget);
 
+    const gotcha = formData.get("_gotcha");
+    if (typeof gotcha === "string" && gotcha.trim() !== "") {
+      trackEvent("contact_form_bot_honeypot", { language });
+      setStatus("error");
+      setErrorMessage(
+        en
+          ? "We could not send your message. Please try again or email hello@forsadesign.co.uk."
+          : "Nie udało się wysłać wiadomości. Spróbuj ponownie lub napisz na hello@forsadesign.co.uk.",
+      );
+      return;
+    }
+
     const form = new URLSearchParams();
     formData.forEach((value, key) => {
       if (typeof value === "string") form.set(key, value);
@@ -78,6 +90,10 @@ export default function ContactForm() {
           onSubmit={submit}
           className="rounded-sm border border-primary/20 bg-card p-6 md:p-8"
         >
+          <div className="absolute -left-[9999px]" aria-hidden="true">
+            <label htmlFor="contact-company">Company</label>
+            <input id="contact-company" name="_gotcha" tabIndex={-1} autoComplete="off" />
+          </div>
           <div className="grid gap-5 sm:grid-cols-2">
             <label className="text-sm text-foreground/70">
               {en ? "Name" : "Imię i nazwisko"}
