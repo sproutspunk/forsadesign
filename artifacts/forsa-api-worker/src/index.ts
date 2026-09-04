@@ -295,7 +295,17 @@ async function handleWaitlist(
   if (!email || !emailPattern.test(email) || email.length > 320) {
     return json({ error: "A valid email address is required." }, 400, origin);
   }
-  if (!env.RESEND_API_KEY) return json({ error: "Email service is not configured." }, 503, origin);
+  if (env.LEADS) {
+    await env.LEADS.put(
+      `waitlist:${email}`,
+      JSON.stringify({ email, language, signupAt: Date.now() }),
+    );
+  }
+
+  if (!env.RESEND_API_KEY) {
+    console.error(JSON.stringify({ event: "waitlist_email_not_configured", email }));
+    return json({ ok: true }, 200, origin);
+  }
 
   const content =
     language === "pl"
@@ -308,15 +318,13 @@ async function handleWaitlist(
           text: "Hi,\n\nThanks for signing up. We'll let you know first as soon as the self-service website editor demo goes live.\n\nMiro\nForsa Design\nhello@forsadesign.co.uk",
         };
 
-  const delivered = await sendViaResend(env.RESEND_API_KEY, {
+  await sendViaResend(env.RESEND_API_KEY, {
     from: FROM,
     to: [email],
     reply_to: OWNER_EMAIL,
     subject: content.subject,
     text: content.text,
   });
-  if (!delivered)
-    return json({ error: "We could not sign you up. Please try again." }, 502, origin);
 
   await sendViaResend(env.RESEND_API_KEY, {
     from: FROM,
@@ -325,13 +333,6 @@ async function handleWaitlist(
     subject: `New editor demo waitlist signup: ${email}`,
     text: `Email: ${email}\nLanguage: ${language}\nTime: ${new Date().toISOString()}`,
   });
-
-  if (env.LEADS) {
-    await env.LEADS.put(
-      `waitlist:${email}`,
-      JSON.stringify({ email, language, signupAt: Date.now() }),
-    );
-  }
 
   return json({ ok: true }, 200, origin);
 }

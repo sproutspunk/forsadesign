@@ -270,6 +270,25 @@ describe("Worker", () => {
       const stored = await kv.get("waitlist:user@example.com");
       expect(stored).toBeTruthy();
     });
+
+    it("stores waitlist signup even when email delivery fails", async () => {
+      const kv = createKV();
+      mockFetch(async (url) => {
+        if (url.includes("api.resend.com")) return new Response("Bad Gateway", { status: 502 });
+        return undefined;
+      });
+      const res = await worker.fetch(
+        request("/api/waitlist", {
+          method: "POST",
+          body: JSON.stringify({ email: "user@example.com", language: "en" }),
+        }),
+        createEnv({ LEADS: kv }),
+      );
+      expect(res.status).toBe(200);
+      expect(await res.json()).toEqual({ ok: true });
+      const stored = await kv.get("waitlist:user@example.com");
+      expect(stored).toBeTruthy();
+    });
   });
 
   describe("/api/quotes/email", () => {
