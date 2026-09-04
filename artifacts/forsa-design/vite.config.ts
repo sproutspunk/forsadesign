@@ -14,7 +14,7 @@ const basePath = process.env.BASE_PATH ?? "/";
 
 export default defineConfig({
   base: basePath,
-  envPrefix: ["VITE_", "FORSA_"],
+  envPrefix: ["VITE_", "FORSA_", "TURNSTILE_"],
   plugins: [react(), tailwindcss()],
   resolve: {
     alias: {

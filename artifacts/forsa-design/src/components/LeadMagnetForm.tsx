@@ -2,6 +2,9 @@ import { useState } from "react";
 import type { FormEvent } from "react";
 import { Download, Loader2, CheckCircle2 } from "lucide-react";
 import { trackEvent } from "@/lib/consentManager";
+import Turnstile from "@/components/Turnstile";
+
+const SITE_KEY = import.meta.env.TURNSTILE_SITE_KEY as string | undefined;
 
 interface LeadMagnetFormProps {
   isEn: boolean;
@@ -15,13 +18,24 @@ export default function LeadMagnetForm({ isEn, source, className }: LeadMagnetFo
   const t = (en: string, plStr: string) => (isEn ? en : plStr);
   const [email, setEmail] = useState("");
   const [company, setCompany] = useState("");
+  const [gotcha, setGotcha] = useState("");
   const [status, setStatus] = useState<"idle" | "sending" | "done">("idle");
   const [error, setError] = useState("");
+  const [turnstileToken, setTurnstileToken] = useState("");
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
+    if (gotcha.trim() !== "") {
+      trackEvent("lead_magnet_bot_honeypot", { source, language: isEn ? "en" : "pl" });
+      setError(t("Could not send the checklist.", "Nie udalo sie wyslac checklisty."));
+      return;
+    }
     if (!emailPattern.test(email.trim())) {
       setError(t("Enter a valid email address.", "Podaj poprawny adres email."));
+      return;
+    }
+    if (SITE_KEY && !turnstileToken) {
+      setError(t("Please complete the security check.", "Uzupełnij weryfikację bezpieczeństwa."));
       return;
     }
     setError("");
@@ -34,6 +48,8 @@ export default function LeadMagnetForm({ isEn, source, className }: LeadMagnetFo
           email: email.trim(),
           company: company.trim(),
           language: isEn ? "en" : "pl",
+          turnstileToken,
+          _gotcha: gotcha,
         }),
       });
       const responseText = await response.text();
@@ -54,6 +70,7 @@ export default function LeadMagnetForm({ isEn, source, className }: LeadMagnetFo
       }
       trackEvent("lead_magnet_download", { source, language: isEn ? "en" : "pl" });
       setStatus("done");
+      setTurnstileToken("");
     } catch (err) {
       setError(
         err instanceof Error
@@ -78,6 +95,18 @@ export default function LeadMagnetForm({ isEn, source, className }: LeadMagnetFo
 
   return (
     <form onSubmit={handleSubmit} className={`flex flex-col ${className ?? ""}`}>
+      <div className="absolute -left-[9999px]" aria-hidden="true">
+        <label htmlFor="lead-magnet-company">Company</label>
+        <input
+          id="lead-magnet-company"
+          name="_gotcha"
+          type="text"
+          tabIndex={-1}
+          autoComplete="off"
+          value={gotcha}
+          onChange={(e) => setGotcha(e.target.value)}
+        />
+      </div>
       <div className="flex flex-col sm:flex-row gap-2">
         <input
           type="email"
@@ -108,6 +137,7 @@ export default function LeadMagnetForm({ isEn, source, className }: LeadMagnetFo
           {t("Download checklist", "Pobierz checklist\u0119")}
         </button>
       </div>
+      {SITE_KEY && <Turnstile siteKey={SITE_KEY} onVerify={setTurnstileToken} className="mt-3" />}
       {error && <p className="text-xs text-red-400 mt-1.5">{error}</p>}
     </form>
   );
