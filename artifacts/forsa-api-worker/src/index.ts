@@ -710,6 +710,7 @@ async function handleCheckoutQuote(
 
   const result = await stripeRequest(env.STRIPE_SECRET_KEY, "checkout/sessions", {
     mode: "payment",
+    managed_payments: { enabled: false },
     ...(email ? { customer_email: email } : {}),
     line_items: [
       {
@@ -786,6 +787,7 @@ async function handleCheckoutMaintenance(
 
   const result = await stripeRequest(env.STRIPE_SECRET_KEY, "checkout/sessions", {
     mode: "subscription",
+    managed_payments: { enabled: false },
     customer_email: email,
     line_items: [
       {
@@ -866,6 +868,7 @@ async function handleCheckoutCustom(
 
   const result = await stripeRequest(env.STRIPE_SECRET_KEY, "checkout/sessions", {
     mode: "payment",
+    managed_payments: { enabled: false },
     ...(email ? { customer_email: email } : {}),
     line_items: [
       {
