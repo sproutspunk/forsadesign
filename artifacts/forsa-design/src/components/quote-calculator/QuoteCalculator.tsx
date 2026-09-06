@@ -16,7 +16,7 @@ import {
   Boxes,
 } from "lucide-react";
 
-interface QuoteState {
+export interface QuoteState {
   packageId: string;
   selectedAddOns: string[];
   extraLanguageCount: number;

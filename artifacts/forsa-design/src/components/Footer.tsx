@@ -100,6 +100,12 @@ export default function Footer() {
             >
               {t("nav.quote")}
             </a>
+            <a
+              href={`/${language}/pay`}
+              className="text-sm font-medium text-foreground/70 hover:text-primary transition-colors w-fit"
+            >
+              {t("nav.pay")}
+            </a>
           </div>
         </div>
 

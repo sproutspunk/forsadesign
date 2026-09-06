@@ -92,11 +92,15 @@ All headings use `text-wrap: balance` and paragraphs use `text-wrap: pretty`. Fo
 
 ## API Endpoints
 
-| Method | Endpoint            | Purpose                              |
-| ------ | ------------------- | ------------------------------------ |
-| `GET`  | `/api/healthz`      | Worker health check                  |
-| `POST` | `/api/contact`      | Contact form submission              |
-| `POST` | `/api/quotes/email` | Sends a generated quote PDF by email |
+| Method | Endpoint                    | Purpose                                                                  |
+| ------ | --------------------------- | ------------------------------------------------------------------------ |
+| `GET`  | `/api/healthz`              | Worker health check                                                      |
+| `POST` | `/api/contact`              | Contact form submission                                                  |
+| `POST` | `/api/quotes/email`         | Sends a generated quote PDF by email                                     |
+| `POST` | `/api/checkout/quote`       | Creates a Stripe Checkout session for a package deposit or full payment  |
+| `POST` | `/api/checkout/maintenance` | Creates a Stripe Checkout session for a recurring Care Plan subscription |
+| `POST` | `/api/checkout/custom`      | Creates a Stripe Checkout session for an arbitrary invoice amount        |
+| `POST` | `/api/stripe/webhook`       | Receives Stripe events, marks orders paid and sends confirmation emails  |
 
 Public write endpoints validate incoming data and are rate-limited (5 requests per 15 minutes per IP). The contact form uses an invisible honeypot field (`_gotcha`) to filter naive bots.
 
@@ -106,10 +110,12 @@ Public write endpoints validate incoming data and are rate-limited (5 requests p
 
 Required Worker secrets:
 
-| Secret                 | Purpose                                                |
-| ---------------------- | ------------------------------------------------------ |
-| `RESEND_API_KEY`       | Sends contact and quote emails through Resend          |
-| `TURNSTILE_SECRET_KEY` | Verifies Cloudflare Turnstile tokens from public forms |
+| Secret                  | Purpose                                                  |
+| ----------------------- | -------------------------------------------------------- |
+| `RESEND_API_KEY`        | Sends contact and quote emails through Resend            |
+| `TURNSTILE_SECRET_KEY`  | Verifies Cloudflare Turnstile tokens from public forms   |
+| `STRIPE_SECRET_KEY`     | Creates Stripe Checkout sessions (starts with `sk_`)     |
+| `STRIPE_WEBHOOK_SECRET` | Verifies the `Stripe-Signature` header on webhook events |
 
 Set a secret from the Windows clipboard:
 
@@ -179,6 +185,21 @@ Resend must have a verified sender for:
 ```text
 Forsa Design <hello@forsadesign.co.uk>
 ```
+
+## Stripe
+
+Set the Worker secrets, then add a webhook endpoint in the Stripe Dashboard pointing to
+`https://forsa-api.sproutspunk.workers.dev/api/stripe/webhook`, subscribed to the
+`checkout.session.completed` event. Copy the endpoint's signing secret into `STRIPE_WEBHOOK_SECRET`.
+
+```bash
+pnpm --filter @workspace/forsa-api-worker exec wrangler secret put STRIPE_SECRET_KEY
+pnpm --filter @workspace/forsa-api-worker exec wrangler secret put STRIPE_WEBHOOK_SECRET
+```
+
+Package, add-on and maintenance plan prices are duplicated server-side in `artifacts/forsa-api-worker/src/index.ts`
+(`PACKAGE_PRICES`, `ADDON_PRICES`, `MAINTENANCE_PRICES`) so checkout amounts are never trusted from the client.
+Keep them in sync with `artifacts/forsa-design/src/data/quoteConfig.ts` when prices change.
 
 Never store API keys, Cloudflare tokens, or database URLs in source files, Git history, or client-side variables.
 

@@ -13,6 +13,8 @@ interface TestKV {
 interface TestEnv {
   RESEND_API_KEY?: string;
   LEADS?: TestKV;
+  STRIPE_SECRET_KEY?: string;
+  STRIPE_WEBHOOK_SECRET?: string;
 }
 
 function createKV(): TestKV {
@@ -36,6 +38,8 @@ function createEnv(overrides: Partial<TestEnv> = {}): TestEnv {
   return {
     RESEND_API_KEY: "re_test_key",
     LEADS: createKV(),
+    STRIPE_SECRET_KEY: "sk_test_key",
+    STRIPE_WEBHOOK_SECRET: "whsec_test_secret",
     ...overrides,
   };
 }
@@ -352,6 +356,230 @@ describe("Worker", () => {
       );
       expect(res.status).toBe(200);
       expect(await res.json()).toEqual({ ok: true });
+      expect(sent).toHaveLength(2);
+    });
+  });
+
+  describe("/api/checkout/quote", () => {
+    it("returns 400 for an unknown package", async () => {
+      const res = await worker.fetch(
+        request("/api/checkout/quote", {
+          method: "POST",
+          body: JSON.stringify({ packageId: "deluxe", mode: "full" }),
+        }),
+        createEnv(),
+      );
+      expect(res.status).toBe(400);
+    });
+
+    it("returns 503 when Stripe is not configured", async () => {
+      const res = await worker.fetch(
+        request("/api/checkout/quote", {
+          method: "POST",
+          body: JSON.stringify({ packageId: "business", mode: "full" }),
+        }),
+        createEnv({ STRIPE_SECRET_KEY: undefined }),
+      );
+      expect(res.status).toBe(503);
+    });
+
+    it("charges a 30% deposit computed server-side, ignoring any client amount", async () => {
+      const kv = createKV();
+      let capturedBody = "";
+      mockFetch(async (url, init) => {
+        if (url.includes("api.stripe.com/v1/checkout/sessions")) {
+          capturedBody = String(init?.body ?? "");
+          return Response.json({ id: "cs_test_1", url: "https://checkout.stripe.com/cs_test_1" });
+        }
+        return undefined;
+      });
+      const res = await worker.fetch(
+        request("/api/checkout/quote", {
+          method: "POST",
+          body: JSON.stringify({
+            packageId: "business",
+            mode: "deposit",
+            email: "client@example.com",
+            language: "en",
+            total: 1, // attempted price tampering, must be ignored
+          }),
+        }),
+        createEnv({ LEADS: kv }),
+      );
+      expect(res.status).toBe(200);
+      expect(await res.json()).toEqual({ url: "https://checkout.stripe.com/cs_test_1" });
+      // business package is 15000 -> 30% deposit = 4500 GBP = 450000 pence
+      expect(capturedBody).toContain("unit_amount%5D=450000");
+      const stored = JSON.parse((await kv.get("order:cs_test_1")) ?? "{}");
+      expect(stored.amount).toBe(4500);
+      expect(stored.status).toBe("pending");
+    });
+
+    it("catches honeypot", async () => {
+      const res = await worker.fetch(
+        request("/api/checkout/quote", {
+          method: "POST",
+          body: JSON.stringify({ packageId: "business", mode: "full", _gotcha: "x" }),
+        }),
+        createEnv(),
+      );
+      expect(res.status).toBe(200);
+      expect(await res.json()).toEqual({ ok: true });
+    });
+  });
+
+  describe("/api/checkout/maintenance", () => {
+    it("returns 400 for an invalid plan", async () => {
+      const res = await worker.fetch(
+        request("/api/checkout/maintenance", {
+          method: "POST",
+          body: JSON.stringify({ maintenance: "none", email: "client@example.com" }),
+        }),
+        createEnv(),
+      );
+      expect(res.status).toBe(400);
+    });
+
+    it("returns 400 without a valid email", async () => {
+      const res = await worker.fetch(
+        request("/api/checkout/maintenance", {
+          method: "POST",
+          body: JSON.stringify({ maintenance: "business" }),
+        }),
+        createEnv(),
+      );
+      expect(res.status).toBe(400);
+    });
+
+    it("creates a subscription checkout session", async () => {
+      const kv = createKV();
+      mockFetch(async (url) => {
+        if (url.includes("api.stripe.com/v1/checkout/sessions")) {
+          return Response.json({ id: "cs_test_2", url: "https://checkout.stripe.com/cs_test_2" });
+        }
+        return undefined;
+      });
+      const res = await worker.fetch(
+        request("/api/checkout/maintenance", {
+          method: "POST",
+          body: JSON.stringify({
+            maintenance: "premium",
+            email: "client@example.com",
+            language: "en",
+          }),
+        }),
+        createEnv({ LEADS: kv }),
+      );
+      expect(res.status).toBe(200);
+      const stored = JSON.parse((await kv.get("order:cs_test_2")) ?? "{}");
+      expect(stored.amount).toBe(350);
+      expect(stored.kind).toBe("maintenance");
+    });
+  });
+
+  describe("/api/checkout/custom", () => {
+    it("rejects amounts outside the allowed range", async () => {
+      const res = await worker.fetch(
+        request("/api/checkout/custom", {
+          method: "POST",
+          body: JSON.stringify({ amountGBP: 0, email: "client@example.com" }),
+        }),
+        createEnv(),
+      );
+      expect(res.status).toBe(400);
+    });
+
+    it("creates a one-off payment session for a valid amount", async () => {
+      const kv = createKV();
+      mockFetch(async (url) => {
+        if (url.includes("api.stripe.com/v1/checkout/sessions")) {
+          return Response.json({ id: "cs_test_3", url: "https://checkout.stripe.com/cs_test_3" });
+        }
+        return undefined;
+      });
+      const res = await worker.fetch(
+        request("/api/checkout/custom", {
+          method: "POST",
+          body: JSON.stringify({
+            amountGBP: 250,
+            description: "Invoice #1042",
+            email: "client@example.com",
+            language: "en",
+          }),
+        }),
+        createEnv({ LEADS: kv }),
+      );
+      expect(res.status).toBe(200);
+      const stored = JSON.parse((await kv.get("order:cs_test_3")) ?? "{}");
+      expect(stored.amount).toBe(250);
+      expect(stored.kind).toBe("custom");
+    });
+  });
+
+  describe("/api/stripe/webhook", () => {
+    async function signPayload(payload: string, secret: string, timestamp: number) {
+      const key = await crypto.subtle.importKey(
+        "raw",
+        new TextEncoder().encode(secret),
+        { name: "HMAC", hash: "SHA-256" },
+        false,
+        ["sign"],
+      );
+      const signed = await crypto.subtle.sign(
+        "HMAC",
+        key,
+        new TextEncoder().encode(`${timestamp}.${payload}`),
+      );
+      return [...new Uint8Array(signed)].map((byte) => byte.toString(16).padStart(2, "0")).join("");
+    }
+
+    it("rejects an invalid signature", async () => {
+      const payload = JSON.stringify({ type: "checkout.session.completed", data: { object: {} } });
+      const req = new Request("https://api.example.com/api/stripe/webhook", {
+        method: "POST",
+        body: payload,
+        headers: { "stripe-signature": "t=1,v1=deadbeef" },
+      });
+      const res = await worker.fetch(req, createEnv());
+      expect(res.status).toBe(400);
+    });
+
+    it("marks the order paid and sends confirmation emails on a valid event", async () => {
+      const kv = createKV();
+      await kv.put(
+        "order:cs_test_4",
+        JSON.stringify({
+          kind: "quote",
+          status: "pending",
+          amount: 4500,
+          email: "client@example.com",
+          language: "en",
+        }),
+      );
+      const sent: string[] = [];
+      mockFetch(async (url) => {
+        if (url.includes("api.resend.com")) {
+          sent.push(url);
+          return Response.json({ id: "m" });
+        }
+        return undefined;
+      });
+      const secret = "whsec_test_secret";
+      const payload = JSON.stringify({
+        type: "checkout.session.completed",
+        data: { object: { id: "cs_test_4" } },
+      });
+      const timestamp = Math.floor(Date.now() / 1000);
+      const signature = await signPayload(payload, secret, timestamp);
+      const req = new Request("https://api.example.com/api/stripe/webhook", {
+        method: "POST",
+        body: payload,
+        headers: { "stripe-signature": `t=${timestamp},v1=${signature}` },
+      });
+      const res = await worker.fetch(req, createEnv({ LEADS: kv, STRIPE_WEBHOOK_SECRET: secret }));
+      expect(res.status).toBe(200);
+      const stored = JSON.parse((await kv.get("order:cs_test_4")) ?? "{}");
+      expect(stored.status).toBe("paid");
       expect(sent).toHaveLength(2);
     });
   });

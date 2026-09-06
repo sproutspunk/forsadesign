@@ -11,6 +11,8 @@ interface KVNamespace {
 interface Env {
   RESEND_API_KEY?: string;
   LEADS?: KVNamespace;
+  STRIPE_SECRET_KEY?: string;
+  STRIPE_WEBHOOK_SECRET?: string;
 }
 
 interface RateLimitEntry {
@@ -50,6 +52,27 @@ const RATE_LIMIT_MAX_REQUESTS = 5;
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const rateLimits = new Map<string, RateLimitEntry>();
 const DAY_MS = 24 * 60 * 60 * 1000;
+
+const SITE_ORIGIN = "https://forsadesign.co.uk";
+const STRIPE_API = "https://api.stripe.com/v1";
+const CHECKOUT_MAX_BODY_BYTES = 4_000;
+const STRIPE_WEBHOOK_MAX_BODY_BYTES = 256 * 1024;
+const DEPOSIT_RATIO = 0.3;
+const CUSTOM_MIN_GBP = 1;
+const CUSTOM_MAX_GBP = 50_000;
+
+// Server-side pricing source of truth for Stripe checkout amounts — must be
+// kept in sync with artifacts/forsa-design/src/data/quoteConfig.ts. Prices are
+// never trusted from the client to prevent tampering.
+const PACKAGE_PRICES: Record<string, number> = { starter: 7500, business: 15000, premium: 25000 };
+const ADDON_PRICES: Record<string, { price: number; perUnit?: boolean }> = {
+  "extra-language": { price: 850, perUnit: true },
+  photography: { price: 2000 },
+  copywriting: { price: 1200 },
+  "express-priority": { price: 2500 },
+  "express-fasttrack": { price: 5000 },
+};
+const MAINTENANCE_PRICES: Record<string, number> = { business: 180, premium: 350 };
 // step -> minimum days since signup before it is due
 const FOLLOW_UP_SCHEDULE: Record<number, number> = { 2: 3, 3: 7, 4: 14 };
 
@@ -134,6 +157,90 @@ async function sendViaResend(apiKey: string, payload: Record<string, unknown>): 
     );
   }
   return response.ok;
+}
+
+// Encodes nested objects/arrays using Stripe's bracket notation for its form-encoded API.
+function toStripeForm(params: Record<string, unknown>, prefix = ""): [string, string][] {
+  const entries: [string, string][] = [];
+  for (const [key, value] of Object.entries(params)) {
+    if (value === undefined || value === null) continue;
+    const paramKey = prefix ? `${prefix}[${key}]` : key;
+    if (Array.isArray(value)) {
+      value.forEach((item, index) => {
+        const arrayKey = `${paramKey}[${index}]`;
+        if (item && typeof item === "object") {
+          entries.push(...toStripeForm(item as Record<string, unknown>, arrayKey));
+        } else {
+          entries.push([arrayKey, String(item)]);
+        }
+      });
+    } else if (typeof value === "object") {
+      entries.push(...toStripeForm(value as Record<string, unknown>, paramKey));
+    } else {
+      entries.push([paramKey, String(value)]);
+    }
+  }
+  return entries;
+}
+
+async function stripeRequest(
+  apiKey: string,
+  path: string,
+  params: Record<string, unknown>,
+): Promise<{ ok: boolean; data: Record<string, unknown> }> {
+  const response = await fetch(`${STRIPE_API}/${path}`, {
+    method: "POST",
+    headers: {
+      "content-type": "application/x-www-form-urlencoded",
+      Authorization: `Bearer ${apiKey}`,
+    },
+    body: new URLSearchParams(toStripeForm(params)),
+  });
+  const data = (await response.json().catch(() => ({}))) as Record<string, unknown>;
+  if (!response.ok) {
+    console.error(
+      JSON.stringify({ event: "stripe_request_failed", path, status: response.status }),
+    );
+  }
+  return { ok: response.ok, data };
+}
+
+// Verifies the Stripe-Signature header per Stripe's webhook signing scheme (HMAC-SHA256
+// over "timestamp.payload"), without depending on the Stripe SDK's Node-only crypto.
+async function verifyStripeSignature(
+  payload: string,
+  header: string | null,
+  secret: string,
+): Promise<boolean> {
+  if (!header) return false;
+  const parts = Object.fromEntries(
+    header.split(",").map((part) => part.split("=") as [string, string]),
+  );
+  const timestamp = parts.t;
+  const signature = parts.v1;
+  if (!timestamp || !signature) return false;
+
+  const key = await crypto.subtle.importKey(
+    "raw",
+    new TextEncoder().encode(secret),
+    { name: "HMAC", hash: "SHA-256" },
+    false,
+    ["sign"],
+  );
+  const signed = await crypto.subtle.sign(
+    "HMAC",
+    key,
+    new TextEncoder().encode(`${timestamp}.${payload}`),
+  );
+  const expected = [...new Uint8Array(signed)]
+    .map((byte) => byte.toString(16).padStart(2, "0"))
+    .join("");
+
+  if (expected.length !== signature.length) return false;
+  let mismatch = 0;
+  for (let i = 0; i < expected.length; i++)
+    mismatch |= expected.charCodeAt(i) ^ signature.charCodeAt(i);
+  return mismatch === 0;
 }
 
 async function handleContact(request: Request, env: Env, origin: string | null): Promise<Response> {
@@ -535,6 +642,312 @@ async function handleQuote(request: Request, env: Env, origin: string | null): P
     : json({ error: "We could not send the quote email. Please try again." }, 502, origin);
 }
 
+async function handleCheckoutQuote(
+  request: Request,
+  env: Env,
+  origin: string | null,
+): Promise<Response> {
+  if (isRateLimited(request, "checkout")) {
+    return json({ error: "Too many checkout requests. Please try again later." }, 429, origin);
+  }
+  if (!env.STRIPE_SECRET_KEY) return json({ error: "Payments are not configured." }, 503, origin);
+
+  const text = await readBody(request, CHECKOUT_MAX_BODY_BYTES);
+  if (text === null) return json({ error: "Request too large." }, 413, origin);
+  const payload = await Promise.resolve()
+    .then(() => JSON.parse(text))
+    .catch(() => null);
+  if (!isQuotePayload(payload)) return json({ error: "Invalid request." }, 400, origin);
+  if (typeof payload._gotcha === "string" && payload._gotcha.trim() !== "") {
+    return json({ ok: true }, 200, origin);
+  }
+
+  const packageId = typeof payload.packageId === "string" ? payload.packageId : "";
+  const packagePrice = PACKAGE_PRICES[packageId];
+  if (!packagePrice) return json({ error: "Invalid package selected." }, 400, origin);
+
+  const selectedAddOns = Array.isArray(payload.selectedAddOns)
+    ? payload.selectedAddOns.filter((value): value is string => typeof value === "string")
+    : [];
+  const extraLanguageCount = Number.isInteger(payload.extraLanguageCount)
+    ? Math.min(Math.max(payload.extraLanguageCount as number, 1), 10)
+    : 1;
+
+  let addOnsPrice = 0;
+  for (const value of selectedAddOns) {
+    const addon = ADDON_PRICES[value];
+    if (!addon) continue;
+    addOnsPrice += addon.perUnit ? addon.price * extraLanguageCount : addon.price;
+  }
+
+  const mode = payload.mode === "deposit" ? "deposit" : "full";
+  const subtotal = packagePrice + addOnsPrice;
+  const chargeAmount = mode === "deposit" ? Math.round(subtotal * DEPOSIT_RATIO) : subtotal;
+
+  const email = typeof payload.email === "string" ? payload.email.trim() : "";
+  if (email && (!emailPattern.test(email) || email.length > 320)) {
+    return json({ error: "Invalid email address." }, 400, origin);
+  }
+  const language = payload.language === "pl" ? "pl" : "en";
+  const packageLabel = packageId.charAt(0).toUpperCase() + packageId.slice(1);
+  const productName =
+    mode === "deposit"
+      ? `Forsa Design \u2013 ${packageLabel} package (30% deposit)`
+      : `Forsa Design \u2013 ${packageLabel} package (full payment)`;
+
+  const result = await stripeRequest(env.STRIPE_SECRET_KEY, "checkout/sessions", {
+    mode: "payment",
+    ...(email ? { customer_email: email } : {}),
+    line_items: [
+      {
+        quantity: 1,
+        price_data: {
+          currency: "gbp",
+          unit_amount: chargeAmount * 100,
+          product_data: { name: productName },
+        },
+      },
+    ],
+    success_url: `${SITE_ORIGIN}/${language}/quote?payment=success&session_id={CHECKOUT_SESSION_ID}`,
+    cancel_url: `${SITE_ORIGIN}/${language}/quote?payment=cancelled`,
+    metadata: { kind: "quote", packageId, mode, language },
+  });
+  if (!result.ok || typeof result.data.url !== "string" || typeof result.data.id !== "string") {
+    return json({ error: "We could not start the checkout. Please try again." }, 502, origin);
+  }
+
+  if (env.LEADS) {
+    await env.LEADS.put(
+      `order:${result.data.id}`,
+      JSON.stringify({
+        kind: "quote",
+        status: "pending",
+        packageId,
+        selectedAddOns,
+        mode,
+        amount: chargeAmount,
+        email,
+        language,
+        createdAt: Date.now(),
+      }),
+    );
+  }
+
+  return json({ url: result.data.url }, 200, origin);
+}
+
+async function handleCheckoutMaintenance(
+  request: Request,
+  env: Env,
+  origin: string | null,
+): Promise<Response> {
+  if (isRateLimited(request, "checkout")) {
+    return json({ error: "Too many checkout requests. Please try again later." }, 429, origin);
+  }
+  if (!env.STRIPE_SECRET_KEY) return json({ error: "Payments are not configured." }, 503, origin);
+
+  const text = await readBody(request, CHECKOUT_MAX_BODY_BYTES);
+  if (text === null) return json({ error: "Request too large." }, 413, origin);
+  const payload = await Promise.resolve()
+    .then(() => JSON.parse(text))
+    .catch(() => null);
+  if (!isQuotePayload(payload)) return json({ error: "Invalid request." }, 400, origin);
+  if (typeof payload._gotcha === "string" && payload._gotcha.trim() !== "") {
+    return json({ ok: true }, 200, origin);
+  }
+
+  const plan = typeof payload.maintenance === "string" ? payload.maintenance : "";
+  const monthlyPrice = MAINTENANCE_PRICES[plan];
+  if (!monthlyPrice) return json({ error: "Invalid maintenance plan selected." }, 400, origin);
+
+  const email = typeof payload.email === "string" ? payload.email.trim() : "";
+  if (!email || !emailPattern.test(email) || email.length > 320) {
+    return json({ error: "A valid email address is required." }, 400, origin);
+  }
+  const language = payload.language === "pl" ? "pl" : "en";
+  const planLabel = plan.charAt(0).toUpperCase() + plan.slice(1);
+
+  const result = await stripeRequest(env.STRIPE_SECRET_KEY, "checkout/sessions", {
+    mode: "subscription",
+    customer_email: email,
+    line_items: [
+      {
+        quantity: 1,
+        price_data: {
+          currency: "gbp",
+          unit_amount: monthlyPrice * 100,
+          recurring: { interval: "month" },
+          product_data: { name: `Forsa Design \u2013 ${planLabel} Care Plan` },
+        },
+      },
+    ],
+    success_url: `${SITE_ORIGIN}/${language}/quote?payment=success&session_id={CHECKOUT_SESSION_ID}`,
+    cancel_url: `${SITE_ORIGIN}/${language}/quote?payment=cancelled`,
+    metadata: { kind: "maintenance", plan, language },
+  });
+  if (!result.ok || typeof result.data.url !== "string" || typeof result.data.id !== "string") {
+    return json({ error: "We could not start the checkout. Please try again." }, 502, origin);
+  }
+
+  if (env.LEADS) {
+    await env.LEADS.put(
+      `order:${result.data.id}`,
+      JSON.stringify({
+        kind: "maintenance",
+        status: "pending",
+        plan,
+        amount: monthlyPrice,
+        email,
+        language,
+        createdAt: Date.now(),
+      }),
+    );
+  }
+
+  return json({ url: result.data.url }, 200, origin);
+}
+
+async function handleCheckoutCustom(
+  request: Request,
+  env: Env,
+  origin: string | null,
+): Promise<Response> {
+  if (isRateLimited(request, "checkout")) {
+    return json({ error: "Too many checkout requests. Please try again later." }, 429, origin);
+  }
+  if (!env.STRIPE_SECRET_KEY) return json({ error: "Payments are not configured." }, 503, origin);
+
+  const text = await readBody(request, CHECKOUT_MAX_BODY_BYTES);
+  if (text === null) return json({ error: "Request too large." }, 413, origin);
+  const payload = await Promise.resolve()
+    .then(() => JSON.parse(text))
+    .catch(() => null);
+  if (!isQuotePayload(payload)) return json({ error: "Invalid request." }, 400, origin);
+  if (typeof payload._gotcha === "string" && payload._gotcha.trim() !== "") {
+    return json({ ok: true }, 200, origin);
+  }
+
+  const amountGBP = typeof payload.amountGBP === "number" ? payload.amountGBP : NaN;
+  if (!Number.isFinite(amountGBP) || amountGBP < CUSTOM_MIN_GBP || amountGBP > CUSTOM_MAX_GBP) {
+    return json(
+      { error: `Enter an amount between \u00a3${CUSTOM_MIN_GBP} and \u00a3${CUSTOM_MAX_GBP}.` },
+      400,
+      origin,
+    );
+  }
+  const description =
+    typeof payload.description === "string" ? payload.description.trim().slice(0, 200) : "";
+  const email = typeof payload.email === "string" ? payload.email.trim() : "";
+  if (email && (!emailPattern.test(email) || email.length > 320)) {
+    return json({ error: "Invalid email address." }, 400, origin);
+  }
+  const language = payload.language === "pl" ? "pl" : "en";
+
+  const result = await stripeRequest(env.STRIPE_SECRET_KEY, "checkout/sessions", {
+    mode: "payment",
+    ...(email ? { customer_email: email } : {}),
+    line_items: [
+      {
+        quantity: 1,
+        price_data: {
+          currency: "gbp",
+          unit_amount: Math.round(amountGBP * 100),
+          product_data: { name: description || "Forsa Design \u2013 Invoice payment" },
+        },
+      },
+    ],
+    success_url: `${SITE_ORIGIN}/${language}/pay?payment=success&session_id={CHECKOUT_SESSION_ID}`,
+    cancel_url: `${SITE_ORIGIN}/${language}/pay?payment=cancelled`,
+    metadata: { kind: "custom", language },
+  });
+  if (!result.ok || typeof result.data.url !== "string" || typeof result.data.id !== "string") {
+    return json({ error: "We could not start the checkout. Please try again." }, 502, origin);
+  }
+
+  if (env.LEADS) {
+    await env.LEADS.put(
+      `order:${result.data.id}`,
+      JSON.stringify({
+        kind: "custom",
+        status: "pending",
+        amount: amountGBP,
+        description,
+        email,
+        language,
+        createdAt: Date.now(),
+      }),
+    );
+  }
+
+  return json({ url: result.data.url }, 200, origin);
+}
+
+async function handleStripeWebhook(request: Request, env: Env): Promise<Response> {
+  if (!env.STRIPE_WEBHOOK_SECRET) return new Response("Webhook not configured.", { status: 503 });
+
+  const rawBody = await readBody(request, STRIPE_WEBHOOK_MAX_BODY_BYTES);
+  if (rawBody === null) return new Response("Payload too large.", { status: 413 });
+
+  const valid = await verifyStripeSignature(
+    rawBody,
+    request.headers.get("stripe-signature"),
+    env.STRIPE_WEBHOOK_SECRET,
+  );
+  if (!valid) return new Response("Invalid signature.", { status: 400 });
+
+  const event = await Promise.resolve()
+    .then(() => JSON.parse(rawBody))
+    .catch(() => null);
+  if (!event || typeof event !== "object") return new Response("Invalid payload.", { status: 400 });
+
+  if (event.type === "checkout.session.completed" && env.LEADS) {
+    const session = (event as { data?: { object?: Record<string, unknown> } }).data?.object;
+    const sessionId = typeof session?.id === "string" ? session.id : null;
+    if (sessionId) {
+      const raw = await env.LEADS.get(`order:${sessionId}`);
+      if (raw) {
+        const order = JSON.parse(raw) as Record<string, unknown> & {
+          email?: string;
+          language?: string;
+          kind?: string;
+          amount?: number;
+        };
+        order.status = "paid";
+        await env.LEADS.put(`order:${sessionId}`, JSON.stringify(order));
+
+        if (env.RESEND_API_KEY && order.email) {
+          const isEn = order.language !== "pl";
+          const subject = isEn
+            ? "Payment received - Forsa Design"
+            : "Platnosc otrzymana - Forsa Design";
+          const text = isEn
+            ? `Thank you - we've received your payment of GBP ${order.amount}. We'll be in touch shortly.\n\nMiro\nForsa Design\nhello@forsadesign.co.uk`
+            : `Dziekujemy - otrzymalismy Twoja platnosc w wysokosci GBP ${order.amount}. Wkrotce sie odezwiemy.\n\nMiro\nForsa Design\nhello@forsadesign.co.uk`;
+          await sendViaResend(env.RESEND_API_KEY, {
+            from: FROM,
+            to: [order.email],
+            reply_to: OWNER_EMAIL,
+            subject,
+            text,
+          });
+          await sendViaResend(env.RESEND_API_KEY, {
+            from: FROM,
+            to: [OWNER_EMAIL],
+            reply_to: order.email,
+            subject: `New Stripe payment: ${order.kind} (GBP ${order.amount})`,
+            text: `Session: ${sessionId}\nKind: ${order.kind}\nAmount: GBP ${order.amount}\nEmail: ${order.email}`,
+          });
+        }
+      }
+    }
+  }
+
+  return new Response(JSON.stringify({ received: true }), {
+    status: 200,
+    headers: { "content-type": "application/json" },
+  });
+}
+
 export default {
   async fetch(request: Request, env: Env): Promise<Response> {
     const origin = request.headers.get("origin");
@@ -542,6 +955,8 @@ export default {
     const path = new URL(request.url).pathname;
     if (request.method === "GET" && path === "/api/healthz")
       return json({ status: "ok" }, 200, origin);
+    if (request.method === "POST" && path === "/api/stripe/webhook")
+      return await handleStripeWebhook(request, env);
 
     try {
       if (request.method === "POST" && path === "/api/contact")
@@ -552,6 +967,12 @@ export default {
         return await handleLeadMagnet(request, env, origin);
       if (request.method === "POST" && path === "/api/waitlist")
         return await handleWaitlist(request, env, origin);
+      if (request.method === "POST" && path === "/api/checkout/quote")
+        return await handleCheckoutQuote(request, env, origin);
+      if (request.method === "POST" && path === "/api/checkout/maintenance")
+        return await handleCheckoutMaintenance(request, env, origin);
+      if (request.method === "POST" && path === "/api/checkout/custom")
+        return await handleCheckoutCustom(request, env, origin);
       return json({ error: "Not found." }, 404, origin);
     } catch {
       return json({ error: "Unable to process the request." }, 500, origin);

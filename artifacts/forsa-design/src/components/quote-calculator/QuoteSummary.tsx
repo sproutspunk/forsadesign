@@ -12,9 +12,13 @@ import {
   ChevronUp,
   Send,
   Loader2,
+  CreditCard,
+  Landmark,
+  Wallet,
 } from "lucide-react";
 import { trackEvent } from "@/lib/consentManager";
 import { API_BASE_URL } from "@/lib/api";
+import type { QuoteState } from "./QuoteCalculator";
 
 interface Breakdown {
   packagePrice: number;
@@ -34,10 +38,12 @@ interface QuoteSummaryProps {
   formatPrice: (n: number) => string;
   showSuccess: boolean;
   setShowSuccess: (v: boolean) => void;
-  state: unknown;
+  state: QuoteState;
   onReset: () => void;
   projectLabel: string;
 }
+
+type CheckoutMode = "deposit" | "full" | "maintenance";
 
 const INCLUDED_EN = [
   "Responsive Design",
@@ -81,6 +87,62 @@ export function QuoteSummary({
   const [gotcha, setGotcha] = useState("");
   const [isGenerating, setIsGenerating] = useState(false);
   const [emailError, setEmailError] = useState("");
+  const [checkoutLoading, setCheckoutLoading] = useState<CheckoutMode | null>(null);
+  const [checkoutError, setCheckoutError] = useState("");
+
+  const startCheckout = async (mode: CheckoutMode) => {
+    if (
+      mode === "maintenance" &&
+      (!email.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim()))
+    ) {
+      setCheckoutError(
+        t("Enter a valid email address first.", "Podaj najpierw poprawny adres email."),
+      );
+      setEmailStep("capturing");
+      return;
+    }
+    setCheckoutError("");
+    setCheckoutLoading(mode);
+    trackEvent("quote_checkout_start", {
+      mode,
+      language: isEn ? "en" : "pl",
+      total: breakdown.total,
+    });
+    try {
+      const language = isEn ? "en" : "pl";
+      const endpoint = mode === "maintenance" ? "checkout/maintenance" : "checkout/quote";
+      const body =
+        mode === "maintenance"
+          ? { maintenance: state.maintenance, email: email.trim(), language }
+          : {
+              packageId: state.packageId,
+              selectedAddOns: state.selectedAddOns,
+              extraLanguageCount: state.extraLanguageCount,
+              mode,
+              email: email.trim() || undefined,
+              language,
+            };
+      const response = await fetch(`${API_BASE_URL}/api/${endpoint}`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(body),
+      });
+      const result = (await response.json().catch(() => ({}))) as { url?: string; error?: string };
+      if (!response.ok || !result.url) {
+        throw new Error(
+          result.error || t("Could not start checkout.", "Nie udalo sie rozpoczac platnosci."),
+        );
+      }
+      window.location.href = result.url;
+    } catch (error) {
+      setCheckoutError(
+        error instanceof Error
+          ? error.message
+          : t("Could not start checkout.", "Nie udalo sie rozpoczac platnosci."),
+      );
+      setCheckoutLoading(null);
+    }
+  };
 
   const handleSave = () => {
     const quotes = JSON.parse(localStorage.getItem("forsa-quotes") || "[]");
@@ -461,6 +523,67 @@ export function QuoteSummary({
                 >
                   {t("Request a Discovery Call", "Um\u00f3w rozmow\u0119 wst\u0119pn\u0105")}
                 </a>
+                <div className="grid grid-cols-2 gap-2">
+                  <button
+                    onClick={() => startCheckout("deposit")}
+                    disabled={checkoutLoading !== null}
+                    className="flex items-center justify-center gap-1.5 px-3 py-3 text-sm font-bold rounded-lg bg-primary/15 border-2 border-primary text-primary hover:bg-primary/25 transition-colors disabled:opacity-70 disabled:cursor-not-allowed"
+                  >
+                    {checkoutLoading === "deposit" ? (
+                      <Loader2 className="w-4 h-4 animate-spin" />
+                    ) : (
+                      <CreditCard className="w-4 h-4" />
+                    )}
+                    {t("Pay 30% deposit", "Zap\u0142a\u0107 30% zaliczki")}
+                  </button>
+                  <button
+                    onClick={() => startCheckout("full")}
+                    disabled={checkoutLoading !== null}
+                    className="flex items-center justify-center gap-1.5 px-3 py-3 text-sm font-bold rounded-lg bg-primary/15 border-2 border-primary text-primary hover:bg-primary/25 transition-colors disabled:opacity-70 disabled:cursor-not-allowed"
+                  >
+                    {checkoutLoading === "full" ? (
+                      <Loader2 className="w-4 h-4 animate-spin" />
+                    ) : (
+                      <CreditCard className="w-4 h-4" />
+                    )}
+                    {t("Pay in full", "Zap\u0142a\u0107 ca\u0142o\u015b\u0107")}
+                  </button>
+                </div>
+                <div className="flex items-center justify-center gap-4 text-foreground/40">
+                  <span className="flex items-center gap-1 text-[11px]" title={t("Card", "Karta")}>
+                    <CreditCard className="w-3.5 h-3.5" /> {t("Card", "Karta")}
+                  </span>
+                  <span
+                    className="flex items-center gap-1 text-[11px]"
+                    title={t("Bank transfer", "Przelew bankowy")}
+                  >
+                    <Landmark className="w-3.5 h-3.5" /> {t("Bank transfer", "Przelew")}
+                  </span>
+                  <span
+                    className="flex items-center gap-1 text-[11px]"
+                    title={t("Digital wallet", "Portfel cyfrowy")}
+                  >
+                    <Wallet className="w-3.5 h-3.5" /> {t("Wallet", "Portfel")}
+                  </span>
+                </div>
+                {breakdown.maintenanceMonthly > 0 && (
+                  <button
+                    onClick={() => startCheckout("maintenance")}
+                    disabled={checkoutLoading !== null}
+                    className="w-full flex items-center justify-center gap-1.5 px-3 py-2.5 text-xs font-semibold rounded-lg border-2 border-border/60 text-foreground hover:border-primary hover:text-primary transition-colors disabled:opacity-70 disabled:cursor-not-allowed"
+                  >
+                    {checkoutLoading === "maintenance" ? (
+                      <Loader2 className="w-3.5 h-3.5 animate-spin" />
+                    ) : (
+                      <CreditCard className="w-3.5 h-3.5" />
+                    )}
+                    {t(
+                      `Subscribe (${formatPrice(breakdown.maintenanceMonthly)}/mo)`,
+                      `Subskrybuj (${formatPrice(breakdown.maintenanceMonthly)}/mies.)`,
+                    )}
+                  </button>
+                )}
+                {checkoutError && <p className="text-xs text-red-500">{checkoutError}</p>}
                 <button
                   onClick={handleDownloadClick}
                   disabled={isGenerating}

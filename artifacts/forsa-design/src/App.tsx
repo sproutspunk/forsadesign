@@ -23,6 +23,7 @@ const ContactPage = lazy(() => import("@/pages/ContactPage"));
 const SearchPage = lazy(() => import("@/pages/SearchPage"));
 const BlogPage = lazy(() => import("@/pages/BlogPage"));
 const ArticlePage = lazy(() => import("@/pages/ArticlePage"));
+const PayPage = lazy(() => import("@/pages/PayPage"));
 
 function Redirector() {
   const [location, setLocation] = useLocation();
@@ -112,6 +113,8 @@ function Router() {
         <Route path="/pl/comparison" component={() => <ComparisonPage lang="pl" />} />
         <Route path="/en/quote" component={() => <QuoteCalculatorPage lang="en" />} />
         <Route path="/pl/quote" component={() => <QuoteCalculatorPage lang="pl" />} />
+        <Route path="/en/pay" component={() => <PayPage lang="en" />} />
+        <Route path="/pl/pay" component={() => <PayPage lang="pl" />} />
         <Route path="/en/search" component={() => <SearchPage lang="en" />} />
         <Route path="/pl/search" component={() => <SearchPage lang="pl" />} />
         <Route path="/en/blog/:slug" component={() => <ArticleRoute lang="en" />} />
