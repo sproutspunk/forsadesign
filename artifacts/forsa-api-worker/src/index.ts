@@ -187,7 +187,7 @@ async function stripeRequest(
   apiKey: string,
   path: string,
   params: Record<string, unknown>,
-): Promise<{ ok: boolean; data: Record<string, unknown> }> {
+): Promise<{ ok: boolean; data: Record<string, unknown>; error?: string }> {
   const response = await fetch(`${STRIPE_API}/${path}`, {
     method: "POST",
     headers: {
@@ -198,9 +198,22 @@ async function stripeRequest(
   });
   const data = (await response.json().catch(() => ({}))) as Record<string, unknown>;
   if (!response.ok) {
+    const stripeError = data.error as
+      | { message?: string; code?: string; type?: string }
+      | undefined;
     console.error(
-      JSON.stringify({ event: "stripe_request_failed", path, status: response.status }),
+      JSON.stringify({
+        event: "stripe_request_failed",
+        path,
+        status: response.status,
+        stripeError,
+      }),
     );
+    return {
+      ok: false,
+      data,
+      error: stripeError?.message ?? `Stripe request failed (${response.status}).`,
+    };
   }
   return { ok: response.ok, data };
 }
@@ -713,7 +726,11 @@ async function handleCheckoutQuote(
     metadata: { kind: "quote", packageId, mode, language },
   });
   if (!result.ok || typeof result.data.url !== "string" || typeof result.data.id !== "string") {
-    return json({ error: "We could not start the checkout. Please try again." }, 502, origin);
+    return json(
+      { error: result.error ?? "We could not start the checkout. Please try again." },
+      502,
+      origin,
+    );
   }
 
   if (env.LEADS) {
@@ -786,7 +803,11 @@ async function handleCheckoutMaintenance(
     metadata: { kind: "maintenance", plan, language },
   });
   if (!result.ok || typeof result.data.url !== "string" || typeof result.data.id !== "string") {
-    return json({ error: "We could not start the checkout. Please try again." }, 502, origin);
+    return json(
+      { error: result.error ?? "We could not start the checkout. Please try again." },
+      502,
+      origin,
+    );
   }
 
   if (env.LEADS) {
@@ -861,7 +882,11 @@ async function handleCheckoutCustom(
     metadata: { kind: "custom", language },
   });
   if (!result.ok || typeof result.data.url !== "string" || typeof result.data.id !== "string") {
-    return json({ error: "We could not start the checkout. Please try again." }, 502, origin);
+    return json(
+      { error: result.error ?? "We could not start the checkout. Please try again." },
+      502,
+      origin,
+    );
   }
 
   if (env.LEADS) {
