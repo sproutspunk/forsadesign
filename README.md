@@ -2,21 +2,21 @@
 
 Forsa Design is the production website and quote workflow for an industrial web-design studio. It is maintained as a pnpm monorepo with a React/Vite frontend and a Cloudflare Workers API.
 
-The public site is hosted on Cloudflare Pages. Contact enquiries and quote-email delivery are handled by the `forsa-api` Worker and delivered through Resend. The contact form is protected by a honeypot field and per-IP rate limiting instead of a captcha.
+The public site is hosted on Cloudflare Pages. Contact enquiries and quote-email delivery are handled by the `forsa-api` Worker and delivered through Resend. The contact form is protected by a honeypot field (`_gotcha`) to filter naive bots.
 
 ## Architecture
 
 ```text
 Browser
-  |
-  v
+   |
+   v
 Cloudflare Pages (React/Vite site, advanced-mode Worker)
-  |
-  | /api/*
-  v
+   |
+   | /api/*
+   v
 forsa-api Cloudflare Worker
-  |
-  v
+   |
+   v
 Resend
 ```
 
@@ -94,19 +94,19 @@ All headings use `text-wrap: balance` and paragraphs use `text-wrap: pretty`. Fo
 
 | Method | Endpoint                    | Purpose                                                                  |
 | ------ | --------------------------- | ------------------------------------------------------------------------ |
-| `GET`  | `/api/healthz`              | Worker health check                                                      |
-| `POST` | `/api/contact`              | Contact form submission                                                  |
-| `POST` | `/api/quotes/email`         | Sends a generated quote PDF by email                                     |
-| `POST` | `/api/checkout/quote`       | Creates a Stripe Checkout session for a package deposit or full payment  |
-| `POST` | `/api/checkout/maintenance` | Creates a Stripe Checkout session for a recurring Care Plan subscription |
-| `POST` | `/api/checkout/custom`      | Creates a Stripe Checkout session for an arbitrary invoice amount        |
-| `POST` | `/api/stripe/webhook`       | Receives Stripe events, marks orders paid and sends confirmation emails  |
+| GET    | `/api/healthz`              | Worker health check                                                      |
+| POST   | `/api/contact`              | Contact form submission                                                  |
+| POST   | `/api/quotes/email`         | Sends a generated quote PDF by email                                     |
+| POST   | `/api/checkout/quote`       | Creates a Stripe Checkout session for a package deposit or full payment  |
+| POST   | `/api/checkout/maintenance` | Creates a Stripe Checkout session for a recurring Care Plan subscription |
+| POST   | `/api/checkout/custom`      | Creates a Stripe Checkout session for an arbitrary invoice amount        |
+| POST   | `/api/stripe/webhook`       | Receives Stripe events, marks orders paid and sends confirmation emails  |
 
-Public write endpoints validate incoming data and are rate-limited (5 requests per 15 minutes per IP). The contact form uses an invisible honeypot field (`_gotcha`) to filter naive bots.
+Public write endpoints validate incoming data and are rate-limited (5 requests per 15 minutes per IP). The contact form uses a honeypot field (`_gotcha`) to filter naive bots.
 
 ## Cloudflare Configuration
 
-### `forsa-api` Worker
+### forsa-api Worker
 
 Required Worker secrets:
 
@@ -182,37 +182,33 @@ Expected response:
 
 Resend must have a verified sender for:
 
-```text
+```
 Forsa Design <hello@forsadesign.co.uk>
 ```
 
 ## Stripe
 
-Set the Worker secrets, then add a webhook endpoint in the Stripe Dashboard pointing to
-`https://forsa-api.sproutspunk.workers.dev/api/stripe/webhook`, subscribed to the
-`checkout.session.completed` event. Copy the endpoint's signing secret into `STRIPE_WEBHOOK_SECRET`.
+Set the Worker secrets, then add a webhook endpoint in the Stripe Dashboard pointing to `https://forsa-api.sproutspunk.workers.dev/api/stripe/webhook`, subscribed to the `checkout.session.completed` event. Copy the endpoint's signing secret into `STRIPE_WEBHOOK_SECRET`.
 
 ```bash
 pnpm --filter @workspace/forsa-api-worker exec wrangler secret put STRIPE_SECRET_KEY
 pnpm --filter @workspace/forsa-api-worker exec wrangler secret put STRIPE_WEBHOOK_SECRET
 ```
 
-Package, add-on and maintenance plan prices are duplicated server-side in `artifacts/forsa-api-worker/src/index.ts`
-(`PACKAGE_PRICES`, `ADDON_PRICES`, `MAINTENANCE_PRICES`) so checkout amounts are never trusted from the client.
-Keep them in sync with `artifacts/forsa-design/src/data/quoteConfig.ts` when prices change.
+Package, add-on and maintenance plan prices are duplicated server-side in `artifacts/forsa-api-worker/src/index.ts` (`PACKAGE_PRICES`, `ADDON_PRICES`, `MAINTENANCE_PRICES`) so checkout amounts are never trusted from the client. Keep them in sync with `artifacts/forsa-design/src/data/quoteConfig.ts` when prices change.
 
 Never store API keys, Cloudflare tokens, or database URLs in source files, Git history, or client-side variables.
 
 ## Deployment Order
 
-1. Deploy `forsa-api`.
-2. Configure or confirm the `RESEND_API_KEY` Worker secret.
-3. Configure or confirm the `TURNSTILE_SECRET_KEY` Worker secret.
-4. Confirm `API_ORIGIN` in Cloudflare Pages.
-5. Build `forsa-design` with `TURNSTILE_SITE_KEY` exported.
-6. Deploy `forsa-design`.
-7. Verify `/api/healthz`.
-8. Submit a real contact-form test and confirm delivery.
+1. Deploy `forsa-api`
+2. Configure or confirm the `RESEND_API_KEY` Worker secret
+3. Configure or confirm the `TURNSTILE_SECRET_KEY` Worker secret
+4. Confirm `API_ORIGIN` in Cloudflare Pages
+5. Build `forsa-design` with `TURNSTILE_SITE_KEY` exported
+6. Deploy `forsa-design`
+7. Verify `/api/healthz`
+8. Submit a real contact-form test and confirm delivery
 
 ## Troubleshooting
 
@@ -220,7 +216,7 @@ Never store API keys, Cloudflare tokens, or database URLs in source files, Git h
 
 The Worker's `TURNSTILE_SECRET_KEY` is invalid or does not match the frontend `TURNSTILE_SITE_KEY`.
 
-1. Get the correct secret key from the Cloudflare Turnstile dashboard (not the site key).
+1. Get the correct secret key from the Cloudflare Turnstile dashboard (not the site key)
 2. Re-set the Worker secret:
    ```bash
    cd artifacts/forsa-api-worker
@@ -231,9 +227,9 @@ The Worker's `TURNSTILE_SECRET_KEY` is invalid or does not match the frontend `T
    pnpm exec wrangler tail
    ```
    Look for `event: turnstile_verify_failed` and the `errorCodes` array:
-   - `invalid-input-secret` — wrong secret key on the Worker.
-   - `400020` / `hostname-mismatch` — the site key's domain allowlist does not include the production domain.
-   - `invalid-input-response` — token is malformed or expired; usually a frontend/widget issue.
+   - `invalid-input-secret` - wrong secret key on the Worker
+   - `400020` / `hostname-mismatch` - the site key's domain allowlist does not include the production domain
+   - `invalid-input-response` - token is malformed or expired; usually a frontend/widget issue
 
 ## License
 
