@@ -108,7 +108,6 @@ export default function PricingSection() {
           </p>
           <div className="w-16 h-1 bg-primary md:mx-auto mt-6" />
         </motion.div>
-
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-5xl mx-auto">
           {presets.map((preset, index) => (
             <motion.div
@@ -177,7 +176,6 @@ export default function PricingSection() {
             </motion.div>
           ))}
         </div>
-
         <motion.p
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -190,6 +188,18 @@ export default function PricingSection() {
             "Wszystkie ceny są orientacyjne. Ostateczna wycena zależy od dokładnych wymagań. Użyj kalkulatora do precyzyjnej kalkulacji.",
           )}
         </motion.p>
+        <motion.p
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.5 }}
+          className="text-center text-sm text-foreground/50 mt-4 max-w-2xl mx-auto"
+        >
+          {bi(
+            "Why are these prices lower than a traditional agency? AI handles most of the repetitive work. I focus on what actually affects the outcome: architecture, messaging, optimisation and making sure the site passes the purchasing review. You pay for my experience in industrial B2B, not for hours spent writing CSS.",
+            "Dlaczego te ceny s\u0105 ni\u017csze ni\u017c w tradycyjnej agencji? AI wykonuje wi\u0119kszo\u015b\u0107 powtarzalnej pracy. Ja zajmuj\u0119 si\u0119 tym, co rzeczywi\u015bcie wp\u0142ywa na wynik: architektur\u0105, przekazem, optymalizacj\u0105 i tym, \u017ceby strona przesz\u0142a kontrol\u0119 zakupow\u0105. P\u0142acisz za moje do\u015bwiadczenie w B2B przemys\u0142owym, nie za godziny sp\u0119dzone na pisaniu CSS.",
+          )}
+        </motion.p>{" "}
       </div>
     </section>
   );

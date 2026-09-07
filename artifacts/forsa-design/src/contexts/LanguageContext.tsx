@@ -57,27 +57,29 @@ const translations = {
       co2: "CO\u2082 per visit",
       a11y: "Accessibility",
       lowEmission: "Low emission",
+      explainer:
+        "These results did not come from a template. AI generates the code, and I optimise it by hand for Core Web Vitals and accessibility. The outcome is the same as code written from scratch. The difference is time: the site is ready in weeks, not months.",
     },
     hero: {
-      tagline: "Web Systems for Heavy Industry",
+      tagline: "Websites and Web Systems for Heavy Industry",
       subheader:
-        "No templates. No page builders. Just fast, secure sites that pass procurement checks.",
-      body: "You build infrastructure. We build the digital layer that proves you can deliver it. With more than twenty years in international B2B industrial sales across machinery, engineering and energy procurement, I know what happens when a buyer shortlists three suppliers and checks their websites. Forsa Design builds dedicated, hand-coded websites and web systems for offshore and energy contractors, engineering firms, industrial equipment suppliers and heavy logistics operators. Based in Banff, Aberdeenshire. Serving Scotland, the UK and selected EU export markets.",
+        "No templates. No Elementor-style page builders. Fast, secure websites that pass the purchasing review.",
+      body: "You build infrastructure. I build the digital layer that proves you can deliver it. I have more than twenty years in international B2B industrial sales: machinery, engineering, energy, procurement. I know what happens when a buyer narrows the supplier list to three firms and checks their websites. Forsa Design builds dedicated websites and web systems for offshore operators, energy contractors, engineering firms, industrial equipment suppliers and heavy logistics operators. Based in Banff, Aberdeenshire. Serving Scotland, the UK and selected EU export markets.",
       cta: "Request a Technical Quote",
     },
     services: {
       heading: "What We Build",
       card1: {
-        title: "Industrial Web Presence",
-        desc: "Dedicated sites built from scratch for engineering and manufacturing firms. Fast load times, mobile performance for site offices and technical messaging that speaks to specifiers, not designers.",
+        title: "Does your website speak to the specifier, or the designer?",
+        desc: "Dedicated websites for engineering and manufacturing firms. Fast load times, mobile performance for site offices, and technical messaging aimed at the people who write specifications.\n\nI do not write code from scratch. I use AI to generate the structure and front end, then refine the logic, SEO and performance by hand. You pay for the result, not for hours spent typing. The site is ready sooner, while the visual and technical quality stays at the same level.",
       },
       card2: {
-        title: "E-commerce for Parts and Equipment",
-        desc: "B2B catalogues and ordering systems for industrial components with account pricing, bulk quotes and integrations with ERP or stock systems. Built for procurement officers, not casual browsers.",
+        title: "Does your B2B catalogue work like a tool, or like a brochure?",
+        desc: "Catalogue and ordering systems for industrial components. Account pricing, bulk quotes, and integrations with ERP or stock systems. Built for procurement specialists, not casual visitors.\n\nAI helps me build the store framework and form logic in a fraction of the time. I configure the integrations, B2B account permissions and quote flow by hand. The result: delivery in 3-4 weeks instead of 3 months.",
       },
       card3: {
-        title: "Bespoke Web Systems",
-        desc: "Dealer portals, technical specification generators, multilingual quote engines and workflow integrations for export markets. Practical tools that fit your operation instead of disrupting it.",
+        title: "Does your dealer portal or spec generator need its own IT team?",
+        desc: "Dealer portals, technical specification generators, multilingual quote engines and workflow integrations for export markets. Practical tools that fit your operation instead of forcing it into a new rhythm.\n\nAI speeds up building prototypes and backend logic. I refine the architecture, security and procurement compliance myself. As a result, prototype costs drop by 40-50%, and you get a system that works, not a promise on paper.",
       },
     },
     process: {
@@ -147,7 +149,7 @@ const translations = {
       ],
     },
     pricing: {
-      heading: "Transparent Pricing",
+      heading: "What does it cost?",
       subheading: "Three starting points. Every project is tailored to your needs.",
     },
     cta: {
@@ -246,27 +248,29 @@ const translations = {
       co2: "CO\u2082 na wizyt\u0119",
       a11y: "Dost\u0119pno\u015b\u0107",
       lowEmission: "Niskie emisje",
+      explainer:
+        "Te wyniki nie wzięły się z szablonu. AI generuje kod, ja go optymalizuję ręcznie pod Core Web Vitals i dostępność. Efekt jest taki sam jak przy kodzie pisanym od zera. Różnica jest w czasie: strona gotowa w tygodnie, a nie w miesiące.",
     },
     hero: {
-      tagline: "Systemy Webowe dla Przemys\u0142u Ci\u0119\u017ckiego",
+      tagline: "Strony i systemy webowe dla przemysłu ciężkiego",
       subheader:
-        "Bez szablonów. Bez kreatorów. Tylko szybkie, bezpieczne strony gotowe na weryfikację zakupową.",
-      body: "Budujesz infrastrukturę. My tworzymy cyfrową warstwę, która pokazuje, że potrafisz ją dostarczyć. Dzięki ponad 20 latom doświadczenia w międzynarodowej sprzedaży B2B wiem, jak kupujący oceniają dostawców i ich strony. Tworzymy ręcznie kodowane strony i systemy dla firm offshore, energetycznych, inżynieryjnych, przemysłowych i logistycznych. Z Banff obsługujemy Szkocję, Wielką Brytanię i wybrane rynki UE.",
+        "Bez szablonów. Bez kreatorów typu Elementor. Szybkie, bezpieczne witryny, które przechodzą kontrolę zakupową.",
+      body: "Budujesz infrastrukturę. Ja buduję warstwę cyfrową, która pokazuje, że potrafisz to dostarczyć. Mam ponad dwadzieścia lat w międzynarodowym B2B sprzedaży przemysłowej: maszyny, inżynieria, energetyka, procurement. Wiem, co się dzieje, gdy kupujący skraca listę dostawców do trzech firm i wchodzi na ich strony. Forsa Design buduje dedykowane witryny i systemy webowe dla offshore, kontrahentów energetycznych, firm inżynierskich, dostawców sprzętu przemysłowego i operatorów logistyki ciężkiej. Siedziba w Banff, Aberdeenshire. Obsługuję Szkocję, Wielką Brytanię i wybrane rynki eksportowe UE.",
       cta: "Popro\u015b o wycen\u0119 techniczn\u0105",
     },
     services: {
       heading: "Co budujemy",
       card1: {
-        title: "Strony dla przemys\u0142u",
-        desc: "Dedykowane strony budowane od podstaw dla firm inżynieryjnych i produkcyjnych. Szybkie ładowanie, wydajność mobilna dla biur budowy i komunikacja techniczna skierowana do specyfikantów, nie do designerów.",
+        title: "Czy twoja strona mówi do specyfikanta, czy do grafika?",
+        desc: "Dedykowane witryny dla firm inżynierskich i produkcyjnych. Szybkie ładowanie, wydajność mobilna dla biur terenowych, przekaz techniczny skierowany do osób piszących specyfikacje.\n\nNie piszę kodu od zera. Używam AI do generowania struktury i frontendu, a potem ręcznie poprawiam logikę, SEO i wydajność. Płacisz za efekt, nie za godziny spędzone nad klawiaturą. Strona jest gotowa szybciej, a jakość wizualna i techniczna pozostaje na tym samym poziomie.",
       },
       card2: {
-        title: "E-commerce dla cz\u0119\u015bci i urz\u0105dze\u0144",
-        desc: "Katalogi B2B i systemy zamówień dla komponentów przemysłowych z cenami dla kont klientów, wycenami hurtowymi i integracjami z systemami ERP lub magazynowymi. Tworzone dla działów zakupów, nie dla przypadkowych odwiedzających.",
+        title: "Czy twój katalog B2B działa jak narzędzie, czy jak broszura?",
+        desc: "Systemy katalogowe i zamówieniowe dla komponentów przemysłowych. Ceny kontaktowe, wyceny hurtowe, integracje z ERP lub systemami magazynowymi. Zbudowane dla specjalistów od zakupów, nie dla przypadkowych odwiedzających.\n\nAI pomaga mi zbudować szkielet sklepu i logikę formularzy w ułamku czasu. Ręcznie konfiguruję integracje, uprawnienia kont B2B i przepływ wycen. Rezultat: wdrożenie w 3-4 tygodnie zamiast 3 miesięcy.",
       },
       card3: {
-        title: "Dedykowane systemy webowe",
-        desc: "Portale dealerskie, generatory specyfikacji technicznych, wielojęzyczne silniki wycen i integracje workflow dla rynków eksportowych. Praktyczne narzędzia dopasowane do Twojej operacji, a nie ją zakłócające.",
+        title: "Czy twój portal dealerów lub generator specyfikacji wymaga zespołu IT?",
+        desc: "Portale dealerskie, generatory specyfikacji technicznej, wielojęzyczne silniki wycenowe i integracje workflow dla rynków eksportowych. Praktyczne narzędzia dopasowane do twojej operacji, a nie narzucające jej nowy rytm.\n\nAI przyspiesza budowę prototypów i logiki backendu. Sam dopracowuję architekturę, bezpieczeństwo i zgodność z wymaganiami procurementu. Dzięki temu koszt prototypu spada o 40-50%, a ty dostajesz system, który działa, a nie obietnicę na papierze.",
       },
     },
     process: {
@@ -299,8 +303,8 @@ const translations = {
         "Siedziba w Banff, Aberdeenshire. Biegły w językach angielskim i polskim. Obsługujemy klientów w Szkocji, w całej Wielkiej Brytanii oraz na wybranych rynkach eksportowych UE.",
     },
     pricing: {
-      heading: "Przejrzyste ceny",
-      subheading: "Trzy punkty wyj\u015bcia. Ka\u017cdy projekt dopasowany do Twoich potrzeb.",
+      heading: "Ile to kosztuje?",
+      subheading: "Trzy punkty startowe. Ka\u017cdy projekt jest dopasowany do twoich potrzeb.",
     },
     cta: {
       heading: "Gotowy przesta\u0107 si\u0119 wstydzi\u0107 swojej strony?",

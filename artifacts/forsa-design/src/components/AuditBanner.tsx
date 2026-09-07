@@ -28,14 +28,14 @@ export default function AuditBanner({ source }: AuditBannerProps) {
       >
         <h2 className="text-2xl md:text-[32px] font-serif font-bold text-white leading-tight mb-4">
           {bi(
-            "Does your website pass the procurement check?",
-            "Czy Twoja strona przejdzie audyt zakupowy?",
+            "Does your website pass the purchasing review?",
+            "Czy twoja strona przejdzie kontrol\u0119 zakupow\u0105?",
           )}
         </h2>
         <p className="text-base text-foreground/60 leading-relaxed mb-8">
           {bi(
-            "Download our free checklist. 10 checks. 5 minutes. See what buyers look for before they call.",
-            "Pobierz darmow\u0105 checklist\u0119. 10 punkt\u00f3w. 5 minut. Zobacz, na co patrz\u0105 kupuj\u0105cy, zanim zadzwoni\u0105.",
+            "Download our free checklist. 10 checks. 5 minutes. Check what buyers look for before they call.",
+            "Pobierz darmow\u0105 checklist\u0119. 10 punkt\u00f3w. 5 minut. Sprawd\u017a, na co patrzy kupuj\u0105cy, zanim zadzwoni.",
           )}
         </p>
 

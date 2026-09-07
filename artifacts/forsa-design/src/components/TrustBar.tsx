@@ -165,6 +165,9 @@ export default function TrustBar() {
           );
         })}
       </div>
+      <p className="max-w-xl text-center text-sm text-foreground/50 leading-relaxed">
+        {t("trustBar.explainer")}
+      </p>
     </div>
   );
 }
