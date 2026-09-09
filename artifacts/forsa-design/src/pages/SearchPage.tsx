@@ -46,10 +46,11 @@ const pageEntries: Record<Language, SearchEntry[]> = {
       category: "Guide",
     },
     {
-      title: "Website Quote Calculator",
-      excerpt: "Get an instant estimate for a custom website, e-commerce store or web application.",
+      title: "Request a Quote",
+      excerpt:
+        "Tell us about your project and we'll send a tailored quote within one business day.",
       href: "/en/quote",
-      category: "Tools",
+      category: "Contact",
     },
     {
       title: "Contact Forsa Design",
@@ -100,10 +101,11 @@ const pageEntries: Record<Language, SearchEntry[]> = {
       category: "Poradnik",
     },
     {
-      title: "Kalkulator wyceny strony",
-      excerpt: "Uzyskaj natychmiastową wycenę strony, sklepu internetowego lub aplikacji webowej.",
+      title: "Poproś o wycenę",
+      excerpt:
+        "Opowiedz nam o swoim projekcie, a my prześlemy spersonalizowaną wycenę w ciągu jednego dnia roboczego.",
       href: "/pl/quote",
-      category: "Narzędzia",
+      category: "Kontakt",
     },
     {
       title: "Kontakt z Forsa Design",

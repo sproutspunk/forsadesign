@@ -253,8 +253,7 @@ function buildHomepageBodyEn() {
 <p>Up to 10 pages. Fully custom project. Professional copywriting. Advanced SEO and analytics. Newsletter and GDPR setup. Priority delivery. Business care plan.</p>
 <a href="/en/contact">Get a custom quote</a>
 </div>
-<p>All prices are indicative. Final quote depends on your exact requirements. Use our calculator for a precise estimate.</p>
-</section>
+<p>All prices are indicative. Final quote depends on your exact requirements. Request a quote for a precise estimate.</p>
 <section id="process">
 <h2>How We Work</h2>
 <div>
@@ -366,8 +365,7 @@ function buildHomepageBodyPl() {
 <p>Do 10 stron. Projekt w pełni na zamówienie. Profesjonalny copywriting. Zaawansowane SEO i analityka. Newsletter i konfiguracja GDPR. Priorytetowa realizacja. Biznesowy plan opieki.</p>
 <a href="/pl/contact">Uzyskaj wycenę</a>
 </div>
-<p>Wszystkie ceny są orientacyjne. Ostateczna wycena zależy od dokładnych wymagań. Użyj kalkulatora do precyzyjnej kalkulacji.</p>
-</section>
+<p>Wszystkie ceny są orientacyjne. Ostateczna wycena zależy od dokładnych wymagań. Poproś o wycenę, aby uzyskać precyzyjną kalkulację.</p>
 <section id="process">
 <h2>Jak Pracujemy</h2>
 <div>
@@ -1597,25 +1595,21 @@ function buildQuoteBodyEn() {
 <nav><a href="/en/">&#8592; Home</a> <span>|</span> <a href="/en/about">About</a> <span>|</span> <a href="/en/comparison">Compare Options</a></nav>
 </header>
 <main>
-<h1>Website Quote Calculator</h1>
-<p>Get an instant estimate for your website project. Select your project type and requirements to see a custom price range.</p>
+<h1>Request a Quote</h1>
+<p>Tell us about your industrial, manufacturing or engineering website project and we'll reply with a tailored quote within one business day.</p>
 <section>
 <h2>What We Build</h2>
 <div>
-<h3>Landing Page</h3>
-<p>A focused single-page site built to convert visitors. Ideal for lead generation, product launches, or campaign landing pages.</p>
+<h3>Industrial Websites</h3>
+<p>Procurement-ready websites for engineering and manufacturing firms, with fast load times, mobile performance and technical messaging for specifiers.</p>
 </div>
 <div>
-<h3>Business Website</h3>
-<p>A professional multi-page website for your company. Includes services, about, contact, and portfolio sections.</p>
+<h3>B2B Catalogues &amp; Ordering Systems</h3>
+<p>B2B catalogues and ordering systems with account pricing, bulk quotes and ERP or stock integrations.</p>
 </div>
 <div>
-<h3>E-commerce Store</h3>
-<p>A custom online shop built for performance and conversion. Product catalogue, checkout, and payment integration.</p>
-</div>
-<div>
-<h3>Web Application</h3>
-<p>Bespoke web systems for complex business requirements. Databases, user accounts, dashboards, and integrations.</p>
+<h3>Bespoke Web Systems</h3>
+<p>Dealer portals, technical specification generators, multilingual quote engines and workflow integrations.</p>
 </div>
 </section>
 <section>
@@ -1635,25 +1629,21 @@ function buildQuoteBodyPl() {
 <nav><a href="/pl/">&#8592; Strona G&#322;&#243;wna</a> <span>|</span> <a href="/pl/about">O Nas</a> <span>|</span> <a href="/pl/comparison">Por&#243;wnanie</a></nav>
 </header>
 <main>
-<h1>Kalkulator Wyceny Strony</h1>
-<p>Uzyskaj natychmiastow&#261; wycen&#281; swojego projektu strony. Wybierz typ projektu i wymagania, aby zobaczy&#263; orientacyjny przedzia&#322; cenowy.</p>
+<h1>Popro&#347; o Wycen&#281;</h1>
+<p>Opowiedz nam o swoim projekcie strony internetowej dla przemys&#322;u, produkcji lub in&#380;ynierii, a my odpowiemy spersonalizowan&#261; wycen&#261; w ci&#261;gu jednego dnia roboczego.</p>
 <section>
 <h2>Co Budujemy</h2>
 <div>
-<h3>Landing Page</h3>
-<p>Skupiona strona jednostronicowa zbudowana do konwersji odwiedzaj&#261;cych. Idealna do generowania lead&#243;w, lansowania produkt&#243;w lub kampanii marketingowych.</p>
+<h3>Strony Przemys&#322;owe</h3>
+<p>Strony gotowe na audyt zakupowy dla firm in&#380;ynieryjnych i produkcyjnych, z szybkim &#322;adowaniem, wygod&#261; mobiln&#261; i technicznym przekazem dla specyfikant&#243;w.</p>
 </div>
 <div>
-<h3>Strona Firmowa</h3>
-<p>Profesjonalna wielostronicowa strona dla Twojej firmy. Obejmuje us&#322;ugi, o nas, kontakt i sekcje portfolio.</p>
+<h3>Katalogi B2B i Systemy Zam&#243;wie&#324;</h3>
+<p>Katalogi B2B i systemy zam&#243;wie&#324; z cenami dla kont klient&#243;w, wycenami hurtowymi i integracjami ERP lub magazynowymi.</p>
 </div>
 <div>
-<h3>Sklep E-commerce</h3>
-<p>Niestandardowy sklep internetowy zbudowany dla wydajno&#347;ci i konwersji. Katalog produkt&#243;w, koszyk i integracja p&#322;atno&#347;ci.</p>
-</div>
-<div>
-<h3>Aplikacja Webowa</h3>
-<p>Dedykowane systemy webowe dla z&#322;o&#380;onych wymaga&#324; biznesowych. Bazy danych, konta u&#380;ytkownik&#243;w, dashboardy i integracje.</p>
+<h3>Dedykowane Systemy Webowe</h3>
+<p>Portale dealerskie, generatory specyfikacji technicznych, wieloj&#281;zyczne silniki wycen i integracje proces&#243;w.</p>
 </div>
 </section>
 <section>
@@ -1907,9 +1897,9 @@ const routes = [
   {
     outDir: "en/quote",
     lang: "en",
-    title: "Quote Calculator | Forsa Design",
-    desc: "Get an instant estimate for your website project. Custom pricing for landing pages, business sites, e-commerce and web applications.",
-    ogTitle: "Website Quote Calculator | Forsa Design",
+    title: "Request a Quote | Forsa Design",
+    desc: "Tell us about your industrial, manufacturing or engineering website project and we'll send a tailored quote within one business day.",
+    ogTitle: "Request a Quote | Forsa Design",
     locale: "en_GB",
     canonical: `${SITE}/en/quote`,
     alternates: [
@@ -1920,10 +1910,9 @@ const routes = [
   },
   {
     outDir: "pl/quote",
-    lang: "pl",
-    title: "Kalkulator wyceny | Forsa Design",
-    desc: "Uzyskaj natychmiastow\u0105 wycen\u0119 swojego projektu strony. Ceny dla stron docelowych, firmowych, sklep\u00f3w i aplikacji webowych.",
-    ogTitle: "Kalkulator wyceny strony | Forsa Design",
+    title: "Poproś o Wycenę | Forsa Design",
+    desc: "Opowiedz nam o swoim projekcie strony internetowej dla przemysłu, produkcji lub inżynierii, a my prześlemy spersonalizowaną wycenę w ciągu jednego dnia roboczego.",
+    ogTitle: "Poproś o Wycenę | Forsa Design",
     locale: "pl_PL",
     canonical: `${SITE}/pl/quote`,
     alternates: [

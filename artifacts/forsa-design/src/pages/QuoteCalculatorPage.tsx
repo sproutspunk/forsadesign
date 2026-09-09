@@ -3,7 +3,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { useSeoMeta, useJsonLd, buildHref } from "@/hooks/useSeoMeta";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import QuoteCalculator from "@/components/quote-calculator/QuoteCalculator";
+import QuoteRequestForm from "@/components/QuoteRequestForm";
 
 interface QuoteCalculatorPageProps {
   lang: "en" | "pl";
@@ -18,24 +18,18 @@ export default function QuoteCalculatorPage({ lang }: QuoteCalculatorPageProps) 
   }, [lang, syncLanguage]);
 
   useSeoMeta({
-    title: isEn
-      ? "Website Design Quote UK | Instant Estimate for Industrial Projects"
-      : "Wycena Strony Internetowej UK | Szybki Kalkulator dla Przemysłu",
+    title: isEn ? "Request a Quote | Forsa Design" : "Poproś o Wycenę | Forsa Design",
     description: isEn
-      ? "Get an instant website design quote for your industrial, manufacturing or engineering project. Custom pricing for UK businesses. No email required."
-      : "Uzyskaj natychmiastową wycenę strony dla projektu przemysłowego, produkcyjnego lub inżynieryjnego. Ceny dla firm w UK.",
-    ogTitle: isEn
-      ? "Website Design Quote Calculator | Forsa Design"
-      : "Kalkulator Wyceny Strony | Forsa Design",
+      ? "Tell us about your industrial, manufacturing or engineering website project and we'll send a tailored quote within one business day."
+      : "Opowiedz nam o swoim projekcie strony internetowej dla przemysłu, produkcji lub inżynierii, a my prześlemy spersonalizowaną wycenę w ciągu jednego dnia roboczego.",
+    ogTitle: isEn ? "Request a Quote | Forsa Design" : "Poproś o Wycenę | Forsa Design",
     ogDescription: isEn
-      ? "Get an instant website design quote for your industrial, manufacturing or engineering project. Custom pricing for UK businesses."
-      : "Uzyskaj natychmiastową wycenę strony dla projektu przemysłowego, produkcyjnego lub inżynieryjnego. Ceny dla firm w UK.",
-    twitterTitle: isEn
-      ? "Website Design Quote Calculator | Forsa Design"
-      : "Kalkulator Wyceny Strony | Forsa Design",
+      ? "Tell us about your industrial, manufacturing or engineering website project and we'll send a tailored quote within one business day."
+      : "Opowiedz nam o swoim projekcie strony internetowej dla przemysłu, produkcji lub inżynierii, a my prześlemy spersonalizowaną wycenę w ciągu jednego dnia roboczego.",
+    twitterTitle: isEn ? "Request a Quote | Forsa Design" : "Poproś o Wycenę | Forsa Design",
     twitterDescription: isEn
-      ? "Get an instant website design quote for your industrial, manufacturing or engineering project. Custom pricing for UK businesses."
-      : "Uzyskaj natychmiastową wycenę strony dla projektu przemysłowego, produkcyjnego lub inżynieryjnego. Ceny dla firm w UK.",
+      ? "Tell us about your industrial, manufacturing or engineering website project and we'll send a tailored quote within one business day."
+      : "Opowiedz nam o swoim projekcie strony internetowej dla przemysłu, produkcji lub inżynierii, a my prześlemy spersonalizowaną wycenę w ciągu jednego dnia roboczego.",
     ogLocale: isEn ? "en_GB" : "pl_PL",
     canonical: buildHref(isEn ? "/en/quote" : "/pl/quote"),
     alternates: [
@@ -69,8 +63,22 @@ export default function QuoteCalculatorPage({ lang }: QuoteCalculatorPageProps) 
   return (
     <div className="min-h-[100dvh] bg-background text-foreground">
       <Header />
-      <main id="main-content">
-        <QuoteCalculator />
+      <main id="main-content" className="py-16 md:py-24">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-2xl text-center">
+            <h1 className="font-serif text-4xl font-medium tracking-tight md:text-5xl">
+              {isEn ? "Request a quote" : "Poproś o wycenę"}
+            </h1>
+            <p className="mt-4 text-lg text-muted-foreground">
+              {isEn
+                ? "Tell us about your project and we'll reply with a tailored quote within one business day."
+                : "Opowiedz nam o swoim projekcie, a my odpowiemy spersonalizowaną wyceną w ciągu jednego dnia roboczego."}
+            </p>
+          </div>
+          <div className="mx-auto mt-12 max-w-xl">
+            <QuoteRequestForm isEn={isEn} source="quote-page" />
+          </div>
+        </div>
       </main>
       <Footer />
     </div>
