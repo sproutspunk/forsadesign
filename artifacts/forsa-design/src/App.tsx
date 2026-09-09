@@ -1,10 +1,4 @@
-import {
-  useLocation as useWouterLocation,
-  useRoute,
-  Switch,
-  Route,
-  Router as WouterRouter,
-} from "wouter";
+import { Switch, Route, Router as WouterRouter, useLocation, useRoute } from "wouter";
 import { lazy, Suspense, useEffect } from "react";
 import { LazyMotion } from "framer-motion";
 
@@ -30,14 +24,6 @@ const SearchPage = lazy(() => import("@/pages/SearchPage"));
 const BlogPage = lazy(() => import("@/pages/BlogPage"));
 const ArticlePage = lazy(() => import("@/pages/ArticlePage"));
 const PayPage = lazy(() => import("@/pages/PayPage"));
-
-function useLocation() {
-  const [loc, setLoc] = useWouterLocation();
-  // Cloudflare Pages canonical URLs use a trailing slash, but wouter routes
-  // are defined without one. Normalize so both variants match the same route.
-  const normalized = loc === "/" ? loc : loc.replace(/\/$/, "");
-  return [normalized, setLoc] as [string, typeof setLoc];
-}
 
 function Redirector() {
   const [location, setLocation] = useLocation();
@@ -108,8 +94,8 @@ function Router() {
     <Suspense fallback={null}>
       <Redirector />
       <Switch>
-        <Route path="/en" component={() => <HomePage lang="en" />} />
-        <Route path="/pl" component={() => <HomePage lang="pl" />} />
+        <Route path="/en/" component={() => <HomePage lang="en" />} />
+        <Route path="/pl/" component={() => <HomePage lang="pl" />} />
         <Route path="/en/terms" component={TermsPage} />
         <Route path="/pl/terms" component={TermsPagePL} />
         <Route path="/terms" component={() => <RedirectTo to="/en/terms" />} />
@@ -157,7 +143,7 @@ function AnalyticsGate() {
 function App() {
   return (
     <LazyMotion features={loadMotionFeatures} strict>
-      <WouterRouter hook={useLocation} base={import.meta.env.BASE_URL.replace(/\/$/, "")}>
+      <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, "")}>
         <LanguageProvider>
           <ErrorBoundary>
             <Router />
