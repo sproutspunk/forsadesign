@@ -21,9 +21,6 @@ type AboutContent = {
   process: Pair[];
   differentHeading: string;
   different: Pair[];
-  comparison: string[][];
-  comparisonHref: string;
-  comparisonCta: string;
   contactCta: string;
 };
 
@@ -31,198 +28,165 @@ const shared = {
   background: {
     en: [
       [
-        "Real business perspective",
-        "Having run a company for more than 20 years, negotiated international contracts across three continents and managed teams in multiple countries, I understand what a website needs to do for your bottom line. Every design decision is filtered through a business lens, not just an aesthetic one.",
+        "Industrial B2B experience",
+        "More than 20 years in international B2B sales means I approach a website as a commercial tool, not only as a visual project. I understand industrial products, technical sales, international trade and procurement.",
       ],
       [
-        "Communication at every level",
-        "I have worked with clients and stakeholders from all walks of life. That translates into websites that speak clearly to your audience, whether they are local customers or international partners.",
+        "Understanding the buying process",
+        "I understand the questions buyers ask, the information they look for and the credibility signals that matter when a supplier is being evaluated.",
       ],
       [
-        "Results-focused delivery",
-        "My career has been built on closing deals, managing projects end to end and delivering measurable outcomes. I bring that same discipline to web development: clear timelines, transparent communication and a focus on what actually moves the needle for your business.",
+        "Direct responsibility",
+        "Forsa Design is a one-person business. There is no account-management layer between you and the person doing the work. I handle the project directly from specification through launch.",
       ],
     ],
     pl: [
       [
-        "Prawdziwa perspektywa biznesowa",
-        "Prowadząc firmę przez ponad 20 lat, negocjując międzynarodowe kontrakty na trzech kontynentach i zarządzając zespołami w wielu krajach, rozumiem, co strona internetowa musi robić dla Twojego zysku. Każda decyzja projektowa jest filtrowana przez pryzmat biznesowy, nie tylko estetyczny.",
+        "Doświadczenie w przemysłowym B2B",
+        "Ponad 20 lat w międzynarodowej sprzedaży B2B sprawia, że traktuję stronę jako narzędzie biznesowe, a nie wyłącznie projekt wizualny. Rozumiem produkty przemysłowe, sprzedaż techniczną, handel międzynarodowy i procesy zakupowe.",
       ],
       [
-        "Komunikacja na każdym poziomie",
-        "Pracowałem z klientami i interesariuszami z każdej dziedziny życia. To przekłada się na strony, które jasno komunikują się z odbiorcami, czy to lokalnymi klientami, czy międzynarodowymi partnerami.",
+        "Znajomość procesu zakupowego",
+        "Rozumiem pytania zadawane przez kupujących, informacje, których szukają, oraz elementy budujące wiarygodność podczas oceny potencjalnego dostawcy.",
       ],
       [
-        "Dostarczanie wyników",
-        "Cała moja kariera opierała się na zawieraniu umów, zarządzaniu projektami od A do Z i dostarczaniu mierzalnych rezultatów. Tę samą dyscyplinę przenoszę do web developmentu: jasne terminy, transparentna komunikacja i skupienie na tym, co naprawdę przynosi korzyść Twojej firmie.",
+        "Bezpośrednia odpowiedzialność",
+        "Forsa Design jest jednoosobową firmą. Nie ma pośrednika pomiędzy Tobą a osobą wykonującą pracę. Prowadzę projekt bezpośrednio od specyfikacji do uruchomienia.",
       ],
     ],
   },
   process: {
     en: [
       [
-        "1. Discovery and strategy (weeks 1-2)",
-        "We conduct interviews, analyse your industry, competition and users, and define business goals.",
+        "Discovery and strategy — weeks 1–2",
+        "I review your business, customers, competitors, existing website and project requirements and define the objectives and structure.",
       ],
       [
-        "2. Design (weeks 3-4)",
-        "We create wireframes, mockups and a visual strategy. Everything is approved by you before we write a line of code.",
+        "Design — weeks 3–4",
+        "I develop the page structure, visual direction and user experience before moving into the main development stage.",
       ],
       [
-        "3. Development (weeks 5-8)",
-        "We build the site with a focus on performance, security, SEO and conversion.",
+        "Development — weeks 5–8",
+        "I build and configure the website, content structure and required functionality, with attention to performance, security, accessibility and SEO.",
       ],
       [
-        "4. Testing and optimisation (week 9)",
-        "Tests across all devices and browsers. Performance analysis, security and SEO.",
+        "Testing and optimisation — week 9",
+        "I test the website across relevant devices and browsers and review performance, accessibility, security configuration and SEO fundamentals.",
       ],
       [
-        "5. Launch and support (ongoing)",
-        "We deploy the site live. The first few weeks we are in close contact, then we transition to ongoing support.",
+        "Launch and optional support",
+        "I deploy the completed website. Ongoing maintenance and support are available separately if required.",
       ],
     ],
     pl: [
       [
-        "1. Analiza i strategia (tygodnie 1-2)",
-        "Przeprowadzamy wywiady, analizujemy Twoją branżę, konkurencję, użytkowników, definiujemy cele biznesowe.",
+        "Analiza i strategia — tygodnie 1–2",
+        "Analizuję firmę, klientów, konkurencję, obecną stronę oraz wymagania projektu i określam jego cele oraz strukturę.",
       ],
       [
-        "2. Projektowanie (tygodnie 3-4)",
-        "Tworzymy wireframe'y, mockupy i strategię wizualną. Wszystko zatwierdzone przez Ciebie, zanim zaczniemy kodować.",
+        "Projekt — tygodnie 3–4",
+        "Opracowuję strukturę stron, kierunek wizualny i sposób korzystania z witryny przed rozpoczęciem głównego etapu developmentu.",
       ],
       [
-        "3. Rozwój (tygodnie 5-8)",
-        "Budujemy stronę z naciskiem na wydajność, bezpieczeństwo, SEO i konwersję.",
+        "Development — tygodnie 5–8",
+        "Buduję i konfiguruję stronę, strukturę treści oraz wymagane funkcje, zwracając uwagę na wydajność, bezpieczeństwo, dostępność i SEO.",
       ],
       [
-        "4. Testowanie i optymalizacja (tydzień 9)",
-        "Testy na wszystkich urządzeniach i przeglądarkach, analiza wydajności, bezpieczeństwa, SEO.",
+        "Testy i optymalizacja — tydzień 9",
+        "Testuję stronę na odpowiednich urządzeniach i przeglądarkach oraz sprawdzam wydajność, dostępność, konfigurację bezpieczeństwa i podstawy SEO.",
       ],
       [
-        "5. Uruchomienie i wsparcie (na bieżąco)",
-        "Wdrażamy stronę live. Pierwszych kilka tygodni mamy ścisły kontakt, potem przystępujemy do wsparcia.",
+        "Uruchomienie i opcjonalne wsparcie",
+        "Uruchamiam gotową stronę. Dalsze utrzymanie i wsparcie są dostępne oddzielnie, jeśli są potrzebne.",
       ],
     ],
   },
   different: {
     en: [
-      ["No templates", "Every project starts from scratch, tailored to your industry and goals."],
       [
-        "Focus on business results",
-        "We measure everything. Does the site attract users, convert and support sales?",
+        "No off-the-shelf templates",
+        "I build custom implementations without WordPress, Elementor-style page builders or ready-made website templates.",
       ],
       [
-        "You own everything",
-        "Your domain, hosting and content are always under your control. No lock-in, no dependency on a single provider.",
+        "Business before decoration",
+        "The structure and content should help visitors understand what your company does, what it can deliver and how to take the next step.",
       ],
       [
-        "Long-term partnership",
-        "We support you months and years after launch. This is not a project, it is a collaboration.",
+        "No deliberate vendor lock-in",
+        "I do not deliberately build systems that make a client dependent on me. The technical setup and access arrangements are agreed for each project.",
       ],
       [
-        "Transparent communication",
-        "You know what is being done, why and when it will be ready. No hidden fees, no bureaucratic tricks.",
+        "Optional ongoing support",
+        "Support after launch is available as a separate paid service. You are not required to purchase an ongoing maintenance contract.",
+      ],
+      [
+        "Direct communication",
+        "You communicate directly with the person designing and building the project. Scope, costs and responsibilities are agreed before the work begins.",
       ],
     ],
     pl: [
-      ["Bez szablonów", "Każdy projekt zaczynamy od zera, dostosowany do Twojej branży i celów."],
       [
-        "Fokus na wyniki biznesowe",
-        "Mierzymy wszystko. Czy strona przyciąga użytkowników, konwertuje, wspiera sprzedaż?",
+        "Bez gotowych szablonów",
+        "Buduję dedykowane rozwiązania bez WordPressa, kreatorów typu Elementor i gotowych szablonów stron.",
       ],
       [
-        "Wszystko należy do Ciebie",
-        "Domena, hosting i treść zawsze są pod Twoją kontrolą. Bez uzależnienia od dostawcy.",
+        "Biznes przed dekoracją",
+        "Struktura i treść strony powinny pomagać odbiorcy zrozumieć, czym zajmuje się firma, co potrafi dostarczyć i jaki powinien być kolejny krok.",
       ],
       [
-        "Długoterminowe partnerstwo",
-        "Wspieramy Cię miesiące i lata po uruchomieniu. To nie projekt, to współpraca.",
+        "Bez celowego vendor lock-in",
+        "Nie buduję celowo rozwiązań uzależniających klienta ode mnie. Sposób konfiguracji technicznej i zasady dostępu ustalam indywidualnie dla każdego projektu.",
       ],
       [
-        "Transparentna komunikacja",
-        "Wiesz, co się robi, dlaczego i kiedy będzie gotowe. Brak ukrytych opłat, brak biurokratycznych sztuczek.",
+        "Opcjonalne wsparcie",
+        "Wsparcie po uruchomieniu jest dostępne jako oddzielna płatna usługa. Nie wymagam podpisania stałej umowy serwisowej.",
+      ],
+      [
+        "Bezpośrednia komunikacja",
+        "Rozmawiasz bezpośrednio z osobą projektującą i budującą rozwiązanie. Zakres, koszty i odpowiedzialność ustalam przed rozpoczęciem prac.",
       ],
     ],
   },
 };
 
-const comparison = [
-  ["Aspect", "CMS template", "Non-specialist agency", "Freelancer", "Forsa Design"],
-  ["Price", "£800-2,000", "£3,000-8,000", "£1,500-4,000", "£1,200-12,000+"],
-  ["Turnaround", "2-4 weeks", "6-12 weeks", "4-8 weeks", "8-12 weeks"],
-  [
-    "Design uniqueness",
-    "Looks like competition",
-    "Sometimes template-based",
-    "Varies",
-    "Unique, tailored",
-  ],
-  ["Site speed", "Average (plugin-heavy)", "Good (if clean code)", "Varies", "High (optimised)"],
-  ["SEO and optimisation", "Basic", "Average", "Varies", "Advanced (Schema, E-E-A-T)"],
-  ["Technical support", "Plugins required", "Optional (extra cost)", "Limited", "Included"],
-  [
-    "Security (SSL, GDPR, PCI)",
-    "Depends on plugins",
-    "Generally yes",
-    "Varies",
-    "Yes, full documentation",
-  ],
-  [
-    "Integrations (CRM, ERP)",
-    "Plugin ecosystem",
-    "Can be done",
-    "Varies",
-    "Yes, custom development",
-  ],
-  ["Scalability", "Difficult (template lock-in)", "Possible", "Possible", "Easy (custom code)"],
-  ["Portability", "Medium", "High", "High", "High (full control)"],
-  ["Brand consistency", "Low", "Medium", "Varies", "High (guidelines integrated)"],
-];
-
 const content: Record<"en" | "pl", AboutContent> = {
   en: {
-    seoTitle: "About Forsa Design | Industrial Web Developer in Aberdeenshire",
+    seoTitle: "About Forsa Design | Industrial Web Development in Aberdeenshire",
     seoDesc:
-      "Forsa Design builds industrial websites for manufacturing, engineering and offshore firms. Founded by Miro after 20+ years in B2B industrial sales. Based in Banff, Aberdeenshire.",
-    heading: "Who's Behind This?",
+      "Forsa Design builds custom websites and web systems for industrial, engineering and technical B2B companies. One-person business based in Banff, Aberdeenshire.",
+    heading: "Who’s Behind Forsa Design?",
     intro: [
-      "My name is Miro. I founded Forsa Design after more than 20 years in international B2B sales. I traded in metalworking machinery, industrial equipment and engineering solutions across Europe and Asia. I sat on both sides of the procurement table. I know what the process looks like from the first email to the signed contract.",
-      "That experience taught me one thing: most industrial firms do excellent work, but their websites do not keep up with the quality of their service. And that costs contracts. Not because the work is poor: in today's B2B, the website is the first stage of verification.",
-      "I am not a London agency with fifteen people on the team and a coffee machine in the office. I am someone who understands industry, logistics and international trade. I now build websites that speak your customers' language. No templates. No unnecessary jargon. Just clean code and a clear message.",
-      "Based in Banff, Aberdeenshire. Fluent in English and Polish. Serving clients in Scotland, across the UK and in selected EU export markets.",
+      "I’m Miro. I founded Forsa Design after more than 20 years in international B2B sales. I traded metalworking machinery, industrial equipment and engineering solutions across Europe and Asia. I ran businesses in two countries, negotiated international contracts across three continents and managed teams in different countries.",
+      "That experience gave me a practical understanding of industrial sales and procurement. I know the process from initial contact and technical discussions through negotiation to the signed contract. I understand what buyers, engineers and decision-makers look for when they assess a potential supplier.",
+      "Forsa Design is a one-person business. You deal directly with me from the first conversation through development and launch. I use modern development tools including VS Code, GitHub, Cloudflare and AI-assisted development tools, but I remain responsible for the architecture, configuration, testing and final result.",
+      "I am based in Banff, Aberdeenshire. I am fluent in English and Polish and have some knowledge of Russian and Ukrainian. I can work with clients in the UK and internationally.",
     ],
-    backgroundHeading: "Why this background matters",
+    backgroundHeading: "Why My Background Matters",
     background: shared.background.en as Pair[],
-    processHeading: "How we work",
+    processHeading: "Typical Website Project",
     process: shared.process.en as Pair[],
-    differentHeading: "What sets us apart",
+    differentHeading: "How I Work",
     different: shared.different.en as Pair[],
-    comparison,
-    comparisonHref: "/en/comparison/",
-    comparisonCta: "See full comparison",
-    contactCta: "Start a Project",
+    contactCta: "Request a Quote",
   },
   pl: {
-    seoTitle: "O Forsa Design | Web Design dla Przemysłu w UK",
+    seoTitle: "O Forsa Design | Strony i systemy webowe dla przemysłu",
     seoDesc:
-      "Forsa Design tworzy strony dla firm przemysłowych, produkcyjnych i offshore. Założyciel Miro ma 20+ lat doświadczenia w sprzedaży B2B. Siedziba w Banff, Aberdeenshire.",
-    heading: "Kto za tym stoi?",
+      "Forsa Design buduje dedykowane strony i systemy webowe dla firm przemysłowych, inżynieryjnych i technicznych. Jednoosobowa firma z siedzibą w Banff, Aberdeenshire.",
+    heading: "Kto stoi za Forsa Design?",
     intro: [
-      "Nazywam się Miro. Forsa Design założyłem po ponad 20 latach w międzynarodowej sprzedaży B2B. Handlowałem maszynami do obróbki metalu, wyposażeniem przemysłowym i rozwiązaniami inżynieryjnymi w Europie i Azji. Siedziałem po obu stronach stołu zakupowego. Wiem, jak wygląda proces od pierwszego maila po podpisany kontrakt.",
-      "To doświadczenie nauczyło mnie jednej rzeczy. Większość firm przemysłowych wykonuje świetną robotę, ale ich strony internetowe nie nadążają za poziomem ich usług. I to kosztuje kontrakty. Nie dlatego, że praca jest słaba. W dzisiejszym B2B strona to pierwszy etap weryfikacji.",
-      "Nie jestem agencją z Londynu z piętnastoma osobami w zespole i kawiarnią w biurze. Jestem człowiekiem, który rozumie przemysł, logistykę i handel międzynarodowy. Teraz buduję strony, które komunikują się językiem Twoich klientów. Bez szablonów. Bez zbędnego żargonu. Tylko czysty kod i jasny przekaz.",
-      "Siedziba w Banff, Aberdeenshire. Pracuję po angielsku i polsku. Obsługuję klientów w Szkocji, w całej Wielkiej Brytanii oraz na wybranych rynkach eksportowych UE.",
+      "Nazywam się Miro. Założyłem Forsa Design po ponad 20 latach pracy w międzynarodowej sprzedaży B2B. Handlowałem maszynami do obróbki metalu, wyposażeniem przemysłowym i rozwiązaniami inżynieryjnymi w Europie i Azji. Prowadziłem firmy w dwóch krajach, negocjowałem międzynarodowe kontrakty na trzech kontynentach i zarządzałem zespołami w różnych krajach.",
+      "To doświadczenie dało mi praktyczną znajomość sprzedaży przemysłowej i procesów zakupowych. Znam ten proces od pierwszego kontaktu i rozmów technicznych, przez negocjacje, aż po podpisanie kontraktu. Rozumiem, na co zwracają uwagę kupcy, inżynierowie i osoby podejmujące decyzje, oceniając potencjalnego dostawcę.",
+      "Forsa Design jest jednoosobową firmą. Od pierwszej rozmowy, przez development, aż po uruchomienie projektu współpracujesz bezpośrednio ze mną. Korzystam z nowoczesnych narzędzi, takich jak VS Code, GitHub, Cloudflare, oraz narzędzi wspomaganych przez AI, ale to ja odpowiadam za architekturę, konfigurację, testy i końcowy rezultat.",
+      "Działam z Banff w Aberdeenshire. Biegle mówię po polsku i angielsku, a także w pewnym stopniu posługuję się rosyjskim i ukraińskim. Mogę współpracować z klientami z Wielkiej Brytanii oraz z zagranicy.",
     ],
-    backgroundHeading: "Dlaczego to doświadczenie ma znaczenie",
+    backgroundHeading: "Dlaczego moje doświadczenie ma znaczenie",
     background: shared.background.pl as Pair[],
-    processHeading: "Jak pracujemy",
+    processHeading: "Typowy projekt strony internetowej",
     process: shared.process.pl as Pair[],
-    differentHeading: "Co nas wyróżnia",
+    differentHeading: "Jak pracuję",
     different: shared.different.pl as Pair[],
-    comparison: [],
-    comparisonHref: "",
-    comparisonCta: "",
-    contactCta: "Rozpocznij projekt",
+    contactCta: "Poproś o wycenę",
   },
 };
 
@@ -315,38 +279,6 @@ export default function AboutPage({ lang }: AboutPageProps) {
             </div>
           </div>
         </section>
-        {lang === "en" && (
-          <section className={`${sectionClass} about-comparison bg-card`}>
-            <div className="container mx-auto max-w-6xl px-6">
-              <h2 className={headingClass}>How we compare</h2>
-              <div className="overflow-x-auto">
-                <table>
-                  <thead>
-                    <tr>
-                      {c.comparison[0].map((cell) => (
-                        <th key={cell}>{cell}</th>
-                      ))}
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {c.comparison.slice(1).map((row) => (
-                      <tr key={row[0]}>
-                        {row.map((cell, i) => (
-                          <td key={`${row[0]}-${i}`}>{cell}</td>
-                        ))}
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-              <p className="mt-8 text-right">
-                <a className="text-primary font-medium hover:underline" href={c.comparisonHref}>
-                  {c.comparisonCta} →
-                </a>
-              </p>
-            </div>
-          </section>
-        )}
         <section className="py-20 bg-background border-t border-border/10 text-center">
           <a
             href={`${homeHref}#contact`}

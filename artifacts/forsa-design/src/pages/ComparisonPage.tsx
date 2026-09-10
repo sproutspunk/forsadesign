@@ -12,269 +12,303 @@ interface ComparisonPageProps {
 
 const content = {
   en: {
-    seoTitle: "Custom Website vs Template UK | Industrial Web Design Comparison",
+    seoTitle: "CMS Template vs Agency vs Freelancer vs Forsa Design | Comparison",
     seoDesc:
-      "Compare custom websites, CMS templates, agencies and freelancers for industrial web design in the UK. Find the right fit for manufacturing and engineering businesses.",
-    heading: "Which Option Is Right for You?",
+      "A practical comparison of CMS templates, general agencies, freelancers and Forsa Design. Development model, contact, team size, templates, AI-assisted development, industrial B2B experience, API integrations, support, lock-in and project time.",
+    heading: "Which option is right for you?",
     intro:
-      "Not every business needs a custom website. The right choice depends on your goals, budget, timeline, and how important flexibility, performance, and future growth are. Below is a practical comparison of the most common web solutions.",
+      "Not every business needs a custom website. Here is how the most common options compare on the points that matter in practice.",
     optionCards: [
       {
         name: "CMS Template",
-        tagline: "Fast and affordable",
-        pros: ["Lower initial cost", "Quick to launch", "Easy content updates"],
+        tagline: "Platform/theme-based",
+        pros: [
+          "Quick to launch in simple cases",
+          "Familiar editing interface in many setups",
+          "Large plugin and theme ecosystem",
+        ],
         cons: [
           "Often based on existing themes",
           "Can become slower with too many plug-ins",
-          "Limited control over SEO and performance",
+          "Limited control over performance and structure",
         ],
         highlight: false,
       },
       {
-        name: "Non-specialist Agency",
-        tagline: "General solution provider",
-        pros: ["Experienced teams", "Project management", "Existing portfolio"],
+        name: "General Agency",
+        tagline: "Depends on the agency",
+        pros: ["Team capacity", "Established processes", "Wider service range"],
         cons: [
-          "Often template-based",
-          "Higher costs due to larger structures",
-          "May lack industry-specific experience",
+          "Often higher costs due to larger structures",
+          "Contact often through an account/project manager",
+          "Industrial experience depends on the team",
         ],
         highlight: false,
       },
       {
         name: "Freelancer",
-        tagline: "Flexible and personal",
+        tagline: "Depends on the person",
         pros: ["Direct communication", "Flexible pricing", "Wide range of skills"],
         cons: [
-          "One person responsible for the whole project",
-          "Availability can become a challenge",
-          "Quality varies between providers",
+          "Availability and continuity depend on one person",
+          "Quality and process vary between providers",
+          "Industry experience depends on the individual",
         ],
         highlight: false,
       },
       {
         name: "Forsa Design",
-        tagline: "A website that works for your business, not the other way around",
+        tagline: "Custom development",
         pros: [
-          "Built around your customers and business goals",
-          "Fast experiences that respect your customers' time",
-          "Built to be found and trusted online",
-          "Processes simplified through smart automation",
-          "A long-term partner when your business evolves",
-          "Ready to support the next stage of your growth",
-          "No lock-ins. No dependence on a single provider.",
+          "Built around the commercial purpose and scope of the project",
+          "No off-the-shelf templates or page builders",
+          "AI-assisted development where it makes sense, with personal responsibility for architecture, configuration, testing and the final result",
+          "Proven 20+ years of industrial B2B experience",
+          "API integrations available, assessed individually",
+          "An optional paid support service",
+          "I do not deliberately introduce vendor lock-in",
         ],
         cons: [],
         highlight: true,
       },
     ],
-    tableHeading: "Full Comparison",
-    tableSub: "This comparison focuses on practical differences between each approach.",
-    tableHeaders: ["Criterion", "DIY Builder", "Freelancer", "Agency", "Forsa Design"],
+    cardNoteHeading: "Important notes",
+    cardNotes: [
+      "This comparison describes typical patterns, not every provider. There are good and weak examples of each option.",
+      "A CMS template is not automatically bad and custom development is not automatically necessary. The right choice depends on scope, budget, timeline and requirements.",
+      "For an industrial business, the deciding factors are usually credibility with buyers, clarity of technical information, performance, security, SEO fundamentals and the ability to maintain and develop the site.",
+    ],
+    tableHeading: "Full comparison",
+    tableSub: "Each project is different, but these points usually decide which option fits.",
+    tableHeaders: ["Aspect", "CMS Template", "General Agency", "Freelancer", "Forsa Design"],
     tableRows: [
       [
-        "Time",
-        "Self-service",
-        "Independent developer",
-        "Team-based delivery",
-        "More time to focus on running your business",
+        "Development model",
+        "Platform/theme-based",
+        "Depends on the agency",
+        "Depends on the person",
+        "Custom development",
       ],
       [
-        "Communication",
-        "Support tickets",
-        "Direct",
-        "Account manager",
-        "Direct access to the person building your solution",
+        "Main contact",
+        "Depends on the provider",
+        "Often an account/project manager",
+        "Usually the freelancer directly",
+        "Directly with Miro",
       ],
       [
-        "Growth",
-        "Template-based",
-        "Varies",
-        "Custom",
-        "Built around business goals, not templates",
+        "Team size",
+        "Depends on the provider",
+        "Usually several people",
+        "Usually one person",
+        "One person",
       ],
       [
-        "Customer Experience",
-        "Depends on platform",
-        "Varies",
-        "Usually optimised",
-        "Fast, clear and professional user journeys",
+        "Templates/page builders",
+        "Often used, but not always",
+        "Depends on the agency",
+        "Depends on the freelancer",
+        "I do not use them",
       ],
       [
-        "Visibility",
-        "Basic",
-        "Varies",
-        "Included",
-        "Designed to help customers find and trust you",
+        "AI-assisted development",
+        "Depends on the provider",
+        "Depends on the agency",
+        "Depends on the freelancer",
+        "Used where it makes sense",
       ],
       [
-        "Efficiency",
-        "Limited",
-        "Depends on skills",
-        "Available",
-        "Manual tasks reduced through smart systems",
+        "Industrial B2B experience",
+        "Depends on the provider",
+        "Depends on the agency and the team",
+        "Depends on the person",
+        "More than 20 years",
       ],
-      ["Reliability", "Self-managed", "Limited", "Ongoing", "Ongoing support when you need it"],
       [
-        "Scalability",
-        "Platform dependent",
-        "Usually full",
-        "Usually full",
-        "Ready for the next stage of your growth",
+        "API integrations",
+        "Depend on the platform and provider",
+        "Depend on scope",
+        "Depend on skills",
+        "Available and assessed individually",
       ],
-      ["Ownership", "Limited", "Varies", "Good", "Full control over your digital assets"],
+      [
+        "Post-launch support",
+        "Depends on the provider and package",
+        "Depends on the agency and contract",
+        "Depends on the freelancer",
+        "An optional paid service",
+      ],
+      [
+        "Vendor lock-in",
+        "Depends on the platform and setup",
+        "Depends on the contract and setup",
+        "Depends on the setup",
+        "I do not introduce it deliberately",
+      ],
+      [
+        "Project time",
+        "Depends on scope",
+        "Depends on scope",
+        "Depends on scope",
+        "A typical company website around nine weeks",
+      ],
     ],
-    ctaHeading: "Ready to talk?",
-    ctaSub: "The right approach starts with understanding your business.",
+    ctaHeading: "Ready to Discuss Your Project?",
+    ctaSub:
+      "If you are not sure which approach fits your requirements, tell me what you need. I will assess the scope and explain what I can build and what the project would involve.",
     ctaButton: "Request a Quote",
-    pros: "Pros",
-    cons: "Cons",
-    highlighted: "Recommended",
+    pros: "Strengths",
+    cons: "Limitations",
+    highlighted: "Forsa Design",
   },
   pl: {
-    seoTitle: "Opcje Web Design dla Przemysłu | Forsa Design",
+    seoTitle: "Szablon CMS vs agencja vs freelancer vs Forsa Design | Porównanie",
     seoDesc:
-      "Porównaj opcje web design dla przemysłu: autorskie strony, szablony CMS, agencje i freelancerzy. Wybierz rozwiązanie dla swojej firmy.",
-    heading: "Która Opcja Jest Dla Ciebie?",
+      "Praktyczne porównanie: szablony CMS, agencje ogólne, freelancerzy i Forsa Design. Model developmentu, kontakt, wielkość zespołu, szablony, development wspomagany AI, doświadczenie w przemysłowym B2B, integracje API, wsparcie, lock-in i czas projektu.",
+    heading: "Która opcja jest dla Ciebie?",
     intro:
-      "Nie ka\u017cdy biznes potrzebuje dedykowanej strony. Wyb\u00f3r zale\u017cy od Twoich cel\u00f3w, bud\u017cetu, harmonogramu i tego, jak wa\u017cne s\u0105 elastyczno\u015b\u0107, wydajno\u015b\u0107 i przysz\u0142y wzrost. Poni\u017cej znajdziesz praktyczne por\u00f3wnanie najpopularniejszych rozwi\u0105za\u0144 webowych.",
+      "Nie każdy biznes potrzebuje dedykowanej strony. Oto jak najpopularniejsze opcje wypadają w punktach, które mają znaczenie w praktyce.",
     optionCards: [
       {
         name: "Szablon CMS",
-        tagline: "Szybko i przyst\u0119pnie",
+        tagline: "Oparty na platformie/motywie",
         pros: [
-          "Ni\u017cszy koszt wej\u015bcia",
-          "Szybkie uruchomienie",
-          "\u0141atwa aktualizacja tre\u015bci",
+          "Szybkie uruchomienie w prostych przypadkach",
+          "Znany interfejs edycji w wielu konfiguracjach",
+          "Duży ekosystem wtyczek i motywów",
         ],
         cons: [
-          "Cz\u0119sto oparte na gotowych szablonach",
-          "Mo\u017ce spowalnia\u0107 przy zbyt wielu wtyczkach",
-          "Ograniczona kontrola nad SEO i wydajno\u015bci\u0105",
+          "Często oparte na gotowych szablonach",
+          "Może spowalniać przy zbyt wielu wtyczkach",
+          "Ograniczona kontrola nad wydajnością i strukturą",
         ],
         highlight: false,
       },
       {
-        name: "Agencja bez specjalizacji",
-        tagline: "Og\u00f3lny dostawca rozwi\u0105za\u0144",
-        pros: [
-          "Do\u015bwiadczone zespo\u0142y",
-          "Zarz\u0105dzanie projektem",
-          "Istniej\u0105ce portfolio",
-        ],
+        name: "Agencja ogólna",
+        tagline: "Zależy od agencji",
+        pros: ["Zasoby zespołu", "Ugruntowane procesy", "Szerszy zakres usług"],
         cons: [
-          "Cz\u0119sto szablonowe podej\u015bcie",
-          "Wy\u017csze koszty wynikaj\u0105ce z rozbudowanych struktur",
-          "Mo\u017ce brakowa\u0107 do\u015bwiadczenia bran\u017cowego",
+          "Często wyższe koszty wynikające z większych struktur",
+          "Kontakt często przez account/project managera",
+          "Doświadczenie przemysłowe zależy od zespołu",
         ],
         highlight: false,
       },
       {
         name: "Freelancer",
-        tagline: "Elastyczny i osobisty",
-        pros: [
-          "Bezpo\u015brednia komunikacja",
-          "Elastyczne ceny",
-          "Szeroki zakres umiej\u0119tno\u015bci",
-        ],
+        tagline: "Zależy od osoby",
+        pros: ["Bezpośrednia komunikacja", "Elastyczne ceny", "Szeroki zakres umiejętności"],
         cons: [
-          "Jedna osoba odpowiedzialna za ca\u0142y projekt",
-          "Dost\u0119pno\u015b\u0107 mo\u017ce by\u0107 wyzwaniem",
-          "Jako\u015b\u0107 r\u00f3\u017cni si\u0119 mi\u0119dzy dostawcami",
+          "Dostępność i ciągłość zależą od jednej osoby",
+          "Jakość i proces różnią się między dostawcami",
+          "Doświadczenie branżowe zależy od osoby",
         ],
         highlight: false,
       },
       {
         name: "Forsa Design",
-        tagline: "Strona, kt\u00f3ra pracuje dla Twojego biznesu: nie na odwr\u00f3t",
+        tagline: "Dedykowany development",
         pros: [
-          "Dostosowana do cel\u00f3w i klient\u00f3w, nie do szablon\u00f3w",
-          "Szybkie do\u015bwiadczenia, kt\u00f3re szanuj\u0105 czas u\u017cytkownik\u00f3w",
-          "Zbudowana, by klienci znale\u017ali Ci\u0119 i zaufali",
-          "Procesy uproszczone przez inteligentne systemy",
-          "Wsparcie, gdy Tw\u00f3j biznes si\u0119 zmienia",
-          "Gotowa na kolejny etap rozwoju",
-          "Brak lock-in. Brak zale\u017cno\u015bci od jednego dostawcy.",
+          "Dostosowana do celu biznesowego i zakresu projektu",
+          "Bez gotowych szablonów i kreatorów stron",
+          "Development wspomagany AI tam, gdzie ma sens, z osobistą odpowiedzialnością za architekturę, konfigurację, testy i efekt końcowy",
+          "Potwierdzone 20+ lat doświadczenia w przemysłowym B2B",
+          "Integracje API dostępne, oceniane indywidualnie",
+          "Opcjonalna płatna usługa wsparcia",
+          "Nie wprowadzam celowo vendor lock-in",
         ],
         cons: [],
         highlight: true,
       },
     ],
-    tableHeading: "Pe\u0142ne Por\u00f3wnanie",
-    tableSub:
-      "Por\u00f3wnanie skupia si\u0119 na praktycznych r\u00f3\u017cnicach mi\u0119dzy ka\u017cdym podej\u015bciem.",
-    tableHeaders: ["Kryterium", "DIY Builder", "Freelancer", "Agencja", "Forsa Design"],
+    cardNoteHeading: "Ważne uwagi",
+    cardNotes: [
+      "To porównanie opisuje typowe wzorce, a nie każdego dostawcę. W każdej z tych opcji są dobre i słabe przykłady.",
+      "Szablon CMS nie jest automatycznie zły, a dedykowany development nie zawsze jest konieczny. Właściwy wybór zależy od zakresu, budżetu, harmonogramu i wymagań.",
+      "Dla firmy przemysłowej decydujące są zwykle wiarygodność w oczach kupujących, jasność informacji technicznych, wydajność, bezpieczeństwo, podstawy SEO oraz możliwość utrzymania i rozwoju strony.",
+    ],
+    tableHeading: "Pełne porównanie",
+    tableSub: "Każdy projekt jest inny, ale te punkty zwykle decydują o dopasowaniu opcji.",
+    tableHeaders: ["Aspekt", "Szablon CMS", "Agencja ogólna", "Freelancer", "Forsa Design"],
     tableRows: [
       [
-        "Czas",
-        "Samodzielna konfiguracja",
-        "Samodzielny deweloper",
-        "Dostawa zespo\u0142owa",
-        "Wi\u0119cej czasu na prowadzenie biznesu",
+        "Model developmentu",
+        "Oparty na platformie/motywie",
+        "Zależy od agencji",
+        "Zależy od osoby",
+        "Dedykowany development",
       ],
       [
-        "Komunikacja",
-        "Zg\u0142oszenia do supportu",
-        "Bezpo\u015brednia",
-        "Account manager",
-        "Bezpo\u015bredni kontakt z osob\u0105 buduj\u0105c\u0105 rozwi\u0105zanie",
+        "Główny kontakt",
+        "Zależy od dostawcy",
+        "Często account/project manager",
+        "Zwykle bezpośrednio freelancer",
+        "Bezpośrednio Miro",
       ],
       [
-        "Rozw\u00f3j",
-        "Szablonowy",
-        "Zale\u017cy",
-        "Dostosowany",
-        "Dostosowany do cel\u00f3w biznesowych, nie szablon\u00f3w",
+        "Wielkość zespołu",
+        "Zależy od dostawcy",
+        "Zwykle kilka osób",
+        "Zwykle jedna osoba",
+        "Jedna osoba",
       ],
       [
-        "Do\u015bwiadczenie klienta",
-        "Zale\u017cy od platformy",
-        "Zale\u017cy",
-        "Zazwyczaj zoptymalizowana",
-        "Szybkie, przejrzyste i profesjonalne \u015bcie\u017cki u\u017cytkownika",
+        "Szablony/kreatory",
+        "Często używane, ale nie zawsze",
+        "Zależy od agencji",
+        "Zależy od freelancera",
+        "Nie używam",
       ],
       [
-        "Widoczno\u015b\u0107",
-        "Podstawowy",
-        "Zale\u017cy",
-        "W\u0142\u0105czony",
-        "Zaprojektowane, by klienci znale\u017ali Ci\u0119 i zaufali",
+        "Development wspomagany AI",
+        "Zależy od dostawcy",
+        "Zależy od agencji",
+        "Zależy od freelancera",
+        "Używany tam, gdzie ma sens",
       ],
       [
-        "Efektywno\u015b\u0107",
-        "Ograniczone",
-        "Zale\u017cy od umiej\u0119tno\u015bci",
-        "Dost\u0119pne",
-        "R\u0119czne zadania ograniczone przez inteligentne systemy",
+        "Doświadczenie w przemysłowym B2B",
+        "Zależy od dostawcy",
+        "Zależy od zespołu",
+        "Zależy od osoby",
+        "Potwierdzone 20+ lat",
       ],
       [
-        "Niezawodno\u015b\u0107",
-        "Samodzielne",
-        "Ograniczone",
-        "Bie\u017c\u0105ce",
-        "Wsparcie, gdy go potrzebujesz",
+        "Integracje API",
+        "Zależą od platformy i dostawcy",
+        "Zależą od zakresu",
+        "Zależą od kompetencji",
+        "Dostępne, oceniane indywidualnie",
       ],
       [
-        "Skalowalno\u015b\u0107",
-        "Zale\u017cna od platformy",
-        "Zazwyczaj pe\u0142na",
-        "Zazwyczaj pe\u0142na",
-        "Gotowe na kolejny etap rozwoju",
+        "Wsparcie po wdrożeniu",
+        "Zależy od dostawcy/pakietu",
+        "Zwykle dostępne",
+        "Zależy od freelancera",
+        "Opcjonalna płatna usługa",
       ],
       [
-        "W\u0142asno\u015b\u0107",
-        "Ograniczona",
-        "Zale\u017cy",
-        "Dobra",
-        "Pe\u0142na kontrola nad zasobami cyfrowymi",
+        "Vendor lock-in",
+        "Zależy od platformy i konfiguracji",
+        "Zależy od umowy i konfiguracji",
+        "Zależy od konfiguracji",
+        "Nie wprowadzam go celowo",
+      ],
+      [
+        "Czas projektu",
+        "Zależy od zakresu",
+        "Zależy od zakresu",
+        "Zależy od zakresu",
+        "Typowa strona około 9 tygodni",
       ],
     ],
-    ctaHeading: "Gotowy porozmawia\u0107?",
-    ctaSub: "W\u0142a\u015bciwe podej\u015bcie zaczyna si\u0119 od zrozumienia Twojego biznesu.",
+    ctaHeading: "Chcesz omówić swój projekt?",
+    ctaSub: "",
     ctaButton: "Poproś o wycenę",
-    pros: "Zalety",
-    cons: "Wady",
-    highlighted: "Polecamy",
+    pros: "Mocne strony",
+    cons: "Ograniczenia",
+    highlighted: "Forsa Design",
   },
 };
 
@@ -291,7 +325,12 @@ function cellClass(ci: number, total: number, value: string) {
   if (ci === 0) return "px-4 py-3 font-medium text-foreground/80 whitespace-nowrap";
   if (ci === total - 1) return "px-4 py-3 text-primary font-semibold";
   const lower = value.toLowerCase();
-  if (lower === "varies" || lower === "zależy" || lower === "medium" || lower === "średnia")
+  if (
+    lower.startsWith("depends") ||
+    lower.startsWith("zale") ||
+    lower === "varies" ||
+    lower === "medium"
+  )
     return "px-4 py-3 text-foreground/40";
   return "px-4 py-3 text-foreground/55";
 }
@@ -355,9 +394,7 @@ export default function ComparisonPage({ lang }: ComparisonPageProps) {
           >
             <div className="w-12 h-1 bg-primary mb-8" />
             <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
-              {lang === "en"
-                ? "Custom Website vs Template, Agency or Freelancer for Industrial Web Design"
-                : c.heading}
+              {c.heading}
             </h1>
             <p className="text-xl text-foreground/70 font-light leading-relaxed max-w-2xl text-justify">
               {c.intro}
@@ -447,10 +484,26 @@ export default function ComparisonPage({ lang }: ComparisonPageProps) {
               );
             })}
           </div>
+          {(c as { cardNotes?: string[]; cardNoteHeading?: string }).cardNotes &&
+            ((c as { cardNotes?: string[]; cardNoteHeading?: string }).cardNotes?.length ?? 0) >
+              0 && (
+              <div className="mt-10 rounded-md border border-border/20 bg-card p-6 md:p-8">
+                <h2 className="font-serif text-xl font-bold text-white mb-4">
+                  {(c as { cardNoteHeading?: string }).cardNoteHeading}
+                </h2>
+                <ul className="space-y-3">
+                  {((c as { cardNotes?: string[] }).cardNotes ?? []).map((note, ni) => (
+                    <li key={ni} className="text-sm text-foreground/70 leading-relaxed">
+                      {note}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
         </div>
       </section>
       {/* Full Comparison Table */}
-      {lang === "en" && (
+      {(c.tableRows?.length ?? 0) > 0 && (
         <section className="py-24 bg-card">
           <div className="container mx-auto px-6 max-w-6xl">
             <motion.div
@@ -495,20 +548,27 @@ export default function ComparisonPage({ lang }: ComparisonPageProps) {
                       transition={{ duration: 0.35, delay: ri * 0.04 }}
                       className="border-b border-border/10 last:border-0 hover:bg-background/20 transition-colors"
                     >
-                      {row.map((cell, ci) => (
-                        <td key={ci} className={cellClass(ci, row.length, cell)}>
-                          {ci > 0 &&
+                      {row.map((cell, ci) => {
+                        const lower = cell.toLowerCase();
+                        const isNeutral =
+                          ci > 0 &&
                           ci < row.length - 1 &&
-                          (cell.toLowerCase() === "varies" || cell.toLowerCase() === "zależy") ? (
-                            <span className="flex items-center gap-1">
-                              <NeutralIcon />
-                              {cell}
-                            </span>
-                          ) : (
-                            cell
-                          )}
-                        </td>
-                      ))}
+                          (lower.startsWith("depends") ||
+                            lower.startsWith("zale") ||
+                            lower === "varies");
+                        return (
+                          <td key={ci} className={cellClass(ci, row.length, cell)}>
+                            {isNeutral ? (
+                              <span className="flex items-center gap-1">
+                                <NeutralIcon />
+                                {cell}
+                              </span>
+                            ) : (
+                              cell
+                            )}
+                          </td>
+                        );
+                      })}
                     </motion.tr>
                   ))}
                 </tbody>
@@ -530,7 +590,9 @@ export default function ComparisonPage({ lang }: ComparisonPageProps) {
             <h2 className="font-serif text-3xl md:text-4xl font-bold text-white mb-4">
               {c.ctaHeading}
             </h2>
-            <p className="text-foreground/60 font-light mb-10 leading-relaxed">{c.ctaSub}</p>
+            {c.ctaSub && (
+              <p className="text-foreground/60 font-light mb-10 leading-relaxed">{c.ctaSub}</p>
+            )}
             <a
               href={homeHref + "#contact"}
               className="inline-flex items-center gap-2 bg-primary text-background font-semibold px-8 py-4 rounded-sm hover:bg-primary/90 transition-colors"

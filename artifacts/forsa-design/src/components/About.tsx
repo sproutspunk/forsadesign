@@ -8,30 +8,30 @@ export default function About() {
   const highlighted = isEn
     ? [
         [
-          "Real business perspective",
-          "Having run a business for over 20 years, negotiated international contracts across three continents and managed teams in multiple countries, I understand what a website needs to do for your bottom line. Every design decision is filtered through a business lens, not just an aesthetic one.",
+          "Industrial B2B experience",
+          "More than 20 years in international B2B sales means I approach a website as a commercial tool, not only as a visual project. I understand industrial products, technical sales, international trade and procurement.",
         ],
         [
-          "Communication at every level",
-          "I’ve worked with clients and stakeholders from every walk of life. That translates into websites that communicate clearly with audiences, whether local clients or international partners.",
+          "Understanding the buying process",
+          "I understand the questions buyers ask, the information they look for and the credibility signals that matter when a supplier is being evaluated.",
         ],
         [
-          "Delivering results",
-          "My whole career has been built on closing deals, managing projects from A to Z and delivering measurable results. I bring that same discipline to web development: clear deadlines, transparent communication and a focus on what actually benefits your business.",
+          "Direct responsibility",
+          "Forsa Design is a one-person business. There is no account-management layer between you and the person doing the work. I handle the project directly from specification through launch.",
         ],
       ]
     : [
         [
-          "Prawdziwa perspektywa biznesowa",
-          "Prowadząc firmę przez ponad 20 lat, negocjując międzynarodowe kontrakty na trzech kontynentach i zarządzając zespołami w wielu krajach, rozumiem, co strona internetowa musi robić dla Twojego zysku. Każda decyzja projektowa jest filtrowana przez pryzmat biznesowy, nie tylko estetyczny.",
+          "Doświadczenie w przemysłowym B2B",
+          "Ponad 20 lat w międzynarodowej sprzedaży B2B sprawia, że traktuję stronę jako narzędzie biznesowe, a nie wyłącznie projekt wizualny. Rozumiem produkty przemysłowe, sprzedaż techniczną, handel międzynarodowy i procesy zakupowe.",
         ],
         [
-          "Komunikacja na każdym poziomie",
-          "Pracowałem z klientami i interesariuszami z każdej dziedziny życia. To przekłada się na strony, które jasno komunikują się z odbiorcami, czy to lokalnymi klientami, czy międzynarodowymi partnerami.",
+          "Znajomość procesu zakupowego",
+          "Rozumiem pytania zadawane przez kupujących, informacje, których szukają, oraz elementy budujące wiarygodność podczas oceny potencjalnego dostawcy.",
         ],
         [
-          "Dostarczanie wyników",
-          "Cała moja kariera opierała się na zawieraniu umów, zarządzaniu projektami od A do Z i dostarczaniu mierzalnych rezultatów. Tę samą dyscyplinę przenoszę do web developmentu: jasne terminy, transparentna komunikacja i skupienie na tym, co naprawdę przynosi korzyść Twojej firmie.",
+          "Bezpośrednia odpowiedzialność",
+          "Forsa Design jest jednoosobową firmą. Nie ma pośrednika pomiędzy Tobą a osobą wykonującą pracę. Prowadzę projekt bezpośrednio od specyfikacji do uruchomienia.",
         ],
       ];
 

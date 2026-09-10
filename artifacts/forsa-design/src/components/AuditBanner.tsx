@@ -18,7 +18,7 @@ export default function AuditBanner({ source }: AuditBannerProps) {
   const [activePanel, setActivePanel] = useState<ActivePanel>("none");
 
   return (
-    <section className="w-full bg-background border-t border-primary/40 py-16 px-5 md:py-24">
+    <section className="w-full bg-card border-t border-primary/40 py-24 px-6">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -28,14 +28,14 @@ export default function AuditBanner({ source }: AuditBannerProps) {
       >
         <h2 className="text-2xl md:text-[32px] font-serif font-bold text-white leading-tight mb-4">
           {bi(
-            "Does your website pass the purchasing review?",
-            "Czy twoja strona przejdzie kontrol\u0119 zakupow\u0105?",
+            "Does your website give buyers the information they need?",
+            "Czy Twoja strona daje kupującym informacje, których potrzebują?",
           )}
         </h2>
         <p className="text-base text-foreground/60 leading-relaxed mb-8">
           {bi(
-            "Download our free checklist. 10 checks. 5 minutes. Check what buyers look for before they call.",
-            "Pobierz darmow\u0105 checklist\u0119. 10 punkt\u00f3w. 5 minut. Sprawd\u017a, na co patrzy kupuj\u0105cy, zanim zadzwoni.",
+            "Download the free checklist. 10 checks. 5 minutes. Review the information, usability and trust signals a B2B buyer is likely to look for before making contact.",
+            "Pobierz darmową checklistę. 10 punktów. 5 minut. Sprawdź informacje, użyteczność i elementy budujące wiarygodność, na które może zwracać uwagę klient B2B przed kontaktem z dostawcą.",
           )}
         </p>
 

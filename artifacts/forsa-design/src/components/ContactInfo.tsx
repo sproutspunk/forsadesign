@@ -35,7 +35,7 @@ export default function ContactInfo() {
   return (
     <section
       id="contact"
-      className="py-24 bg-card border-t border-border/10 relative overflow-hidden"
+      className="py-24 bg-background border-t border-border/10 relative overflow-hidden"
     >
       {/* Background glow */}
       <div
@@ -45,7 +45,7 @@ export default function ContactInfo() {
             "radial-gradient(ellipse 70% 50% at 50% 100%, rgba(201,168,76,0.08) 0%, transparent 70%)",
         }}
       />
-      <div className="container mx-auto px-6 max-w-5xl relative">
+      <div className="container mx-auto px-6 relative">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}

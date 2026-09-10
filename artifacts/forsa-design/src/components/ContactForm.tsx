@@ -70,7 +70,7 @@ export default function ContactForm() {
   };
 
   return (
-    <section className="bg-background py-16 md:py-24">
+    <section className="bg-card py-24">
       <div className="container mx-auto grid max-w-5xl gap-12 px-6 md:grid-cols-[0.8fr_1.2fr]">
         <div>
           <p className="mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-primary">

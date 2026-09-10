@@ -1,3 +1,4 @@
+- [Project rules](project-rules.md) — mandatory working rules for AI assistants; stop and ask when information is missing.
 - [Turnstile CAPTCHA on contact form](turnstile-contact-form.md) — managed-mode bot check; graceful degradation by design; error 400020 = domain not in site-key allowlist, not a code bug.
 - [react-hooks v7 flat config](react-hooks-flat-config.md) — use `reactHooks.configs.flat.recommended` (not `.recommended`, which is legacy eslintrc & crashes flat config); fix set-state-in-effect via useSyncExternalStore / `key` remount.
 - [Quote PDF lazy loading](quote-pdf-lazy-loading.md) — keep pdf-lib out of the initial bundle; load the generator only when the user downloads a quote.

@@ -42,10 +42,7 @@ export default function Header() {
       href: `${servicesHref}#web-systems`,
     },
   ];
-  const aboutLinks = [
-    { label: language === "pl" ? "O nas" : "About us", href: aboutHref },
-    { label: "Blog", href: blogHref },
-  ];
+  const aboutLinks = [{ label: "Blog", href: blogHref }];
 
   const closeMobileMenu = () => {
     setIsMobileMenuOpen(false);
@@ -106,6 +103,41 @@ export default function Header() {
         aria-hidden="true"
       />
     </button>
+  );
+
+  const aboutTrigger = (mobile = false) => (
+    <span className={mobile ? "flex items-center justify-between" : "flex items-center gap-1"}>
+      <a
+        href={aboutHref}
+        data-testid={`link-nav-about${mobile ? "-mobile" : ""}`}
+        onClick={mobile ? closeMobileMenu : undefined}
+        className={
+          mobile
+            ? "py-2 text-lg font-medium text-foreground hover:text-primary transition-colors"
+            : "text-sm font-medium text-foreground/80 hover:text-primary transition-colors"
+        }
+      >
+        {language === "pl" ? "O nas" : "About"}
+      </a>
+      <button
+        type="button"
+        onClick={() => toggleDropdown("about")}
+        aria-expanded={openDropdown === "about"}
+        aria-controls={`${mobile ? "mobile-" : "desktop-"}about-menu`}
+        data-testid={`btn-nav-about${mobile ? "-mobile" : ""}`}
+        className={
+          mobile
+            ? "flex items-center px-2 py-2 text-foreground hover:text-primary transition-colors"
+            : "flex items-center px-1 py-1 text-foreground/80 hover:text-primary transition-colors"
+        }
+      >
+        <ChevronDown
+          size={mobile ? 18 : 14}
+          className={`transition-transform ${openDropdown === "about" ? "rotate-180" : ""}`}
+          aria-hidden="true"
+        />
+      </button>
+    </span>
   );
 
   const dropdownLinks = (
@@ -196,7 +228,7 @@ export default function Header() {
               {dropdownLinks("work", workLinks)}
             </div>
             <div className="relative">
-              {dropdownButton("about", language === "pl" ? "O nas" : "About")}
+              {aboutTrigger()}
               {dropdownLinks("about", aboutLinks)}
             </div>
             <a
@@ -311,7 +343,7 @@ export default function Header() {
               {dropdownLinks("work", workLinks, true)}
             </div>
             <div>
-              {dropdownButton("about", language === "pl" ? "O nas" : "About", true)}
+              {aboutTrigger(true)}
               {dropdownLinks("about", aboutLinks, true)}
             </div>
             <a
