@@ -65,7 +65,7 @@ export default function AuditBanner({ source }: AuditBannerProps) {
                 setActivePanel("quote");
                 trackEvent("quote_request_form_open", { section: source, language });
               }}
-              className="text-sm text-foreground/60 underline underline-offset-4 hover:text-primary transition-colors cursor-pointer"
+              className="text-sm text-foreground/60 hover:text-primary transition-colors cursor-pointer"
             >
               {bi("Or request a quote", "Albo popro\u015b o wycen\u0119")}
             </button>

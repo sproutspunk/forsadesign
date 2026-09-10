@@ -58,19 +58,19 @@ const shared = {
   process: {
     en: [
       [
-        "Discovery and strategy — weeks 1–2",
+        "Discovery and strategy - weeks 1-2",
         "I review your business, customers, competitors, existing website and project requirements and define the objectives and structure.",
       ],
       [
-        "Design — weeks 3–4",
+        "Design - weeks 3-4",
         "I develop the page structure, visual direction and user experience before moving into the main development stage.",
       ],
       [
-        "Development — weeks 5–8",
+        "Development - weeks 5-8",
         "I build and configure the website, content structure and required functionality, with attention to performance, security, accessibility and SEO.",
       ],
       [
-        "Testing and optimisation — week 9",
+        "Testing and optimisation - week 9",
         "I test the website across relevant devices and browsers and review performance, accessibility, security configuration and SEO fundamentals.",
       ],
       [
@@ -80,19 +80,19 @@ const shared = {
     ],
     pl: [
       [
-        "Analiza i strategia — tygodnie 1–2",
+        "Analiza i strategia - tygodnie 1-2",
         "Analizuję firmę, klientów, konkurencję, obecną stronę oraz wymagania projektu i określam jego cele oraz strukturę.",
       ],
       [
-        "Projekt — tygodnie 3–4",
+        "Projekt - tygodnie 3-4",
         "Opracowuję strukturę stron, kierunek wizualny i sposób korzystania z witryny przed rozpoczęciem głównego etapu developmentu.",
       ],
       [
-        "Development — tygodnie 5–8",
+        "Development - tygodnie 5-8",
         "Buduję i konfiguruję stronę, strukturę treści oraz wymagane funkcje, zwracając uwagę na wydajność, bezpieczeństwo, dostępność i SEO.",
       ],
       [
-        "Testy i optymalizacja — tydzień 9",
+        "Testy i optymalizacja - tydzień 9",
         "Testuję stronę na odpowiednich urządzeniach i przeglądarkach oraz sprawdzam wydajność, dostępność, konfigurację bezpieczeństwa i podstawy SEO.",
       ],
       [

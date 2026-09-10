@@ -74,7 +74,7 @@ const translations = {
       },
       card2: {
         title: "B2B Catalogues and Ordering Systems",
-        desc: "Custom product catalogues, enquiry systems, quote workflows and B2B ordering interfaces. Depending on the project, these can include customer accounts, account-specific information, bulk enquiries and API integrations with external services.\n\nA typical custom B2B catalogue or ordering system can take approximately 6–10 weeks once the specification, content and required integration access are available. More complex systems are estimated individually.",
+        desc: "Custom product catalogues, enquiry systems, quote workflows and B2B ordering interfaces. Depending on the project, these can include customer accounts, account-specific information, bulk enquiries and API integrations with external services.\n\nA typical custom B2B catalogue or ordering system can take approximately 6-10 weeks once the specification, content and required integration access are available. More complex systems are estimated individually.",
       },
       card3: {
         title: "Custom Web Tools and API Integrations",
@@ -126,13 +126,13 @@ const translations = {
       ],
       processTitle: "Typical Website Project",
       processList: [
-        "Discovery and strategy — weeks 1–2",
+        "Discovery and strategy - weeks 1-2",
         "I review your business, customers, competitors, existing website and project requirements and define the objectives and structure.",
-        "Design — weeks 3–4",
+        "Design - weeks 3-4",
         "I develop the page structure, visual direction and user experience before moving into the main development stage.",
-        "Development — weeks 5–8",
+        "Development - weeks 5-8",
         "I build and configure the website, content structure and required functionality, with attention to performance, security, accessibility and SEO.",
-        "Testing and optimisation — week 9",
+        "Testing and optimisation - week 9",
         "I test the website across relevant devices and browsers and review performance, accessibility, security configuration and SEO fundamentals.",
         "Launch and optional support",
         "I deploy the completed website. Ongoing maintenance and support are available separately if required.",
@@ -269,7 +269,7 @@ const translations = {
       },
       card2: {
         title: "Katalogi B2B i systemy zamówień",
-        desc: "Dedykowane katalogi produktów, systemy zapytań, procesy wycenowe i interfejsy zamówień B2B. W zależności od projektu mogą obejmować konta klientów, informacje przypisane do kont, zapytania zbiorcze oraz integracje API z usługami zewnętrznymi.\n\nTypowy dedykowany katalog lub system zamówień B2B może wymagać około 6–10 tygodni od momentu uzgodnienia specyfikacji i dostarczenia treści oraz dostępu potrzebnego do integracji. Bardziej złożone systemy planuję i wyceniam indywidualnie.",
+        desc: "Dedykowane katalogi produktów, systemy zapytań, procesy wycenowe i interfejsy zamówień B2B. W zależności od projektu mogą obejmować konta klientów, informacje przypisane do kont, zapytania zbiorcze oraz integracje API z usługami zewnętrznymi.\n\nTypowy dedykowany katalog lub system zamówień B2B może wymagać około 6-10 tygodni od momentu uzgodnienia specyfikacji i dostarczenia treści oraz dostępu potrzebnego do integracji. Bardziej złożone systemy planuję i wyceniam indywidualnie.",
       },
       card3: {
         title: "Dedykowane narzędzia webowe i integracje API",
