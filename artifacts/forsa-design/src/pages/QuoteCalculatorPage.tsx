@@ -63,7 +63,7 @@ export default function QuoteCalculatorPage({ lang }: QuoteCalculatorPageProps) 
   return (
     <div className="min-h-[100dvh] bg-background text-foreground">
       <Header />
-      <main id="main-content" className="py-16 md:py-24">
+      <main id="main-content" className="pt-36 pb-16 md:pt-40 md:pb-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
             <h1 className="font-serif text-4xl font-medium tracking-tight md:text-5xl">
