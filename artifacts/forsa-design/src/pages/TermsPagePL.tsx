@@ -6,15 +6,15 @@ export default function TermsPagePL() {
   const { t } = useLanguage();
 
   useSeoMeta({
-    title: "Regulamin i Warunki Świadczenia Usług | Forsa Design",
+    title: "Regulamin | Forsa Design",
     description:
-      "Zapoznaj się z regulaminem i warunkami świadczenia usług Forsa Design, w tym zasadami realizacji projektów, warunkami płatności, własnością intelektualną i odpowiedzialnością.",
-    ogTitle: "Regulamin i Warunki Świadczenia Usług | Forsa Design",
+      "Zapoznaj się z regulaminem Forsa Design, w tym zasadami realizacji projektów, warunkami płatności, własnością intelektualną i odpowiedzialnością.",
+    ogTitle: "Regulamin | Forsa Design",
     ogDescription:
-      "Zapoznaj się z regulaminem i warunkami świadczenia usług Forsa Design, w tym zasadami realizacji projektów, warunkami płatności, własnością intelektualną i odpowiedzialnością.",
-    twitterTitle: "Regulamin i Warunki Świadczenia Usług | Forsa Design",
+      "Zapoznaj się z regulaminem Forsa Design, w tym zasadami realizacji projektów, warunkami płatności, własnością intelektualną i odpowiedzialnością.",
+    twitterTitle: "Regulamin | Forsa Design",
     twitterDescription:
-      "Zapoznaj się z regulaminem i warunkami świadczenia usług Forsa Design, w tym zasadami realizacji projektów, warunkami płatności, własnością intelektualną i odpowiedzialnością.",
+      "Zapoznaj się z regulaminem Forsa Design, w tym zasadami realizacji projektów, warunkami płatności, własnością intelektualną i odpowiedzialnością.",
     ogLocale: "pl_PL",
     canonical: buildHref("/pl/terms"),
     alternates: [
@@ -40,12 +40,12 @@ export default function TermsPagePL() {
 
       <div className="container mx-auto px-6 py-16 max-w-4xl">
         <div className="mb-12">
-          <h1 className="font-serif text-4xl md:text-5xl font-bold text-white mb-4">
-            Regulamin i Warunki Świadczenia Usług
-          </h1>
-          <p className="text-foreground/60 font-light">Forsa Design - Art &amp; Web Design</p>
+          <h1 className="font-serif text-4xl md:text-5xl font-bold text-white mb-4">Regulamin</h1>
+          <p className="text-foreground/60 font-light">
+            Forsa Design, Banff, Szkocja, Wielka Brytania
+          </p>
           <p className="text-foreground/50 font-light text-sm mt-2">
-            Ostatnia aktualizacja: Czerwiec 2026
+            Ostatnia aktualizacja: Wrzesień 2026
           </p>
         </div>
 
@@ -89,216 +89,162 @@ function Section({ section }: { section: SectionData }) {
 const sections: SectionData[] = [
   {
     number: "1",
-    title: "Wstęp",
-    body: `Witaj w Forsa Design ("My", "nas", "naszych" lub "Spółka"). Niniejszy Regulamin i Warunki Świadczenia Usług ("Regulamin") reguluje dostęp do naszej strony internetowej i zaangażowanie naszych usług. Uzyskując dostęp do naszej strony internetowej lub korzystając z naszych usług, zgadzasz się być związany niniejszym Regulaminem. Jeśli nie zgadzasz się z jakąkolwiek częścią niniejszego regulaminu, prosimy nie korzystaj z naszej strony ani usług. Niniejszy Regulamin ma zastosowanie do wszystkich usług świadczonych przez Forsa Design, w tym między innymi projektowania stron internetowych, tworzenia aplikacji webowych, rozwiązań e-commerce, systemów niestandardowych i wsparcia bieżącego.`,
+    title: "Postanowienia ogólne",
+    body: `Niniejszy Regulamin dotyczy strony internetowej Forsa Design oraz usług świadczonych przez Forsa Design. Forsa Design jest jednoosobową działalnością z siedzibą w Banff w Szkocji. Świadczę usługi obejmujące tworzenie dedykowanych stron internetowych, katalogów i systemów zamówień B2B, dedykowanych narzędzi webowych, integracji API oraz opcjonalnego wsparcia po wdrożeniu. Regulamin jest przeznaczony dla usług świadczonych na rzecz firm, organizacji oraz osób działających w związku ze swoją działalnością gospodarczą lub zawodową. Jeżeli zgodzę się świadczyć usługę konsumentowi, zastosowanie zachowują wszystkie ustawowe prawa konsumenta, których zgodnie z prawem nie można wyłączyć ani ograniczyć. Oferta, umowa projektowa lub inne pisemne uzgodnienie może zawierać warunki dotyczące konkretnego projektu. Jeżeli takie uzgodnienie jest sprzeczne z niniejszym Regulaminem, w odniesieniu do danego projektu pierwszeństwo ma uzgodnienie projektowe.`,
   },
   {
     number: "2",
-    title: "Korzystanie ze Strony Internetowej",
-    body: `Zawartość naszej strony internetowej jest udostępniana wyłącznie do celów informacyjnych i może być aktualizowana lub zmieniana bez powiadomienia. Dokładamy rozsądnych starań, aby zapewnić dokładność informacji na naszej stronie; jednak nie gwarantujemy kompletności, dokładności ani przydatności dla jakiegokolwiek konkretnego celu. Zastrzegamy sobie prawo do ograniczenia lub odmowy dostępu dowolnej osobie lub organizacji bez podawania przyczyn.`,
+    title: "Korzystanie ze strony",
+    body: `Treści na stronie Forsa Design służą do przekazywania ogólnych informacji o działalności i oferowanych usługach. Dokładam rozsądnych starań, aby informacje na stronie były aktualne i prawidłowe, jednak wymagania projektowe, możliwości techniczne, usługi zewnętrzne i ceny mogą się zmieniać. Informacje opublikowane na stronie nie stanowią same w sobie wiążącej oferty, zobowiązania umownego ani gwarancji. Wiążący zakres, cena, elementy projektu i pozostałe warunki dotyczące konkretnego projektu wynikają z zaakceptowanej oferty, umowy projektowej lub innego pisemnego uzgodnienia.`,
   },
   {
     number: "3",
-    title: "Prawa Autorskie i Własność Intelektualna",
-    body: `O ile nie uzgodniono inaczej na piśmie, wszystkie prawa autorskie i prawa własności intelektualnej dotyczące naszej strony internetowej, w tym między innymi tekst, grafiki, branding, elementy projektowe, layouty, kod i zawartość, należą wyłącznie do Forsa Design. Możesz przeglądać i drukować strony z naszej witryny wyłącznie do osobistego, niekomercyjnego użytku. Każde inne powielanie, rozpowszechnianie lub wykorzystanie zawartości strony jest surowo zakazane bez uprzedniej pisemnej zgody Forsa Design.`,
-    subsections: [
-      {
-        title: "Rezultaty projektu",
-        body: `Prawo własności do niestandardowych rezultatów projektu (w tym stron internetowych, projektów, kodu i innych materiałów) stworzonych specjalnie dla klienta przechodzi na klienta po otrzymaniu 100% płatności całkowitej wartości projektu. Aż do otrzymania pełnej płatności wszystkie prawa autorskie i prawa własności intelektualnej, w tym kod źródłowy, pliki projektowe, bazy danych i wszystkie powiązane materiały, pozostają wyłączną własnością Forsa Design. Forsa Design zastrzega sobie prawo do wykorzystywania rezultatów projektów jako przykładów z portfolio i studiów przypadków z odpowiednią anonimizacją, jeśli będzie tego życzył klient.`,
-      },
-      {
-        title: "Wcześniej Istniejące Materiały",
-        body: `Forsa Design zachowuje wszystkie prawa autorskie i prawa własności intelektualnej do wcześniej istniejących szablonów, frameworków, bibliotek, komponentów, procesów i metodologii opracowanych przed lub niezależnie od projektów klienta.`,
-      },
-    ],
+    title: "Usługi",
+    body: `Usługi mogą obejmować dedykowane strony internetowe, katalogi i systemy zamówień B2B, dedykowane narzędzia webowe, integracje API oraz opcjonalne wsparcie techniczne i dalszy rozwój po uruchomieniu. Dokładny zakres usług i elementów projektu określa odpowiednia oferta lub umowa projektowa. Funkcja, integracja lub usługa wymieniona na stronie nie jest automatycznie częścią projektu, jeżeli nie została uwzględniona w uzgodnionym zakresie.`,
   },
   {
     number: "4",
-    title: "Zapytania o Usługi i Oferty",
-    body: `Każda oferta, oszacowanie, propozycja lub zakres pracy dostarczony przez Forsa Design jest niewiążący aż do formalnego zaakceptowania przez klienta i potwierdzenia w podpisanej umowie projektowej lub kontrakcie. Oferty są ważne przez 30 dni od daty wydania. Po upływie 30 dni oferty muszą być odświeżone i mogą podlegać zmienionej wycenie. Zastrzegamy sobie prawo do odmowy jakiegokolwiek zapytania projektowego lub propozycji wyłącznie według naszego uznania, bez podawania przyczyn.`,
+    title: "Oferty i przyjęcie projektu",
+    body: `Każdy projekt analizuję i wyceniam indywidualnie. Oferta może określać zakres projektu, elementy do wykonania, przewidywany czas realizacji, cenę, harmonogram płatności, obowiązki klienta, zakres poprawek, usługi zewnętrzne i zasady wsparcia. Jeżeli oferta nie stanowi inaczej, jest ważna przez 30 dni od daty wystawienia. Projekt staje się wiążący po zaakceptowaniu oferty lub umowy projektowej w sposób określony w danym dokumencie. Przed zawarciem umowy mogę odmówić przyjęcia projektu. Jeżeli zakres projektu zmieni się przed rozpoczęciem prac, mogę przedstawić zmienioną ofertę.`,
   },
   {
     number: "5",
-    title: "Zaliczki, Płatności i Warunki Płatności",
-    body: `Nierefundowana zaliczka w wysokości 25% całkowitej wartości projektu jest wymagana przed rozpoczęciem prac. Zaliczka będzie traktowana jako płatność na poczet faktury końcowej. Zaliczka musi być otrzymana i zaksięgowana przed rozpoczęciem jakichkolwiek prac.`,
-    subsections: [
-      {
-        title: "Plan Płatności",
-        body: `Pozostałe saldo w wysokości 75% będzie płacone zgodnie z harmonogramem określonym w indywidualnej umowie projektowej. Standardowe warunki płatności to: pozostałe saldo po zakończeniu projektu, lub płatności etapowe w uzgodnionych kamieniach milowych, lub zgodnie z wystawioną fakturą po zakończeniu projektu.`,
-      },
-      {
-        title: "Metoda Płatności i Termin Płatności",
-        body: `Wszystkie faktury są wymagalne w ciągu 14 dni od wystawienia, o ile nie uzgodniono innych warunków na piśmie. Płatność musi być dokonana przesyłką bankową lub inną uzgodnioną metodą.`,
-      },
-      {
-        title: "Płatność Zaległa",
-        body: `Niezłożenie płatności w wyznaczonym terminie może spowodować natychmiastowe wstrzymanie prac do czasu spłacenia całości zalegających kwot. Jeśli płatność pozostaje zaległa przez ponad 30 dni od daty wymagalności, Forsa Design zastrzega sobie prawo do: natychmiastowego zakończenia projektu, wystawienia faktury za wszystkie wykonane dotychczas prace, ograniczenia lub wyłączenia dostępu do strony internetowej lub rezultatów, oraz dochodzenia zalegających kwot drogą prawną.`,
-      },
-      {
-        title: "Prawo Własności i Dostęp",
-        body: `Klient nabywa wyłączne prawo własności do ukończonej strony internetowej i wszystkich rezultatów wyłącznie po otrzymaniu 100% płatności całkowitej wartości projektu. Aż do pełnej zapłaty Forsa Design zachowuje wszystkie prawa autorskie i może ograniczyć lub wyłączyć dostęp do strony internetowej, kodu źródłowego i wszystkich powiązanych materiałów.`,
-      },
-      {
-        title: "Polityka Zwrotów",
-        body: `Zaliczka w wysokości 25% jest nierefundowalna w żadnych okolicznościach, włączając anulowanie projektu przez klienta. Jeśli klient anuluje projekt po rozpoczęciu prac, klient będzie zobowiązany zapłacić za wszystkie dotychczas wykonane prace, a także za wszelkie koszty poniesione przez Forsa Design, których nie można odzyskać.`,
-      },
-    ],
+    title: "Zaliczki i płatności",
+    body: `Wysokość zaliczki i harmonogram płatności są określane w ofercie lub umowie projektowej. Jeżeli dla danego projektu określono zaliczkę w wysokości 25%, prace zwykle rozpoczynam po jej otrzymaniu oraz po otrzymaniu informacji lub dostępu potrzebnego do rozpoczęcia projektu. Pozostałe płatności mogą być wymagane na uzgodnionych etapach, po zakończeniu projektu lub zgodnie z innym harmonogramem wskazanym w dokumentacji projektowej. Jeżeli faktura lub pisemne uzgodnienie nie określa innego terminu, faktura jest płatna w ciągu 14 dni. Płatności mogą być obsługiwane przez Stripe lub inną uzgodnioną metodę płatności. Zewnętrzni dostawcy usług płatniczych działają na podstawie własnych warunków i polityk.`,
   },
   {
     number: "6",
-    title: "Terminy Projektów i Kamienie Milowe",
-    body: `Wszystkie szacunkowe daty zakończenia, harmonogramy lub harmonogramy dostarczenia podane przed podpisaniem formalnej umowy projektowej są wyłącznie orientacyjne i nie powinny być uważane za gwarantowane. Terminy projektów stają się wiążące tylko po wykonaniu formalnej pisemnej umowy projektowej podpisanej przez obie strony. Wszystkie terminy projektów, kamienie milowe, rezultaty, dopuszczalne liczby rewizji, daty zakończenia i szczegółowe wymagania będą udokumentowane w formalnej umowie projektowej podpisanej przez obie strony.`,
-    subsections: [
-      {
-        title: "Opóźnienia Spowodowane przez Klienta",
-        body: `Forsa Design nie będzie odpowiedzialna za opóźnienia spowodowane przez klienta, w tym opóźnienia w dostarczeniu treści, tekstu, obrazów, materiałów brandingowych lub innych informacji niezbędnych do postępu projektu; opóźnienia w udzieleniu sprzężenia zwrotnego, zatwierdzeń lub podjęciu decyzji; zmiany zakresu projektu lub wymagań po rozpoczęciu prac; dostarczanie niedokładnych lub niekompletnych informacji; lub niedostępność przedstawicieli klienta do konsultacji lub przeglądu. Wszelkie opóźnienia spowodowane przez klienta będą odpowiednio przedłużać harmonogram projektu i nie spowodują kar lub odpowiedzialności dla Forsa Design.`,
-      },
-      {
-        title: "Siła Wyższa",
-        body: `Forsa Design nie będzie odpowiedzialna za opóźnienia lub brak wykonania spowodowane okolicznościami pozostającymi poza rozsądną kontrolą, w tym między innymi klęski żywiołowe, pandemie, działania rządowe, awarie infrastruktury lub inne nieprzewidziane zdarzenia.`,
-      },
-    ],
+    title: "Opóźnienia w płatnościach",
+    body: `Jeżeli faktura nie zostanie opłacona w terminie, mogę w odpowiednich przypadkach wstrzymać prace, przesunąć termin dostawy, wstrzymać przekazanie nieopłaconych elementów projektu, zmienić harmonogram projektu, wstrzymać uzgodnione wsparcie, zakończyć projekt zgodnie z Regulaminem i umową projektową lub podjąć rozsądne działania w celu odzyskania należności. Powyższe postanowienia nie ograniczają ustawowych praw związanych z opóźnieniami w płatnościach w transakcjach handlowych.`,
   },
   {
     number: "7",
-    title: "Zakres Prac i Żądania Zmian",
-    body: `Zakres pracy będzie określony w indywidualnej umowie projektowej. Prace będą ograniczone do uzgodnionego zakresu, chyba że autoryzowano inaczej na piśmie. Liczba rund rewizji, cykli sprzężenia zwrotnego i rewizji zawartych w opłacie projektowej będzie określona w umowie projektowej.`,
-    subsections: [
-      {
-        title: "Zmiany Poza Zakresem",
-        body: `Wszelkie zmiany, uzupełnienia lub rewizje żądane poza uzgodnionym zakresem lub poza dopuszczalną liczbę rewizji będą podlegać dodatkowym opłatom. Żądania zmian muszą być złożone na piśmie i będą wycenione oddzielnie przed rozpoczęciem prac. Dodatkowe prace nie będą wykonywane bez pisemnej zgody i uzgodnienia zmienionej wysokości opłat. Dodatkowe rundy rewizji są naliczane w wysokości £75 za godzinę lub zgodnie z wyceną.`,
-      },
-      {
-        title: "Zapobieganie Rozszerzaniu Się Zakresu",
-        body: `Jeśli żądane zmiany istotnie zmieniają zakres projektu lub harmonogram, Forsa Design zastrzega sobie prawo do: udzielenia zmienionej wyceny, przedłużenia harmonogramu projektu, żądania dodatkowej zaliczki, lub odmowy realizacji żądanych zmian.`,
-      },
-    ],
+    title: "Terminy realizacji",
+    body: `Terminy podawane przed pełnym ustaleniem zakresu projektu są jedynie szacunkowe. Typowa strona firmowa może wymagać około dziewięciu tygodni realizacji. Dedykowany katalog lub system zamówień B2B może wymagać około 6-10 tygodni od uzgodnienia specyfikacji oraz otrzymania wymaganych treści i dostępu potrzebnego do integracji. Bardziej złożone projekty wyceniam i planuję indywidualnie. Termin zakończenia jest wiążący tylko wtedy, gdy został wyraźnie uzgodniony na piśmie.`,
   },
   {
     number: "8",
-    title: "Odpowiedzialność Klienta",
-    body: `Klient jest odpowiedzialny za dostarczenie dokładnych, kompletnych, terminowych i prawidłowo sformatowanych informacji, treści, materiałów, obrazów i zasobów brandingowych niezbędnych do wykonania projektu. Klient zobowiązany jest zapewnić, że wszystkie dostarczone materiały mają wystarczającą jakość i rozdzielczość do profesjonalnego użytku.`,
-    subsections: [
-      {
-        title: "Gwarancja Praw Autorskich",
-        body: `Klient gwarantuje, że wszystkie materiały, zawartość, obrazy, teksty, audio, wideo i kod dostarczone Forsa Design są oryginalnym dziełem klienta lub klient uzyskał wszelkie niezbędne uprawnienia i licencje. Żaden z dostarczonych materiałów nie narusza praw autorskich, znaków towarowych, prywatności ani innych praw jakiejkolwiek strony trzeciej.`,
-      },
-      {
-        title: "Odszkodowanie",
-        body: `Klient zgadza się zabezpieczyć i wyzwolić Forsa Design z wszelkich roszczeń stron trzecich, szkód, kosztów lub strat wynikających z materiałów, zawartości lub informacji klienta, wykorzystania przez klienta rezultatów, naruszenia przez klienta niniejszego Regulaminu lub obowiązującego prawa, lub jakiegokolwiek naruszenia gwarancji udzielonych przez klienta.`,
-      },
-      {
-        title: "Dokładność Zawartości",
-        body: `Forsa Design nie jest odpowiedzialna za dokładność, legalność lub odpowiedniość zawartości dostarczonej przez klienta. Klient ponosi wyłączną odpowiedzialność za zapewnienie, że cała zawartość jest zgodna z obowiązującym prawem i nie narusza praw stron trzecich.`,
-      },
-      {
-        title: "Terminowe Sprzężenie Zwrotne i Decyzje",
-        body: `Klient zobowiązany jest dostarczać terminowe sprzężenie zwrotne, zatwierdzenia i decyzje w celu zapobieżenia opóźnieniom projektu. Forsa Design nie będzie odpowiedzialna za opóźnienia spowodowane wolną odpowiedzią klienta.`,
-      },
-    ],
+    title: "Obowiązki klienta i opóźnienia",
+    body: `Klient odpowiada za dostarczenie informacji, materiałów, decyzji, akceptacji i dostępu, które są w rozsądnym zakresie potrzebne do realizacji projektu. W zależności od projektu mogą to być teksty i zdjęcia, materiały identyfikacji wizualnej, informacje o produktach, dokumentacja techniczna, dane dostępowe, dokumentacja lub dane dostępowe API, uwagi i akceptacje. Opóźnienia w przekazaniu wymaganych informacji, treści, dostępu, uwag lub decyzji mogą wpłynąć na harmonogram projektu. Zmiany uzgodnionego zakresu mogą również wpłynąć na cenę i termin realizacji. Nie odpowiadam za opóźnienie spowodowane wyłącznie niedostarczeniem przez klienta wymaganych informacji, materiałów, dostępu, uwag lub akceptacji w odpowiednim czasie.`,
   },
   {
     number: "9",
-    title: "Rewizje i Dodatkowe Prace",
-    body: `Liczba rund rewizji, cykli przeglądu i godzin rewizji zawartych w opłacie projektowej powinna być wyraźnie określona w umowie projektowej. O ile nie stwierdzono inaczej, "rewizje" obejmują zmiany projektowania, layoutu, tekstu, funkcjonalności lub innych elementów w ramach pierwotnego zakresu. Rewizje poza uzgodnionym dozwolonym zakresem będą naliczane w wysokości £75 za godzinę lub zgodnie z oddzielną wyceną. Jeśli żądanie rewizji stanowi istotną zmianę zakresu projektu, rezultatów lub harmonogramu, Forsa Design zastrzega sobie prawo do potraktowania go jako oddzielnego żądania zmiany podlegającego dodatkowym opłatom.`,
+    title: "Treści i materiały klienta",
+    body: `Klient odpowiada za prawidłowość materiałów przekazanych do wykorzystania w projekcie oraz za posiadanie praw lub zezwoleń potrzebnych do ich wykorzystania. Dotyczy to w szczególności tekstów, zdjęć, grafik, materiałów wideo i audio, logo, znaków towarowych, informacji o produktach, dokumentacji technicznej, oprogramowania, kodu, baz danych i innych przekazanych danych. Klient pozostaje odpowiedzialny za zgodność z prawem i poprawność informacji przeznaczonych do publikacji, w tym specyfikacji produktów, cen, twierdzeń regulacyjnych, danych firmy i danych kontaktowych.`,
   },
   {
     number: "10",
-    title: "Ograniczenie Odpowiedzialności",
-    body: `W największym dozwolonym przez prawo zakresie, Forsa Design nie będzie odpowiedzialna za żadne: pośrednie, incydentalne, specjalne lub następcze szkody; stratę zysku, przychodu, szans biznesowych, goodwillu lub reputacji; stratę danych, przerwanie działalności biznesu lub awarię systemu; szkody wynikające z korzystania przez Ciebie lub niemożności korzystania z naszej strony lub usług. Ograniczenie to dotyczy niezależnie od przyczyny roszczeń i niezależnie od tego, czy taka odpowiedzialność opiera się na umowie, delikt, odpowiedzialność bezwzględną czy jakakolwiek inna teoria prawna.`,
-    subsections: [
-      {
-        title: "Maksymalny Limit Odpowiedzialności",
-        body: `W żadnym wypadku całkowita odpowiedzialność Forsa Design wynikająca z lub związana z niniejszym Regulaminem lub naszymi usługami nie będzie przekraczać kwoty wpłaconej przez klienta w 12 miesiącach poprzedzających roszczenie lub £500, w zależności od tego, która kwota jest większa.`,
-      },
-      {
-        title: "Wyjątki",
-        body: `Nic w niniejszym Regulaminie nie wyłącza ani nie ogranicza odpowiedzialności Forsa Design za: śmierć lub obrażenia ciała spowodowane zaniedbaniem; oszustwo, oszukańcze wprowadzenie w błąd lub umyślne naruszenie; każdą odpowiedzialność, która nie może być prawnie wyłączona lub ograniczona na mocy obowiązującego prawa szkockiego.`,
-      },
-    ],
+    title: "Zmiana zakresu i prace dodatkowe",
+    body: `Prace wykraczające poza uzgodniony zakres nie są automatycznie objęte pierwotną ceną projektu. Jeżeli klient zleci dodatkowe prace, ocenię ich wpływ na projekt i, w odpowiednich przypadkach, przedstawię dodatkową wycenę lub zmienioną ofertę przed rozpoczęciem tych prac. Istotna zmiana może wymagać zmienionej oferty, zmiany harmonogramu, wydzielenia osobnego etapu projektu lub osobnego uzgodnienia. Mogę odmówić wykonania zmiany, jeżeli nie jest technicznie możliwa lub wykracza poza rodzaj świadczonych przeze mnie usług.`,
   },
   {
     number: "11",
-    title: "Usługi Stron Trzecich i Hosting",
-    body: `Projekty mogą uwzględniać lub być zależne od usług stron trzecich, platform, dostawców hostingu, wtyczek, oprogramowania, narzędzi lub sieci dostarczania treści. Mogą to być (ale nie są ograniczone do): dostawcy hostingu, rejestry domen, dostawcy certyfikatów SSL, usługi email, bramy płatności, narzędzia analityczne, sieci CDN i wtyczki stron trzecich.`,
-    subsections: [
-      {
-        title: "Odpowiedzialność Forsa Design",
-        body: `Forsa Design nie bierze odpowiedzialności za: awarie, przerwy w usługach lub przestoje spowodowane dostawcami stron trzecich; zmiany warunków, funkcji, cen lub dostępności od dostawców stron trzecich; naruszenia bezpieczeństwa, utratę danych lub luki w zabezpieczeniach na platformach stron trzecich; lub słabą wydajność, wolne czasy ładowania lub problemy techniczne spowodowane usługami stron trzecich.`,
-      },
-      {
-        title: "Odpowiedzialność Klienta",
-        body: `O ile nie stwierdzono wyraźnie inaczej w umowie projektowej, klient odpowiada za: wybór i zawarcie umowy z dostawcami hostingu, rejestrację i utrzymanie nazw domen, utrzymanie certyfikatów SSL/TLS, zarządzanie usługami poczty elektronicznej i kopii zapasowych, oraz płacenie wszystkich opłat za hosting, domeny i usługi stron trzecich.`,
-      },
-      {
-        title: "Umowy Poziomu Usług",
-        body: `Forsa Design nie zapewnia ani nie gwarantuje żadnej umowy poziomu usług (SLA) dla usług stron trzecich. Czas pracy, dostępność i wydajność zależą całkowicie od dostawców stron trzecich.`,
-      },
-    ],
+    title: "Poprawki",
+    body: `Liczba i zakres poprawek zawartych w projekcie są określone w ofercie lub umowie projektowej. Poprawka mieszcząca się w uzgodnionym zakresie nie jest tym samym co zlecenie nowej funkcjonalności lub istotna zmiana wcześniej uzgodnionych wymagań. Prace wykraczające poza uzgodniony zakres poprawek lub zakres projektu są wyceniane osobno, chyba że wcześniej pisemnie uzgodniono inny sposób rozliczenia. Nie obowiązuje automatyczna stała stawka godzinowa, jeżeli nie została ona wyraźnie uzgodniona.`,
   },
   {
     number: "12",
-    title: "Dostępność Strony Internetowej i Konserwacja",
-    body: `Nie gwarantujemy, że strona będzie stale dostępna, nieprzerywana, wolna od błędów lub bezpieczna. Dostęp do strony może być czasowo wstrzymany z powodu: zaplanowanej konserwacji i aktualizacji, napraw awaryjnych, poprawek bezpieczeństwa, uaktualnień serwerów, lub okoliczności pozostających poza naszą rozsądną kontrolą. Forsa Design nie będzie odpowiedzialna za jakiekolwiek przestoje, utratę danych lub niemożność dostępu do strony, z wyjątkiem sytuacji spowodowanej bezpośrednio zaniedbaniem Forsa Design.`,
+    title: "Testowanie i standardy techniczne",
+    body: `Sprawdzam i testuję wykonane prace zgodnie z uzgodnionym zakresem projektu. W zależności od projektu może to obejmować responsywność, obsługę urządzeń mobilnych, dostępność, konfigurację SSL/TLS, wydajność, techniczne SEO, formularze, działanie w obsługiwanych przeglądarkach, integracje API i konfigurację związaną z bezpieczeństwem. Testowanie ogranicza ryzyko, ale nie może zagwarantować, że strona, system lub usługa zewnętrzna pozostaną całkowicie wolne od błędów, podatności, awarii lub problemów z przyszłą kompatybilnością. Na wydajność, bezpieczeństwo i dostępność mogą również wpływać dostawcy hostingu, przeglądarki, urządzenia, API i inna infrastruktura zewnętrzna pozostająca poza moją bezpośrednią kontrolą.`,
   },
   {
     number: "13",
-    title: "Własność Intelektualna i Wykorzystanie w Portfolio",
-    body: `Forsa Design zastrzega sobie prawo do: wyświetlania strony internetowej jako przykładu z portfolio, prezentowania projektu w studiach przypadków, materiałach marketingowych lub referencjach, oraz wykorzystywania zanonimizowanych opisów i zrzutów ekranu do celów promocyjnych. Jeśli klient zażąda anonimowości, musi to być uzgodnione na piśmie w momencie rozpoczęcia projektu. Forsa Design może poprosić o zezwolenie na wykorzystanie referencji klienta, sprzężenia zwrotnego lub opinii do celów marketingowych. Wykorzystywanie referencji wymaga uprzedniej pisemnej zgody.`,
+    title: "Usługi zewnętrzne",
+    body: `Projekt może korzystać z usług zewnętrznych, takich jak hosting, rejestracja domen, obsługa płatności, dostarczanie wiadomości e-mail, API, usługi analityczne, sieci dostarczania treści, usługi chmurowe, zewnętrzne oprogramowanie lub platformy. Usługi zewnętrzne działają na podstawie własnych warunków, cenników, dostępności i ograniczeń technicznych. Jeżeli oferta nie stanowi wyraźnie inaczej, koszty usług zewnętrznych nie są częścią wynagrodzenia Forsa Design za projekt. Nie odpowiadam za awarie, zmiany cen, zakończenie świadczenia usług, zmiany API, incydenty bezpieczeństwa ani inne problemy spowodowane przez zewnętrznych dostawców i pozostające poza moją rozsądną kontrolą. Jeżeli uzgodniono dalsze wsparcie, mogę pomagać w rozwiązywaniu problemów z usługami zewnętrznymi w ramach uzgodnionego zakresu wsparcia.`,
   },
   {
     number: "14",
-    title: "Ochrona Danych i Prywatność",
-    body: `Obie strony będą zgodne z Ogólnym Rozporządzeniem o Ochronie Danych (RODO), Ustawą o Ochronie Danych z 2018 r. i wszystkimi obowiązującymi przepisami o ochronie danych. Klient jest odpowiedzialny za: uzyskanie wszelkich niezbędnych zgód od użytkowników końcowych na zbieranie i przetwarzanie danych, zapewnienie, że polityka prywatności strony internetowej jest zgodna z RODO, utrzymanie odpowiednich środków bezpieczeństwa dla danych osobowych, oraz powiadomienie Forsa Design o wszelkich naruszeniach danych dotyczących strony internetowej.`,
-    subsections: [
-      {
-        title: "Odpowiedzialność Forsa Design",
-        body: `Forsa Design wdroży rozsądne środki bezpieczeństwa w celu ochrony danych hostowanych na stronach klientów. Jednak Forsa Design nie bierze odpowiedzialności za naruszenia danych spowodowane dostawcami hostingu stron trzecich lub lukami w bezpieczeństwie spowodowanymi przez klienta.`,
-      },
-      {
-        title: "Umowa Przetwarzania Danych",
-        body: `Jeśli zaangażowane jest przetwarzanie danych osobowych, Umowa Przetwarzania Danych (DPA) będzie wykonana jako część umowy projektowej.`,
-      },
-    ],
+    title: "Integracje API",
+    body: `Każdą integrację API oceniam indywidualnie. Możliwość wykonania integracji zależy między innymi od dostępności zewnętrznego API, dokumentacji, sposobu uwierzytelniania, uprawnień i dostępu, ograniczeń technicznych, limitów użycia, kompatybilności oraz cen i ograniczeń zewnętrznego dostawcy. Nie gwarantuję możliwości wykonania integracji, jeżeli zewnętrzny dostawca nie zapewnia odpowiedniego dostępu, dokumentacji lub możliwości technicznych.`,
   },
   {
     number: "15",
-    title: "Rozwiązanie i Anulowanie",
-    body: `Jeśli klient zażąda anulowania projektu po wpłaceniu zaliczki: zaliczka w wysokości 25% jest nierefundowalna w żadnych okolicznościach; klient będzie zobowiązany zapłacić za wszystkie dotychczas wykonane prace oraz wszelkie koszty nieodwracalne poniesione przez Forsa Design; i klient nie nabywa praw własności do niekompletnych prac do czasu pełnej zapłaty wszystkich wykonanych prac.`,
+    title: "Hosting",
+    body: `Zasady hostingu i podział odpowiedzialności zależą od konkretnego projektu oraz ewentualnej osobnej umowy dotyczącej hostingu lub wsparcia. Jeżeli hosting zapewnia zewnętrzny dostawca, jego dostępność, infrastruktura i poziom usług podlegają warunkom tego dostawcy, chyba że wyraźnie uzgodniłem na piśmie inaczej. Nie mogę zagwarantować nieprzerwanej dostępności zewnętrznej usługi hostingowej.`,
+  },
+  {
+    number: "16",
+    title: "Wsparcie po uruchomieniu",
+    body: `Dalsze wsparcie jest opcjonalne i nie jest automatycznie świadczone bezterminowo po zakończeniu projektu. Wsparcie może obejmować utrzymanie techniczne, aktualizacje, poprawki, monitoring, pomoc przy hostingu, uzgodnione zmiany i dalszy rozwój. Zakres i cenę wsparcia ustalam indywidualnie w zależności od projektu i potrzeb klienta. Nie wymagam od klienta zakupu stałego pakietu wsparcia, chyba że takie rozwiązanie zostało wyraźnie uzgodnione. Wsparcie dotyczące usług zewnętrznych podlega dostępności i ograniczeniom ich dostawców.`,
+  },
+  {
+    number: "17",
+    title: "Własność intelektualna",
+    body: `Oryginalne elementy marki, teksty, grafiki, treści projektowe i inne oryginalne materiały należące do strony Forsa Design pozostają własnością Forsa Design, chyba że wskazano inaczej. Oprogramowanie, biblioteki, fonty, obrazy, API, platformy i inne materiały podmiotów trzecich podlegają ich własnym licencjom i prawom własności. Niniejszy Regulamin nie przenosi praw własności intelektualnej należących do osób lub podmiotów trzecich.`,
     subsections: [
       {
-        title: "Rozwiązanie przez Forsa Design",
-        body: `Forsa Design zastrzega sobie prawo do natychmiastowego rozwiązania projektu, jeśli: płatność jest zaległa o ponad 30 dni po terminie płatności, klient istotnie narusza niniejszy Regulamin lub umowę projektową, postępowanie klienta jest obraźliwe, groźne lub nieuzasadnione, lub klient dostarcza fałszywe, mylące lub niekompletne informacje. Po rozwiązaniu przez Forsa Design, Forsa Design wystawia fakturę za wszystkie dotychczas wykonane prace, klient musi zapłacić wszystkie zalegające faktury w ciągu 7 dni, i klient nie nabywa praw własności do rezultatów do czasu pełnej zapłaty wszystkich kwot.`,
+        title: "Elementy projektu",
+        body: `Prawa własności i prawa do korzystania z elementów wykonanych w ramach projektu określa oferta lub umowa projektowa. Jeżeli nie uzgodniono inaczej na piśmie, prawa do dedykowanych prac wykonanych specjalnie dla klienta przechodzą po pełnym opłaceniu odpowiednich faktur za projekt, z uwzględnieniem licencji podmiotów trzecich, licencji open-source, warunków zewnętrznych platform, wcześniej istniejących materiałów Forsa Design, komponentów i narzędzi przeznaczonych do ponownego wykorzystania oraz innych praw wskazanych w umowie projektowej. Nieopłacone elementy projektu mogą zostać wstrzymane do czasu uregulowania odpowiednich należności.`,
       },
       {
-        title: "Skutek Rozwiązania",
-        body: `Po rozwiązaniu wszystkie prace w toku natychmiast ustają. Forsa Design usunie lub zwróci wszystkie materiały klienta, pod warunkiem że wszystkie zalegające płatności zostały dokonane.`,
+        title: "Materiały istniejące wcześniej i wielokrotnego użytku",
+        body: `Komponenty, biblioteki, procesy developerskie, wzorce, metody i narzędzia utworzone przed rozpoczęciem projektu lub przeznaczone do ogólnego ponownego wykorzystania nie stają się automatycznie wyłączną własnością klienta. Nie wprowadzam celowo vendor lock-in. Projekt może jednak zależeć od zewnętrznych platform, usług lub technologii, które mają własne ograniczenia techniczne lub umowne.`,
       },
     ],
   },
   {
-    number: "16",
-    title: "Prawo Właściwe i Rozstrzyganie Sporów",
-    body: `Niniejszy Regulamin i Warunki Świadczenia Usług będą regulowane i interpretowane zgodnie z prawem Szkocji, bez względu na jego zasady dotyczące kolizji praw. Każdy spór wynikający z niniejszego Regulaminu lub naszych usług będzie podlegać wyłącznej jurysdykcji sądów szkockich. Obie strony wyrażają zgodę na jurysdykcję sądów szkockich. Przed wszczęciem postępowania sądowego obie strony zgadzają się spróbować rozwiązać spory poprzez uczciwą negocjację. Jeśli negocjacja zawiedzie, spory będą rozstrzygane przez sądy szkockie.`,
-  },
-  {
-    number: "17",
-    title: "Zmiany w Niniejszym Regulaminie",
-    body: `Forsa Design zastrzega sobie prawo do aktualizacji, zmiany lub modyfikacji niniejszego Regulaminu w dowolnym momencie wyłącznie według swojego uznania. Zmiany wchodzą w życie po opublikowaniu na naszej stronie internetowej. Dalsze korzystanie z naszej strony lub usług stanowi zaakceptowanie zaktualizowanego Regulaminu. W przypadku istniejących projektów obowiązujący Regulamin w momencie rozpoczęcia projektu będzie regulować ten projekt.`,
-  },
-  {
     number: "18",
-    title: "Nieważność Postanowień",
-    body: `Jeśli którekolwiek postanowienie niniejszego Regulaminu okaże się niewykonalne lub nieważne na mocy obowiązującego prawa, to postanowienie będzie usunięte, a pozostałe postanowienia będą obowiązywać w pełnej mocy i skuteczności.`,
+    title: "Portfolio i case studies",
+    body: `Mogę poprosić klienta o zgodę na zaprezentowanie ukończonego projektu w portfolio Forsa Design lub jako case study. Informacje poufne, referencje oraz materiały wymagające zgody nie są automatycznie przeznaczone do wykorzystania promocyjnego tylko dlatego, że projekt został ukończony. Szczególne zasady dotyczące poufności lub prezentowania projektu w portfolio mogą zostać uzgodnione na piśmie.`,
   },
   {
     number: "19",
-    title: "Całość Umowy",
-    body: `Niniejszy Regulamin i Warunki Świadczenia Usług, wraz z każdą umową projektową, ofertą i fakturą, stanowią całość umowy między stronami dotyczącej usług Forsa Design. Wszelkie wcześniejsze dyskusje, oświadczenia lub umowy nie opisane na piśmie są zastępowane przez niniejszy Regulamin.`,
+    title: "Ochrona danych i prywatność",
+    body: `Przetwarzam dane osobowe zgodnie z obowiązującymi przepisami Wielkiej Brytanii dotyczącymi ochrony danych oraz Polityką prywatności Forsa Design. Role Forsa Design, klienta i zewnętrznych dostawców w zakresie ochrony danych zależą od okoliczności konkretnego projektu i rodzaju przetwarzania. Jeżeli jest to wymagane, odpowiednie zasady przetwarzania danych mogą zostać uzgodnione osobno. Klient pozostaje odpowiedzialny za obowiązki prawne i regulacyjne dotyczące jego własnej działalności oraz sposobu korzystania z dostarczonej strony lub systemu. W zależności od projektu mogą one obejmować politykę prywatności, zgodne z prawem przetwarzanie danych osobowych, zgodę na pliki cookie, komunikację marketingową, dane klientów, okresy przechowywania danych i wymagania właściwe dla danej branży. Forsa Design nie świadczy usług doradztwa prawnego.`,
   },
   {
     number: "20",
-    title: "Informacje Kontaktowe",
-    body: `W przypadku pytań, sporów lub zawiadomień dotyczących niniejszego Regulaminu, prosimy o kontakt: Forsa Design, Art & Web Design, Banff, Szkocja. Email: hello@forsadesign.co.uk. Telefon: 07770110735.`,
+    title: "Bezpieczeństwo",
+    body: `Stosuję rozsądne środki techniczne i organizacyjne odpowiednie do projektu i uzgodnionego zakresu. Żadna strona ani system połączony z internetem nie może mieć zagwarantowanego całkowitego bezpieczeństwa. Na bezpieczeństwo mogą wpływać zewnętrzni dostawcy, infrastruktura hostingowa, konfiguracja klienta, hasła i dane dostępowe, zachowanie użytkowników, usługi zewnętrzne oraz zmiany wprowadzone po przekazaniu projektu. Zakres odpowiedzialności za bezpieczeństwo i utrzymanie po uruchomieniu zależy od uzgodnionych zasad wsparcia lub hostingu.`,
+  },
+  {
+    number: "21",
+    title: "Rezygnacja i rozwiązanie umowy",
+    body: `Każda ze stron może zrezygnować z projektu lub rozwiązać umowę zgodnie z umową projektową, niniejszym Regulaminem i obowiązującym prawem. Jeżeli klient zrezygnuje po rozpoczęciu prac, mogę wystawić fakturę za prace wykonane do dnia rezygnacji, ukończone etapy projektu i bezzwrotne koszty usług zewnętrznych poniesione na potrzeby projektu. Sposób rozliczenia zaliczki wynika z zaakceptowanej oferty, umowy projektowej i obowiązującego prawa.`,
+    subsections: [
+      {
+        title: "Wstrzymanie lub zakończenie prac przez Forsa Design",
+        body: `Mogę wstrzymać lub zakończyć prace w przypadku poważnego lub utrzymującego się braku płatności, istotnego naruszenia umowy projektowej lub Regulaminu, żądania wykorzystania projektu lub usług w sposób niezgodny z prawem albo powtarzającego się braku informacji, dostępu lub decyzji niezbędnych do kontynuowania prac. Jeżeli będzie to rozsądnie możliwe, poinformuję klienta przed wstrzymaniem lub zakończeniem prac.`,
+      },
+      {
+        title: "Skutki rozwiązania umowy",
+        body: `Rozwiązanie umowy nie usuwa obowiązku zapłaty prawidłowo wystawionych i wymagalnych faktur ani kwot należnych za już wykonane prace. Sposób postępowania z niedokończonymi pracami, plikami projektowymi i materiałami klienta zależy od umowy projektowej, zakresu wykonanych prac i dokonanych płatności.`,
+      },
+    ],
+  },
+  {
+    number: "22",
+    title: "Odpowiedzialność",
+    body: `Żadne postanowienie Regulaminu nie wyłącza ani nie ogranicza odpowiedzialności w zakresie, w którym byłoby to niezgodne z prawem. Nie odpowiadam za straty spowodowane wyłącznie awarią usług lub infrastruktury podmiotów trzecich pozostającą poza moją rozsądną kontrolą. Nie gwarantuję, że strona, system lub inny wykonany element zapewni określony poziom sprzedaży, liczby zapytań, przychodów, pozycji w wynikach wyszukiwania lub wyników biznesowych. Ewentualne ograniczenie odpowiedzialności dotyczące konkretnego projektu może zostać określone w odpowiedniej umowie projektowej.`,
+  },
+  {
+    number: "23",
+    title: "Zdarzenia pozostające poza rozsądną kontrolą",
+    body: `Nie odpowiadam za opóźnienie lub niewykonanie zobowiązania spowodowane okolicznościami pozostającymi poza moją rozsądną kontrolą. Może to obejmować awarie lub przerwy w działaniu zewnętrznej infrastruktury albo usług potrzebnych do realizacji projektu. Jeżeli takie zdarzenie istotnie wpłynie na realizację, podejmę rozsądne działania, aby poinformować klienta i kontynuować projekt, gdy będzie to możliwe.`,
+  },
+  {
+    number: "24",
+    title: "Prawo właściwe",
+    body: `Do niniejszego Regulaminu oraz objętych nim umów projektowych stosuje się prawo Szkocji. Spory będą rozstrzygane zgodnie z obowiązującym prawem szkockim i zasadami jurysdykcji mającymi zastosowanie do danej umowy. Jeżeli jest to praktycznie możliwe, strony powinny najpierw podjąć próbę rozwiązania sporu w drodze bezpośredniego porozumienia. Żadne postanowienie Regulaminu nie pozbawia strony prawa ani środka ochrony prawnej, którego zgodnie z prawem nie można wyłączyć.`,
+  },
+  {
+    number: "25",
+    title: "Zmiany Regulaminu",
+    body: `Mogę aktualizować Regulamin w związku ze zmianami usług Forsa Design, sposobu prowadzenia działalności lub wymagań prawnych. Aktualna wersja będzie publikowana na stronie Forsa Design wraz z datą ostatniej aktualizacji. Późniejsza zmiana Regulaminu na stronie nie zmienia automatycznie uzgodnionego zakresu, ceny ani warunków istniejącego projektu, chyba że strony uzgodnią inaczej lub wymaga tego prawo.`,
+  },
+  {
+    number: "26",
+    title: "Rozdzielność postanowień",
+    body: `Jeżeli którekolwiek postanowienie Regulaminu zostanie uznane za nieważne lub niewykonalne, pozostałe postanowienia zachowują moc w zakresie dozwolonym przez prawo.`,
+  },
+  {
+    number: "27",
+    title: "Całość uzgodnień",
+    body: `W przypadku konkretnego projektu dokumenty umowne mogą obejmować zaakceptowaną ofertę, umowę projektową, uzgodniony zakres, uzgodnione na piśmie zmiany zakresu, faktury oraz niniejszy Regulamin. Jeżeli szczegółowa umowa dotycząca projektu wyraźnie różni się od niniejszego Regulaminu, w odniesieniu do tego projektu pierwszeństwo ma umowa projektowa.`,
+  },
+  {
+    number: "28",
+    title: "Kontakt",
+    body: `W sprawach dotyczących niniejszego Regulaminu: Forsa Design, Banff, Szkocja, Wielka Brytania. E-mail: hello@forsadesign.co.uk. Telefon: 07770 110735.`,
   },
 ];
