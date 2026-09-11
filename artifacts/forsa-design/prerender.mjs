@@ -194,227 +194,595 @@ function ensureXDefault(alternates, fallback) {
 // ---------------------------------------------------------------------------
 
 function buildHomepageBodyEn() {
-  return `<header>
-<nav><a href="/en/">Forsa Design</a> | <a href="/en/#services">Services</a> | <a href="/en/about/">About</a> | <a href="/en/#faq">FAQ</a> | <a href="/en/#contact">Contact</a> | <a href="/en/blog">Blog</a></nav>
+  return `<header class="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
+<nav aria-label="Main navigation" class="container mx-auto flex h-16 items-center justify-between px-6">
+<a href="/en/" class="text-sm font-medium text-foreground/80 hover:text-primary transition-colors">Home</a>
+<a href="/en/#services" class="text-sm font-medium text-foreground/80 hover:text-primary transition-colors">Services</a>
+<a href="/en/#pricing" class="text-sm font-medium text-foreground/80 hover:text-primary transition-colors">Pricing</a>
+<a href="/en/about/" class="text-sm font-medium text-foreground/80 hover:text-primary transition-colors">About</a>
+<a href="/en/#contact" class="text-sm font-medium text-foreground/80 hover:text-primary transition-colors">Contact</a>
+<a href="/en/quote/" class="rounded-sm bg-primary px-4 py-2 text-sm font-bold text-primary-foreground hover:bg-primary/90 transition-colors">Quote</a>
+</nav>
 </header>
-<main>
-<section id="home">
-<h1>Web Systems for Heavy Industry</h1>
-<p>No templates. No page builders. Just fast, secure sites that pass procurement checks.</p>
-<p>You build infrastructure. We build the digital layer that proves you can deliver it. With more than twenty years in international B2B industrial sales across machinery, engineering and energy procurement, I know what happens when a buyer shortlists three suppliers and checks their websites. Forsa Design builds dedicated, hand-coded websites and web systems for offshore and energy contractors, engineering firms, industrial equipment suppliers and heavy logistics operators. Based in Banff, Aberdeenshire. Serving Scotland, the UK and selected EU export markets.</p>
-<a href="/en/#contact">Request a Technical Quote</a>
-<ul aria-label="Performance metrics">
-<li>PageSpeed desktop: 100/100</li>
-<li>PageSpeed mobile: 95/100</li>
-<li>SSL Labs: Grade A+</li>
-<li>Mozilla Observatory: 105/100</li>
-<li>CO&#x2082; per visit: 0.07 g</li>
-<li>Accessibility: 100/100</li>
-</ul>
-<a href="https://digitalbeacon.co/" rel="noopener">Low emission &#x2014; 0.07 g CO&#x2082; per visit</a>
-</section>
-<section id="services">
-<h2>What We Build</h2>
-<div>
-<h3>Industrial Web Presence</h3>
-<p>Dedicated sites built from scratch for engineering and manufacturing firms. Fast load times, mobile performance for site offices and technical messaging that speaks to specifiers, not designers.</p>
+<main id="main-content">
+<section id="home" class="relative min-h-[62dvh] flex items-center justify-center py-16 md:py-20 overflow-hidden">
+<div class="container mx-auto px-6 relative z-10">
+<div class="max-w-5xl mx-auto text-center flex flex-col items-center">
+<img src="/logo-hero-384.webp?v=17" alt="Forsa Design" width="384" height="317" loading="eager" decoding="async" class="w-64 md:w-80 lg:w-96 h-auto object-contain block mx-auto mb-2" />
+<div class="w-20 h-px bg-primary mb-6 mt-4"></div>
+<h1 class="text-4xl md:text-5xl lg:text-6xl font-serif font-bold tracking-tight leading-tight mb-4 max-w-4xl">Websites and Web Systems for Industry</h1>
+<p class="text-lg md:text-xl text-foreground/80 font-medium mb-5 max-w-3xl text-balance">No templates. No page builders. Custom websites and web systems built for technical B2B companies.</p>
+<p class="text-base md:text-lg text-foreground/60 font-light leading-relaxed mb-8 max-w-[65ch] text-left">You know your industry. I understand how industrial buyers evaluate suppliers. I have more than 20 years of experience in international B2B sales, including metalworking machinery, industrial equipment and engineering solutions across Europe and Asia. Forsa Design combines that commercial experience with modern web development to build websites and web systems for industrial, engineering and technical businesses. Based in Banff, Aberdeenshire. Available to work with clients in the UK and internationally.</p>
+<a href="#contact" data-testid="btn-hero-cta" class="inline-flex items-center justify-center px-8 py-4 bg-primary text-primary-foreground font-semibold text-lg rounded-sm">Request a Quote</a>
+<div class="mt-10 flex flex-col items-center gap-4" role="list">
+<div class="flex flex-wrap justify-center gap-3" role="list">
+<div role="listitem" class="flex items-center gap-2.5 px-4 py-3 border border-slate-400/15 rounded-lg"><div><div class="text-[11px] text-foreground/40 uppercase tracking-[0.07em] leading-none mb-1">PageSpeed desktop</div><div class="text-[15px] font-medium text-slate-100 leading-none">100 / 100</div></div></div>
+<div role="listitem" class="flex items-center gap-2.5 px-4 py-3 border border-slate-400/15 rounded-lg"><div><div class="text-[11px] text-foreground/40 uppercase tracking-[0.07em] leading-none mb-1">PageSpeed mobile</div><div class="text-[15px] font-medium text-slate-100 leading-none">95 / 100</div></div></div>
+<div role="listitem" class="flex items-center gap-2.5 px-4 py-3 border border-slate-400/15 rounded-lg"><div><div class="text-[11px] text-foreground/40 uppercase tracking-[0.07em] leading-none mb-1">SSL Labs</div><div class="text-[15px] font-medium text-slate-100 leading-none">Grade A+</div></div></div>
+<div role="listitem" class="flex items-center gap-2.5 px-4 py-3 border border-slate-400/15 rounded-lg"><div><div class="text-[11px] text-foreground/40 uppercase tracking-[0.07em] leading-none mb-1">Mozilla Observatory</div><div class="text-[15px] font-medium text-slate-100 leading-none">105 / 100</div></div></div>
+<a role="listitem" href="https://digitalbeacon.co/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2.5 px-4 py-3 border border-slate-400/15 rounded-lg"><div><div class="text-[11px] text-foreground/40 uppercase tracking-[0.07em] leading-none mb-1">CO&#x2082; per visit</div><div class="text-[15px] font-medium text-slate-100 leading-none">0.07 g</div></div></a>
+<div role="listitem" class="flex items-center gap-2.5 px-4 py-3 border border-slate-400/15 rounded-lg"><div><div class="text-[11px] text-foreground/40 uppercase tracking-[0.07em] leading-none mb-1">Accessibility</div><div class="text-[15px] font-medium text-slate-100 leading-none">100 / 100</div></div></div>
 </div>
-<div>
-<h3>E-commerce for Parts and Equipment</h3>
-<p>B2B catalogues and ordering systems for industrial components with account pricing, bulk quotes and integrations with ERP or stock systems. Built for procurement officers, not casual browsers.</p>
+<p class="max-w-xl text-center text-sm text-foreground/50 leading-relaxed">I use AI-assisted development tools to accelerate appropriate parts of the build, then review, configure and optimise the implementation myself. Performance, accessibility, security and SEO are tested as part of the development process.</p>
 </div>
-<div>
-<h3>Bespoke Web Systems</h3>
-<p>Dealer portals, technical specification generators, multilingual quote engines and workflow integrations for export markets. Practical tools that fit your operation instead of disrupting it.</p>
+</div>
 </div>
 </section>
-<section id="pricing">
-<h2>Transparent Pricing</h2>
-<p>Three starting points. Every project is tailored to your needs.</p>
-<div>
-<h3>Starter</h3>
-<p>Perfect for new businesses</p>
-<p>From £1,200</p>
-<p>Landing page or small website. Fully custom project. Mobile responsive. SEO foundation.</p>
-<a href="/en/contact">Get a custom quote</a>
+<section class="w-full bg-card border-t border-primary/40 py-24 px-6">
+<div class="max-w-3xl mx-auto text-center">
+<h2 class="text-2xl md:text-[32px] font-serif font-bold text-white leading-tight mb-4">Does your website give buyers the information they need?</h2>
+<p class="text-base text-foreground/60 leading-relaxed mb-8">Download the free checklist. 10 checks. 5 minutes. Review the information, usability and trust signals a B2B buyer is likely to look for before making contact.</p>
+<div class="flex flex-col items-center gap-3">
+<button type="button" class="w-full sm:w-auto max-w-[320px] sm:max-w-none inline-flex items-center justify-center px-8 py-3.5 rounded-md bg-primary text-primary-foreground font-semibold">Get the Free Checklist</button>
+<span class="text-sm text-foreground/60">Or request a quote</span>
 </div>
-<div>
-<h3>Business</h3>
-<p>Most Popular</p>
-<p>Grow your online presence</p>
-<p>From £4,000</p>
-<p>Up to 5 pages. Fully custom project. Testimonials. Basic SEO setup. Google Maps integration. Monthly care plan.</p>
-<a href="/en/contact">Get a custom quote</a>
-</div>
-<div>
-<h3>Premium</h3>
-<p>Full-scale digital solution</p>
-<p>From £8,000</p>
-<p>Up to 10 pages. Fully custom project. Professional copywriting. Advanced SEO and analytics. Newsletter and GDPR setup. Priority delivery. Business care plan.</p>
-<a href="/en/contact">Get a custom quote</a>
-</div>
-<p>All prices are indicative. Final quote depends on your exact requirements. Request a quote for a precise estimate.</p>
-<section id="process">
-<h2>How We Work</h2>
-<div>
-<h3>Discovery and Audit</h3>
-<p>We analyse your current site, competitors and where you lose credibility during the buyer's vetting process. We map decision-makers and the evidence they need to see.</p>
-</div>
-<div>
-<h3>Technical Spec and Design</h3>
-<p>Clean architecture, hand-written code and no unnecessary plugins. Every page is built around a procurement checkpoint, with real proof of your facility, capabilities and work.</p>
-</div>
-<div>
-<h3>Compliance, Testing and Launch</h3>
-<p>GDPR, accessibility, SSL and performance benchmarks. Tested on the devices your clients actually use, from phones offshore to older PCs in site cabins.</p>
-</div>
-<div>
-<h3>Support and Evolution</h3>
-<p>Monthly care plans keep your site secure, up to date, and aligned with your contract pipeline. As your capabilities grow, your site grows with them.</p>
 </div>
 </section>
-<section id="faq">
-<h2>Common Questions</h2>
-<p>Straight answers for industrial, engineering and procurement teams.</p>
-<h3>Do you use WordPress or templates?</h3>
-<p>No. Every site is hand-coded. WordPress is fine for blogs. It is not fine for a firm that wants to pass a procurement audit without explaining why their site needs seventeen plug-ins and a security patch every Tuesday.</p>
-<h3>How long does a project take?</h3>
-<p>Between four and eight weeks, depending on scope. Not because I work slowly. Because I do not start coding until I understand what your buyers need to see. That conversation takes time. The coding is the easy part.</p>
-<h3>What if I do not have any photos?</h3>
-<p>We work with what you have. A decent photo of your workshop taken on a phone is better than a stock image of a smiling engineer in a hard hat that you bought from a random website.</p>
-<h3>Do you offer ongoing support?</h3>
-<p>Yes. Monthly care plans start at £150. That includes hosting, security updates, backups and the occasional panic email at 10 pm because you need a phone number changed before a tender deadline.</p>
-<h3>Can you integrate with our existing systems?</h3>
-<p>If it has an API, probably yes. If it runs on a spreadsheet from 2003 and a prayer, we will figure something out. I have seen worse.</p>
+<section id="services" class="py-24 bg-background">
+<div class="container mx-auto px-6">
+<div class="mb-16 md:text-center">
+<h2 class="font-serif text-4xl md:text-5xl font-bold text-white leading-tight mb-4">What I Build</h2>
+<div class="w-16 h-1 bg-primary md:mx-auto"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div id="industrial-websites" class="scroll-mt-28 bg-card border-t-4 border-t-primary p-8 rounded-b-md shadow-sm">
+<h3 class="font-serif text-2xl font-bold text-white leading-tight mb-4">Industrial and Engineering Websites</h3>
+<p class="text-foreground/70 leading-relaxed font-light whitespace-pre-line text-left">Custom websites for industrial, engineering and manufacturing businesses. I focus on clear technical communication, performance, mobile usability, SEO, accessibility and security.
+
+I use AI-assisted development tools where they improve efficiency, then review and refine the structure, implementation, content logic, SEO and performance myself. There are no off-the-shelf templates or page builders.</p>
+</div>
+<div id="b2b-e-commerce" class="scroll-mt-28 bg-card border-t-4 border-t-primary p-8 rounded-b-md shadow-sm">
+<h3 class="font-serif text-2xl font-bold text-white leading-tight mb-4">B2B Catalogues and Ordering Systems</h3>
+<p class="text-foreground/70 leading-relaxed font-light whitespace-pre-line text-left">Custom product catalogues, enquiry systems, quote workflows and B2B ordering interfaces. Depending on the project, these can include customer accounts, account-specific information, bulk enquiries and API integrations with external services.
+
+A typical custom B2B catalogue or ordering system can take approximately 6-10 weeks once the specification, content and required integration access are available. More complex systems are estimated individually.</p>
+</div>
+<div id="web-systems" class="scroll-mt-28 bg-card border-t-4 border-t-primary p-8 rounded-b-md shadow-sm">
+<h3 class="font-serif text-2xl font-bold text-white leading-tight mb-4">Custom Web Tools and API Integrations</h3>
+<p class="text-foreground/70 leading-relaxed font-light whitespace-pre-line text-left">Dealer portals, specification tools, multilingual quote systems, custom forms and workflow integrations built around the way your business operates.
+
+I use AI-assisted tools to accelerate appropriate parts of development while retaining direct control over architecture, configuration, testing, security and the final implementation. API integrations are assessed individually according to the external system and its documentation.</p>
+</div>
+</div>
+</div>
 </section>
-<section id="contact">
-<h2>Get In Touch</h2>
-<p>Ready to start your next project? Let's talk.</p>
-<p>Email: <!--email_off--><a href="mailto:hello@forsadesign.co.uk">hello@forsadesign.co.uk</a><!--/email_off--></p>
-<p>Phone: <a href="tel:07770110735">07770110735</a></p>
+<section class="w-full bg-card border-t border-primary/40 py-24 px-6">
+<div class="max-w-3xl mx-auto text-center">
+<h2 class="text-2xl md:text-[32px] font-serif font-bold text-white leading-tight mb-4">Does your website give buyers the information they need?</h2>
+<p class="text-base text-foreground/60 leading-relaxed mb-8">Download the free checklist. 10 checks. 5 minutes. Review the information, usability and trust signals a B2B buyer is likely to look for before making contact.</p>
+<div class="flex flex-col items-center gap-3">
+<button type="button" class="w-full sm:w-auto max-w-[320px] sm:max-w-none inline-flex items-center justify-center px-8 py-3.5 rounded-md bg-primary text-primary-foreground font-semibold">Get the Free Checklist</button>
+<span class="text-sm text-foreground/60">Or request a quote</span>
+</div>
+</div>
 </section>
-</main>
-<footer>
-<div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:12px;">
-<p>&#169; 2026 Forsa Design. All rights reserved.</p>
-<a href="https://marketingplatform.google.com/about/analytics/" target="_blank" rel="noopener noreferrer" aria-label="Measured with Google Analytics">
-<img src="/analytics-badge.webp" alt="Measured with Google Analytics" width="182" height="48" loading="lazy" decoding="async" style="height:24px;width:auto;opacity:0.8;">
+<section id="pricing" class="py-24 bg-background border-y border-border/10">
+<div class="container mx-auto px-6">
+<div class="mb-12 md:text-center">
+<h2 class="font-serif text-4xl md:text-5xl font-bold text-white leading-tight mb-4">What Does It Cost?</h2>
+<p class="text-lg text-foreground/70 max-w-2xl md:mx-auto">Every project is scoped individually according to its functionality, content and integration requirements.</p>
+<div class="w-16 h-1 bg-primary md:mx-auto mt-6"></div>
+</div>
+<div class="max-w-3xl mx-auto">
+<div class="border border-border/20 rounded-lg overflow-hidden">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 p-6 border-b border-border/10"><span class="font-medium text-white">Website projects</span><span class="text-foreground/70">Quoted individually</span></div>
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 p-6 border-b border-border/10"><span class="font-medium text-white">Custom B2B catalogues and ordering systems</span><span class="text-foreground/70">Quoted individually</span></div>
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 p-6 border-b border-border/10"><span class="font-medium text-white">Custom web tools and API integrations</span><span class="text-foreground/70">Quoted individually</span></div>
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 p-6"><span class="font-medium text-white">Ongoing support</span><span class="text-foreground/70">Optional, priced according to hosting, maintenance and support requirements</span></div>
+</div>
+<div class="mt-10 flex flex-col items-center gap-6 text-center">
+<a href="/en/quote" class="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-lg bg-primary text-primary-foreground font-semibold">Get a Custom Quote</a>
+<p class="text-sm text-foreground/50 max-w-xl">The final price depends on the agreed scope, functionality, content requirements and external integrations.</p>
+<p class="text-sm text-foreground/50 max-w-2xl">AI-assisted tools can reduce time spent on repetitive development tasks. I use that time where it matters more: architecture, implementation, testing, content structure, performance and the commercial purpose of the site.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="process" class="py-24 bg-card">
+<div class="container mx-auto px-6">
+<div class="mb-16 md:text-center">
+<h2 class="font-serif text-4xl md:text-5xl font-bold text-white leading-tight mb-4">How I Work</h2>
+<div class="w-16 h-1 bg-primary md:mx-auto"></div>
+</div>
+<div class="relative">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8">
+<div class="relative flex md:flex-col items-start gap-6 md:gap-8">
+<div class="relative z-10 flex-shrink-0 w-12 h-12 rounded-full border-2 border-primary bg-background flex items-center justify-center text-primary font-serif font-bold text-xl">1</div>
+<div class="flex-1">
+<h3 class="font-serif text-xl font-bold text-white leading-tight mb-3">Discovery and Audit</h3>
+<p class="text-foreground/70 font-light leading-relaxed text-left">I review your current website, business requirements, competitors, target customers and the information buyers need in order to evaluate your company.</p>
+</div>
+</div>
+<div class="relative flex md:flex-col items-start gap-6 md:gap-8">
+<div class="relative z-10 flex-shrink-0 w-12 h-12 rounded-full border-2 border-primary bg-background flex items-center justify-center text-primary font-serif font-bold text-xl">2</div>
+<div class="flex-1">
+<h3 class="font-serif text-xl font-bold text-white leading-tight mb-3">Specification and Design</h3>
+<p class="text-foreground/70 font-light leading-relaxed text-left">I define the structure, functionality and technical requirements before development begins. The design is built around clear communication, usability and the commercial purpose of the website.</p>
+</div>
+</div>
+<div class="relative flex md:flex-col items-start gap-6 md:gap-8">
+<div class="relative z-10 flex-shrink-0 w-12 h-12 rounded-full border-2 border-primary bg-background flex items-center justify-center text-primary font-serif font-bold text-xl">3</div>
+<div class="flex-1">
+<h3 class="font-serif text-xl font-bold text-white leading-tight mb-3">Development</h3>
+<p class="text-foreground/70 font-light leading-relaxed text-left">I build the website or web system using a modern development workflow, including AI-assisted tools where appropriate. I review and refine the implementation myself, with attention to performance, security, SEO and accessibility.</p>
+</div>
+</div>
+<div class="relative flex md:flex-col items-start gap-6 md:gap-8">
+<div class="relative z-10 flex-shrink-0 w-12 h-12 rounded-full border-2 border-primary bg-background flex items-center justify-center text-primary font-serif font-bold text-xl">4</div>
+<div class="flex-1">
+<h3 class="font-serif text-xl font-bold text-white leading-tight mb-3">Testing and Launch</h3>
+<p class="text-foreground/70 font-light leading-relaxed text-left">Before launch, I test the implementation across relevant devices and browsers and check performance, accessibility, SSL, security configuration, SEO fundamentals and GDPR-related requirements.</p>
+</div>
+</div>
+<div class="relative flex md:flex-col items-start gap-6 md:gap-8">
+<div class="relative z-10 flex-shrink-0 w-12 h-12 rounded-full border-2 border-primary bg-background flex items-center justify-center text-primary font-serif font-bold text-xl">5</div>
+<div class="flex-1">
+<h3 class="font-serif text-xl font-bold text-white leading-tight mb-3">Optional Ongoing Support</h3>
+<p class="text-foreground/70 font-light leading-relaxed text-left">After launch, ongoing support is available as a separate paid service. Depending on your requirements, it can include hosting, backups, security maintenance, updates and agreed website changes.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="faq" class="py-24 bg-background">
+<div class="container mx-auto px-6 max-w-3xl">
+<div class="mb-16 text-center">
+<h2 class="font-serif text-4xl md:text-5xl font-bold text-white leading-tight mb-4">Common Questions</h2>
+<div class="w-16 h-1 bg-primary mx-auto mb-6"></div>
+<p class="text-foreground/60 font-light text-lg">Straight answers for industrial, engineering and procurement teams.</p>
+</div>
+<div class="divide-y divide-border/20 border border-border/20 rounded-md overflow-hidden">
+<div id="faq-1" class="bg-card scroll-mt-24">
+<details>
+<summary class="w-full flex items-center justify-between px-6 py-5 text-left cursor-pointer"><span class="font-medium text-white pr-6 leading-snug text-sm md:text-base">Do you use WordPress or templates?</span></summary>
+<div class="px-6 pb-6 pt-0">
+<p class="text-foreground/70 font-light leading-relaxed text-sm md:text-base">No. I build custom websites and web systems without WordPress, Elementor-style page builders or off-the-shelf templates. I use AI-assisted development tools where they make the work faster, then review, configure and optimise the implementation myself.</p>
+</div>
+</details>
+</div>
+<div id="faq-2" class="bg-card scroll-mt-24">
+<details>
+<summary class="w-full flex items-center justify-between px-6 py-5 text-left cursor-pointer"><span class="font-medium text-white pr-6 leading-snug text-sm md:text-base">How long does a project take?</span></summary>
+<div class="px-6 pb-6 pt-0">
+<p class="text-foreground/70 font-light leading-relaxed text-sm md:text-base">A typical business website takes around nine weeks. More complex web systems, catalogues and API integrations usually take longer and are estimated individually once the scope is defined.</p>
+</div>
+</details>
+</div>
+<div id="faq-3" class="bg-card scroll-mt-24">
+<details>
+<summary class="w-full flex items-center justify-between px-6 py-5 text-left cursor-pointer"><span class="font-medium text-white pr-6 leading-snug text-sm md:text-base">What if I do not have professional photos?</span></summary>
+<div class="px-6 pb-6 pt-0">
+<p class="text-foreground/70 font-light leading-relaxed text-sm md:text-base">I work with the material you have and identify what is genuinely missing. For an industrial business, authentic photographs of your facilities, equipment and work are often more useful than generic stock photography.</p>
+</div>
+</details>
+</div>
+<div id="faq-4" class="bg-card scroll-mt-24">
+<details>
+<summary class="w-full flex items-center justify-between px-6 py-5 text-left cursor-pointer"><span class="font-medium text-white pr-6 leading-snug text-sm md:text-base">Do you offer ongoing support?</span></summary>
+<div class="px-6 pb-6 pt-0">
+<p class="text-foreground/70 font-light leading-relaxed text-sm md:text-base">Yes. Ongoing support is optional and paid separately. It can include hosting, backups, security maintenance, updates and agreed changes to the website. The price depends on the site and the level of support required.</p>
+</div>
+</details>
+</div>
+<div id="faq-5" class="bg-card scroll-mt-24">
+<details>
+<summary class="w-full flex items-center justify-between px-6 py-5 text-left cursor-pointer"><span class="font-medium text-white pr-6 leading-snug text-sm md:text-base">Can you integrate with our existing systems?</span></summary>
+<div class="px-6 pb-6 pt-0">
+<p class="text-foreground/70 font-light leading-relaxed text-sm md:text-base">API integrations are one of the main ways I connect websites and web systems with external services. Feasibility depends on the API, documentation, permissions and requirements of the system being connected.</p>
+</div>
+</details>
+</div>
+</div>
+<div class="mt-12 text-center"><a href="/en/comparison" class="text-primary font-medium">See full comparison</a></div>
+</div>
+</section>
+<section class="py-24 bg-card border-t border-border/10">
+<div class="container mx-auto px-6 text-center">
+<div class="max-w-3xl mx-auto">
+<h2 class="font-serif text-4xl md:text-5xl font-bold text-white leading-tight mb-6">Need a Better Website or Web System?</h2>
+<p class="text-lg md:text-xl text-foreground/70 font-light mb-10 leading-relaxed">Tell me what your business needs. I&#x2019;ll assess the scope and propose a practical technical approach.</p>
+<a href="#contact" class="inline-flex items-center justify-center px-8 py-4 bg-primary text-primary-foreground font-semibold text-lg rounded-sm">Let's Talk</a>
+</div>
+</div>
+</section>
+<section id="contact" class="py-24 bg-background border-t border-border/10 relative overflow-hidden">
+<div class="container mx-auto px-6 relative">
+<div class="text-center mb-16">
+<h2 class="font-serif text-4xl md:text-5xl font-bold text-white leading-tight mb-4">Contact</h2>
+<div class="w-16 h-1 bg-primary mx-auto"></div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+<div class="h-full flex flex-col items-center justify-center text-center p-8 md:p-10 rounded-sm border border-primary/20 bg-background/60">
+<p class="text-foreground/50 text-sm uppercase tracking-widest mb-2 font-medium">Contact person</p>
+<p class="text-white text-sm md:text-base font-semibold leading-snug break-all">Miro</p>
+</div>
+<a href="mailto:hello@forsadesign.co.uk" class="h-full flex flex-col items-center justify-center text-center p-8 md:p-10 rounded-sm border border-primary/20 bg-background/60">
+<p class="text-foreground/50 text-sm uppercase tracking-widest mb-2 font-medium">Email</p>
+<p class="text-white text-sm md:text-base font-semibold leading-snug break-all">hello@forsadesign.co.uk</p>
+</a>
+<a href="tel:07770110735" class="h-full flex flex-col items-center justify-center text-center p-8 md:p-10 rounded-sm border border-primary/20 bg-background/60">
+<p class="text-foreground/50 text-sm uppercase tracking-widest mb-2 font-medium">Phone</p>
+<p class="text-white text-sm md:text-base font-semibold leading-snug break-all">07770110735</p>
+</a>
+<a href="https://www.linkedin.com/in/miroslaw-potaczek" target="_blank" rel="noopener noreferrer" class="h-full flex flex-col items-center justify-center text-center p-8 md:p-10 rounded-sm border border-primary/20 bg-background/60">
+<p class="text-foreground/50 text-sm uppercase tracking-widest mb-2 font-medium">LinkedIn</p>
+<p class="text-white text-sm md:text-base font-semibold leading-snug break-all">miroslaw-potaczek</p>
 </a>
 </div>
-<nav><a href="/en/terms">Terms &amp; Conditions</a> | <a href="/en/privacy">Privacy Policy</a></nav>
+</div>
+</section>
+<section class="bg-card py-24">
+<div class="container mx-auto grid max-w-5xl gap-12 px-6 md:grid-cols-[0.8fr_1.2fr]">
+<div>
+<p class="mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-primary">Start a conversation</p>
+<h2 class="font-serif text-3xl font-bold text-white md:text-4xl">Tell us what you are building.</h2>
+</div>
+<div>
+<form method="post" class="space-y-5">
+<input type="hidden" name="language" value="en" />
+<div><label for="cf-name" class="block text-sm font-medium text-foreground/70 mb-2">Name</label><input id="cf-name" name="name" type="text" required class="w-full bg-background border border-border/30 rounded-md px-4 py-3 text-sm text-white" /></div>
+<div><label for="cf-email" class="block text-sm font-medium text-foreground/70 mb-2">Email</label><input id="cf-email" name="email" type="email" required class="w-full bg-background border border-border/30 rounded-md px-4 py-3 text-sm text-white" /></div>
+<div><label for="cf-message" class="block text-sm font-medium text-foreground/70 mb-2">Message</label><textarea id="cf-message" name="message" rows="5" required class="w-full bg-background border border-border/30 rounded-md px-4 py-3 text-sm text-white"></textarea></div>
+<input type="text" name="_gotcha" tabindex="-1" autocomplete="off" class="hidden" aria-hidden="true" />
+<button type="submit" class="inline-flex items-center justify-center px-8 py-3.5 rounded-lg bg-primary text-primary-foreground font-semibold">Send message</button>
+</form>
+</div>
+</div>
+</section>
+</main>
+<footer class="bg-background py-12 border-t border-border/10">
+<div class="container mx-auto px-6">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 mb-12">
+<div>
+<p class="font-serif text-xl tracking-[0.2em] font-bold text-white uppercase mb-4">Forsa Design</p>
+<p class="text-foreground/60 font-light mb-2">Custom web development for technical B2B.</p>
+<p class="text-foreground/60 font-light mb-4">Banff, Aberdeenshire, Scotland</p>
+<div class="space-y-2">
+<p class="text-sm text-foreground/50">Contact person: <span class="text-foreground/70">Miro</span></p>
+<a href="mailto:hello@forsadesign.co.uk" class="flex items-center gap-2 text-sm text-foreground/60 hover:text-primary transition-colors w-fit" data-testid="footer-link-email">hello@forsadesign.co.uk</a>
+<a href="tel:07770110735" class="flex items-center gap-2 text-sm text-foreground/60 hover:text-primary transition-colors w-fit" data-testid="footer-link-phone">07770110735</a>
+<a href="https://www.linkedin.com/in/miroslaw-potaczek" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-sm text-foreground/60 hover:text-primary transition-colors w-fit">LinkedIn</a>
+</div>
+</div>
+<div class="flex flex-col gap-3">
+<a href="/en/#home" class="text-sm font-medium text-foreground/70 hover:text-primary transition-colors w-fit">Home</a>
+<a href="/en/#services" class="text-sm font-medium text-foreground/70 hover:text-primary transition-colors w-fit">Services</a>
+<a href="/en/#pricing" class="text-sm font-medium text-foreground/70 hover:text-primary transition-colors w-fit">Pricing</a>
+<a href="/en/#process" class="text-sm font-medium text-foreground/70 hover:text-primary transition-colors w-fit">Process</a>
+<a href="/en/about/" class="text-sm font-medium text-foreground/70 hover:text-primary transition-colors w-fit">About</a>
+<a href="/en/#contact" class="text-sm font-medium text-foreground/70 hover:text-primary transition-colors w-fit">Contact</a>
+<a href="/en/#faq" class="text-sm font-medium text-foreground/70 hover:text-primary transition-colors w-fit">FAQ</a>
+<a href="/en/comparison/" class="text-sm font-medium text-foreground/70 hover:text-primary transition-colors w-fit">Compare</a>
+<a href="/en/quote/" class="text-sm font-medium text-foreground/70 hover:text-primary transition-colors w-fit">Quote</a>
+<a href="/en/pay/" class="text-sm font-medium text-foreground/70 hover:text-primary transition-colors w-fit">Pay Invoice</a>
+</div>
+</div>
+<div class="pt-8 border-t border-border/20 text-sm text-foreground/40 font-light">
+<div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-4">
+<p class="text-center md:text-left">&#169; 2026 Forsa Design. All rights reserved.</p>
+</div>
+<a href="/en/terms/" class="hover:text-primary transition-colors mr-4 inline-block py-3 -my-2" data-testid="footer-link-terms">Terms &amp; Conditions</a>
+<a href="/en/privacy/" class="hover:text-primary transition-colors mr-4 inline-block py-3 -my-2" data-testid="footer-link-privacy">Privacy Policy</a>
+<span class="inline-block py-3 -my-2" data-testid="footer-link-cookie-preferences">Cookie Preferences</span>
+</div>
+</div>
 </footer>`;
 }
 
 function buildHomepageBodyPl() {
-  return `<header>
-<nav><a href="/pl/">Forsa Design</a> | <a href="/pl/#services">Us&#322;ugi</a> | <a href="/pl/about/">O Nas</a> | <a href="/pl/#faq">FAQ</a> | <a href="/pl/#contact">Kontakt</a> | <a href="/pl/blog">Blog</a></nav>
+  return `<header class="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
+<nav aria-label="Główna nawigacja" class="container mx-auto flex h-16 items-center justify-between px-6">
+<a href="/pl/" class="text-sm font-medium text-foreground/80 hover:text-primary transition-colors">Strona główna</a>
+<a href="/pl/#services" class="text-sm font-medium text-foreground/80 hover:text-primary transition-colors">Us&#322;ugi</a>
+<a href="/pl/#pricing" class="text-sm font-medium text-foreground/80 hover:text-primary transition-colors">Ceny</a>
+<a href="/pl/o-nas/" class="text-sm font-medium text-foreground/80 hover:text-primary transition-colors">O mnie</a>
+<a href="/pl/#contact" class="text-sm font-medium text-foreground/80 hover:text-primary transition-colors">Kontakt</a>
+<a href="/pl/quote/" class="rounded-sm bg-primary px-4 py-2 text-sm font-bold text-primary-foreground hover:bg-primary/90 transition-colors">Wycena</a>
+</nav>
 </header>
-<main>
-<section id="home">
-<h1>Systemy Webowe dla Przemysłu Ciężkiego</h1>
-<p>Bez szablonów. Bez kreatorów. Tylko szybkie, bezpieczne strony gotowe na weryfikację zakupową.</p>
-<p>Budujesz infrastrukturę. My tworzymy cyfrową warstwę, która pokazuje, że potrafisz ją dostarczyć. Dzięki ponad 20 latom doświadczenia w międzynarodowej sprzedaży B2B wiem, jak kupujący oceniają dostawców i ich strony. Tworzymy ręcznie kodowane strony i systemy dla firm offshore, energetycznych, inżynieryjnych, przemysłowych i logistycznych. Z Banff obsługujemy Szkocję, Wielką Brytanię i wybrane rynki UE.</p>
-<a href="/pl/#contact">Poproś o wycenę techniczną</a>
-<ul aria-label="Metryki wydajności">
-<li>PageSpeed desktop: 100/100</li>
-<li>PageSpeed mobile: 95/100</li>
-<li>SSL Labs: Grade A+</li>
-<li>Mozilla Observatory: 105/100</li>
-<li>CO&#x2082; na wizytę: 0.07 g</li>
-<li>Dostępność: 100/100</li>
-</ul>
-<a href="https://digitalbeacon.co/" rel="noopener">Niskie emisje &#x2014; 0.07 g CO&#x2082; per visit</a>
-</section>
-<section id="services">
-<h2>Co budujemy</h2>
-<div>
-<h3>Strony dla przemysłu</h3>
-<p>Dedykowane strony budowane od podstaw dla firm inżynieryjnych i produkcyjnych. Szybkie ładowanie, wydajność mobilna dla biur budowy i komunikacja techniczna skierowana do specyfikantów, nie do designerów.</p>
+<main id="main-content">
+<section id="home" class="relative min-h-[62dvh] flex items-center justify-center py-16 md:py-20 overflow-hidden">
+<div class="container mx-auto px-6 relative z-10">
+<div class="max-w-5xl mx-auto text-center flex flex-col items-center">
+<img src="/logo-hero-384.webp?v=17" alt="Forsa Design" width="384" height="317" loading="eager" decoding="async" class="w-64 md:w-80 lg:w-96 h-auto object-contain block mx-auto mb-2" />
+<div class="w-20 h-px bg-primary mb-6 mt-4"></div>
+<h1 class="text-4xl md:text-5xl lg:text-6xl font-serif font-bold tracking-tight leading-tight mb-4 max-w-4xl">Strony i systemy webowe dla przemys&#322;u</h1>
+<p class="text-lg md:text-xl text-foreground/80 font-medium mb-5 max-w-3xl text-balance">Bez szablon&#243;w. Bez kreator&#243;w stron. Dedykowane strony i systemy webowe dla technicznych firm B2B.</p>
+<p class="text-base md:text-lg text-foreground/60 font-light leading-relaxed mb-8 max-w-[65ch] text-left">Ty znasz swoj&#261; bran&#380;&#281;. Ja rozumiem, jak przemys&#322;owi klienci oceniaj&#261; dostawc&#243;w. Mam ponad 20 lat do&#347;wiadczenia w mi&#281;dzynarodowej sprzeda&#380;y B2B, obejmuj&#261;cej maszyny do obr&#243;bki metalu, wyposa&#380;enie przemys&#322;owe i rozwi&#261;zania in&#380;ynieryjne w Europie i Azji. Forsa Design &#322;&#261;czy to do&#347;wiadczenie handlowe z nowoczesnym web developmentem, tworz&#261;c strony i systemy webowe dla firm przemys&#322;owych, in&#380;ynieryjnych i technicznych. Dzia&#322;am z Banff w Aberdeenshire i mog&#281; wsp&#243;&#322;pracowa&#263; z klientami z Wielkiej Brytanii oraz z zagranicy.</p>
+<a href="#contact" data-testid="btn-hero-cta" class="inline-flex items-center justify-center px-8 py-4 bg-primary text-primary-foreground font-semibold text-lg rounded-sm">Popro&#347; o wycen&#281;</a>
+<div class="mt-10 flex flex-col items-center gap-4" role="list">
+<div class="flex flex-wrap justify-center gap-3" role="list">
+<div role="listitem" class="flex items-center gap-2.5 px-4 py-3 border border-slate-400/15 rounded-lg"><div><div class="text-[11px] text-foreground/40 uppercase tracking-[0.07em] leading-none mb-1">PageSpeed desktop</div><div class="text-[15px] font-medium text-slate-100 leading-none">100 / 100</div></div></div>
+<div role="listitem" class="flex items-center gap-2.5 px-4 py-3 border border-slate-400/15 rounded-lg"><div><div class="text-[11px] text-foreground/40 uppercase tracking-[0.07em] leading-none mb-1">PageSpeed mobile</div><div class="text-[15px] font-medium text-slate-100 leading-none">95 / 100</div></div></div>
+<div role="listitem" class="flex items-center gap-2.5 px-4 py-3 border border-slate-400/15 rounded-lg"><div><div class="text-[11px] text-foreground/40 uppercase tracking-[0.07em] leading-none mb-1">SSL Labs</div><div class="text-[15px] font-medium text-slate-100 leading-none">Grade A+</div></div></div>
+<div role="listitem" class="flex items-center gap-2.5 px-4 py-3 border border-slate-400/15 rounded-lg"><div><div class="text-[11px] text-foreground/40 uppercase tracking-[0.07em] leading-none mb-1">Mozilla Observatory</div><div class="text-[15px] font-medium text-slate-100 leading-none">105 / 100</div></div></div>
+<a role="listitem" href="https://digitalbeacon.co/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2.5 px-4 py-3 border border-slate-400/15 rounded-lg"><div><div class="text-[11px] text-foreground/40 uppercase tracking-[0.07em] leading-none mb-1">CO&#x2082; na wizyt&#281;</div><div class="text-[15px] font-medium text-slate-100 leading-none">0.07 g</div></div></a>
+<div role="listitem" class="flex items-center gap-2.5 px-4 py-3 border border-slate-400/15 rounded-lg"><div><div class="text-[11px] text-foreground/40 uppercase tracking-[0.07em] leading-none mb-1">Dost&#281;pno&#347;&#263;</div><div class="text-[15px] font-medium text-slate-100 leading-none">100 / 100</div></div></div>
 </div>
-<div>
-<h3>E-commerce dla części i urządzeń</h3>
-<p>Katalogi B2B i systemy zamówień dla komponentów przemysłowych z cenami dla kont klientów, wycenami hurtowymi i integracjami z systemami ERP lub magazynowymi. Tworzone dla działów zakupów, nie dla przypadkowych odwiedzających.</p>
+<p class="max-w-xl text-center text-sm text-foreground/50 leading-relaxed">Korzystam z narz&#281;dzi wspomaganych przez AI, aby przyspieszy&#263; odpowiednie etapy tworzenia strony, a nast&#281;pnie sam sprawdzam, konfiguruj&#281; i optymalizuj&#281; wdro&#380;enie. Wydajno&#347;&#263;, dost&#281;pno&#347;&#263;, bezpiecze&#324;stwo i SEO s&#261; testowane w ramach procesu tworzenia strony.</p>
 </div>
-<div>
-<h3>Dedykowane systemy webowe</h3>
-<p>Portale dealerskie, generatory specyfikacji technicznych, wielojęzyczne silniki wycen i integracje workflow dla rynków eksportowych. Praktyczne narzędzia dopasowane do Twojej operacji, a nie ją zakłócające.</p>
+</div>
 </div>
 </section>
-<section id="pricing">
-<h2>Przejrzyste ceny</h2>
-<p>Trzy punkty wyjścia. Każdy projekt dopasowany do Twoich potrzeb.</p>
-<div>
-<h3>Starter</h3>
-<p>Idealny dla nowych firm</p>
-<p>Od 1200 GBP</p>
-<p>Strona docelowa lub mała witryna. Projekt w pełni na zamówienie. Responsywna na mobile. Podstawy SEO.</p>
-<a href="/pl/contact">Uzyskaj wycenę</a>
+<section class="w-full bg-card border-t border-primary/40 py-24 px-6">
+<div class="max-w-3xl mx-auto text-center">
+<h2 class="text-2xl md:text-[32px] font-serif font-bold text-white leading-tight mb-4">Czy Twoja strona daje kupuj&#261;cy informacje, kt&#243;rych potrzebuj&#261;?</h2>
+<p class="text-base text-foreground/60 leading-relaxed mb-8">Pobierz darmow&#261; checklist&#281;. 10 punkt&#243;w. 5 minut. Sprawd&#378; informacje, u&#380;yteczno&#347;&#263; i elementy buduj&#261;ce wiarygodno&#347;&#263;, na kt&#243;re mo&#380;e zwraca&#263; uwag&#281; klient B2B przed kontaktem z dostawc&#261;.</p>
+<div class="flex flex-col items-center gap-3">
+<button type="button" class="w-full sm:w-auto max-w-[320px] sm:max-w-none inline-flex items-center justify-center px-8 py-3.5 rounded-md bg-primary text-primary-foreground font-semibold">Pobierz darmow&#261; checklist&#281;</button>
+<span class="text-sm text-foreground/60">Albo popro&#347; o wycen&#281;</span>
 </div>
-<div>
-<h3>Business</h3>
-<p>Najpopularniejszy</p>
-<p>Rozwijaj swoją obecność online</p>
-<p>Od 4000 GBP</p>
-<p>Do 5 stron. Projekt w pełni na zamówienie. Opinie klientów. Podstawowa konfiguracja SEO. Integracja z Mapami Google. Miesięczny plan opieki.</p>
-<a href="/pl/contact">Uzyskaj wycenę</a>
-</div>
-<div>
-<h3>Premium</h3>
-<p>Pełne rozwiązanie cyfrowe</p>
-<p>Od 8000 GBP</p>
-<p>Do 10 stron. Projekt w pełni na zamówienie. Profesjonalny copywriting. Zaawansowane SEO i analityka. Newsletter i konfiguracja GDPR. Priorytetowa realizacja. Biznesowy plan opieki.</p>
-<a href="/pl/contact">Uzyskaj wycenę</a>
-</div>
-<p>Wszystkie ceny są orientacyjne. Ostateczna wycena zależy od dokładnych wymagań. Poproś o wycenę, aby uzyskać precyzyjną kalkulację.</p>
-<section id="process">
-<h2>Jak Pracujemy</h2>
-<div>
-<h3>Analiza i audyt</h3>
-<p>Analizujemy Twoją obecną stronę, konkurencję i momenty, w których tracisz wiarygodność podczas weryfikacji przez kupującego. Mapujemy decydentów i dowody, które muszą zobaczyć.</p>
-</div>
-<div>
-<h3>Specyfikacja techniczna i projekt</h3>
-<p>Czysta architektura, kod pisany ręcznie, bez zbędnych wtyczek. Każda strona budowana jest wokół punktu kontrolnego zakupowego z realnymi dowodami na Twoje zaplecze, możliwości i prace.</p>
-</div>
-<div>
-<h3>Zgodność, testy i uruchomienie</h3>
-<p>GDPR, dostępność, SSL i benchmarki wydajności. Testowane na urządzeniach, których faktycznie używają Twoi klienci, od telefonów na offshore po starsze komputery w kontenerach biurowych.</p>
-</div>
-<div>
-<h3>Wsparcie i rozwój</h3>
-<p>Miesięczne plany opieki utrzymują stronę bezpieczną, zaktualizowaną i dopasowaną do Twojego pipeline'u kontraktowego. Wraz z rozwojem Twoich możliwości strona rozwija się razem z nimi.</p>
 </div>
 </section>
-<section id="faq">
-<h2>Najczęstsze pytania</h2>
-<p>Proste odpowiedzi dla firm przemysłowych, inżynieryjnych i zespołów zakupowych.</p>
-<h3>Czy używacie WordPressa lub szablonów?</h3>
-<p>Nie. Każda strona pisana jest ręcznie. WordPress sprawdza się przy blogach. Nie sprawdza się przy firmie, która chce przejść audyt zakupowy bez tłumaczenia, dlaczego jej strona potrzebuje siedemnastu wtyczek i łatki bezpieczeństwa w każdy wtorek.</p>
-<h3>Ile trwa projekt?</h3>
-<p>Od czterech do ośmiu tygodni, w zależności od zakresu. Nie dlatego, że pracuję wolno. Dlatego że nie zaczynam kodować, dopóki nie zrozumiem, co Twoi kupcy muszą zobaczyć. Ta rozmowa zajmuje czas. Kodowanie to najłatwiejsza część.</p>
-<h3>A jeśli nie mam żadnych zdjęć?</h3>
-<p>Pracujemy z tym, co masz. Przeciętne zdjęcie Twojego warsztatu zrobione telefonem jest lepsze niż stockowe zdjęcie uśmiechniętego inżyniera w kasku, które kupiłeś na randomowej stronie.</p>
-<h3>Czy oferujecie wsparcie po wdrożeniu?</h3>
-<p>Tak. Opieka miesięczna zaczyna się od 150 funtów. Obejmuje hosting, aktualizacje bezpieczeństwa, kopie zapasowe i ten sporadyczny mail o dziesiątej wieczorem, bo musisz zmienić numer telefonu przed terminem składania ofert.</p>
-<h3>Czy możecie zintegrować stronę z naszymi istniejącymi systemami?</h3>
-<p>Jeśli ma API, prawdopodobnie tak. Jeśli działa na arkuszu kalkulacyjnym z 2003 roku i modlitwie, coś wymyślimy. Widziałem gorsze rzeczy.</p>
+<section id="services" class="py-24 bg-background">
+<div class="container mx-auto px-6">
+<div class="mb-16 md:text-center">
+<h2 class="font-serif text-4xl md:text-5xl font-bold text-white leading-tight mb-4">Co buduj&#281;</h2>
+<div class="w-16 h-1 bg-primary md:mx-auto"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div id="industrial-websites" class="scroll-mt-28 bg-card border-t-4 border-t-primary p-8 rounded-b-md shadow-sm">
+<h3 class="font-serif text-2xl font-bold text-white leading-tight mb-4">Strony dla przemys&#322;u i firm in&#380;ynieryjnych</h3>
+<p class="text-foreground/70 leading-relaxed font-light whitespace-pre-line text-left">Dedykowane strony internetowe dla firm przemys&#322;owych, in&#380;ynieryjnych i produkcyjnych. Koncentruj&#281; si&#281; na czytelnej komunikacji technicznej, wydajno&#347;ci, obs&#322;udze urz&#281;dze&#324; mobilnych, SEO, dost&#281;pno&#347;ci i bezpiecze&#324;stwie.
+
+Korzystam z narz&#281;dzi wspomaganych przez AI tam, gdzie zwi&#281;kszaj&#261; efektywno&#347;&#263; pracy, a nast&#281;pnie sam sprawdzam i dopracowuj&#281; struktur&#281;, implementacj&#281;, logik&#281; tre&#347;ci, SEO i wydajno&#347;&#263;. Nie u&#380;ywam gotowych szablon&#243;w ani kreator&#243;w stron.</p>
+</div>
+<div id="b2b-e-commerce" class="scroll-mt-28 bg-card border-t-4 border-t-primary p-8 rounded-b-md shadow-sm">
+<h3 class="font-serif text-2xl font-bold text-white leading-tight mb-4">Katalogi B2B i systemy zam&#243;wie&#324;</h3>
+<p class="text-foreground/70 leading-relaxed font-light whitespace-pre-line text-left">Dedykowane katalogi produkt&#243;w, systemy zapyta&#324;, procesy wycenowe i interfejsy zam&#243;wie&#324; B2B. W zale&#380;no&#347;ci od projektu mog&#261; obejmowa&#263; konta klient&#243;w, informacje przypisane do kont, zapytania zbiorcze oraz integracje API z us&#322;ugami zewn&#281;trznymi.
+
+Typowy dedykowany katalog lub system zam&#243;wie&#324; B2B mo&#380;e wymaga&#263; oko&#322;o 6-10 tygodni od momentu uzgodnienia specyfikacji i dostarczenia tre&#347;ci oraz dost&#281;pu potrzebnego do integracji. Bardziej z&#322;o&#380;one systemy planuj&#281; i wyceniam indywidualnie.</p>
+</div>
+<div id="web-systems" class="scroll-mt-28 bg-card border-t-4 border-t-primary p-8 rounded-b-md shadow-sm">
+<h3 class="font-serif text-2xl font-bold text-white leading-tight mb-4">Dedykowane narz&#281;dzia webowe i integracje API</h3>
+<p class="text-foreground/70 leading-relaxed font-light whitespace-pre-line text-left">Portale dealerskie, narz&#281;dzia do tworzenia specyfikacji, wieloj&#281;zyczne systemy wycen, dedykowane formularze i integracje proces&#243;w dopasowane do sposobu dzia&#322;ania firmy.
+
+Korzystam z narz&#281;dzi wspomaganych przez AI, aby przyspieszy&#263; odpowiednie etapy developmentu, zachowuj&#261;c bezpo&#322;redni&#261; kontrol&#281; nad architektur&#261;, konfiguracj&#261;, testami, bezpiecze&#324;stwem i ko&#243;cowym wdro&#380;eniem. Ka&#380;d&#261; integracj&#281; API oceniam indywidualnie na podstawie systemu zewn&#281;trznego i jego dokumentacji.</p>
+</div>
+</div>
+</div>
 </section>
-<section id="contact">
-<h2>Rozpocznij rozmowę</h2>
-<p>Opowiedz, co chcesz zbudować.</p>
-<p>Napisz kilka szczegółów, a odpowiemy z konkretną propozycją kolejnego kroku.</p>
-<p>Email: <!--email_off--><a href="mailto:hello@forsadesign.co.uk">hello@forsadesign.co.uk</a><!--/email_off--></p>
-<p>Telefon: <a href="tel:07770110735">07770110735</a></p>
+<section class="w-full bg-card border-t border-primary/40 py-24 px-6">
+<div class="max-w-3xl mx-auto text-center">
+<h2 class="text-2xl md:text-[32px] font-serif font-bold text-white leading-tight mb-4">Czy Twoja strona daje kupuj&#261;cy informacje, kt&#243;rych potrzebuj&#261;?</h2>
+<p class="text-base text-foreground/60 leading-relaxed mb-8">Pobierz darmow&#261; checklist&#281;. 10 punkt&#243;w. 5 minut. Sprawd&#378; informacje, u&#380;yteczno&#347;&#263; i elementy buduj&#261;ce wiarygodno&#347;&#263;, na kt&#243;re mo&#380;e zwraca&#263; uwag&#281; klient B2B przed kontaktem z dostawc&#261;.</p>
+<div class="flex flex-col items-center gap-3">
+<button type="button" class="w-full sm:w-auto max-w-[320px] sm:max-w-none inline-flex items-center justify-center px-8 py-3.5 rounded-md bg-primary text-primary-foreground font-semibold">Pobierz darmow&#261; checklist&#281;</button>
+<span class="text-sm text-foreground/60">Albo popro&#347; o wycen&#281;</span>
+</div>
+</div>
 </section>
-</main>
-<footer>
-<div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:12px;">
-<p>&#169; 2026 Forsa Design. Wszystkie prawa zastrze&#380;one.</p>
-<a href="https://marketingplatform.google.com/about/analytics/" target="_blank" rel="noopener noreferrer" aria-label="Measured with Google Analytics">
-<img src="/analytics-badge.webp" alt="Measured with Google Analytics" width="182" height="48" loading="lazy" decoding="async" style="height:24px;width:auto;opacity:0.8;">
+<section id="pricing" class="py-24 bg-background border-y border-border/10">
+<div class="container mx-auto px-6">
+<div class="mb-12 md:text-center">
+<h2 class="font-serif text-4xl md:text-5xl font-bold text-white leading-tight mb-4">Ile to kosztuje?</h2>
+<p class="text-lg text-foreground/70 max-w-2xl md:mx-auto">Ka&#380;dy projekt wyceniam indywidualnie na podstawie wymaganych funkcji, tre&#347;ci i integracji.</p>
+<div class="w-16 h-1 bg-primary md:mx-auto mt-6"></div>
+</div>
+<div class="max-w-3xl mx-auto">
+<div class="border border-border/20 rounded-lg overflow-hidden">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 p-6 border-b border-border/10"><span class="font-medium text-white">Projekty stron internetowych</span><span class="text-foreground/70">Wycena indywidualna</span></div>
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 p-6 border-b border-border/10"><span class="font-medium text-white">Dedykowane katalogi B2B i systemy zam&#243;wie&#324;</span><span class="text-foreground/70">Wycena indywidualna</span></div>
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 p-6 border-b border-border/10"><span class="font-medium text-white">Dedykowane narz&#281;dzia webowe i integracje API</span><span class="text-foreground/70">Wycena indywidualna</span></div>
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 p-6"><span class="font-medium text-white">Sta&#322;e wsparcie</span><span class="text-foreground/70">Opcjonalne, wyceniane wed&#380;ug wymaga&#324; dotycz&#261;cych hostingu, utrzymania i zakresu obs&#322;ugi</span></div>
+</div>
+<div class="mt-10 flex flex-col items-center gap-6 text-center">
+<a href="/pl/quote" class="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-lg bg-primary text-primary-foreground font-semibold">Uzyskaj indywidualn&#261; wycen&#261;</a>
+<p class="text-sm text-foreground/50 max-w-xl">Ostateczna cena zale&#380;y od uzgodnionego zakresu, funkcjonalno&#347;ci, wymaga&#324; dotycz&#261;cych tre&#347;ci i integracji z systemami zewn&#281;trznymi.</p>
+<p class="text-sm text-foreground/50 max-w-2xl">Narz&#281;dzia wspomagane przez AI mog&#261; ograniczy&#263; czas po&#347;wi&#281;cany na powtarzalne zadania developerskie. Ten czas wykorzystuj&#281; tam, gdzie ma wi&#281;ksze znaczenie: na architektur&#281;, wdro&#380;enie, testy, struktur&#281; tre&#347;ci, wydajno&#347;&#263; i biznesowy cel strony.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="process" class="py-24 bg-card">
+<div class="container mx-auto px-6">
+<div class="mb-16 md:text-center">
+<h2 class="font-serif text-4xl md:text-5xl font-bold text-white leading-tight mb-4">Jak pracuj&#281;</h2>
+<div class="w-16 h-1 bg-primary md:mx-auto"></div>
+</div>
+<div class="relative">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8">
+<div class="relative flex md:flex-col items-start gap-6 md:gap-8">
+<div class="relative z-10 flex-shrink-0 w-12 h-12 rounded-full border-2 border-primary bg-background flex items-center justify-center text-primary font-serif font-bold text-xl">1</div>
+<div class="flex-1">
+<h3 class="font-serif text-xl font-bold text-white leading-tight mb-3">Analiza i audyt</h3>
+<p class="text-foreground/70 font-light leading-relaxed text-left">Analizuj&#281; obecn&#261; stron&#281;, wymagania biznesowe, konkurencj&#281;, grup&#281; docelow&#261; oraz informacje potrzebne klientom do oceny Twojej firmy.</p>
+</div>
+</div>
+<div class="relative flex md:flex-col items-start gap-6 md:gap-8">
+<div class="relative z-10 flex-shrink-0 w-12 h-12 rounded-full border-2 border-primary bg-background flex items-center justify-center text-primary font-serif font-bold text-xl">2</div>
+<div class="flex-1">
+<h3 class="font-serif text-xl font-bold text-white leading-tight mb-3">Specyfikacja i projekt</h3>
+<p class="text-foreground/70 font-light leading-relaxed text-left">Przed rozpocz&#281;ciem developmentu okre&#347;lam struktur&#281;, funkcjonalno&#347;&#263; i wymagania techniczne. Projekt powstaje z my&#347;l&#261; o czytelnej komunikacji, u&#380;yteczno&#347;ci i biznesowym celu strony.</p>
+</div>
+</div>
+<div class="relative flex md:flex-col items-start gap-6 md:gap-8">
+<div class="relative z-10 flex-shrink-0 w-12 h-12 rounded-full border-2 border-primary bg-background flex items-center justify-center text-primary font-serif font-bold text-xl">3</div>
+<div class="flex-1">
+<h3 class="font-serif text-xl font-bold text-white leading-tight mb-3">Development</h3>
+<p class="text-foreground/70 font-light leading-relaxed text-left">Buduj&#281; stron&#281; lub system webowy przy u&#380;yciu nowoczesnego procesu developmentu, w tym narz&#281;dzi wspomaganych przez AI tam, gdzie ma to sens. Sam sprawdzam i dopracowuj&#281; wdro&#380;enie, zwracaj&#261;c uwag&#281; na wydajno&#347;&#263;, bezpiecze&#324;stwo, SEO i dost&#281;pno&#347;&#263;.</p>
+</div>
+</div>
+<div class="relative flex md:flex-col items-start gap-6 md:gap-8">
+<div class="relative z-10 flex-shrink-0 w-12 h-12 rounded-full border-2 border-primary bg-background flex items-center justify-center text-primary font-serif font-bold text-xl">4</div>
+<div class="flex-1">
+<h3 class="font-serif text-xl font-bold text-white leading-tight mb-3">Testy i uruchomienie</h3>
+<p class="text-foreground/70 font-light leading-relaxed text-left">Przed uruchomieniem testuj&#281; wdro&#380;enie na odpowiednich urz&#281;dzeniach i przegl&#261;darkach oraz sprawdzam wydajno&#347;&#263;, dost&#281;pno&#347;&#263;, SSL, konfiguracj&#281; bezpiecze&#324;stwa, podstawy SEO i wymagania zwi&#261;zane z GDPR.</p>
+</div>
+</div>
+<div class="relative flex md:flex-col items-start gap-6 md:gap-8">
+<div class="relative z-10 flex-shrink-0 w-12 h-12 rounded-full border-2 border-primary bg-background flex items-center justify-center text-primary font-serif font-bold text-xl">5</div>
+<div class="flex-1">
+<h3 class="font-serif text-xl font-bold text-white leading-tight mb-3">Opcjonalne wsparcie</h3>
+<p class="text-foreground/70 font-light leading-relaxed text-left">Po uruchomieniu mog&#281; zapewni&#263; dalsze wsparcie jako oddzieln&#261; p&#322;atn&#261; us&#322;ug&#281;. W zale&#380;no&#347;ci od potrzeb mo&#380;e ono obejmowa&#263; hosting, kopie zapasowe, utrzymanie bezpiecze&#324;stwa, aktualizacje i uzgodnione zmiany na stronie.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="faq" class="py-24 bg-background">
+<div class="container mx-auto px-6 max-w-3xl">
+<div class="mb-16 text-center">
+<h2 class="font-serif text-4xl md:text-5xl font-bold text-white leading-tight mb-4">Najcz&#281;stsze pytania</h2>
+<div class="w-16 h-1 bg-primary mx-auto mb-6"></div>
+<p class="text-foreground/60 font-light text-lg">Konkretne odpowiedzi dla firm przemys&#322;owych, in&#380;ynieryjnych i zespo&#322;&#243;w zakupowych.</p>
+</div>
+<div class="divide-y divide-border/20 border border-border/20 rounded-md overflow-hidden">
+<div id="faq-1" class="bg-card scroll-mt-24">
+<details>
+<summary class="w-full flex items-center justify-between px-6 py-5 text-left cursor-pointer"><span class="font-medium text-white pr-6 leading-snug text-sm md:text-base">Czy u&#380;ywasz WordPressa lub szablon&#243;w?</span></summary>
+<div class="px-6 pb-6 pt-0">
+<p class="text-foreground/70 font-light leading-relaxed text-sm md:text-base">Nie. Buduj&#281; dedykowane strony i systemy webowe bez WordPressa, kreator&#243;w typu Elementor i gotowych szablon&#243;w. Korzystam z narz&#281;dzi wspomaganych przez AI tam, gdzie przyspieszaj&#261; prac&#281;, a nast&#281;pnie sam sprawdzam, konfiguruj&#281; i optymalizuj&#281; wdro&#380;enie.</p>
+</div>
+</details>
+</div>
+<div id="faq-2" class="bg-card scroll-mt-24">
+<details>
+<summary class="w-full flex items-center justify-between px-6 py-5 text-left cursor-pointer"><span class="font-medium text-white pr-6 leading-snug text-sm md:text-base">Ile trwa projekt?</span></summary>
+<div class="px-6 pb-6 pt-0">
+<p class="text-foreground/70 font-light leading-relaxed text-sm md:text-base">Typowy projekt strony firmowej zajmuje oko&#322;o dziewi&#281;ciu tygodni. Bardziej rozbudowane systemy webowe, katalogi i integracje API zwykle wymagaj&#261; wi&#281;cej czasu. Termin ustalam indywidualnie po okre&#347;leniu zakresu.</p>
+</div>
+</details>
+</div>
+<div id="faq-3" class="bg-card scroll-mt-24">
+<details>
+<summary class="w-full flex items-center justify-between px-6 py-5 text-left cursor-pointer"><span class="font-medium text-white pr-6 leading-snug text-sm md:text-base">Co je&#347;li nie mam profesjonalnych zdj&#281;&#263;?</span></summary>
+<div class="px-6 pb-6 pt-0">
+<p class="text-foreground/70 font-light leading-relaxed text-sm md:text-base">Pracuj&#281; z materia&#322;ami, kt&#243;re masz, i okre&#347;lam, czego rzeczywi&#347;cie brakuje. W przypadku firmy przemys&#322;owej autentyczne zdj&#281;cia zak&#322;adu, urz&#261;dze&#324; i realizacji s&#261; cz&#281;sto bardziej warto&#347;ciowe ni&#261; og&#243;lne zdj&#281;cia stockowe.</p>
+</div>
+</details>
+</div>
+<div id="faq-4" class="bg-card scroll-mt-24">
+<details>
+<summary class="w-full flex items-center justify-between px-6 py-5 text-left cursor-pointer"><span class="font-medium text-white pr-6 leading-snug text-sm md:text-base">Czy oferujesz wsparcie po wdro&#380;eniu?</span></summary>
+<div class="px-6 pb-6 pt-0">
+<p class="text-foreground/70 font-light leading-relaxed text-sm md:text-base">Tak. Sta&#322;e wsparcie jest opcjonaln&#261;, dodatkowo p&#322;atn&#261; us&#322;ug&#261;. Mo&#380;e obejmowa&#263; hosting, kopie zapasowe, utrzymanie bezpiecze&#324;stwa, aktualizacje i uzgodnione zmiany na stronie. Cena zale&#380;y od projektu i wymaganego zakresu obs&#322;ugi.</p>
+</div>
+</details>
+</div>
+<div id="faq-5" class="bg-card scroll-mt-24">
+<details>
+<summary class="w-full flex items-center justify-between px-6 py-5 text-left cursor-pointer"><span class="font-medium text-white pr-6 leading-snug text-sm md:text-base">Czy mo&#380;esz zintegrowa&#261; stron&#281; z naszymi systemami?</span></summary>
+<div class="px-6 pb-6 pt-0">
+<p class="text-foreground/70 font-light leading-relaxed text-sm md:text-base">Integracje API s&#261; jednym z g&#322;&#243;wnych sposob&#243;w &#322;&#261;czenia stron i system&#243;w webowych z us&#322;ugami zewn&#281;trznymi. Mo&#380;liwo&#347;&#263; integracji zale&#380;y od dost&#281;pnego API, dokumentacji, uprawnie&#324; i wymaga&#324; danego systemu.</p>
+</div>
+</details>
+</div>
+</div>
+<div class="mt-12 text-center"><a href="/pl/comparison" class="text-primary font-medium">Zobacz pe&#322;ne por&#243;wnanie</a></div>
+</div>
+</section>
+<section class="py-24 bg-card border-t border-border/10">
+<div class="container mx-auto px-6 text-center">
+<div class="max-w-3xl mx-auto">
+<h2 class="font-serif text-4xl md:text-5xl font-bold text-white leading-tight mb-6">Potrzebujesz lepszej strony lub systemu webowego?</h2>
+<p class="text-lg md:text-xl text-foreground/70 font-light mb-10 leading-relaxed">Powiedz mi, czego potrzebuje Twoja firma. Oceni&#281; zakres i zaproponuj&#281; praktyczne rozwi&#261;zanie techniczne.</p>
+<a href="#contact" class="inline-flex items-center justify-center px-8 py-4 bg-primary text-primary-foreground font-semibold text-lg rounded-sm">Porozmawiajmy</a>
+</div>
+</div>
+</section>
+<section id="contact" class="py-24 bg-background border-t border-border/10 relative overflow-hidden">
+<div class="container mx-auto px-6 relative">
+<div class="text-center mb-16">
+<h2 class="font-serif text-4xl md:text-5xl font-bold text-white leading-tight mb-4">Kontakt</h2>
+<div class="w-16 h-1 bg-primary mx-auto"></div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+<div class="h-full flex flex-col items-center justify-center text-center p-8 md:p-10 rounded-sm border border-primary/20 bg-background/60">
+<p class="text-foreground/50 text-sm uppercase tracking-widest mb-2 font-medium">Osoba kontaktowa</p>
+<p class="text-white text-sm md:text-base font-semibold leading-snug break-all">Miro</p>
+</div>
+<a href="mailto:hello@forsadesign.co.uk" class="h-full flex flex-col items-center justify-center text-center p-8 md:p-10 rounded-sm border border-primary/20 bg-background/60">
+<p class="text-foreground/50 text-sm uppercase tracking-widest mb-2 font-medium">Email</p>
+<p class="text-white text-sm md:text-base font-semibold leading-snug break-all">hello@forsadesign.co.uk</p>
+</a>
+<a href="tel:07770110735" class="h-full flex flex-col items-center justify-center text-center p-8 md:p-10 rounded-sm border border-primary/20 bg-background/60">
+<p class="text-foreground/50 text-sm uppercase tracking-widest mb-2 font-medium">Telefon</p>
+<p class="text-white text-sm md:text-base font-semibold leading-snug break-all">07770110735</p>
+</a>
+<a href="https://www.linkedin.com/in/miroslaw-potaczek" target="_blank" rel="noopener noreferrer" class="h-full flex flex-col items-center justify-center text-center p-8 md:p-10 rounded-sm border border-primary/20 bg-background/60">
+<p class="text-foreground/50 text-sm uppercase tracking-widest mb-2 font-medium">LinkedIn</p>
+<p class="text-white text-sm md:text-base font-semibold leading-snug break-all">miroslaw-potaczek</p>
 </a>
 </div>
-<nav><a href="/pl/terms">Regulamin i Warunki</a> | <a href="/pl/privacy">Polityka Prywatno&#347;sci</a></nav>
+</div>
+</section>
+<section class="bg-card py-24">
+<div class="container mx-auto grid max-w-5xl gap-12 px-6 md:grid-cols-[0.8fr_1.2fr]">
+<div>
+<p class="mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-primary">Rozpocznij rozmow&#281;</p>
+<h2 class="font-serif text-3xl font-bold text-white md:text-4xl">Opowiedz, co chcesz zbudowa&#263;.</h2>
+</div>
+<div>
+<form method="post" class="space-y-5">
+<input type="hidden" name="language" value="pl" />
+<div><label for="cf-name" class="block text-sm font-medium text-foreground/70 mb-2">Imi&#281; i nazwisko</label><input id="cf-name" name="name" type="text" required class="w-full bg-background border border-border/30 rounded-md px-4 py-3 text-sm text-white" /></div>
+<div><label for="cf-email" class="block text-sm font-medium text-foreground/70 mb-2">Email</label><input id="cf-email" name="email" type="email" required class="w-full bg-background border border-border/30 rounded-md px-4 py-3 text-sm text-white" /></div>
+<div><label for="cf-message" class="block text-sm font-medium text-foreground/70 mb-2">Wiadomo&#347;&#263;</label><textarea id="cf-message" name="message" rows="5" required class="w-full bg-background border border-border/30 rounded-md px-4 py-3 text-sm text-white"></textarea></div>
+<input type="text" name="_gotcha" tabindex="-1" autocomplete="off" class="hidden" aria-hidden="true" />
+<button type="submit" class="inline-flex items-center justify-center px-8 py-3.5 rounded-lg bg-primary text-primary-foreground font-semibold">Wy&#347;lij wiadomo&#347;&#263;</button>
+</form>
+</div>
+</div>
+</section>
+<footer class="bg-background py-12 border-t border-border/10">
+<div class="container mx-auto px-6">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 mb-12">
+<div>
+<p class="font-serif text-xl tracking-[0.2em] font-bold text-white uppercase mb-4">Forsa Design</p>
+<p class="text-foreground/60 font-light mb-2">Dedykowany web development dla technicznego B2B.</p>
+<p class="text-foreground/60 font-light mb-4">Banff, Aberdeenshire, Szkocja</p>
+<div class="space-y-2">
+<p class="text-sm text-foreground/50">Osoba kontaktowa: <span class="text-foreground/70">Miro</span></p>
+<a href="mailto:hello@forsadesign.co.uk" class="flex items-center gap-2 text-sm text-foreground/60 hover:text-primary transition-colors w-fit" data-testid="footer-link-email">hello@forsadesign.co.uk</a>
+<a href="tel:07770110735" class="flex items-center gap-2 text-sm text-foreground/60 hover:text-primary transition-colors w-fit" data-testid="footer-link-phone">07770110735</a>
+<a href="https://www.linkedin.com/in/miroslaw-potaczek" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-sm text-foreground/60 hover:text-primary transition-colors w-fit">LinkedIn</a>
+</div>
+</div>
+<div class="flex flex-col gap-3">
+<a href="/pl/#home" class="text-sm font-medium text-foreground/70 hover:text-primary transition-colors w-fit">Strona g&#322;&#243;wna</a>
+<a href="/pl/#services" class="text-sm font-medium text-foreground/70 hover:text-primary transition-colors w-fit">Us&#322;ugi</a>
+<a href="/pl/#pricing" class="text-sm font-medium text-foreground/70 hover:text-primary transition-colors w-fit">Ceny</a>
+<a href="/pl/#process" class="text-sm font-medium text-foreground/70 hover:text-primary transition-colors w-fit">Proces</a>
+<a href="/pl/o-nas/" class="text-sm font-medium text-foreground/70 hover:text-primary transition-colors w-fit">O mnie</a>
+<a href="/pl/#contact" class="text-sm font-medium text-foreground/70 hover:text-primary transition-colors w-fit">Kontakt</a>
+<a href="/pl/#faq" class="text-sm font-medium text-foreground/70 hover:text-primary transition-colors w-fit">FAQ</a>
+<a href="/pl/comparison/" class="text-sm font-medium text-foreground/70 hover:text-primary transition-colors w-fit">Por&#243;wnanie</a>
+<a href="/pl/quote/" class="text-sm font-medium text-foreground/70 hover:text-primary transition-colors w-fit">Wycena</a>
+<a href="/pl/pay/" class="text-sm font-medium text-foreground/70 hover:text-primary transition-colors w-fit">Zap&#322;a&#263; faktur&#281;</a>
+</div>
+</div>
+<div class="pt-8 border-t border-border/20 text-sm text-foreground/40 font-light">
+<div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-4">
+<p class="text-center md:text-left">&#169; 2026 Forsa Design. Wszystkie prawa zastrze&#380;one.</p>
+</div>
+<a href="/pl/terms/" class="hover:text-primary transition-colors mr-4 inline-block py-3 -my-2" data-testid="footer-link-terms">Regulamin</a>
+<a href="/pl/privacy/" class="hover:text-primary transition-colors mr-4 inline-block py-3 -my-2" data-testid="footer-link-privacy">Polityka prywatno&#347;ci</a>
+<span class="inline-block py-3 -my-2" data-testid="footer-link-cookie-preferences">Ustawienia cookies</span>
+</div>
+</div>
 </footer>`;
 }
 
