@@ -59,6 +59,7 @@ const CHECKOUT_MAX_BODY_BYTES = 4_000;
 const STRIPE_WEBHOOK_MAX_BODY_BYTES = 256 * 1024;
 const CUSTOM_MIN_GBP = 1;
 const CUSTOM_MAX_GBP = 50_000;
+const HSTS = "max-age=63072000; includeSubDomains; preload";
 
 // step -> minimum days since signup before it is due
 const FOLLOW_UP_SCHEDULE: Record<number, number> = { 2: 3, 3: 7, 4: 14 };
@@ -75,7 +76,11 @@ function corsHeaders(origin: string | null): Record<string, string> {
 function json(data: unknown, status = 200, origin: string | null = null): Response {
   return new Response(JSON.stringify(data), {
     status,
-    headers: { "content-type": "application/json; charset=utf-8", ...corsHeaders(origin) },
+    headers: {
+      "content-type": "application/json; charset=utf-8",
+      "strict-transport-security": HSTS,
+      ...corsHeaders(origin),
+    },
   });
 }
 
@@ -723,22 +728,38 @@ async function handleCheckoutCustom(
 }
 
 async function handleStripeWebhook(request: Request, env: Env): Promise<Response> {
-  if (!env.STRIPE_WEBHOOK_SECRET) return new Response("Webhook not configured.", { status: 503 });
+  if (!env.STRIPE_WEBHOOK_SECRET)
+    return new Response("Webhook not configured.", {
+      status: 503,
+      headers: { "strict-transport-security": HSTS },
+    });
 
   const rawBody = await readBody(request, STRIPE_WEBHOOK_MAX_BODY_BYTES);
-  if (rawBody === null) return new Response("Payload too large.", { status: 413 });
+  if (rawBody === null)
+    return new Response("Payload too large.", {
+      status: 413,
+      headers: { "strict-transport-security": HSTS },
+    });
 
   const valid = await verifyStripeSignature(
     rawBody,
     request.headers.get("stripe-signature"),
     env.STRIPE_WEBHOOK_SECRET,
   );
-  if (!valid) return new Response("Invalid signature.", { status: 400 });
+  if (!valid)
+    return new Response("Invalid signature.", {
+      status: 400,
+      headers: { "strict-transport-security": HSTS },
+    });
 
   const event = await Promise.resolve()
     .then(() => JSON.parse(rawBody))
     .catch(() => null);
-  if (!event || typeof event !== "object") return new Response("Invalid payload.", { status: 400 });
+  if (!event || typeof event !== "object")
+    return new Response("Invalid payload.", {
+      status: 400,
+      headers: { "strict-transport-security": HSTS },
+    });
 
   if (event.type === "checkout.session.completed" && env.LEADS) {
     const session = (event as { data?: { object?: Record<string, unknown> } }).data?.object;
@@ -784,14 +805,17 @@ async function handleStripeWebhook(request: Request, env: Env): Promise<Response
 
   return new Response(JSON.stringify({ received: true }), {
     status: 200,
-    headers: { "content-type": "application/json" },
+    headers: { "content-type": "application/json", "strict-transport-security": HSTS },
   });
 }
 
 export default {
   async fetch(request: Request, env: Env): Promise<Response> {
     const origin = request.headers.get("origin");
-    if (request.method === "OPTIONS") return new Response(null, { headers: corsHeaders(origin) });
+    if (request.method === "OPTIONS")
+      return new Response(null, {
+        headers: { ...corsHeaders(origin), "strict-transport-security": HSTS },
+      });
     const path = new URL(request.url).pathname;
     if (request.method === "GET" && path === "/api/healthz")
       return json({ status: "ok" }, 200, origin);
