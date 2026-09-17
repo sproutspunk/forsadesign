@@ -3,6 +3,14 @@ import worker from "../src/index";
 
 const OWNER_EMAIL = "hello@forsadesign.co.uk";
 
+function isResendUrl(url: string): boolean {
+  try {
+    return new URL(url).origin === "https://api.resend.com";
+  } catch {
+    return false;
+  }
+}
+
 interface TestKV {
   get(key: string): Promise<string | null>;
   put(key: string, value: string): Promise<void>;
@@ -155,7 +163,7 @@ describe("Worker", () => {
     it("sends contact email and confirmation", async () => {
       const sent: { url: string; init: RequestInit }[] = [];
       mockFetch(async (url, init) => {
-        if (url.includes("api.resend.com")) {
+        if (isResendUrl(url)) {
           sent.push({ url, init });
           return Response.json({ id: "email-id" });
         }
@@ -175,7 +183,7 @@ describe("Worker", () => {
     it("stores contact and returns ok when Resend fails", async () => {
       const kv = createKV();
       mockFetch(async (url) => {
-        if (url.includes("api.resend.com")) return new Response("Internal error", { status: 500 });
+        if (isResendUrl(url)) return new Response("Internal error", { status: 500 });
         return undefined;
       });
       const res = await worker.fetch(
@@ -190,7 +198,7 @@ describe("Worker", () => {
 
     it("rate limits repeated requests", async () => {
       mockFetch(async (url) => {
-        if (url.includes("api.resend.com")) return Response.json({ id: "x" });
+        if (isResendUrl(url)) return Response.json({ id: "x" });
         return undefined;
       });
       const env = createEnv();
@@ -233,7 +241,7 @@ describe("Worker", () => {
       const sent: string[] = [];
       const kv = createKV();
       mockFetch(async (url) => {
-        if (url.includes("api.resend.com")) {
+        if (isResendUrl(url)) {
           sent.push(url);
           return Response.json({ id: "x" });
         }
@@ -271,7 +279,7 @@ describe("Worker", () => {
     it("sends waitlist confirmation and stores signup", async () => {
       const kv = createKV();
       mockFetch(async (url) => {
-        if (url.includes("api.resend.com")) return Response.json({ id: "x" });
+        if (isResendUrl(url)) return Response.json({ id: "x" });
         return undefined;
       });
       const res = await worker.fetch(
@@ -289,7 +297,7 @@ describe("Worker", () => {
     it("stores waitlist signup even when email delivery fails", async () => {
       const kv = createKV();
       mockFetch(async (url) => {
-        if (url.includes("api.resend.com")) return new Response("Bad Gateway", { status: 502 });
+        if (isResendUrl(url)) return new Response("Bad Gateway", { status: 502 });
         return undefined;
       });
       const res = await worker.fetch(
@@ -343,7 +351,7 @@ describe("Worker", () => {
     it("sends quote to client and owner", async () => {
       const sent: string[] = [];
       mockFetch(async (url) => {
-        if (url.includes("api.resend.com")) {
+        if (isResendUrl(url)) {
           sent.push(url);
           return Response.json({ id: "q" });
         }

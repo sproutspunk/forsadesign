@@ -1,11 +1,10 @@
 import { Router, type IRouter } from "express";
 import rateLimit, { ipKeyGenerator } from "express-rate-limit";
-import { realClientIp } from "./contact";
+import { isValidEmail, realClientIp } from "./contact";
 
 const router: IRouter = Router();
 const OWNER_EMAIL = "hello@forsadesign.co.uk";
 const FROM = "Forsa Design <hello@forsadesign.co.uk>";
-const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 const waitlistLimiter = rateLimit({
   windowMs: 15 * 60 * 1000,
@@ -32,7 +31,7 @@ router.post("/waitlist", waitlistLimiter, async (req, res) => {
   const email = typeof req.body?.email === "string" ? req.body.email.trim() : "";
   const language = req.body?.language === "pl" ? "pl" : "en";
 
-  if (!email || !emailPattern.test(email) || email.length > 320) {
+  if (!email || !isValidEmail(email) || email.length > 320) {
     res.status(400).json({ error: "A valid email address is required." });
     return;
   }
