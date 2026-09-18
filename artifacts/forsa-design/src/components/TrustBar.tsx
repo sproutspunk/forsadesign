@@ -137,14 +137,13 @@ export default function TrustBar() {
   return (
     <div className="mt-10 flex flex-col items-center gap-4">
       {/* metric badges */}
-      <div className="flex flex-wrap justify-center gap-3" role="list">
+      <div className="flex flex-wrap justify-center gap-3">
         {metrics.map(({ key, labelKey, value, icon }) => {
           const isCo2 = key === "co2";
           const Tag = isCo2 ? "a" : "div";
           return (
             <Tag
               key={key}
-              role="listitem"
               {...(isCo2
                 ? {
                     href: "https://digitalbeacon.co/",

@@ -25,7 +25,7 @@ import { fileURLToPath } from "url";
 import { articles } from "./src/data/articlesData.ts";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const distDir = join(__dirname, "dist/public");
+const distDir = join(__dirname, "..", "..", "dist/public");
 const SITE = "https://forsadesign.co.uk";
 
 /** Encode plain text for safe insertion into an HTML attribute value. */
@@ -155,11 +155,14 @@ function patch(html, meta) {
     .join("\n");
   out = out.replace(/(rel="canonical"[^>]*\/>)/, `$1\n${altLines}`);
 
-  // Preload the actual hero LCP image on every prerendered page.
-  if (!out.includes('href="/logo-hero-384.webp"')) {
+  // Preload the hero LCP image only on pages that actually render it
+  // (homepage EN/PL). The preload href must match the <img> src exactly
+  // (including ?v=17) - different URLs are different browser cache keys,
+  // so a mismatched preload is wasted and the image is fetched twice.
+  if (meta.bodyHtml?.includes("logo-hero-384.webp") && !out.includes('rel="preload" as="image"')) {
     out = out.replace(
       /(\s*<\/head>)/,
-      `\n    <link rel="preload" as="image" href="/logo-hero-384.webp" type="image/webp" fetchpriority="high" />$1`,
+      `\n    <link rel="preload" as="image" href="/logo-hero-384.webp?v=17" type="image/webp" fetchpriority="high" />$1`,
     );
   }
 
@@ -171,7 +174,7 @@ function patch(html, meta) {
     const skipText = meta.lang === "pl" ? "Przejdź do treści" : "Skip to main content";
     out = out.replace(
       /<div\s+id="root">\s*<\/div>/,
-      `<div id="root" data-prerendered="true">\n<a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] focus:rounded-sm focus:bg-primary focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-primary-foreground">${skipText}</a>\n<div id="main-content">\n${meta.bodyHtml}\n</div>\n</div>`,
+      `<div id="root" data-prerendered="true">\n<a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] focus:rounded-sm focus:bg-primary focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-primary-foreground">${skipText}</a>\n<div class="prerendered-page">\n${meta.bodyHtml}\n</div>\n</div>`,
     );
   }
 
@@ -208,20 +211,20 @@ function buildHomepageBodyEn() {
 <section id="home" class="relative min-h-[62dvh] flex items-center justify-center py-16 md:py-20 overflow-hidden">
 <div class="container mx-auto px-6 relative z-10">
 <div class="max-w-5xl mx-auto text-center flex flex-col items-center">
-<img src="/logo-hero-384.webp?v=17" alt="Forsa Design" width="384" height="317" loading="eager" decoding="async" class="w-64 md:w-80 lg:w-96 h-auto object-contain block mx-auto mb-2" />
+<img src="/logo-hero-384.webp?v=17" alt="Forsa Design" width="384" height="317" loading="eager" fetchpriority="high" decoding="async" class="w-64 md:w-80 lg:w-96 h-auto object-contain block mx-auto mb-2" />
 <div class="w-20 h-px bg-primary mb-6 mt-4"></div>
 <h1 class="text-4xl md:text-5xl lg:text-6xl font-serif font-bold tracking-tight leading-tight mb-4 max-w-4xl">Websites and Web Systems for Industry</h1>
 <p class="text-lg md:text-xl text-foreground/80 font-medium mb-5 max-w-3xl text-balance">No templates. No page builders. Custom websites and web systems built for technical B2B companies.</p>
 <p class="text-base md:text-lg text-foreground/60 font-light leading-relaxed mb-8 max-w-[65ch] text-left">You know your industry. I understand how industrial buyers evaluate suppliers. I have more than 20 years of experience in international B2B sales, including metalworking machinery, industrial equipment and engineering solutions across Europe and Asia. Forsa Design combines that commercial experience with modern web development to build websites and web systems for industrial, engineering and technical businesses. Based in Banff, Aberdeenshire. Available to work with clients in the UK and internationally.</p>
 <a href="#contact" data-testid="btn-hero-cta" class="inline-flex items-center justify-center px-8 py-4 bg-primary text-primary-foreground font-semibold text-lg rounded-sm">Request a Quote</a>
-<div class="mt-10 flex flex-col items-center gap-4" role="list">
-<div class="flex flex-wrap justify-center gap-3" role="list">
-<div role="listitem" class="flex items-center gap-2.5 px-4 py-3 border border-slate-400/15 rounded-lg"><div><div class="text-[11px] text-foreground/40 uppercase tracking-[0.07em] leading-none mb-1">PageSpeed desktop</div><div class="text-[15px] font-medium text-slate-100 leading-none">100 / 100</div></div></div>
-<div role="listitem" class="flex items-center gap-2.5 px-4 py-3 border border-slate-400/15 rounded-lg"><div><div class="text-[11px] text-foreground/40 uppercase tracking-[0.07em] leading-none mb-1">PageSpeed mobile</div><div class="text-[15px] font-medium text-slate-100 leading-none">95 / 100</div></div></div>
-<div role="listitem" class="flex items-center gap-2.5 px-4 py-3 border border-slate-400/15 rounded-lg"><div><div class="text-[11px] text-foreground/40 uppercase tracking-[0.07em] leading-none mb-1">SSL Labs</div><div class="text-[15px] font-medium text-slate-100 leading-none">Grade A+</div></div></div>
-<div role="listitem" class="flex items-center gap-2.5 px-4 py-3 border border-slate-400/15 rounded-lg"><div><div class="text-[11px] text-foreground/40 uppercase tracking-[0.07em] leading-none mb-1">Mozilla Observatory</div><div class="text-[15px] font-medium text-slate-100 leading-none">105 / 100</div></div></div>
-<a role="listitem" href="https://digitalbeacon.co/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2.5 px-4 py-3 border border-slate-400/15 rounded-lg"><div><div class="text-[11px] text-foreground/40 uppercase tracking-[0.07em] leading-none mb-1">CO&#x2082; per visit</div><div class="text-[15px] font-medium text-slate-100 leading-none">0.07 g</div></div></a>
-<div role="listitem" class="flex items-center gap-2.5 px-4 py-3 border border-slate-400/15 rounded-lg"><div><div class="text-[11px] text-foreground/40 uppercase tracking-[0.07em] leading-none mb-1">Accessibility</div><div class="text-[15px] font-medium text-slate-100 leading-none">100 / 100</div></div></div>
+<div class="mt-10 flex flex-col items-center gap-4">
+<div class="flex flex-wrap justify-center gap-3">
+<div class="flex items-center gap-2.5 px-4 py-3 border border-slate-400/15 rounded-lg"><div><div class="text-[11px] text-foreground/40 uppercase tracking-[0.07em] leading-none mb-1">PageSpeed desktop</div><div class="text-[15px] font-medium text-slate-100 leading-none">100 / 100</div></div></div>
+<div class="flex items-center gap-2.5 px-4 py-3 border border-slate-400/15 rounded-lg"><div><div class="text-[11px] text-foreground/40 uppercase tracking-[0.07em] leading-none mb-1">PageSpeed mobile</div><div class="text-[15px] font-medium text-slate-100 leading-none">95 / 100</div></div></div>
+<div class="flex items-center gap-2.5 px-4 py-3 border border-slate-400/15 rounded-lg"><div><div class="text-[11px] text-foreground/40 uppercase tracking-[0.07em] leading-none mb-1">SSL Labs</div><div class="text-[15px] font-medium text-slate-100 leading-none">Grade A+</div></div></div>
+<div class="flex items-center gap-2.5 px-4 py-3 border border-slate-400/15 rounded-lg"><div><div class="text-[11px] text-foreground/40 uppercase tracking-[0.07em] leading-none mb-1">Mozilla Observatory</div><div class="text-[15px] font-medium text-slate-100 leading-none">105 / 100</div></div></div>
+<a href="https://digitalbeacon.co/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2.5 px-4 py-3 border border-slate-400/15 rounded-lg"><div><div class="text-[11px] text-foreground/40 uppercase tracking-[0.07em] leading-none mb-1">CO&#x2082; per visit</div><div class="text-[15px] font-medium text-slate-100 leading-none">0.07 g</div></div></a>
+<div class="flex items-center gap-2.5 px-4 py-3 border border-slate-400/15 rounded-lg"><div><div class="text-[11px] text-foreground/40 uppercase tracking-[0.07em] leading-none mb-1">Accessibility</div><div class="text-[15px] font-medium text-slate-100 leading-none">100 / 100</div></div></div>
 </div>
 <p class="max-w-xl text-center text-sm text-foreground/50 leading-relaxed">I use AI-assisted development tools to accelerate appropriate parts of the build, then review, configure and optimise the implementation myself. Performance, accessibility, security and SEO are tested as part of the development process.</p>
 </div>
@@ -505,20 +508,20 @@ function buildHomepageBodyPl() {
 <section id="home" class="relative min-h-[62dvh] flex items-center justify-center py-16 md:py-20 overflow-hidden">
 <div class="container mx-auto px-6 relative z-10">
 <div class="max-w-5xl mx-auto text-center flex flex-col items-center">
-<img src="/logo-hero-384.webp?v=17" alt="Forsa Design" width="384" height="317" loading="eager" decoding="async" class="w-64 md:w-80 lg:w-96 h-auto object-contain block mx-auto mb-2" />
+<img src="/logo-hero-384.webp?v=17" alt="Forsa Design" width="384" height="317" loading="eager" fetchpriority="high" decoding="async" class="w-64 md:w-80 lg:w-96 h-auto object-contain block mx-auto mb-2" />
 <div class="w-20 h-px bg-primary mb-6 mt-4"></div>
 <h1 class="text-4xl md:text-5xl lg:text-6xl font-serif font-bold tracking-tight leading-tight mb-4 max-w-4xl">Strony i systemy webowe dla przemys&#322;u</h1>
 <p class="text-lg md:text-xl text-foreground/80 font-medium mb-5 max-w-3xl text-balance">Bez szablon&#243;w. Bez kreator&#243;w stron. Dedykowane strony i systemy webowe dla technicznych firm B2B.</p>
 <p class="text-base md:text-lg text-foreground/60 font-light leading-relaxed mb-8 max-w-[65ch] text-left">Ty znasz swoj&#261; bran&#380;&#281;. Ja rozumiem, jak przemys&#322;owi klienci oceniaj&#261; dostawc&#243;w. Mam ponad 20 lat do&#347;wiadczenia w mi&#281;dzynarodowej sprzeda&#380;y B2B, obejmuj&#261;cej maszyny do obr&#243;bki metalu, wyposa&#380;enie przemys&#322;owe i rozwi&#261;zania in&#380;ynieryjne w Europie i Azji. Forsa Design &#322;&#261;czy to do&#347;wiadczenie handlowe z nowoczesnym web developmentem, tworz&#261;c strony i systemy webowe dla firm przemys&#322;owych, in&#380;ynieryjnych i technicznych. Dzia&#322;am z Banff w Aberdeenshire i mog&#281; wsp&#243;&#322;pracowa&#263; z klientami z Wielkiej Brytanii oraz z zagranicy.</p>
 <a href="#contact" data-testid="btn-hero-cta" class="inline-flex items-center justify-center px-8 py-4 bg-primary text-primary-foreground font-semibold text-lg rounded-sm">Popro&#347; o wycen&#281;</a>
-<div class="mt-10 flex flex-col items-center gap-4" role="list">
-<div class="flex flex-wrap justify-center gap-3" role="list">
-<div role="listitem" class="flex items-center gap-2.5 px-4 py-3 border border-slate-400/15 rounded-lg"><div><div class="text-[11px] text-foreground/40 uppercase tracking-[0.07em] leading-none mb-1">PageSpeed desktop</div><div class="text-[15px] font-medium text-slate-100 leading-none">100 / 100</div></div></div>
-<div role="listitem" class="flex items-center gap-2.5 px-4 py-3 border border-slate-400/15 rounded-lg"><div><div class="text-[11px] text-foreground/40 uppercase tracking-[0.07em] leading-none mb-1">PageSpeed mobile</div><div class="text-[15px] font-medium text-slate-100 leading-none">95 / 100</div></div></div>
-<div role="listitem" class="flex items-center gap-2.5 px-4 py-3 border border-slate-400/15 rounded-lg"><div><div class="text-[11px] text-foreground/40 uppercase tracking-[0.07em] leading-none mb-1">SSL Labs</div><div class="text-[15px] font-medium text-slate-100 leading-none">Grade A+</div></div></div>
-<div role="listitem" class="flex items-center gap-2.5 px-4 py-3 border border-slate-400/15 rounded-lg"><div><div class="text-[11px] text-foreground/40 uppercase tracking-[0.07em] leading-none mb-1">Mozilla Observatory</div><div class="text-[15px] font-medium text-slate-100 leading-none">105 / 100</div></div></div>
-<a role="listitem" href="https://digitalbeacon.co/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2.5 px-4 py-3 border border-slate-400/15 rounded-lg"><div><div class="text-[11px] text-foreground/40 uppercase tracking-[0.07em] leading-none mb-1">CO&#x2082; na wizyt&#281;</div><div class="text-[15px] font-medium text-slate-100 leading-none">0.07 g</div></div></a>
-<div role="listitem" class="flex items-center gap-2.5 px-4 py-3 border border-slate-400/15 rounded-lg"><div><div class="text-[11px] text-foreground/40 uppercase tracking-[0.07em] leading-none mb-1">Dost&#281;pno&#347;&#263;</div><div class="text-[15px] font-medium text-slate-100 leading-none">100 / 100</div></div></div>
+<div class="mt-10 flex flex-col items-center gap-4">
+<div class="flex flex-wrap justify-center gap-3">
+<div class="flex items-center gap-2.5 px-4 py-3 border border-slate-400/15 rounded-lg"><div><div class="text-[11px] text-foreground/40 uppercase tracking-[0.07em] leading-none mb-1">PageSpeed desktop</div><div class="text-[15px] font-medium text-slate-100 leading-none">100 / 100</div></div></div>
+<div class="flex items-center gap-2.5 px-4 py-3 border border-slate-400/15 rounded-lg"><div><div class="text-[11px] text-foreground/40 uppercase tracking-[0.07em] leading-none mb-1">PageSpeed mobile</div><div class="text-[15px] font-medium text-slate-100 leading-none">95 / 100</div></div></div>
+<div class="flex items-center gap-2.5 px-4 py-3 border border-slate-400/15 rounded-lg"><div><div class="text-[11px] text-foreground/40 uppercase tracking-[0.07em] leading-none mb-1">SSL Labs</div><div class="text-[15px] font-medium text-slate-100 leading-none">Grade A+</div></div></div>
+<div class="flex items-center gap-2.5 px-4 py-3 border border-slate-400/15 rounded-lg"><div><div class="text-[11px] text-foreground/40 uppercase tracking-[0.07em] leading-none mb-1">Mozilla Observatory</div><div class="text-[15px] font-medium text-slate-100 leading-none">105 / 100</div></div></div>
+<a href="https://digitalbeacon.co/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2.5 px-4 py-3 border border-slate-400/15 rounded-lg"><div><div class="text-[11px] text-foreground/40 uppercase tracking-[0.07em] leading-none mb-1">CO&#x2082; na wizyt&#281;</div><div class="text-[15px] font-medium text-slate-100 leading-none">0.07 g</div></div></a>
+<div class="flex items-center gap-2.5 px-4 py-3 border border-slate-400/15 rounded-lg"><div><div class="text-[11px] text-foreground/40 uppercase tracking-[0.07em] leading-none mb-1">Dost&#281;pno&#347;&#263;</div><div class="text-[15px] font-medium text-slate-100 leading-none">100 / 100</div></div></div>
 </div>
 <p class="max-w-xl text-center text-sm text-foreground/50 leading-relaxed">Korzystam z narz&#281;dzi wspomaganych przez AI, aby przyspieszy&#263; odpowiednie etapy tworzenia strony, a nast&#281;pnie sam sprawdzam, konfiguruj&#281; i optymalizuj&#281; wdro&#380;enie. Wydajno&#347;&#263;, dost&#281;pno&#347;&#263;, bezpiecze&#324;stwo i SEO s&#261; testowane w ramach procesu tworzenia strony.</p>
 </div>

@@ -124,6 +124,7 @@ export default function Header() {
         onClick={() => toggleDropdown("about")}
         aria-expanded={openDropdown === "about"}
         aria-controls={`${mobile ? "mobile-" : "desktop-"}about-menu`}
+        aria-label={language === "pl" ? "Rozwiń sekcję O nas" : "Expand About section"}
         data-testid={`btn-nav-about${mobile ? "-mobile" : ""}`}
         className={
           mobile
