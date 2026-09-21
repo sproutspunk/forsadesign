@@ -8,3 +8,4 @@ flushSync(() => {
   createRoot(root).render(<App />);
 });
 root.removeAttribute("data-prerendered");
+document.documentElement.classList.remove("js-booting");

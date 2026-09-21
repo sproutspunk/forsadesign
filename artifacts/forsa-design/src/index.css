@@ -7,6 +7,10 @@ html {
   scrollbar-gutter: stable;
 }
 
+html.js-booting #root {
+  visibility: hidden;
+}
+
 .about-hero {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
