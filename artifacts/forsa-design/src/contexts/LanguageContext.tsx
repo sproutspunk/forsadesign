@@ -406,8 +406,10 @@ interface LanguageContextType {
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [_, setLocation] = useLocation();
+  const [location, setLocation] = useLocation();
   const [language, setLanguageState] = useState<Language>(() => {
+    if (location.startsWith("/pl")) return "pl";
+    if (location.startsWith("/en")) return "en";
     const saved = localStorage.getItem("forsa-lang");
     return saved === "en" || saved === "pl" ? saved : "en";
   });

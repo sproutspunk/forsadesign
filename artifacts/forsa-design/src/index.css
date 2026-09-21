@@ -2,6 +2,11 @@
 @import "tw-animate-css";
 @plugin "@tailwindcss/typography";
 
+html {
+  overflow-y: scroll;
+  scrollbar-gutter: stable;
+}
+
 .about-hero {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
