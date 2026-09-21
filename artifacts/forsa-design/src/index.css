@@ -66,12 +66,13 @@
 }
 
 /* Self-hosted variable fonts (latin + latin-ext for Polish diacritics).
-   font-display: swap keeps text visible with a system fallback while loading. */
+   Optional avoids replacing already-painted fallback text when a font arrives
+   after first paint, which would shift text and surrounding layout. */
 @font-face {
   font-family: "Inter";
   font-style: normal;
   font-weight: 300 700;
-  font-display: swap;
+  font-display: optional;
   src: url("/fonts/inter-latin.woff2") format("woff2");
   unicode-range:
     U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329,
@@ -81,7 +82,7 @@
   font-family: "Inter";
   font-style: normal;
   font-weight: 300 700;
-  font-display: swap;
+  font-display: optional;
   src: url("/fonts/inter-latin-ext.woff2") format("woff2");
   unicode-range:
     U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329,
@@ -92,7 +93,7 @@
   font-family: "Playfair Display";
   font-style: normal;
   font-weight: 400 700;
-  font-display: swap;
+  font-display: optional;
   src: url("/fonts/playfair-display-latin.woff2") format("woff2");
   unicode-range:
     U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329,
@@ -102,7 +103,7 @@
   font-family: "Playfair Display";
   font-style: normal;
   font-weight: 400 700;
-  font-display: swap;
+  font-display: optional;
   src: url("/fonts/playfair-display-latin-ext.woff2") format("woff2");
   unicode-range:
     U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329,
