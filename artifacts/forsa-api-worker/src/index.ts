@@ -65,11 +65,12 @@ const HSTS = "max-age=63072000; includeSubDomains; preload";
 const FOLLOW_UP_SCHEDULE: Record<number, number> = { 2: 3, 3: 7, 4: 14 };
 
 function corsHeaders(origin: string | null): Record<string, string> {
-  const allowed = origin && ALLOWED_ORIGINS.includes(origin) ? origin : ALLOWED_ORIGINS[0];
+  if (!origin || !ALLOWED_ORIGINS.includes(origin)) return {};
   return {
-    "Access-Control-Allow-Origin": allowed,
+    "Access-Control-Allow-Origin": origin,
     "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
     "Access-Control-Allow-Headers": "content-type",
+    Vary: "Origin",
   };
 }
 
@@ -80,6 +81,20 @@ function json(data: unknown, status = 200, origin: string | null = null): Respon
       "content-type": "application/json; charset=utf-8",
       "strict-transport-security": HSTS,
       ...corsHeaders(origin),
+    },
+  });
+}
+
+function originIsAllowed(origin: string | null): boolean {
+  return origin === null || ALLOWED_ORIGINS.includes(origin);
+}
+
+function forbiddenOrigin(): Response {
+  return new Response(JSON.stringify({ error: "Origin is not allowed." }), {
+    status: 403,
+    headers: {
+      "content-type": "application/json; charset=utf-8",
+      "strict-transport-security": HSTS,
     },
   });
 }
@@ -812,9 +827,14 @@ async function handleStripeWebhook(request: Request, env: Env): Promise<Response
 export default {
   async fetch(request: Request, env: Env): Promise<Response> {
     const origin = request.headers.get("origin");
+    if (!originIsAllowed(origin)) return forbiddenOrigin();
     if (request.method === "OPTIONS")
       return new Response(null, {
-        headers: { ...corsHeaders(origin), "strict-transport-security": HSTS },
+        status: origin ? 204 : 403,
+        headers: {
+          ...corsHeaders(origin),
+          "strict-transport-security": HSTS,
+        },
       });
     const path = new URL(request.url).pathname;
     if (request.method === "GET" && path === "/api/healthz")

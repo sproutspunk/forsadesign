@@ -95,18 +95,36 @@ describe("Worker", () => {
       expect(res.headers.get("Access-Control-Allow-Origin")).toBe("http://localhost:3000");
     });
 
-    it("falls back to production origin for unknown origins", async () => {
+    it("rejects unknown origins", async () => {
       const res = await worker.fetch(
         request("/api/healthz", { origin: "https://evil.com" }),
         createEnv(),
       );
-      expect(res.headers.get("Access-Control-Allow-Origin")).toBe("https://forsadesign.co.uk");
+      expect(res.status).toBe(403);
+      expect(res.headers.get("Access-Control-Allow-Origin")).toBeNull();
     });
 
-    it("responds to OPTIONS", async () => {
+    it("responds to allowed OPTIONS with no content and Vary", async () => {
       const res = await worker.fetch(request("/api/contact", { method: "OPTIONS" }), createEnv());
-      expect(res.status).toBe(200);
+      expect(res.status).toBe(204);
       expect(res.headers.get("Access-Control-Allow-Methods")).toBe("GET, POST, OPTIONS");
+      expect(res.headers.get("Vary")).toBe("Origin");
+    });
+
+    it("rejects OPTIONS without an origin", async () => {
+      const preflight = new Request("https://api.example.com/api/contact", {
+        method: "OPTIONS",
+        headers: { "access-control-request-method": "POST" },
+      });
+      const res = await worker.fetch(preflight, createEnv());
+      expect(res.status).toBe(403);
+    });
+
+    it("allows requests without an origin without CORS headers", async () => {
+      const direct = new Request("https://api.example.com/api/healthz");
+      const res = await worker.fetch(direct, createEnv());
+      expect(res.status).toBe(200);
+      expect(res.headers.get("Access-Control-Allow-Origin")).toBeNull();
     });
   });
   describe("/api/contact", () => {

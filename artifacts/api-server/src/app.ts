@@ -5,6 +5,16 @@ import router from "./routes";
 import { logger } from "./lib/logger";
 
 const app: Express = express();
+const defaultAllowedOrigins = [
+  "https://forsadesign.co.uk",
+  "https://www.forsadesign.co.uk",
+  "http://localhost:3000",
+];
+const allowedOrigins = new Set(
+  (process.env["ALLOWED_ORIGINS"]?.split(",") ?? defaultAllowedOrigins)
+    .map((origin) => origin.trim())
+    .filter(Boolean),
+);
 
 // Requests can reach this server through a reverse proxy, so the real client IP is
 // in the X-Forwarded-For header. Trust the first hop so per-IP rate limiting
@@ -30,7 +40,13 @@ app.use(
     },
   }),
 );
-app.use(cors());
+app.use(
+  cors({
+    origin(origin, callback) {
+      callback(null, origin ? allowedOrigins.has(origin) : false);
+    },
+  }),
+);
 app.use(express.json({ limit: "12mb" }));
 // The contact form posts urlencoded data; keep this cap small so oversized
 // bodies are rejected during parsing rather than trusting Content-Length.

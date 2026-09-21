@@ -3,6 +3,23 @@
 // Worker configured by the API_ORIGIN Worker binding.
 // Static assets and SPA fallback are handled via env.ASSETS.
 
+const ALLOWED_ORIGINS = new Set([
+  "https://forsadesign.co.uk",
+  "https://www.forsadesign.co.uk",
+  "http://localhost:3000",
+]);
+
+function originIsAllowed(origin) {
+  return !origin || ALLOWED_ORIGINS.has(origin);
+}
+
+function forbiddenOrigin() {
+  return new Response(JSON.stringify({ error: "Origin is not allowed." }), {
+    status: 403,
+    headers: { "content-type": "application/json; charset=utf-8" },
+  });
+}
+
 function withFreshHtmlHeaders(response) {
   const contentType = response.headers.get("content-type") || "";
   if (!contentType.toLowerCase().includes("text/html")) return response;
@@ -24,6 +41,20 @@ export default {
     // fetch(request) on the same origin loops back through this worker (error 1019),
     // so we rewrite the URL to the configured external Worker URL.
     if (url.pathname === "/api" || url.pathname.startsWith("/api/")) {
+      const origin = request.headers.get("Origin");
+      if (!originIsAllowed(origin)) return forbiddenOrigin();
+      if (request.method === "OPTIONS") {
+        if (!origin) return new Response("Origin is required for preflight.", { status: 403 });
+        return new Response(null, {
+          status: 204,
+          headers: {
+            "Access-Control-Allow-Origin": origin,
+            "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
+            "Access-Control-Allow-Headers": "content-type",
+            Vary: "Origin",
+          },
+        });
+      }
       if (!env.API_ORIGIN) {
         return new Response("API service is not configured.", { status: 503 });
       }
