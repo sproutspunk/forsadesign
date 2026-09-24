@@ -1,12 +1,11 @@
 import { Router, type IRouter } from "express";
 import rateLimit, { ipKeyGenerator } from "express-rate-limit";
-import { realClientIp } from "./contact";
+import { isValidEmail, realClientIp } from "./contact";
 
 const router: IRouter = Router();
 const OWNER_EMAIL = "hello@forsadesign.co.uk";
 const FROM = "Forsa Design <hello@forsadesign.co.uk>";
 const MAX_PDF_BYTES = 8 * 1024 * 1024;
-const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 const quoteEmailLimiter = rateLimit({
   windowMs: 15 * 60 * 1000,
@@ -38,7 +37,7 @@ router.post("/quotes/email", quoteEmailLimiter, async (req, res) => {
 
   if (
     typeof email !== "string" ||
-    !emailPattern.test(email) ||
+    !isValidEmail(email) ||
     (name !== undefined && (typeof name !== "string" || name.length > 100)) ||
     (phone !== undefined && (typeof phone !== "string" || phone.length > 40)) ||
     typeof pdfBase64 !== "string" ||

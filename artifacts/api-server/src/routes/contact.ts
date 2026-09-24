@@ -11,9 +11,20 @@ export const realClientIp = (req: Request): string => {
   const value = Array.isArray(header) ? header[0] : header;
   return (value ?? "").trim() || req.ip || "";
 };
+export const isValidEmail = (email: string): boolean => {
+  const at = email.indexOf("@");
+  const lastAt = email.lastIndexOf("@");
+  const dotAfterAt = email.lastIndexOf(".");
+  return (
+    at > 0 &&
+    at === lastAt &&
+    dotAfterAt > at + 1 &&
+    dotAfterAt < email.length - 1 &&
+    !email.includes(" ")
+  );
+};
 const OWNER_EMAIL = "hello@forsadesign.co.uk";
 const CONTACT_MAX_BODY_BYTES = 12_000;
-const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 const contactLimiter = rateLimit({
   windowMs: 15 * 60 * 1000,
@@ -63,7 +74,7 @@ router.post("/contact", contactLimiter, async (req, res) => {
     res.status(400).json({ error: "Submitted data is too long." });
     return;
   }
-  if (!emailPattern.test(email)) {
+  if (!isValidEmail(email)) {
     res.status(400).json({ error: "Invalid email address." });
     return;
   }

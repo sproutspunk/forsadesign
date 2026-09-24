@@ -1,12 +1,11 @@
 import { Router, type IRouter } from "express";
 import rateLimit, { ipKeyGenerator } from "express-rate-limit";
-import { realClientIp } from "./contact";
+import { isValidEmail, realClientIp } from "./contact";
 
 const router: IRouter = Router();
 const OWNER_EMAIL = "hello@forsadesign.co.uk";
 const FROM = "Forsa Design <hello@forsadesign.co.uk>";
 const CHECKLIST_URL = "https://forsadesign.co.uk/audit-checklist.pdf";
-const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 const leadMagnetLimiter = rateLimit({
   windowMs: 15 * 60 * 1000,
@@ -35,7 +34,7 @@ router.post("/lead-magnet", leadMagnetLimiter, async (req, res) => {
     typeof req.body?.company === "string" ? req.body.company.trim().slice(0, 200) : "";
   const language = req.body?.language === "pl" ? "pl" : "en";
 
-  if (!email || !emailPattern.test(email) || email.length > 320) {
+  if (!email || !isValidEmail(email) || email.length > 320) {
     res.status(400).json({ error: "A valid email address is required." });
     return;
   }
