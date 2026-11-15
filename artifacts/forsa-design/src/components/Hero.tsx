@@ -13,7 +13,7 @@ export default function Hero() {
       id="home"
       className="relative min-h-[62dvh] flex items-center justify-center py-16 md:py-20 overflow-hidden"
     >
-      <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary/10 via-background to-background" />
+      <div className="blueprint-hero-glow absolute inset-0 pointer-events-none" />
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-5xl mx-auto text-center flex flex-col items-center">
           <img

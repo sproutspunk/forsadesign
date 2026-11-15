@@ -1,3 +1,5 @@
+import BlueprintBackground from "@/components/BlueprintBackground";
+import { BlueprintMotionProvider } from "@/contexts/BlueprintMotionContext";
 import { Switch, Route, Router as WouterRouter, useLocation, useRoute } from "wouter";
 import { lazy, Suspense, useEffect } from "react";
 import { LazyMotion } from "framer-motion";
@@ -152,9 +154,16 @@ function App() {
       <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, "")}>
         <LanguageProvider>
           <ErrorBoundary>
-            <Router />
-            <CookieConsent />
-            <AnalyticsGate />
+            <BlueprintMotionProvider>
+              <div className="forsa-portal">
+                <BlueprintBackground />
+                <div className="forsa-content">
+                  <Router />
+                </div>
+                <CookieConsent />
+                <AnalyticsGate />
+              </div>
+            </BlueprintMotionProvider>
           </ErrorBoundary>
         </LanguageProvider>
       </WouterRouter>
