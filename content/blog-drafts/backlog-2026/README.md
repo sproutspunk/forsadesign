@@ -4,22 +4,22 @@ Użytkownik zatwierdził poprawienie i publikację całego pakietu. Data publika
 
 ## Pełne teksty
 
-| Nr | Artykuł PL/EN | Czytanie |
-|---|---|---|
-| 01 | [Czy Twoja strona przechodzi weryfikację dostawcy?](01-procurement-ready-website.md) | 3 min |
-| 02 | [Katalog B2B bez koszyka. Kiedy to lepszy wybór?](02-catalogue-without-checkout.md) | 3 min |
-| 03 | [Formularz RFQ, po którym da się przygotować ofertę](03-useful-rfq-form.md) | 3 min |
-| 04 | [PDF na stronie to za mało. Jak uporządkować dokumentację techniczną?](04-technical-documentation.md) | 3 min |
-| 05 | [Ceny w katalogu B2B: pokazać, ukryć czy wyjaśnić?](05-b2b-pricing.md) | 3 min |
-| 06 | [Integracja strony z ERP i CRM zaczyna się od właściciela danych](06-erp-crm-integration.md) | 2 min |
-| 07 | [Wielojęzyczna strona przemysłowa to więcej niż tłumaczenie](07-multilingual-industrial-website.md) | 2 min |
-| 08 | [Konfigurator produktu czy dobry formularz zapytania?](08-product-configurator.md) | 2 min |
-| 09 | [Dostępność katalogu B2B sprawdza się przy konkretnym zadaniu](09-accessible-industrial-catalogue.md) | 2 min |
-| 10 | [Co powinien wiedzieć zagraniczny kupiec przed wysłaniem zapytania?](10-export-enquiries.md) | 2 min |
-| 11 | [„Dostępny” w katalogu B2B: co właściwie obiecujesz?](11-stock-and-lead-times.md) | 2 min |
-| 12 | [Przekazanie strony: czy firma potrafi przejąć jej obsługę?](12-website-handover.md) | 2 min |
-| 13 | [Formularz zapytania B2B: mniej spamu, bezpieczniejsze załączniki](13-enquiry-form-security.md) | 2 min |
-| 14 | [Animacja na stronie B2B: efekt, który daje się zatrzymać](14-motion-with-user-control.md) | 2 min |
+| Nr  | Artykuł PL/EN                                                                                         | Czytanie |
+| --- | ----------------------------------------------------------------------------------------------------- | -------- |
+| 01  | [Czy Twoja strona przechodzi weryfikację dostawcy?](01-procurement-ready-website.md)                  | 3 min    |
+| 02  | [Katalog B2B bez koszyka. Kiedy to lepszy wybór?](02-catalogue-without-checkout.md)                   | 3 min    |
+| 03  | [Formularz RFQ, po którym da się przygotować ofertę](03-useful-rfq-form.md)                           | 3 min    |
+| 04  | [PDF na stronie to za mało. Jak uporządkować dokumentację techniczną?](04-technical-documentation.md) | 3 min    |
+| 05  | [Ceny w katalogu B2B: pokazać, ukryć czy wyjaśnić?](05-b2b-pricing.md)                                | 3 min    |
+| 06  | [Integracja strony z ERP i CRM zaczyna się od właściciela danych](06-erp-crm-integration.md)          | 2 min    |
+| 07  | [Wielojęzyczna strona przemysłowa to więcej niż tłumaczenie](07-multilingual-industrial-website.md)   | 2 min    |
+| 08  | [Konfigurator produktu czy dobry formularz zapytania?](08-product-configurator.md)                    | 2 min    |
+| 09  | [Dostępność katalogu B2B sprawdza się przy konkretnym zadaniu](09-accessible-industrial-catalogue.md) | 2 min    |
+| 10  | [Co powinien wiedzieć zagraniczny kupiec przed wysłaniem zapytania?](10-export-enquiries.md)          | 2 min    |
+| 11  | [„Dostępny” w katalogu B2B: co właściwie obiecujesz?](11-stock-and-lead-times.md)                     | 2 min    |
+| 12  | [Przekazanie strony: czy firma potrafi przejąć jej obsługę?](12-website-handover.md)                  | 2 min    |
+| 13  | [Formularz zapytania B2B: mniej spamu, bezpieczniejsze załączniki](13-enquiry-form-security.md)       | 2 min    |
+| 14  | [Animacja na stronie B2B: efekt, który daje się zatrzymać](14-motion-with-user-control.md)            | 2 min    |
 
 ## Zakres redakcji i weryfikacji
 
