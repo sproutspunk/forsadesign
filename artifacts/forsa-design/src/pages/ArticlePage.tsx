@@ -193,6 +193,28 @@ export default function ArticlePage({ lang, slug }: ArticlePageProps) {
                 </p>
               </div>
             ))}
+            {a.sources && a.sources.length > 0 && (
+              <section aria-labelledby="article-sources">
+                <h2
+                  id="article-sources"
+                  className="font-serif text-xl md:text-2xl font-bold text-white mb-3"
+                >
+                  {lang === "pl" ? "Źródła" : "Sources"}
+                </h2>
+                <ul className="space-y-2 list-disc pl-5">
+                  {a.sources.map((source) => (
+                    <li key={source.href}>
+                      <a
+                        href={source.href}
+                        className="text-primary underline underline-offset-4 hover:text-primary/80"
+                      >
+                        {source.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            )}
           </motion.div>
 
           <div className="mt-16 rounded-sm border border-primary/20 bg-card p-8">
