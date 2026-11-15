@@ -398,7 +398,7 @@ html.js-booting #root {
 .tool-logos-track {
   display: flex;
   width: max-content;
-  animation: tool-logos-scroll 65s linear infinite;
+  animation: tool-logos-scroll 40s linear infinite;
 }
 
 .tool-logos-group {
@@ -436,8 +436,7 @@ html.js-booting #root {
   outline-offset: -2px;
 }
 
-.tool-logos:hover .tool-logos-track,
-.tool-logos:focus-within .tool-logos-track {
+.tool-logos:has(a:focus-visible) .tool-logos-track {
   animation-play-state: paused;
 }
 
