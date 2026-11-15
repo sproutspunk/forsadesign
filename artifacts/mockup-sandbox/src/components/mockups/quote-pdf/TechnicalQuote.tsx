@@ -19,20 +19,13 @@ export default function TechnicalQuote() {
           <header className="border-b-2 border-navy px-12 pt-12 pb-8">
             <div className="flex items-start justify-between">
               {/* Logo */}
-              <div className="flex flex-col">
-                <div
-                  className="font-serif text-4xl tracking-tight text-navy mb-1"
-                  style={{ fontFamily: "Georgia, serif", fontWeight: 600 }}
-                >
-                  FORSA
-                </div>
-                <div
-                  className="text-[10px] tracking-[0.3em] text-gold uppercase font-medium"
-                  style={{ fontFamily: "system-ui, sans-serif" }}
-                >
-                  Design Studio
-                </div>
-              </div>
+              <img
+                src="/__mockup/images/forsa-logo-gold.svg"
+                alt="Forsa Design"
+                width="1000"
+                height="710"
+                className="h-16 w-auto object-contain"
+              />
 
               {/* Quote Info */}
               <div className="text-right">

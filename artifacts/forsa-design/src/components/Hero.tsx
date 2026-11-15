@@ -17,10 +17,10 @@ export default function Hero() {
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-5xl mx-auto text-center flex flex-col items-center">
           <img
-            src="/logo-hero-384.webp?v=17"
+            src="/brand/forsa-logo-gradient.svg"
             alt="Forsa Design"
             width={384}
-            height={317}
+            height={273}
             loading="eager"
             fetchPriority="high"
             decoding="async"

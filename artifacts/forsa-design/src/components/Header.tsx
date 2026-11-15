@@ -193,10 +193,10 @@ export default function Header() {
             className="flex shrink-0 items-center"
           >
             <img
-              src="/logo-header.webp?v=9"
+              src="/brand/forsa-logo-gradient.svg"
               alt="Forsa Design"
-              width="160"
-              height="132"
+              width="1000"
+              height="710"
               loading="eager"
               fetchPriority="low"
               decoding="async"

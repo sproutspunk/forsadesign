@@ -43,7 +43,7 @@ export function HeaderBanner() {
       <div className="w-full bg-[hsl(var(--background))] flex justify-center border-b border-white/10 py-4 px-6">
         <a href="#" aria-label="Forsa Design home">
           <img
-            src="/__mockup/images/forsa-banner.png"
+            src="/__mockup/images/forsa-logo-gold.svg"
             alt="Forsa Design — Web Systems for Heavy Industry"
             className="h-auto w-[clamp(320px,72vw,860px)] object-contain"
           />
