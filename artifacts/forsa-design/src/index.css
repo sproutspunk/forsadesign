@@ -389,3 +389,72 @@ html.js-booting #root {
 .text-foreground\/60 {
   color: hsl(var(--foreground) / 0.84) !important;
 }
+
+.tool-logos {
+  overflow: hidden;
+  mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+}
+
+.tool-logos-track {
+  display: flex;
+  width: max-content;
+  animation: tool-logos-scroll 65s linear infinite;
+}
+
+.tool-logos-group {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  padding: 0.5rem 2.5rem 0.5rem 0;
+}
+
+.tool-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 2.75rem;
+  height: 2.75rem;
+  border-radius: 0.25rem;
+  opacity: 0.6;
+  transition: opacity 160ms ease;
+}
+
+.tool-logo img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+}
+
+.tool-logo:hover,
+.tool-logo:focus-visible {
+  opacity: 1;
+}
+
+.tool-logo:focus-visible {
+  outline: 2px solid hsl(var(--primary));
+  outline-offset: -2px;
+}
+
+.tool-logos:hover .tool-logos-track,
+.tool-logos:focus-within .tool-logos-track {
+  animation-play-state: paused;
+}
+
+@keyframes tool-logos-scroll {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tool-logos {
+    overflow-x: auto;
+  }
+  .tool-logos-track {
+    animation: none;
+  }
+  .tool-logos-group[aria-hidden="true"] {
+    display: none;
+  }
+}
