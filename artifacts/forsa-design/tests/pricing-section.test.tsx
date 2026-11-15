@@ -15,7 +15,7 @@ vi.mock("framer-motion", async () => {
     p: createMotionComponent("p"),
   };
 
-  return { motion };
+  return { m: motion };
 });
 
 vi.mock("../src/contexts/LanguageContext", () => ({
@@ -26,12 +26,12 @@ vi.mock("../src/contexts/LanguageContext", () => ({
 }));
 
 describe("PricingSection", () => {
-  it("links all pricing cards to the quote page", () => {
+  it("links the custom quote CTA to the quote page", () => {
     render(<PricingSection />);
 
     const links = screen.getAllByRole("link", { name: /Get a custom quote/i });
 
-    expect(links).toHaveLength(3);
+    expect(links).toHaveLength(1);
     links.forEach((link) => {
       expect(link).toHaveAttribute("href", "/en/quote");
     });

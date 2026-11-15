@@ -1,0 +1,39 @@
+{
+  "entries": [
+    {
+      "identifier": "urn:air:forsadesign.co.uk:website",
+      "displayName": "Forsa Design website",
+      "type": "application/ld+json",
+      "description": "Industrial web design and bespoke web systems from Banff, Scotland. Website available in English and Polish.",
+      "representativeQueries": [
+        "What web design services does Forsa Design offer?",
+        "How can I contact Forsa Design about an industrial website?"
+      ],
+      "data": {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Forsa Design",
+        "url": "https://forsadesign.co.uk/",
+        "inLanguage": ["en-GB", "pl-PL"],
+        "publisher": {
+          "@type": "Organization",
+          "name": "Forsa Design",
+          "url": "https://forsadesign.co.uk/",
+          "email": "hello@forsadesign.co.uk"
+        },
+        "hasPart": [
+          {
+            "@type": "WebPage",
+            "url": "https://forsadesign.co.uk/en/",
+            "inLanguage": "en-GB"
+          },
+          {
+            "@type": "WebPage",
+            "url": "https://forsadesign.co.uk/pl/",
+            "inLanguage": "pl-PL"
+          }
+        ]
+      }
+    }
+  ]
+}

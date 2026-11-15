@@ -1,5 +1,6 @@
 import { lazy, Suspense } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import ToolLogos from "@/components/ToolLogos";
 import { trackEvent } from "@/lib/consentManager";
 
 const TrustBar = lazy(() => import("@/components/TrustBar"));
@@ -31,6 +32,8 @@ export default function Hero() {
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold tracking-tight leading-tight mb-4 max-w-4xl">
             {t("hero.tagline")}
           </h1>
+
+          <ToolLogos />
 
           <p className="text-lg md:text-xl text-foreground/80 font-medium mb-5 max-w-3xl text-balance">
             {t("hero.subheader")}
