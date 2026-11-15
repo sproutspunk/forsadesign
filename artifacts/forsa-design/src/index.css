@@ -391,13 +391,79 @@ html.js-booting #root {
 }
 
 .tool-logos {
+  position: relative;
+  height: 144px;
   overflow: hidden;
+  -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
   mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
 }
 
+.tool-logos-spotlight {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse 105px 44px at 50% 50%,
+    hsl(var(--primary) / 0.19),
+    transparent 80%
+  );
+}
+
+.tool-logos-spotlight::after {
+  content: "";
+  position: absolute;
+  width: 210px;
+  height: 1px;
+  top: 50%;
+  left: calc(50% - 105px);
+  background: linear-gradient(90deg, transparent, hsl(var(--primary) / 0.28), transparent);
+}
+
+.tool-logos-orbit {
+  position: absolute;
+  width: 92px;
+  height: 92px;
+  top: calc(50% - 46px);
+  left: calc(50% - 46px);
+  border: 1px solid hsl(var(--primary) / 0.15);
+  border-radius: 50%;
+  transform: rotate(-25deg);
+  box-shadow:
+    0 0 28px hsl(var(--primary) / 0.035),
+    inset 0 0 22px hsl(var(--primary) / 0.025);
+  pointer-events: none;
+}
+
+.tool-logos-orbit::before {
+  content: "";
+  position: absolute;
+  inset: 7px -8px;
+  border-radius: 50%;
+  border-top: 1px solid hsl(var(--primary) / 0.48);
+  border-bottom: 1px solid hsl(var(--primary) / 0.16);
+  transform: rotate(40deg) scaleY(0.62);
+}
+
+.tool-logos-glint {
+  position: absolute;
+  top: calc(50% - 45px);
+  left: calc(50% - 2px);
+  width: 4px;
+  height: 4px;
+  background: hsl(43 90% 88%);
+  transform: rotate(45deg);
+  box-shadow:
+    0 0 8px hsl(var(--primary)),
+    0 0 18px hsl(var(--primary) / 0.5);
+  pointer-events: none;
+}
+
 .tool-logos-track {
+  position: relative;
   display: flex;
+  align-items: center;
   width: max-content;
+  height: 100%;
   animation: tool-logos-scroll 40s linear infinite;
 }
 
@@ -405,35 +471,108 @@ html.js-booting #root {
   display: flex;
   align-items: center;
   gap: 2.5rem;
-  padding: 0.5rem 2.5rem 0.5rem 0;
+  padding-right: 2.5rem;
 }
 
 .tool-logo {
+  --logo-heat: 0;
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   flex: 0 0 2.75rem;
   height: 2.75rem;
   border-radius: 0.25rem;
-  opacity: 0.6;
-  transition: opacity 160ms ease;
+}
+
+.tool-logo::before {
+  content: "";
+  position: absolute;
+  width: 84px;
+  height: 84px;
+  left: calc(50% - 42px);
+  top: calc(50% - 42px);
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    hsl(var(--primary) / 0.23),
+    hsl(var(--primary) / 0.05) 45%,
+    transparent 72%
+  );
+  opacity: var(--logo-heat);
+  transition: opacity 100ms linear;
+  pointer-events: none;
+}
+
+.tool-logo-symbol {
+  position: relative;
+  display: block;
+  width: 32px;
+  height: 32px;
+  transform: translateY(calc(var(--logo-heat) * -4px)) scale(calc(1 + var(--logo-heat) * 0.23));
+  filter: drop-shadow(
+    0 0 calc(var(--logo-heat) * 12px) hsl(var(--primary) / calc(var(--logo-heat) * 0.85))
+  );
+  transition:
+    transform 100ms linear,
+    filter 100ms linear;
 }
 
 .tool-logo img {
-  width: 28px;
-  height: 28px;
+  position: absolute;
+  inset: 0;
+  width: 32px;
+  height: 32px;
   object-fit: contain;
   filter: brightness(0) invert(1);
+  opacity: calc(0.34 + var(--logo-heat) * 0.66);
+  transition: opacity 100ms linear;
 }
 
-.tool-logo:hover,
-.tool-logo:focus-visible {
-  opacity: 1;
+.tool-logo-gold {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, hsl(43 90% 88%), hsl(var(--primary)) 80%);
+  -webkit-mask-size: contain;
+  -webkit-mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+  mask-size: contain;
+  mask-position: center;
+  mask-repeat: no-repeat;
+  opacity: var(--logo-heat);
+  transition: opacity 100ms linear;
 }
 
 .tool-logo:focus-visible {
+  --logo-heat: 1 !important;
   outline: 2px solid hsl(var(--primary));
-  outline-offset: -2px;
+  outline-offset: 7px;
+}
+
+.tool-logo:focus-visible .tool-logo-symbol {
+  transform: translateY(-7px) scale(1.3);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .tool-logo:hover {
+    --logo-heat: 1 !important;
+  }
+
+  .tool-logo:hover .tool-logo-symbol {
+    transform: translateY(-7px) scale(1.3);
+    filter: drop-shadow(0 0 7px hsl(var(--primary))) drop-shadow(0 0 21px hsl(var(--primary) / 0.7));
+  }
+
+  .tool-logo:hover::after {
+    content: "";
+    position: absolute;
+    inset: -10px -5px;
+    border-radius: 50%;
+    border: 1px solid hsl(var(--primary) / 0.55);
+    box-shadow: 0 0 14px hsl(var(--primary) / 0.14);
+    transform: rotate(-25deg) scaleY(0.85);
+    pointer-events: none;
+  }
 }
 
 .tool-logos:has(a:focus-visible) .tool-logos-track {
@@ -455,5 +594,9 @@ html.js-booting #root {
   }
   .tool-logos-group[aria-hidden="true"] {
     display: none;
+  }
+  .tool-logo-symbol {
+    transform: none !important;
+    transition: none;
   }
 }
