@@ -64,7 +64,13 @@ function ArticleRoute({ lang }: { lang: "en" | "pl" }) {
 function RootLandingPage() {
   return (
     <div className="min-h-[100dvh] bg-background text-foreground flex flex-col items-center justify-center gap-6 p-8">
-      <p className="font-serif text-3xl font-bold text-white">Forsa Design</p>
+      <img
+        src="/brand/forsa-logo-gradient.svg"
+        alt="Forsa Design"
+        width="1000"
+        height="710"
+        className="h-auto w-56"
+      />
       <p className="text-foreground/70 text-center max-w-md">
         Web Design &amp; Development Agency - Banff, Scotland
       </p>

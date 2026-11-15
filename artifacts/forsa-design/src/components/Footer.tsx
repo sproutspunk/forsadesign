@@ -10,9 +10,17 @@ export default function Footer() {
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 mb-12">
           <div>
-            <p className="font-serif text-xl tracking-[0.2em] font-bold text-white uppercase mb-4">
-              Forsa Design
-            </p>
+            <a href={`/${language}/`} className="mb-5 inline-block">
+              <img
+                src="/brand/forsa-logo-gradient.svg"
+                alt="Forsa Design"
+                width="1000"
+                height="710"
+                loading="lazy"
+                decoding="async"
+                className="h-auto w-40"
+              />
+            </a>
             <p className="text-foreground/60 font-light mb-2">{t("footer.tagline")}</p>
             <p className="text-foreground/60 font-light mb-4">{t("footer.location")}</p>
             <div className="space-y-2">

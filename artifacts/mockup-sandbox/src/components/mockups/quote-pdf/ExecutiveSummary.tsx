@@ -17,7 +17,7 @@ export default function ExecutiveSummary() {
           <div className="flex justify-between items-start mb-12 mt-4">
             <div className="flex items-center rounded-sm bg-[#0D2540] px-3 py-2">
               <img
-                src="/__mockup/images/forsa-design-logo.png"
+                src="/__mockup/images/forsa-logo-gold.svg"
                 alt="Forsa Design"
                 className="h-16 w-24 object-contain object-left"
               />

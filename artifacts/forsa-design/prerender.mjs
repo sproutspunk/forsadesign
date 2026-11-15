@@ -124,7 +124,7 @@ function patch(html, meta) {
         "@type": "Organization",
         name: "Forsa Design",
         url: SITE,
-        logo: { "@type": "ImageObject", url: `${SITE}/logo-new.png?v=6` },
+        logo: { "@type": "ImageObject", url: `${SITE}/brand/forsa-logo.png` },
       },
       mainEntityOfPage: { "@type": "WebPage", "@id": meta.canonical },
     };
@@ -157,12 +157,15 @@ function patch(html, meta) {
 
   // Preload the hero LCP image only on pages that actually render it
   // (homepage EN/PL). The preload href must match the <img> src exactly
-  // (including ?v=17) - different URLs are different browser cache keys,
+  // (including the path and any query string) - different URLs are different browser cache keys,
   // so a mismatched preload is wasted and the image is fetched twice.
-  if (meta.bodyHtml?.includes("logo-hero-384.webp") && !out.includes('rel="preload" as="image"')) {
+  if (
+    meta.bodyHtml?.includes("brand/forsa-logo-gradient.svg") &&
+    !out.includes('rel="preload" as="image"')
+  ) {
     out = out.replace(
       /(\s*<\/head>)/,
-      `\n    <link rel="preload" as="image" href="/logo-hero-384.webp?v=17" type="image/webp" fetchpriority="high" />$1`,
+      `\n    <link rel="preload" as="image" href="/brand/forsa-logo-gradient.svg" type="image/svg+xml" fetchpriority="high" />$1`,
     );
   }
 
@@ -211,7 +214,7 @@ function buildHomepageBodyEn() {
 <section id="home" class="relative min-h-[62dvh] flex items-center justify-center py-16 md:py-20 overflow-hidden">
 <div class="container mx-auto px-6 relative z-10">
 <div class="max-w-5xl mx-auto text-center flex flex-col items-center">
-<img src="/logo-hero-384.webp?v=17" alt="Forsa Design" width="384" height="317" loading="eager" fetchpriority="high" decoding="async" class="w-64 md:w-80 lg:w-96 h-auto object-contain block mx-auto mb-2" />
+<img src="/brand/forsa-logo-gradient.svg" alt="Forsa Design" width="384" height="273" loading="eager" fetchpriority="high" decoding="async" class="w-64 md:w-80 lg:w-96 h-auto object-contain block mx-auto mb-2" />
 <div class="w-20 h-px bg-primary mb-6 mt-4"></div>
 <h1 class="text-4xl md:text-5xl lg:text-6xl font-serif font-bold tracking-tight leading-tight mb-4 max-w-4xl">Websites and Web Systems for Industry</h1>
 <p class="text-lg md:text-xl text-foreground/80 font-medium mb-5 max-w-3xl text-balance">No templates. No page builders. Custom websites and web systems built for technical B2B companies.</p>
@@ -458,7 +461,7 @@ I use AI-assisted tools to accelerate appropriate parts of development while ret
 <div class="container mx-auto px-6">
 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 mb-12">
 <div>
-<p class="font-serif text-xl tracking-[0.2em] font-bold text-white uppercase mb-4">Forsa Design</p>
+<img src="/brand/forsa-logo-gradient.svg" alt="Forsa Design" width="1000" height="710" loading="lazy" decoding="async" class="h-auto w-40 mb-5" />
 <p class="text-foreground/60 font-light mb-2">Custom web development for technical B2B.</p>
 <p class="text-foreground/60 font-light mb-4">Banff, Aberdeenshire, Scotland</p>
 <div class="space-y-2">
@@ -508,7 +511,7 @@ function buildHomepageBodyPl() {
 <section id="home" class="relative min-h-[62dvh] flex items-center justify-center py-16 md:py-20 overflow-hidden">
 <div class="container mx-auto px-6 relative z-10">
 <div class="max-w-5xl mx-auto text-center flex flex-col items-center">
-<img src="/logo-hero-384.webp?v=17" alt="Forsa Design" width="384" height="317" loading="eager" fetchpriority="high" decoding="async" class="w-64 md:w-80 lg:w-96 h-auto object-contain block mx-auto mb-2" />
+<img src="/brand/forsa-logo-gradient.svg" alt="Forsa Design" width="384" height="273" loading="eager" fetchpriority="high" decoding="async" class="w-64 md:w-80 lg:w-96 h-auto object-contain block mx-auto mb-2" />
 <div class="w-20 h-px bg-primary mb-6 mt-4"></div>
 <h1 class="text-4xl md:text-5xl lg:text-6xl font-serif font-bold tracking-tight leading-tight mb-4 max-w-4xl">Strony i systemy webowe dla przemys&#322;u</h1>
 <p class="text-lg md:text-xl text-foreground/80 font-medium mb-5 max-w-3xl text-balance">Bez szablon&#243;w. Bez kreator&#243;w stron. Dedykowane strony i systemy webowe dla technicznych firm B2B.</p>
@@ -754,7 +757,7 @@ Korzystam z narz&#281;dzi wspomaganych przez AI, aby przyspieszy&#263; odpowiedn
 <div class="container mx-auto px-6">
 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 mb-12">
 <div>
-<p class="font-serif text-xl tracking-[0.2em] font-bold text-white uppercase mb-4">Forsa Design</p>
+<img src="/brand/forsa-logo-gradient.svg" alt="Forsa Design" width="1000" height="710" loading="lazy" decoding="async" class="h-auto w-40 mb-5" />
 <p class="text-foreground/60 font-light mb-2">Dedykowany web development dla technicznego B2B.</p>
 <p class="text-foreground/60 font-light mb-4">Banff, Aberdeenshire, Szkocja</p>
 <div class="space-y-2">

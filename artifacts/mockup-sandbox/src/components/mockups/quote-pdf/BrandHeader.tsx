@@ -13,7 +13,7 @@ export default function BrandHeader() {
           {/* Official Forsa Design logo */}
           <div className="flex items-center gap-5">
             <img
-              src="/__mockup/images/forsa-design-logo.png"
+              src="/__mockup/images/forsa-logo-gold.svg"
               alt="Forsa Design"
               className="h-40 w-40 object-contain opacity-[1]"
             />
