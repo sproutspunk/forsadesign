@@ -1,3 +1,4 @@
+import { BlueprintToggle } from "@/components/BlueprintBackground";
 import { useEffect, useRef, useState } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useLocation } from "wouter";
@@ -284,10 +285,11 @@ export default function Header() {
             </div>
           </div>
 
+          <BlueprintToggle />
           <button
             ref={menuToggleRef}
             type="button"
-            className="ml-auto text-foreground md:hidden"
+            className="text-foreground md:hidden"
             onClick={() => setIsMobileMenuOpen((open) => !open)}
             aria-expanded={isMobileMenuOpen}
             aria-controls="mobile-nav"
