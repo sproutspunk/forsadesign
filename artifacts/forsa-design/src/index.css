@@ -390,6 +390,10 @@ html.js-booting #root {
   color: hsl(var(--foreground) / 0.84) !important;
 }
 
+.tool-logos-shell {
+  position: relative;
+}
+
 .tool-logos {
   position: relative;
   height: 144px;
@@ -464,11 +468,13 @@ html.js-booting #root {
   align-items: center;
   width: max-content;
   height: 100%;
-  animation: tool-logos-scroll 40s linear infinite;
+  transform: translate3d(0, 0, 0);
+  will-change: transform;
 }
 
 .tool-logos-group {
   display: flex;
+  flex: 0 0 auto;
   align-items: center;
   gap: 2.5rem;
   padding-right: 2.5rem;
@@ -481,6 +487,8 @@ html.js-booting #root {
   align-items: center;
   justify-content: center;
   flex: 0 0 2.75rem;
+  width: 2.75rem;
+  min-width: 2.75rem;
   height: 2.75rem;
   border-radius: 0.25rem;
 }
@@ -509,7 +517,7 @@ html.js-booting #root {
   display: block;
   width: 32px;
   height: 32px;
-  transform: translateY(calc(var(--logo-heat) * -4px)) scale(calc(1 + var(--logo-heat) * 0.23));
+  transform: scale(calc(1 + var(--logo-heat) * 0.23));
   filter: drop-shadow(
     0 0 calc(var(--logo-heat) * 12px) hsl(var(--primary) / calc(var(--logo-heat) * 0.85))
   );
@@ -550,7 +558,7 @@ html.js-booting #root {
 }
 
 .tool-logo:focus-visible .tool-logo-symbol {
-  transform: translateY(-7px) scale(1.3);
+  transform: scale(1.3);
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -559,7 +567,7 @@ html.js-booting #root {
   }
 
   .tool-logo:hover .tool-logo-symbol {
-    transform: translateY(-7px) scale(1.3);
+    transform: scale(1.3);
     filter: drop-shadow(0 0 7px hsl(var(--primary))) drop-shadow(0 0 21px hsl(var(--primary) / 0.7));
   }
 
@@ -575,22 +583,9 @@ html.js-booting #root {
   }
 }
 
-.tool-logos:has(a:focus-visible) .tool-logos-track {
-  animation-play-state: paused;
-}
-
-@keyframes tool-logos-scroll {
-  to {
-    transform: translateX(-50%);
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
   .tool-logos {
     overflow-x: auto;
-  }
-  .tool-logos-track {
-    animation: none;
   }
   .tool-logos-group[aria-hidden="true"] {
     display: none;
@@ -598,5 +593,38 @@ html.js-booting #root {
   .tool-logo-symbol {
     transform: none !important;
     transition: none;
+  }
+}
+
+.tool-logos-toggle {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  color: hsl(var(--primary));
+  background: hsl(var(--background) / 0.9);
+  border: 1px solid hsl(var(--primary) / 0.3);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.tool-logos-toggle:hover,
+.tool-logos-toggle[aria-pressed="true"] {
+  background: hsl(var(--primary) / 0.12);
+  border-color: hsl(var(--primary) / 0.7);
+}
+
+.tool-logos-toggle:focus-visible {
+  outline: 2px solid hsl(var(--primary));
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tool-logos-toggle {
+    display: none;
   }
 }
