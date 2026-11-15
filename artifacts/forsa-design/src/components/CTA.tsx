@@ -1,5 +1,5 @@
 import { useLanguage } from "@/contexts/LanguageContext";
-import { motion } from "framer-motion";
+import { m as motion } from "framer-motion";
 import { trackEvent } from "@/lib/consentManager";
 
 export default function CTA() {

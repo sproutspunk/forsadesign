@@ -29,6 +29,8 @@ export default function AnnouncementBanner({ language }: AnnouncementBannerProps
       <div className="flex items-center gap-2">
         <img
           src="/megaphone.webp"
+          width={36}
+          height={24}
           alt=""
           aria-hidden="true"
           className="h-6 w-auto flex-shrink-0 object-contain"

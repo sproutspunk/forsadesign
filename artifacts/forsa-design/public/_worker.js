@@ -20,12 +20,25 @@ function forbiddenOrigin() {
   });
 }
 
-function withFreshHtmlHeaders(response) {
+function withAssetCacheHeaders(response, request) {
   const contentType = response.headers.get("content-type") || "";
-  if (!contentType.toLowerCase().includes("text/html")) return response;
-
+  const url = new URL(request.url);
   const headers = new Headers(response.headers);
-  headers.set("Cache-Control", "public, max-age=0, must-revalidate");
+  if (contentType.toLowerCase().includes("text/html")) {
+    headers.set("Cache-Control", "public, max-age=0, must-revalidate");
+  } else if (
+    response.status === 200 &&
+    /^\/assets\/[^/]+-[A-Za-z0-9_-]{8,}\.(?:js|css|js\.map|css\.map)$/.test(url.pathname)
+  ) {
+    // Vite's content hash changes whenever the file changes. Set this after
+    // ASSETS.fetch so overlapping Pages _headers rules cannot shorten the TTL.
+    headers.set("Cache-Control", "public, max-age=31536000, immutable");
+  } else if (response.status === 200 && /^\/fonts\/[^/]+\.woff2$/.test(url.pathname)) {
+    // Font URLs are not fingerprinted, so keep them revalidatable.
+    headers.set("Cache-Control", "public, max-age=604800, must-revalidate");
+  } else {
+    return response;
+  }
   return new Response(response.body, {
     status: response.status,
     statusText: response.statusText,
@@ -85,12 +98,13 @@ export default {
       const routeIndex = new URL(`${url.pathname.replace(/\/$/, "")}/index.html`, url.origin);
       const prerenderedResponse = await env.ASSETS.fetch(new Request(routeIndex, request));
       if (prerenderedResponse.status !== 404) {
-        return withFreshHtmlHeaders(prerenderedResponse);
+        return withAssetCacheHeaders(prerenderedResponse, request);
       }
-      return withFreshHtmlHeaders(
+      return withAssetCacheHeaders(
         await env.ASSETS.fetch(new Request(new URL("/", url.origin), request)),
+        request,
       );
     }
-    return withFreshHtmlHeaders(assetResponse);
+    return withAssetCacheHeaders(assetResponse, request);
   },
 };
