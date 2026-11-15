@@ -1,12 +1,12 @@
 ---
-status: draft
-published_at: null
+status: published
+published_at: 2026-11-15
 reading_time_min: 3
 slug_pl: formularz-zapytania-ofertowego-dla-przemyslu
 slug_en: useful-industrial-rfq-form
 ---
 
-# PL — Formularz RFQ, po którym da się przygotować ofertę
+# PL: Formularz RFQ, po którym da się przygotować ofertę
 
 **Zajawka:** Dobry formularz zapytania zbiera informacje potrzebne do kolejnego kroku. Nie powinien ani ograniczać się do pustego pola wiadomości, ani przypominać pełnego audytu dostawcy.
 
@@ -22,7 +22,7 @@ Przy zapytaniu o rozwiązanie ważniejsze mogą być zastosowanie, warunki pracy
 
 ## Wymagaj tylko informacji rzeczywiście niezbędnych
 
-Adres odpowiedzi, opis potrzeby i kontekst zapytania zwykle mają inny priorytet niż numer podatkowy lub pełny adres dostawy. Jeżeli określone pole jest obowiązkowe, zespół powinien umieć wyjaśnić dlaczego.
+Przy pierwszym kontakcie ustal, czy do odpowiedzi wystarczą adres e-mail, opis potrzeby i kontekst zapytania. Numer podatkowy lub pełny adres dostawy mogą być potrzebne na późniejszym etapie. Jeżeli określone pole jest obowiązkowe, zespół powinien umieć wyjaśnić dlaczego.
 
 Termin realizacji warto odróżnić od terminu odpowiedzi na ofertę. „Potrzebuję wyceny do piątku” nie oznacza „towar musi dotrzeć w piątek”. Osobne pytania pomagają uniknąć takiej pomyłki. Przy międzynarodowej dostawie kraj i orientacyjny kod pocztowy mogą wystarczyć do pierwszej oceny transportu.
 
@@ -36,11 +36,11 @@ Nie wystarczy sprawdzić rozszerzenia w przeglądarce. Weryfikacja po stronie se
 
 Komunikat sukcesu powinien pojawić się po rzeczywistym przyjęciu zapytania przez serwer. Dobrze, gdy zawiera numer sprawy lub podsumowanie i wyjaśnia następny krok. Jeżeli firma nie ma ustalonego czasu reakcji, nie warto automatycznie obiecywać odpowiedzi w godzinę.
 
-Przetestuj formularz na telefonie, przy błędnym adresie e-mail, bez załącznika i po przerwaniu połączenia. Sprawdź również, czy wiadomość trafia do osoby, która ma ją obsłużyć. Wygląd formularza to tylko część działającego procesu zapytania.
+Przetestuj formularz na telefonie, przy błędnym adresie e-mail, bez załącznika i po przerwaniu połączenia. Sprawdź również, czy wiadomość trafia do osoby, która ma ją obsłużyć. Uwzględnij w odbiorze projektu zarówno wysłanie formularza, jak i odebranie zgłoszenia przez właściwy zespół.
 
 **Powiązane:** [Systemy webowe](/pl/services/) · [Omów formularz RFQ](/pl/contact/)
 
-# EN — An industrial RFQ form that supports a useful quotation
+# EN: An industrial RFQ form that supports a useful quotation
 
 **Excerpt:** A good enquiry form collects what the next step requires. It should offer more direction than an empty message box without turning first contact into a full supplier audit.
 
@@ -56,7 +56,7 @@ For an application enquiry, operating conditions and constraints may matter more
 
 ## Be selective about compulsory fields
 
-A reply address, description of the requirement and enquiry context usually have a different priority from tax details or a complete delivery address. The team should be able to explain why each compulsory field is needed at this stage.
+Check whether a reply address, requirement description and enquiry context are enough for the initial response. Tax details or a complete delivery address may belong at a later stage. The team should be able to explain why each compulsory field is needed at this stage.
 
 Distinguish the quotation deadline from the required delivery date. “We need your quotation by Friday” does not mean the goods must arrive on Friday. Separate questions make that distinction explicit. For an initial international freight assessment, the destination country and approximate postcode may be enough.
 
@@ -70,11 +70,11 @@ Checking the filename extension in the browser is insufficient. Server-side vali
 
 A success message should follow actual acceptance of the enquiry by the server. A reference or summary is useful, along with an explanation of the next step. Avoid promising a response within an hour unless the business has a process that supports it.
 
-Test on a phone, with an incorrect email address, without an attachment and after interrupting the connection. Check that the submitted enquiry reaches the person responsible for handling it. The form’s appearance is only one part of a working enquiry process.
+Test on a phone, with an incorrect email address, without an attachment and after interrupting the connection. Check that the submitted enquiry reaches the person responsible for handling it. Include both submission and receipt by the responsible team in the release checks.
 
 **Related:** [Web systems](/en/services/) · [Discuss an RFQ form](/en/contact/)
 
-## Materiały do weryfikacji / Further reading
+## Źródła / Sources
 
-- W3C WAI, Forms Tutorial: https://www.w3.org/WAI/tutorials/forms/
-- OWASP, File Upload Cheat Sheet: https://cheatsheetseries.owasp.org/cheatsheets/File_Upload_Cheat_Sheet.html
+- [W3C: Forms Tutorial](https://www.w3.org/WAI/tutorials/forms/)
+- [OWASP: File Upload Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/File_Upload_Cheat_Sheet.html)

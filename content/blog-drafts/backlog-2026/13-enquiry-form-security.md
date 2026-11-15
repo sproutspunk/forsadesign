@@ -1,12 +1,12 @@
 ---
-status: draft
-published_at: null
-reading_time_min: 3
+status: published
+published_at: 2026-11-15
+reading_time_min: 2
 slug_pl: bezpieczenstwo-formularza-b2b-i-zalacznikow
 slug_en: secure-b2b-enquiry-forms-and-attachments
 ---
 
-# PL — Formularz zapytania B2B: mniej spamu, bezpieczniejsze załączniki
+# PL: Formularz zapytania B2B: mniej spamu, bezpieczniejsze załączniki
 
 **Zajawka:** Publiczny formularz przyjmuje dane od nieznanych osób. Ochrona musi obejmować serwer, pliki, wysyłkę i obsługę błędów, a nie tylko dodatkowe pole w przeglądarce.
 
@@ -18,7 +18,7 @@ Celem jest ograniczenie nadużyć przy zachowaniu wygody prawdziwych klientów. 
 
 Pola w przeglądarce pomagają wpisać prawidłową treść, lecz można ominąć ich ograniczenia. Serwer powinien sprawdzać typ, długość i format danych oraz przyjmować tylko oczekiwane pola.
 
-Dane klienta nie mogą swobodnie sterować odbiorcą wiadomości ani nagłówkami poczty. Nie należy też wstawiać nieprzetworzonego tekstu w miejsca, które interpretują go jako kod. Uprawnienia integracji powinny ograniczać się do zadania formularza.
+Dane klienta nie mogą swobodnie sterować odbiorcą wiadomości ani nagłówkami poczty. Przy wyświetlaniu treści stosuj kodowanie odpowiednie do kontekstu, a w zapytaniach SQL parametryzację. Walidacja danych nie zastępuje tych zabezpieczeń ani sprawdzania uprawnień. Uprawnienia integracji powinny ograniczać się do zadania formularza.
 
 ## Załącznik to osobny obszar kontroli
 
@@ -40,7 +40,7 @@ Monitoruj błędy przekazania i odrzucenia. Logi mają umożliwiać znalezienie 
 
 **Powiązane:** [Systemy i integracje](/pl/services/) · [Kontakt](/pl/contact/)
 
-# EN — Protecting B2B enquiry forms and their attachments
+# EN: Protecting B2B enquiry forms and their attachments
 
 **Excerpt:** A public form accepts information from unknown visitors. Protection needs to cover the server, uploads, delivery and error handling, rather than relying on one browser control.
 
@@ -52,7 +52,7 @@ A bot check can be one useful layer. It cannot replace input validation or safe 
 
 Browser controls help visitors enter suitable information, but their restrictions can be bypassed. The server should check types, lengths and formats, and accept only expected fields.
 
-Submitted values should not freely determine email recipients or headers. Do not insert untrusted text into contexts where it can become executable code. Give integrations only the permissions needed for the form's task.
+Submitted values should not freely determine email recipients or headers. Use context-appropriate output encoding when displaying content and parameterised queries for SQL. Input validation does not replace those controls or authorisation checks. Give integrations only the permissions needed for the form's task.
 
 ## Treat uploads as a separate concern
 
@@ -74,4 +74,7 @@ Monitor delivery failures and rejected requests. Logs should help diagnosis with
 
 **Related:** [Web systems and integrations](/en/services/) · [Contact](/en/contact/)
 
-**Źródło / Further reading:** [OWASP: File Upload Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/File_Upload_Cheat_Sheet.html)
+## Źródła / Sources
+
+- [OWASP: File Upload Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/File_Upload_Cheat_Sheet.html)
+- [OWASP: Input Validation Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Input_Validation_Cheat_Sheet.html)

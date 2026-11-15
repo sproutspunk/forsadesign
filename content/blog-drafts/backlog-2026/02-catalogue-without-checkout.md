@@ -1,24 +1,24 @@
 ---
-status: draft
-published_at: null
+status: published
+published_at: 2026-11-15
 reading_time_min: 3
 slug_pl: katalog-b2b-bez-koszyka-kiedy-ma-sens
 slug_en: b2b-product-catalogue-without-checkout
 ---
 
-# PL — Katalog B2B bez koszyka. Kiedy to lepszy wybór?
+# PL: Katalog B2B bez koszyka. Kiedy to lepszy wybór?
 
 **Zajawka:** Nie każdy produkt przemysłowy powinien kończyć drogę zakupową płatnością online. Czasami dobrze zbudowany katalog i zapytanie ofertowe lepiej odpowiadają sposobowi sprzedaży.
 
 Przy rozmowie o nowej stronie katalog produktów łatwo zamienia się w projekt sklepu. Skoro produkt ma nazwę, zdjęcie i numer, można przecież dodać cenę oraz koszyk. Problem pojawia się wtedy, gdy rzeczywista oferta wymaga doboru wariantu, sprawdzenia zastosowania albo uzgodnienia dostawy.
 
-W takiej sytuacji koszyk może sugerować gotowość do transakcji, której firma nie potrafi jeszcze potwierdzić. Nie jest to argument przeciwko sprzedaży internetowej. To powód, żeby najpierw ustalić, który etap sprzedaży rzeczywiście da się obsłużyć bez rozmowy.
+W takiej sytuacji koszyk może sugerować gotowość do transakcji, której firma nie potrafi jeszcze potwierdzić. Najpierw ustal więc, które etapy sprzedaży można obsłużyć bez rozmowy, a które wymagają potwierdzenia.
 
 ## Co kupujący może ustalić samodzielnie
 
 Dobry katalog pozwala zawęzić wybór: znaleźć rodzinę produktów, porównać istotne parametry, sprawdzić zastosowanie i pobrać dokumentację. Nie musi od razu obiecywać ostatecznej ceny ani terminu wysyłki.
 
-Przy części zamiennej kupujący może znać numer producenta. Przy wyposażeniu linii produkcyjnej ważniejsze mogą być warunki pracy, wydajność lub zgodność z istniejącą instalacją. Struktura katalogu powinna odpowiadać tym sposobom szukania. Przeniesienie folderów z firmowego dysku do menu zwykle nie wystarcza.
+Przy części zamiennej kupujący może znać numer producenta. Przy wyposażeniu linii produkcyjnej ważniejsze mogą być warunki pracy, wydajność lub zgodność z istniejącą instalacją. Struktura katalogu powinna odpowiadać tym sposobom szukania. Sprawdź, czy nazwy kategorii pozostają zrozumiałe dla osoby, która nie zna struktury firmowych folderów.
 
 ## Zapytanie zamiast pozornego zamówienia
 
@@ -40,19 +40,19 @@ Decyzję warto oprzeć na rzeczywistym procesie handlowym. Jeżeli klient i tak 
 
 **Powiązane:** [Katalogi i systemy B2B](/pl/services/) · [Kontakt](/pl/contact/)
 
-# EN — When a B2B product catalogue does not need a checkout
+# EN: When a B2B product catalogue does not need a checkout
 
 **Excerpt:** Not every industrial product should lead directly to an online payment. A structured catalogue and an enquiry process can better reflect the way a business sells.
 
 A discussion about a new product catalogue can quickly become a discussion about an online shop. Once a product has a name, photograph and part number, adding a price and basket seems straightforward. The difficulty appears when the actual offer still requires configuration, an application check or an agreed delivery arrangement.
 
-In that situation, a checkout can suggest readiness to transact that the business cannot yet confirm. This is not an argument against online selling. It is a reason to establish which stages of the sale can genuinely happen without a conversation.
+In that situation, a checkout can suggest readiness to transact that the business cannot yet confirm. First establish which stages of the sale can happen without a conversation and which still require confirmation.
 
 ## Help buyers narrow the choice
 
 A useful catalogue lets buyers find a product family, compare relevant specifications, check applications and obtain documentation. It does not have to promise a final price or dispatch date immediately.
 
-Somebody looking for a spare part may have a manufacturer’s reference. Somebody selecting equipment for a production line may start with operating conditions, capacity or compatibility. Catalogue structure should support those different approaches. Copying the company’s internal folder structure into a menu is rarely sufficient.
+Somebody looking for a spare part may have a manufacturer’s reference. Somebody selecting equipment for a production line may start with operating conditions, capacity or compatibility. Catalogue structure should support those different approaches. Check whether category names make sense to somebody unfamiliar with the company’s internal folder structure.
 
 ## An enquiry should retain the product details
 

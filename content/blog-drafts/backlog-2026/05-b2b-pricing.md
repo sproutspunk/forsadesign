@@ -1,12 +1,12 @@
 ---
-status: draft
-published_at: null
+status: published
+published_at: 2026-11-15
 reading_time_min: 3
 slug_pl: ceny-w-katalogu-b2b-publiczne-czy-na-zapytanie
 slug_en: b2b-catalogue-public-prices-or-quotation
 ---
 
-# PL — Ceny w katalogu B2B: pokazać, ukryć czy wyjaśnić?
+# PL: Ceny w katalogu B2B: pokazać, ukryć czy wyjaśnić?
 
 **Zajawka:** Cena publiczna, cennik kontraktowy i wycena indywidualna rozwiązują różne problemy. Dobry katalog jasno pokazuje, który model obowiązuje i co klient powinien zrobić dalej.
 
@@ -36,11 +36,11 @@ Nie obiecuj automatycznie odpowiedzi w godzinę, jeżeli proces tego nie zapewni
 
 Przed zmianą całego katalogu wybierz jedną rodzinę produktów i sprawdź rzeczywiste zasady sprzedaży z handlowcami. Porównaj pytania klientów, kompletność zapytań i czas potrzebny na odpowiedź. Dopiero wtedy rozszerz model.
 
-Nie ma jednego układu cen odpowiedniego dla każdego B2B. Jest za to prosta zasada: klient powinien rozumieć, co oznacza pokazana kwota albo dlaczego wymaga ona potwierdzenia.
+Dla wybranej grupy zapisz trzy reguły: kto widzi cenę, jakie warunki obejmuje kwota i kiedy wymaga ona potwierdzenia. Sprawdź te same reguły w katalogu, formularzu i odpowiedzi z systemu.
 
 **Powiązane:** [Systemy i strony dla B2B](/pl/services/) · [Porozmawiajmy o katalogu](/pl/contact/)
 
-# EN — B2B catalogue prices: publish them, restrict them or explain them?
+# EN: B2B catalogue prices: publish them, restrict them or explain them?
 
 **Excerpt:** Public prices, contract price lists and individual quotations serve different needs. A useful catalogue makes the pricing model clear and shows buyers what to do next.
 
@@ -70,6 +70,6 @@ Describe the next step honestly: technical selection, availability checks or com
 
 Review the actual selling rules with the commercial team before changing the entire catalogue. Start with one family and assess the questions buyers ask, the completeness of enquiries and the work required to answer them.
 
-There is no universal pricing layout for B2B. There is a practical standard: buyers should understand the figure they see, or understand why it needs confirmation.
+For the selected product family, record who can see a price, what it includes and when confirmation is required. Check those rules in the catalogue, enquiry form and system response.
 
 **Related:** [B2B websites and systems](/en/services/) · [Discuss your catalogue](/en/contact/)

@@ -1,18 +1,18 @@
 ---
-status: draft
-published_at: null
-reading_time_min: 3
+status: published
+published_at: 2026-11-15
+reading_time_min: 2
 slug_pl: animacje-na-stronie-b2b-kontrola-ruchu
 slug_en: b2b-website-animation-with-user-control
 ---
 
-# PL — Animacja na stronie B2B: efekt, który daje się zatrzymać
+# PL: Animacja na stronie B2B: efekt, który daje się zatrzymać
 
 **Zajawka:** Ruch może budować charakter marki, ale nie powinien utrudniać czytania ani kliknięcia. Przy projektowaniu animacji trzeba uwzględnić telefon, ograniczenie ruchu i kontrolę użytkownika.
 
 Świecący znak, przesuwające się logotypy i aktywna siatka potrafią nadać technicznej stronie rozpoznawalny charakter. Trzeba jednak sprawdzić, co dzieje się, gdy użytkownik chce wybrać link, przeczytać treść albo po prostu zatrzymać efekt.
 
-W projekcie Forsa Design pojawiły się ruchomy pasek logotypów oraz siatka z sygnałami biegnącymi między punktami. To dobry kontekst do omówienia decyzji, które warto podejmować przy podobnych efektach. Sam atrakcyjny podgląd nie potwierdza jeszcze wygody na wszystkich urządzeniach.
+W projekcie Forsa Design pojawiły się ruchomy pasek logotypów oraz siatka z sygnałami biegnącymi między punktami. Przy takich elementach trzeba osobno sprawdzić zatrzymanie ruchu, wybieranie linków i działanie na telefonie.
 
 ## Celowanie w link nie powinno być zadaniem zręcznościowym
 
@@ -36,17 +36,17 @@ Na mniejszym urządzeniu można ograniczyć liczbę efektów i tempo aktualizacj
 
 Test powinien objąć prawdziwy telefon, zmianę orientacji, przewijanie, powrót do karty oraz włączone ograniczenie ruchu. Osobno warto sprawdzić obciążenie renderowania i wskaźniki wydajności. Pojedynczy wynik Lighthouse nie opisuje wszystkich warunków korzystania ze strony.
 
-Dobra animacja pozostaje wyborem. Jeśli po jej zatrzymaniu strona nadal wygląda spójnie i pozwala bez przeszkód wykonać zadanie, efekt został osadzony w projekcie rozsądnie.
+Do listy odbiorowej dodaj statyczny wariant strony, działanie pauzy i możliwość wybrania każdego linku. Powtórz te sprawdzenia po zmianie układu lub dodaniu nowych logotypów.
 
 **Powiązane:** [Projektowanie stron i systemów](/pl/services/) · [Kontakt](/pl/contact/)
 
-# EN — B2B website animation should give visitors control
+# EN: B2B website animation should give visitors control
 
 **Excerpt:** Movement can give a technical brand a distinctive character, but it should not make reading or selecting a link harder. Design for touch, reduced motion and an explicit pause.
 
 An illuminated mark, moving technology logos and an active grid can create a recognisable visual identity. The design still needs to work when someone wants to read, choose a link or stop the effect.
 
-The Forsa Design project includes a moving logo strip and a grid with signals travelling between points. These provide a useful setting for considering similar motion decisions. An appealing preview alone does not establish usability across devices.
+The Forsa Design project includes a moving logo strip and a grid with signals travelling between points. For these elements, check motion controls, link selection and phone behaviour separately.
 
 ## Do not turn links into moving targets
 
@@ -70,8 +70,11 @@ Smaller devices may need fewer effects and a lower update rate. Retaining the de
 
 Use a real phone to check orientation changes, scrolling, returning to the tab and reduced-motion settings. Assess rendering work and performance separately. A single Lighthouse result cannot describe every viewing condition.
 
-Animation works best as a choice. If stopping it leaves a coherent page and a straightforward task, the effect has a useful place in the design.
+Include the static page, pause behaviour and selection of every link in the release checklist. Repeat those checks after layout changes or the addition of further logos.
 
 **Related:** [Website and system design](/en/services/) · [Contact](/en/contact/)
 
-**Źródło / Further reading:** [web.dev: prefers-reduced-motion](https://web.dev/articles/prefers-reduced-motion)
+## Źródła / Sources
+
+- [web.dev: prefers-reduced-motion](https://web.dev/articles/prefers-reduced-motion)
+- [W3C: Pause, Stop, Hide](https://www.w3.org/WAI/WCAG22/Understanding/pause-stop-hide.html)

@@ -874,6 +874,11 @@ function buildArticleBody(lang, article) {
       return `${heading}<p>${ht(s.body)}</p>`;
     })
     .join("\n");
+  const sourcesHtml = content.sources?.length
+    ? `<section aria-labelledby="article-sources"><h2 id="article-sources">${en ? "Sources" : "Źródła"}</h2><ul>${content.sources
+        .map((source) => `<li><a href="${ht(source.href)}">${ht(source.label)}</a></li>`)
+        .join("")}</ul></section>`
+    : "";
   return `<header>
 <nav><a href="/${lang}/">Forsa Design</a> | <a href="/${lang}/#services">${en ? "Services" : "Usługi"}</a> | <a href="/${lang}/#faq">FAQ</a> | <a href="/${lang}/#contact">${en ? "Contact" : "Kontakt"}</a> | <a href="/${lang}/blog">Blog</a></nav>
 </header>
@@ -883,6 +888,7 @@ function buildArticleBody(lang, article) {
 <h1>${ht(content.title)}</h1>
 <p><time datetime="${article.dateIso}">${article.dateIso}</time> · ${article.readingTimeMin} min</p>
 ${sectionsHtml}
+${sourcesHtml}
 <aside>
 <h2>${en ? "Working on a similar project?" : "Pracujesz nad podobnym projektem?"}</h2>
 <p>${en ? "We design procurement-ready websites and bespoke web systems for industrial, marine and engineering businesses." : "Projektujemy strony gotowe na audyt zakupowy i dedykowane systemy webowe dla firm przemysłowych, morskich i inżynieryjnych."}</p>

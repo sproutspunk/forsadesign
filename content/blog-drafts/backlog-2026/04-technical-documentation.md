@@ -1,16 +1,16 @@
 ---
-status: draft
-published_at: null
+status: published
+published_at: 2026-11-15
 reading_time_min: 3
 slug_pl: dokumentacja-techniczna-na-stronie-wersje-i-aktualnosc
 slug_en: technical-documentation-website-version-control
 ---
 
-# PL — PDF na stronie to za mało. Jak uporządkować dokumentację techniczną?
+# PL: PDF na stronie to za mało. Jak uporządkować dokumentację techniczną?
 
 **Zajawka:** Instrukcja, karta produktu i deklaracja nie powinny tworzyć przypadkowej listy plików. Kupujący musi wiedzieć, do czego dokument się odnosi i czy jest właściwą wersją.
 
-Plik nazwany „karta_final_nowa2.pdf” może być zrozumiały dla osoby, która go wczoraj zapisała. Dla klienta szukającego dokumentacji do konkretnego urządzenia nie jest wiarygodną informacją. Problemem nie musi być sam PDF. Często brakuje kontekstu, który pozwala wybrać właściwy dokument.
+Plik nazwany „karta_final_nowa2.pdf” może być zrozumiały dla osoby, która go wczoraj zapisała. Dla klienta szukającego dokumentacji do konkretnego urządzenia nie jest wiarygodną informacją. Problemem nie musi być sam PDF. Sprawdź, czy przy linku podano kontekst potrzebny do wyboru właściwego dokumentu.
 
 Na stronie przemysłowej dokumentacja jest częścią informacji o produkcie. Powinna być powiązana z modelem, wariantem, językiem i zakresem zastosowania. Zanim dołożysz wyszukiwarkę plików, warto uporządkować te zależności.
 
@@ -40,11 +40,11 @@ Dobry porządek w dokumentacji nie kończy się na dniu uruchomienia strony. Pot
 
 **Powiązane:** [Strony i katalogi dla przemysłu](/pl/services/) · [Kontakt](/pl/contact/)
 
-# EN — Technical documentation needs more than a PDF download link
+# EN: Technical documentation needs more than a PDF download link
 
 **Excerpt:** Manuals, product sheets and declarations should not become an arbitrary file list. Buyers need to understand what a document covers and whether it is the appropriate version.
 
-“Datasheet_final_new2.pdf” may make sense to the person who saved it yesterday. It tells a customer looking for a particular machine’s documentation very little. The problem is not necessarily the PDF format. It is often the missing context needed to select the right document.
+“Datasheet_final_new2.pdf” may make sense to the person who saved it yesterday. It tells a customer looking for a particular machine’s documentation very little. The problem is not necessarily the PDF format. Check whether the link provides the context needed to select the right document.
 
 On an industrial website, documentation forms part of the product information. It should be associated with the relevant model, variant, language and application scope. Organise those relationships before adding another file-search tool.
 
@@ -70,6 +70,6 @@ Conversely, a link labelled “current manual” should not return different rev
 
 A basic product sheet and a confidential manufacturing drawing may require different access arrangements. Removing a link from the navigation does not create access control. The information owner should approve the publication decision.
 
-Documentation management continues after launch. It needs an update process and a straightforward test: can somebody unfamiliar with the company’s folder structure find the appropriate document for a particular product? If they cannot, another folder of PDFs will not solve the underlying problem.
+Documentation management continues after launch. It needs an update process and a straightforward test: can somebody unfamiliar with the company’s folder structure find the appropriate document for a particular product? Record whether the difficulty concerns the filename, product association, revision or navigation, then correct that specific issue.
 
 **Related:** [Industrial websites and catalogues](/en/services/) · [Contact](/en/contact/)

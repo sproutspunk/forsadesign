@@ -1,12 +1,12 @@
 ---
-status: draft
-published_at: null
-reading_time_min: 3
+status: published
+published_at: 2026-11-15
+reading_time_min: 2
 slug_pl: integracja-strony-z-erp-i-crm-zrodlo-danych
 slug_en: website-erp-crm-integration-data-ownership
 ---
 
-# PL — Integracja strony z ERP i CRM zaczyna się od właściciela danych
+# PL: Integracja strony z ERP i CRM zaczyna się od właściciela danych
 
 **Zajawka:** Połączenie systemów nie rozwiązuje samo problemu nieaktualnych informacji. Najpierw trzeba ustalić, skąd pochodzą dane, kto je zatwierdza i co dzieje się przy błędzie.
 
@@ -36,11 +36,11 @@ Operator potrzebuje czytelnego statusu: co się nie udało, jaki rekord dotyczy 
 
 Nie wszystkie dane wymagają synchronizacji w tej samej chwili. Opisy produktów mogą mieć inny rytm niż dostępność. Ustal akceptowalne opóźnienie oraz zachowanie strony, gdy ostatnia aktualizacja jest zbyt stara.
 
-Zacznij od małego przepływu i przetestuj również jego awarię. Udana integracja to nie tylko poprawny pierwszy import. To proces, który firma potrafi zrozumieć, obserwować i naprawić.
+Zacznij od małego przepływu i przetestuj również jego awarię. Przy odbiorze wskaż osobę odpowiedzialną za alarmy i przećwicz ponowienie odrzuconego rekordu bez tworzenia duplikatu.
 
 **Powiązane:** [Integracje i systemy webowe](/pl/services/) · [Omówienie procesu](/pl/contact/)
 
-# EN — Website integrations start with ownership of the data
+# EN: Website integrations start with ownership of the data
 
 **Excerpt:** Connecting a website to ERP or CRM does not automatically make its information reliable. First define where data comes from, who approves it and what happens when a transfer fails.
 
@@ -70,6 +70,6 @@ The operator needs to see what failed, which record is affected and whether the 
 
 Product descriptions and stock availability may need different update schedules. Define acceptable delay and what the website displays when its last successful update is too old.
 
-Begin with a small flow and test its failure as well as its success. A useful integration is a process the business can monitor and recover, rather than just an import that worked once.
+Begin with a small flow and test its failure as well as its success. At handover, assign responsibility for alerts and practise retrying a rejected record without creating a duplicate.
 
 **Related:** [Web systems and integrations](/en/services/) · [Discuss your process](/en/contact/)

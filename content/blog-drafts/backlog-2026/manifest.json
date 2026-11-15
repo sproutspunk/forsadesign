@@ -1,219 +1,284 @@
 {
-  "status": "awaiting_editorial_approval",
+  "status": "approved_for_publication",
   "last_existing_article_date": "2026-08-07",
   "backlog_weeks": 14,
-  "publication_policy": "Actual date assigned only after approval; no backdating.",
-  "weekly_schedule": "Monday around 08:00 Europe/London; draft for approval only.",
+  "publication_policy": "User approved revision and publication of the full package. Actual publication date; no backdating.",
+  "weekly_schedule": "Monday around 08:00 Europe/London; future articles remain drafts for approval.",
   "articles": [
     {
       "id": 1,
       "file": "01-procurement-ready-website.md",
-      "status": "draft",
-      "published_at": null,
+      "status": "published",
+      "published_at": "2026-11-15",
       "title_pl": "Czy Twoja strona przechodzi weryfikację dostawcy?",
       "title_en": "Does your industrial website help buyers check your business?",
       "slug_pl": "strona-przemyslowa-gotowa-na-weryfikacje-dostawcy",
       "slug_en": "industrial-website-supplier-checks",
-      "excerpt_pl": "Zanim kupiec wyśle zapytanie, sprawdza, czy firma rzeczywiście pasuje do zadania. Strona powinna pomóc mu potwierdzić kompetencje, zakres dostaw i właściwy kontakt.",
-      "excerpt_en": "Before sending an enquiry, a buyer checks whether your company fits the job. Your website should help them verify capabilities, delivery scope and the right contact.",
-      "word_count_pl": 400,
-      "word_count_en": 481,
-      "reading_time_min": 3
+      "excerpt_pl": "Strona może pomóc kupcowi sprawdzić, czy firma pasuje do zadania. Strona powinna pomóc mu potwierdzić kompetencje, zakres dostaw i właściwy kontakt.",
+      "excerpt_en": "A website can help a buyer check whether your company fits the job. Your website should help them verify capabilities, delivery scope and the right contact.",
+      "word_count_pl": 356,
+      "word_count_en": 429,
+      "reading_time_min": 3,
+      "sources": []
     },
     {
       "id": 2,
       "file": "02-catalogue-without-checkout.md",
-      "status": "draft",
-      "published_at": null,
+      "status": "published",
+      "published_at": "2026-11-15",
       "title_pl": "Katalog B2B bez koszyka. Kiedy to lepszy wybór?",
       "title_en": "When a B2B product catalogue does not need a checkout",
       "slug_pl": "katalog-b2b-bez-koszyka-kiedy-ma-sens",
       "slug_en": "b2b-product-catalogue-without-checkout",
       "excerpt_pl": "Nie każdy produkt przemysłowy powinien kończyć drogę zakupową płatnością online. Czasami dobrze zbudowany katalog i zapytanie ofertowe lepiej odpowiadają sposobowi sprzedaży.",
       "excerpt_en": "Not every industrial product should lead directly to an online payment. A structured catalogue and an enquiry process can better reflect the way a business sells.",
-      "word_count_pl": 399,
-      "word_count_en": 466,
-      "reading_time_min": 3
+      "word_count_pl": 364,
+      "word_count_en": 424,
+      "reading_time_min": 3,
+      "sources": []
     },
     {
       "id": 3,
       "file": "03-useful-rfq-form.md",
-      "status": "draft",
-      "published_at": null,
+      "status": "published",
+      "published_at": "2026-11-15",
       "title_pl": "Formularz RFQ, po którym da się przygotować ofertę",
       "title_en": "An industrial RFQ form that supports a useful quotation",
       "slug_pl": "formularz-zapytania-ofertowego-dla-przemyslu",
       "slug_en": "useful-industrial-rfq-form",
       "excerpt_pl": "Dobry formularz zapytania zbiera informacje potrzebne do kolejnego kroku. Nie powinien ani ograniczać się do pustego pola wiadomości, ani przypominać pełnego audytu dostawcy.",
       "excerpt_en": "A good enquiry form collects what the next step requires. It should offer more direction than an empty message box without turning first contact into a full supplier audit.",
-      "word_count_pl": 387,
-      "word_count_en": 487,
-      "reading_time_min": 3
+      "word_count_pl": 368,
+      "word_count_en": 425,
+      "reading_time_min": 3,
+      "sources": [
+        {
+          "label": "W3C: Forms Tutorial",
+          "href": "https://www.w3.org/WAI/tutorials/forms/"
+        },
+        {
+          "label": "OWASP: File Upload Cheat Sheet",
+          "href": "https://cheatsheetseries.owasp.org/cheatsheets/File_Upload_Cheat_Sheet.html"
+        }
+      ]
     },
     {
       "id": 4,
       "file": "04-technical-documentation.md",
-      "status": "draft",
-      "published_at": null,
+      "status": "published",
+      "published_at": "2026-11-15",
       "title_pl": "PDF na stronie to za mało. Jak uporządkować dokumentację techniczną?",
       "title_en": "Technical documentation needs more than a PDF download link",
       "slug_pl": "dokumentacja-techniczna-na-stronie-wersje-i-aktualnosc",
       "slug_en": "technical-documentation-website-version-control",
       "excerpt_pl": "Instrukcja, karta produktu i deklaracja nie powinny tworzyć przypadkowej listy plików. Kupujący musi wiedzieć, do czego dokument się odnosi i czy jest właściwą wersją.",
       "excerpt_en": "Manuals, product sheets and declarations should not become an arbitrary file list. Buyers need to understand what a document covers and whether it is the appropriate version.",
-      "word_count_pl": 388,
-      "word_count_en": 440,
-      "reading_time_min": 3
+      "word_count_pl": 355,
+      "word_count_en": 407,
+      "reading_time_min": 3,
+      "sources": []
     },
     {
       "id": 5,
       "file": "05-b2b-pricing.md",
-      "status": "draft",
-      "published_at": null,
+      "status": "published",
+      "published_at": "2026-11-15",
       "title_pl": "Ceny w katalogu B2B: pokazać, ukryć czy wyjaśnić?",
       "title_en": "B2B catalogue prices: publish them, restrict them or explain them?",
       "slug_pl": "ceny-w-katalogu-b2b-publiczne-czy-na-zapytanie",
       "slug_en": "b2b-catalogue-public-prices-or-quotation",
       "excerpt_pl": "Cena publiczna, cennik kontraktowy i wycena indywidualna rozwiązują różne problemy. Dobry katalog jasno pokazuje, który model obowiązuje i co klient powinien zrobić dalej.",
       "excerpt_en": "Public prices, contract price lists and individual quotations serve different needs. A useful catalogue makes the pricing model clear and shows buyers what to do next.",
-      "word_count_pl": 383,
-      "word_count_en": 408,
-      "reading_time_min": 3
+      "word_count_pl": 349,
+      "word_count_en": 373,
+      "reading_time_min": 3,
+      "sources": []
     },
     {
       "id": 6,
       "file": "06-erp-crm-integration.md",
-      "status": "draft",
-      "published_at": null,
+      "status": "published",
+      "published_at": "2026-11-15",
       "title_pl": "Integracja strony z ERP i CRM zaczyna się od właściciela danych",
       "title_en": "Website integrations start with ownership of the data",
       "slug_pl": "integracja-strony-z-erp-i-crm-zrodlo-danych",
       "slug_en": "website-erp-crm-integration-data-ownership",
       "excerpt_pl": "Połączenie systemów nie rozwiązuje samo problemu nieaktualnych informacji. Najpierw trzeba ustalić, skąd pochodzą dane, kto je zatwierdza i co dzieje się przy błędzie.",
       "excerpt_en": "Connecting a website to ERP or CRM does not automatically make its information reliable. First define where data comes from, who approves it and what happens when a transfer fails.",
-      "word_count_pl": 354,
-      "word_count_en": 372,
-      "reading_time_min": 3
+      "word_count_pl": 317,
+      "word_count_en": 325,
+      "reading_time_min": 2,
+      "sources": []
     },
     {
       "id": 7,
       "file": "07-multilingual-industrial-website.md",
-      "status": "draft",
-      "published_at": null,
+      "status": "published",
+      "published_at": "2026-11-15",
       "title_pl": "Wielojęzyczna strona przemysłowa to więcej niż tłumaczenie",
       "title_en": "A multilingual industrial website needs more than translated text",
       "slug_pl": "wielojezyczna-strona-przemyslowa-wiecej-niz-tlumaczenie",
       "slug_en": "multilingual-industrial-website-beyond-translation",
       "excerpt_pl": "Przetłumaczone menu nie wystarczy, jeżeli kupiec nadal otrzymuje niewłaściwe jednostki, dokumenty i informacje o obsłudze. Wersja językowa powinna wspierać cały proces zapytania.",
       "excerpt_en": "A translated menu is not enough when buyers still encounter unsuitable units, outdated documents or an enquiry route that loses their language. Localisation should cover the whole buying task.",
-      "word_count_pl": 352,
-      "word_count_en": 383,
-      "reading_time_min": 3
+      "word_count_pl": 321,
+      "word_count_en": 325,
+      "reading_time_min": 2,
+      "sources": [
+        {
+          "label": "Google Search Central: Localised versions",
+          "href": "https://developers.google.com/search/docs/specialty/international/localized-versions"
+        }
+      ]
     },
     {
       "id": 8,
       "file": "08-product-configurator.md",
-      "status": "draft",
-      "published_at": null,
+      "status": "published",
+      "published_at": "2026-11-15",
       "title_pl": "Konfigurator produktu czy dobry formularz zapytania?",
       "title_en": "Do you need a product configurator or a better enquiry form?",
       "slug_pl": "konfigurator-produktu-czy-formularz-zapytania",
       "slug_en": "product-configurator-or-enquiry-form",
       "excerpt_pl": "Konfigurator pomaga wtedy, gdy potrafi sprawdzić rzeczywiste reguły doboru. Jeśli tych reguł jeszcze nie opisano, rozbudowany interfejs może tylko ukryć niepewność.",
       "excerpt_en": "A configurator is useful when it can apply genuine selection rules. If those rules remain undefined, a sophisticated interface may only hide uncertainty.",
-      "word_count_pl": 329,
-      "word_count_en": 368,
-      "reading_time_min": 3
+      "word_count_pl": 295,
+      "word_count_en": 327,
+      "reading_time_min": 2,
+      "sources": [
+        {
+          "label": "OWASP: Input Validation Cheat Sheet",
+          "href": "https://cheatsheetseries.owasp.org/cheatsheets/Input_Validation_Cheat_Sheet.html"
+        }
+      ]
     },
     {
       "id": 9,
       "file": "09-accessible-industrial-catalogue.md",
-      "status": "draft",
-      "published_at": null,
+      "status": "published",
+      "published_at": "2026-11-15",
       "title_pl": "Dostępność katalogu B2B sprawdza się przy konkretnym zadaniu",
       "title_en": "Test B2B catalogue accessibility through a real task",
       "slug_pl": "dostepny-katalog-i-formularz-b2b",
       "slug_en": "accessible-b2b-catalogue-and-enquiry-forms",
-      "excerpt_pl": "Czy da się znaleźć część, porównać parametry i wysłać zapytanie bez myszy? Taki test mówi więcej o użyteczności katalogu niż sam wygląd strony.",
-      "excerpt_en": "Can someone find a part, compare its specifications and submit an enquiry without a mouse? That task reveals more than appearance alone.",
-      "word_count_pl": 350,
-      "word_count_en": 370,
-      "reading_time_min": 3
+      "excerpt_pl": "Czy da się znaleźć część, porównać parametry i wysłać zapytanie bez myszy? To praktyczny sposób sprawdzenia jednej ścieżki korzystania z katalogu.",
+      "excerpt_en": "Can someone find a part, compare its specifications and submit an enquiry without a mouse? Use the task to assess a complete catalogue journey.",
+      "word_count_pl": 322,
+      "word_count_en": 327,
+      "reading_time_min": 2,
+      "sources": [
+        {
+          "label": "W3C: Forms Tutorial",
+          "href": "https://www.w3.org/WAI/tutorials/forms/"
+        },
+        {
+          "label": "W3C: Pause, Stop, Hide",
+          "href": "https://www.w3.org/WAI/WCAG22/Understanding/pause-stop-hide.html"
+        }
+      ]
     },
     {
       "id": 10,
       "file": "10-export-enquiries.md",
-      "status": "draft",
-      "published_at": null,
+      "status": "published",
+      "published_at": "2026-11-15",
       "title_pl": "Co powinien wiedzieć zagraniczny kupiec przed wysłaniem zapytania?",
       "title_en": "What should an overseas buyer know before making an enquiry?",
       "slug_pl": "zapytania-eksportowe-strona-przemyslowa",
       "slug_en": "industrial-website-export-enquiries",
       "excerpt_pl": "Angielska wersja strony otwiera rozmowę, ale nie wyjaśnia jeszcze zakresu dostaw. Kupiec potrzebuje informacji o produkcie, dokumentacji, obsłudze i danych potrzebnych do oferty.",
       "excerpt_en": "An English-language website starts the conversation, but buyers also need clarity about supply coverage, technical requirements, documentation and the information needed for a quotation.",
-      "word_count_pl": 347,
-      "word_count_en": 350,
-      "reading_time_min": 2
+      "word_count_pl": 315,
+      "word_count_en": 315,
+      "reading_time_min": 2,
+      "sources": []
     },
     {
       "id": 11,
       "file": "11-stock-and-lead-times.md",
-      "status": "draft",
-      "published_at": null,
+      "status": "published",
+      "published_at": "2026-11-15",
       "title_pl": "„Dostępny” w katalogu B2B: co właściwie obiecujesz?",
       "title_en": "What does “available” promise in a B2B catalogue?",
       "slug_pl": "dostepnosc-i-terminy-dostawy-w-katalogu-b2b",
       "slug_en": "b2b-catalogue-stock-and-lead-times",
       "excerpt_pl": "Stan magazynowy, możliwość zamówienia i potwierdzony termin dostawy to różne informacje. Ich pomieszanie może stworzyć obietnicę, której firma nie zamierzała składać.",
       "excerpt_en": "Physical stock, the ability to order and a confirmed delivery date are different things. Combining them into one green label can create an unintended promise.",
-      "word_count_pl": 345,
-      "word_count_en": 350,
-      "reading_time_min": 2
+      "word_count_pl": 321,
+      "word_count_en": 320,
+      "reading_time_min": 2,
+      "sources": []
     },
     {
       "id": 12,
       "file": "12-website-handover.md",
-      "status": "draft",
-      "published_at": null,
+      "status": "published",
+      "published_at": "2026-11-15",
       "title_pl": "Przekazanie strony: czy firma potrafi przejąć jej obsługę?",
       "title_en": "A website handover should let the business take control",
       "slug_pl": "przekazanie-strony-firmowej-dostepy-i-odtworzenie",
       "slug_en": "business-website-handover-access-and-recovery",
       "excerpt_pl": "Hasło do panelu nie oznacza jeszcze kontroli nad stroną. Przy odbiorze projektu warto sprawdzić domenę, konta, kod, wdrożenie i możliwość odtworzenia danych.",
       "excerpt_en": "A control-panel password is only part of a handover. Check ownership of the domain, service accounts, source code, deployment process and recovery arrangements.",
-      "word_count_pl": 343,
-      "word_count_en": 364,
-      "reading_time_min": 3
+      "word_count_pl": 305,
+      "word_count_en": 309,
+      "reading_time_min": 2,
+      "sources": [
+        {
+          "label": "NCSC: Backing up your data",
+          "href": "https://www.ncsc.gov.uk/collection/small-organisations-guide-to-cyber-security/backing-up-your-data"
+        }
+      ]
     },
     {
       "id": 13,
       "file": "13-enquiry-form-security.md",
-      "status": "draft",
-      "published_at": null,
+      "status": "published",
+      "published_at": "2026-11-15",
       "title_pl": "Formularz zapytania B2B: mniej spamu, bezpieczniejsze załączniki",
       "title_en": "Protecting B2B enquiry forms and their attachments",
       "slug_pl": "bezpieczenstwo-formularza-b2b-i-zalacznikow",
       "slug_en": "secure-b2b-enquiry-forms-and-attachments",
       "excerpt_pl": "Publiczny formularz przyjmuje dane od nieznanych osób. Ochrona musi obejmować serwer, pliki, wysyłkę i obsługę błędów, a nie tylko dodatkowe pole w przeglądarce.",
       "excerpt_en": "A public form accepts information from unknown visitors. Protection needs to cover the server, uploads, delivery and error handling, rather than relying on one browser control.",
-      "word_count_pl": 351,
-      "word_count_en": 365,
-      "reading_time_min": 3
+      "word_count_pl": 327,
+      "word_count_en": 322,
+      "reading_time_min": 2,
+      "sources": [
+        {
+          "label": "OWASP: File Upload Cheat Sheet",
+          "href": "https://cheatsheetseries.owasp.org/cheatsheets/File_Upload_Cheat_Sheet.html"
+        },
+        {
+          "label": "OWASP: Input Validation Cheat Sheet",
+          "href": "https://cheatsheetseries.owasp.org/cheatsheets/Input_Validation_Cheat_Sheet.html"
+        }
+      ]
     },
     {
       "id": 14,
       "file": "14-motion-with-user-control.md",
-      "status": "draft",
-      "published_at": null,
+      "status": "published",
+      "published_at": "2026-11-15",
       "title_pl": "Animacja na stronie B2B: efekt, który daje się zatrzymać",
       "title_en": "B2B website animation should give visitors control",
       "slug_pl": "animacje-na-stronie-b2b-kontrola-ruchu",
       "slug_en": "b2b-website-animation-with-user-control",
       "excerpt_pl": "Ruch może budować charakter marki, ale nie powinien utrudniać czytania ani kliknięcia. Przy projektowaniu animacji trzeba uwzględnić telefon, ograniczenie ruchu i kontrolę użytkownika.",
       "excerpt_en": "Movement can give a technical brand a distinctive character, but it should not make reading or selecting a link harder. Design for touch, reduced motion and an explicit pause.",
-      "word_count_pl": 355,
-      "word_count_en": 389,
-      "reading_time_min": 3
+      "word_count_pl": 313,
+      "word_count_en": 331,
+      "reading_time_min": 2,
+      "sources": [
+        {
+          "label": "web.dev: prefers-reduced-motion",
+          "href": "https://web.dev/articles/prefers-reduced-motion"
+        },
+        {
+          "label": "W3C: Pause, Stop, Hide",
+          "href": "https://www.w3.org/WAI/WCAG22/Understanding/pause-stop-hide.html"
+        }
+      ]
     }
   ]
 }

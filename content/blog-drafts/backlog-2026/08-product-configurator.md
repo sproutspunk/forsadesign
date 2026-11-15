@@ -1,12 +1,12 @@
 ---
-status: draft
-published_at: null
-reading_time_min: 3
+status: published
+published_at: 2026-11-15
+reading_time_min: 2
 slug_pl: konfigurator-produktu-czy-formularz-zapytania
 slug_en: product-configurator-or-enquiry-form
 ---
 
-# PL — Konfigurator produktu czy dobry formularz zapytania?
+# PL: Konfigurator produktu czy dobry formularz zapytania?
 
 **Zajawka:** Konfigurator pomaga wtedy, gdy potrafi sprawdzić rzeczywiste reguły doboru. Jeśli tych reguł jeszcze nie opisano, rozbudowany interfejs może tylko ukryć niepewność.
 
@@ -36,11 +36,11 @@ Przesłane dane trzeba ponownie zweryfikować na serwerze. Reguły widoczne w pr
 
 Najlepszym początkiem bywa jedna rodzina produktów z ograniczoną liczbą wariantów. Sprawdź, czy klienci potrafią zakończyć dobór i czy handlowiec otrzymuje dane potrzebne do odpowiedzi. Testuj również kombinacje graniczne i niepełne zgłoszenia.
 
-Rozbudowę uzasadniają rzeczywiste pytania i powtarzalna praca zespołu. Konfigurator powinien usuwać konkretne trudności w doborze. Gdy tylko przenosi je na kolejny ekran, warto najpierw poprawić sam proces.
+Zapisuj pytania wymagające ręcznego wyjaśnienia. Kolejne reguły dodawaj dopiero po zatwierdzeniu przez właściciela produktu. Jeżeli dana decyzja nadal wymaga oceny inżyniera, zostaw wyraźną drogę do konsultacji.
 
 **Powiązane:** [Systemy dla firm B2B](/pl/services/) · [Omówienie konfiguratora](/pl/contact/)
 
-# EN — Do you need a product configurator or a better enquiry form?
+# EN: Do you need a product configurator or a better enquiry form?
 
 **Excerpt:** A configurator is useful when it can apply genuine selection rules. If those rules remain undefined, a sophisticated interface may only hide uncertainty.
 
@@ -70,6 +70,10 @@ Validate submitted values again on the server. Browser rules help the buyer, but
 
 One product family with a manageable set of variants is often enough for an initial release. Check whether buyers can finish the task and whether the sales team receives useful information. Include boundary combinations and incomplete requests in testing.
 
-Expand in response to actual questions and repeated work. The configurator should remove a defined difficulty in product selection. If it merely moves that difficulty to another screen, improve the process first.
+Record questions that still require manual explanation. Add further rules only after product-owner approval. Where an engineering assessment remains necessary, retain a clear consultation route.
 
 **Related:** [B2B systems](/en/services/) · [Discuss a configurator](/en/contact/)
+
+## Źródła / Sources
+
+- [OWASP: Input Validation Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Input_Validation_Cheat_Sheet.html)

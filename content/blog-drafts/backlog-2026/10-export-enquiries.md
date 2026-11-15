@@ -1,12 +1,12 @@
 ---
-status: draft
-published_at: null
+status: published
+published_at: 2026-11-15
 reading_time_min: 2
 slug_pl: zapytania-eksportowe-strona-przemyslowa
 slug_en: industrial-website-export-enquiries
 ---
 
-# PL — Co powinien wiedzieć zagraniczny kupiec przed wysłaniem zapytania?
+# PL: Co powinien wiedzieć zagraniczny kupiec przed wysłaniem zapytania?
 
 **Zajawka:** Angielska wersja strony otwiera rozmowę, ale nie wyjaśnia jeszcze zakresu dostaw. Kupiec potrzebuje informacji o produkcie, dokumentacji, obsłudze i danych potrzebnych do oferty.
 
@@ -34,13 +34,13 @@ Rozdziel termin potrzebnej oferty od oczekiwanej dostawy. To dwie różne inform
 
 ## Nie zgaduj warunków handlowych
 
-Zasady transportu, odpowiedzialności i rozliczeń powinny wynikać z uzgodnionej polityki firmy oraz konkretnej oferty. Jeżeli używane są reguły Incoterms, należy wskazać właściwą regułę, uzgodnione miejsce i wersję zgodnie z przyjętymi warunkami. Sam skrót w stopce nie wyjaśnia całej transakcji.
+Zasady transportu, odpowiedzialności i rozliczeń powinny wynikać z uzgodnionej polityki firmy oraz konkretnej oferty. Na stronie można wskazać, które kwestie firma potwierdza w ofercie: koszt przewozu, miejsce dostawy, wymagane dokumenty i zakres obsługi. Szczegółowe zapisy handlowe powinny zatwierdzić osoby odpowiedzialne za daną transakcję.
 
 Przed rozbudową eksportowej części strony przejrzyj kilka typowych zapytań razem z osobą odpowiedzialną za sprzedaż. Pytania, które powracają, są dobrym punktem wyjścia do poprawienia treści i formularza.
 
 **Powiązane:** [Strony dla przemysłu](/pl/services/) · [Porozmawiajmy o obsłudze B2B](/pl/contact/)
 
-# EN — What should an overseas buyer know before making an enquiry?
+# EN: What should an overseas buyer know before making an enquiry?
 
 **Excerpt:** An English-language website starts the conversation, but buyers also need clarity about supply coverage, technical requirements, documentation and the information needed for a quotation.
 
@@ -68,7 +68,7 @@ Separate the quotation deadline from the requested delivery date. Provide a rout
 
 ## Keep commercial terms explicit
 
-Transport, responsibility and payment arrangements should follow the business's agreed policy and the specific quotation. If Incoterms rules are used, identify the agreed rule, named place and edition as appropriate to those terms. An abbreviation in the footer does not explain the whole transaction.
+Transport, responsibility and payment arrangements should follow the business's agreed policy and the specific quotation. Explain which matters the quotation confirms, such as carriage cost, destination, required documents and support coverage. Detailed commercial wording should be approved by the people responsible for the transaction.
 
 Review several typical enquiries with the person responsible for export sales. Repeated questions provide a practical starting point for improving website content and the form.
 

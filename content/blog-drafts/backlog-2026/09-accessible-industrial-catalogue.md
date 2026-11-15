@@ -1,16 +1,16 @@
 ---
-status: draft
-published_at: null
-reading_time_min: 3
+status: published
+published_at: 2026-11-15
+reading_time_min: 2
 slug_pl: dostepny-katalog-i-formularz-b2b
 slug_en: accessible-b2b-catalogue-and-enquiry-forms
 ---
 
-# PL — Dostępność katalogu B2B sprawdza się przy konkretnym zadaniu
+# PL: Dostępność katalogu B2B sprawdza się przy konkretnym zadaniu
 
-**Zajawka:** Czy da się znaleźć część, porównać parametry i wysłać zapytanie bez myszy? Taki test mówi więcej o użyteczności katalogu niż sam wygląd strony.
+**Zajawka:** Czy da się znaleźć część, porównać parametry i wysłać zapytanie bez myszy? To praktyczny sposób sprawdzenia jednej ścieżki korzystania z katalogu.
 
-Katalog przemysłowy może mieć czytelny układ, a mimo to utrudniać wykonanie prostego zadania. Filtr działa tylko po najechaniu, tabela wymaga precyzyjnego przesuwania, a błąd formularza jest zaznaczony wyłącznie kolorem. W każdej z tych sytuacji użytkownik musi odgadywać sposób działania interfejsu.
+Katalog przemysłowy może mieć czytelny układ, a mimo to utrudniać wykonanie prostego zadania. Filtr działa tylko po najechaniu, tabela wymaga precyzyjnego przesuwania, a błąd formularza jest zaznaczony wyłącznie kolorem. W takich przypadkach sprawdź, czy funkcja pozostaje dostępna bez wskazywania myszką, precyzyjnego gestu lub rozpoznawania koloru.
 
 Dostępność warto sprawdzać jako część codziennego procesu zakupowego. Wybierz produkt, znajdź właściwy wariant, dodaj go do zapytania i wyślij formularz. Przejdź tę drogę klawiaturą, na telefonie i przy powiększonym tekście.
 
@@ -40,11 +40,11 @@ Automatyczny audyt pomoże znaleźć część problemów. Nie zastąpi jednak r�
 
 **Powiązane:** [Projektowanie systemów B2B](/pl/services/) · [Kontakt](/pl/contact/)
 
-# EN — Test B2B catalogue accessibility through a real task
+# EN: Test B2B catalogue accessibility through a real task
 
-**Excerpt:** Can someone find a part, compare its specifications and submit an enquiry without a mouse? That task reveals more than appearance alone.
+**Excerpt:** Can someone find a part, compare its specifications and submit an enquiry without a mouse? Use the task to assess a complete catalogue journey.
 
-A catalogue can look clear while making ordinary tasks difficult. A filter opens only on hover, a table needs precise dragging, or an invalid field is marked only by colour. Each forces the visitor to work out how the interface behaves.
+A catalogue can look clear while making ordinary tasks difficult. A filter opens only on hover, a table needs precise dragging, or an invalid field is marked only by colour. Check whether each function remains available without hover, precise gestures or colour recognition.
 
 Treat accessibility as part of the buying process. Choose a product, find a variant, add it to an enquiry and submit the form. Repeat the journey with a keyboard, on a phone and with enlarged text.
 
@@ -74,4 +74,7 @@ Automated checks can identify some defects, but they cannot replace completing t
 
 **Related:** [B2B system design](/en/services/) · [Contact](/en/contact/)
 
-**Źródło / Further reading:** [W3C: Forms Tutorial](https://www.w3.org/WAI/tutorials/forms/)
+## Źródła / Sources
+
+- [W3C: Forms Tutorial](https://www.w3.org/WAI/tutorials/forms/)
+- [W3C: Pause, Stop, Hide](https://www.w3.org/WAI/WCAG22/Understanding/pause-stop-hide.html)

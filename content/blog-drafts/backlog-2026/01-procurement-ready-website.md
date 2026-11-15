@@ -1,16 +1,16 @@
 ---
-status: draft
-published_at: null
+status: published
+published_at: 2026-11-15
 reading_time_min: 3
 slug_pl: strona-przemyslowa-gotowa-na-weryfikacje-dostawcy
 slug_en: industrial-website-supplier-checks
 ---
 
-# PL — Czy Twoja strona przechodzi weryfikację dostawcy?
+# PL: Czy Twoja strona przechodzi weryfikację dostawcy?
 
-**Zajawka:** Zanim kupiec wyśle zapytanie, sprawdza, czy firma rzeczywiście pasuje do zadania. Strona powinna pomóc mu potwierdzić kompetencje, zakres dostaw i właściwy kontakt.
+**Zajawka:** Strona może pomóc kupcowi sprawdzić, czy firma pasuje do zadania. Strona powinna pomóc mu potwierdzić kompetencje, zakres dostaw i właściwy kontakt.
 
-Kupiec przemysłowy rzadko wchodzi na stronę, żeby podziwiać jej wygląd. Często dostał nazwę firmy od współpracownika, znalazł produkt albo szuka alternatywnego dostawcy. Musi zdecydować, czy warto poświęcić czas na rozmowę. Strona jest jednym z miejsc, w których sprawdza podstawowe informacje.
+Wyobraź sobie kupca szukającego alternatywnego dostawcy elementów ze stali nierdzewnej. Zna nazwę firmy, ale potrzebuje potwierdzenia dostępnych procesów, zakresu prac i drogi kontaktu. To konkretne zadanie, które można sprawdzić na własnej stronie.
 
 Nie zastąpi audytu dostawcy ani dokumentacji wymaganej w konkretnym przetargu. Może jednak usunąć niepotrzebne pytania już na początku. Jeżeli odbiorca musi zgadywać, czym zajmuje się firma, weryfikacja zaczyna się od przeszkody.
 
@@ -36,15 +36,15 @@ Warto też podać nazwę podmiotu, lokalizację i obszar działania. Jeżeli mon
 
 Poproś osobę spoza firmy o znalezienie trzech rzeczy: zakresu usługi, dokumentu potwierdzającego kompetencje i kontaktu do zapytania. Nie podpowiadaj, gdzie kliknąć. Zapisz miejsca, w których zaczyna zgadywać.
 
-Właśnie tam warto zacząć poprawki. Nie od nowej animacji, lecz od informacji, która pomaga podjąć decyzję. Dobrze zaprojektowana strona przemysłowa porządkuje pierwszy etap rozmowy i ułatwia kupcowi ocenę, czy Wasze firmy mogą ze sobą pracować.
+Zapisz brakujące informacje i przypisz każdą do osoby, która może ją potwierdzić. Następnie powtórz test po poprawkach. W ten sposób oceniasz konkretną ścieżkę weryfikacji, zamiast zgadywać, czy nowy układ jest czytelniejszy.
 
 **Powiązane:** [Usługi](/pl/services/) · [Porozmawiajmy o stronie](/pl/contact/)
 
-# EN — Does your industrial website help buyers check your business?
+# EN: Does your industrial website help buyers check your business?
 
-**Excerpt:** Before sending an enquiry, a buyer checks whether your company fits the job. Your website should help them verify capabilities, delivery scope and the right contact.
+**Excerpt:** A website can help a buyer check whether your company fits the job. Your website should help them verify capabilities, delivery scope and the right contact.
 
-An industrial buyer rarely visits a website simply to admire its appearance. A colleague may have suggested your company, a product search may have led them there, or they may need an alternative supplier. They have to decide whether a conversation is worth pursuing. Your website is one place where they check the basics.
+Consider a buyer looking for an alternative supplier of stainless-steel components. They know the company name but need to establish its processes, scope and contact route. This gives you a specific task to test on your own website.
 
 It cannot replace a supplier audit or the documents required for a particular tender. It can remove unnecessary questions at the start. If visitors have to guess what the company actually does, the assessment begins with an obstacle.
 
@@ -70,6 +70,6 @@ Include the legal business name, location and operating area as well. If install
 
 Ask somebody outside the company to find three things: a service’s scope, evidence supporting the relevant capability, and the contact route for an enquiry. Do not tell them where to click. Note where they start making assumptions.
 
-Those are useful places to begin improving the site. Start with information that helps a decision. A well-planned industrial website organises the first stage of the conversation and helps buyers establish whether the two businesses can work together.
+List the missing information and assign each item to someone who can verify it. Repeat the task after making changes. This assesses a specific supplier-checking journey rather than relying on an impression that the new layout looks clearer.
 
 **Related:** [Services](/en/services/) · [Discuss your website](/en/contact/)

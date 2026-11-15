@@ -1,16 +1,16 @@
 ---
-status: draft
-published_at: null
-reading_time_min: 3
+status: published
+published_at: 2026-11-15
+reading_time_min: 2
 slug_pl: przekazanie-strony-firmowej-dostepy-i-odtworzenie
 slug_en: business-website-handover-access-and-recovery
 ---
 
-# PL — Przekazanie strony: czy firma potrafi przejąć jej obsługę?
+# PL: Przekazanie strony: czy firma potrafi przejąć jej obsługę?
 
 **Zajawka:** Hasło do panelu nie oznacza jeszcze kontroli nad stroną. Przy odbiorze projektu warto sprawdzić domenę, konta, kod, wdrożenie i możliwość odtworzenia danych.
 
-Strona działa, formularz wysyła wiadomości, a wykonawca przekazuje login. Na tym etapie łatwo uznać projekt za zakończony. Dopiero później może się okazać, że domenę opłaca nieznane konto, kod istnieje tylko na jednym komputerze, a kopii zapasowej nikt nie umie przywrócić.
+Strona działa, formularz wysyła wiadomości, a wykonawca przekazuje login. Na tym etapie łatwo uznać projekt za zakończony. Przed zamknięciem projektu sprawdź jeszcze, kto opłaca domenę, gdzie znajduje się repozytorium i czy ktoś przećwiczył odtworzenie kopii zapasowej.
 
 Przekazanie powinno pozwalać firmie utrzymać usługę i zlecić dalsze prace wybranej osobie. Nie oznacza to, że właściciel firmy musi sam wdrażać aplikację. Powinien jednak wiedzieć, gdzie znajdują się zasoby i kto może nimi zarządzać.
 
@@ -40,11 +40,11 @@ Odbiór można zakończyć prostą próbą: nowa osoba uruchamia projekt, publik
 
 **Powiązane:** [Systemy webowe i ich rozwój](/pl/services/) · [Kontakt](/pl/contact/)
 
-# EN — A website handover should let the business take control
+# EN: A website handover should let the business take control
 
 **Excerpt:** A control-panel password is only part of a handover. Check ownership of the domain, service accounts, source code, deployment process and recovery arrangements.
 
-The website works and the supplier provides a login. It is easy to consider the project complete. Later, the business may discover that an unfamiliar account pays for the domain, the source exists on one laptop or nobody knows how to restore the backup.
+The website works and the supplier provides a login. It is easy to consider the project complete. Before closing the project, check who pays for the domain, where the repository is held and whether someone has practised restoring a backup.
 
 A handover should enable the business to maintain the service and appoint another team when needed. The owner need not deploy the application personally, but should know where the resources are and who controls them.
 
@@ -74,4 +74,6 @@ Finish with a practical check: a new maintainer runs the project, releases a tes
 
 **Related:** [Web systems and ongoing development](/en/services/) · [Contact](/en/contact/)
 
-**Źródło / Further reading:** [NCSC: Backing up your data](https://www.ncsc.gov.uk/collection/small-business-guide/backing-your-data)
+## Źródła / Sources
+
+- [NCSC: Backing up your data](https://www.ncsc.gov.uk/collection/small-organisations-guide-to-cyber-security/backing-up-your-data)

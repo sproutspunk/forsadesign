@@ -1,12 +1,12 @@
 ---
-status: draft
-published_at: null
+status: published
+published_at: 2026-11-15
 reading_time_min: 2
 slug_pl: dostepnosc-i-terminy-dostawy-w-katalogu-b2b
 slug_en: b2b-catalogue-stock-and-lead-times
 ---
 
-# PL — „Dostępny” w katalogu B2B: co właściwie obiecujesz?
+# PL: „Dostępny” w katalogu B2B: co właściwie obiecujesz?
 
 **Zajawka:** Stan magazynowy, możliwość zamówienia i potwierdzony termin dostawy to różne informacje. Ich pomieszanie może stworzyć obietnicę, której firma nie zamierzała składać.
 
@@ -36,11 +36,11 @@ Jeśli strona pokazuje zakres orientacyjny, nazwij go orientacyjnym. Jeżeli ter
 
 Przejdź kilka przypadków: część ilości dostępna, produkt na zamówienie, wycofany wariant i awaria synchronizacji. Zapytaj handlowca, co w każdej sytuacji może rzeczywiście obiecać.
 
-Dobrze zaprojektowany status pomaga podjąć następną decyzję. Nie musi być zawsze zielony. Musi odpowiadać temu, co firma wie w danym momencie.
+Zatwierdź treść każdego statusu i przypisz mu warunek w danych. Dzięki temu zespół może sprawdzić, dlaczego katalog pokazał określoną informację, oraz poprawić regułę, jeśli nie odpowiada ona procesowi sprzedaży.
 
 **Powiązane:** [Katalogi i integracje B2B](/pl/services/) · [Kontakt](/pl/contact/)
 
-# EN — What does “available” promise in a B2B catalogue?
+# EN: What does “available” promise in a B2B catalogue?
 
 **Excerpt:** Physical stock, the ability to order and a confirmed delivery date are different things. Combining them into one green label can create an unintended promise.
 
@@ -70,6 +70,6 @@ Label an indicative range as indicative. If the date requires confirmation for a
 
 Test partial availability, made-to-order items, withdrawn variants and a failed synchronisation. Ask the commercial team what it can actually promise in each case.
 
-A useful status supports the buyer's next decision. It does not need to be green every time; it needs to reflect what the business currently knows.
+Approve each status message and map it to a defined data condition. The team can then establish why the catalogue displayed it and correct a rule that does not reflect the sales process.
 
 **Related:** [B2B catalogues and integrations](/en/services/) · [Contact](/en/contact/)
