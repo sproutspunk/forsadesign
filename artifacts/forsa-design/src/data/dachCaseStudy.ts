@@ -2,8 +2,8 @@ export const dachCase = {
   pl: {
     title: "Dach Systema: konfigurator garaży i hal 3D",
     intro:
-      "Od wyboru bryły i dachu do zestawienia konfiguracji. Działający prototyp pozwala dopasować wymiary, otwory, wiaty i wykończenie, obserwując model 3D.",
-    status: "Działający prototyp / Konfigurator 3D",
+      "Konfigurator łączy wybór bryły, dachu, wymiarów i wyposażenia z podglądem 3D. Klient może zobaczyć swój wariant, zachować projekt i przygotować zapytanie z konkretnymi parametrami.",
+    status: "Konfigurator 3D / W sprzedaży od stycznia 2027",
     caption:
       "Rzeczywisty zrzut rosyjskiej wersji konfiguratora, wykonany 16 listopada 2026 z aplikacji uruchomionej lokalnie z gałęzi projektu.",
     scope: "Zakres konfiguratora",
@@ -33,27 +33,27 @@ export const dachCase = {
         "Zmiana bryły z istniejącym wyposażeniem wymaga potwierdzenia. Użytkownik może zapisać projekt przed rozpoczęciem nowego układu.",
       ],
     ],
-    decisions: "Cena i zapytanie bez pozornej finalizacji",
+    decisions: "Od konfiguracji do zapytania",
     pricing:
       "Cena z migawki produktów jest pokazywana tylko dla zgodnego gotowego wariantu i danych młodszych niż 36 godzin. Podgląd nie odświeża cen automatycznie. Zmiany wymagają indywidualnej wyceny, zamiast zachowywać pozornie aktualną cenę bazowego produktu.",
     enquiry:
-      "Podsumowanie przygotowuje zapytanie otwierane w aplikacji pocztowej przez mailto. Prototyp nie wysyła wiadomości automatycznie i nie tworzy zamówienia w CMS.",
-    technology: "Implementacja i granice modelu",
+      "Podsumowanie zbiera parametry wybranego wariantu i przygotowuje wiadomość w aplikacji pocztowej klienta. Wysyłkę zatwierdza użytkownik; dalsze ustalenia techniczne i wycena odbywają się z dostawcą.",
+    technology: "Technologia i model 3D",
     tech: "Model wykorzystuje Three.js i WebGL2, a interfejs lokalne moduły JavaScript oraz CSS. Proces czterech kroków jest wydzielony w workflow.js. Samodzielny plik HTML zawiera lokalne zasoby i może działać bez zewnętrznego CDN. Przy braku WebGL pozostają funkcje formularza, zapisu i zapytania.",
     limits:
       "Model służy do wizualnego doprecyzowania potrzeb. Nie zastępuje CAD, dokumentacji konstrukcyjnej ani zatwierdzenia nietypowych układów przez producenta. Kolory i faktury są orientacyjne; wymiary modelu i potwierdzone światło otworów są rozdzielone.",
     result: "Rezultat: wspólny punkt odniesienia do rozmowy technicznej",
     outcome:
-      "Zestawienie parametrów i poglądowy model opisują tę samą konfigurację. Projekt pokazuje, jak połączyć prezentację produktu z regułami wyboru i przygotowaniem zapytania, bez udawania gotowej dokumentacji wykonawczej lub automatycznej oferty.",
-    note: "Opis zweryfikowano w gałęzi projektu. Konfigurator pozostaje odrębnym prototypem z chronionym podglądem. Nie przedstawiamy go jako wdrożonego modułu produkcyjnego portalu ani nie deklarujemy niezmierzonych efektów sprzedażowych.",
+      "Klient przekazuje wybraną konfigurację wraz z poglądowym modelem i zestawieniem parametrów. Zespół otrzymuje punkt wyjścia do rozmowy o wymiarach, wyposażeniu i warunkach wykonania. Zapis projektu pozwala wrócić do wcześniejszych ustaleń.",
+    note: "Case study przedstawia zaimplementowane funkcje konfiguratora: wizualizację, dobór parametrów, zapis projektu i przygotowanie zapytania.",
     back: "Powrót do portfolio",
     cta: "Omów podobny konfigurator",
   },
   en: {
     title: "Dach Systema: a 3D garage and hall configurator",
     intro:
-      "From choosing a footprint and roof to reviewing the configuration. This working prototype lets users adjust dimensions, openings, canopies and finishes while viewing a 3D model.",
-    status: "Working prototype / 3D configurator",
+      "The configurator connects footprint, roof, dimension and equipment choices with a 3D preview. Customers can inspect their chosen variant, save the project and prepare an enquiry with specific requirements.",
+    status: "3D configurator / Available for purchase from January 2027",
     caption:
       "An actual Russian-language interface capture, taken on 16 November 2026 from the application run locally from the project branch.",
     scope: "What the configurator includes",
@@ -83,19 +83,19 @@ export const dachCase = {
         "Changing a footprint with existing equipment requires confirmation. Users can save their project before starting a new layout.",
       ],
     ],
-    decisions: "Pricing and enquiries without a false checkout",
+    decisions: "From configuration to enquiry",
     pricing:
       "A product-snapshot price is displayed only for a matching preset and data less than 36 hours old. The preview does not refresh prices automatically. Changed configurations require an individual quotation rather than retaining an apparently current base-product price.",
     enquiry:
-      "The summary prepares an enquiry opened in the user's email application through mailto. The prototype does not automatically send an email or create a CMS order.",
-    technology: "Implementation and model boundaries",
+      "The summary collects the selected parameters and prepares a message in the customer's email application. The user authorises sending; technical details and quotation terms are then discussed with the supplier.",
+    technology: "Technology and the 3D model",
     tech: "The model uses Three.js and WebGL2, with local JavaScript modules and CSS for the interface. The four-step flow is separated into workflow.js. A standalone HTML file embeds local resources and can operate without an external CDN. Forms, saving and enquiries remain available without WebGL.",
     limits:
       "The model helps clarify requirements visually. It does not replace CAD, structural documentation or manufacturer approval of non-standard layouts. Colours and textures are indicative; model dimensions are distinguished from confirmed clear opening dimensions.",
     result: "The result: a shared reference for a technical discussion",
     outcome:
-      "The parameter summary and indicative model describe the same configuration. The project combines product presentation, selection rules and enquiry preparation without presenting the result as construction documentation or an automatic quotation.",
-    note: "The description was checked against the project branch. The configurator remains a separate prototype with protected preview access. It is not presented as a deployed production-portal module, and no unmeasured sales gains are claimed.",
+      "Customers can share the selected configuration with an indicative model and parameter summary. The team receives a starting point for discussing dimensions, equipment and manufacturing requirements. A saved project preserves the choices for later review.",
+    note: "This case study presents implemented configurator features: visualisation, parameter selection, project saving and enquiry preparation.",
     back: "Back to portfolio",
     cta: "Discuss a similar configurator",
   },
