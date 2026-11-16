@@ -25,7 +25,6 @@ export default function Header() {
   const blogHref = `${base}blog/`;
   const servicesHref = `${base}services/`;
   const workLinks = [
-    { label: "Portfolio", href: sectionHref("#portfolio") },
     { label: language === "pl" ? "Proces" : "Process", href: sectionHref("#process") },
     { label: "FAQ", href: sectionHref("#faq") },
     { label: language === "pl" ? "Porównanie" : "Comparison", href: `${base}comparison/` },
@@ -208,7 +207,7 @@ export default function Header() {
 
           <nav
             aria-label={language === "pl" ? "Główna nawigacja" : "Main navigation"}
-            className="hidden min-w-0 flex-1 items-center justify-center gap-6 md:flex"
+            className="hidden min-w-0 flex-1 items-center justify-center gap-4 lg:flex xl:gap-6"
           >
             <a
               href={sectionHref("#home")}
@@ -226,6 +225,12 @@ export default function Header() {
             >
               {t("nav.pricing")}
             </a>
+            <a
+              href={sectionHref("#portfolio")}
+              className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors"
+            >
+              Portfolio
+            </a>
             <div className="relative">
               {dropdownButton("work", language === "pl" ? "Jak pracujemy" : "How we work")}
               {dropdownLinks("work", workLinks)}
@@ -242,7 +247,7 @@ export default function Header() {
             </a>
           </nav>
 
-          <div className="ml-auto hidden shrink-0 items-center gap-5 md:flex">
+          <div className="ml-auto hidden shrink-0 items-center gap-3 lg:flex xl:gap-5">
             <a
               href={quoteHref}
               data-testid="link-nav-quote"
@@ -290,7 +295,7 @@ export default function Header() {
           <button
             ref={menuToggleRef}
             type="button"
-            className="text-foreground md:hidden"
+            className="text-foreground lg:hidden"
             onClick={() => setIsMobileMenuOpen((open) => !open)}
             aria-expanded={isMobileMenuOpen}
             aria-controls="mobile-nav"
@@ -318,7 +323,7 @@ export default function Header() {
           id="mobile-nav"
           aria-hidden={!isMobileMenuOpen}
           inert={!isMobileMenuOpen ? true : undefined}
-          className={`md:hidden overflow-y-auto overscroll-contain border-b border-border bg-card transition-all duration-200 ${isMobileMenuOpen ? "max-h-[calc(100dvh-6rem)] opacity-100" : "max-h-0 overflow-hidden opacity-0"}`}
+          className={`lg:hidden overflow-y-auto overscroll-contain border-b border-border bg-card transition-all duration-200 ${isMobileMenuOpen ? "max-h-[calc(100dvh-6rem)] opacity-100" : "max-h-0 overflow-hidden opacity-0"}`}
         >
           <nav
             aria-label={language === "pl" ? "Mobilna nawigacja" : "Mobile navigation"}
@@ -341,6 +346,13 @@ export default function Header() {
               className="py-2 text-lg font-medium text-foreground hover:text-primary transition-colors"
             >
               {t("nav.pricing")}
+            </a>
+            <a
+              href={sectionHref("#portfolio")}
+              onClick={closeMobileMenu}
+              className="py-2 text-lg font-medium text-foreground hover:text-primary transition-colors"
+            >
+              Portfolio
             </a>
             <div>
               {dropdownButton("work", language === "pl" ? "Jak pracujemy" : "How we work", true)}
