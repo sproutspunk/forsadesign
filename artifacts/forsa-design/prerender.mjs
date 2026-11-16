@@ -2481,6 +2481,15 @@ for (const route of routes) {
     if (!alt.href.endsWith("/")) alt.href += "/";
   }
   if (route.bodyHtml) {
+    // Portfolio remains a direct navigation link even without JavaScript.
+    route.bodyHtml = route.bodyHtml.replace(/<nav\b[^>]*>[\s\S]*?<\/nav>/, (nav) =>
+      /href="[^"]*#portfolio"/.test(nav)
+        ? nav
+        : nav.replace(
+            "</nav>",
+            `<a href="/${route.lang}/#portfolio" class="text-sm font-medium text-foreground/80 hover:text-primary transition-colors">Portfolio</a></nav>`,
+          ),
+    );
     route.bodyHtml = route.bodyHtml.replace(
       /href="(\/(?:en|pl)\/[^"#?]*?)(\/?)([#?][^"]*)?"/g,
       (m, path, _slash, suffix = "") => `href="${path.replace(/\/+$/, "")}/${suffix}"`,
