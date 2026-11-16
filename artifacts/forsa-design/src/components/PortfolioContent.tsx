@@ -65,16 +65,16 @@ export default function PortfolioContent({ lang }: { lang: "pl" | "en" }) {
           </div>
           <ul
             aria-label={lang === "pl" ? "Projekty portfolio" : "Portfolio projects"}
-            className="flex gap-6 overflow-x-auto snap-x snap-mandatory pb-5 pt-1 px-1 -mx-1"
+            className="grid grid-flow-col auto-cols-[100%] sm:auto-cols-[340px] items-stretch gap-6 overflow-x-auto snap-x snap-mandatory pb-5 pt-1 px-1 -mx-1"
           >
             {cards.map((card) => (
-              <li key={card.href} className="w-[min(78vw,340px)] shrink-0 snap-start">
+              <li key={card.href} className="min-w-0 snap-start">
                 <a
                   href={card.href}
-                  className="group flex flex-col h-[560px] overflow-hidden rounded-lg border border-primary/25 bg-card hover:border-primary/70 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary focus-visible:outline-offset-2"
+                  className="group grid grid-rows-[220px_minmax(0,1fr)] w-full h-[600px] overflow-hidden rounded-lg border border-primary/25 bg-card hover:border-primary/70 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary focus-visible:outline-offset-2"
                 >
                   <div
-                    className={`h-[220px] shrink-0 p-4 flex items-center justify-center border-b border-primary/15 ${card.light ? "bg-slate-100" : "bg-[#151d21]"}`}
+                    className={`min-w-0 min-h-0 p-4 flex items-center justify-center border-b border-primary/15 ${card.light ? "bg-slate-100" : "bg-[#151d21]"}`}
                   >
                     <img
                       src={card.image}
@@ -85,16 +85,14 @@ export default function PortfolioContent({ lang }: { lang: "pl" | "en" }) {
                       className="w-full h-full object-contain"
                     />
                   </div>
-                  <div className="flex flex-col flex-1 p-6">
-                    <p className="text-primary text-[11px] uppercase tracking-[0.14em] mb-3">
+                  <div className="grid grid-rows-[20px_40px_minmax(0,1fr)_40px_48px] gap-3 min-w-0 min-h-0 p-6">
+                    <p className="text-primary text-[11px] uppercase tracking-[0.14em]">
                       {card.category}
                     </p>
-                    <h3 className="font-serif text-3xl font-bold text-white mb-4">{card.title}</h3>
-                    <p className="text-sm text-foreground/75 leading-relaxed mb-5">
-                      {card.description}
-                    </p>
+                    <h3 className="font-serif text-3xl font-bold text-white">{card.title}</h3>
+                    <p className="text-sm text-foreground/75 leading-relaxed">{card.description}</p>
                     <p className="text-xs text-primary/80 leading-relaxed">{card.detail}</p>
-                    <span className="mt-auto pt-5 inline-flex items-center justify-between gap-3 text-sm font-semibold text-primary border-t border-primary/15">
+                    <span className="h-full inline-flex items-center justify-between gap-3 text-sm font-semibold text-primary border-t border-primary/15">
                       {c.readCase}
                       <span aria-hidden="true">↗</span>
                     </span>
