@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { ArrowLeft, ArrowUpRight, Check, ChevronRight } from "lucide-react";
 import Header from "@/components/Header";
+import ZoomableImage from "@/components/ZoomableImage";
 import Footer from "@/components/Footer";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { buildHref, useJsonLd, useSeoMeta } from "@/hooks/useSeoMeta";
@@ -76,7 +77,8 @@ export default function LinklangCaseStudyPage({ lang }: { lang: CaseStudyLanguag
                 <span className="h-2 w-2 rounded-full bg-slate-300" />
                 <span className="ml-4 text-xs text-slate-600">linklang.co.uk</span>
               </div>
-              <img
+              <ZoomableImage
+                lang={lang}
                 src={c.image}
                 alt={c.imageAlt}
                 width={1120}
@@ -140,29 +142,23 @@ export default function LinklangCaseStudyPage({ lang }: { lang: CaseStudyLanguag
           </section>
 
           <figure className="mb-16">
-            <a
-              href="/projects/linklang-workflow.webp"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block"
-            >
-              <img
-                src="/projects/linklang-workflow.webp"
-                alt={
-                  lang === "pl"
-                    ? "Schemat: zgłoszenie usługi, wycena administratora, akceptacja klienta, Stripe Checkout oraz karta zlecenia z wiadomościami i dokumentami"
-                    : "Workflow: service request, administrator quotation, client acceptance, Stripe Checkout and an order workspace containing messages and documents"
-                }
-                width={1983}
-                height={793}
-                loading="lazy"
-                className="w-full h-auto rounded-lg border border-primary/20"
-              />
-            </a>
+            <ZoomableImage
+              lang={lang}
+              src="/projects/linklang-workflow.webp"
+              alt={
+                lang === "pl"
+                  ? "Schemat: zgłoszenie usługi, wycena administratora, akceptacja klienta, Stripe Checkout oraz karta zlecenia z wiadomościami i dokumentami"
+                  : "Workflow: service request, administrator quotation, client acceptance, Stripe Checkout and an order workspace containing messages and documents"
+              }
+              width={1983}
+              height={793}
+              loading="lazy"
+              className="w-full h-auto rounded-lg border border-primary/20"
+            />
             <figcaption className="mt-3 text-sm text-foreground/65">
               {lang === "pl"
-                ? "Uproszczony przebieg obsługi. Karta zlecenia jest dostępna również przed płatnością. Kliknij, aby otworzyć grafikę w pełnym rozmiarze."
-                : "A simplified service journey. The order workspace is also available before payment. Select the graphic to open it at full size."}
+                ? "Uproszczony przebieg obsługi. Karta zlecenia jest dostępna również przed płatnością. Kliknij, aby powiększyć grafikę na tej stronie."
+                : "A simplified service journey. The order workspace is also available before payment. Select the graphic to zoom in on this page."}
             </figcaption>
           </figure>
 
