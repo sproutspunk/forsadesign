@@ -1,7 +1,8 @@
+import PortfolioContent from "./src/components/PortfolioContent.tsx";
 import { renderToStaticMarkup } from "react-dom/server";
 import { createElement } from "react";
 import DachCaseContent from "./src/components/DachCaseContent.tsx";
-import { dachCase, dachPath, dachImage, dachSchema } from "./src/data/dachCaseStudy.ts";
+import { dachCase, dachPath, dachSchema } from "./src/data/dachCaseStudy.ts";
 /**
  * Build-time prerender script.
  *
@@ -217,16 +218,7 @@ function ensureXDefault(alternates, fallback) {
 // ---------------------------------------------------------------------------
 
 function buildPortfolioBody(lang) {
-  const c = linklangCaseStudy[lang];
-  return `<section id="portfolio" class="py-24 border-t border-border/10 scroll-mt-24"><div class="container mx-auto px-6 max-w-6xl">
-<p class="text-primary text-xs font-semibold uppercase mb-3">Portfolio</p>
-<h2 class="font-serif text-4xl font-bold text-white mb-5">${lang === "pl" ? "Projekty w praktyce" : "Projects in practice"}</h2>
-<p class="text-foreground/70 mb-10">${lang === "pl" ? "Strony i narzędzia połączone z rzeczywistym procesem obsługi klienta." : "Websites and tools built around real customer workflows."}</p>
-<a href="${dachPath(lang)}" class="grid md:grid-cols-2 bg-card border border-primary/20 rounded-lg mb-6"><img src="${dachImage}" alt="${he(dachCase[lang].title)}" width="1440" height="1000" loading="lazy" class="w-full h-auto"/><div class="p-8"><p>${ht(dachCase[lang].status)}</p><h3>${ht(dachCase[lang].title)}</h3><p>${ht(dachCase[lang].intro)}</p><span>${ht(c.readCase)}</span></div></a>
-<a href="${linklangCasePath(lang)}" class="grid md:grid-cols-2 overflow-hidden rounded-lg border border-primary/20 bg-card">
-<div class="bg-slate-100 flex items-center p-7"><img src="${c.image}" alt="${he(c.imageAlt)}" width="1120" height="420" loading="lazy" class="w-full h-auto rounded-md" /></div>
-<div class="p-8"><p class="text-primary text-xs uppercase mb-3">${ht(c.label)}</p><h3 class="font-serif text-3xl text-white mb-4">LinkLang</h3><p class="text-foreground/70 mb-6">${ht(c.cardText)}</p><span class="text-primary font-semibold">${ht(c.readCase)}</span></div></a>
-</div></section>`;
+  return renderToStaticMarkup(createElement(PortfolioContent, { lang }));
 }
 
 function buildLinklangCaseBody(lang) {
