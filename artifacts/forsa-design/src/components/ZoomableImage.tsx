@@ -36,7 +36,7 @@ export default function ZoomableImage({ lang, alt, ...props }: Props) {
       <dialog
         ref={dialog}
         aria-label={alt || labels.open}
-        className="fixed inset-0 m-auto w-[96vw] max-w-none h-[94dvh] max-h-none p-0 rounded-lg border border-white/20 bg-slate-950 text-white backdrop:bg-black/85"
+        className="fixed inset-0 m-auto open:flex flex-col w-[96vw] max-w-none h-[94dvh] max-h-none p-0 rounded-lg border border-primary/30 bg-background/90 text-foreground shadow-2xl backdrop-blur-md backdrop:bg-background/75 backdrop:backdrop-blur-sm"
         onClose={() => {
           setZoomed(false);
           document.body.style.overflow = previousOverflow.current;
@@ -45,10 +45,10 @@ export default function ZoomableImage({ lang, alt, ...props }: Props) {
           if (event.target === event.currentTarget) close();
         }}
       >
-        <div className="flex items-center justify-end gap-4 p-3 border-b border-white/20">
+        <div className="flex shrink-0 items-center justify-end gap-3 p-3 sm:px-5 border-b border-primary/20 bg-card/60">
           <button
             type="button"
-            className="px-4 py-2 border border-white/40 rounded"
+            className="min-h-11 px-4 py-2 text-sm font-medium text-primary border border-primary/40 rounded-md bg-background/50 transition-colors hover:bg-primary/10 hover:border-primary/70 focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary focus-visible:outline-offset-2"
             onClick={() => setZoomed(!zoomed)}
           >
             {zoomed ? labels.fit : labels.zoom}
@@ -56,14 +56,14 @@ export default function ZoomableImage({ lang, alt, ...props }: Props) {
           <button
             type="button"
             autoFocus
-            className="px-4 py-2 border border-white/40 rounded"
+            className="min-h-11 px-4 py-2 text-sm font-medium text-primary border border-primary/40 rounded-md bg-background/50 transition-colors hover:bg-primary/10 hover:border-primary/70 focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary focus-visible:outline-offset-2"
             onClick={close}
           >
             {labels.close} ×
           </button>
         </div>
         <div
-          className="h-[calc(100%_-_5rem)] overflow-auto p-3"
+          className="min-h-0 flex-1 overflow-auto p-3 sm:p-5"
           onClick={(event) => {
             if (event.target === event.currentTarget) close();
           }}
