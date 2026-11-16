@@ -25,6 +25,7 @@ const ContactPage = lazy(() => import("@/pages/ContactPage"));
 const SearchPage = lazy(() => import("@/pages/SearchPage"));
 const BlogPage = lazy(() => import("@/pages/BlogPage"));
 const ArticlePage = lazy(() => import("@/pages/ArticlePage"));
+const DachCaseStudyPage = lazy(() => import("@/pages/DachCaseStudyPage"));
 const LinklangCaseStudyPage = lazy(() => import("@/pages/LinklangCaseStudyPage"));
 const PayPage = lazy(() => import("@/pages/PayPage"));
 
@@ -103,6 +104,14 @@ function Router() {
     <Suspense fallback={null}>
       <Redirector />
       <Switch>
+        <Route
+          path="/pl/case-studies/dachsystema"
+          component={() => <DachCaseStudyPage lang="pl" />}
+        />
+        <Route
+          path="/en/case-studies/dachsystema"
+          component={() => <DachCaseStudyPage lang="en" />}
+        />
         <Route path="/en/" component={() => <HomePage lang="en" />} />
         <Route path="/pl/" component={() => <HomePage lang="pl" />} />
         <Route
