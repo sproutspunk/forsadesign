@@ -3,7 +3,7 @@ export const dachCase = {
     title: "Dach Systema: konfigurator garaży i hal 3D",
     intro:
       "Konfigurator łączy wybór bryły, dachu, wymiarów i wyposażenia z podglądem 3D. Klient może zobaczyć swój wariant, zachować projekt i przygotować zapytanie z konkretnymi parametrami.",
-    status: "Konfigurator 3D / W sprzedaży od stycznia 2027",
+    status: "Konfigurator 3D / Gotowy do wdrożenia pod klienta",
     caption:
       "Rzeczywisty zrzut rosyjskiej wersji konfiguratora, wykonany 16 listopada 2026 z aplikacji uruchomionej lokalnie z gałęzi projektu.",
     scope: "Zakres konfiguratora",
@@ -53,7 +53,7 @@ export const dachCase = {
     title: "Dach Systema: a 3D garage and hall configurator",
     intro:
       "The configurator connects footprint, roof, dimension and equipment choices with a 3D preview. Customers can inspect their chosen variant, save the project and prepare an enquiry with specific requirements.",
-    status: "3D configurator / Available for purchase from January 2027",
+    status: "3D configurator / Ready for client-specific deployment",
     caption:
       "An actual Russian-language interface capture, taken on 16 November 2026 from the application run locally from the project branch.",
     scope: "What the configurator includes",

@@ -8,6 +8,6 @@ The portfolio screenshot was replaced on 16 November 2026 by a fresh Russian-lan
 
 The preview is protected and remains a separate prototype. The case study does not link to or publish that preview, copy its executable configurator, alter its branch, or claim a production portal launch. It presents the project and a selected interface screenshot as requested by the owner. No conversion figures, client testimonials or engineering certification are invented.
 
-## Public availability and narrative
+## Deployment positioning
 
-The project owner explicitly supplied the commercial availability statement: sales begin in January 2027. Public PL/EN copy displays this date in the shared portfolio/case-study label. It is an owner-provided commercial schedule, separate from features verified in source. The presentation describes implemented functions and user value; it does not claim a current production-portal launch. Technical limits and enquiry/pricing behaviour remain accurate.
+The project owner supplied the final public positioning: ready for client-specific deployment. Shared PL/EN portfolio and case-study labels use that wording. The January 2027 sales announcement is removed. This describes readiness for adaptation and deployment for a client, not an existing production deployment or a dated sales launch.
