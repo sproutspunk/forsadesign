@@ -21,8 +21,8 @@ export default function DachCaseContent({ lang }: { lang: "pl" | "en" }) {
               src={dachImage}
               alt={
                 lang === "pl"
-                  ? "Rzeczywisty konfigurator Dach Systema: model garażu 3D i panel edycji wymiarów"
-                  : "Actual Dach Systema configurator: a 3D garage model and dimension controls"
+                  ? "Rosyjska wersja konfiguratora Dach Systema: model garażu 3D i panel wyboru modeli z cyrylicą"
+                  : "Russian-language Dach Systema configurator: a 3D garage model and preset controls in Cyrillic"
               }
               width={1440}
               height={1000}
