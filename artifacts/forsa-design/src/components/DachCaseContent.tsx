@@ -1,4 +1,5 @@
 import React from "react";
+import ZoomableImage from "./ZoomableImage";
 import { dachCase, dachImage } from "../data/dachCaseStudy";
 export default function DachCaseContent({ lang }: { lang: "pl" | "en" }) {
   const c = dachCase[lang];
@@ -16,20 +17,19 @@ export default function DachCaseContent({ lang }: { lang: "pl" | "en" }) {
           <p className="text-lg text-foreground/75 leading-relaxed">{c.intro}</p>
         </header>
         <figure className="mb-16">
-          <a href={dachImage} target="_blank" rel="noopener noreferrer">
-            <img
-              src={dachImage}
-              alt={
-                lang === "pl"
-                  ? "Rosyjska wersja konfiguratora Dach Systema: model garażu 3D i panel wyboru modeli z cyrylicą"
-                  : "Russian-language Dach Systema configurator: a 3D garage model and preset controls in Cyrillic"
-              }
-              width={1440}
-              height={1000}
-              className="w-full h-auto rounded-lg border border-primary/25"
-              fetchPriority="high"
-            />
-          </a>
+          <ZoomableImage
+            lang={lang}
+            src={dachImage}
+            alt={
+              lang === "pl"
+                ? "Rosyjska wersja konfiguratora Dach Systema: model garażu 3D i panel wyboru modeli z cyrylicą"
+                : "Russian-language Dach Systema configurator: a 3D garage model and preset controls in Cyrillic"
+            }
+            width={1440}
+            height={1000}
+            className="w-full h-auto rounded-lg border border-primary/25"
+            fetchPriority="high"
+          />
           <figcaption className="text-xs text-foreground/55 mt-3">{c.caption}</figcaption>
         </figure>
         <section className="mb-16">
