@@ -199,6 +199,28 @@ export default function ArticlePage({ lang, slug }: ArticlePageProps) {
                 </p>
               </div>
             ))}
+            {a.relatedLinks && a.relatedLinks.length > 0 && (
+              <section aria-labelledby="article-related">
+                <h2
+                  id="article-related"
+                  className="font-serif text-xl md:text-2xl font-bold text-white mb-3"
+                >
+                  {lang === "pl" ? "Powiązane artykuły i usługi" : "Related articles and services"}
+                </h2>
+                <ul className="space-y-2 list-disc pl-5">
+                  {a.relatedLinks.map((link) => (
+                    <li key={link.href}>
+                      <a
+                        href={link.href}
+                        className="text-primary underline underline-offset-4 hover:text-primary/80"
+                      >
+                        {link.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            )}
             {a.sources && a.sources.length > 0 && (
               <section aria-labelledby="article-sources">
                 <h2

@@ -10,6 +10,22 @@ export interface ArticleMeta {
 
 export const articlesMeta: ArticleMeta[] = [
   {
+    dateIso: "2026-11-16",
+    slugPl: "wyszukiwarka-katalogu-b2b-numery-czesci",
+    slugEn: "b2b-catalogue-part-number-search",
+    readingTimeMin: 4,
+    pl: {
+      title: "Wyszukiwarka w katalogu B2B: jak szukać po numerach części",
+      excerpt:
+        "Numery części, warianty i brak wyników wymagają jasnych reguł. Jak zaprojektować wyszukiwanie, które zachowuje znaczenie oznaczeń produktu.",
+    },
+    en: {
+      title: "B2B catalogue search: getting part numbers right",
+      excerpt:
+        "Part numbers, variants and empty results need clear rules. Design catalogue search that preserves product identifiers and gives buyers a useful next step.",
+    },
+  },
+  {
     slugEn: "industrial-website-supplier-checks",
     slugPl: "strona-przemyslowa-gotowa-na-weryfikacje-dostawcy",
     dateIso: "2026-08-14",
