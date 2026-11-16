@@ -1,7 +1,7 @@
 {
-  "status": "draft",
-  "dateIso": null,
-  "publishedDateIso": null,
+  "status": "published",
+  "dateIso": "2026-11-16",
+  "publishedDateIso": "2026-11-16",
   "draftCreatedIso": "2026-11-16",
   "slugPl": "wyszukiwarka-katalogu-b2b-numery-czesci",
   "slugEn": "b2b-catalogue-part-number-search",

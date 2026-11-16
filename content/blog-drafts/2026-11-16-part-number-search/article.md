@@ -1,7 +1,7 @@
 ---
-status: draft
+status: published
 prepared_at: 2026-11-16
-published_at: null
+published_at: 2026-11-16
 slug_pl: wyszukiwarka-katalogu-b2b-numery-czesci
 slug_en: b2b-catalogue-part-number-search
 reading_time_min: 4

@@ -934,6 +934,9 @@ function buildArticleBody(lang, article) {
       return `${heading}<p>${ht(s.body)}</p>`;
     })
     .join("\n");
+  const relatedHtml = content.relatedLinks?.length
+    ? `<section aria-labelledby="article-related"><h2 id="article-related">${en ? "Related articles and services" : "Powiązane artykuły i usługi"}</h2><ul>${content.relatedLinks.map((link) => `<li><a href="${he(link.href)}">${ht(link.label)}</a></li>`).join("")}</ul></section>`
+    : "";
   const sourcesHtml = content.sources?.length
     ? `<section aria-labelledby="article-sources"><h2 id="article-sources">${en ? "Sources" : "Źródła"}</h2><ul>${content.sources
         .map((source) => `<li><a href="${ht(source.href)}">${ht(source.label)}</a></li>`)
@@ -948,6 +951,7 @@ function buildArticleBody(lang, article) {
 <h1>${ht(content.title)}</h1>
 <p>${article.publishedDateIso ? (en ? "Editorial date: " : "Data redakcyjna: ") : ""}<time datetime="${article.dateIso}">${article.dateIso}</time> · ${article.readingTimeMin} min</p>
 ${sectionsHtml}
+${relatedHtml}
 ${sourcesHtml}
 ${buildNewsletterBody(lang, `article:${article.slugEn}`)}
 <aside>
