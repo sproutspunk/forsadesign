@@ -195,33 +195,6 @@ export default function LinklangCaseStudyPage({ lang }: { lang: CaseStudyLanguag
             </ul>
           </section>
 
-          <figure className="mb-16">
-            <a
-              href="/projects/linklang-architecture.webp"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block"
-            >
-              <img
-                src="/projects/linklang-architecture.webp"
-                alt={
-                  lang === "pl"
-                    ? "Interfejs React komunikuje się z API Hono na Workers. API odczytuje i zapisuje dane w D1, przekazuje pliki do R2, tworzy Stripe Checkout i odbiera webhook płatności oraz zleca wysyłkę e-maili w Resend."
-                    : "The React interface communicates with the Hono API on Workers. The API reads and writes D1 data, transfers R2 files, creates Stripe Checkout sessions and receives payment webhooks, and sends notifications through Resend."
-                }
-                width={1752}
-                height={897}
-                loading="lazy"
-                className="w-full h-auto rounded-lg border border-primary/20"
-              />
-            </a>
-            <figcaption className="mt-3 text-sm text-foreground/65">
-              {lang === "pl"
-                ? "Połączenia potwierdzone w kodzie: API obsługuje bazę danych, dokumenty, płatności i powiadomienia. Kliknij, aby powiększyć schemat."
-                : "Connections verified in code: the API handles data, documents, payments and notifications. Select the diagram to view it at full size."}
-            </figcaption>
-          </figure>
-
           <section className="max-w-3xl mb-16">
             <h2 className="font-serif text-3xl text-white mb-5">{c.outcomeHeading}</h2>
             <p className="text-foreground/75 leading-relaxed mb-6">{c.outcome}</p>
