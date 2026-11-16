@@ -79,7 +79,7 @@ The LinkLang case study is available at `/pl/case-studies/linklang/` and `/en/ca
 
 Blog drafting automation is managed outside this repository. There is no repository job that independently approves or publishes weekly articles.
 
-The portfolio also includes `/pl/case-studies/dachsystema/` and `/en/case-studies/dachsystema/`: a source-verified 3D garage/hall configurator prototype with an archived interface screenshot. The protected executable preview is not embedded or published by this site. See [Dach Systema evidence](content/case-studies/dachsystema-evidence.md).
+The portfolio also includes `/pl/case-studies/dachsystema/` and `/en/case-studies/dachsystema/`: a source-verified 3D garage/hall configurator prototype with an actual Russian-language interface screenshot. The protected executable preview is not embedded or published by this site. See [Dach Systema evidence](content/case-studies/dachsystema-evidence.md).
 
 ## API routes
 

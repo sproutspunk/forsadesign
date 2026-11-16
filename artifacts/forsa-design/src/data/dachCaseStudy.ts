@@ -5,7 +5,7 @@ export const dachCase = {
       "Od wyboru bryły i dachu do zestawienia konfiguracji. Działający prototyp pozwala dopasować wymiary, otwory, wiaty i wykończenie, obserwując model 3D.",
     status: "Działający prototyp / Konfigurator 3D",
     caption:
-      "Rzeczywisty zrzut interfejsu zapisany w gałęzi projektu. Widoczny model jest renderowany w 3D.",
+      "Rzeczywisty zrzut rosyjskiej wersji konfiguratora, wykonany 16 listopada 2026 z aplikacji uruchomionej lokalnie z gałęzi projektu.",
     scope: "Zakres konfiguratora",
     features: [
       [
@@ -55,7 +55,7 @@ export const dachCase = {
       "From choosing a footprint and roof to reviewing the configuration. This working prototype lets users adjust dimensions, openings, canopies and finishes while viewing a 3D model.",
     status: "Working prototype / 3D configurator",
     caption:
-      "An actual interface capture stored in the project branch. The visible building is rendered in 3D.",
+      "An actual Russian-language interface capture, taken on 16 November 2026 from the application run locally from the project branch.",
     scope: "What the configurator includes",
     features: [
       [
@@ -100,7 +100,7 @@ export const dachCase = {
     cta: "Discuss a similar configurator",
   },
 };
-export const dachImage = "/projects/dachsystema-configurator.webp";
+export const dachImage = "/projects/dachsystema-configurator-ru.webp";
 export const dachPath = (lang: "pl" | "en") => `/${lang}/case-studies/dachsystema/`;
 export function dachSchema(lang: "pl" | "en") {
   return {
