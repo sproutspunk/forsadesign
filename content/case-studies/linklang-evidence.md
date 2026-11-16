@@ -28,9 +28,9 @@ Public routes:
 
 The same content data supplies React and prerendered pages. Both routes include canonical URLs, reciprocal language alternates, CreativeWork structured data and sitemap entries.
 
-## Diagrams
+## Illustration status
 
-The case study includes generated workflow and architecture graphics checked against the code. The first architecture illustration was rejected and is not deployed. Its replacement names the purpose of every connection: browser/API requests, D1 records, R2 files, Stripe session/webhook and Resend notifications. Accessible text and the adjoining explanation carry the same facts. The workflow caption clarifies that the order workspace is already available before payment. Published WebP assets are approximately 82 and 88 KB; full-size originals remain outside the deployment.
+The workflow illustration remains, with a caption clarifying that the order workspace is available before payment. On the user's instruction, the architecture graphic was removed from the case study. Architecture is described in text based on the source, rather than by a diagram with ambiguous arrow directions. Generated architecture drafts are not part of the published case study.
 
 ## Release validation
 

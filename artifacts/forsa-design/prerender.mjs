@@ -242,7 +242,6 @@ function buildLinklangCaseBody(lang) {
 <figure><a href="/projects/linklang-workflow.webp"><img src="/projects/linklang-workflow.webp" alt="${lang === "pl" ? "Schemat zgłoszenia, wyceny, akceptacji i płatności; karta zlecenia zawiera wiadomości i dokumenty" : "Service request, quotation, acceptance and payment workflow; the order workspace holds messages and documents"}" width="1983" height="793" loading="lazy" /></a><figcaption>${lang === "pl" ? "Uproszczony przebieg. Karta zlecenia jest dostępna również przed płatnością." : "Simplified workflow. The order workspace is also available before payment."}</figcaption></figure>
 <section><h2>${ht(c.decisionsHeading)}</h2>${blocks(c.decisions)}</section>
 <section><h2>${ht(c.stackHeading)}</h2><p>${ht(c.stackIntro)}</p><ul>${linklangProject.technologies.map((t) => `<li>${ht(t)}</li>`).join("")}</ul></section>
-<figure><a href="/projects/linklang-architecture.webp"><img src="/projects/linklang-architecture.webp" alt="${lang === "pl" ? "Interfejs React łączy się z API Hono. API obsługuje bazę D1, pliki R2, Stripe Checkout i e-maile Resend." : "The React interface connects to the Hono API. The API handles D1 data, R2 files, Stripe Checkout and Resend email."}" width="1752" height="897" loading="lazy" /></a></figure>
 <section><h2>${ht(c.outcomeHeading)}</h2><p>${ht(c.outcome)}</p><p>${ht(c.evidence)}</p></section>
 <aside><h2>${ht(c.ctaTitle)}</h2><p>${ht(c.ctaBody)}</p><a href="/${lang}/contact/">${ht(c.cta)}</a></aside>
 </article></main>`;
