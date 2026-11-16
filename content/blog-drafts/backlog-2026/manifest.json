@@ -19,7 +19,8 @@
       "word_count_pl": 356,
       "word_count_en": 429,
       "reading_time_min": 3,
-      "sources": []
+      "sources": [],
+      "editorial_date": "2026-08-14"
     },
     {
       "id": 2,
@@ -35,7 +36,8 @@
       "word_count_pl": 364,
       "word_count_en": 424,
       "reading_time_min": 3,
-      "sources": []
+      "sources": [],
+      "editorial_date": "2026-08-21"
     },
     {
       "id": 3,
@@ -60,7 +62,8 @@
           "label": "OWASP: File Upload Cheat Sheet",
           "href": "https://cheatsheetseries.owasp.org/cheatsheets/File_Upload_Cheat_Sheet.html"
         }
-      ]
+      ],
+      "editorial_date": "2026-08-28"
     },
     {
       "id": 4,
@@ -76,7 +79,8 @@
       "word_count_pl": 355,
       "word_count_en": 407,
       "reading_time_min": 3,
-      "sources": []
+      "sources": [],
+      "editorial_date": "2026-09-04"
     },
     {
       "id": 5,
@@ -92,7 +96,8 @@
       "word_count_pl": 349,
       "word_count_en": 373,
       "reading_time_min": 3,
-      "sources": []
+      "sources": [],
+      "editorial_date": "2026-09-11"
     },
     {
       "id": 6,
@@ -108,7 +113,8 @@
       "word_count_pl": 317,
       "word_count_en": 325,
       "reading_time_min": 2,
-      "sources": []
+      "sources": [],
+      "editorial_date": "2026-09-18"
     },
     {
       "id": 7,
@@ -129,7 +135,8 @@
           "label": "Google Search Central: Localised versions",
           "href": "https://developers.google.com/search/docs/specialty/international/localized-versions"
         }
-      ]
+      ],
+      "editorial_date": "2026-09-25"
     },
     {
       "id": 8,
@@ -150,7 +157,8 @@
           "label": "OWASP: Input Validation Cheat Sheet",
           "href": "https://cheatsheetseries.owasp.org/cheatsheets/Input_Validation_Cheat_Sheet.html"
         }
-      ]
+      ],
+      "editorial_date": "2026-10-02"
     },
     {
       "id": 9,
@@ -175,7 +183,8 @@
           "label": "W3C: Pause, Stop, Hide",
           "href": "https://www.w3.org/WAI/WCAG22/Understanding/pause-stop-hide.html"
         }
-      ]
+      ],
+      "editorial_date": "2026-10-09"
     },
     {
       "id": 10,
@@ -191,7 +200,8 @@
       "word_count_pl": 315,
       "word_count_en": 315,
       "reading_time_min": 2,
-      "sources": []
+      "sources": [],
+      "editorial_date": "2026-10-16"
     },
     {
       "id": 11,
@@ -207,7 +217,8 @@
       "word_count_pl": 321,
       "word_count_en": 320,
       "reading_time_min": 2,
-      "sources": []
+      "sources": [],
+      "editorial_date": "2026-10-23"
     },
     {
       "id": 12,
@@ -228,7 +239,8 @@
           "label": "NCSC: Backing up your data",
           "href": "https://www.ncsc.gov.uk/collection/small-organisations-guide-to-cyber-security/backing-up-your-data"
         }
-      ]
+      ],
+      "editorial_date": "2026-10-30"
     },
     {
       "id": 13,
@@ -253,7 +265,8 @@
           "label": "OWASP: Input Validation Cheat Sheet",
           "href": "https://cheatsheetseries.owasp.org/cheatsheets/Input_Validation_Cheat_Sheet.html"
         }
-      ]
+      ],
+      "editorial_date": "2026-11-06"
     },
     {
       "id": 14,
@@ -278,7 +291,9 @@
           "label": "W3C: Pause, Stop, Hide",
           "href": "https://www.w3.org/WAI/WCAG22/Understanding/pause-stop-hide.html"
         }
-      ]
+      ],
+      "editorial_date": "2026-11-13"
     }
-  ]
+  ],
+  "date_policy": "Weekly editorial chronology requested by the user. Actual publication remains 2026-11-15 in structured data."
 }

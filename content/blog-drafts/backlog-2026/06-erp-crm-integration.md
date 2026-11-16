@@ -1,6 +1,7 @@
 ---
 status: published
 published_at: 2026-11-15
+editorial_date: 2026-09-18
 reading_time_min: 2
 slug_pl: integracja-strony-z-erp-i-crm-zrodlo-danych
 slug_en: website-erp-crm-integration-data-ownership

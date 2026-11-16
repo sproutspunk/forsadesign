@@ -4,6 +4,7 @@ import PricingSection from "@/components/PricingSection";
 import AuditBanner from "@/components/AuditBanner";
 
 const Process = lazy(() => import("@/components/Process"));
+const Portfolio = lazy(() => import("@/components/Portfolio"));
 const FAQ = lazy(() => import("@/components/FAQ"));
 const CTA = lazy(() => import("@/components/CTA"));
 const ContactInfo = lazy(() => import("@/components/ContactInfo"));
@@ -16,6 +17,7 @@ export default function HomeSections() {
       <AuditBanner source="homepage-pricing" />
       <PricingSection />
       <Suspense fallback={null}>
+        <Portfolio />
         <Process />
         <FAQ />
         <CTA />

@@ -23,6 +23,12 @@ import { readFileSync, writeFileSync, mkdirSync } from "fs";
 import { join, dirname } from "path";
 import { fileURLToPath } from "url";
 import { articles } from "./src/data/articlesData.ts";
+import {
+  linklangCaseStudy,
+  linklangCasePath,
+  linklangCaseSchema,
+  linklangProject,
+} from "./src/data/linklangCaseStudy.ts";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const distDir = join(__dirname, "..", "..", "dist/public");
@@ -70,6 +76,13 @@ function buildSectionsHtml(sections) {
  */
 function patch(html, meta) {
   let out = html;
+  if (meta.schema) {
+    const schema = JSON.stringify(meta.schema).replace(/</g, "\\u003c");
+    out = out.replace(
+      /(\s*<\/head>)/,
+      `\n    <script type="application/ld+json" data-json-ld-id="linklang-case-study">${schema}</script>$1`,
+    );
+  }
 
   // <html lang="...">
   out = out.replace(/(<html\b[^>]*\blang=")[^"]*(")/s, `$1${meta.lang}$2`);
@@ -199,6 +212,42 @@ function ensureXDefault(alternates, fallback) {
 // Route-level body HTML helpers
 // ---------------------------------------------------------------------------
 
+function buildPortfolioBody(lang) {
+  const c = linklangCaseStudy[lang];
+  return `<section id="portfolio" class="py-24 border-t border-border/10 scroll-mt-24"><div class="container mx-auto px-6 max-w-6xl">
+<p class="text-primary text-xs font-semibold uppercase mb-3">Portfolio</p>
+<h2 class="font-serif text-4xl font-bold text-white mb-5">${ht(c.portfolioHeading)}</h2>
+<p class="text-foreground/70 mb-10">${ht(c.portfolioIntro)}</p>
+<a href="${linklangCasePath(lang)}" class="grid md:grid-cols-2 overflow-hidden rounded-lg border border-primary/20 bg-card">
+<div class="bg-slate-100 flex items-center p-7"><img src="${c.image}" alt="${he(c.imageAlt)}" width="1120" height="420" loading="lazy" class="w-full h-auto rounded-md" /></div>
+<div class="p-8"><p class="text-primary text-xs uppercase mb-3">${ht(c.label)}</p><h3 class="font-serif text-3xl text-white mb-4">LinkLang</h3><p class="text-foreground/70 mb-6">${ht(c.cardText)}</p><span class="text-primary font-semibold">${ht(c.readCase)}</span></div></a>
+</div></section>`;
+}
+
+function buildLinklangCaseBody(lang) {
+  const c = linklangCaseStudy[lang];
+  const blocks = (items) =>
+    items
+      .map((item) => `<section><h3>${ht(item.title)}</h3><p>${ht(item.body)}</p></section>`)
+      .join("\n");
+  return `<header><nav><a href="/${lang}/">Forsa Design</a> | <a href="/${lang}/#portfolio">Portfolio</a> | <a href="/${lang}/contact/">${lang === "pl" ? "Kontakt" : "Contact"}</a></nav></header>
+<main id="main-content"><article>
+<a href="/${lang}/#portfolio">${ht(c.back)}</a>
+<header><p>${ht(c.label)}</p><h1>${ht(c.title)}</h1><p>${ht(c.lead)}</p><a href="${linklangProject.url}" target="_blank" rel="noopener noreferrer">${ht(c.visit)}</a></header>
+<figure><img src="${c.image}" alt="${he(c.imageAlt)}" width="1120" height="420" fetchpriority="high" /><figcaption>${ht(c.imageCaption)}</figcaption></figure>
+<dl>${c.facts.map((f) => `<dt>${ht(f.label)}</dt><dd>${ht(f.value)}</dd>`).join("")}</dl>
+<section><h2>${ht(c.contextHeading)}</h2>${c.context.map((p) => `<p>${ht(p)}</p>`).join("")}</section>
+<section><h2>${ht(c.scopeHeading)}</h2>${blocks(c.features)}</section>
+<section><h2>${ht(c.workflowHeading)}</h2><p>${ht(c.workflowIntro)}</p><ol>${c.steps.map((step) => `<li><h3>${ht(step.title)}</h3><p>${ht(step.body)}</p></li>`).join("")}</ol></section>
+<figure><a href="/projects/linklang-workflow.webp"><img src="/projects/linklang-workflow.webp" alt="${lang === "pl" ? "Schemat zgłoszenia, wyceny, akceptacji i płatności; karta zlecenia zawiera wiadomości i dokumenty" : "Service request, quotation, acceptance and payment workflow; the order workspace holds messages and documents"}" width="1983" height="793" loading="lazy" /></a><figcaption>${lang === "pl" ? "Uproszczony przebieg. Karta zlecenia jest dostępna również przed płatnością." : "Simplified workflow. The order workspace is also available before payment."}</figcaption></figure>
+<section><h2>${ht(c.decisionsHeading)}</h2>${blocks(c.decisions)}</section>
+<section><h2>${ht(c.stackHeading)}</h2><p>${ht(c.stackIntro)}</p><ul>${linklangProject.technologies.map((t) => `<li>${ht(t)}</li>`).join("")}</ul></section>
+<figure><a href="/projects/linklang-architecture.webp"><img src="/projects/linklang-architecture.webp" alt="${lang === "pl" ? "Interfejs React łączy się z API Hono. API obsługuje bazę D1, pliki R2, Stripe Checkout i e-maile Resend." : "The React interface connects to the Hono API. The API handles D1 data, R2 files, Stripe Checkout and Resend email."}" width="1752" height="897" loading="lazy" /></a></figure>
+<section><h2>${ht(c.outcomeHeading)}</h2><p>${ht(c.outcome)}</p><p>${ht(c.evidence)}</p></section>
+<aside><h2>${ht(c.ctaTitle)}</h2><p>${ht(c.ctaBody)}</p><a href="/${lang}/contact/">${ht(c.cta)}</a></aside>
+</article></main>`;
+}
+
 function buildHomepageBodyEn() {
   return `<header class="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
 <nav aria-label="Main navigation" class="container mx-auto flex h-16 items-center justify-between px-6">
@@ -304,6 +353,7 @@ I use AI-assisted tools to accelerate appropriate parts of development while ret
 </div>
 </div>
 </section>
+${buildPortfolioBody("en")}
 <section id="process" class="py-24 bg-card">
 <div class="container mx-auto px-6">
 <div class="mb-16 md:text-center">
@@ -601,6 +651,7 @@ Korzystam z narz&#281;dzi wspomaganych przez AI, aby przyspieszy&#263; odpowiedn
 </div>
 </div>
 </section>
+${buildPortfolioBody("pl")}
 <section id="process" class="py-24 bg-card">
 <div class="container mx-auto px-6">
 <div class="mb-16 md:text-center">
@@ -829,17 +880,26 @@ function buildSearchBody(lang) {
 </main>`;
 }
 
-// Blog index entries derived from src/data/articlesData.ts so the prerendered
-// blog listing, the article routes, and the sitemap can never drift apart.
-const blogArticleIndex = {
-  en: articles.map((a) => [a.slugEn, a.en.title]),
-  pl: articles.map((a) => [a.slugPl, a.pl.title]),
-};
+function buildNewsletterBody(lang, source) {
+  const en = lang === "en";
+  return `<section id="newsletter"><h2>${en ? "New articles, straight to your inbox" : "Nowe artykuły prosto na Twoją skrzynkę"}</h2>
+<p>${en ? "Practical guidance on B2B websites and systems. Confirm your email to subscribe. You can unsubscribe at any time." : "Praktyczne wskazówki o stronach i systemach B2B. Potwierdź adres, aby dołączyć. Możesz wypisać się w każdej chwili."}</p>
+<form action="https://forsa-api.sproutspunk.workers.dev/api/newsletter" method="post">
+<label for="newsletter-email">${en ? "Email address" : "Adres e-mail"}</label><input id="newsletter-email" type="email" name="email" required maxlength="320" autocomplete="email" />
+<input type="hidden" name="language" value="${lang}" /><input type="hidden" name="source" value="${he(source)}" />
+<label><input type="checkbox" name="consent" value="yes" required />${en ? "I agree to receive Forsa Design articles and guidance by email. I can withdraw consent at any time." : "Zgadzam się otrzymywać e-mailem artykuły i wskazówki Forsa Design. Mogę wycofać zgodę w każdej chwili."}</label>
+<a href="/${lang}/privacy/">${en ? "Privacy policy" : "Polityka prywatności"}</a>
+<button type="submit">${en ? "Subscribe to the newsletter" : "Zapisz się do newslettera"}</button></form></section>`;
+}
 
 function buildBlogBody(lang) {
   const en = lang === "en";
-  const items = blogArticleIndex[lang]
-    .map(([slug, title]) => `<li><a href="/${lang}/blog/${slug}">${title}</a></li>`)
+  const items = [...articles]
+    .sort((a, b) => b.dateIso.localeCompare(a.dateIso))
+    .map(
+      (article) =>
+        `<li><a href="/${lang}/blog/${lang === "en" ? article.slugEn : article.slugPl}">${ht(article[lang].title)}</a> <span>${article.publishedDateIso ? (en ? "Editorial date: " : "Data redakcyjna: ") : ""}<time datetime="${article.dateIso}">${article.dateIso}</time></span></li>`,
+    )
     .join("\n");
   return `<header>
 <nav><a href="/${lang}/">Forsa Design</a> | <a href="/${lang}/#services">${en ? "Services" : "Usługi"}</a> | <a href="/${lang}/#faq">FAQ</a> | <a href="/${lang}/#contact">${en ? "Contact" : "Kontakt"}</a> | <a href="/${lang}/blog">Blog</a></nav>
@@ -847,6 +907,7 @@ function buildBlogBody(lang) {
 <main>
 <h1>Blog</h1>
 <p>${en ? "Expert insights on web design, SEO, e-commerce, and digital strategy from the Forsa Design team." : "Wiedza ekspercka o web designie, SEO, e-commerce i strategii cyfrowej od zespołu Forsa Design."}</p>
+${buildNewsletterBody(lang, "blog-index")}
 <ul>
 ${items}
 </ul>
@@ -886,9 +947,10 @@ function buildArticleBody(lang, article) {
 <article>
 <p><a href="/${lang}/blog">${en ? "← Back to blog" : "← Wróć do bloga"}</a></p>
 <h1>${ht(content.title)}</h1>
-<p><time datetime="${article.dateIso}">${article.dateIso}</time> · ${article.readingTimeMin} min</p>
+<p>${article.publishedDateIso ? (en ? "Editorial date: " : "Data redakcyjna: ") : ""}<time datetime="${article.dateIso}">${article.dateIso}</time> · ${article.readingTimeMin} min</p>
 ${sectionsHtml}
 ${sourcesHtml}
+${buildNewsletterBody(lang, `article:${article.slugEn}`)}
 <aside>
 <h2>${en ? "Working on a similar project?" : "Pracujesz nad podobnym projektem?"}</h2>
 <p>${en ? "We design procurement-ready websites and bespoke web systems for industrial, marine and engineering businesses." : "Projektujemy strony gotowe na audyt zakupowy i dedykowane systemy webowe dla firm przemysłowych, morskich i inżynieryjnych."}</p>
@@ -2359,6 +2421,26 @@ const routes = [
   },
 ];
 
+for (const lang of ["en", "pl"]) {
+  const content = linklangCaseStudy[lang];
+  routes.push({
+    outDir: `${lang}/case-studies/linklang`,
+    lang,
+    title: `${content.title} | Forsa Design`,
+    desc: content.description,
+    ogTitle: content.title,
+    locale: lang === "en" ? "en_GB" : "pl_PL",
+    canonical: `${SITE}${linklangCasePath(lang)}`,
+    alternates: [
+      { lang: "en", href: `${SITE}${linklangCasePath("en")}` },
+      { lang: "pl", href: `${SITE}${linklangCasePath("pl")}` },
+    ],
+    bodyHtml: buildLinklangCaseBody(lang),
+    schema: linklangCaseSchema(lang),
+    lastmod: linklangProject.reviewedOn,
+  });
+}
+
 // Blog article routes — one per article per language, derived from
 // src/data/articlesData.ts so slugs and content never drift.
 for (const article of articles) {
@@ -2382,7 +2464,7 @@ for (const article of articles) {
       ],
       bodyHtml: buildArticleBody(lang, article),
       isArticle: true,
-      lastmod: article.dateIso,
+      lastmod: article.publishedDateIso ?? article.dateIso,
     });
   }
 }

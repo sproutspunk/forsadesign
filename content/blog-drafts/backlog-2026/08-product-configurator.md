@@ -1,6 +1,7 @@
 ---
 status: published
 published_at: 2026-11-15
+editorial_date: 2026-10-02
 reading_time_min: 2
 slug_pl: konfigurator-produktu-czy-formularz-zapytania
 slug_en: product-configurator-or-enquiry-form

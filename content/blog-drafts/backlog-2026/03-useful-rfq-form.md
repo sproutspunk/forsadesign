@@ -1,6 +1,7 @@
 ---
 status: published
 published_at: 2026-11-15
+editorial_date: 2026-08-28
 reading_time_min: 3
 slug_pl: formularz-zapytania-ofertowego-dla-przemyslu
 slug_en: useful-industrial-rfq-form

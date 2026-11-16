@@ -36,3 +36,7 @@ Kolejne cotygodniowe teksty nadal powstają jako drafty do akceptacji, w poniedz
 ## Walidacja wydania
 
 Build i prerender zakończyły się powodzeniem. TypeScript bez błędów; 30 testów aplikacji i 5 testów obsługi statycznych zasobów przeszło. Sprawdzono zgodność 24 wpisów między danymi a metadanymi oraz kompletność 28 nowych stron: treść, datę, canonical, hreflang, obecność w spisie bloga i sitemap oraz klikalne źródła. W nowych tekstach nie ma em dash ani surowych znaczników Markdown.
+
+## Chronologia redakcyjna
+
+Na prośbę użytkownika 14 zaległych tematów otrzymało tygodniowe daty redakcyjne od 14 sierpnia do 13 listopada 2026. Blog sortuje wpisy według tych dat i oznacza je jako daty redakcyjne. Rzeczywista publikacja 15 listopada pozostaje zapisana osobno w `publishedDateIso` oraz danych strukturalnych. Chronologia nie stanowi deklaracji historycznych publikacji.

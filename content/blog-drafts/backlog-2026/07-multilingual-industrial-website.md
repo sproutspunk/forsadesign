@@ -1,6 +1,7 @@
 ---
 status: published
 published_at: 2026-11-15
+editorial_date: 2026-09-25
 reading_time_min: 2
 slug_pl: wielojezyczna-strona-przemyslowa-wiecej-niz-tlumaczenie
 slug_en: multilingual-industrial-website-beyond-translation

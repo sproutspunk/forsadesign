@@ -1,6 +1,7 @@
 ---
 status: published
 published_at: 2026-11-15
+editorial_date: 2026-09-11
 reading_time_min: 3
 slug_pl: ceny-w-katalogu-b2b-publiczne-czy-na-zapytanie
 slug_en: b2b-catalogue-public-prices-or-quotation

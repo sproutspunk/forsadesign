@@ -1,6 +1,7 @@
 ---
 status: published
 published_at: 2026-11-15
+editorial_date: 2026-08-14
 reading_time_min: 3
 slug_pl: strona-przemyslowa-gotowa-na-weryfikacje-dostawcy
 slug_en: industrial-website-supplier-checks

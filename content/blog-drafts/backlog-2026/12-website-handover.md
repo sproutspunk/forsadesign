@@ -1,6 +1,7 @@
 ---
 status: published
 published_at: 2026-11-15
+editorial_date: 2026-10-30
 reading_time_min: 2
 slug_pl: przekazanie-strony-firmowej-dostepy-i-odtworzenie
 slug_en: business-website-handover-access-and-recovery

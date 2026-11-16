@@ -1,6 +1,7 @@
 ---
 status: published
 published_at: 2026-11-15
+editorial_date: 2026-10-16
 reading_time_min: 2
 slug_pl: zapytania-eksportowe-strona-przemyslowa
 slug_en: industrial-website-export-enquiries

@@ -19,6 +19,7 @@ export interface Article {
   slugEn: string;
   slugPl: string;
   dateIso: string;
+  publishedDateIso?: string;
   readingTimeMin: number;
   en: ArticleLang;
   pl: ArticleLang;
@@ -32,7 +33,8 @@ export const articles: Article[] = [
   {
     slugEn: "industrial-website-supplier-checks",
     slugPl: "strona-przemyslowa-gotowa-na-weryfikacje-dostawcy",
-    dateIso: "2026-11-15",
+    dateIso: "2026-08-14",
+    publishedDateIso: "2026-11-15",
     readingTimeMin: 3,
     pl: {
       title: "Czy Twoja strona przechodzi weryfikację dostawcy?",
@@ -120,7 +122,8 @@ export const articles: Article[] = [
   {
     slugEn: "b2b-product-catalogue-without-checkout",
     slugPl: "katalog-b2b-bez-koszyka-kiedy-ma-sens",
-    dateIso: "2026-11-15",
+    dateIso: "2026-08-21",
+    publishedDateIso: "2026-11-15",
     readingTimeMin: 3,
     pl: {
       title: "Katalog B2B bez koszyka. Kiedy to lepszy wybór?",
@@ -208,7 +211,8 @@ export const articles: Article[] = [
   {
     slugEn: "useful-industrial-rfq-form",
     slugPl: "formularz-zapytania-ofertowego-dla-przemyslu",
-    dateIso: "2026-11-15",
+    dateIso: "2026-08-28",
+    publishedDateIso: "2026-11-15",
     readingTimeMin: 3,
     pl: {
       title: "Formularz RFQ, po którym da się przygotować ofertę",
@@ -316,7 +320,8 @@ export const articles: Article[] = [
   {
     slugEn: "technical-documentation-website-version-control",
     slugPl: "dokumentacja-techniczna-na-stronie-wersje-i-aktualnosc",
-    dateIso: "2026-11-15",
+    dateIso: "2026-09-04",
+    publishedDateIso: "2026-11-15",
     readingTimeMin: 3,
     pl: {
       title: "PDF na stronie to za mało. Jak uporządkować dokumentację techniczną?",
@@ -404,7 +409,8 @@ export const articles: Article[] = [
   {
     slugEn: "b2b-catalogue-public-prices-or-quotation",
     slugPl: "ceny-w-katalogu-b2b-publiczne-czy-na-zapytanie",
-    dateIso: "2026-11-15",
+    dateIso: "2026-09-11",
+    publishedDateIso: "2026-11-15",
     readingTimeMin: 3,
     pl: {
       title: "Ceny w katalogu B2B: pokazać, ukryć czy wyjaśnić?",
@@ -492,7 +498,8 @@ export const articles: Article[] = [
   {
     slugEn: "website-erp-crm-integration-data-ownership",
     slugPl: "integracja-strony-z-erp-i-crm-zrodlo-danych",
-    dateIso: "2026-11-15",
+    dateIso: "2026-09-18",
+    publishedDateIso: "2026-11-15",
     readingTimeMin: 2,
     pl: {
       title: "Integracja strony z ERP i CRM zaczyna się od właściciela danych",
@@ -580,7 +587,8 @@ export const articles: Article[] = [
   {
     slugEn: "multilingual-industrial-website-beyond-translation",
     slugPl: "wielojezyczna-strona-przemyslowa-wiecej-niz-tlumaczenie",
-    dateIso: "2026-11-15",
+    dateIso: "2026-09-25",
+    publishedDateIso: "2026-11-15",
     readingTimeMin: 2,
     pl: {
       title: "Wielojęzyczna strona przemysłowa to więcej niż tłumaczenie",
@@ -686,7 +694,8 @@ export const articles: Article[] = [
   {
     slugEn: "product-configurator-or-enquiry-form",
     slugPl: "konfigurator-produktu-czy-formularz-zapytania",
-    dateIso: "2026-11-15",
+    dateIso: "2026-10-02",
+    publishedDateIso: "2026-11-15",
     readingTimeMin: 2,
     pl: {
       title: "Konfigurator produktu czy dobry formularz zapytania?",
@@ -786,7 +795,8 @@ export const articles: Article[] = [
   {
     slugEn: "accessible-b2b-catalogue-and-enquiry-forms",
     slugPl: "dostepny-katalog-i-formularz-b2b",
-    dateIso: "2026-11-15",
+    dateIso: "2026-10-09",
+    publishedDateIso: "2026-11-15",
     readingTimeMin: 2,
     pl: {
       title: "Dostępność katalogu B2B sprawdza się przy konkretnym zadaniu",
@@ -894,7 +904,8 @@ export const articles: Article[] = [
   {
     slugEn: "industrial-website-export-enquiries",
     slugPl: "zapytania-eksportowe-strona-przemyslowa",
-    dateIso: "2026-11-15",
+    dateIso: "2026-10-16",
+    publishedDateIso: "2026-11-15",
     readingTimeMin: 2,
     pl: {
       title: "Co powinien wiedzieć zagraniczny kupiec przed wysłaniem zapytania?",
@@ -982,7 +993,8 @@ export const articles: Article[] = [
   {
     slugEn: "b2b-catalogue-stock-and-lead-times",
     slugPl: "dostepnosc-i-terminy-dostawy-w-katalogu-b2b",
-    dateIso: "2026-11-15",
+    dateIso: "2026-10-23",
+    publishedDateIso: "2026-11-15",
     readingTimeMin: 2,
     pl: {
       title: "„Dostępny” w katalogu B2B: co właściwie obiecujesz?",
@@ -1070,7 +1082,8 @@ export const articles: Article[] = [
   {
     slugEn: "business-website-handover-access-and-recovery",
     slugPl: "przekazanie-strony-firmowej-dostepy-i-odtworzenie",
-    dateIso: "2026-11-15",
+    dateIso: "2026-10-30",
+    publishedDateIso: "2026-11-15",
     readingTimeMin: 2,
     pl: {
       title: "Przekazanie strony: czy firma potrafi przejąć jej obsługę?",
@@ -1170,7 +1183,8 @@ export const articles: Article[] = [
   {
     slugEn: "secure-b2b-enquiry-forms-and-attachments",
     slugPl: "bezpieczenstwo-formularza-b2b-i-zalacznikow",
-    dateIso: "2026-11-15",
+    dateIso: "2026-11-06",
+    publishedDateIso: "2026-11-15",
     readingTimeMin: 2,
     pl: {
       title: "Formularz zapytania B2B: mniej spamu, bezpieczniejsze załączniki",
@@ -1278,7 +1292,8 @@ export const articles: Article[] = [
   {
     slugEn: "b2b-website-animation-with-user-control",
     slugPl: "animacje-na-stronie-b2b-kontrola-ruchu",
-    dateIso: "2026-11-15",
+    dateIso: "2026-11-13",
+    publishedDateIso: "2026-11-15",
     readingTimeMin: 2,
     pl: {
       title: "Animacja na stronie B2B: efekt, który daje się zatrzymać",

@@ -1,6 +1,7 @@
 ---
 status: published
 published_at: 2026-11-15
+editorial_date: 2026-11-06
 reading_time_min: 2
 slug_pl: bezpieczenstwo-formularza-b2b-i-zalacznikow
 slug_en: secure-b2b-enquiry-forms-and-attachments

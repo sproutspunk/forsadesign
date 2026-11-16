@@ -25,6 +25,7 @@ const ContactPage = lazy(() => import("@/pages/ContactPage"));
 const SearchPage = lazy(() => import("@/pages/SearchPage"));
 const BlogPage = lazy(() => import("@/pages/BlogPage"));
 const ArticlePage = lazy(() => import("@/pages/ArticlePage"));
+const LinklangCaseStudyPage = lazy(() => import("@/pages/LinklangCaseStudyPage"));
 const PayPage = lazy(() => import("@/pages/PayPage"));
 
 function Redirector() {
@@ -104,6 +105,14 @@ function Router() {
       <Switch>
         <Route path="/en/" component={() => <HomePage lang="en" />} />
         <Route path="/pl/" component={() => <HomePage lang="pl" />} />
+        <Route
+          path="/en/case-studies/linklang"
+          component={() => <LinklangCaseStudyPage lang="en" />}
+        />
+        <Route
+          path="/pl/case-studies/linklang"
+          component={() => <LinklangCaseStudyPage lang="pl" />}
+        />
         <Route path="/en/terms" component={TermsPage} />
         <Route path="/pl/terms" component={TermsPagePL} />
         <Route path="/terms" component={() => <RedirectTo to="/en/terms" />} />
