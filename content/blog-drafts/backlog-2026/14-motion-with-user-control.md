@@ -1,6 +1,7 @@
 ---
 status: published
 published_at: 2026-11-15
+editorial_date: 2026-11-13
 reading_time_min: 2
 slug_pl: animacje-na-stronie-b2b-kontrola-ruchu
 slug_en: b2b-website-animation-with-user-control

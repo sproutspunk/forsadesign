@@ -1,3 +1,5 @@
+import { handleNewsletter } from "./newsletter";
+
 interface KVNamespace {
   get(key: string): Promise<string | null>;
   put(key: string, value: string): Promise<void>;
@@ -827,7 +829,10 @@ async function handleStripeWebhook(request: Request, env: Env): Promise<Response
 export default {
   async fetch(request: Request, env: Env): Promise<Response> {
     const origin = request.headers.get("origin");
-    if (!originIsAllowed(origin)) return forbiddenOrigin();
+    const requestUrl = new URL(request.url);
+    const newsletterAction = /^\/api\/newsletter\/(confirm|unsubscribe)$/.test(requestUrl.pathname);
+    if (!originIsAllowed(origin) && !(newsletterAction && origin === requestUrl.origin))
+      return forbiddenOrigin();
     if (request.method === "OPTIONS")
       return new Response(null, {
         status: origin ? 204 : 403,
@@ -843,6 +848,11 @@ export default {
       return await handleStripeWebhook(request, env);
 
     try {
+      if (path === "/api/newsletter" || /^\/api\/newsletter\/(confirm|unsubscribe)$/.test(path)) {
+        if (request.method === "POST" && isRateLimited(request, "newsletter"))
+          return json({ error: "Too many requests. Please try again later." }, 429, origin);
+        return await handleNewsletter(request, env, origin, sendViaResend);
+      }
       if (request.method === "POST" && path === "/api/contact")
         return await handleContact(request, env, origin);
       if (request.method === "POST" && path === "/api/quotes/email")

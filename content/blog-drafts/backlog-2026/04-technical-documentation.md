@@ -1,6 +1,7 @@
 ---
 status: published
 published_at: 2026-11-15
+editorial_date: 2026-09-04
 reading_time_min: 3
 slug_pl: dokumentacja-techniczna-na-stronie-wersje-i-aktualnosc
 slug_en: technical-documentation-website-version-control

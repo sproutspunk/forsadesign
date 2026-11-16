@@ -3,6 +3,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { useSeoMeta, useJsonLd, buildHref } from "@/hooks/useSeoMeta";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import NewsletterSignup from "@/components/NewsletterSignup";
 import AuditBanner from "@/components/AuditBanner";
 import { getArticleBySlug } from "@/data/articlesData";
 import { m as motion } from "framer-motion";
@@ -87,8 +88,8 @@ export default function ArticlePage({ lang, slug }: ArticlePageProps) {
           "@type": "BlogPosting",
           headline: a.title,
           description: a.excerpt,
-          datePublished: article.dateIso,
-          dateModified: article.dateIso,
+          datePublished: article.publishedDateIso ?? article.dateIso,
+          dateModified: article.publishedDateIso ?? article.dateIso,
           inLanguage: lang === "en" ? "en-GB" : "pl-PL",
           url: buildHref(`/${lang}/blog/${canonicalSlug}`),
           author: {
@@ -156,7 +157,12 @@ export default function ArticlePage({ lang, slug }: ArticlePageProps) {
             className="mb-12"
           >
             <div className="flex items-center gap-4 text-xs text-foreground/40 font-light mb-6">
-              <span>{formatDate(article.dateIso, lang)}</span>
+              <span>
+                {article.publishedDateIso && (
+                  <span>{lang === "pl" ? "Data redakcyjna: " : "Editorial date: "}</span>
+                )}
+                <time dateTime={article.dateIso}>{formatDate(article.dateIso, lang)}</time>
+              </span>
               <span>·</span>
               <span className="flex items-center gap-1">
                 <Clock size={12} />
@@ -216,6 +222,10 @@ export default function ArticlePage({ lang, slug }: ArticlePageProps) {
               </section>
             )}
           </motion.div>
+
+          <div className="mt-12">
+            <NewsletterSignup lang={lang} source={`article:${article.slugEn}`} />
+          </div>
 
           <div className="mt-16 rounded-sm border border-primary/20 bg-card p-8">
             <h2 className="font-serif text-xl md:text-2xl font-bold text-white mb-3">

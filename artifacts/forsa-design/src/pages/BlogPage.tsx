@@ -3,6 +3,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { useSeoMeta, useJsonLd, buildHref } from "@/hooks/useSeoMeta";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import NewsletterSignup from "@/components/NewsletterSignup";
 import { articlesMeta } from "@/data/articlesMeta";
 import { m as motion } from "framer-motion";
 import { ArrowRight, Clock } from "lucide-react";
@@ -90,7 +91,7 @@ export default function BlogPage({ lang }: BlogPageProps) {
           "@type": "BlogPosting",
           headline: a.title,
           description: a.excerpt,
-          datePublished: article.dateIso,
+          datePublished: article.publishedDateIso ?? article.dateIso,
           url: buildHref(`/${lang}/blog/${slug}`),
           author: {
             "@type": "Person",
@@ -127,6 +128,10 @@ export default function BlogPage({ lang }: BlogPageProps) {
         </div>
       </section>
 
+      <div className="container mx-auto px-6 max-w-4xl pt-10">
+        <NewsletterSignup lang={lang} source="blog-index" />
+      </div>
+
       {/* Articles grid */}
       <section className="py-20">
         <div className="container mx-auto px-6 max-w-4xl">
@@ -145,7 +150,12 @@ export default function BlogPage({ lang }: BlogPageProps) {
                 >
                   <a href={`/${lang}/blog/${slug}`} className="block">
                     <div className="flex items-center gap-4 text-xs text-foreground/40 font-light mb-4">
-                      <span>{formatDate(article.dateIso, lang)}</span>
+                      <span>
+                        {article.publishedDateIso && (
+                          <span>{lang === "pl" ? "Data redakcyjna: " : "Editorial date: "}</span>
+                        )}
+                        <time dateTime={article.dateIso}>{formatDate(article.dateIso, lang)}</time>
+                      </span>
                       <span>·</span>
                       <span className="flex items-center gap-1">
                         <Clock size={12} />

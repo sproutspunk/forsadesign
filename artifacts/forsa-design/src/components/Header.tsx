@@ -25,6 +25,7 @@ export default function Header() {
   const blogHref = `${base}blog/`;
   const servicesHref = `${base}services/`;
   const workLinks = [
+    { label: "Portfolio", href: sectionHref("#portfolio") },
     { label: language === "pl" ? "Proces" : "Process", href: sectionHref("#process") },
     { label: "FAQ", href: sectionHref("#faq") },
     { label: language === "pl" ? "Porównanie" : "Comparison", href: `${base}comparison/` },

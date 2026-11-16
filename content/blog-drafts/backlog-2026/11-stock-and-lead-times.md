@@ -1,6 +1,7 @@
 ---
 status: published
 published_at: 2026-11-15
+editorial_date: 2026-10-23
 reading_time_min: 2
 slug_pl: dostepnosc-i-terminy-dostawy-w-katalogu-b2b
 slug_en: b2b-catalogue-stock-and-lead-times

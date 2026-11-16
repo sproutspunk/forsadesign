@@ -1,6 +1,7 @@
 ---
 status: published
 published_at: 2026-11-15
+editorial_date: 2026-10-09
 reading_time_min: 2
 slug_pl: dostepny-katalog-i-formularz-b2b
 slug_en: accessible-b2b-catalogue-and-enquiry-forms
