@@ -1,3 +1,4 @@
+import { processCopy } from "../data/process";
 import { getFaqItems } from "../data/faq";
 import { createContext, useContext, useState, ReactNode } from "react";
 import { useLocation } from "wouter";
@@ -61,31 +62,7 @@ const translations = {
         desc: "Dealer portals, specification tools, multilingual quote systems, custom forms and workflow integrations built around the way your business operates.\n\nI use AI-assisted tools to accelerate appropriate parts of development while retaining direct control over architecture, configuration, testing, security and the final implementation. API integrations are assessed individually according to the external system and its documentation.",
       },
     },
-    process: {
-      heading: "How We Work",
-      steps: [
-        {
-          title: "Discovery and Audit",
-          desc: "We review your current website, business requirements, competitors, target customers and the information buyers need in order to evaluate your company.",
-        },
-        {
-          title: "Specification and Design",
-          desc: "We define the structure, functionality and technical requirements before development begins. The design is built around clear communication, usability and the commercial purpose of the website.",
-        },
-        {
-          title: "Development",
-          desc: "We build the website or web system using a modern development workflow, including AI-assisted tools where appropriate. We review and refine the implementation ourselves, with attention to performance, security, SEO and accessibility.",
-        },
-        {
-          title: "Testing and Launch",
-          desc: "Before launch, we test the implementation across relevant devices and browsers and check performance, accessibility, SSL, security configuration, SEO fundamentals and GDPR-related requirements.",
-        },
-        {
-          title: "Optional Ongoing Support",
-          desc: "After launch, ongoing support is available as a separate paid service. Depending on your requirements, it can include hosting, backups, security maintenance, updates and agreed website changes.",
-        },
-      ],
-    },
+    process: processCopy["en"],
     about: {
       heading: "Who’s Behind Forsa Design?",
       body: "Forsa Design brings together web development and industrial B2B experience. Our founder, Miro, spent more than 20 years in international B2B sales, trading metalworking machinery, industrial equipment and engineering solutions across Europe and Asia. He ran businesses in two countries, negotiated contracts across three continents and managed international teams.",
@@ -235,31 +212,7 @@ const translations = {
         desc: "Portale dealerskie, narzędzia do tworzenia specyfikacji, wielojęzyczne systemy wycen, dedykowane formularze i integracje procesów dopasowane do sposobu działania firmy.\n\nKorzystam z narzędzi wspomaganych przez AI, aby przyspieszyć odpowiednie etapy developmentu, zachowując bezpośrednią kontrolę nad architekturą, konfiguracją, testami, bezpieczeństwem i końcowym wdrożeniem. Każdą integrację API oceniamy indywidualnie na podstawie systemu zewnętrznego i jego dokumentacji.",
       },
     },
-    process: {
-      heading: "Jak pracujemy",
-      steps: [
-        {
-          title: "Analiza i audyt",
-          desc: "Analizujemy obecną stronę, wymagania biznesowe, konkurencję, grupę docelową oraz informacje potrzebne klientom do oceny Twojej firmy.",
-        },
-        {
-          title: "Specyfikacja i projekt",
-          desc: "Przed rozpoczęciem developmentu określamy strukturę, funkcjonalność i wymagania techniczne. Projekt powstaje z myślą o czytelnej komunikacji, użyteczności i biznesowym celu strony.",
-        },
-        {
-          title: "Development",
-          desc: "Budujemy stronę lub system webowy przy użyciu nowoczesnego procesu developmentu, w tym narzędzi wspomaganych przez AI tam, gdzie ma to sens. Sprawdzamy i dopracowujemy wdrożenie, zwracając uwagę na wydajność, bezpieczeństwo, SEO i dostępność.",
-        },
-        {
-          title: "Testy i uruchomienie",
-          desc: "Przed uruchomieniem testujemy wdrożenie na odpowiednich urządzeniach i przeglądarkach oraz sprawdzamy wydajność, dostępność, SSL, konfigurację bezpieczeństwa, podstawy SEO i wymagania związane z GDPR.",
-        },
-        {
-          title: "Opcjonalne wsparcie",
-          desc: "Po uruchomieniu możemy zapewnić dalsze wsparcie jako oddzielną płatną usługę. W zależności od potrzeb może ono obejmować hosting, kopie zapasowe, utrzymanie bezpieczeństwa, aktualizacje i uzgodnione zmiany na stronie.",
-        },
-      ],
-    },
+    process: processCopy["pl"],
     about: {
       heading: "Kto stoi za Forsa Design?",
       body: "W Forsa Design łączymy web development z doświadczeniem w przemysłowym B2B. Nasz założyciel, Miro, przez ponad 20 lat pracował w międzynarodowej sprzedaży B2B, handlując maszynami do obróbki metalu, wyposażeniem przemysłowym i rozwiązaniami inżynieryjnymi w Europie i Azji. Prowadził firmy w dwóch krajach, negocjował kontrakty na trzech kontynentach i zarządzał międzynarodowymi zespołami.",

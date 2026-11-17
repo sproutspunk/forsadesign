@@ -1,3 +1,4 @@
+import ProcessContent from "./src/components/ProcessContent.tsx";
 import FAQContent from "./src/components/FAQContent.tsx";
 import LinklangBrandingProof from "./src/components/LinklangBrandingProof.tsx";
 import BrandingOffer from "./src/components/BrandingOffer.tsx";
@@ -2552,6 +2553,10 @@ for (const lang of ["pl", "en"]) {
 
 for (const lang of ["pl", "en"]) {
   const home = routes.find((route) => route.outDir === lang);
+  home.bodyHtml = home.bodyHtml.replace(
+    /<section id="process"[\s\S]*?<\/section>/,
+    renderToStaticMarkup(createElement(ProcessContent, { lang })),
+  );
   home.bodyHtml = home.bodyHtml.replace(
     /<section id="faq"[\s\S]*?<\/section>/,
     renderToStaticMarkup(createElement(FAQContent, { lang })),
