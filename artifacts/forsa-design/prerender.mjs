@@ -1,3 +1,4 @@
+import LinklangBrandingProof from "./src/components/LinklangBrandingProof.tsx";
 import BrandingOffer from "./src/components/BrandingOffer.tsx";
 import DueDiligenceContent, { DueDiligenceCard } from "./src/components/DueDiligenceContent.tsx";
 import { dueDiligence, dueDiligencePath, dueDiligenceSchema } from "./src/data/dueDiligence.ts";
@@ -235,6 +236,7 @@ function buildLinklangCaseBody(lang) {
 <a href="/${lang}/#portfolio">${ht(c.back)}</a>
 <header><p>${ht(c.label)}</p><h1>${ht(c.title)}</h1><p>${ht(c.lead)}</p><a href="${linklangProject.url}" target="_blank" rel="noopener noreferrer">${ht(c.visit)}</a></header>
 <figure><img src="${c.image}" alt="${he(c.imageAlt)}" width="1120" height="420" fetchpriority="high" /><figcaption>${ht(c.imageCaption)}</figcaption></figure>
+${renderToStaticMarkup(createElement(LinklangBrandingProof, { lang }))}
 <dl>${c.facts.map((f) => `<dt>${ht(f.label)}</dt><dd>${ht(f.value)}</dd>`).join("")}</dl>
 <section><h2>${ht(c.contextHeading)}</h2>${c.context.map((p) => `<p>${ht(p)}</p>`).join("")}</section>
 <section><h2>${ht(c.scopeHeading)}</h2>${blocks(c.features)}</section>

@@ -20,7 +20,10 @@ export default function PortfolioContent({ lang }: { lang: "pl" | "en" }) {
   const cards = [
     {
       title: "Dach Systema",
-      category: lang === "pl" ? "Konfigurator 3D" : "3D configurator",
+      category:
+        lang === "pl"
+          ? "Konfigurator 3D · Identyfikacja wizualna"
+          : "3D configurator · Visual identity",
       description:
         lang === "pl"
           ? "Wymiary, dach i wyposażenie garażu lub hali w interaktywnym modelu 3D. Zapis projektu i przygotowanie zapytania."
@@ -38,7 +41,10 @@ export default function PortfolioContent({ lang }: { lang: "pl" | "en" }) {
     },
     {
       title: "LinkLang",
-      category: lang === "pl" ? "Portal klienta" : "Client portal",
+      category:
+        lang === "pl"
+          ? "Portal klienta · Identyfikacja wizualna"
+          : "Client portal · Visual identity",
       description:
         lang === "pl"
           ? "Platforma usług językowych. Konto klienta, zlecenia, dokumenty i kontakt z obsługą w jednym miejscu."

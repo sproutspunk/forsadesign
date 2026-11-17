@@ -1,4 +1,5 @@
 import React from "react";
+import DachColourRationale from "./DachColourRationale";
 import ZoomableImage from "./ZoomableImage";
 import { dachCase, dachImage } from "../data/dachCaseStudy";
 export default function DachCaseContent({ lang }: { lang: "pl" | "en" }) {
@@ -32,6 +33,7 @@ export default function DachCaseContent({ lang }: { lang: "pl" | "en" }) {
           />
           <figcaption className="text-xs text-foreground/55 mt-3">{c.caption}</figcaption>
         </figure>
+        <DachColourRationale lang={lang} />
         <section className="mb-16">
           <h2 className="font-serif text-3xl text-white mb-8">{c.scope}</h2>
           <div className="grid md:grid-cols-2 gap-5">

@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { ArrowLeft, ArrowUpRight, Check, ChevronRight } from "lucide-react";
+import LinklangBrandingProof from "@/components/LinklangBrandingProof";
 import Header from "@/components/Header";
 import ZoomableImage from "@/components/ZoomableImage";
 import Footer from "@/components/Footer";
@@ -89,6 +90,8 @@ export default function LinklangCaseStudyPage({ lang }: { lang: CaseStudyLanguag
             </div>
             <figcaption className="mt-3 text-xs text-foreground/55">{c.imageCaption}</figcaption>
           </figure>
+
+          <LinklangBrandingProof lang={lang} />
 
           <dl className="grid sm:grid-cols-3 gap-6 border-y border-primary/20 py-8 mb-16">
             {c.facts.map((f) => (
