@@ -1,3 +1,4 @@
+import { getFaqItems } from "../data/faq";
 import { createContext, useContext, useState, ReactNode } from "react";
 import { useLocation } from "wouter";
 
@@ -25,28 +26,7 @@ const translations = {
       noResults: "No questions match your search.",
       comparisonCta: "See full comparison",
       comparisonHref: "/en/comparison",
-      items: [
-        {
-          q: "Do you use WordPress or templates?",
-          a: "No. We build custom websites and web systems without WordPress, Elementor-style page builders or off-the-shelf templates. We use AI-assisted development tools where they make the work faster, then review, configure and optimise the implementation ourselves.",
-        },
-        {
-          q: "How long does a project take?",
-          a: "A typical business website takes around nine weeks. More complex web systems, catalogues and API integrations usually take longer and are estimated individually once the scope is defined.",
-        },
-        {
-          q: "What if We do not have professional photos?",
-          a: "We work with the material you have and identify what is genuinely missing. For an industrial business, authentic photographs of your facilities, equipment and work are often more useful than generic stock photography.",
-        },
-        {
-          q: "Do you offer ongoing support?",
-          a: "Yes. Ongoing support is optional and paid separately. It can include hosting, backups, security maintenance, updates and agreed changes to the website. The price depends on the site and the level of support required.",
-        },
-        {
-          q: "Can you integrate with our existing systems?",
-          a: "API integrations are one of the main ways We connect websites and web systems with external services. Feasibility depends on the API, documentation, permissions and requirements of the system being connected.",
-        },
-      ],
+      items: getFaqItems("en"),
     },
     trustBar: {
       desktop: "PageSpeed desktop",
@@ -220,28 +200,7 @@ const translations = {
       noResults: "Brak pytań pasujących do wyszukiwania.",
       comparisonCta: "Zobacz pełne porównanie",
       comparisonHref: "/pl/comparison",
-      items: [
-        {
-          q: "Czy używasz WordPressa lub szablonów?",
-          a: "Nie. Budujemy dedykowane strony i systemy webowe bez WordPressa, kreatorów typu Elementor i gotowych szablonów. Korzystamy z narzędzi wspomaganych przez AI tam, gdzie przyspieszają pracę, a następnie sprawdzamy, konfigurujemy i optymalizujemy wdrożenie.",
-        },
-        {
-          q: "Ile trwa projekt?",
-          a: "Typowy projekt strony firmowej zajmuje około dziewięciu tygodni. Bardziej rozbudowane systemy webowe, katalogi i integracje API zwykle wymagają więcej czasu. Termin ustalamy indywidualnie po określeniu zakresu.",
-        },
-        {
-          q: "Co jeśli nie mamy profesjonalnych zdjęć?",
-          a: "Pracujemy z materiałami, które masz, i określamy, czego rzeczywiście brakuje. W przypadku firmy przemysłowej autentyczne zdjęcia zakładu, urządzeń i realizacji są często bardziej wartościowe niż ogólne zdjęcia stockowe.",
-        },
-        {
-          q: "Czy oferujesz wsparcie po wdrożeniu?",
-          a: "Tak. Stałe wsparcie jest opcjonalną, dodatkowo płatną usługą. Może obejmować hosting, kopie zapasowe, utrzymanie bezpieczeństwa, aktualizacje i uzgodnione zmiany na stronie. Cena zależy od projektu i wymaganego zakresu obsługi.",
-        },
-        {
-          q: "Czy możesz zintegrować stronę z naszymi systemami?",
-          a: "Integracje API są jednym z głównych sposobów łączenia stron i systemów webowych z usługami zewnętrznymi. Możliwość integracji zależy od dostępnego API, dokumentacji, uprawnień i wymagań danego systemu.",
-        },
-      ],
+      items: getFaqItems("pl"),
     },
     trustBar: {
       desktop: "PageSpeed desktop",

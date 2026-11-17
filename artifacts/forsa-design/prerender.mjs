@@ -1,3 +1,4 @@
+import FAQContent from "./src/components/FAQContent.tsx";
 import LinklangBrandingProof from "./src/components/LinklangBrandingProof.tsx";
 import BrandingOffer from "./src/components/BrandingOffer.tsx";
 import DueDiligenceContent, { DueDiligenceCard } from "./src/components/DueDiligenceContent.tsx";
@@ -2547,6 +2548,14 @@ for (const lang of ["pl", "en"]) {
       `<div class="container mx-auto px-6 pb-16">${card}</div>` + marker,
     );
   }
+}
+
+for (const lang of ["pl", "en"]) {
+  const home = routes.find((route) => route.outDir === lang);
+  home.bodyHtml = home.bodyHtml.replace(
+    /<section id="faq"[\s\S]*?<\/section>/,
+    renderToStaticMarkup(createElement(FAQContent, { lang })),
+  );
 }
 
 // Blog article routes — one per article per language, derived from

@@ -146,7 +146,7 @@ export default function SearchPage({ lang }: { lang: Language }) {
   const { t } = useLanguage();
   const [query, setQuery] = useState("");
   const isEn = lang === "en";
-  const faqItems = t("faq.items") as unknown as { q: string; a: string }[];
+  const faqItems = t("faq.items") as unknown as { id: string; q: string; a: string }[];
 
   useSeoMeta({
     title: isEn ? "Search | Forsa Design" : "Szukaj | Forsa Design",
@@ -182,10 +182,10 @@ export default function SearchPage({ lang }: { lang: Language }) {
         category: isEn ? "Articles" : "Artykuły",
       };
     });
-    const faqEntries: SearchEntry[] = faqItems.map((item, index) => ({
+    const faqEntries: SearchEntry[] = faqItems.map((item) => ({
       title: item.q,
       excerpt: item.a,
-      href: `/${lang}/#faq-${index + 1}`,
+      href: `/${lang}/#${item.id}`,
       category: "FAQ",
     }));
     return [...pageEntries[lang], ...faqEntries, ...articleEntries];
