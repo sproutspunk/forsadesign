@@ -70,8 +70,8 @@ export default function ServicesPage({ lang }: { lang: "en" | "pl" }) {
       provider: serviceProvider,
       areaServed,
       description: en
-        ? "Custom websites for industrial, engineering and manufacturing businesses. I focus on clear technical communication, performance, mobile usability, SEO, accessibility and security. I use AI-assisted development tools where they improve efficiency, then review and refine the structure, implementation, content logic, SEO and performance myself. There are no off-the-shelf templates or page builders."
-        : "Dedykowane strony internetowe dla firm przemysłowych, inżynieryjnych i produkcyjnych. Koncentruję się na czytelnej komunikacji technicznej, wydajności, obsłudze urządzeń mobilnych, SEO, dostępności i bezpieczeństwie. Korzystam z narzędzi wspomaganych przez AI tam, gdzie zwiększają efektywność pracy, a następnie sam sprawdzam i dopracowuję strukturę, implementację, logikę treści, SEO i wydajność. Nie używam gotowych szablonów ani kreatorów stron.",
+        ? "Custom websites for industrial, engineering and manufacturing businesses. We focus on clear technical communication, performance, mobile usability, SEO, accessibility and security. We use AI-assisted development tools where they improve efficiency, then review and refine the structure, implementation, content logic, SEO and performance ourselves. There are no off-the-shelf templates or page builders."
+        : "Dedykowane strony internetowe dla firm przemysłowych, inżynieryjnych i produkcyjnych. Koncentrujemy się na czytelnej komunikacji technicznej, wydajności, obsłudze urządzeń mobilnych, SEO, dostępności i bezpieczeństwie. Korzystamy z narzędzi wspomaganych przez AI tam, gdzie zwiększają efektywność pracy, a następnie sprawdzamy i dopracowujemy strukturę, implementację, logikę treści, SEO i wydajność. Nie używamy gotowych szablonów ani kreatorów stron.",
     },
     "services-schema-web",
   );
@@ -84,7 +84,7 @@ export default function ServicesPage({ lang }: { lang: "en" | "pl" }) {
       areaServed,
       description: en
         ? "Custom product catalogues, enquiry systems, quote workflows and B2B ordering interfaces. Depending on the project, these can include customer accounts, account-specific information, bulk enquiries and API integrations with external services. A typical custom B2B catalogue or ordering system can take approximately 6-10 weeks once the specification, content and required integration access are available. More complex systems are estimated individually."
-        : "Dedykowane katalogi produktów, systemy zapytań, procesy wycenowe i interfejsy zamówień B2B. W zależności od projektu mogą obejmować konta klientów, informacje przypisane do kont, zapytania zbiorcze oraz integracje API z usługami zewnętrznymi. Typowy dedykowany katalog lub system zamówień B2B może wymagać około 6-10 tygodni od momentu uzgodnienia specyfikacji i dostarczenia treści oraz dostępu potrzebnego do integracji. Bardziej złożone systemy planuję i wyceniam indywidualnie.",
+        : "Dedykowane katalogi produktów, systemy zapytań, procesy wycenowe i interfejsy zamówień B2B. W zależności od projektu mogą obejmować konta klientów, informacje przypisane do kont, zapytania zbiorcze oraz integracje API z usługami zewnętrznymi. Typowy dedykowany katalog lub system zamówień B2B może wymagać około 6-10 tygodni od momentu uzgodnienia specyfikacji i dostarczenia treści oraz dostępu potrzebnego do integracji. Bardziej złożone systemy planujemy i wyceniamy indywidualnie.",
     },
     "services-schema-ecommerce",
   );
@@ -98,8 +98,8 @@ export default function ServicesPage({ lang }: { lang: "en" | "pl" }) {
       provider: serviceProvider,
       areaServed,
       description: en
-        ? "Dealer portals, specification tools, multilingual quote systems, custom forms and workflow integrations built around the way the business operates. I use AI-assisted tools to accelerate appropriate parts of development while retaining direct control over architecture, configuration, testing, security and the final implementation. API integrations are assessed individually according to the external system and its documentation."
-        : "Portale dealerskie, narzędzia do tworzenia specyfikacji, wielojęzyczne systemy wycen, dedykowane formularze i integracje procesów dopasowane do sposobu działania firmy. Korzystam z narzędzi wspomaganych przez AI, aby przyspieszyć odpowiednie etapy developmentu, zachowując bezpośrednią kontrolę nad architekturą, konfiguracją, testami, bezpieczeństwem i końcowym wdrożeniem. Każdą integrację API oceniam indywidualnie na podstawie systemu zewnętrznego i jego dokumentacji.",
+        ? "Dealer portals, specification tools, multilingual quote systems, custom forms and workflow integrations built around the way the business operates. We use AI-assisted tools to accelerate appropriate parts of development while retaining direct control over architecture, configuration, testing, security and the final implementation. API integrations are assessed individually according to the external system and its documentation."
+        : "Portale dealerskie, narzędzia do tworzenia specyfikacji, wielojęzyczne systemy wycen, dedykowane formularze i integracje procesów dopasowane do sposobu działania firmy. Korzystamy z narzędzi wspomaganych przez AI, aby przyspieszyć odpowiednie etapy developmentu, zachowując bezpośrednią kontrolę nad architekturą, konfiguracją, testami, bezpieczeństwem i końcowym wdrożeniem. Każdą integrację API oceniamy indywidualnie na podstawie systemu zewnętrznego i jego dokumentacji.",
     },
     "services-schema-bespoke",
   );
@@ -118,13 +118,13 @@ export default function ServicesPage({ lang }: { lang: "en" | "pl" }) {
             </h1>
             <p className="text-xl text-foreground/70 font-light leading-relaxed max-w-3xl">
               {en
-                ? "I build custom websites, B2B catalogues and web tools for industrial, engineering and technical businesses. No WordPress, no page builders and no off-the-shelf templates. Where appropriate, I use AI-assisted development tools and then review, configure, test and optimise the implementation myself."
-                : "Buduję dedykowane strony, katalogi B2B i narzędzia webowe dla firm przemysłowych, inżynieryjnych i technicznych. Bez WordPressa, bez kreatorów stron i bez gotowych szablonów. Tam, gdzie ma to sens, korzystam z narzędzi wspomaganych przez AI, a następnie sam sprawdzam, konfiguruję, testuję i optymalizuję wdrożenie."}
+                ? "We build custom websites, B2B catalogues and web tools for industrial, engineering and technical businesses. No WordPress, no page builders and no off-the-shelf templates. Where appropriate, we use AI-assisted development tools and then review, configure, test and optimise the implementation ourselves."
+                : "Budujemy dedykowane strony, katalogi B2B i narzędzia webowe dla firm przemysłowych, inżynieryjnych i technicznych. Bez WordPressa, bez kreatorów stron i bez gotowych szablonów. Tam, gdzie ma to sens, korzystamy z narzędzi wspomaganych przez AI, a następnie sprawdzamy, konfigurujemy, testujemy i optymalizujemy wdrożenie."}
             </p>
             <p className="text-xl text-foreground/70 font-light leading-relaxed max-w-3xl mt-4">
               {en
-                ? "My approach combines modern web development with more than 20 years of experience in international industrial B2B sales."
-                : "Łączę nowoczesny web development z ponad 20-letnim doświadczeniem w międzynarodowej sprzedaży przemysłowej B2B."}
+                ? "Our approach combines modern web development with more than 20 years of experience in international industrial B2B sales."
+                : "Łączymy nowoczesny web development z ponad 20-letnim doświadczeniem w międzynarodowej sprzedaży przemysłowej B2B."}
             </p>
           </div>
         </section>

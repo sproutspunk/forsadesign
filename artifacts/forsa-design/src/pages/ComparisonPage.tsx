@@ -66,7 +66,7 @@ const content = {
           "Proven 20+ years of industrial B2B experience",
           "API integrations available, assessed individually",
           "An optional paid support service",
-          "I do not deliberately introduce vendor lock-in",
+          "We do not deliberately introduce vendor lock-in",
         ],
         cons: [],
         highlight: true,
@@ -108,7 +108,7 @@ const content = {
         "Often used, but not always",
         "Depends on the agency",
         "Depends on the freelancer",
-        "I do not use them",
+        "We do not use them",
       ],
       [
         "AI-assisted development",
@@ -143,7 +143,7 @@ const content = {
         "Depends on the platform and setup",
         "Depends on the contract and setup",
         "Depends on the setup",
-        "I do not introduce it deliberately",
+        "We do not introduce it deliberately",
       ],
       [
         "Project time",
@@ -155,7 +155,7 @@ const content = {
     ],
     ctaHeading: "Ready to Discuss Your Project?",
     ctaSub:
-      "If you are not sure which approach fits your requirements, tell me what you need. I will assess the scope and explain what I can build and what the project would involve.",
+      "If you are not sure which approach fits your requirements, tell us what you need. We will assess the scope and explain what we can build and what the project would involve.",
     ctaButton: "Request a Quote",
     pros: "Strengths",
     cons: "Limitations",
@@ -216,7 +216,7 @@ const content = {
           "Potwierdzone 20+ lat doświadczenia w przemysłowym B2B",
           "Integracje API dostępne, oceniane indywidualnie",
           "Opcjonalna płatna usługa wsparcia",
-          "Nie wprowadzam celowo vendor lock-in",
+          "Nie wprowadzamy celowo vendor lock-in",
         ],
         cons: [],
         highlight: true,
@@ -258,7 +258,7 @@ const content = {
         "Często używane, ale nie zawsze",
         "Zależy od agencji",
         "Zależy od freelancera",
-        "Nie używam",
+        "Nie używamy",
       ],
       [
         "Development wspomagany AI",
@@ -293,7 +293,7 @@ const content = {
         "Zależy od platformy i konfiguracji",
         "Zależy od umowy i konfiguracji",
         "Zależy od konfiguracji",
-        "Nie wprowadzam go celowo",
+        "Nie wprowadzamy go celowo",
       ],
       [
         "Czas projektu",

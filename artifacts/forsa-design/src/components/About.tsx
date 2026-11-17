@@ -9,29 +9,29 @@ export default function About() {
     ? [
         [
           "Industrial B2B experience",
-          "More than 20 years in international B2B sales means I approach a website as a commercial tool, not only as a visual project. I understand industrial products, technical sales, international trade and procurement.",
+          "More than 20 years in international B2B sales means we approach a website as a commercial tool, not only as a visual project. We understand industrial products, technical sales, international trade and procurement.",
         ],
         [
           "Understanding the buying process",
-          "I understand the questions buyers ask, the information they look for and the credibility signals that matter when a supplier is being evaluated.",
+          "We understand the questions buyers ask, the information they look for and the credibility signals that matter when a supplier is being evaluated.",
         ],
         [
           "Direct responsibility",
-          "Forsa Design is a one-person business. There is no account-management layer between you and the person doing the work. I handle the project directly from specification through launch.",
+          "We work directly with you from specification through launch. Scope, costs and responsibilities are agreed before work begins.",
         ],
       ]
     : [
         [
           "Doświadczenie w przemysłowym B2B",
-          "Ponad 20 lat w międzynarodowej sprzedaży B2B sprawia, że traktuję stronę jako narzędzie biznesowe, a nie wyłącznie projekt wizualny. Rozumiem produkty przemysłowe, sprzedaż techniczną, handel międzynarodowy i procesy zakupowe.",
+          "Ponad 20 lat w międzynarodowej sprzedaży B2B sprawia, że traktujemy stronę jako narzędzie biznesowe, a nie wyłącznie projekt wizualny. Rozumiemy produkty przemysłowe, sprzedaż techniczną, handel międzynarodowy i procesy zakupowe.",
         ],
         [
           "Znajomość procesu zakupowego",
-          "Rozumiem pytania zadawane przez kupujących, informacje, których szukają, oraz elementy budujące wiarygodność podczas oceny potencjalnego dostawcy.",
+          "Rozumiemy pytania zadawane przez kupujących, informacje, których szukają, oraz elementy budujące wiarygodność podczas oceny potencjalnego dostawcy.",
         ],
         [
           "Bezpośrednia odpowiedzialność",
-          "Forsa Design jest jednoosobową firmą. Nie ma pośrednika pomiędzy Tobą a osobą wykonującą pracę. Prowadzę projekt bezpośrednio od specyfikacji do uruchomienia.",
+          "Współpracujemy z Tobą bezpośrednio od specyfikacji do uruchomienia. Zakres, koszty i odpowiedzialność ustalamy przed rozpoczęciem prac.",
         ],
       ];
 

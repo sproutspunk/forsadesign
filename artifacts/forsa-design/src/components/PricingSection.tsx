@@ -107,8 +107,8 @@ export default function PricingSection() {
 
             <p className="text-sm text-foreground/50 max-w-2xl">
               {bi(
-                "AI-assisted tools can reduce time spent on repetitive development tasks. I use that time where it matters more: architecture, implementation, testing, content structure, performance and the commercial purpose of the site.",
-                "Narzędzia wspomagane przez AI mogą ograniczyć czas poświęcany na powtarzalne zadania developerskie. Ten czas wykorzystuję tam, gdzie ma większe znaczenie: na architekturę, wdrożenie, testy, strukturę treści, wydajność i biznesowy cel strony.",
+                "AI-assisted tools can reduce time spent on repetitive development tasks. We use that time where it matters more: architecture, implementation, testing, content structure, performance and the commercial purpose of the site.",
+                "Narzędzia wspomagane przez AI mogą ograniczyć czas poświęcany na powtarzalne zadania developerskie. Ten czas wykorzystujemy tam, gdzie ma większe znaczenie: na architekturę, wdrożenie, testy, strukturę treści, wydajność i biznesowy cel strony.",
               )}
             </p>
           </motion.div>
