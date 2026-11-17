@@ -1,8 +1,9 @@
 import { useLanguage } from "@/contexts/LanguageContext";
+import { DueDiligenceCard } from "./DueDiligenceContent";
 import { Monitor, ShoppingCart, Layers } from "lucide-react";
 
 export default function Services() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   const services = [
     {
@@ -49,6 +50,7 @@ export default function Services() {
             </div>
           ))}
         </div>
+        <DueDiligenceCard lang={language} />
       </div>
     </section>
   );

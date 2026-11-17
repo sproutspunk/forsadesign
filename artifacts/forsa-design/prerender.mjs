@@ -1,3 +1,5 @@
+import DueDiligenceContent, { DueDiligenceCard } from "./src/components/DueDiligenceContent.tsx";
+import { dueDiligence, dueDiligencePath, dueDiligenceSchema } from "./src/data/dueDiligence.ts";
 import PortfolioContent from "./src/components/PortfolioContent.tsx";
 import { renderToStaticMarkup } from "react-dom/server";
 import { createElement } from "react";
@@ -2458,6 +2460,32 @@ for (const lang of ["pl", "en"]) {
     bodyHtml: `<header><nav><a href="/${lang}/#portfolio">Portfolio</a></nav></header><main id="main-content">${renderToStaticMarkup(createElement(DachCaseContent, { lang }))}</main>`,
     schema: dachSchema(lang),
   });
+}
+
+for (const lang of ["pl", "en"]) {
+  const c = dueDiligence[lang];
+  routes.push({
+    outDir: `${lang}/services/commercial-due-diligence`,
+    lang,
+    title: c.title + " | Forsa Design",
+    desc: c.opening[1],
+    ogTitle: c.title,
+    locale: lang === "pl" ? "pl_PL" : "en_GB",
+    canonical: SITE + dueDiligencePath(lang),
+    alternates: ["pl", "en"].map((l) => ({ lang: l, href: SITE + dueDiligencePath(l) })),
+    bodyHtml: `<header><nav><a href="/${lang}/">Forsa Design</a></nav></header><main id="main-content" class="pt-56 md:pt-48 pb-20">${renderToStaticMarkup(createElement(DueDiligenceContent, { lang }))}</main>`,
+    schema: dueDiligenceSchema(lang),
+  });
+  for (const route of routes.filter(
+    (r) => r.lang === lang && [lang, `${lang}/services`].includes(r.outDir),
+  )) {
+    const card = renderToStaticMarkup(createElement(DueDiligenceCard, { lang }));
+    const marker = route.outDir === lang ? '<section id="pricing"' : "</main>";
+    route.bodyHtml = route.bodyHtml.replace(
+      marker,
+      `<div class="container mx-auto px-6 pb-16">${card}</div>` + marker,
+    );
+  }
 }
 
 // Blog article routes — one per article per language, derived from

@@ -55,6 +55,12 @@ export default function Footer() {
 
           <div className="flex flex-col gap-3">
             <a
+              href={`/${language}/services/commercial-due-diligence/`}
+              className="text-sm font-medium text-foreground/70 hover:text-primary transition-colors w-fit"
+            >
+              {language === "pl" ? "Weryfikacja kontrahentów" : "Commercial due diligence"}
+            </a>
+            <a
               href={`/${language}/#home`}
               className="text-sm font-medium text-foreground/70 hover:text-primary transition-colors w-fit"
             >

@@ -20,6 +20,7 @@ const PrivacyPagePL = lazy(() => import("@/pages/PrivacyPagePL"));
 const AboutPage = lazy(() => import("@/pages/AboutPage"));
 const ComparisonPage = lazy(() => import("@/pages/ComparisonPage"));
 const QuoteCalculatorPage = lazy(() => import("@/pages/QuoteCalculatorPage"));
+const DueDiligencePage = lazy(() => import("@/pages/DueDiligencePage"));
 const ServicesPage = lazy(() => import("@/pages/ServicesPage"));
 const ContactPage = lazy(() => import("@/pages/ContactPage"));
 const SearchPage = lazy(() => import("@/pages/SearchPage"));
@@ -131,6 +132,14 @@ function Router() {
         <Route path="/en/about" component={() => <AboutPage lang="en" />} />
         <Route path="/pl/about" component={() => <AboutPage lang="pl" />} />
         <Route path="/pl/o-nas" component={() => <AboutPage lang="pl" />} />
+        <Route
+          path="/en/services/commercial-due-diligence"
+          component={() => <DueDiligencePage lang="en" />}
+        />
+        <Route
+          path="/pl/services/commercial-due-diligence"
+          component={() => <DueDiligencePage lang="pl" />}
+        />
         <Route path="/en/services" component={() => <ServicesPage lang="en" />} />
         <Route path="/pl/services" component={() => <ServicesPage lang="pl" />} />
         <Route path="/en/contact" component={() => <ContactPage lang="en" />} />

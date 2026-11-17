@@ -3,6 +3,7 @@ import { Search as SearchIcon, ArrowRight } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useSeoMeta, buildHref } from "@/hooks/useSeoMeta";
 import { articles } from "@/data/articlesData";
+import { dueDiligence, dueDiligencePath } from "@/data/dueDiligence";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
@@ -18,6 +19,12 @@ type SearchEntry = {
 
 const pageEntries: Record<Language, SearchEntry[]> = {
   en: [
+    {
+      title: dueDiligence.en.title,
+      excerpt: dueDiligence.en.opening[1],
+      href: dueDiligencePath("en"),
+      category: "Services",
+    },
     {
       title: "Forsa Design",
       excerpt:
@@ -73,6 +80,12 @@ const pageEntries: Record<Language, SearchEntry[]> = {
     },
   ],
   pl: [
+    {
+      title: dueDiligence.pl.title,
+      excerpt: dueDiligence.pl.opening[1],
+      href: dueDiligencePath("pl"),
+      category: "Usługi",
+    },
     {
       title: "Forsa Design",
       excerpt:

@@ -31,6 +31,10 @@ export default function Header() {
   ];
   const serviceLinks = [
     {
+      label: language === "pl" ? "Weryfikacja kontrahentów" : "Commercial due diligence",
+      href: `${servicesHref}commercial-due-diligence/`,
+    },
+    {
       label: language === "pl" ? "Strony dla przemysłu" : "Industrial websites",
       href: `${servicesHref}#industrial-websites`,
     },
