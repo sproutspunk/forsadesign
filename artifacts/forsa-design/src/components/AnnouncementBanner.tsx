@@ -38,13 +38,13 @@ export default function AnnouncementBanner({ language }: AnnouncementBannerProps
         <p className="leading-snug">
           {isEn ? (
             <>
-              <span className="font-bold">Coming soon:</span> a fully self-service editor for your
-              website. Update your own content, no developer needed.
+              <span className="font-bold">Coming soon:</span> a content editor for selected website
+              features. Join the product update list.
             </>
           ) : (
             <>
-              <span className="font-bold">Wkrótce:</span> w pełni samoobsługowy edytor Twojej
-              strony. Aktualizuj treści samodzielnie, bez programisty.
+              <span className="font-bold">Wkrótce:</span> edytor wybranych treści strony. Zapisz się
+              na informacje o rozwoju produktu.
             </>
           )}
         </p>

@@ -1,23 +1,29 @@
 # Forsa Design
 
-> Forsa Design is an industrial web design studio based in Banff, Aberdeenshire. We build fast, hand-coded websites and bespoke web systems for offshore, energy, engineering, industrial equipment, logistics and manufacturing businesses across the UK and EU.
+> Forsa Design is an industrial web design studio based in Banff, Aberdeenshire. We build custom websites and bespoke web systems for offshore, energy, engineering, industrial equipment, logistics and manufacturing businesses across the UK and EU.
 
 ## Key pages
 
 - [Homepage (English)](https://forsadesign.co.uk/en/)
 - [Homepage (Polish)](https://forsadesign.co.uk/pl/)
-- [Services (English)](https://forsadesign.co.uk/en/services)
-- [Usługi (Polish)](https://forsadesign.co.uk/pl/services)
-- [Contact (English)](https://forsadesign.co.uk/en/contact)
-- [Kontakt (Polish)](https://forsadesign.co.uk/pl/contact)
-- [Terms & Conditions (EN)](https://forsadesign.co.uk/en/terms)
-- [Terms & Conditions (PL)](https://forsadesign.co.uk/pl/terms)
-- [Privacy Policy (EN)](https://forsadesign.co.uk/en/privacy)
-- [Privacy Policy (PL)](https://forsadesign.co.uk/pl/privacy)
+- [Services (English)](https://forsadesign.co.uk/en/services/)
+- [Usługi (Polish)](https://forsadesign.co.uk/pl/services/)
+- [Contact (English)](https://forsadesign.co.uk/en/contact/)
+- [Kontakt (Polish)](https://forsadesign.co.uk/pl/contact/)
+- [Terms & Conditions (EN)](https://forsadesign.co.uk/en/terms/)
+- [Terms & Conditions (PL)](https://forsadesign.co.uk/pl/terms/)
+- [Privacy Policy (EN)](https://forsadesign.co.uk/en/privacy/)
+- [Privacy Policy (PL)](https://forsadesign.co.uk/pl/privacy/)
 
 ## Services
 
-Industrial web presence, B2B e-commerce for parts and equipment, procurement-ready websites, bespoke web systems, ERP/stock integrations, performance optimisation and technical SEO.
+Custom industrial websites, B2B catalogues and ordering systems, client portals, API integrations and 3D product configurators. Visual identity covers logos, colours, typography and usage guidelines. Counterparty credibility and commercial risk assessment is a separate service. Ongoing support is optional and paid separately. Project times depend on functionality, content and integration requirements.
+
+## Portfolio
+
+- [Dach Systema: 3D configurator](https://forsadesign.co.uk/en/case-studies/dachsystema/)
+- [LinkLang: client portal and visual identity](https://forsadesign.co.uk/en/case-studies/linklang/)
+- [Counterparty assessment](https://forsadesign.co.uk/en/services/commercial-due-diligence/)
 
 ## Founder
 

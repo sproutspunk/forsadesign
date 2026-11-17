@@ -89,7 +89,7 @@ export default function ArticlePage({ lang, slug }: ArticlePageProps) {
           headline: a.title,
           description: a.excerpt,
           datePublished: article.publishedDateIso ?? article.dateIso,
-          dateModified: article.publishedDateIso ?? article.dateIso,
+          dateModified: article.dateIso,
           inLanguage: lang === "en" ? "en-GB" : "pl-PL",
           url: buildHref(`/${lang}/blog/${canonicalSlug}`),
           author: {
@@ -159,7 +159,7 @@ export default function ArticlePage({ lang, slug }: ArticlePageProps) {
             <div className="flex items-center gap-4 text-xs text-foreground/40 font-light mb-6">
               <span>
                 {article.publishedDateIso && (
-                  <span>{lang === "pl" ? "Data redakcyjna: " : "Editorial date: "}</span>
+                  <span>{lang === "pl" ? "Aktualizacja: " : "Updated: "}</span>
                 )}
                 <time dateTime={article.dateIso}>{formatDate(article.dateIso, lang)}</time>
               </span>

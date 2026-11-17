@@ -115,6 +115,14 @@ export default function WaitlistForm({ isEn, className }: WaitlistFormProps) {
           {error}
         </p>
       )}
+      <p className="text-xs leading-relaxed mt-3">
+        {isEn
+          ? "We use these details to handle your request."
+          : "Dane wykorzystujemy do obsługi zgłoszenia."}{" "}
+        <a className="underline" href={`/${isEn ? "en" : "pl"}/privacy/`}>
+          {isEn ? "Privacy policy" : "Polityka prywatności"}
+        </a>
+      </p>
     </form>
   );
 }

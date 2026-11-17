@@ -41,7 +41,7 @@ export default function CookieConsent() {
   const [entered, setEntered] = useState(false);
   const [expanded, setExpanded] = useState(false);
   const [analytics, setAnalytics] = useState(false);
-  const [marketing, setMarketing] = useState(false);
+
   const panelRef = useRef<HTMLDivElement>(null);
   const restoreFocusRef = useRef<HTMLElement | null>(null);
 
@@ -62,7 +62,6 @@ export default function CookieConsent() {
     const saved = loadConsent();
     if (saved) {
       setAnalytics(saved.analytics);
-      setMarketing(saved.marketing);
     }
     restoreFocusRef.current = document.activeElement as HTMLElement | null;
     setExpanded(true);
@@ -86,7 +85,7 @@ export default function CookieConsent() {
   }
 
   function accept() {
-    saveConsent({ decided: true, essential: true, analytics: true, marketing: true });
+    saveConsent({ decided: true, essential: true, analytics: true, marketing: false });
     close();
   }
 
@@ -96,7 +95,7 @@ export default function CookieConsent() {
   }
 
   function saveCustom() {
-    saveConsent({ decided: true, essential: true, analytics, marketing });
+    saveConsent({ decided: true, essential: true, analytics, marketing: false });
     close();
   }
 
@@ -159,12 +158,6 @@ export default function CookieConsent() {
                 description={t("cookies.analyticsDesc")}
                 checked={analytics}
                 onChange={setAnalytics}
-              />
-              <CategoryRow
-                label={t("cookies.marketing")}
-                description={t("cookies.marketingDesc")}
-                checked={marketing}
-                onChange={setMarketing}
               />
             </div>
           </div>
@@ -252,6 +245,7 @@ function CategoryRow({
       ) : (
         <button
           role="switch"
+          aria-label={label}
           aria-checked={checked}
           onClick={() => onChange?.(!checked)}
           className={`relative shrink-0 mt-0.5 w-10 h-5.5 rounded-full transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary ${

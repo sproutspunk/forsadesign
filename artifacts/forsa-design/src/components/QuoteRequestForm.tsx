@@ -80,7 +80,10 @@ export default function QuoteRequestForm({ isEn, source, className }: QuoteReque
     return (
       <div className={`flex items-center gap-2 text-sm text-emerald-500 ${className ?? ""}`}>
         <CheckCircle2 className="w-4 h-4 flex-shrink-0" />
-        {t("Thanks, we will reply within 24 hours.", "Dzięki, odpowiemy w ciągu 24 godzin.")}
+        {t(
+          "Thank you. Your enquiry has been received; we will contact you about the next step.",
+          "Dziękujemy. Otrzymaliśmy zapytanie i skontaktujemy się w sprawie kolejnego kroku.",
+        )}
       </div>
     );
   }
@@ -141,6 +144,14 @@ export default function QuoteRequestForm({ isEn, source, className }: QuoteReque
         )}
         {t("Request a Quote", "Poproś o wycenę")}
       </button>
+      <p className="text-xs leading-relaxed mt-3">
+        {isEn
+          ? "We use these details to handle your request."
+          : "Dane wykorzystujemy do obsługi zgłoszenia."}{" "}
+        <a className="underline" href={`/${isEn ? "en" : "pl"}/privacy/`}>
+          {isEn ? "Privacy policy" : "Polityka prywatności"}
+        </a>
+      </p>
     </form>
   );
 }

@@ -65,6 +65,12 @@ function loadAnalyticsAndFlush() {
 }
 
 describe("GA4 consent gating", () => {
+  it("does not treat an undecided record as explicit consent", () => {
+    setConsent(true);
+    const saved = JSON.parse(localStorage.getItem(STORAGE_KEY)!);
+    localStorage.setItem(STORAGE_KEY, JSON.stringify({ ...saved, decided: false }));
+    expect(hasAnalyticsConsent()).toBe(false);
+  });
   it("hasAnalyticsConsent is true only after explicit analytics consent", () => {
     expect(hasAnalyticsConsent()).toBe(false);
     setConsent(false);
@@ -102,7 +108,8 @@ describe("GA4 script injection (loadAnalytics)", () => {
     const inline = gaInline();
     expect(inline).not.toBeNull();
     expect(inline?.textContent).toContain(`gtag('config', '${MEASUREMENT_ID}'`);
-    expect(inline?.textContent).toContain("anonymize_ip: true");
+    expect(inline?.textContent).toContain("allow_google_signals: false");
+    expect(inline?.textContent).toContain("ad_storage:'denied'");
   });
 
   it("does NOT inject GA when the user has not consented to analytics", () => {
@@ -140,7 +147,8 @@ describe("GA4 removal (removeAnalytics)", () => {
     setConsent(true);
     loadAnalyticsAndFlush();
     gaWindow.dataLayer = [];
-    gaWindow.gtag = () => {};
+    const gtag = vi.fn();
+    gaWindow.gtag = gtag;
 
     removeAnalytics();
 
@@ -148,6 +156,14 @@ describe("GA4 removal (removeAnalytics)", () => {
     expect(gaInline()).toBeNull();
     expect(gaWindow.dataLayer).toBeUndefined();
     expect(gaWindow.gtag).toBeUndefined();
+    expect(gtag).toHaveBeenCalledWith(
+      "consent",
+      "update",
+      expect.objectContaining({ analytics_storage: "denied", ad_storage: "denied" }),
+    );
+    expect((window as unknown as Record<string, unknown>)[`ga-disable-${MEASUREMENT_ID}`]).toBe(
+      true,
+    );
   });
 
   it("is safe to call when analytics was never loaded", () => {

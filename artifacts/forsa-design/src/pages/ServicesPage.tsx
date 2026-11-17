@@ -84,8 +84,8 @@ export default function ServicesPage({ lang }: { lang: "en" | "pl" }) {
       provider: serviceProvider,
       areaServed,
       description: en
-        ? "Custom product catalogues, enquiry systems, quote workflows and B2B ordering interfaces. Depending on the project, these can include customer accounts, account-specific information, bulk enquiries and API integrations with external services. A typical custom B2B catalogue or ordering system can take approximately 6-10 weeks once the specification, content and required integration access are available. More complex systems are estimated individually."
-        : "Dedykowane katalogi produktów, systemy zapytań, procesy wycenowe i interfejsy zamówień B2B. W zależności od projektu mogą obejmować konta klientów, informacje przypisane do kont, zapytania zbiorcze oraz integracje API z usługami zewnętrznymi. Typowy dedykowany katalog lub system zamówień B2B może wymagać około 6-10 tygodni od momentu uzgodnienia specyfikacji i dostarczenia treści oraz dostępu potrzebnego do integracji. Bardziej złożone systemy planujemy i wyceniamy indywidualnie.",
+        ? "Custom product catalogues, enquiry systems, quote workflows and B2B ordering interfaces. Depending on the project, these can include customer accounts, account-specific information, bulk enquiries and API integrations with external services. Delivery time depends on product data, functionality and integration requirements. More complex systems are estimated individually."
+        : "Dedykowane katalogi produktów, systemy zapytań, procesy wycenowe i interfejsy zamówień B2B. W zależności od projektu mogą obejmować konta klientów, informacje przypisane do kont, zapytania zbiorcze oraz integracje API z usługami zewnętrznymi. Czas realizacji zależy od danych produktowych, funkcji i wymaganych integracji. Bardziej złożone systemy planujemy i wyceniamy indywidualnie.",
     },
     "services-schema-ecommerce",
   );
@@ -138,8 +138,8 @@ export default function ServicesPage({ lang }: { lang: "en" | "pl" }) {
             </p>
             <p className="text-xl text-foreground/70 font-light leading-relaxed max-w-3xl mt-4">
               {en
-                ? "Our approach combines modern web development with more than 20 years of experience in international industrial B2B sales."
-                : "Łączymy nowoczesny web development z ponad 20-letnim doświadczeniem w międzynarodowej sprzedaży przemysłowej B2B."}
+                ? "Our approach combines modern web development with our founder’s more than 20 years of experience in international industrial B2B sales."
+                : "Łączymy nowoczesny web development z ponad 20-letnim doświadczeniem założyciela w międzynarodowej sprzedaży przemysłowej B2B."}
             </p>
           </div>
         </section>

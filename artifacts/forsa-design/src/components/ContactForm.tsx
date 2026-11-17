@@ -158,6 +158,14 @@ export default function ContactForm() {
               ? "Your details are used only to respond to this enquiry."
               : "Twoje dane zostaną użyte wyłącznie do odpowiedzi na to zapytanie."}
           </p>
+          <p className="text-xs leading-relaxed mt-3">
+            {en
+              ? "We use these details to handle your request."
+              : "Dane wykorzystujemy do obsługi zgłoszenia."}{" "}
+            <a className="underline" href={`/${en ? "en" : "pl"}/privacy/`}>
+              {en ? "Privacy policy" : "Polityka prywatności"}
+            </a>
+          </p>
         </form>
       </div>
     </section>

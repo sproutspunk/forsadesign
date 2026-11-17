@@ -1,3 +1,4 @@
+import { articlesMeta } from "../data/articlesMeta";
 import { BlueprintToggle } from "@/components/BlueprintBackground";
 import { useEffect, useRef, useState } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -67,7 +68,15 @@ export default function Header() {
       newPath = newPath.replace(/\/about\/?$/, "/o-nas/");
     if (lang === "en" && /\/o-nas\/?$/.test(newPath))
       newPath = newPath.replace(/\/o-nas\/?$/, "/about/");
-    setLocation(newPath || `/${lang}/`);
+    const article = articlesMeta.find(
+      (entry) =>
+        location.endsWith(`/blog/${entry.slugEn}`) ||
+        location.endsWith(`/blog/${entry.slugEn}/`) ||
+        location.endsWith(`/blog/${entry.slugPl}`) ||
+        location.endsWith(`/blog/${entry.slugPl}/`),
+    );
+    if (article) newPath = `/${lang}/blog/${lang === "pl" ? article.slugPl : article.slugEn}/`;
+    setLocation((newPath || `/${lang}/`) + window.location.hash);
   };
 
   useEffect(() => {

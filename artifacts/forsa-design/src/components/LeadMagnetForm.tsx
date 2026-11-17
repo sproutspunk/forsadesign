@@ -129,6 +129,14 @@ export default function LeadMagnetForm({ isEn, source, className }: LeadMagnetFo
         </button>
       </div>
       {error && <p className="text-xs text-red-400 mt-1.5">{error}</p>}
+      <p className="text-xs leading-relaxed mt-3">
+        {isEn
+          ? "We use these details to fulfil this request. Downloading the checklist does not subscribe you to a newsletter."
+          : "Dane wykorzystujemy do obsługi tego zgłoszenia. Pobranie checklisty nie zapisuje na newsletter. Materiał jest w języku angielskim."}{" "}
+        <a className="underline" href={`/${isEn ? "en" : "pl"}/privacy/`}>
+          {isEn ? "Privacy policy" : "Polityka prywatności"}
+        </a>
+      </p>
     </form>
   );
 }

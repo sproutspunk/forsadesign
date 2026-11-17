@@ -64,14 +64,14 @@ export default function BrandingOffer({ lang }: { lang: "pl" | "en" }) {
           href={dachPath(lang) + "#dach-colours"}
           className="text-primary underline underline-offset-4"
         >
-          Dach Systema —{" "}
+          Dach Systema :{" "}
           {lang === "pl" ? "kolorystyka konfiguratora 3D" : "3D configurator colours"}
         </a>
         <a
           href={linklangCasePath(lang) + "#linklang-branding"}
           className="text-primary underline underline-offset-4"
         >
-          LinkLang — {lang === "pl" ? "identyfikacja wizualna portalu" : "portal visual identity"}
+          LinkLang : {lang === "pl" ? "identyfikacja wizualna portalu" : "portal visual identity"}
         </a>
       </nav>
       <a

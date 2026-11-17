@@ -247,7 +247,7 @@ describe("Worker", () => {
       expect(res.status).toBe(400);
     });
 
-    it("sends checklist email and stores lead", async () => {
+    it("delivers the requested checklist without queuing promotional follow-ups", async () => {
       const sent: string[] = [];
       const kv = createKV();
       mockFetch(async (url) => {
@@ -271,7 +271,7 @@ describe("Worker", () => {
       expect(res.status).toBe(200);
       expect(sent).toHaveLength(2);
       const stored = await kv.get("lead:lead@example.com");
-      expect(stored).toBeTruthy();
+      expect(stored).toBeNull();
     });
   });
 

@@ -107,7 +107,7 @@ describe("CookieConsent", () => {
     expect(consent).not.toBeNull();
     expect(consent.decided).toBe(true);
     expect(consent.analytics).toBe(true);
-    expect(consent.marketing).toBe(true);
+    expect(consent.marketing).toBe(false);
     expect(consent.essential).toBe(true);
   });
 
@@ -140,7 +140,7 @@ describe("CookieConsent", () => {
     fireEvent.click(screen.getByRole("button", { name: /cookies\.customise/i }));
 
     const switches = screen.getAllByRole("switch");
-    expect(switches).toHaveLength(2);
+    expect(switches).toHaveLength(1);
     expect(screen.getByRole("button", { name: /cookies\.savePreferences/i })).toBeInTheDocument();
   });
 
@@ -151,7 +151,7 @@ describe("CookieConsent", () => {
     });
 
     fireEvent.click(screen.getByRole("button", { name: /cookies\.customise/i }));
-    expect(screen.getAllByRole("switch")).toHaveLength(2);
+    expect(screen.getAllByRole("switch")).toHaveLength(1);
 
     fireEvent.click(screen.getByRole("button", { name: /Collapse/i }));
 
@@ -170,13 +170,10 @@ describe("CookieConsent", () => {
 
     fireEvent.click(screen.getByRole("button", { name: /cookies\.customise/i }));
 
-    const [analyticsSwitch, marketingSwitch] = screen.getAllByRole("switch");
+    const analyticsSwitch = screen.getByRole("switch", { name: "cookies.analytics" });
 
     if (analyticsSwitch.getAttribute("aria-checked") !== "true") {
       fireEvent.click(analyticsSwitch);
-    }
-    if (marketingSwitch.getAttribute("aria-checked") === "true") {
-      fireEvent.click(marketingSwitch);
     }
 
     fireEvent.click(screen.getByRole("button", { name: /cookies\.savePreferences/i }));
@@ -264,10 +261,10 @@ describe("CookieConsent", () => {
     });
 
     expect(screen.getByRole("dialog")).toBeInTheDocument();
-    expect(screen.getAllByRole("switch")).toHaveLength(2);
+    expect(screen.getAllByRole("switch")).toHaveLength(1);
 
-    const [analyticsSwitch, marketingSwitch] = screen.getAllByRole("switch");
+    const analyticsSwitch = screen.getByRole("switch", { name: "cookies.analytics" });
     expect(analyticsSwitch.getAttribute("aria-checked")).toBe("true");
-    expect(marketingSwitch.getAttribute("aria-checked")).toBe("false");
+    expect(analyticsSwitch).toHaveAccessibleName("cookies.analytics");
   });
 });

@@ -26,7 +26,7 @@
 
 export const STORAGE_KEY = "forsa-cookie-consent";
 export const CONSENT_UPDATED_EVENT = "forsa:consent-updated";
-export const CONSENT_VERSION = 1;
+export const CONSENT_VERSION = 2;
 export const CONSENT_MAX_AGE_MS = 365 * 24 * 60 * 60 * 1000;
 
 export interface ConsentState {
@@ -54,7 +54,8 @@ export function getConsent(): ConsentState | null {
 
 /** True only when the user has explicitly accepted analytics cookies. */
 export function hasAnalyticsConsent(): boolean {
-  return getConsent()?.analytics === true;
+  const consent = getConsent();
+  return consent?.decided === true && consent.analytics === true;
 }
 
 /** True only when the user has explicitly accepted marketing cookies. */
@@ -103,6 +104,7 @@ function injectAnalyticsScripts(): void {
   if (!hasAnalyticsConsent()) return;
   if (document.getElementById(GA_SCRIPT_ID)) return; // already loaded
 
+  (window as unknown as Record<string, unknown>)[`ga-disable-${measurementId}`] = false;
   const script = document.createElement("script");
   script.id = GA_SCRIPT_ID;
   script.src = `https://www.googletagmanager.com/gtag/js?id=${measurementId}`;
@@ -115,7 +117,9 @@ function injectAnalyticsScripts(): void {
     "window.dataLayer = window.dataLayer || [];",
     "function gtag(){dataLayer.push(arguments);}",
     "gtag('js', new Date());",
-    `gtag('config', '${measurementId}', { anonymize_ip: true });`,
+    "gtag('consent', 'default', {analytics_storage:'denied',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied'});",
+    "gtag('consent', 'update', {analytics_storage:'granted',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied'});",
+    `gtag('config', '${measurementId}', { allow_google_signals: false, allow_ad_personalization_signals: false });`,
   ].join("\n");
   document.head.appendChild(init);
 }
@@ -125,6 +129,29 @@ function injectAnalyticsScripts(): void {
  * so analytics stops firing after the user withdraws consent.
  */
 export function removeAnalytics(): void {
+  const measurementId = import.meta.env.VITE_GA_MEASUREMENT_ID as string | undefined;
+  if (measurementId)
+    (window as unknown as Record<string, unknown>)[`ga-disable-${measurementId}`] = true;
+  const current = (window as unknown as { gtag?: (...args: unknown[]) => void }).gtag;
+  current?.("consent", "update", {
+    analytics_storage: "denied",
+    ad_storage: "denied",
+    ad_user_data: "denied",
+    ad_personalization: "denied",
+  });
+  for (const cookie of document.cookie.split(";")) {
+    const name = cookie.split("=")[0].trim();
+    if (!/^_ga(?:_|$)/.test(name)) continue;
+    const domains = [
+      "",
+      window.location.hostname,
+      "." + window.location.hostname,
+      ".forsadesign.co.uk",
+    ];
+    for (const domain of domains)
+      document.cookie = `${name}=; Max-Age=0; Path=/;${domain ? ` Domain=${domain};` : ""} SameSite=Lax; Secure`;
+  }
+
   document.getElementById(GA_SCRIPT_ID)?.remove();
   document.getElementById(GA_INLINE_ID)?.remove();
 

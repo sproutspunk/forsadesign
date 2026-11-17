@@ -22,24 +22,36 @@ const MARGIN = 42;
 const COL = W - MARGIN * 2;
 
 const CHECKS = [
-  ["Site loads in under 2 seconds on mobile", "Test: PageSpeed Insights"],
-  ["SSL certificate valid and grade A+", "Test: SSL Labs"],
+  [
+    "Main content appears promptly on mobile",
+    "Compare repeated tests and check a real mobile device",
+  ],
+  [
+    "HTTPS works without certificate warnings",
+    "Review TLS; a grade is not a full application security audit",
+  ],
   [
     "Contact page has a direct email + phone, not just a form",
-    "Buyers avoid form-only contact pages",
+    "Make contact options clear and appropriate for the audience",
   ],
   ["Mobile menu works without zooming", "Test on an actual phone, not just DevTools"],
-  ["Homepage states what the company does in under 3 seconds", "No jargon above the fold"],
   [
-    "Case studies or client logos are visible without scrolling",
-    "Builds trust before the first click",
+    "Homepage explains the actual service and audience",
+    "Use specific service descriptions and a clear next step",
   ],
-  ["GDPR / cookie compliance banner is present", "Required for EU and UK visitors"],
+  [
+    "Project examples identify scope and delivery status",
+    "Publish only supported claims and authorised materials",
+  ],
+  [
+    "Optional analytics follows the user's cookie choice",
+    "A banner alone does not demonstrate legal compliance",
+  ],
   ["No broken links or 404 errors on main navigation", "Click every top-level link"],
   ["PDF datasheets download correctly on mobile", "Test on iOS Safari and Android Chrome"],
   [
-    "Website works on the browsers your procurement team uses",
-    "Chrome, Edge and Safari at minimum",
+    "Key tasks work in the supported browsers",
+    "Include keyboard operation, mobile and error states",
   ],
 ];
 
@@ -60,7 +72,7 @@ async function main() {
     size: 20,
     color: WHITE,
   });
-  page.drawText("10 checks every buyer makes before calling a supplier", {
+  page.drawText("10 practical checks for an initial website review", {
     x: MARGIN,
     y: H - 76,
     font: fontReg,
@@ -122,24 +134,27 @@ async function main() {
   const footerY = 70;
   page.drawRectangle({ x: MARGIN - 6, y: footerY - 20, width: COL + 12, height: 70, color: NAVY });
   page.drawRectangle({ x: MARGIN - 6, y: footerY + 46, width: COL + 12, height: 4, color: GOLD });
-  page.drawText("Scored 7 or below?", {
+  page.drawText("Review any failed checks", {
     x: MARGIN + 6,
     y: footerY + 24,
     font: fontBold,
     size: 12,
     color: GOLD,
   });
-  page.drawText("Your suppliers might be losing tenders before conversations start.", {
+  page.drawText("This checklist identifies questions; it is not a compliance audit.", {
     x: MARGIN + 6,
     y: footerY + 8,
     font: fontReg,
     size: 10,
     color: WHITE,
   });
-  page.drawText(
-    "Forsa Design builds procurement-ready web systems for industrial firms. Based in Banff, Aberdeenshire.",
-    { x: MARGIN + 6, y: footerY - 8, font: fontReg, size: 10, color: rgb(0.85, 0.85, 0.88) },
-  );
+  page.drawText("Forsa Design: custom websites and web systems. Banff, Aberdeenshire.", {
+    x: MARGIN + 6,
+    y: footerY - 8,
+    font: fontReg,
+    size: 10,
+    color: rgb(0.85, 0.85, 0.88),
+  });
 
   const bytes = await doc.save();
   const outPath = join(__dirname, "..", "public", "audit-checklist.pdf");

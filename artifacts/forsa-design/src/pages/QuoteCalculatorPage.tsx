@@ -20,16 +20,16 @@ export default function QuoteCalculatorPage({ lang }: QuoteCalculatorPageProps) 
   useSeoMeta({
     title: isEn ? "Request a Quote | Forsa Design" : "Poproś o Wycenę | Forsa Design",
     description: isEn
-      ? "Tell us about your industrial, manufacturing or engineering website project and we'll send a tailored quote within one business day."
-      : "Opowiedz nam o swoim projekcie strony internetowej dla przemysłu, produkcji lub inżynierii, a my prześlemy spersonalizowaną wycenę w ciągu jednego dnia roboczego.",
+      ? "Tell us about your industrial, manufacturing or engineering website project and we will review the requirements and identify the information needed for a quotation."
+      : "Opowiedz nam o swoim projekcie strony internetowej dla przemysłu, produkcji lub inżynierii, a my przeanalizujemy wymagania i wskażemy dane potrzebne do przygotowania oferty.",
     ogTitle: isEn ? "Request a Quote | Forsa Design" : "Poproś o Wycenę | Forsa Design",
     ogDescription: isEn
-      ? "Tell us about your industrial, manufacturing or engineering website project and we'll send a tailored quote within one business day."
-      : "Opowiedz nam o swoim projekcie strony internetowej dla przemysłu, produkcji lub inżynierii, a my prześlemy spersonalizowaną wycenę w ciągu jednego dnia roboczego.",
+      ? "Tell us about your industrial, manufacturing or engineering website project and we will review the requirements and identify the information needed for a quotation."
+      : "Opowiedz nam o swoim projekcie strony internetowej dla przemysłu, produkcji lub inżynierii, a my przeanalizujemy wymagania i wskażemy dane potrzebne do przygotowania oferty.",
     twitterTitle: isEn ? "Request a Quote | Forsa Design" : "Poproś o Wycenę | Forsa Design",
     twitterDescription: isEn
-      ? "Tell us about your industrial, manufacturing or engineering website project and we'll send a tailored quote within one business day."
-      : "Opowiedz nam o swoim projekcie strony internetowej dla przemysłu, produkcji lub inżynierii, a my prześlemy spersonalizowaną wycenę w ciągu jednego dnia roboczego.",
+      ? "Tell us about your industrial, manufacturing or engineering website project and we will review the requirements and identify the information needed for a quotation."
+      : "Opowiedz nam o swoim projekcie strony internetowej dla przemysłu, produkcji lub inżynierii, a my przeanalizujemy wymagania i wskażemy dane potrzebne do przygotowania oferty.",
     ogLocale: isEn ? "en_GB" : "pl_PL",
     canonical: buildHref(isEn ? "/en/quote" : "/pl/quote"),
     alternates: [
@@ -71,8 +71,8 @@ export default function QuoteCalculatorPage({ lang }: QuoteCalculatorPageProps) 
             </h1>
             <p className="mt-4 text-lg text-muted-foreground">
               {isEn
-                ? "Tell us about your project and we'll reply with a tailored quote within one business day."
-                : "Opowiedz nam o swoim projekcie, a my odpowiemy spersonalizowaną wyceną w ciągu jednego dnia roboczego."}
+                ? "Describe your project. We will review the requirements and identify the information needed for a quotation."
+                : "Opowiedz nam o swoim projekcie, a my przeanalizujemy wymagania i wskażemy dane potrzebne do przygotowania oferty."}
             </p>
           </div>
           <div className="mx-auto mt-12 max-w-xl">

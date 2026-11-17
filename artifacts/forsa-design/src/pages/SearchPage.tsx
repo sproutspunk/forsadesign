@@ -54,8 +54,7 @@ const pageEntries: Record<Language, SearchEntry[]> = {
     },
     {
       title: "Request a Quote",
-      excerpt:
-        "Tell us about your project and we'll send a tailored quote within one business day.",
+      excerpt: "Describe your project so we can review the requirements and prepare the next step.",
       href: "/en/quote",
       category: "Contact",
     },
@@ -116,7 +115,7 @@ const pageEntries: Record<Language, SearchEntry[]> = {
     {
       title: "Poproś o wycenę",
       excerpt:
-        "Opowiedz nam o swoim projekcie, a my prześlemy spersonalizowaną wycenę w ciągu jednego dnia roboczego.",
+        "Opisz projekt. Przeanalizujemy wymagania i wskażemy informacje potrzebne do przygotowania oferty.",
       href: "/pl/quote",
       category: "Kontakt",
     },
