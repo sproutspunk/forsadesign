@@ -21,6 +21,42 @@ export default function FAQContent({
   const [query, setQuery] = useState("");
   const [category, setCategory] = useState<FaqCategory | "all">("all");
   const [open, setOpen] = useState<string | null>(null);
+  const [shareStatus, setShareStatus] = useState<{
+    id: string;
+    message: string;
+    text?: string;
+  } | null>(null);
+  const shareAnswer = async (id: string, question: string, answer: string) => {
+    const url = new URL(`/${lang}/`, window.location.origin);
+    url.hash = id;
+    const shareText = `${question}\n\n${answer}\n\n${url.href}`;
+    setShareStatus(null);
+    if (navigator.share) {
+      try {
+        await navigator.share({
+          title: `${question} | Forsa Design`,
+          text: `${question}\n\n${answer}`,
+          url: url.href,
+        });
+        return;
+      } catch (error) {
+        if (error instanceof Error && error.name === "AbortError") return;
+      }
+    }
+    try {
+      await navigator.clipboard.writeText(shareText);
+      setShareStatus({
+        id,
+        message: pl ? "Pytanie, odpowiedź i link skopiowane." : "Question, answer and link copied.",
+      });
+    } catch {
+      setShareStatus({
+        id,
+        message: pl ? "Skopiuj pytanie, odpowiedź i link:" : "Copy the question, answer and link:",
+        text: shareText,
+      });
+    }
+  };
   useEffect(() => {
     const followHash = () => {
       const id = window.location.hash.slice(1);
@@ -138,12 +174,29 @@ export default function FAQContent({
                       className="px-5 pb-6"
                     >
                       <p className="text-foreground/80 text-base leading-relaxed">{item.a}</p>
-                      <a
-                        href={`#${item.id}`}
-                        className={`inline-block mt-4 text-primary underline text-sm ${focus}`}
+                      <button
+                        type="button"
+                        onClick={() => void shareAnswer(item.id, item.q, item.a)}
+                        aria-label={`${pl ? "Udostępnij odpowiedź" : "Share answer"}: ${item.q}`}
+                        className={`inline-block mt-4 py-2 text-primary underline text-sm ${focus}`}
                       >
-                        {pl ? "Link do pytania" : "Link to this question"}
-                      </a>
+                        {pl ? "Udostępnij odpowiedź" : "Share answer"}
+                      </button>
+                      {shareStatus?.id === item.id && (
+                        <div className="mt-2 text-sm text-foreground">
+                          <p role="status">{shareStatus.message}</p>
+                          {shareStatus.text && (
+                            <textarea
+                              rows={6}
+                              aria-label={pl ? "Treść do udostępnienia" : "Content to share"}
+                              readOnly
+                              value={shareStatus.text}
+                              onFocus={(event) => event.target.select()}
+                              className={`mt-2 w-full rounded border border-border bg-background p-2 text-base ${focus}`}
+                            />
+                          )}
+                        </div>
+                      )}
                     </div>
                   </div>
                 ))}
