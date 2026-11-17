@@ -50,8 +50,8 @@ export default function FAQContent({
             className="font-serif text-3xl md:text-4xl font-bold text-white mb-5"
           >
             {pl
-              ? "Tworzenie stron internetowych i systemów B2B — pytania o koszty, realizację i utrzymanie"
-              : "Website development and B2B systems — costs, delivery and ongoing support"}
+              ? "Tworzenie stron internetowych i systemów B2B: pytania o koszty, realizację i utrzymanie"
+              : "Website development and B2B systems: costs, delivery and ongoing support"}
           </h2>
           <p className="text-foreground/80 text-lg">
             {pl
