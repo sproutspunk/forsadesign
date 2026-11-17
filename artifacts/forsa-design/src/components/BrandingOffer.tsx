@@ -1,4 +1,5 @@
 import React from "react";
+import LinklangBrandingProof from "./LinklangBrandingProof";
 import { dachImage, dachPath } from "../data/dachCaseStudy";
 
 export const brandingCopy = {
@@ -154,6 +155,7 @@ export default function BrandingOffer({ lang }: { lang: "pl" | "en" }) {
           </ul>
         </details>
       </div>
+      <LinklangBrandingProof lang={lang} />
       <a
         href={`/${lang}/contact/`}
         className="mt-8 inline-block rounded-sm bg-primary px-5 py-3 text-base font-semibold text-primary-foreground hover:bg-primary/90"
