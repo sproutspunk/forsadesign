@@ -53,74 +53,71 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="flex flex-col gap-3">
-            <a
-              href={`/${language}/services/commercial-due-diligence/`}
-              className="text-sm font-medium text-foreground/70 hover:text-primary transition-colors w-fit"
-            >
-              {language === "pl" ? "Weryfikacja kontrahentów" : "Commercial due diligence"}
-            </a>
-            <a
-              href={`/${language}/#home`}
-              className="text-sm font-medium text-foreground/70 hover:text-primary transition-colors w-fit"
-            >
-              {t("nav.home")}
-            </a>
-            <a
-              href={`/${language}/#services`}
-              className="text-sm font-medium text-foreground/70 hover:text-primary transition-colors w-fit"
-            >
-              {t("nav.services")}
-            </a>
-            <a
-              href={`/${language}/#pricing`}
-              className="text-sm font-medium text-foreground/70 hover:text-primary transition-colors w-fit"
-            >
-              {t("nav.pricing")}
-            </a>
-            <a
-              href={`/${language}/#process`}
-              className="text-sm font-medium text-foreground/70 hover:text-primary transition-colors w-fit"
-            >
-              {t("nav.process")}
-            </a>
-            <a
-              href={language === "pl" ? "/pl/o-nas/" : "/en/about/"}
-              className="text-sm font-medium text-foreground/70 hover:text-primary transition-colors w-fit"
-            >
-              {t("nav.about")}
-            </a>
-            <a
-              href={`/${language}/#contact`}
-              className="text-sm font-medium text-foreground/70 hover:text-primary transition-colors w-fit"
-            >
-              {t("nav.contact")}
-            </a>
-            <a
-              href={`/${language}/#faq`}
-              className="text-sm font-medium text-foreground/70 hover:text-primary transition-colors w-fit"
-            >
-              {t("nav.faq")}
-            </a>
-            <a
-              href={`/${language}/comparison`}
-              className="text-sm font-medium text-foreground/70 hover:text-primary transition-colors w-fit"
-            >
-              {t("nav.comparison")}
-            </a>
-            <a
-              href={`/${language}/quote`}
-              className="text-sm font-medium text-foreground/70 hover:text-primary transition-colors w-fit"
-            >
-              {t("nav.quote")}
-            </a>
-            <a
-              href={`/${language}/pay`}
-              className="text-sm font-medium text-foreground/70 hover:text-primary transition-colors w-fit"
-            >
-              {t("nav.pay")}
-            </a>
-          </div>
+          <nav
+            aria-label={language === "pl" ? "Nawigacja w stopce" : "Footer navigation"}
+            className="flex flex-col gap-3"
+          >
+            <h2 className="text-lg font-semibold">
+              {language === "pl" ? "Na skróty" : "Quick links"}
+            </h2>
+            {[
+              { href: `/${language}/#home`, label: t("nav.home") },
+              { href: `/${language}/#pricing`, label: t("nav.pricing") },
+              { href: `/${language}/#portfolio`, label: "Portfolio" },
+              { href: `/${language}/#process`, label: t("nav.process") },
+              { href: language === "pl" ? "/pl/o-nas/" : "/en/about/", label: t("nav.about") },
+              { href: `/${language}/blog/`, label: "Blog" },
+              { href: `/${language}/#contact`, label: t("nav.contact") },
+              { href: `/${language}/#faq`, label: t("nav.faq") },
+              { href: `/${language}/comparison/`, label: t("nav.comparison") },
+              { href: `/${language}/quote`, label: t("nav.quote") },
+              { href: `/${language}/pay`, label: t("nav.pay") },
+            ].map(({ href, label }) => (
+              <a
+                key={href}
+                href={href}
+                className="text-base font-medium text-foreground/80 hover:text-primary transition-colors w-fit"
+              >
+                {label}
+              </a>
+            ))}
+          </nav>
+          <nav
+            aria-label={language === "pl" ? "Usługi w stopce" : "Footer services"}
+            className="flex flex-col gap-3"
+          >
+            <h2 className="text-lg font-semibold">{t("nav.services")}</h2>
+            {[
+              {
+                href: `/${language}/services/`,
+                label: language === "pl" ? "Wszystkie usługi" : "All services",
+              },
+              {
+                href: `/${language}/services/commercial-due-diligence/`,
+                label: language === "pl" ? "Weryfikacja kontrahentów" : "Commercial due diligence",
+              },
+              {
+                href: `/${language}/services/#industrial-websites`,
+                label: language === "pl" ? "Strony dla przemysłu" : "Industrial websites",
+              },
+              {
+                href: `/${language}/services/#b2b-e-commerce`,
+                label: language === "pl" ? "E-commerce B2B" : "B2B e-commerce",
+              },
+              {
+                href: `/${language}/services/#web-systems`,
+                label: language === "pl" ? "Systemy webowe" : "Web systems",
+              },
+            ].map(({ href, label }) => (
+              <a
+                key={href}
+                href={href}
+                className="text-base font-medium text-foreground/80 hover:text-primary transition-colors w-fit"
+              >
+                {label}
+              </a>
+            ))}
+          </nav>
         </div>
 
         <div className="pt-8 border-t border-border/20 text-sm text-foreground/40 font-light">

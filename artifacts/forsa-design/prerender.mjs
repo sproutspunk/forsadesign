@@ -265,7 +265,7 @@ function buildHomepageBodyEn() {
 <div class="w-20 h-px bg-primary mb-6 mt-4"></div>
 <h1 class="text-4xl md:text-5xl lg:text-6xl font-serif font-bold tracking-tight leading-tight mb-4 max-w-4xl">Websites and Web Systems for Industry</h1>
 <p class="text-lg md:text-xl text-foreground/80 font-medium mb-5 max-w-3xl text-balance">No templates. No page builders. Custom websites and web systems built for technical B2B companies.</p>
-<p class="text-base md:text-lg text-foreground/60 font-light leading-relaxed mb-8 max-w-[65ch] text-left">You know your industry. I understand how industrial buyers evaluate suppliers. I have more than 20 years of experience in international B2B sales, including metalworking machinery, industrial equipment and engineering solutions across Europe and Asia. Forsa Design combines that commercial experience with modern web development to build websites and web systems for industrial, engineering and technical businesses. Based in Banff, Aberdeenshire. Available to work with clients in the UK and internationally.</p>
+<p class="text-base md:text-lg text-foreground/60 font-light leading-relaxed mb-8 max-w-[65ch] text-left">You know your industry. We understand how industrial buyers evaluate suppliers. We have more than 20 years of experience in international B2B sales, including metalworking machinery, industrial equipment and engineering solutions across Europe and Asia. Forsa Design combines that commercial experience with modern web development to build websites and web systems for industrial, engineering and technical businesses. Based in Banff, Aberdeenshire. Available to work with clients in the UK and internationally.</p>
 <a href="#contact" data-testid="btn-hero-cta" class="inline-flex items-center justify-center px-8 py-4 bg-primary text-primary-foreground font-semibold text-lg rounded-sm">Request a Quote</a>
 <div class="mt-10 flex flex-col items-center gap-4">
 <div class="flex flex-wrap justify-center gap-3">
@@ -276,7 +276,7 @@ function buildHomepageBodyEn() {
 <a href="https://digitalbeacon.co/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2.5 px-4 py-3 border border-slate-400/15 rounded-lg"><div><div class="text-[11px] text-foreground/40 uppercase tracking-[0.07em] leading-none mb-1">CO&#x2082; per visit</div><div class="text-[15px] font-medium text-slate-100 leading-none">0.07 g</div></div></a>
 <div class="flex items-center gap-2.5 px-4 py-3 border border-slate-400/15 rounded-lg"><div><div class="text-[11px] text-foreground/40 uppercase tracking-[0.07em] leading-none mb-1">Accessibility</div><div class="text-[15px] font-medium text-slate-100 leading-none">100 / 100</div></div></div>
 </div>
-<p class="max-w-xl text-center text-sm text-foreground/50 leading-relaxed">I use AI-assisted development tools to accelerate appropriate parts of the build, then review, configure and optimise the implementation myself. Performance, accessibility, security and SEO are tested as part of the development process.</p>
+<p class="max-w-xl text-center text-sm text-foreground/50 leading-relaxed">We use AI-assisted development tools to accelerate appropriate parts of the build, then review, configure and optimise the implementation ourselves. Performance, accessibility, security and SEO are tested as part of the development process.</p>
 </div>
 </div>
 </div>
@@ -294,15 +294,15 @@ function buildHomepageBodyEn() {
 <section id="services" class="py-24 bg-background">
 <div class="container mx-auto px-6">
 <div class="mb-16 md:text-center">
-<h2 class="font-serif text-4xl md:text-5xl font-bold text-white leading-tight mb-4">What I Build</h2>
+<h2 class="font-serif text-4xl md:text-5xl font-bold text-white leading-tight mb-4">What We Build</h2>
 <div class="w-16 h-1 bg-primary md:mx-auto"></div>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
 <div id="industrial-websites" class="scroll-mt-28 bg-card border-t-4 border-t-primary p-8 rounded-b-md shadow-sm">
 <h3 class="font-serif text-2xl font-bold text-white leading-tight mb-4">Industrial and Engineering Websites</h3>
-<p class="text-foreground/70 leading-relaxed font-light whitespace-pre-line text-left">Custom websites for industrial, engineering and manufacturing businesses. I focus on clear technical communication, performance, mobile usability, SEO, accessibility and security.
+<p class="text-foreground/70 leading-relaxed font-light whitespace-pre-line text-left">Custom websites for industrial, engineering and manufacturing businesses. We focus on clear technical communication, performance, mobile usability, SEO, accessibility and security.
 
-I use AI-assisted development tools where they improve efficiency, then review and refine the structure, implementation, content logic, SEO and performance myself. There are no off-the-shelf templates or page builders.</p>
+We use AI-assisted development tools where they improve efficiency, then review and refine the structure, implementation, content logic, SEO and performance ourselves. There are no off-the-shelf templates or page builders.</p>
 </div>
 <div id="b2b-e-commerce" class="scroll-mt-28 bg-card border-t-4 border-t-primary p-8 rounded-b-md shadow-sm">
 <h3 class="font-serif text-2xl font-bold text-white leading-tight mb-4">B2B Catalogues and Ordering Systems</h3>
@@ -314,7 +314,7 @@ A typical custom B2B catalogue or ordering system can take approximately 6-10 we
 <h3 class="font-serif text-2xl font-bold text-white leading-tight mb-4">Custom Web Tools and API Integrations</h3>
 <p class="text-foreground/70 leading-relaxed font-light whitespace-pre-line text-left">Dealer portals, specification tools, multilingual quote systems, custom forms and workflow integrations built around the way your business operates.
 
-I use AI-assisted tools to accelerate appropriate parts of development while retaining direct control over architecture, configuration, testing, security and the final implementation. API integrations are assessed individually according to the external system and its documentation.</p>
+We use AI-assisted tools to accelerate appropriate parts of development while retaining direct control over architecture, configuration, testing, security and the final implementation. API integrations are assessed individually according to the external system and its documentation.</p>
 </div>
 </div>
 </div>
@@ -346,7 +346,7 @@ I use AI-assisted tools to accelerate appropriate parts of development while ret
 <div class="mt-10 flex flex-col items-center gap-6 text-center">
 <a href="/en/quote" class="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-lg bg-primary text-primary-foreground font-semibold">Get a Custom Quote</a>
 <p class="text-sm text-foreground/50 max-w-xl">The final price depends on the agreed scope, functionality, content requirements and external integrations.</p>
-<p class="text-sm text-foreground/50 max-w-2xl">AI-assisted tools can reduce time spent on repetitive development tasks. I use that time where it matters more: architecture, implementation, testing, content structure, performance and the commercial purpose of the site.</p>
+<p class="text-sm text-foreground/50 max-w-2xl">AI-assisted tools can reduce time spent on repetitive development tasks. We use that time where it matters more: architecture, implementation, testing, content structure, performance and the commercial purpose of the site.</p>
 </div>
 </div>
 </div>
@@ -355,7 +355,7 @@ ${buildPortfolioBody("en")}
 <section id="process" class="py-24 bg-card">
 <div class="container mx-auto px-6">
 <div class="mb-16 md:text-center">
-<h2 class="font-serif text-4xl md:text-5xl font-bold text-white leading-tight mb-4">How I Work</h2>
+<h2 class="font-serif text-4xl md:text-5xl font-bold text-white leading-tight mb-4">How We Work</h2>
 <div class="w-16 h-1 bg-primary md:mx-auto"></div>
 </div>
 <div class="relative">
@@ -364,28 +364,28 @@ ${buildPortfolioBody("en")}
 <div class="relative z-10 flex-shrink-0 w-12 h-12 rounded-full border-2 border-primary bg-background flex items-center justify-center text-primary font-serif font-bold text-xl">1</div>
 <div class="flex-1">
 <h3 class="font-serif text-xl font-bold text-white leading-tight mb-3">Discovery and Audit</h3>
-<p class="text-foreground/70 font-light leading-relaxed text-left">I review your current website, business requirements, competitors, target customers and the information buyers need in order to evaluate your company.</p>
+<p class="text-foreground/70 font-light leading-relaxed text-left">We review your current website, business requirements, competitors, target customers and the information buyers need in order to evaluate your company.</p>
 </div>
 </div>
 <div class="relative flex md:flex-col items-start gap-6 md:gap-8">
 <div class="relative z-10 flex-shrink-0 w-12 h-12 rounded-full border-2 border-primary bg-background flex items-center justify-center text-primary font-serif font-bold text-xl">2</div>
 <div class="flex-1">
 <h3 class="font-serif text-xl font-bold text-white leading-tight mb-3">Specification and Design</h3>
-<p class="text-foreground/70 font-light leading-relaxed text-left">I define the structure, functionality and technical requirements before development begins. The design is built around clear communication, usability and the commercial purpose of the website.</p>
+<p class="text-foreground/70 font-light leading-relaxed text-left">We define the structure, functionality and technical requirements before development begins. The design is built around clear communication, usability and the commercial purpose of the website.</p>
 </div>
 </div>
 <div class="relative flex md:flex-col items-start gap-6 md:gap-8">
 <div class="relative z-10 flex-shrink-0 w-12 h-12 rounded-full border-2 border-primary bg-background flex items-center justify-center text-primary font-serif font-bold text-xl">3</div>
 <div class="flex-1">
 <h3 class="font-serif text-xl font-bold text-white leading-tight mb-3">Development</h3>
-<p class="text-foreground/70 font-light leading-relaxed text-left">I build the website or web system using a modern development workflow, including AI-assisted tools where appropriate. I review and refine the implementation myself, with attention to performance, security, SEO and accessibility.</p>
+<p class="text-foreground/70 font-light leading-relaxed text-left">We build the website or web system using a modern development workflow, including AI-assisted tools where appropriate. We review and refine the implementation ourselves, with attention to performance, security, SEO and accessibility.</p>
 </div>
 </div>
 <div class="relative flex md:flex-col items-start gap-6 md:gap-8">
 <div class="relative z-10 flex-shrink-0 w-12 h-12 rounded-full border-2 border-primary bg-background flex items-center justify-center text-primary font-serif font-bold text-xl">4</div>
 <div class="flex-1">
 <h3 class="font-serif text-xl font-bold text-white leading-tight mb-3">Testing and Launch</h3>
-<p class="text-foreground/70 font-light leading-relaxed text-left">Before launch, I test the implementation across relevant devices and browsers and check performance, accessibility, SSL, security configuration, SEO fundamentals and GDPR-related requirements.</p>
+<p class="text-foreground/70 font-light leading-relaxed text-left">Before launch, we test the implementation across relevant devices and browsers and check performance, accessibility, SSL, security configuration, SEO fundamentals and GDPR-related requirements.</p>
 </div>
 </div>
 <div class="relative flex md:flex-col items-start gap-6 md:gap-8">
@@ -411,7 +411,7 @@ ${buildPortfolioBody("en")}
 <details>
 <summary class="w-full flex items-center justify-between px-6 py-5 text-left cursor-pointer"><span class="font-medium text-white pr-6 leading-snug text-sm md:text-base">Do you use WordPress or templates?</span></summary>
 <div class="px-6 pb-6 pt-0">
-<p class="text-foreground/70 font-light leading-relaxed text-sm md:text-base">No. I build custom websites and web systems without WordPress, Elementor-style page builders or off-the-shelf templates. I use AI-assisted development tools where they make the work faster, then review, configure and optimise the implementation myself.</p>
+<p class="text-foreground/70 font-light leading-relaxed text-sm md:text-base">No. We build custom websites and web systems without WordPress, Elementor-style page builders or off-the-shelf templates. We use AI-assisted development tools where they make the work faster, then review, configure and optimise the implementation ourselves.</p>
 </div>
 </details>
 </div>
@@ -425,9 +425,9 @@ ${buildPortfolioBody("en")}
 </div>
 <div id="faq-3" class="bg-card scroll-mt-24">
 <details>
-<summary class="w-full flex items-center justify-between px-6 py-5 text-left cursor-pointer"><span class="font-medium text-white pr-6 leading-snug text-sm md:text-base">What if I do not have professional photos?</span></summary>
+<summary class="w-full flex items-center justify-between px-6 py-5 text-left cursor-pointer"><span class="font-medium text-white pr-6 leading-snug text-sm md:text-base">What if We do not have professional photos?</span></summary>
 <div class="px-6 pb-6 pt-0">
-<p class="text-foreground/70 font-light leading-relaxed text-sm md:text-base">I work with the material you have and identify what is genuinely missing. For an industrial business, authentic photographs of your facilities, equipment and work are often more useful than generic stock photography.</p>
+<p class="text-foreground/70 font-light leading-relaxed text-sm md:text-base">We work with the material you have and identify what is genuinely missing. For an industrial business, authentic photographs of your facilities, equipment and work are often more useful than generic stock photography.</p>
 </div>
 </details>
 </div>
@@ -443,7 +443,7 @@ ${buildPortfolioBody("en")}
 <details>
 <summary class="w-full flex items-center justify-between px-6 py-5 text-left cursor-pointer"><span class="font-medium text-white pr-6 leading-snug text-sm md:text-base">Can you integrate with our existing systems?</span></summary>
 <div class="px-6 pb-6 pt-0">
-<p class="text-foreground/70 font-light leading-relaxed text-sm md:text-base">API integrations are one of the main ways I connect websites and web systems with external services. Feasibility depends on the API, documentation, permissions and requirements of the system being connected.</p>
+<p class="text-foreground/70 font-light leading-relaxed text-sm md:text-base">API integrations are one of the main ways We connect websites and web systems with external services. Feasibility depends on the API, documentation, permissions and requirements of the system being connected.</p>
 </div>
 </details>
 </div>
@@ -455,7 +455,7 @@ ${buildPortfolioBody("en")}
 <div class="container mx-auto px-6 text-center">
 <div class="max-w-3xl mx-auto">
 <h2 class="font-serif text-4xl md:text-5xl font-bold text-white leading-tight mb-6">Need a Better Website or Web System?</h2>
-<p class="text-lg md:text-xl text-foreground/70 font-light mb-10 leading-relaxed">Tell me what your business needs. I&#x2019;ll assess the scope and propose a practical technical approach.</p>
+<p class="text-lg md:text-xl text-foreground/70 font-light mb-10 leading-relaxed">Tell us what your business needs. We’ll assess the scope and propose a practical technical approach.</p>
 <a href="#contact" class="inline-flex items-center justify-center px-8 py-4 bg-primary text-primary-foreground font-semibold text-lg rounded-sm">Let's Talk</a>
 </div>
 </div>
@@ -520,16 +520,16 @@ ${buildPortfolioBody("en")}
 </div>
 </div>
 <div class="flex flex-col gap-3">
-<a href="/en/#home" class="text-sm font-medium text-foreground/70 hover:text-primary transition-colors w-fit">Home</a>
-<a href="/en/#services" class="text-sm font-medium text-foreground/70 hover:text-primary transition-colors w-fit">Services</a>
-<a href="/en/#pricing" class="text-sm font-medium text-foreground/70 hover:text-primary transition-colors w-fit">Pricing</a>
-<a href="/en/#process" class="text-sm font-medium text-foreground/70 hover:text-primary transition-colors w-fit">Process</a>
-<a href="/en/about/" class="text-sm font-medium text-foreground/70 hover:text-primary transition-colors w-fit">About</a>
-<a href="/en/#contact" class="text-sm font-medium text-foreground/70 hover:text-primary transition-colors w-fit">Contact</a>
-<a href="/en/#faq" class="text-sm font-medium text-foreground/70 hover:text-primary transition-colors w-fit">FAQ</a>
-<a href="/en/comparison/" class="text-sm font-medium text-foreground/70 hover:text-primary transition-colors w-fit">Compare</a>
-<a href="/en/quote/" class="text-sm font-medium text-foreground/70 hover:text-primary transition-colors w-fit">Quote</a>
-<a href="/en/pay/" class="text-sm font-medium text-foreground/70 hover:text-primary transition-colors w-fit">Pay Invoice</a>
+<a href="/en/#home" class="text-base font-medium text-foreground/70 hover:text-primary transition-colors w-fit">Home</a>
+<a href="/en/#services" class="text-base font-medium text-foreground/70 hover:text-primary transition-colors w-fit">Services</a>
+<a href="/en/#pricing" class="text-base font-medium text-foreground/70 hover:text-primary transition-colors w-fit">Pricing</a>
+<a href="/en/#process" class="text-base font-medium text-foreground/70 hover:text-primary transition-colors w-fit">Process</a>
+<a href="/en/about/" class="text-base font-medium text-foreground/70 hover:text-primary transition-colors w-fit">About</a>
+<a href="/en/#contact" class="text-base font-medium text-foreground/70 hover:text-primary transition-colors w-fit">Contact</a>
+<a href="/en/#faq" class="text-base font-medium text-foreground/70 hover:text-primary transition-colors w-fit">FAQ</a>
+<a href="/en/comparison/" class="text-base font-medium text-foreground/70 hover:text-primary transition-colors w-fit">Compare</a>
+<a href="/en/quote/" class="text-base font-medium text-foreground/70 hover:text-primary transition-colors w-fit">Quote</a>
+<a href="/en/pay/" class="text-base font-medium text-foreground/70 hover:text-primary transition-colors w-fit">Pay Invoice</a>
 </div>
 </div>
 <div class="pt-8 border-t border-border/20 text-sm text-foreground/40 font-light">
@@ -541,6 +541,13 @@ ${buildPortfolioBody("en")}
 <span class="inline-block py-3 -my-2" data-testid="footer-link-cookie-preferences">Cookie Preferences</span>
 </div>
 </div>
+<a href="/en/services/" class="block text-base font-medium text-foreground/80 hover:text-primary py-2">All services</a>
+<a href="/en/services/commercial-due-diligence/" class="block text-base font-medium text-foreground/80 hover:text-primary py-2">Commercial due diligence</a>
+<a href="/en/services/#industrial-websites" class="block text-base font-medium text-foreground/80 hover:text-primary py-2">Industrial websites</a>
+<a href="/en/services/#b2b-e-commerce" class="block text-base font-medium text-foreground/80 hover:text-primary py-2">B2B e-commerce</a>
+<a href="/en/services/#web-systems" class="block text-base font-medium text-foreground/80 hover:text-primary py-2">Web systems</a>
+<a href="/en/#portfolio" class="block text-base font-medium text-foreground/80 hover:text-primary py-2">Portfolio</a>
+<a href="/en/blog/" class="block text-base font-medium text-foreground/80 hover:text-primary py-2">Blog</a>
 </footer>`;
 }
 
@@ -550,7 +557,7 @@ function buildHomepageBodyPl() {
 <a href="/pl/" class="text-sm font-medium text-foreground/80 hover:text-primary transition-colors">Strona główna</a>
 <a href="/pl/#services" class="text-sm font-medium text-foreground/80 hover:text-primary transition-colors">Us&#322;ugi</a>
 <a href="/pl/#pricing" class="text-sm font-medium text-foreground/80 hover:text-primary transition-colors">Ceny</a>
-<a href="/pl/o-nas/" class="text-sm font-medium text-foreground/80 hover:text-primary transition-colors">O mnie</a>
+<a href="/pl/o-nas/" class="text-sm font-medium text-foreground/80 hover:text-primary transition-colors">O nas</a>
 <a href="/pl/#contact" class="text-sm font-medium text-foreground/80 hover:text-primary transition-colors">Kontakt</a>
 <a href="/pl/quote/" class="rounded-sm bg-primary px-4 py-2 text-sm font-bold text-primary-foreground hover:bg-primary/90 transition-colors">Wycena</a>
 </nav>
@@ -563,7 +570,7 @@ function buildHomepageBodyPl() {
 <div class="w-20 h-px bg-primary mb-6 mt-4"></div>
 <h1 class="text-4xl md:text-5xl lg:text-6xl font-serif font-bold tracking-tight leading-tight mb-4 max-w-4xl">Strony i systemy webowe dla przemys&#322;u</h1>
 <p class="text-lg md:text-xl text-foreground/80 font-medium mb-5 max-w-3xl text-balance">Bez szablon&#243;w. Bez kreator&#243;w stron. Dedykowane strony i systemy webowe dla technicznych firm B2B.</p>
-<p class="text-base md:text-lg text-foreground/60 font-light leading-relaxed mb-8 max-w-[65ch] text-left">Ty znasz swoj&#261; bran&#380;&#281;. Ja rozumiem, jak przemys&#322;owi klienci oceniaj&#261; dostawc&#243;w. Mam ponad 20 lat do&#347;wiadczenia w mi&#281;dzynarodowej sprzeda&#380;y B2B, obejmuj&#261;cej maszyny do obr&#243;bki metalu, wyposa&#380;enie przemys&#322;owe i rozwi&#261;zania in&#380;ynieryjne w Europie i Azji. Forsa Design &#322;&#261;czy to do&#347;wiadczenie handlowe z nowoczesnym web developmentem, tworz&#261;c strony i systemy webowe dla firm przemys&#322;owych, in&#380;ynieryjnych i technicznych. Dzia&#322;am z Banff w Aberdeenshire i mog&#281; wsp&#243;&#322;pracowa&#263; z klientami z Wielkiej Brytanii oraz z zagranicy.</p>
+<p class="text-base md:text-lg text-foreground/60 font-light leading-relaxed mb-8 max-w-[65ch] text-left">Ty znasz swoją branżę. My rozumiemy, jak przemysłowi klienci oceniają dostawców. Mamy ponad 20 lat doświadczenia w międzynarodowej sprzedaży B2B, obejmującej maszyny do obróbki metalu, wyposażenie przemysłowe i rozwiązania inżynieryjne w Europie i Azji. Forsa Design łączy to doświadczenie handlowe z nowoczesnym web developmentem, tworząc strony i systemy webowe dla firm przemysłowych, inżynieryjnych i technicznych. Działamy z Banff w Aberdeenshire i możemy współpracować z klientami z Wielkiej Brytanii oraz z zagranicy.</p>
 <a href="#contact" data-testid="btn-hero-cta" class="inline-flex items-center justify-center px-8 py-4 bg-primary text-primary-foreground font-semibold text-lg rounded-sm">Popro&#347; o wycen&#281;</a>
 <div class="mt-10 flex flex-col items-center gap-4">
 <div class="flex flex-wrap justify-center gap-3">
@@ -574,7 +581,7 @@ function buildHomepageBodyPl() {
 <a href="https://digitalbeacon.co/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2.5 px-4 py-3 border border-slate-400/15 rounded-lg"><div><div class="text-[11px] text-foreground/40 uppercase tracking-[0.07em] leading-none mb-1">CO&#x2082; na wizyt&#281;</div><div class="text-[15px] font-medium text-slate-100 leading-none">0.07 g</div></div></a>
 <div class="flex items-center gap-2.5 px-4 py-3 border border-slate-400/15 rounded-lg"><div><div class="text-[11px] text-foreground/40 uppercase tracking-[0.07em] leading-none mb-1">Dost&#281;pno&#347;&#263;</div><div class="text-[15px] font-medium text-slate-100 leading-none">100 / 100</div></div></div>
 </div>
-<p class="max-w-xl text-center text-sm text-foreground/50 leading-relaxed">Korzystam z narz&#281;dzi wspomaganych przez AI, aby przyspieszy&#263; odpowiednie etapy tworzenia strony, a nast&#281;pnie sam sprawdzam, konfiguruj&#281; i optymalizuj&#281; wdro&#380;enie. Wydajno&#347;&#263;, dost&#281;pno&#347;&#263;, bezpiecze&#324;stwo i SEO s&#261; testowane w ramach procesu tworzenia strony.</p>
+<p class="max-w-xl text-center text-sm text-foreground/50 leading-relaxed">Korzystamy z narzędzi wspomaganych przez AI, aby przyspieszyć odpowiednie etapy tworzenia strony, a następnie sprawdzamy, konfigurujemy i optymalizujemy wdrożenie. Wydajność, dostępność, bezpieczeństwo i SEO są testowane w ramach procesu tworzenia strony.</p>
 </div>
 </div>
 </div>
@@ -592,27 +599,27 @@ function buildHomepageBodyPl() {
 <section id="services" class="py-24 bg-background">
 <div class="container mx-auto px-6">
 <div class="mb-16 md:text-center">
-<h2 class="font-serif text-4xl md:text-5xl font-bold text-white leading-tight mb-4">Co buduj&#281;</h2>
+<h2 class="font-serif text-4xl md:text-5xl font-bold text-white leading-tight mb-4">Co budujemy</h2>
 <div class="w-16 h-1 bg-primary md:mx-auto"></div>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
 <div id="industrial-websites" class="scroll-mt-28 bg-card border-t-4 border-t-primary p-8 rounded-b-md shadow-sm">
 <h3 class="font-serif text-2xl font-bold text-white leading-tight mb-4">Strony dla przemys&#322;u i firm in&#380;ynieryjnych</h3>
-<p class="text-foreground/70 leading-relaxed font-light whitespace-pre-line text-left">Dedykowane strony internetowe dla firm przemys&#322;owych, in&#380;ynieryjnych i produkcyjnych. Koncentruj&#281; si&#281; na czytelnej komunikacji technicznej, wydajno&#347;ci, obs&#322;udze urz&#281;dze&#324; mobilnych, SEO, dost&#281;pno&#347;ci i bezpiecze&#324;stwie.
+<p class="text-foreground/70 leading-relaxed font-light whitespace-pre-line text-left">Dedykowane strony internetowe dla firm przemysłowych, inżynieryjnych i produkcyjnych. Koncentrujemy się na czytelnej komunikacji technicznej, wydajności, obsłudze urzędzeń mobilnych, SEO, dostępności i bezpieczeństwie.
 
-Korzystam z narz&#281;dzi wspomaganych przez AI tam, gdzie zwi&#281;kszaj&#261; efektywno&#347;&#263; pracy, a nast&#281;pnie sam sprawdzam i dopracowuj&#281; struktur&#281;, implementacj&#281;, logik&#281; tre&#347;ci, SEO i wydajno&#347;&#263;. Nie u&#380;ywam gotowych szablon&#243;w ani kreator&#243;w stron.</p>
+Korzystamy z narzędzi wspomaganych przez AI tam, gdzie zwiększają efektywność pracy, a następnie sprawdzamy i dopracowujemy strukturę, implementację, logikę treści, SEO i wydajność. Nie używamy gotowych szablonów ani kreatorów stron.</p>
 </div>
 <div id="b2b-e-commerce" class="scroll-mt-28 bg-card border-t-4 border-t-primary p-8 rounded-b-md shadow-sm">
 <h3 class="font-serif text-2xl font-bold text-white leading-tight mb-4">Katalogi B2B i systemy zam&#243;wie&#324;</h3>
 <p class="text-foreground/70 leading-relaxed font-light whitespace-pre-line text-left">Dedykowane katalogi produkt&#243;w, systemy zapyta&#324;, procesy wycenowe i interfejsy zam&#243;wie&#324; B2B. W zale&#380;no&#347;ci od projektu mog&#261; obejmowa&#263; konta klient&#243;w, informacje przypisane do kont, zapytania zbiorcze oraz integracje API z us&#322;ugami zewn&#281;trznymi.
 
-Typowy dedykowany katalog lub system zam&#243;wie&#324; B2B mo&#380;e wymaga&#263; oko&#322;o 6-10 tygodni od momentu uzgodnienia specyfikacji i dostarczenia tre&#347;ci oraz dost&#281;pu potrzebnego do integracji. Bardziej z&#322;o&#380;one systemy planuj&#281; i wyceniam indywidualnie.</p>
+Typowy dedykowany katalog lub system zamówień B2B może wymagać około 6-10 tygodni od momentu uzgodnienia specyfikacji i dostarczenia treści oraz dostępu potrzebnego do integracji. Bardziej złożone systemy planujemy i wyceniamy indywidualnie.</p>
 </div>
 <div id="web-systems" class="scroll-mt-28 bg-card border-t-4 border-t-primary p-8 rounded-b-md shadow-sm">
 <h3 class="font-serif text-2xl font-bold text-white leading-tight mb-4">Dedykowane narz&#281;dzia webowe i integracje API</h3>
 <p class="text-foreground/70 leading-relaxed font-light whitespace-pre-line text-left">Portale dealerskie, narz&#281;dzia do tworzenia specyfikacji, wieloj&#281;zyczne systemy wycen, dedykowane formularze i integracje proces&#243;w dopasowane do sposobu dzia&#322;ania firmy.
 
-Korzystam z narz&#281;dzi wspomaganych przez AI, aby przyspieszy&#263; odpowiednie etapy developmentu, zachowuj&#261;c bezpo&#322;redni&#261; kontrol&#281; nad architektur&#261;, konfiguracj&#261;, testami, bezpiecze&#324;stwem i ko&#243;cowym wdro&#380;eniem. Ka&#380;d&#261; integracj&#281; API oceniam indywidualnie na podstawie systemu zewn&#281;trznego i jego dokumentacji.</p>
+Korzystamy z narzędzi wspomaganych przez AI, aby przyspieszyć odpowiednie etapy developmentu, zachowując bezpołrednią kontrolę nad architekturą, konfiguracją, testami, bezpieczeństwem i koócowym wdrożeniem. Każdą integrację API oceniamy indywidualnie na podstawie systemu zewnętrznego i jego dokumentacji.</p>
 </div>
 </div>
 </div>
@@ -631,7 +638,7 @@ Korzystam z narz&#281;dzi wspomaganych przez AI, aby przyspieszy&#263; odpowiedn
 <div class="container mx-auto px-6">
 <div class="mb-12 md:text-center">
 <h2 class="font-serif text-4xl md:text-5xl font-bold text-white leading-tight mb-4">Ile to kosztuje?</h2>
-<p class="text-lg text-foreground/70 max-w-2xl md:mx-auto">Ka&#380;dy projekt wyceniam indywidualnie na podstawie wymaganych funkcji, tre&#347;ci i integracji.</p>
+<p class="text-lg text-foreground/70 max-w-2xl md:mx-auto">Każdy projekt wyceniamy indywidualnie na podstawie wymaganych funkcji, treści i integracji.</p>
 <div class="w-16 h-1 bg-primary md:mx-auto mt-6"></div>
 </div>
 <div class="max-w-3xl mx-auto">
@@ -644,7 +651,7 @@ Korzystam z narz&#281;dzi wspomaganych przez AI, aby przyspieszy&#263; odpowiedn
 <div class="mt-10 flex flex-col items-center gap-6 text-center">
 <a href="/pl/quote" class="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-lg bg-primary text-primary-foreground font-semibold">Uzyskaj indywidualn&#261; wycen&#261;</a>
 <p class="text-sm text-foreground/50 max-w-xl">Ostateczna cena zale&#380;y od uzgodnionego zakresu, funkcjonalno&#347;ci, wymaga&#324; dotycz&#261;cych tre&#347;ci i integracji z systemami zewn&#281;trznymi.</p>
-<p class="text-sm text-foreground/50 max-w-2xl">Narz&#281;dzia wspomagane przez AI mog&#261; ograniczy&#263; czas po&#347;wi&#281;cany na powtarzalne zadania developerskie. Ten czas wykorzystuj&#281; tam, gdzie ma wi&#281;ksze znaczenie: na architektur&#281;, wdro&#380;enie, testy, struktur&#281; tre&#347;ci, wydajno&#347;&#263; i biznesowy cel strony.</p>
+<p class="text-sm text-foreground/50 max-w-2xl">Narzędzia wspomagane przez AI mogą ograniczyć czas poświęcany na powtarzalne zadania developerskie. Ten czas wykorzystujemy tam, gdzie ma większe znaczenie: na architekturę, wdrożenie, testy, strukturę treści, wydajność i biznesowy cel strony.</p>
 </div>
 </div>
 </div>
@@ -653,7 +660,7 @@ ${buildPortfolioBody("pl")}
 <section id="process" class="py-24 bg-card">
 <div class="container mx-auto px-6">
 <div class="mb-16 md:text-center">
-<h2 class="font-serif text-4xl md:text-5xl font-bold text-white leading-tight mb-4">Jak pracuj&#281;</h2>
+<h2 class="font-serif text-4xl md:text-5xl font-bold text-white leading-tight mb-4">Jak pracujemy</h2>
 <div class="w-16 h-1 bg-primary md:mx-auto"></div>
 </div>
 <div class="relative">
@@ -662,35 +669,35 @@ ${buildPortfolioBody("pl")}
 <div class="relative z-10 flex-shrink-0 w-12 h-12 rounded-full border-2 border-primary bg-background flex items-center justify-center text-primary font-serif font-bold text-xl">1</div>
 <div class="flex-1">
 <h3 class="font-serif text-xl font-bold text-white leading-tight mb-3">Analiza i audyt</h3>
-<p class="text-foreground/70 font-light leading-relaxed text-left">Analizuj&#281; obecn&#261; stron&#281;, wymagania biznesowe, konkurencj&#281;, grup&#281; docelow&#261; oraz informacje potrzebne klientom do oceny Twojej firmy.</p>
+<p class="text-foreground/70 font-light leading-relaxed text-left">Analizujemy obecną stronę, wymagania biznesowe, konkurencję, grupę docelową oraz informacje potrzebne klientom do oceny Twojej firmy.</p>
 </div>
 </div>
 <div class="relative flex md:flex-col items-start gap-6 md:gap-8">
 <div class="relative z-10 flex-shrink-0 w-12 h-12 rounded-full border-2 border-primary bg-background flex items-center justify-center text-primary font-serif font-bold text-xl">2</div>
 <div class="flex-1">
 <h3 class="font-serif text-xl font-bold text-white leading-tight mb-3">Specyfikacja i projekt</h3>
-<p class="text-foreground/70 font-light leading-relaxed text-left">Przed rozpocz&#281;ciem developmentu okre&#347;lam struktur&#281;, funkcjonalno&#347;&#263; i wymagania techniczne. Projekt powstaje z my&#347;l&#261; o czytelnej komunikacji, u&#380;yteczno&#347;ci i biznesowym celu strony.</p>
+<p class="text-foreground/70 font-light leading-relaxed text-left">Przed rozpoczęciem developmentu określamy strukturę, funkcjonalność i wymagania techniczne. Projekt powstaje z myślą o czytelnej komunikacji, użyteczności i biznesowym celu strony.</p>
 </div>
 </div>
 <div class="relative flex md:flex-col items-start gap-6 md:gap-8">
 <div class="relative z-10 flex-shrink-0 w-12 h-12 rounded-full border-2 border-primary bg-background flex items-center justify-center text-primary font-serif font-bold text-xl">3</div>
 <div class="flex-1">
 <h3 class="font-serif text-xl font-bold text-white leading-tight mb-3">Development</h3>
-<p class="text-foreground/70 font-light leading-relaxed text-left">Buduj&#281; stron&#281; lub system webowy przy u&#380;yciu nowoczesnego procesu developmentu, w tym narz&#281;dzi wspomaganych przez AI tam, gdzie ma to sens. Sam sprawdzam i dopracowuj&#281; wdro&#380;enie, zwracaj&#261;c uwag&#281; na wydajno&#347;&#263;, bezpiecze&#324;stwo, SEO i dost&#281;pno&#347;&#263;.</p>
+<p class="text-foreground/70 font-light leading-relaxed text-left">Budujemy stronę lub system webowy przy użyciu nowoczesnego procesu developmentu, w tym narzędzi wspomaganych przez AI tam, gdzie ma to sens. Sprawdzamy i dopracowujemy wdrożenie, zwracając uwagę na wydajność, bezpieczeństwo, SEO i dostępność.</p>
 </div>
 </div>
 <div class="relative flex md:flex-col items-start gap-6 md:gap-8">
 <div class="relative z-10 flex-shrink-0 w-12 h-12 rounded-full border-2 border-primary bg-background flex items-center justify-center text-primary font-serif font-bold text-xl">4</div>
 <div class="flex-1">
 <h3 class="font-serif text-xl font-bold text-white leading-tight mb-3">Testy i uruchomienie</h3>
-<p class="text-foreground/70 font-light leading-relaxed text-left">Przed uruchomieniem testuj&#281; wdro&#380;enie na odpowiednich urz&#281;dzeniach i przegl&#261;darkach oraz sprawdzam wydajno&#347;&#263;, dost&#281;pno&#347;&#263;, SSL, konfiguracj&#281; bezpiecze&#324;stwa, podstawy SEO i wymagania zwi&#261;zane z GDPR.</p>
+<p class="text-foreground/70 font-light leading-relaxed text-left">Przed uruchomieniem testujemy wdrożenie na odpowiednich urzędzeniach i przeglądarkach oraz sprawdzamy wydajność, dostępność, SSL, konfigurację bezpieczeństwa, podstawy SEO i wymagania związane z GDPR.</p>
 </div>
 </div>
 <div class="relative flex md:flex-col items-start gap-6 md:gap-8">
 <div class="relative z-10 flex-shrink-0 w-12 h-12 rounded-full border-2 border-primary bg-background flex items-center justify-center text-primary font-serif font-bold text-xl">5</div>
 <div class="flex-1">
 <h3 class="font-serif text-xl font-bold text-white leading-tight mb-3">Opcjonalne wsparcie</h3>
-<p class="text-foreground/70 font-light leading-relaxed text-left">Po uruchomieniu mog&#281; zapewni&#263; dalsze wsparcie jako oddzieln&#261; p&#322;atn&#261; us&#322;ug&#281;. W zale&#380;no&#347;ci od potrzeb mo&#380;e ono obejmowa&#263; hosting, kopie zapasowe, utrzymanie bezpiecze&#324;stwa, aktualizacje i uzgodnione zmiany na stronie.</p>
+<p class="text-foreground/70 font-light leading-relaxed text-left">Po uruchomieniu możemy zapewnić dalsze wsparcie jako oddzielną płatną usługę. W zależności od potrzeb może ono obejmować hosting, kopie zapasowe, utrzymanie bezpieczeństwa, aktualizacje i uzgodnione zmiany na stronie.</p>
 </div>
 </div>
 </div>
@@ -709,7 +716,7 @@ ${buildPortfolioBody("pl")}
 <details>
 <summary class="w-full flex items-center justify-between px-6 py-5 text-left cursor-pointer"><span class="font-medium text-white pr-6 leading-snug text-sm md:text-base">Czy u&#380;ywasz WordPressa lub szablon&#243;w?</span></summary>
 <div class="px-6 pb-6 pt-0">
-<p class="text-foreground/70 font-light leading-relaxed text-sm md:text-base">Nie. Buduj&#281; dedykowane strony i systemy webowe bez WordPressa, kreator&#243;w typu Elementor i gotowych szablon&#243;w. Korzystam z narz&#281;dzi wspomaganych przez AI tam, gdzie przyspieszaj&#261; prac&#281;, a nast&#281;pnie sam sprawdzam, konfiguruj&#281; i optymalizuj&#281; wdro&#380;enie.</p>
+<p class="text-foreground/70 font-light leading-relaxed text-sm md:text-base">Nie. Budujemy dedykowane strony i systemy webowe bez WordPressa, kreatorów typu Elementor i gotowych szablonów. Korzystamy z narzędzi wspomaganych przez AI tam, gdzie przyspieszają pracę, a następnie sprawdzamy, konfigurujemy i optymalizujemy wdrożenie.</p>
 </div>
 </details>
 </div>
@@ -717,15 +724,15 @@ ${buildPortfolioBody("pl")}
 <details>
 <summary class="w-full flex items-center justify-between px-6 py-5 text-left cursor-pointer"><span class="font-medium text-white pr-6 leading-snug text-sm md:text-base">Ile trwa projekt?</span></summary>
 <div class="px-6 pb-6 pt-0">
-<p class="text-foreground/70 font-light leading-relaxed text-sm md:text-base">Typowy projekt strony firmowej zajmuje oko&#322;o dziewi&#281;ciu tygodni. Bardziej rozbudowane systemy webowe, katalogi i integracje API zwykle wymagaj&#261; wi&#281;cej czasu. Termin ustalam indywidualnie po okre&#347;leniu zakresu.</p>
+<p class="text-foreground/70 font-light leading-relaxed text-sm md:text-base">Typowy projekt strony firmowej zajmuje około dziewięciu tygodni. Bardziej rozbudowane systemy webowe, katalogi i integracje API zwykle wymagają więcej czasu. Termin ustalamy indywidualnie po określeniu zakresu.</p>
 </div>
 </details>
 </div>
 <div id="faq-3" class="bg-card scroll-mt-24">
 <details>
-<summary class="w-full flex items-center justify-between px-6 py-5 text-left cursor-pointer"><span class="font-medium text-white pr-6 leading-snug text-sm md:text-base">Co je&#347;li nie mam profesjonalnych zdj&#281;&#263;?</span></summary>
+<summary class="w-full flex items-center justify-between px-6 py-5 text-left cursor-pointer"><span class="font-medium text-white pr-6 leading-snug text-sm md:text-base">Co jeśli nie mamy profesjonalnych zdjęć?</span></summary>
 <div class="px-6 pb-6 pt-0">
-<p class="text-foreground/70 font-light leading-relaxed text-sm md:text-base">Pracuj&#281; z materia&#322;ami, kt&#243;re masz, i okre&#347;lam, czego rzeczywi&#347;cie brakuje. W przypadku firmy przemys&#322;owej autentyczne zdj&#281;cia zak&#322;adu, urz&#261;dze&#324; i realizacji s&#261; cz&#281;sto bardziej warto&#347;ciowe ni&#261; og&#243;lne zdj&#281;cia stockowe.</p>
+<p class="text-foreground/70 font-light leading-relaxed text-sm md:text-base">Pracujemy z materiałami, które masz, i określamy, czego rzeczywiście brakuje. W przypadku firmy przemysłowej autentyczne zdjęcia zakładu, urządzeń i realizacji są często bardziej wartościowe nią ogólne zdjęcia stockowe.</p>
 </div>
 </details>
 </div>
@@ -753,7 +760,7 @@ ${buildPortfolioBody("pl")}
 <div class="container mx-auto px-6 text-center">
 <div class="max-w-3xl mx-auto">
 <h2 class="font-serif text-4xl md:text-5xl font-bold text-white leading-tight mb-6">Potrzebujesz lepszej strony lub systemu webowego?</h2>
-<p class="text-lg md:text-xl text-foreground/70 font-light mb-10 leading-relaxed">Powiedz mi, czego potrzebuje Twoja firma. Oceni&#281; zakres i zaproponuj&#281; praktyczne rozwi&#261;zanie techniczne.</p>
+<p class="text-lg md:text-xl text-foreground/70 font-light mb-10 leading-relaxed">Powiedz nam, czego potrzebuje Twoja firma. Ocenimy zakres i zaproponujemy praktyczne rozwiązanie techniczne.</p>
 <a href="#contact" class="inline-flex items-center justify-center px-8 py-4 bg-primary text-primary-foreground font-semibold text-lg rounded-sm">Porozmawiajmy</a>
 </div>
 </div>
@@ -817,16 +824,16 @@ ${buildPortfolioBody("pl")}
 </div>
 </div>
 <div class="flex flex-col gap-3">
-<a href="/pl/#home" class="text-sm font-medium text-foreground/70 hover:text-primary transition-colors w-fit">Strona g&#322;&#243;wna</a>
-<a href="/pl/#services" class="text-sm font-medium text-foreground/70 hover:text-primary transition-colors w-fit">Us&#322;ugi</a>
-<a href="/pl/#pricing" class="text-sm font-medium text-foreground/70 hover:text-primary transition-colors w-fit">Ceny</a>
-<a href="/pl/#process" class="text-sm font-medium text-foreground/70 hover:text-primary transition-colors w-fit">Proces</a>
-<a href="/pl/o-nas/" class="text-sm font-medium text-foreground/70 hover:text-primary transition-colors w-fit">O mnie</a>
-<a href="/pl/#contact" class="text-sm font-medium text-foreground/70 hover:text-primary transition-colors w-fit">Kontakt</a>
-<a href="/pl/#faq" class="text-sm font-medium text-foreground/70 hover:text-primary transition-colors w-fit">FAQ</a>
-<a href="/pl/comparison/" class="text-sm font-medium text-foreground/70 hover:text-primary transition-colors w-fit">Por&#243;wnanie</a>
-<a href="/pl/quote/" class="text-sm font-medium text-foreground/70 hover:text-primary transition-colors w-fit">Wycena</a>
-<a href="/pl/pay/" class="text-sm font-medium text-foreground/70 hover:text-primary transition-colors w-fit">Zap&#322;a&#263; faktur&#281;</a>
+<a href="/pl/#home" class="text-base font-medium text-foreground/70 hover:text-primary transition-colors w-fit">Strona główna</a>
+<a href="/pl/#services" class="text-base font-medium text-foreground/70 hover:text-primary transition-colors w-fit">Usługi</a>
+<a href="/pl/#pricing" class="text-base font-medium text-foreground/70 hover:text-primary transition-colors w-fit">Ceny</a>
+<a href="/pl/#process" class="text-base font-medium text-foreground/70 hover:text-primary transition-colors w-fit">Proces</a>
+<a href="/pl/o-nas/" class="text-base font-medium text-foreground/70 hover:text-primary transition-colors w-fit">O nas</a>
+<a href="/pl/#contact" class="text-base font-medium text-foreground/70 hover:text-primary transition-colors w-fit">Kontakt</a>
+<a href="/pl/#faq" class="text-base font-medium text-foreground/70 hover:text-primary transition-colors w-fit">FAQ</a>
+<a href="/pl/comparison/" class="text-base font-medium text-foreground/70 hover:text-primary transition-colors w-fit">Porównanie</a>
+<a href="/pl/quote/" class="text-base font-medium text-foreground/70 hover:text-primary transition-colors w-fit">Wycena</a>
+<a href="/pl/pay/" class="text-base font-medium text-foreground/70 hover:text-primary transition-colors w-fit">Zapłać fakturę</a>
 </div>
 </div>
 <div class="pt-8 border-t border-border/20 text-sm text-foreground/40 font-light">
@@ -838,6 +845,13 @@ ${buildPortfolioBody("pl")}
 <span class="inline-block py-3 -my-2" data-testid="footer-link-cookie-preferences">Ustawienia cookies</span>
 </div>
 </div>
+<a href="/pl/services/" class="block text-base font-medium text-foreground/80 hover:text-primary py-2">Wszystkie usługi</a>
+<a href="/pl/services/commercial-due-diligence/" class="block text-base font-medium text-foreground/80 hover:text-primary py-2">Weryfikacja kontrahentów</a>
+<a href="/pl/services/#industrial-websites" class="block text-base font-medium text-foreground/80 hover:text-primary py-2">Strony dla przemysłu</a>
+<a href="/pl/services/#b2b-e-commerce" class="block text-base font-medium text-foreground/80 hover:text-primary py-2">E-commerce B2B</a>
+<a href="/pl/services/#web-systems" class="block text-base font-medium text-foreground/80 hover:text-primary py-2">Systemy webowe</a>
+<a href="/pl/#portfolio" class="block text-base font-medium text-foreground/80 hover:text-primary py-2">Portfolio</a>
+<a href="/pl/blog/" class="block text-base font-medium text-foreground/80 hover:text-primary py-2">Blog</a>
 </footer>`;
 }
 
@@ -1063,7 +1077,7 @@ const termsEN = [
     subsections: [
       {
         title: "Out-of-Scope Changes",
-        body: `Any changes, additions, or revisions requested outside the agreed scope or beyond the included revision allowances shall be subject to additional fees. Change requests must be submitted in writing and shall be quoted separately before work commences. Additional work will not proceed without written approval and agreement on revised fees. Additional revision rounds are charged at \u00A375 per hour or as quoted.`,
+        body: `Any changes, additions, or revisions requested outside the agreed scope or beyond the included revision allowances shall be subject to additional fees. Change requests must be submitted in writing and shall be quoted separately before work commences. Additional work will not proceed without written approval and agreement on revised fees. Additional revision rounds are charged at £75 per hour or as quoted.`,
       },
       {
         title: "Scope Creep Prevention",
@@ -1097,7 +1111,7 @@ const termsEN = [
   {
     number: "9",
     title: "Revision Allowances and Additional Work",
-    body: `The number of revision rounds, review cycles, and revision hours included in the project fee shall be explicitly stated in the project agreement. Unless stated otherwise, "revisions" include changes to design, layout, copy, functionality, or other elements within the original scope. Revisions beyond the agreed allowance shall be charged at \u00A375 per hour or as separately quoted. If a revision request constitutes a substantial change to the project scope, deliverables, or timeline, Forsa Design reserves the right to treat it as a separate change request subject to additional fees.`,
+    body: `The number of revision rounds, review cycles, and revision hours included in the project fee shall be explicitly stated in the project agreement. Unless stated otherwise, "revisions" include changes to design, layout, copy, functionality, or other elements within the original scope. Revisions beyond the agreed allowance shall be charged at £75 per hour or as separately quoted. If a revision request constitutes a substantial change to the project scope, deliverables, or timeline, Forsa Design reserves the right to treat it as a separate change request subject to additional fees.`,
   },
   {
     number: "10",
@@ -1106,7 +1120,7 @@ const termsEN = [
     subsections: [
       {
         title: "Total Liability Cap",
-        body: `In no event shall Forsa Design's total liability arising out of or relating to these Terms or our services exceed the amount paid by the client in the 12 months preceding the claim or \u00A3500, whichever is greater.`,
+        body: `In no event shall Forsa Design's total liability arising out of or relating to these Terms or our services exceed the amount paid by the client in the 12 months preceding the claim or £500, whichever is greater.`,
       },
       {
         title: "Exceptions",
@@ -1203,173 +1217,173 @@ const termsEN = [
 const termsPL = [
   {
     number: "1",
-    title: "Wst\u0119p",
-    body: `Witaj w Forsa Design (\u201CMy\u201D, \u201Cnas\u201D, \u201Cnaszych\u201D lub \u201CSp\u00f3\u0142ka\u201D). Niniejszy Regulamin i Warunki \u015awiadczenia Us\u0142ug (\u201CRegulaminu\u201D) reguluje dost\u0119p do naszej strony internetowej i zaanga\u017cowanie naszych us\u0142ug. Uzyskuj\u0105c dost\u0119p do naszej strony internetowej lub korzystaj\u0105c z naszych us\u0142ug, zgadzasz si\u0119 by\u0107 zwi\u0105zany niniejszym Regulaminem. Je\u015bli nie zgadzasz si\u0119 z jakikolwiek cz\u0119\u015bci\u0105 niniejszego regulaminu, prosimy nie korzystaj z naszej strony ani us\u0142ug. Niniejszy Regulamin ma zastosowanie do wszystkich us\u0142ug \u015bwiadczonych przez Forsa Design, w tym mi\u0119dzy innymi projektowania stron internetowych, tworzenia aplikacji webowych, rozwi\u0105za\u0144 e-commerce, system\u00f3w niestandardowych i wsparcia bie\u017c\u0105cego.`,
+    title: "Wstęp",
+    body: `Witaj w Forsa Design (“My”, “nas”, “naszych” lub “Spółka”). Niniejszy Regulamin i Warunki Świadczenia Usług (“Regulaminu”) reguluje dostęp do naszej strony internetowej i zaangażowanie naszych usług. Uzyskując dostęp do naszej strony internetowej lub korzystając z naszych usług, zgadzasz się być związany niniejszym Regulaminem. Jeśli nie zgadzasz się z jakikolwiek częścią niniejszego regulaminu, prosimy nie korzystaj z naszej strony ani usług. Niniejszy Regulamin ma zastosowanie do wszystkich usług świadczonych przez Forsa Design, w tym między innymi projektowania stron internetowych, tworzenia aplikacji webowych, rozwiązań e-commerce, systemów niestandardowych i wsparcia bieżącego.`,
   },
   {
     number: "2",
     title: "Korzystanie ze Strony Internetowej",
-    body: `Zawarto\u015b\u0107 naszej strony internetowej jest udost\u0119pniana wy\u0142\u0105cznie do cel\u00f3w informacyjnych i mo\u017ce by\u0107 aktualizowana lub zmieniana bez powiadomienia. Dok\u0142adamy rozs\u0105dnych stara\u0144, aby zapewni\u0107 dok\u0142adno\u015b\u0107 informacji na naszej stronie; jednak nie gwarantujemy kompletno\u015bci, dok\u0142adno\u015bci ani przydatno\u015bci dla jakiegokolwiek konkretnego celu. Zastrzegamy sobie prawo do ograniczenia lub odm\u00f3wienia dost\u0119pu dowolnej osobie lub organizacji bez podawania przyczyn.`,
+    body: `Zawartość naszej strony internetowej jest udostępniana wyłącznie do celów informacyjnych i może być aktualizowana lub zmieniana bez powiadomienia. Dokładamy rozsądnych starań, aby zapewnić dokładność informacji na naszej stronie; jednak nie gwarantujemy kompletności, dokładności ani przydatności dla jakiegokolwiek konkretnego celu. Zastrzegamy sobie prawo do ograniczenia lub odmówienia dostępu dowolnej osobie lub organizacji bez podawania przyczyn.`,
   },
   {
     number: "3",
-    title: "Prawa Autorskie i W\u0142asno\u015b\u0107 Intelektualna",
-    body: `O ile nie uzgodniono inaczej na pi\u015bmie, wszystkie prawa autorskie i prawa w\u0142asno\u015bci intelektualnej dotycz\u0105ce naszej strony internetowej, w tym mi\u0119dzy innymi tekst, grafiki, branding, elementy projektowe, layouty, kod i zawarto\u015b\u0107, nale\u017c\u0105 wy\u0142\u0105cznie do Forsa Design. Mo\u017cesz przegl\u0105da\u0107 i drukowa\u0107 strony z naszej witryny wy\u0142\u0105cznie do osobistego, niekomercyjnego u\u017cytku. Ka\u017cde inne powielanie, rozpowszechnianie lub wykorzystanie zawarto\u015bci strony jest surowo zakazane bez uprzedniej pisemnej zgody Forsa Design.`,
+    title: "Prawa Autorskie i Własność Intelektualna",
+    body: `O ile nie uzgodniono inaczej na piśmie, wszystkie prawa autorskie i prawa własności intelektualnej dotyczące naszej strony internetowej, w tym między innymi tekst, grafiki, branding, elementy projektowe, layouty, kod i zawartość, należą wyłącznie do Forsa Design. Możesz przeglądać i drukować strony z naszej witryny wyłącznie do osobistego, niekomercyjnego użytku. Każde inne powielanie, rozpowszechnianie lub wykorzystanie zawartości strony jest surowo zakazane bez uprzedniej pisemnej zgody Forsa Design.`,
     subsections: [
       {
         title: "Rezultaty projektu",
-        body: `Prawo w\u0142asno\u015bci do niestandardowych rezultat\u00f3w projektu (w tym stron internetowych, projekt\u00f3w, kodu i innych materia\u0142\u00f3w) stworzonych specjalnie dla klienta przechodzi na klienta po otrzymaniu 100% p\u0142atno\u015bci ca\u0142kowitej warto\u015bci projektu. A\u017c do otrzymania pe\u0142nej p\u0142atno\u015bci wszystkie prawa autorskie i prawa w\u0142asno\u015bci intelektualnej, w tym kod \u017ar\u00f3d\u0142owy, pliki projektowe, bazy danych i wszystkie powi\u0105zane materia\u0142y, pozostaj\u0105 wy\u0142\u0105czn\u0105 w\u0142asno\u015bci\u0105 Forsa Design.`,
+        body: `Prawo własności do niestandardowych rezultatów projektu (w tym stron internetowych, projektów, kodu i innych materiałów) stworzonych specjalnie dla klienta przechodzi na klienta po otrzymaniu 100% płatności całkowitej wartości projektu. Aż do otrzymania pełnej płatności wszystkie prawa autorskie i prawa własności intelektualnej, w tym kod źródłowy, pliki projektowe, bazy danych i wszystkie powiązane materiały, pozostają wyłączną własnością Forsa Design.`,
       },
       {
-        title: "Wcze\u015bniej Istniej\u0105ce Materia\u0142y",
-        body: `Forsa Design zachowuje wszystkie prawa autorskie i prawa w\u0142asno\u015bci intelektualnej do wcze\u015bniej istniej\u0105cych szablon\u00f3w, framework\u00f3w, bibliotek, komponent\u00f3w, proces\u00f3w i metodologii opracowanych przed lub niezale\u017cnie od projekt\u00f3w klienta.`,
+        title: "Wcześniej Istniejące Materiały",
+        body: `Forsa Design zachowuje wszystkie prawa autorskie i prawa własności intelektualnej do wcześniej istniejących szablonów, frameworków, bibliotek, komponentów, procesów i metodologii opracowanych przed lub niezależnie od projektów klienta.`,
       },
     ],
   },
   {
     number: "4",
-    title: "Zapytania o Us\u0142ugi i Oferty",
-    body: `Ka\u017cda oferta, oszacowanie, propozycja lub zakres pracy dostarczony przez Forsa Design jest nievi\u0105\u017c\u0105cy a\u017c do formalnego zaakceptowania przez klienta i potwierdzenia w podpisanej umowie projektowej lub kontrakcie. Oferty s\u0105 wa\u017cne przez 30 dni od daty wydania. Po up\u0142ywie 30 dni oferty musz\u0105 by\u0107 od\u015bwie\u017cone i mog\u0105 podlega\u0107 zmienionej wycenie.`,
+    title: "Zapytania o Usługi i Oferty",
+    body: `Każda oferta, oszacowanie, propozycja lub zakres pracy dostarczony przez Forsa Design jest nieviążący aż do formalnego zaakceptowania przez klienta i potwierdzenia w podpisanej umowie projektowej lub kontrakcie. Oferty są ważne przez 30 dni od daty wydania. Po upływie 30 dni oferty muszą być odświeżone i mogą podlegać zmienionej wycenie.`,
   },
   {
     number: "5",
-    title: "Zaliczki, P\u0142atno\u015bci i Warunki P\u0142atno\u015bci",
-    body: `Nierefundowana zaliczka w wysoko\u015bci 25% ca\u0142kowitej warto\u015bci projektu jest wymagana przed rozpocz\u0119ciem prac. Zaliczka b\u0119dzie traktowana jako p\u0142atno\u015b\u0107 na poczet faktury ko\u0144cowej. Zaliczka musi by\u0107 otrzymana i zaksi\u0119gowana przed rozpocz\u0119ciem jakichkolwiek prac.`,
+    title: "Zaliczki, Płatności i Warunki Płatności",
+    body: `Nierefundowana zaliczka w wysokości 25% całkowitej wartości projektu jest wymagana przed rozpoczęciem prac. Zaliczka będzie traktowana jako płatność na poczet faktury końcowej. Zaliczka musi być otrzymana i zaksięgowana przed rozpoczęciem jakichkolwiek prac.`,
     subsections: [
       {
-        title: "Plan P\u0142atno\u015bci",
-        body: `Pozosta\u0142e saldo w wysoko\u015bci 75% b\u0119dzie p\u0142acone zgodnie z harmonogramem okre\u015blonym w indywidualnej umowie projektowej.`,
+        title: "Plan Płatności",
+        body: `Pozostałe saldo w wysokości 75% będzie płacone zgodnie z harmonogramem określonym w indywidualnej umowie projektowej.`,
       },
       {
-        title: "Metoda P\u0142atno\u015bci i Termin P\u0142atno\u015bci",
-        body: `Wszystkie faktury s\u0105 wymagalne w ci\u0105gu 14 dni od wystawienia, o ile nie uzgodniono innych warunk\u00f3w na pi\u015bmie.`,
+        title: "Metoda Płatności i Termin Płatności",
+        body: `Wszystkie faktury są wymagalne w ciągu 14 dni od wystawienia, o ile nie uzgodniono innych warunków na piśmie.`,
       },
       {
-        title: "P\u0142atno\u015b\u0107 Zaleg\u0142a",
-        body: `Nez\u0142o\u017cenie p\u0142atno\u015bci w wyznaczonym terminie mo\u017ce spowodowa\u0107 natychmiastowe wstrzymanie prac do czasu sp\u0142acenia ca\u0142o\u015bci zalegaj\u0105cych kwot.`,
+        title: "Płatność Zaległa",
+        body: `Nezłożenie płatności w wyznaczonym terminie może spowodować natychmiastowe wstrzymanie prac do czasu spłacenia całości zalegających kwot.`,
       },
       {
-        title: "Prawo W\u0142asno\u015bci i Dost\u0119p",
-        body: `Klient nabywa wy\u0142\u0105czne prawo w\u0142asno\u015bci do uko\u0144czonej strony internetowej i wszystkich rezultat\u00f3w wy\u0142\u0105cznie po otrzymaniu 100% p\u0142atno\u015bci ca\u0142kowitej warto\u015bci projektu.`,
+        title: "Prawo Własności i Dostęp",
+        body: `Klient nabywa wyłączne prawo własności do ukończonej strony internetowej i wszystkich rezultatów wyłącznie po otrzymaniu 100% płatności całkowitej wartości projektu.`,
       },
       {
-        title: "Polityka Zwrot\u00f3w",
-        body: `Zaliczka w wysoko\u015bci 25% jest nierefundowalna w \u017cadnych okoliczno\u015bciach, w\u0142\u0105czaj\u0105c anulowanie projektu przez klienta.`,
+        title: "Polityka Zwrotów",
+        body: `Zaliczka w wysokości 25% jest nierefundowalna w żadnych okolicznościach, włączając anulowanie projektu przez klienta.`,
       },
     ],
   },
   {
     number: "6",
-    title: "Terminy Projekt\u00f3w i Kamienie Milowe",
-    body: `Wszystkie szacunkowe daty zako\u0144czenia, harmonogramy lub harmonogramy dostarczenia podane przed podpisaniem formalnej umowy projektowej s\u0105 wy\u0142\u0105cznie orientacyjne i nie powinny by\u0107 uwa\u017cane za gwarantowane.`,
+    title: "Terminy Projektów i Kamienie Milowe",
+    body: `Wszystkie szacunkowe daty zakończenia, harmonogramy lub harmonogramy dostarczenia podane przed podpisaniem formalnej umowy projektowej są wyłącznie orientacyjne i nie powinny być uważane za gwarantowane.`,
     subsections: [
       {
-        title: "Op\u00f3\u017anienia Spowodowane przez Klienta",
-        body: `Forsa Design nie b\u0119dzie odpowiedzialna za op\u00f3\u017anienia spowodowane przez klienta, w tym op\u00f3\u017anienia w dostarczeniu tre\u015bci, tekstu, obraz\u00f3w, materia\u0142\u00f3w brandingowych lub innych informacji niezb\u0119dnych do post\u0119pu projektu.`,
+        title: "Opóźnienia Spowodowane przez Klienta",
+        body: `Forsa Design nie będzie odpowiedzialna za opóźnienia spowodowane przez klienta, w tym opóźnienia w dostarczeniu treści, tekstu, obrazów, materiałów brandingowych lub innych informacji niezbędnych do postępu projektu.`,
       },
       {
-        title: "Si\u0142a Wy\u017csza",
-        body: `Forsa Design nie b\u0119dzie odpowiedzialna za op\u00f3\u017anienia lub brak wykonania spowodowane okoliczno\u015bciami pozostaj\u0105cymi poza rozs\u0105dn\u0105 kontrol\u0105.`,
+        title: "Siła Wyższa",
+        body: `Forsa Design nie będzie odpowiedzialna za opóźnienia lub brak wykonania spowodowane okolicznościami pozostającymi poza rozsądną kontrolą.`,
       },
     ],
   },
   {
     number: "7",
-    title: "Zakres Prac i \u017b\u0105dania Zmian",
-    body: `Zakres pracy b\u0119dzie okre\u015blony w indywidualnej umowie projektowej. Prace b\u0119d\u0105 ograniczone do uzgodnionego zakresu, chyba \u017ce autoryzowano inaczej na pi\u015bmie.`,
+    title: "Zakres Prac i Żądania Zmian",
+    body: `Zakres pracy będzie określony w indywidualnej umowie projektowej. Prace będą ograniczone do uzgodnionego zakresu, chyba że autoryzowano inaczej na piśmie.`,
     subsections: [
       {
         title: "Zmiany Poza Zakresem",
-        body: `Wszelkie zmiany, uzupe\u0142nienia lub rewizje \u017c\u0105dane poza uzgodnionym zakresem b\u0119d\u0105 podlega\u0107 dodatkowym op\u0142atom. Dodatkowe rundy rewizji s\u0105 naliczane w wysoko\u015bci \u00a375 za godzin\u0119.`,
+        body: `Wszelkie zmiany, uzupełnienia lub rewizje żądane poza uzgodnionym zakresem będą podlegać dodatkowym opłatom. Dodatkowe rundy rewizji są naliczane w wysokości £75 za godzinę.`,
       },
       {
-        title: "Zapobieganie Rozszerzaniu Si\u0119 Zakresu",
-        body: `Je\u015bli \u017c\u0105dane zmiany istotnie zmieniaj\u0105 zakres projektu lub harmonogram, Forsa Design zastrzega sobie prawo do udzielenia zmienionej wyceny lub odmowy realizacji.`,
+        title: "Zapobieganie Rozszerzaniu Się Zakresu",
+        body: `Jeśli żądane zmiany istotnie zmieniają zakres projektu lub harmonogram, Forsa Design zastrzega sobie prawo do udzielenia zmienionej wyceny lub odmowy realizacji.`,
       },
     ],
   },
   {
     number: "8",
-    title: "Odpowiedzialno\u015b\u0107 Klienta",
-    body: `Klient jest odpowiedzialny za dostarczenie dok\u0142adnych, kompletnych, terminowych i prawid\u0142owo sformatowanych informacji, tre\u015bci, materia\u0142\u00f3w, obraz\u00f3w i zasob\u00f3w brandingowych niezb\u0119dnych do wykonania projektu.`,
+    title: "Odpowiedzialność Klienta",
+    body: `Klient jest odpowiedzialny za dostarczenie dokładnych, kompletnych, terminowych i prawidłowo sformatowanych informacji, treści, materiałów, obrazów i zasobów brandingowych niezbędnych do wykonania projektu.`,
     subsections: [
       {
         title: "Gwarancja Praw Autorskich",
-        body: `Klient gwarantuje, \u017ce wszystkie materia\u0142y dostarczone Forsa Design s\u0105 oryginalnym dzie\u0142em klienta lub klient uzyska\u0142 wszelkie niezb\u0119dne uprawnienia i licencje.`,
+        body: `Klient gwarantuje, że wszystkie materiały dostarczone Forsa Design są oryginalnym dziełem klienta lub klient uzyskał wszelkie niezbędne uprawnienia i licencje.`,
       },
       {
         title: "Odszkodowanie",
-        body: `Klient zgadza si\u0119 zabezpieczy\u0107 i wyzwoli\u0107 Forsa Design z wszelkich roszcze\u0144 stron trzecich wynikaj\u0105cych z materia\u0142\u00f3w, zawarto\u015bci lub informacji klienta.`,
+        body: `Klient zgadza się zabezpieczyć i wyzwolić Forsa Design z wszelkich roszczeń stron trzecich wynikających z materiałów, zawartości lub informacji klienta.`,
       },
       {
-        title: "Dok\u0142adno\u015b\u0107 Zawarto\u015bci",
-        body: `Forsa Design nie jest odpowiedzialna za dok\u0142adno\u015b\u0107, legalno\u015b\u0107 lub odpowiedno\u015b\u0107 zawarto\u015bci dostarczonej przez klienta.`,
+        title: "Dokładność Zawartości",
+        body: `Forsa Design nie jest odpowiedzialna za dokładność, legalność lub odpowiedność zawartości dostarczonej przez klienta.`,
       },
       {
-        title: "Terminowe Sprz\u0119\u017cenie Zwrotne i Decyzje",
-        body: `Klient zobowi\u0105zany jest dostarcza\u0107 terminowe sprz\u0119\u017cenie zwrotne, zatwierdzenia i decyzje w celu zapobiegania op\u00f3\u017anieniom projektu.`,
+        title: "Terminowe Sprzężenie Zwrotne i Decyzje",
+        body: `Klient zobowiązany jest dostarczać terminowe sprzężenie zwrotne, zatwierdzenia i decyzje w celu zapobiegania opóźnieniom projektu.`,
       },
     ],
   },
   {
     number: "9",
     title: "Rewizje i Dodatkowe Prace",
-    body: `Liczba rund rewizji zawartych w op\u0142acie projektowej powinna by\u0107 wyra\u017anie okre\u015blona w umowie projektowej. Rewizje poza uzgodnionym zakresem b\u0119d\u0105 naliczane w wysoko\u015bci \u00a375 za godzin\u0119.`,
+    body: `Liczba rund rewizji zawartych w opłacie projektowej powinna być wyraźnie określona w umowie projektowej. Rewizje poza uzgodnionym zakresem będą naliczane w wysokości £75 za godzinę.`,
   },
   {
     number: "10",
-    title: "Ograniczenie Odpowiedzialno\u015bci",
-    body: `W najwi\u0119kszym dozwolonym przez prawo zakresie, Forsa Design nie b\u0119dzie odpowiedzialna za \u017cadne po\u015brednio, incydentalne lub nast\u0119pcze szkody.`,
+    title: "Ograniczenie Odpowiedzialności",
+    body: `W największym dozwolonym przez prawo zakresie, Forsa Design nie będzie odpowiedzialna za żadne pośrednio, incydentalne lub następcze szkody.`,
     subsections: [
       {
-        title: "Maksymalny Limit Odpowiedzialno\u015bci",
-        body: `W \u017cadnym wypadku ca\u0142kowita odpowiedzialno\u015b\u0107 Forsa Design nie b\u0119dzie przekracza\u0107 kwoty wp\u0142aconej przez klienta w 12 miesi\u0105cach poprzedzaj\u0105cych roszczenie lub \u00a3500.`,
+        title: "Maksymalny Limit Odpowiedzialności",
+        body: `W żadnym wypadku całkowita odpowiedzialność Forsa Design nie będzie przekraczać kwoty wpłaconej przez klienta w 12 miesiącach poprzedzających roszczenie lub £500.`,
       },
       {
-        title: "Wyj\u0105tki",
-        body: `Nic w niniejszym Regulaminie nie wy\u0142\u0105cza odpowiedzialno\u015bci Forsa Design za \u015bmier\u0107 lub obra\u017cenia cia\u0142a spowodowane zaniedbaniem.`,
+        title: "Wyjątki",
+        body: `Nic w niniejszym Regulaminie nie wyłącza odpowiedzialności Forsa Design za śmierć lub obrażenia ciała spowodowane zaniedbaniem.`,
       },
     ],
   },
   {
     number: "11",
-    title: "Us\u0142ugi Stron Trzecich i Hosting",
-    body: `Projekty mog\u0105 uwzgl\u0119dnia\u0107 lub by\u0107 zale\u017cne od us\u0142ug stron trzecich, platform, dostawc\u00f3w hostingu, wtyczek, oprogramowania i narz\u0119dzi.`,
+    title: "Usługi Stron Trzecich i Hosting",
+    body: `Projekty mogą uwzględniać lub być zależne od usług stron trzecich, platform, dostawców hostingu, wtyczek, oprogramowania i narzędzi.`,
   },
   {
     number: "12",
-    title: "Dost\u0119pno\u015b\u0107 Strony Internetowej i Konserwacja",
-    body: `Nie gwarantujemy, \u017ce strona b\u0119dzie stale dost\u0119pna, nieprzerywana, wolna od b\u0142\u0119d\u00f3w lub bezpieczna.`,
+    title: "Dostępność Strony Internetowej i Konserwacja",
+    body: `Nie gwarantujemy, że strona będzie stale dostępna, nieprzerywana, wolna od błędów lub bezpieczna.`,
   },
   {
     number: "13",
-    title: "W\u0142asno\u015b\u0107 Intelektualna i Wykorzystanie w Portfolio",
-    body: `Forsa Design zastrzega sobie prawo do wy\u015bwietlania strony internetowej jako przyk\u0142adu z portfolio i prezentowania projektu w materia\u0142ach marketingowych.`,
+    title: "Własność Intelektualna i Wykorzystanie w Portfolio",
+    body: `Forsa Design zastrzega sobie prawo do wyświetlania strony internetowej jako przykładu z portfolio i prezentowania projektu w materiałach marketingowych.`,
   },
   {
     number: "14",
-    title: "Ochrona Danych i Prywatno\u015b\u0107",
-    body: `Obie strony b\u0119d\u0105 zgodne z Og\u00f3lnym Rozporz\u0105dzeniem o Ochronie Danych (RODO), Ustaw\u0105 o Ochronie Danych z 2018 r. i wszystkimi obowi\u0105zuj\u0105cymi przepisami o ochronie danych.`,
+    title: "Ochrona Danych i Prywatność",
+    body: `Obie strony będą zgodne z Ogólnym Rozporządzeniem o Ochronie Danych (RODO), Ustawą o Ochronie Danych z 2018 r. i wszystkimi obowiązującymi przepisami o ochronie danych.`,
   },
   {
     number: "15",
-    title: "Rozwi\u0105zanie i Anulowanie",
-    body: `Je\u015bli klient za\u017c\u0105da anulowania projektu po wp\u0142aceniu zaliczki: zaliczka w wysoko\u015bci 25% jest nierefundowalna w \u017cadnych okoliczno\u015bciach.`,
+    title: "Rozwiązanie i Anulowanie",
+    body: `Jeśli klient zażąda anulowania projektu po wpłaceniu zaliczki: zaliczka w wysokości 25% jest nierefundowalna w żadnych okolicznościach.`,
     subsections: [
       {
-        title: "Rozwi\u0105zanie przez Forsa Design",
-        body: `Forsa Design zastrzega sobie prawo do natychmiastowego rozwi\u0105zania projektu, je\u015bli p\u0142atno\u015b\u0107 jest zaleg\u0142a o ponad 30 dni po terminie p\u0142atno\u015bci.`,
+        title: "Rozwiązanie przez Forsa Design",
+        body: `Forsa Design zastrzega sobie prawo do natychmiastowego rozwiązania projektu, jeśli płatność jest zaległa o ponad 30 dni po terminie płatności.`,
       },
       {
-        title: "Skutek Rozwi\u0105zania",
-        body: `Po rozwi\u0105zaniu wszystkie prace w toku natychmiast ustaj\u0105. Forsa Design usunie lub zwr\u00f3ci wszystkie materia\u0142y klienta.`,
+        title: "Skutek Rozwiązania",
+        body: `Po rozwiązaniu wszystkie prace w toku natychmiast ustają. Forsa Design usunie lub zwróci wszystkie materiały klienta.`,
       },
     ],
   },
   {
     number: "16",
-    title: "Prawo W\u0142a\u015bciwe i Rozstrzyganie Spor\u00f3w",
-    body: `Niniejszy Regulamin b\u0119dzie regulowany i interpretowany zgodnie z prawem Szkocji. Ka\u017cdy sp\u00f3r wynikaj\u0105cy z niniejszego Regulaminu b\u0119dzie podlega\u0107 wy\u0142\u0105cznej jurysdykcji s\u0105d\u00f3w szkockich.`,
+    title: "Prawo Właściwe i Rozstrzyganie Sporów",
+    body: `Niniejszy Regulamin będzie regulowany i interpretowany zgodnie z prawem Szkocji. Każdy spór wynikający z niniejszego Regulaminu będzie podlegać wyłącznej jurysdykcji sądów szkockich.`,
   },
   {
     number: "17",
@@ -1378,18 +1392,18 @@ const termsPL = [
   },
   {
     number: "18",
-    title: "Niewa\u017cno\u015b\u0107 Postanowie\u0144",
-    body: `Je\u015bli kt\u00f3rekolwiek postanowienie niniejszego Regulaminu oka\u017ce si\u0119 niewykonalne lub niewa\u017cne, to postanowienie b\u0119dzie usuni\u0119te, a pozosta\u0142e postanowienia b\u0119d\u0105 obowi\u0105zywa\u0107.`,
+    title: "Nieważność Postanowień",
+    body: `Jeśli którekolwiek postanowienie niniejszego Regulaminu okaże się niewykonalne lub nieważne, to postanowienie będzie usunięte, a pozostałe postanowienia będą obowiązywać.`,
   },
   {
     number: "19",
-    title: "Ca\u0142o\u015b\u0107 Umowy",
-    body: `Niniejszy Regulamin, wraz z ka\u017cd\u0105 umow\u0105 projektow\u0105, ofert\u0105 i faktur\u0105, stanowi ca\u0142o\u015b\u0107 umowy mi\u0119dzy stronami dotycz\u0105cej us\u0142ug Forsa Design.`,
+    title: "Całość Umowy",
+    body: `Niniejszy Regulamin, wraz z każdą umową projektową, ofertą i fakturą, stanowi całość umowy między stronami dotyczącej usług Forsa Design.`,
   },
   {
     number: "20",
     title: "Informacje Kontaktowe",
-    body: `W przypadku pyta\u0144, spor\u00f3w lub zawiadomie\u0144 dotycz\u0105cych niniejszego Regulaminu: Forsa Design, Art &amp; Web Design, Banff, Szkocja. Email: hello@forsadesign.co.uk. Telefon: 07770110735.`,
+    body: `W przypadku pytań, sporów lub zawiadomień dotyczących niniejszego Regulaminu: Forsa Design, Art &amp; Web Design, Banff, Szkocja. Email: hello@forsadesign.co.uk. Telefon: 07770110735.`,
   },
 ];
 
@@ -1603,13 +1617,13 @@ const privacyEN = [
 const privacyPL = [
   {
     number: "1",
-    title: "Wst\u0119p",
-    body: `Forsa Design (\u201CMy\u201D, \u201Cnas\u201D, \u201Cnaszych\u201D lub \u201CSp\u00f3\u0142ka\u201D) jest zaanga\u017cowana w ochron\u0119 Twojej prywatno\u015bci i zapewnienie pozytywnego do\u015bwiadczenia na naszej stronie internetowej. Niniejsza Polityka Prywatno\u015bci wyja\u015bnia, w jaki spos\u00f3b zbieramy, wykorzystujemy, ujawniamy i przetwarzamy Twoje dane osobowe zgodnie z RODO, Ustaw\u0105 o Ochronie Danych z 2018 r. i wszystkimi obowi\u0105zuj\u0105cymi przepisami o ochronie danych.`,
+    title: "Wstęp",
+    body: `Forsa Design (“My”, “nas”, “naszych” lub “Spółka”) jest zaangażowana w ochronę Twojej prywatności i zapewnienie pozytywnego doświadczenia na naszej stronie internetowej. Niniejsza Polityka Prywatności wyjaśnia, w jaki sposób zbieramy, wykorzystujemy, ujawniamy i przetwarzamy Twoje dane osobowe zgodnie z RODO, Ustawą o Ochronie Danych z 2018 r. i wszystkimi obowiązującymi przepisami o ochronie danych.`,
   },
   {
     number: "2",
     title: "Definicje",
-    body: `\u201CDane Osobowe\u201D to wszelkie informacje dotycz\u0105ce zidentyfikowanej lub mo\u017cliwej do zidentyfikowania osoby fizycznej. \u201CPrzetwarzanie\u201D to wszelkie operacje wykonywane na Danych Osobowych. Forsa Design jest Administratorem dla tej strony internetowej.`,
+    body: `“Dane Osobowe” to wszelkie informacje dotyczące zidentyfikowanej lub możliwej do zidentyfikowania osoby fizycznej. “Przetwarzanie” to wszelkie operacje wykonywane na Danych Osobowych. Forsa Design jest Administratorem dla tej strony internetowej.`,
   },
   {
     number: "3",
@@ -1618,184 +1632,184 @@ const privacyPL = [
   },
   {
     number: "4",
-    title: "Dane Osobowe, Kt\u00f3re Zbieramy",
-    body: `Zbieramy Dane Osobowe, kt\u00f3re dobrowolnie udost\u0119pniasz, w tym: dane z formularzy kontaktowych (imi\u0119, email, telefon, firma, wiadomo\u015b\u0107), dane z zapyta\u0144 o us\u0142ugi i wyceny, dane klient\u00f3w projektowych, dane komunikacji oraz dane rejestracji konta.`,
+    title: "Dane Osobowe, Które Zbieramy",
+    body: `Zbieramy Dane Osobowe, które dobrowolnie udostępniasz, w tym: dane z formularzy kontaktowych (imię, email, telefon, firma, wiadomość), dane z zapytań o usługi i wyceny, dane klientów projektowych, dane komunikacji oraz dane rejestracji konta.`,
     subsections: [
       {
         title: "Dane Zbierane Automatycznie",
-        body: `Zbieramy dane automatycznie podczas odwiedzania naszej strony: adres IP, typ przegl\u0105darki, system operacyjny, odwiedzone strony, czas sp\u0119dzony i dane klikni\u0119\u0107. U\u017cywamy plik\u00f3w cookie i Google Analytics.`,
+        body: `Zbieramy dane automatycznie podczas odwiedzania naszej strony: adres IP, typ przeglądarki, system operacyjny, odwiedzone strony, czas spędzony i dane kliknięć. Używamy plików cookie i Google Analytics.`,
       },
       {
         title: "Dane od Stron Trzecich",
-        body: `Mo\u017cemy otrzymywa\u0107 Dane Osobowe od Twojego pracodawcy, \u017ar\u00f3de\u0142 rekomenduj\u0105cych i publicznie dost\u0119pnych \u017ar\u00f3de\u0142.`,
+        body: `Możemy otrzymywać Dane Osobowe od Twojego pracodawcy, źródeł rekomendujących i publicznie dostępnych źródeł.`,
       },
     ],
   },
   {
     number: "5",
     title: "Prawna Podstawa Przetwarzania",
-    body: `Przetwarzamy Twoje Dane Osobowe wy\u0142\u0105cznie wtedy, gdy mamy prawn\u0105 podstaw\u0119 zgodnie z RODO.`,
+    body: `Przetwarzamy Twoje Dane Osobowe wyłącznie wtedy, gdy mamy prawną podstawę zgodnie z RODO.`,
     subsections: [
       {
         title: "Zgoda",
-        body: `Wyrazi\u0142e\u015b zgod\u0119 na Przetwarzanie dla wiadomo\u015bci email marketingowych, biuletyn\u00f3w i nieistotnych plik\u00f3w cookie. Mo\u017cesz wycofa\u0107 zgod\u0119 w dowolnym momencie.`,
+        body: `Wyraziłeś zgodę na Przetwarzanie dla wiadomości email marketingowych, biuletynów i nieistotnych plików cookie. Możesz wycofać zgodę w dowolnym momencie.`,
       },
       {
         title: "Wykonanie Umowy",
-        body: `Przetwarzanie jest niezb\u0119dne do wykonania umowy z Tob\u0105 lub podj\u0119cia dzia\u0142a\u0144 na Twoj\u0105 pro\u015bb\u0119 przed zawarciem umowy.`,
+        body: `Przetwarzanie jest niezbędne do wykonania umowy z Tobą lub podjęcia działań na Twoją prośbę przed zawarciem umowy.`,
       },
       {
-        title: "Obowi\u0105zek Prawny",
-        body: `Przetwarzanie jest wymagane do zgodno\u015bci z obowi\u0105zuj\u0105cym prawem.`,
+        title: "Obowiązek Prawny",
+        body: `Przetwarzanie jest wymagane do zgodności z obowiązującym prawem.`,
       },
       {
         title: "Uzasadniony Interes",
-        body: `Przetwarzanie jest niezb\u0119dne dla uzasadnionych interes\u00f3w realizowanych przez Sp\u00f3\u0142k\u0119, w tym bezpiecze\u0144stwa witryny, analityki i operacji biznesowych.`,
+        body: `Przetwarzanie jest niezbędne dla uzasadnionych interesów realizowanych przez Spółkę, w tym bezpieczeństwa witryny, analityki i operacji biznesowych.`,
       },
     ],
   },
   {
     number: "6",
     title: "Jak Wykorzystujemy Twoje Dane Osobowe",
-    body: `Wykorzystujemy Twoje Dane Osobowe do \u015bwiadczenia us\u0142ug, komunikacji i obs\u0142ugi klienta, marketingu i promocji (za Twoj\u0105 zgod\u0105), analityki witryny, bezpiecze\u0144stwa i zgodno\u015bci prawnej.`,
+    body: `Wykorzystujemy Twoje Dane Osobowe do świadczenia usług, komunikacji i obsługi klienta, marketingu i promocji (za Twoją zgodą), analityki witryny, bezpieczeństwa i zgodności prawnej.`,
   },
   {
     number: "7",
     title: "Przechowywanie Danych",
-    body: `Przechowujemy Dane Osobowe tylko tak d\u0142ugo, jak jest to niezb\u0119dne do osi\u0105gni\u0119cia cel\u00f3w, dla kt\u00f3rych zosta\u0142y zebrane.`,
+    body: `Przechowujemy Dane Osobowe tylko tak długo, jak jest to niezbędne do osiągnięcia celów, dla których zostały zebrane.`,
     subsections: [
       {
         title: "Okresy Przechowywania",
-        body: `Zapytania z Formularza Kontaktowego: 2 lata. Klienci Projekt\u00f3w: czas trwania projektu + 7 lat. Ewidencje P\u0142atno\u015bci: 7 lat. Dzienniki Serwer\u00f3w i Dane IP: 90 dni.`,
+        body: `Zapytania z Formularza Kontaktowego: 2 lata. Klienci Projektów: czas trwania projektu + 7 lat. Ewidencje Płatności: 7 lat. Dzienniki Serwerów i Dane IP: 90 dni.`,
       },
       {
-        title: "Usuni\u0119cie",
-        body: `Gdy Dane Osobowe nie s\u0105 ju\u017c niezb\u0119dne, bezpiecznie je usuwamy lub anonimizujemy. Mo\u017cesz w dowolnym momencie za\u017c\u0105da\u0107 usuni\u0119cia.`,
+        title: "Usunięcie",
+        body: `Gdy Dane Osobowe nie są już niezbędne, bezpiecznie je usuwamy lub anonimizujemy. Możesz w dowolnym momencie zażądać usunięcia.`,
       },
     ],
   },
   {
     number: "8",
-    title: "Udost\u0119pnianie i Ujawnianie Danych Osobowych",
-    body: `Udost\u0119pniamy Twoje Dane Osobowe stronom trzecim wy\u0142\u0105cznie za Twoj\u0105 zgod\u0105 lub je\u015bli jest to konieczne do \u015bwiadczenia us\u0142ug.`,
+    title: "Udostępnianie i Ujawnianie Danych Osobowych",
+    body: `Udostępniamy Twoje Dane Osobowe stronom trzecim wyłącznie za Twoją zgodą lub jeśli jest to konieczne do świadczenia usług.`,
     subsections: [
       {
-        title: "Dostawcy Us\u0142ug i Strony Trzecie",
-        body: `Mo\u017cemy ujawnia\u0107 Dane Osobowe dostawcom hostingu, procesorom p\u0142atno\u015bci, dostawcom analityki (Google Analytics) i us\u0142ugom profesjonalnym.`,
+        title: "Dostawcy Usług i Strony Trzecie",
+        body: `Możemy ujawniać Dane Osobowe dostawcom hostingu, procesorom płatności, dostawcom analityki (Google Analytics) i usługom profesjonalnym.`,
       },
       {
-        title: "Obowi\u0105zki Prawne",
-        body: `Mo\u017cemy ujawnia\u0107 Dane Osobowe, je\u015bli jest to wymagane przez prawo lub postanowienie s\u0105dowe.`,
+        title: "Obowiązki Prawne",
+        body: `Możemy ujawniać Dane Osobowe, jeśli jest to wymagane przez prawo lub postanowienie sądowe.`,
       },
       {
         title: "Transfer Biznesowy",
-        body: `Je\u015bli Forsa Design zostanie przej\u0119ta lub restrukturyzowana, Dane Osobowe mog\u0105 zosta\u0107 przeniesione. Powiadomimy Ci\u0119 o wszelkich takich zmianach.`,
+        body: `Jeśli Forsa Design zostanie przejęta lub restrukturyzowana, Dane Osobowe mogą zostać przeniesione. Powiadomimy Cię o wszelkich takich zmianach.`,
       },
       {
-        title: "Brak Sprzeda\u017cy Danych",
-        body: `Nie sprzedajemy, nie wynajmujemy ani nie wymieniamy Twoich Danych Osobowych stronom trzecim do cel\u00f3w marketingowych.`,
+        title: "Brak Sprzedaży Danych",
+        body: `Nie sprzedajemy, nie wynajmujemy ani nie wymieniamy Twoich Danych Osobowych stronom trzecim do celów marketingowych.`,
       },
     ],
   },
   {
     number: "9",
-    title: "Mi\u0119dzynarodowe Transfery Danych",
-    body: `Forsa Design przetwarza i przechowuje Dane Osobowe przede wszystkim w Wielkiej Brytanii i Unii Europejskiej. Je\u015bli Dane Osobowe s\u0105 przenoszone poza Wielk\u0105 Brytani\u0119 lub UE, zapewniamy odpowiednie zabezpieczenia.`,
+    title: "Międzynarodowe Transfery Danych",
+    body: `Forsa Design przetwarza i przechowuje Dane Osobowe przede wszystkim w Wielkiej Brytanii i Unii Europejskiej. Jeśli Dane Osobowe są przenoszone poza Wielką Brytanię lub UE, zapewniamy odpowiednie zabezpieczenia.`,
   },
   {
     number: "10",
-    title: "Pliki Cookie i Technologie \u015aledzenia",
-    body: `U\u017cywamy niezb\u0119dnych plik\u00f3w cookie (funkcjonalno\u015b\u0107, bezpiecze\u0144stwo), analitycznych (Google Analytics, wymagaj\u0105 zgody), preferencji (motyw, j\u0119zyk) i marketingowych (ukierunkowana reklama, wymagaj\u0105 zgody).`,
+    title: "Pliki Cookie i Technologie Śledzenia",
+    body: `Używamy niezbędnych plików cookie (funkcjonalność, bezpieczeństwo), analitycznych (Google Analytics, wymagają zgody), preferencji (motyw, język) i marketingowych (ukierunkowana reklama, wymagają zgody).`,
   },
   {
     number: "11",
     title: "Twoje Prawa na Mocy RODO",
-    body: `Jako Osoba Zainteresowana masz nast\u0119puj\u0105ce prawa:`,
+    body: `Jako Osoba Zainteresowana masz następujące prawa:`,
     subsections: [
       {
-        title: "Prawo Dost\u0119pu",
-        body: `Masz prawo do \u017c\u0105dania dost\u0119pu do Twoich Danych Osobowych. Udost\u0119pnimy to w ci\u0105gu 30 dni.`,
+        title: "Prawo Dostępu",
+        body: `Masz prawo do żądania dostępu do Twoich Danych Osobowych. Udostępnimy to w ciągu 30 dni.`,
       },
       {
         title: "Prawo do Sprostowania",
-        body: `Masz prawo do poprawy niedok\u0142adnych Danych Osobowych.`,
+        body: `Masz prawo do poprawy niedokładnych Danych Osobowych.`,
       },
       {
-        title: "Prawo do Usuni\u0119cia",
-        body: `Masz prawo do \u017c\u0105dania usuni\u0119cia Twoich Danych Osobowych, z wyj\u0105tkiem sytuacji, w kt\u00f3rych przetwarzanie jest konieczne do obowi\u0105zk\u00f3w prawnych.`,
+        title: "Prawo do Usunięcia",
+        body: `Masz prawo do żądania usunięcia Twoich Danych Osobowych, z wyjątkiem sytuacji, w których przetwarzanie jest konieczne do obowiązków prawnych.`,
       },
       {
         title: "Prawo do Ograniczenia Przetwarzania",
-        body: `Masz prawo do \u017c\u0105dania ograniczenia sposobu przetwarzania Twoich danych.`,
+        body: `Masz prawo do żądania ograniczenia sposobu przetwarzania Twoich danych.`,
       },
       {
-        title: "Prawo do Przeno\u015bno\u015bci Danych",
+        title: "Prawo do Przenośności Danych",
         body: `Masz prawo do otrzymania kopii Twoich Danych Osobowych w ustrukturyzowanym formacie.`,
       },
       {
         title: "Prawo Sprzeciwu",
-        body: `Masz prawo do sprzeciwienia si\u0119 przetwarzaniu na podstawie uzasadnionego interesu, w tym do cel\u00f3w marketingowych.`,
+        body: `Masz prawo do sprzeciwienia się przetwarzaniu na podstawie uzasadnionego interesu, w tym do celów marketingowych.`,
       },
       {
-        title: "Prawo do Z\u0142o\u017cenia Skargi",
-        body: `Masz prawo do z\u0142o\u017cenia skargi do brytyjskiego Urz\u0119du Komisarza Informacji (ICO): www.ico.org.uk.`,
+        title: "Prawo do Złożenia Skargi",
+        body: `Masz prawo do złożenia skargi do brytyjskiego Urzędu Komisarza Informacji (ICO): www.ico.org.uk.`,
       },
     ],
   },
   {
     number: "12",
-    title: "Prywatno\u015b\u0107 Dzieci",
-    body: `Nasza witryna i us\u0142ugi nie s\u0105 skierowane do dzieci poni\u017cej 13 lat. Nie zbieramy \u015bwiadomie Danych Osobowych od dzieci poni\u017cej 13 lat.`,
+    title: "Prywatność Dzieci",
+    body: `Nasza witryna i usługi nie są skierowane do dzieci poniżej 13 lat. Nie zbieramy świadomie Danych Osobowych od dzieci poniżej 13 lat.`,
   },
   {
     number: "13",
-    title: "Bezpiecze\u0144stwo Danych",
-    body: `Wdra\u017camy rozsądne techniczne i organizacyjne \u015brodki bezpiecze\u0144stwa: szyfrowanie SSL/TLS, zaszyfrowane przechowywanie danych, ograniczony dost\u0119p do danych i uwierzytelnianie wieloczynnikowe.`,
+    title: "Bezpieczeństwo Danych",
+    body: `Wdrażamy rozsądne techniczne i organizacyjne środki bezpieczeństwa: szyfrowanie SSL/TLS, zaszyfrowane przechowywanie danych, ograniczony dostęp do danych i uwierzytelnianie wieloczynnikowe.`,
     subsections: [
       {
         title: "Ograniczenia",
-        body: `\u017baden spos\u00f3b transmisji przez Internet nie jest ca\u0142kowicie bezpieczny. Nie mo\u017cemy zagwarantowa\u0107 bezwzgl\u0119dnego bezpiecze\u0144stwa.`,
+        body: `Żaden sposób transmisji przez Internet nie jest całkowicie bezpieczny. Nie możemy zagwarantować bezwzględnego bezpieczeństwa.`,
       },
       {
         title: "Powiadomienie o Naruszeniu Danych",
-        body: `Je\u015bli odkryjemy naruszenie danych, b\u0119dziemy powiadamia\u0107 w\u0142a\u015bciwy organ ochrony danych w ci\u0105gu 72 godzin i osoby, kt\u00f3rych to dotyczy.`,
+        body: `Jeśli odkryjemy naruszenie danych, będziemy powiadamiać właściwy organ ochrony danych w ciągu 72 godzin i osoby, których to dotyczy.`,
       },
     ],
   },
   {
     number: "14",
-    title: "Linki Stron Trzecich i Us\u0142ugi",
-    body: `Nasza strona mo\u017ce zawiera\u0107 linki do witryn stron trzecich. Nie odpowiadamy za praktyki prywatno\u015bci witryn stron trzecich.`,
+    title: "Linki Stron Trzecich i Usługi",
+    body: `Nasza strona może zawierać linki do witryn stron trzecich. Nie odpowiadamy za praktyki prywatności witryn stron trzecich.`,
   },
   {
     number: "15",
-    title: "Partnerzy Biznesowi i Przetwarzanie Danych Klient\u00f3w",
-    body: `Je\u015bli jeste\u015b klientem Forsa Design, przetwarzamy Dane Osobowe w Twoim imieniu do hostowania, konserwacji i obs\u0142ugi witryny.`,
+    title: "Partnerzy Biznesowi i Przetwarzanie Danych Klientów",
+    body: `Jeśli jesteś klientem Forsa Design, przetwarzamy Dane Osobowe w Twoim imieniu do hostowania, konserwacji i obsługi witryny.`,
   },
   {
     number: "16",
-    title: "Przechowywanie i \u017b\u0105dania Usuni\u0119cia",
-    body: `Mo\u017cesz za\u017c\u0105da\u0107 usuni\u0119cia Twoich Danych Osobowych, kontaktuj\u0105c si\u0119 z nami pod adresem hello@forsadesign.co.uk. B\u0119dziemy odpowiada\u0107 na \u017c\u0105dania usuni\u0119cia w ci\u0105gu 30 dni.`,
+    title: "Przechowywanie i Żądania Usunięcia",
+    body: `Możesz zażądać usunięcia Twoich Danych Osobowych, kontaktując się z nami pod adresem hello@forsadesign.co.uk. Będziemy odpowiadać na żądania usunięcia w ciągu 30 dni.`,
   },
   {
     number: "17",
     title: "Komunikacja Marketingowa i Rezygnacja",
-    body: `Mo\u017cemy wysy\u0142a\u0107 emaile marketingowe wy\u0142\u0105cznie za Twoj\u0105 zgod\u0105. Mo\u017cesz zrezygnowa\u0107 w dowolnym momencie. B\u0119dziemy honorowa\u0107 \u017c\u0105dania anulowania subskrypcji w ci\u0105gu 10 dni roboczych.`,
+    body: `Możemy wysyłać emaile marketingowe wyłącznie za Twoją zgodą. Możesz zrezygnować w dowolnym momencie. Będziemy honorować żądania anulowania subskrypcji w ciągu 10 dni roboczych.`,
   },
   {
     number: "18",
-    title: "Zmiany w Niniejszej Polityce Prywatno\u015bci",
-    body: `Mo\u017cemy okresowo aktualizowa\u0107 niniejsz\u0105 Polityk\u0119 Prywatno\u015bci. Ostatnia Aktualizacja: Czerwiec 2026. B\u0119dziemy Ci\u0119 powiadamia\u0107 o istotnych zmianach za po\u015brednictwem emaila lub publikuj\u0105c zawiadomienie na tej stronie.`,
+    title: "Zmiany w Niniejszej Polityce Prywatności",
+    body: `Możemy okresowo aktualizować niniejszą Politykę Prywatności. Ostatnia Aktualizacja: Czerwiec 2026. Będziemy Cię powiadamiać o istotnych zmianach za pośrednictwem emaila lub publikując zawiadomienie na tej stronie.`,
   },
   {
     number: "19",
-    title: "Skontaktuj Si\u0119 z Nami",
-    body: `W przypadku pyta\u0144 lub skorzystania z Twoich praw na mocy RODO: Forsa Design, Art &amp; Web Design, Banff, Szkocja. Email: hello@forsadesign.co.uk. Telefon: 07770110735.`,
+    title: "Skontaktuj Się z Nami",
+    body: `W przypadku pytań lub skorzystania z Twoich praw na mocy RODO: Forsa Design, Art &amp; Web Design, Banff, Szkocja. Email: hello@forsadesign.co.uk. Telefon: 07770110735.`,
   },
   {
     number: "20",
     title: "Tabela Podsumowania Podstaw Prawnych",
-    body: `Dane z formularza kontaktowego: Zgoda + Umowa. Dane klienta projektu: Umowa. Adres email: Zgoda (marketing). Dane u\u017cytkowania witryny: Uzasadniony interes. Adres IP: Uzasadniony interes (bezpiecze\u0144stwo). Informacje o p\u0142atno\u015bciach: Umowa + Obowi\u0105zek prawny.`,
+    body: `Dane z formularza kontaktowego: Zgoda + Umowa. Dane klienta projektu: Umowa. Adres email: Zgoda (marketing). Dane użytkowania witryny: Uzasadniony interes. Adres IP: Uzasadniony interes (bezpieczeństwo). Informacje o płatnościach: Umowa + Obowiązek prawny.`,
   },
 ];
 
@@ -1833,22 +1847,22 @@ function _buildLegacyAboutBodyEn() {
 </header>
 <main>
 <h1>Meet the Founder of Forsa Design</h1>
-<p>My name is Miro. I started Forsa Design after more than 20 years in international B2B sales. I traded metalworking machinery, industrial equipment and engineering solutions across Europe and Asia. I sat on both sides of the procurement table. I know what the process looks like from the first email to the signed contract.</p>
-<p>That experience taught me one thing: most industrial firms do excellent work, but their websites do not keep up. And it costs contracts. I am not a London agency with fifteen people and a coffee shop in the office. I am someone who understands industry, logistics and international trade. I now build websites that speak your customers' language. No templates. No unnecessary jargon. Just clean code and a clear message.</p>
+<p>We combine web development with industrial B2B experience. Our founder, Miro, spent more than 20 years in international B2B sales, working with metalworking machinery, industrial equipment and engineering solutions across Europe and Asia.</p>
+<p>That experience taught us one thing: most industrial firms do excellent work, but their websites do not keep up. And it costs contracts. We are a team that understands industry, logistics and international trade. We now build websites that speak your customers' language. No templates. No unnecessary jargon. Just clean code and a clear message.</p>
 <p>Based in Banff, Aberdeenshire. Fluent in English and Polish. Serving Scotland, the UK and selected EU export markets.</p>
 <section>
 <h2>Why This Background Matters</h2>
 <div>
 <h3>Real Business Perspective</h3>
-<p>Having run a company for 20 years, negotiated international contracts across three continents, and managed teams in multiple countries, I understand what a website needs to do for your bottom line. Every design decision is filtered through a business lens, not just an aesthetic one.</p>
+<p>Having run a company for 20 years, negotiated international contracts across three continents, and managed teams in multiple countries, we understand what a website needs to do for your bottom line. Every design decision is filtered through a business lens, not just an aesthetic one.</p>
 </div>
 <div>
 <h3>Communication at Every Level</h3>
-<p>I've worked with clients and stakeholders from all walks of life. This translates into websites that speak clearly to your audience, whether they are local customers or international partners.</p>
+<p>We've worked with clients and stakeholders from all walks of life. This translates into websites that speak clearly to your audience, whether they are local customers or international partners.</p>
 </div>
 <div>
 <h3>Results-Focused Delivery</h3>
-<p>My career has been built on closing deals, managing projects end-to-end, and delivering measurable outcomes. I bring the same discipline to web development: clear timelines, transparent communication, and a focus on what actually moves the needle for your business.</p>
+<p>Our work is built on closing deals, managing projects end-to-end, and delivering measurable outcomes. We bring the same discipline to web development: clear timelines, transparent communication, and a focus on what actually moves the needle for your business.</p>
 </div>
 </section>
 <section>
@@ -1892,6 +1906,13 @@ function _buildLegacyAboutBodyEn() {
 </main>
 <footer>
 <nav><a href="/en/terms">Terms &amp; Conditions</a> | <a href="/en/privacy">Privacy Policy</a></nav>
+<a href="/en/services/" class="block text-base font-medium text-foreground/80 hover:text-primary py-2">All services</a>
+<a href="/en/services/commercial-due-diligence/" class="block text-base font-medium text-foreground/80 hover:text-primary py-2">Commercial due diligence</a>
+<a href="/en/services/#industrial-websites" class="block text-base font-medium text-foreground/80 hover:text-primary py-2">Industrial websites</a>
+<a href="/en/services/#b2b-e-commerce" class="block text-base font-medium text-foreground/80 hover:text-primary py-2">B2B e-commerce</a>
+<a href="/en/services/#web-systems" class="block text-base font-medium text-foreground/80 hover:text-primary py-2">Web systems</a>
+<a href="/en/#portfolio" class="block text-base font-medium text-foreground/80 hover:text-primary py-2">Portfolio</a>
+<a href="/en/blog/" class="block text-base font-medium text-foreground/80 hover:text-primary py-2">Blog</a>
 </footer>`;
 }
 
@@ -1901,22 +1922,22 @@ function _buildLegacyAboutBodyPl() {
 </header>
 <main>
 <h1>Poznaj Za&#322;o&#380;yciela Forsa Design</h1>
-<p>Nazywam si&#281; Miro. Forsa Design za&#322;o&#380;y&#322;em po ponad 20 latach w mi&#281;dzynarodowej sprzeda&#380;y B2B. Handlowa&#322;em maszynami do obr&#243;bki metalu, wyposa&#380;eniem przemys&#322;owym i rozwi&#261;zaniami in&#380;ynieryjnymi w Europie i Azji. Siedzia&#322;em po obu stronach sto&#322;u zakupowego. Wiem, jak wygl&#261;da proces od pierwszego maila po podpisany kontrakt.</p>
-<p>To do&#347;wiadczenie nauczy&#322;o mnie jednej rzeczy. Wi&#281;kszo&#347;&#263; firm przemys&#322;owych wykonuje &#347;wietn&#261; robot&#281;, ale ich strony internetowe nie nad&#261;&#380;aj&#261; za poziomem ich us&#322;ug. I to kosztuje kontrakty. Nie dlatego, &#380;e praca jest s&#322;aba, tylko dlatego, &#380;e w dzisiejszym B2B strona to pierwszy etap weryfikacji. Nie jestem agencj&#261; z Londynu z pi&#281;tnastoma osobami w zespole i kawiarni&#261; w biurze. Jestem cz&#322;owiekiem, kt&#243;ry rozumie przemys&#322;, logistyk&#281; i handel mi&#281;dzynarodowy. Teraz buduj&#281; strony, kt&#243;re komunikuj&#261; si&#281; j&#281;zykiem Twoich klient&#243;w. Bez szablon&#243;w. Bez zb&#281;dnego &#380;argonu. Tylko czysty kod i jasny przekaz.</p>
+<p>Łączymy web development z doświadczeniem w przemysłowym B2B. Nasz założyciel, Miro, przez ponad 20 lat pracował w międzynarodowej sprzedaży B2B, zajmując się maszynami do obróbki metalu, wyposażeniem przemysłowym i rozwiązaniami inżynieryjnymi w Europie i Azji.</p>
+<p>To doświadczenie nauczyło nas jednej rzeczy. Większość firm przemysłowych wykonuje świetną robotę, ale ich strony internetowe nie nadążają za poziomem ich usług. I to kosztuje kontrakty. Nie dlatego, że praca jest słaba, tylko dlatego, że w dzisiejszym B2B strona to pierwszy etap weryfikacji. Rozumiemy przemysł, logistykę i handel międzynarodowy. Teraz budujemy strony, które komunikują się językiem Twoich klientów. Bez szablonów. Bez zbędnego żargonu. Tylko czysty kod i jasny przekaz.</p>
 <p>Siedziba w Banff, Aberdeenshire. Biegły w językach angielskim i polskim. Obsługujemy klientów w Szkocji, w całej Wielkiej Brytanii oraz na wybranych rynkach eksportowych UE.</p>
 <section>
 <h2>Dlaczego To Do&#347;wiadczenie Ma Znaczenie</h2>
 <div>
 <h3>Perspektywa Prawdziwego Biznesu</h3>
-<p>Prowadz&#261;c firm&#281; przez 20 lat, negocjuj&#261;c mi&#281;dzynarodowe kontrakty na trzech kontynentach i zarz&#261;dzaj&#261;c zespo&#322;ami w wielu krajach, rozumiem, co strona internetowa musi robi&#263; dla Twojego zysku. Ka&#380;da decyzja projektowa jest filtrowana przez pryzmat biznesowy, nie tylko estetyczny.</p>
+<p>Prowadząc firmę przez 20 lat, negocjując międzynarodowe kontrakty na trzech kontynentach i zarządzając zespołami w wielu krajach, rozumiemy, co strona internetowa musi robić dla Twojego zysku. Każda decyzja projektowa jest filtrowana przez pryzmat biznesowy, nie tylko estetyczny.</p>
 </div>
 <div>
 <h3>Komunikacja na ka&#380;dym poziomie</h3>
-<p>Pracowa&#322;em z klientami i interesariuszami z ka&#380;dej dziedziny &#380;ycia. To przek&#322;ada si&#281; na strony, kt&#243;re jasno komunikuj&#261; si&#281; z odbiorcami, czy to lokalni klienci, czy mi&#281;dzynarodowi partnerzy.</p>
+<p>Pracujemy z klientami i interesariuszami z każdej dziedziny życia. To przekłada się na strony, które jasno komunikują się z odbiorcami, czy to lokalni klienci, czy międzynarodowi partnerzy.</p>
 </div>
 <div>
 <h3>Dostarczanie Wynik&#243;w</h3>
-<p>Ca&#322;a moja kariera opiera&#322;a si&#281; na zawieraniu um&#243;w, zarz&#261;dzaniu projektami od A do Z i dostarczaniu mierzalnych rezultat&#243;w. T&#281; sam&#261; dyscyplin&#281; przenosz&#281; do web developmentu: jasne terminy, transparentna komunikacja i skupienie na tym, co naprawd&#281; przynosi korzy&#347;&#263; Twojej firmie.</p>
+<p>Nasza praca opiera się na zawieraniu umów, zarządzaniu projektami od A do Z i dostarczaniu mierzalnych rezultatów. Tę samą dyscyplinę przenoszę do web developmentu: jasne terminy, transparentna komunikacja i skupienie na tym, co naprawdę przynosi korzyść Twojej firmie.</p>
 </div>
 </section>
 <section>
@@ -1939,6 +1960,13 @@ function _buildLegacyAboutBodyPl() {
 </main>
 <footer>
 <nav><a href="/pl/terms">Regulamin</a> | <a href="/pl/privacy">Polityka Prywatno&#347;ci</a></nav>
+<a href="/pl/services/" class="block text-base font-medium text-foreground/80 hover:text-primary py-2">Wszystkie usługi</a>
+<a href="/pl/services/commercial-due-diligence/" class="block text-base font-medium text-foreground/80 hover:text-primary py-2">Weryfikacja kontrahentów</a>
+<a href="/pl/services/#industrial-websites" class="block text-base font-medium text-foreground/80 hover:text-primary py-2">Strony dla przemysłu</a>
+<a href="/pl/services/#b2b-e-commerce" class="block text-base font-medium text-foreground/80 hover:text-primary py-2">E-commerce B2B</a>
+<a href="/pl/services/#web-systems" class="block text-base font-medium text-foreground/80 hover:text-primary py-2">Systemy webowe</a>
+<a href="/pl/#portfolio" class="block text-base font-medium text-foreground/80 hover:text-primary py-2">Portfolio</a>
+<a href="/pl/blog/" class="block text-base font-medium text-foreground/80 hover:text-primary py-2">Blog</a>
 </footer>`;
 }
 
@@ -1991,6 +2019,13 @@ function buildComparisonBodyEn() {
 </main>
 <footer>
 <nav><a href="/en/terms">Terms &amp; Conditions</a> | <a href="/en/privacy">Privacy Policy</a></nav>
+<a href="/en/services/" class="block text-base font-medium text-foreground/80 hover:text-primary py-2">All services</a>
+<a href="/en/services/commercial-due-diligence/" class="block text-base font-medium text-foreground/80 hover:text-primary py-2">Commercial due diligence</a>
+<a href="/en/services/#industrial-websites" class="block text-base font-medium text-foreground/80 hover:text-primary py-2">Industrial websites</a>
+<a href="/en/services/#b2b-e-commerce" class="block text-base font-medium text-foreground/80 hover:text-primary py-2">B2B e-commerce</a>
+<a href="/en/services/#web-systems" class="block text-base font-medium text-foreground/80 hover:text-primary py-2">Web systems</a>
+<a href="/en/#portfolio" class="block text-base font-medium text-foreground/80 hover:text-primary py-2">Portfolio</a>
+<a href="/en/blog/" class="block text-base font-medium text-foreground/80 hover:text-primary py-2">Blog</a>
 </footer>`;
 }
 
@@ -2031,6 +2066,13 @@ function buildComparisonBodyPl() {
 </main>
 <footer>
 <nav><a href="/pl/terms">Regulamin</a> | <a href="/pl/privacy">Polityka Prywatno&#347;ci</a></nav>
+<a href="/pl/services/" class="block text-base font-medium text-foreground/80 hover:text-primary py-2">Wszystkie usługi</a>
+<a href="/pl/services/commercial-due-diligence/" class="block text-base font-medium text-foreground/80 hover:text-primary py-2">Weryfikacja kontrahentów</a>
+<a href="/pl/services/#industrial-websites" class="block text-base font-medium text-foreground/80 hover:text-primary py-2">Strony dla przemysłu</a>
+<a href="/pl/services/#b2b-e-commerce" class="block text-base font-medium text-foreground/80 hover:text-primary py-2">E-commerce B2B</a>
+<a href="/pl/services/#web-systems" class="block text-base font-medium text-foreground/80 hover:text-primary py-2">Systemy webowe</a>
+<a href="/pl/#portfolio" class="block text-base font-medium text-foreground/80 hover:text-primary py-2">Portfolio</a>
+<a href="/pl/blog/" class="block text-base font-medium text-foreground/80 hover:text-primary py-2">Blog</a>
 </footer>`;
 }
 
@@ -2065,6 +2107,13 @@ function buildQuoteBodyEn() {
 </main>
 <footer>
 <nav><a href="/en/terms">Terms &amp; Conditions</a> | <a href="/en/privacy">Privacy Policy</a></nav>
+<a href="/en/services/" class="block text-base font-medium text-foreground/80 hover:text-primary py-2">All services</a>
+<a href="/en/services/commercial-due-diligence/" class="block text-base font-medium text-foreground/80 hover:text-primary py-2">Commercial due diligence</a>
+<a href="/en/services/#industrial-websites" class="block text-base font-medium text-foreground/80 hover:text-primary py-2">Industrial websites</a>
+<a href="/en/services/#b2b-e-commerce" class="block text-base font-medium text-foreground/80 hover:text-primary py-2">B2B e-commerce</a>
+<a href="/en/services/#web-systems" class="block text-base font-medium text-foreground/80 hover:text-primary py-2">Web systems</a>
+<a href="/en/#portfolio" class="block text-base font-medium text-foreground/80 hover:text-primary py-2">Portfolio</a>
+<a href="/en/blog/" class="block text-base font-medium text-foreground/80 hover:text-primary py-2">Blog</a>
 </footer>`;
 }
 
@@ -2099,6 +2148,13 @@ function buildQuoteBodyPl() {
 </main>
 <footer>
 <nav><a href="/pl/terms">Regulamin</a> | <a href="/pl/privacy">Polityka Prywatno&#347;ci</a></nav>
+<a href="/pl/services/" class="block text-base font-medium text-foreground/80 hover:text-primary py-2">Wszystkie usługi</a>
+<a href="/pl/services/commercial-due-diligence/" class="block text-base font-medium text-foreground/80 hover:text-primary py-2">Weryfikacja kontrahentów</a>
+<a href="/pl/services/#industrial-websites" class="block text-base font-medium text-foreground/80 hover:text-primary py-2">Strony dla przemysłu</a>
+<a href="/pl/services/#b2b-e-commerce" class="block text-base font-medium text-foreground/80 hover:text-primary py-2">E-commerce B2B</a>
+<a href="/pl/services/#web-systems" class="block text-base font-medium text-foreground/80 hover:text-primary py-2">Systemy webowe</a>
+<a href="/pl/#portfolio" class="block text-base font-medium text-foreground/80 hover:text-primary py-2">Portfolio</a>
+<a href="/pl/blog/" class="block text-base font-medium text-foreground/80 hover:text-primary py-2">Blog</a>
 </footer>`;
 }
 
@@ -2128,11 +2184,11 @@ ${buildSectionsHtml(privacyPL)}
 
 // ---------------------------------------------------------------------------
 function buildAboutBodyEn() {
-  return `<main><section class="about-hero"><div class="about-image"><img src="/images/miro-portrait.webp" alt="Miro, founder of Forsa Design" width="600" height="750" loading="eager" decoding="async"></div><div class="about-intro"><h1>Who's Behind This?</h1><p>My name is Miro. I founded Forsa Design after more than 20 years in international B2B industrial sales. I traded in metalworking machinery, industrial equipment and engineering solutions across Europe and Asia. I sat on both sides of the procurement table, selling to refineries, negotiating with plant engineers and vetting suppliers myself.</p><p>That experience taught me one thing: most industrial firms deliver world-class work, but their digital presence does not reflect it. I am not a London agency with fifteen account managers. I am a developer who understands industry, logistics, international trade and contract deadlines. I write the code and answer the phone myself.</p><p>Based in Banff, Aberdeenshire. Fluent in English and Polish. Serving Scotland, the UK and selected EU export markets.</p></div></section><section class="about-background"><h2>Why this background matters</h2><h3>Real business perspective</h3><p>Having run a company for more than 20 years, negotiated international contracts across three continents and managed teams in multiple countries, I understand what a website needs to do for your bottom line. Every design decision is filtered through a business lens, not just an aesthetic one.</p><h3>Communication at every level</h3><p>I have worked with clients and stakeholders from all walks of life. That translates into websites that speak clearly to your audience, whether they are local customers or international partners.</p><h3>Results-focused delivery</h3><p>My career has been built on closing deals, managing projects end to end and delivering measurable outcomes. I bring that same discipline to web development: clear timelines, transparent communication and a focus on what actually moves the needle for your business.</p></section><section class="about-process"><h2>How we work</h2><p>Discovery and strategy, design, development, testing and optimisation, then launch and ongoing support.</p></section><section class="about-different"><h2>What sets us apart</h2><p>No templates. Focus on business results. You own everything. Long-term partnership. Transparent communication.</p></section><section class="about-comparison"><h2>How we compare</h2><table><thead><tr><th>Aspect</th><th>CMS template</th><th>Non-specialist agency</th><th>Freelancer</th><th>Forsa Design</th></tr></thead><tbody><tr><td>Price</td><td>£800-2,000</td><td>£3,000-8,000</td><td>£1,500-4,000</td><td>£1,200-12,000+</td></tr></tbody></table></section></main>`;
+  return `<main><section class="about-hero"><div class="about-image"><img src="/images/miro-portrait.webp" alt="Miro, founder of Forsa Design" width="600" height="750" loading="eager" decoding="async"></div><div class="about-intro"><h1>Who's Behind This?</h1><p>We combine web development with industrial B2B experience. Our founder, Miro, spent more than 20 years in international B2B sales, working with metalworking machinery, industrial equipment and engineering solutions across Europe and Asia.</p><p>That experience taught us one thing: most industrial firms deliver world-class work, but their digital presence does not reflect it. We are not a London agency with fifteen account managers. We are a team that understands industry, logistics, international trade and contract deadlines. We write the code and answer the phone ourselves.</p><p>Based in Banff, Aberdeenshire. Fluent in English and Polish. Serving Scotland, the UK and selected EU export markets.</p></div></section><section class="about-background"><h2>Why this background matters</h2><h3>Real business perspective</h3><p>Having run a company for more than 20 years, negotiated international contracts across three continents and managed teams in multiple countries, we understand what a website needs to do for your bottom line. Every design decision is filtered through a business lens, not just an aesthetic one.</p><h3>Communication at every level</h3><p>We have worked with clients and stakeholders from all walks of life. That translates into websites that speak clearly to your audience, whether they are local customers or international partners.</p><h3>Results-focused delivery</h3><p>Our work is built on closing deals, managing projects end to end and delivering measurable outcomes. We bring that same discipline to web development: clear timelines, transparent communication and a focus on what actually moves the needle for your business.</p></section><section class="about-process"><h2>How we work</h2><p>Discovery and strategy, design, development, testing and optimisation, then launch and ongoing support.</p></section><section class="about-different"><h2>What sets us apart</h2><p>No templates. Focus on business results. You own everything. Long-term partnership. Transparent communication.</p></section><section class="about-comparison"><h2>How we compare</h2><table><thead><tr><th>Aspect</th><th>CMS template</th><th>Non-specialist agency</th><th>Freelancer</th><th>Forsa Design</th></tr></thead><tbody><tr><td>Price</td><td>£800-2,000</td><td>£3,000-8,000</td><td>£1,500-4,000</td><td>£1,200-12,000+</td></tr></tbody></table></section></main>`;
 }
 
 function buildAboutBodyPl() {
-  return `<main><section class="about-hero"><div class="about-image"><img src="/images/miro-portrait.webp" alt="Miro, założyciel Forsa Design" width="600" height="750" loading="eager" decoding="async"></div><div class="about-intro"><h1>Kto za tym stoi?</h1><p>Nazywam się Miro. Forsa Design założyłem po ponad 20 latach w międzynarodowej sprzedaży B2B. Handlowałem maszynami do obróbki metalu, wyposażeniem przemysłowym i rozwiązaniami inżynieryjnymi w Europie i Azji. Siedziałem po obu stronach stołu zakupowego. Wiem, jak wygląda proces od pierwszego maila po podpisany kontrakt.</p><p>To doświadczenie nauczyło mnie jednej rzeczy. Większość firm przemysłowych wykonuje świetną robotę, ale ich strony internetowe nie nadążają za poziomem ich usług. I to kosztuje kontrakty. Nie dlatego, że praca jest słaba. W dzisiejszym B2B strona to pierwszy etap weryfikacji.</p><p>Nie jestem agencją z Londynu z piętnastoma osobami w zespole i kawiarnią w biurze. Jestem człowiekiem, który rozumie przemysł, logistykę i handel międzynarodowy. Teraz buduję strony, które komunikują się językiem Twoich klientów. Bez szablonów. Bez zbędnego żargonu. Tylko czysty kod i jasny przekaz.</p><p>Siedziba w Banff, Aberdeenshire. Pracuję po angielsku i polsku. Obsługuję klientów w Szkocji, w całej Wielkiej Brytanii oraz na wybranych rynkach eksportowych UE.</p></div></section><section class="about-background"><h2>Dlaczego to doświadczenie ma znaczenie</h2><h3>Prawdziwa perspektywa biznesowa</h3><p>Prowadząc firmę przez ponad 20 lat, negocjując międzynarodowe kontrakty na trzech kontynentach i zarządzając zespołami w wielu krajach, rozumiem, co strona internetowa musi robić dla Twojego zysku.</p><h3>Komunikacja na każdym poziomie</h3><p>Pracowałem z klientami i interesariuszami z każdej dziedziny życia. To przekłada się na strony, które jasno komunikują się z odbiorcami.</p><h3>Dostarczanie wyników</h3><p>Cała moja kariera opierała się na zawieraniu umów, zarządzaniu projektami od A do Z i dostarczaniu mierzalnych rezultatów.</p></section><section class="about-process"><h2>Jak pracujemy</h2><p>Analiza i strategia, projektowanie, rozwój, testowanie i optymalizacja, a następnie uruchomienie i wsparcie.</p></section><section class="about-different"><h2>Co nas wyróżnia</h2><p>Bez szablonów. Fokus na wyniki biznesowe. Wszystko należy do Ciebie. Długoterminowe partnerstwo. Transparentna komunikacja.</p></section></main>`;
+  return `<main><section class="about-hero"><div class="about-image"><img src="/images/miro-portrait.webp" alt="Miro, założyciel Forsa Design" width="600" height="750" loading="eager" decoding="async"></div><div class="about-intro"><h1>Kto za tym stoi?</h1><p>Łączymy web development z doświadczeniem w przemysłowym B2B. Nasz założyciel, Miro, przez ponad 20 lat pracował w międzynarodowej sprzedaży B2B, zajmując się maszynami do obróbki metalu, wyposażeniem przemysłowym i rozwiązaniami inżynieryjnymi w Europie i Azji.</p><p>To doświadczenie nauczyło nas jednej rzeczy. Większość firm przemysłowych wykonuje świetną robotę, ale ich strony internetowe nie nadążają za poziomem ich usług. I to kosztuje kontrakty. Nie dlatego, że praca jest słaba. W dzisiejszym B2B strona to pierwszy etap weryfikacji.</p><p>Rozumiemy przemysł, logistykę i handel międzynarodowy. Budujemy strony, które komunikują się językiem Twoich klientów. Bez szablonów i zbędnego żargonu.</p><p>Siedziba w Banff, Aberdeenshire. Pracujemy po angielsku i polsku. Obsługujemy klientów w Szkocji, w całej Wielkiej Brytanii oraz na wybranych rynkach eksportowych UE.</p></div></section><section class="about-background"><h2>Dlaczego to doświadczenie ma znaczenie</h2><h3>Prawdziwa perspektywa biznesowa</h3><p>Prowadząc firmę przez ponad 20 lat, negocjując międzynarodowe kontrakty na trzech kontynentach i zarządzając zespołami w wielu krajach, rozumiemy, co strona internetowa musi robić dla Twojego zysku.</p><h3>Komunikacja na każdym poziomie</h3><p>Pracujemy z klientami i interesariuszami z każdej dziedziny życia. To przekłada się na strony, które jasno komunikują się z odbiorcami.</p><h3>Dostarczanie wyników</h3><p>Nasza praca opiera się na zawieraniu umów, zarządzaniu projektami od A do Z i dostarczaniu mierzalnych rezultatów.</p></section><section class="about-process"><h2>Jak pracujemy</h2><p>Analiza i strategia, projektowanie, rozwój, testowanie i optymalizacja, a następnie uruchomienie i wsparcie.</p></section><section class="about-different"><h2>Co nas wyróżnia</h2><p>Bez szablonów. Fokus na wyniki biznesowe. Wszystko należy do Ciebie. Długoterminowe partnerstwo. Transparentna komunikacja.</p></section></main>`;
 }
 
 // Route definitions  -  one entry per public URL
@@ -2187,9 +2243,9 @@ const routes = [
   {
     outDir: "pl/terms",
     lang: "pl",
-    title: "Regulamin i Warunki \u015awiadczenia Us\u0142ug | Forsa Design",
-    desc: "Zapoznaj si\u0119 z regulaminem i warunkami \u015bwiadczenia us\u0142ug Forsa Design, w tym zasadami realizacji projekt\u00f3w, warunkami p\u0142atno\u015bci, w\u0142asno\u015bci\u0105 intelektualn\u0105 i odpowiedzialno\u015bci\u0105.",
-    ogTitle: "Regulamin i Warunki \u015awiadczenia Us\u0142ug | Forsa Design",
+    title: "Regulamin i Warunki Świadczenia Usług | Forsa Design",
+    desc: "Zapoznaj się z regulaminem i warunkami świadczenia usług Forsa Design, w tym zasadami realizacji projektów, warunkami płatności, własnością intelektualną i odpowiedzialnością.",
+    ogTitle: "Regulamin i Warunki Świadczenia Usług | Forsa Design",
     locale: "pl_PL",
     canonical: `${SITE}/pl/terms`,
     alternates: [
@@ -2202,7 +2258,7 @@ const routes = [
     outDir: "en/privacy",
     lang: "en",
     title: "Privacy Policy | Forsa Design",
-    desc: "Read Forsa Design\u2019s privacy policy to understand how we collect, use, and protect your personal data in compliance with UK GDPR and applicable data protection law.",
+    desc: "Read Forsa Design’s privacy policy to understand how we collect, use, and protect your personal data in compliance with UK GDPR and applicable data protection law.",
     ogTitle: "Privacy Policy | Forsa Design",
     locale: "en_GB",
     canonical: `${SITE}/en/privacy`,
@@ -2215,9 +2271,9 @@ const routes = [
   {
     outDir: "pl/privacy",
     lang: "pl",
-    title: "Polityka Prywatno\u015bci | Forsa Design",
-    desc: "Zapoznaj si\u0119 z polityk\u0105 prywatno\u015bci Forsa Design i dowiedz si\u0119, jak zbieramy, wykorzystujemy i chronimy Twoje dane osobowe zgodnie z UK GDPR i przepisami o ochronie danych.",
-    ogTitle: "Polityka Prywatno\u015bci | Forsa Design",
+    title: "Polityka Prywatności | Forsa Design",
+    desc: "Zapoznaj się z polityką prywatności Forsa Design i dowiedz się, jak zbieramy, wykorzystujemy i chronimy Twoje dane osobowe zgodnie z UK GDPR i przepisami o ochronie danych.",
+    ogTitle: "Polityka Prywatności | Forsa Design",
     locale: "pl_PL",
     canonical: `${SITE}/pl/privacy`,
     alternates: [
@@ -2328,8 +2384,8 @@ const routes = [
     outDir: "pl/comparison",
     lang: "pl",
     title: "Opcje Web Design dla Przemysłu | Forsa Design",
-    desc: "Por\u00f3wnaj opcje web design dla przemys\u0142u: autorskie strony, szablony CMS, agencje i freelancerzy. Wybierz rozwi\u0105zanie dla swojej firmy.",
-    ogTitle: "Por\u00f3wnanie Opcji Web Design | Forsa Design",
+    desc: "Porównaj opcje web design dla przemysłu: autorskie strony, szablony CMS, agencje i freelancerzy. Wybierz rozwiązanie dla swojej firmy.",
+    ogTitle: "Porównanie Opcji Web Design | Forsa Design",
     locale: "pl_PL",
     canonical: `${SITE}/pl/comparison`,
     alternates: [
@@ -2559,7 +2615,7 @@ if (cssLinkMatch) {
     "<\\/style",
   );
   template = template.replace(cssLinkMatch[0], () => `<style>${builtCss}</style>`);
-  console.log(`  \u2713 inlined ${cssLinkMatch[1]} (${builtCss.length} bytes)`);
+  console.log(`  ✓ inlined ${cssLinkMatch[1]} (${builtCss.length} bytes)`);
 } else {
   console.warn("  ! built stylesheet link not found; CSS left external");
 }
@@ -2571,7 +2627,7 @@ for (const route of routes) {
   const outPath = join(distDir, route.outDir);
   mkdirSync(outPath, { recursive: true });
   writeFileSync(join(outPath, "index.html"), html);
-  console.log(`  \u2713 /${route.outDir}/`);
+  console.log(`  ✓ /${route.outDir}/`);
 }
 
 // ---------------------------------------------------------------------------
@@ -2656,6 +2712,6 @@ ${sitemapEntries.join("\n\n")}
 `;
 
 writeFileSync(join(distDir, "sitemap.xml"), sitemapXml);
-console.log("  \u2713 sitemap.xml");
+console.log("  ✓ sitemap.xml");
 
 console.log("Prerender complete.");

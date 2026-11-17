@@ -97,7 +97,7 @@ export default function Header() {
       className={
         mobile
           ? "flex w-full items-center justify-between py-2 text-lg font-medium text-foreground hover:text-primary transition-colors"
-          : "flex items-center gap-1 text-sm font-medium text-foreground/80 hover:text-primary transition-colors"
+          : "flex items-center gap-1 text-lg font-medium text-foreground/80 hover:text-primary transition-colors"
       }
       data-testid={`btn-nav-${key}${mobile ? "-mobile" : ""}`}
     >
@@ -119,7 +119,7 @@ export default function Header() {
         className={
           mobile
             ? "py-2 text-lg font-medium text-foreground hover:text-primary transition-colors"
-            : "text-sm font-medium text-foreground/80 hover:text-primary transition-colors"
+            : "text-lg font-medium text-foreground/80 hover:text-primary transition-colors"
         }
       >
         {language === "pl" ? "O nas" : "About"}
@@ -168,7 +168,7 @@ export default function Header() {
           className={
             mobile
               ? "py-2 text-base text-foreground/80 hover:text-primary transition-colors"
-              : "block rounded-sm px-3 py-2 text-sm text-foreground/80 hover:bg-primary/10 hover:text-primary transition-colors"
+              : "block rounded-sm px-3 py-2 text-base text-foreground/80 hover:bg-primary/10 hover:text-primary transition-colors"
           }
         >
           {link.label}
@@ -211,11 +211,11 @@ export default function Header() {
 
           <nav
             aria-label={language === "pl" ? "Główna nawigacja" : "Main navigation"}
-            className="hidden min-w-0 flex-1 items-center justify-center gap-4 lg:flex xl:gap-6"
+            className="hidden min-w-0 flex-1 items-center justify-center gap-4 xl:flex 2xl:gap-6"
           >
             <a
               href={sectionHref("#home")}
-              className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors"
+              className="text-lg font-medium text-foreground/80 hover:text-primary transition-colors"
             >
               {t("nav.home")}
             </a>
@@ -225,13 +225,13 @@ export default function Header() {
             </div>
             <a
               href={sectionHref("#pricing")}
-              className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors"
+              className="text-lg font-medium text-foreground/80 hover:text-primary transition-colors"
             >
               {t("nav.pricing")}
             </a>
             <a
               href={sectionHref("#portfolio")}
-              className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors"
+              className="text-lg font-medium text-foreground/80 hover:text-primary transition-colors"
             >
               Portfolio
             </a>
@@ -245,22 +245,22 @@ export default function Header() {
             </div>
             <a
               href={sectionHref("#contact")}
-              className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors"
+              className="text-lg font-medium text-foreground/80 hover:text-primary transition-colors"
             >
               {t("nav.contact")}
             </a>
           </nav>
 
-          <div className="ml-auto hidden shrink-0 items-center gap-3 lg:flex xl:gap-5">
+          <div className="ml-auto hidden shrink-0 items-center gap-3 xl:flex 2xl:gap-5">
             <a
               href={quoteHref}
               data-testid="link-nav-quote"
-              className="rounded-sm bg-primary px-4 py-2 text-sm font-bold text-primary-foreground hover:bg-primary/90 transition-colors"
+              className="rounded-sm bg-primary px-4 py-2 text-base font-bold text-primary-foreground hover:bg-primary/90 transition-colors"
             >
               {t("nav.quote")}
             </a>
             <div
-              className="flex items-center gap-2 text-sm font-semibold"
+              className="flex items-center gap-2 text-base font-semibold"
               aria-label={language === "pl" ? "Wybór języka" : "Language selector"}
             >
               <a
@@ -299,7 +299,7 @@ export default function Header() {
           <button
             ref={menuToggleRef}
             type="button"
-            className="text-foreground lg:hidden"
+            className="text-foreground xl:hidden"
             onClick={() => setIsMobileMenuOpen((open) => !open)}
             aria-expanded={isMobileMenuOpen}
             aria-controls="mobile-nav"
@@ -327,7 +327,7 @@ export default function Header() {
           id="mobile-nav"
           aria-hidden={!isMobileMenuOpen}
           inert={!isMobileMenuOpen ? true : undefined}
-          className={`lg:hidden overflow-y-auto overscroll-contain border-b border-border bg-card transition-all duration-200 ${isMobileMenuOpen ? "max-h-[calc(100dvh-6rem)] opacity-100" : "max-h-0 overflow-hidden opacity-0"}`}
+          className={`xl:hidden overflow-y-auto overscroll-contain border-b border-border bg-card transition-all duration-200 ${isMobileMenuOpen ? "max-h-[calc(100dvh-6rem)] opacity-100" : "max-h-0 overflow-hidden opacity-0"}`}
         >
           <nav
             aria-label={language === "pl" ? "Mobilna nawigacja" : "Mobile navigation"}
