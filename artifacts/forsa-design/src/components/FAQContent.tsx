@@ -173,7 +173,22 @@ export default function FAQContent({
                       hidden={open !== item.id}
                       className="px-5 pb-6"
                     >
-                      <p className="text-foreground/80 text-base leading-relaxed">{item.a}</p>
+                      <p className="text-foreground/80 text-base leading-relaxed">
+                        {item.a.split(/(Dach Systema|LinkLang)/g).map((part, index) => {
+                          const link = item.links.find((entry) => entry.label === part);
+                          return link ? (
+                            <a
+                              key={index}
+                              href={link.href}
+                              className={`text-primary underline underline-offset-4 ${focus}`}
+                            >
+                              {part}
+                            </a>
+                          ) : (
+                            part
+                          );
+                        })}
+                      </p>
                       <button
                         type="button"
                         onClick={() => void shareAnswer(item.id, item.q, item.a)}

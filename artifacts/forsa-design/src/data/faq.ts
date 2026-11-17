@@ -9,7 +9,13 @@ export const faqCategories = [
   { id: "verification", pl: "Weryfikacja kontrahentów", en: "Counterparty checks" },
 ] as const;
 export type FaqCategory = (typeof faqCategories)[number]["id"];
-export type FaqItem = { id: string; category: FaqCategory; q: string; a: string };
+export type FaqItem = {
+  id: string;
+  category: FaqCategory;
+  q: string;
+  a: string;
+  links: { label: string; href: string }[];
+};
 type BilingualItem = {
   id: string;
   category: FaqCategory;
@@ -465,10 +471,44 @@ const questions: BilingualItem[] = [
   },
 ];
 export function getFaqItems(lang: "pl" | "en"): FaqItem[] {
-  return questions.map(({ id, category, ...text }) => ({
-    id,
-    category,
-    q: text[lang][0],
-    a: text[lang][1],
-  }));
+  return questions.map(({ id, category, ...text }) => {
+    const dach = { label: "Dach Systema", href: `/${lang}/case-studies/dachsystema/` };
+    const linklang = { label: "LinkLang", href: `/${lang}/case-studies/linklang/` };
+    let a = text[lang][1];
+    let links: FaqItem["links"] = [];
+    if (id === "faq-brand-colours") {
+      links = [
+        { ...dach, href: `${dach.href}#dach-colours` },
+        { ...linklang, href: `${linklang.href}#linklang-branding` },
+      ];
+    } else if (id === "faq-branding") {
+      a +=
+        lang === "pl"
+          ? " Przykłady identyfikacji wizualnej: Dach Systema i LinkLang."
+          : " Visual identity examples: Dach Systema and LinkLang.";
+      links = [
+        { ...dach, href: `${dach.href}#dach-colours` },
+        { ...linklang, href: `${linklang.href}#linklang-branding` },
+      ];
+    } else if (["faq-configurators", "faq-configurator-prices"].includes(id)) {
+      a +=
+        lang === "pl"
+          ? " Zobacz konfigurator 3D Dach Systema w naszym portfolio."
+          : " See the Dach Systema 3D configurator in our portfolio.";
+      links = [dach];
+    } else if (id === "faq-multilingual") {
+      a +=
+        lang === "pl"
+          ? " Przykładem platformy w wersji polskiej i angielskiej jest LinkLang."
+          : " LinkLang is an example of a platform with Polish and English versions.";
+      links = [linklang];
+    } else if (id === "faq-services") {
+      a +=
+        lang === "pl"
+          ? " Przykładowe realizacje: Dach Systema i LinkLang."
+          : " Example projects: Dach Systema and LinkLang.";
+      links = [dach, linklang];
+    }
+    return { id, category, q: text[lang][0], a, links };
+  });
 }
