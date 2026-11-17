@@ -1,5 +1,6 @@
 import { useLanguage } from "@/contexts/LanguageContext";
 import { DueDiligenceCard } from "./DueDiligenceContent";
+import BrandingOffer from "./BrandingOffer";
 import { Monitor, ShoppingCart, Layers } from "lucide-react";
 
 export default function Services() {
@@ -50,6 +51,7 @@ export default function Services() {
             </div>
           ))}
         </div>
+        <BrandingOffer lang={language} />
         <DueDiligenceCard lang={language} />
       </div>
     </section>

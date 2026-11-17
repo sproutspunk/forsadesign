@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useSeoMeta, useJsonLd, buildHref } from "@/hooks/useSeoMeta";
 import Header from "@/components/Header";
+import { brandingCopy } from "@/components/BrandingOffer";
 import Services from "@/components/Services";
 import Process from "@/components/Process";
 import CTA from "@/components/CTA";
@@ -102,6 +103,20 @@ export default function ServicesPage({ lang }: { lang: "en" | "pl" }) {
         : "Portale dealerskie, narzędzia do tworzenia specyfikacji, wielojęzyczne systemy wycen, dedykowane formularze i integracje procesów dopasowane do sposobu działania firmy. Korzystamy z narzędzi wspomaganych przez AI, aby przyspieszyć odpowiednie etapy developmentu, zachowując bezpośrednią kontrolę nad architekturą, konfiguracją, testami, bezpieczeństwem i końcowym wdrożeniem. Każdą integrację API oceniamy indywidualnie na podstawie systemu zewnętrznego i jego dokumentacji.",
     },
     "services-schema-bespoke",
+  );
+
+  useJsonLd(
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      name: brandingCopy[lang].title,
+      description: brandingCopy[lang].intro,
+      serviceType: "Branding and visual identity",
+      url: buildHref(`/${lang}/services/#branding`),
+      provider: serviceProvider,
+      areaServed,
+    },
+    "services-schema-branding",
   );
 
   return (

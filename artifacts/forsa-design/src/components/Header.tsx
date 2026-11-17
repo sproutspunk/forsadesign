@@ -31,6 +31,11 @@ export default function Header() {
   ];
   const serviceLinks = [
     {
+      label:
+        language === "pl" ? "Branding i identyfikacja wizualna" : "Branding and visual identity",
+      href: `${servicesHref}#branding`,
+    },
+    {
       label: language === "pl" ? "Weryfikacja kontrahentów" : "Commercial due diligence",
       href: `${servicesHref}commercial-due-diligence/`,
     },

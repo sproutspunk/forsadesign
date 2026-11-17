@@ -1,3 +1,4 @@
+import BrandingOffer from "./src/components/BrandingOffer.tsx";
 import DueDiligenceContent, { DueDiligenceCard } from "./src/components/DueDiligenceContent.tsx";
 import { dueDiligence, dueDiligencePath, dueDiligenceSchema } from "./src/data/dueDiligence.ts";
 import PortfolioContent from "./src/components/PortfolioContent.tsx";
@@ -2535,7 +2536,9 @@ for (const lang of ["pl", "en"]) {
   for (const route of routes.filter(
     (r) => r.lang === lang && [lang, `${lang}/services`].includes(r.outDir),
   )) {
-    const card = renderToStaticMarkup(createElement(DueDiligenceCard, { lang }));
+    const card =
+      renderToStaticMarkup(createElement(BrandingOffer, { lang })) +
+      renderToStaticMarkup(createElement(DueDiligenceCard, { lang }));
     const marker = route.outDir === lang ? '<section id="pricing"' : "</main>";
     route.bodyHtml = route.bodyHtml.replace(
       marker,

@@ -89,6 +89,13 @@ export default function Footer() {
             <h2 className="text-lg font-semibold">{t("nav.services")}</h2>
             {[
               {
+                href: `/${language}/services/#branding`,
+                label:
+                  language === "pl"
+                    ? "Branding i identyfikacja wizualna"
+                    : "Branding and visual identity",
+              },
+              {
                 href: `/${language}/services/`,
                 label: language === "pl" ? "Wszystkie usługi" : "All services",
               },
