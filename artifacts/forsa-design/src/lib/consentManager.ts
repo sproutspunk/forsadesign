@@ -163,6 +163,32 @@ export function removeAnalytics(): void {
   }
 }
 
+const METRICOOL_SCRIPT_ID = "forsa-metricool-script";
+const METRICOOL_HASH = "4dec5ef009818f1b5a837434048663a8";
+
+function loadMetricool(): void {
+  if (!hasAnalyticsConsent() || document.getElementById(METRICOOL_SCRIPT_ID)) return;
+
+  const script = document.createElement("script");
+  script.id = METRICOOL_SCRIPT_ID;
+  script.type = "text/javascript";
+  script.async = true;
+  script.src = "https://tracker.metricool.com/resources/be.js";
+  script.onload = () => {
+    if (!hasAnalyticsConsent()) return;
+    const tracker = window as unknown as {
+      beTracker?: { t: (options: { hash: string }) => void };
+    };
+    tracker.beTracker?.t({ hash: METRICOOL_HASH });
+  };
+  script.onerror = () => script.remove();
+  document.head.appendChild(script);
+}
+
+function removeMetricool(): void {
+  document.getElementById(METRICOOL_SCRIPT_ID)?.remove();
+}
+
 /**
  * Convenience: call on mount and on every "forsa:consent-updated" event.
  * Loads or removes analytics based on the current consent state.
@@ -170,8 +196,10 @@ export function removeAnalytics(): void {
 export function applyAnalyticsConsent(): void {
   if (hasAnalyticsConsent()) {
     loadAnalytics();
+    loadMetricool();
   } else {
     removeAnalytics();
+    removeMetricool();
   }
 }
 
