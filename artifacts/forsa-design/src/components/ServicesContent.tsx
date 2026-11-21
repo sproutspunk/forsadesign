@@ -31,8 +31,8 @@ export function ServicesContent({ lang }: { lang: "pl" | "en" }) {
               From PDF to Online Sales
             </h3>
             <p className="mb-5 max-w-3xl leading-relaxed text-foreground/80">
-              Turn technical PDF product catalogues into searchable digital catalogues
-              with part-number lookup, specification filters and structured quotation enquiries.
+              Turn technical PDF product catalogues into searchable digital catalogues with
+              part-number lookup, specification filters and structured quotation enquiries.
             </p>
             <a
               href="/en/services/pdf-to-online-sales/"
