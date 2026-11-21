@@ -141,10 +141,7 @@ function Router() {
           path="/pl/services/commercial-due-diligence"
           component={() => <DueDiligencePage lang="pl" />}
         />
-        <Route
-          path="/en/services/pdf-to-online-sales"
-          component={PdfToOnlineSalesPage}
-        />
+        <Route path="/en/services/pdf-to-online-sales" component={PdfToOnlineSalesPage} />
         <Route path="/en/services" component={() => <ServicesPage lang="en" />} />
         <Route path="/pl/services" component={() => <ServicesPage lang="pl" />} />
         <Route path="/en/contact" component={() => <ContactPage lang="en" />} />
