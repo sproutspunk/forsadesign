@@ -131,7 +131,10 @@ export default function PdfToOnlineSalesContent() {
         </p>
         <ul className="grid gap-4 md:grid-cols-2">
           {suitableFor.map((item) => (
-            <li key={item} className="rounded-md border border-border bg-card px-5 py-4 text-foreground/85">
+            <li
+              key={item}
+              className="rounded-md border border-border bg-card px-5 py-4 text-foreground/85"
+            >
               {item}
             </li>
           ))}
@@ -168,14 +171,21 @@ export default function PdfToOnlineSalesContent() {
           Forsa Design combines bespoke web development with its founder’s background
           in international industrial machinery trading, supplier sourcing and B2B negotiation.
           Existing related work includes a client enquiry and quotation workflow in{" "}
-          <a href="/en/case-studies/linklang/" className="text-primary underline underline-offset-4">
+          <a
+            href="/en/case-studies/linklang/"
+            className="text-primary underline underline-offset-4"
+          >
             LinkLang
           </a>{" "}
           and a 3D configuration concept in{" "}
-          <a href="/en/case-studies/dachsystema/" className="text-primary underline underline-offset-4">
+          <a
+            href="/en/case-studies/dachsystema/"
+            className="text-primary underline underline-offset-4"
+          >
             Dach Systema
           </a>.
-          These are examples of related capabilities, not claims of completed PDF conversion projects.
+          These are examples of related capabilities, not claims of completed PDF conversion
+          projects.
         </p>
       </section>
 
