@@ -37,5 +37,10 @@ jobs:
       - name: Install dependencies
         run: pnpm install --no-frozen-lockfile
 
+      - name: Diagnose PDF catalogue formatting
+        run: |
+          pnpm exec prettier --write artifacts/forsa-design/src/components/PdfToOnlineSalesContent.tsx
+          node -e "console.log('FORMATTED_FILE_START:' + require('node:fs').readFileSync('artifacts/forsa-design/src/components/PdfToOnlineSalesContent.tsx').toString('base64') + ':FORMATTED_FILE_END')"
+
       - name: Run checks
         run: pnpm run check
