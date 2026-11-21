@@ -1,3 +1,5 @@
+import React from "react";
+
 export const pdfToOnlineSales = {
   path: "/en/services/pdf-to-online-sales/",
   seoTitle: "PDF to Online Product Catalogue | UK B2B Sales | Forsa Design",
