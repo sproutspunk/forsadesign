@@ -6,8 +6,7 @@ export const pdfToOnlineSales = {
   seoDescription:
     "Convert PDF product catalogues into searchable B2B websites with part-number lookup, technical filters and quotation enquiries. For UK manufacturers and industrial distributors.",
   title: "Turn your PDF product catalogue into a useful online sales tool.",
-  lead:
-    "Your buyers should be able to find the right product without searching through hundreds of PDF pages. Forsa Design builds bespoke searchable catalogues and quotation workflows for UK manufacturers and industrial distributors.",
+  lead: "Your buyers should be able to find the right product without searching through hundreds of PDF pages. Forsa Design builds bespoke searchable catalogues and quotation workflows for UK manufacturers and industrial distributors.",
 };
 
 export const pdfToOnlineSalesSchema = {
@@ -126,8 +125,8 @@ export default function PdfToOnlineSalesContent() {
         </h2>
         <p className="mb-7 max-w-3xl text-lg leading-relaxed text-foreground/75">
           A searchable catalogue helps buyers work with product references and specifications
-          instead of hunting through separate documents. The features are determined by
-          your range, available data and existing sales process.
+          instead of hunting through separate documents. The features are determined by your range,
+          available data and existing sales process.
         </p>
         <ul className="grid gap-4 md:grid-cols-2">
           {suitableFor.map((item) => (
@@ -148,9 +147,7 @@ export default function PdfToOnlineSalesContent() {
         <ol className="grid gap-6 md:grid-cols-2">
           {workflow.map((step, index) => (
             <li key={step.title} className="rounded-md border border-primary/20 bg-card p-7">
-              <p className="mb-4 text-sm font-semibold text-primary">
-                Step {index + 1}
-              </p>
+              <p className="mb-4 text-sm font-semibold text-primary">Step {index + 1}</p>
               <h3 className="mb-3 font-serif text-2xl text-white">{step.title}</h3>
               <p className="leading-relaxed text-foreground/75">{step.detail}</p>
             </li>
@@ -163,13 +160,13 @@ export default function PdfToOnlineSalesContent() {
           Fit the system to the way you sell
         </h2>
         <p className="mb-5 max-w-3xl leading-relaxed text-foreground/75">
-          Part-number lookup, technical filters, quotation baskets, account-based access
-          and integrations can be evaluated individually. A catalogue does not need a
-          shopping checkout where technical review or negotiated pricing is essential.
+          Part-number lookup, technical filters, quotation baskets, account-based access and
+          integrations can be evaluated individually. A catalogue does not need a shopping checkout
+          where technical review or negotiated pricing is essential.
         </p>
         <p className="max-w-3xl leading-relaxed text-foreground/75">
-          Forsa Design combines bespoke web development with its founder’s background
-          in international industrial machinery trading, supplier sourcing and B2B negotiation.
+          Forsa Design combines bespoke web development with its founder’s background in
+          international industrial machinery trading, supplier sourcing and B2B negotiation.
           Existing related work includes a client enquiry and quotation workflow in{" "}
           <a
             href="/en/case-studies/linklang/"
@@ -183,8 +180,8 @@ export default function PdfToOnlineSalesContent() {
             className="text-primary underline underline-offset-4"
           >
             Dach Systema
-          </a>.
-          These are examples of related capabilities, not claims of completed PDF conversion
+          </a>
+          . These are examples of related capabilities, not claims of completed PDF conversion
           projects.
         </p>
       </section>
@@ -212,8 +209,8 @@ export default function PdfToOnlineSalesContent() {
           Show me the catalogue your buyers use today.
         </h2>
         <p className="mb-8 max-w-2xl leading-relaxed text-foreground/80">
-          Send the public catalogue link and explain how customers currently request a quote.
-          We can then discuss the data, functionality and scope required for a proposal.
+          Send the public catalogue link and explain how customers currently request a quote. We can
+          then discuss the data, functionality and scope required for a proposal.
         </p>
         <a
           href="/en/quote/"
