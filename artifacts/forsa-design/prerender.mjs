@@ -12,6 +12,8 @@ import ProcessContent from "./src/components/ProcessContent.tsx";
 import FAQContent from "./src/components/FAQContent.tsx";
 import LinklangBrandingProof from "./src/components/LinklangBrandingProof.tsx";
 import DueDiligenceContent from "./src/components/DueDiligenceContent.tsx";
+import PdfCatalogueContent from "./src/components/PdfCatalogueContent.tsx";
+import { pdfCataloguePath, pdfCatalogueSeo, pdfCatalogueSchema } from "./src/data/pdfCatalogue.ts";
 import PdfToOnlineSalesContent, {
   pdfToOnlineSales,
   pdfToOnlineSalesSchema,
@@ -89,7 +91,7 @@ function patch(html, meta) {
     const schema = JSON.stringify(meta.schema).replace(/</g, "\\u003c");
     out = out.replace(
       /(\s*<\/head>)/,
-      `\n    <script type="application/ld+json" data-json-ld-id="linklang-case-study">${schema}</script>$1`,
+      `\n    <script type="application/ld+json" data-json-ld-id="${meta.schemaId ?? "linklang-case-study"}">${schema}</script>$1`,
     );
   }
 
@@ -792,6 +794,20 @@ for (const lang of ["pl", "en"]) {
     schema: dueDiligenceSchema(lang),
   });
 }
+
+routes.push({
+  outDir: "en/services/pdf-to-online-sales",
+  lang: "en",
+  title: pdfCatalogueSeo.title,
+  desc: pdfCatalogueSeo.description,
+  ogTitle: pdfCatalogueSeo.title,
+  locale: "en_GB",
+  canonical: SITE + pdfCataloguePath,
+  alternates: [{ lang: "en", href: SITE + pdfCataloguePath }],
+  bodyHtml: `${staticNav("en")}<main id="main-content" class="pt-36 md:pt-44 pb-20">${renderToStaticMarkup(createElement(PdfCatalogueContent))}</main>`,
+  schema: pdfCatalogueSchema,
+  schemaId: "pdf-catalogue-service",
+});
 
 for (const lang of ["pl", "en"]) {
   const home = routes.find((route) => route.outDir === lang);
