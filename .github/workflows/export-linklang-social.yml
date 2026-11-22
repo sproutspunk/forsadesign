@@ -1,0 +1,38 @@
+name: Export LinkLang social JPEG
+on:
+  push:
+    paths:
+      - marketing/social/linklang-forsa-portfolio-original-logos.svg
+      - .github/workflows/export-linklang-social.yml
+permissions:
+  contents: write
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install --disable-pip-version-check cairosvg pillow
+      - name: Export JPEG
+        run: |
+          python - <<'PY'
+          import cairosvg, io
+          from PIL import Image
+          from pathlib import Path
+          src = Path('marketing/social/linklang-forsa-portfolio-original-logos.svg')
+          dest = src.with_suffix('.jpg')
+          png = cairosvg.svg2png(url=str(src), output_width=1080, output_height=1080)
+          image = Image.open(io.BytesIO(png)).convert('RGB')
+          image.save(dest, format='JPEG', quality=92, subsampling=0, optimize=True)
+          assert Image.open(dest).size == (1080, 1080)
+          print(f'Exported {dest}')
+          PY
+      - name: Commit exported image
+        run: |
+          git add marketing/social/linklang-forsa-portfolio-original-logos.jpg
+          if ! git diff --cached --quiet; then
+            git -c user.name='github-actions[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' commit -m 'Export LinkLang social JPEG'
+            git push
+          fi
