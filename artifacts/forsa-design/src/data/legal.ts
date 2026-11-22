@@ -4,7 +4,7 @@ export type LegalSection = {
   body: string;
   subsections?: { title: string; body: string }[];
 };
-export const legalUpdated = "17 November 2026";
+export const legalUpdated = "22 November 2026";
 const termsEN: LegalSection[] = [
   {
     number: "1",
@@ -54,7 +54,7 @@ const termsEN: LegalSection[] = [
   {
     number: "10",
     title: "Scope Changes and Additional Work",
-    body: `Work outside the agreed project scope is not automatically included in the original project price. If additional work is requested, we will assess its effect on the project and, where appropriate, provide additional pricing or a revised quotation before carrying out that work. A significant change may require a revised quotation, revised timescale, separate project phase or separate agreement. We may decline a requested change where it is not technically feasible or is outside the type of work We provide.`,
+    body: `Work outside the agreed project scope is not automatically included in the original project price. If additional work is requested, we will assess its effect on the project and, where appropriate, provide additional pricing or a revised quotation before carrying out that work. A significant change may require a revised quotation, revised timescale, separate project phase or separate agreement. We may decline a requested change where it is not technically feasible or is outside the type of work we provide.`,
   },
   {
     number: "11",
@@ -79,7 +79,7 @@ const termsEN: LegalSection[] = [
   {
     number: "15",
     title: "Hosting",
-    body: `Hosting arrangements and responsibilities depend on the individual project and any separate hosting or support agreement. Where hosting is supplied by a third-party provider, its availability, infrastructure and service levels are governed by that provider's terms unless We have expressly agreed otherwise in writing. We cannot guarantee uninterrupted availability of a third-party hosting service.`,
+    body: `Hosting arrangements and responsibilities depend on the individual project and any separate hosting or support agreement. Where hosting is supplied by a third-party provider, its availability, infrastructure and service levels are governed by that provider's terms unless we have expressly agreed otherwise in writing. We cannot guarantee uninterrupted availability of a third-party hosting service.`,
   },
   {
     number: "16",
@@ -302,7 +302,7 @@ const termsPL: LegalSection[] = [
   {
     number: "23",
     title: "Zdarzenia pozostające poza rozsądną kontrolą",
-    body: `Nie odpowiadamy za opóźnienie lub niewykonanie zobowiązania spowodowane okolicznościami pozostającymi poza naszą rozsądną kontrolą. Może to obejmować awarie lub przerwy w działaniu zewnętrznej infrastruktury albo usług potrzebnych do realizacji projektu. Jeżeli takie zdarzenie istotnie wpłynie na realizację, podejmę rozsądne działania, aby poinformować klienta i kontynuować projekt, gdy będzie to możliwe.`,
+    body: `Nie odpowiadamy za opóźnienie lub niewykonanie zobowiązania spowodowane okolicznościami pozostającymi poza naszą rozsądną kontrolą. Może to obejmować awarie lub przerwy w działaniu zewnętrznej infrastruktury albo usług potrzebnych do realizacji projektu. Jeżeli takie zdarzenie istotnie wpłynie na realizację, podejmiemy rozsądne działania, aby poinformować klienta i kontynuować projekt, gdy będzie to możliwe.`,
   },
   {
     number: "24",
