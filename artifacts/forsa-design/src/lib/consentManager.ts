@@ -163,6 +163,89 @@ export function removeAnalytics(): void {
   }
 }
 
+const METRICOOL_SCRIPT_ID = "forsa-metricool-script";
+const METRICOOL_HASH = "4dec5ef009818f1b5a837434048663a8";
+const METRICOOL_DELAY_MS = 5000;
+
+let metricoolLoadTimer: number | null = null;
+let metricoolLoadHandler: (() => void) | null = null;
+let metricoolIdleId: number | null = null;
+
+type MetricoolIdleWindow = Window & {
+  requestIdleCallback?: (callback: () => void, options?: { timeout: number }) => number;
+  cancelIdleCallback?: (id: number) => void;
+};
+
+function injectMetricool(): void {
+  metricoolIdleId = null;
+  if (!hasAnalyticsConsent() || document.getElementById(METRICOOL_SCRIPT_ID)) return;
+
+  const script = document.createElement("script");
+  script.id = METRICOOL_SCRIPT_ID;
+  script.type = "text/javascript";
+  script.async = true;
+  script.src = "https://tracker.metricool.com/resources/be.js";
+  script.onload = () => {
+    if (!hasAnalyticsConsent()) return;
+    const tracker = window as unknown as {
+      beTracker?: { t: (options: { hash: string }) => void };
+    };
+    tracker.beTracker?.t({ hash: METRICOOL_HASH });
+  };
+  script.onerror = () => script.remove();
+  document.head.appendChild(script);
+}
+
+function loadMetricool(): void {
+  if (
+    !hasAnalyticsConsent() ||
+    document.getElementById(METRICOOL_SCRIPT_ID) ||
+    metricoolLoadTimer !== null ||
+    metricoolLoadHandler !== null ||
+    metricoolIdleId !== null
+  ) {
+    return;
+  }
+
+  const afterPageLoad = () => {
+    metricoolLoadHandler = null;
+    metricoolLoadTimer = window.setTimeout(() => {
+      metricoolLoadTimer = null;
+      if (!hasAnalyticsConsent()) return;
+
+      const idleWindow = window as MetricoolIdleWindow;
+      if (typeof idleWindow.requestIdleCallback === "function") {
+        metricoolIdleId = idleWindow.requestIdleCallback(injectMetricool, { timeout: 5000 });
+      } else {
+        injectMetricool();
+      }
+    }, METRICOOL_DELAY_MS);
+  };
+
+  if (document.readyState === "complete") {
+    afterPageLoad();
+  } else {
+    metricoolLoadHandler = afterPageLoad;
+    window.addEventListener("load", afterPageLoad, { once: true });
+  }
+}
+
+function removeMetricool(): void {
+  if (metricoolLoadHandler !== null) {
+    window.removeEventListener("load", metricoolLoadHandler);
+    metricoolLoadHandler = null;
+  }
+  if (metricoolLoadTimer !== null) {
+    window.clearTimeout(metricoolLoadTimer);
+    metricoolLoadTimer = null;
+  }
+  if (metricoolIdleId !== null) {
+    (window as MetricoolIdleWindow).cancelIdleCallback?.(metricoolIdleId);
+    metricoolIdleId = null;
+  }
+  document.getElementById(METRICOOL_SCRIPT_ID)?.remove();
+}
+
 /**
  * Convenience: call on mount and on every "forsa:consent-updated" event.
  * Loads or removes analytics based on the current consent state.
@@ -170,8 +253,10 @@ export function removeAnalytics(): void {
 export function applyAnalyticsConsent(): void {
   if (hasAnalyticsConsent()) {
     loadAnalytics();
+    loadMetricool();
   } else {
     removeAnalytics();
+    removeMetricool();
   }
 }
 

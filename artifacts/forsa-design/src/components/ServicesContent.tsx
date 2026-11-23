@@ -22,6 +22,26 @@ export function ServicesContent({ lang }: { lang: "pl" | "en" }) {
             </article>
           ))}
         </div>
+        {lang === "en" && (
+          <aside className="mt-8 rounded-lg border border-primary/30 bg-card p-7 md:p-9">
+            <p className="mb-3 text-sm font-medium uppercase tracking-wider text-primary">
+              For UK manufacturers and industrial distributors
+            </p>
+            <h3 className="mb-4 font-serif text-2xl font-bold text-white md:text-3xl">
+              From PDF to Online Sales
+            </h3>
+            <p className="mb-5 max-w-3xl leading-relaxed text-foreground/80">
+              Turn technical PDF product catalogues into searchable digital catalogues with
+              part-number lookup, specification filters and structured quotation enquiries.
+            </p>
+            <a
+              href="/en/services/pdf-to-online-sales/"
+              className="inline-flex items-center py-2 font-semibold text-primary underline underline-offset-4"
+            >
+              Explore PDF catalogue conversion
+            </a>
+          </aside>
+        )}
         <p className="mt-6 text-foreground/80">
           {lang === "pl"
             ? "Konfiguratory 3D są częścią dedykowanych narzędzi webowych."

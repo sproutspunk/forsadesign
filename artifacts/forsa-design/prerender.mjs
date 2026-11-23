@@ -12,6 +12,10 @@ import ProcessContent from "./src/components/ProcessContent.tsx";
 import FAQContent from "./src/components/FAQContent.tsx";
 import LinklangBrandingProof from "./src/components/LinklangBrandingProof.tsx";
 import DueDiligenceContent from "./src/components/DueDiligenceContent.tsx";
+import PdfToOnlineSalesContent, {
+  pdfToOnlineSales,
+  pdfToOnlineSalesSchema,
+} from "./src/components/PdfToOnlineSalesContent.tsx";
 import { dueDiligence, dueDiligencePath, dueDiligenceSchema } from "./src/data/dueDiligence.ts";
 import PortfolioContent from "./src/components/PortfolioContent.tsx";
 import { renderToStaticMarkup } from "react-dom/server";
@@ -720,6 +724,19 @@ const routes = [
     bodyHtml: buildBlogBody("pl"),
   },
 ];
+
+routes.push({
+  outDir: "en/services/pdf-to-online-sales",
+  lang: "en",
+  title: pdfToOnlineSales.seoTitle,
+  desc: pdfToOnlineSales.seoDescription,
+  ogTitle: pdfToOnlineSales.seoTitle,
+  locale: "en_GB",
+  canonical: `${SITE}${pdfToOnlineSales.path}`,
+  alternates: [{ lang: "en", href: `${SITE}${pdfToOnlineSales.path}` }],
+  bodyHtml: `${staticNav("en")}<main id="main-content" class="pb-20 pt-40 md:pt-48">${renderToStaticMarkup(createElement(PdfToOnlineSalesContent))}</main>`,
+  schema: pdfToOnlineSalesSchema,
+});
 
 for (const lang of ["en", "pl"]) {
   const content = linklangCaseStudy[lang];
