@@ -1,6 +1,7 @@
 import React from "react";
 import { siteCopy } from "../data/siteCopy";
 import BrandingOffer from "./BrandingOffer";
+import ChuckDemo from "./ChuckDemo";
 import { DueDiligenceCard } from "./DueDiligenceContent";
 export function ServicesContent({ lang }: { lang: "pl" | "en" }) {
   const c = siteCopy[lang].services;
@@ -39,6 +40,7 @@ export function ServicesContent({ lang }: { lang: "pl" | "en" }) {
               ? "Tworzymy interaktywne katalogi 3D, wizualizacje techniczne i konfiguratory dla producentów maszyn, dostawców oprzyrządowania CNC oraz dystrybutorów przemysłowych. Wykorzystujemy oryginalną geometrię CAD udostępnioną do tego celu, aby klienci mogli analizować produkty bezpośrednio w przeglądarce."
               : "We develop interactive 3D catalogues, technical product visualisations and engineering configurators for machinery manufacturers, CNC tooling suppliers and industrial distributors. Using original CAD geometry authorised for the project, we enable customers to inspect products directly in their web browser."}
           </p>
+          <ChuckDemo lang={lang} />
           <div className="grid gap-6 md:grid-cols-2">
             {(lang === "pl" ? [
               ["Interaktywne katalogi 3D", "Modele produktów, parametry techniczne, rysunki wymiarowe, wyszukiwanie i porównywanie."],
