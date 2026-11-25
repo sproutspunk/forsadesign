@@ -32,6 +32,10 @@ export default function Header() {
   ];
   const serviceLinks = [
     {
+      label: language === "pl" ? "Przemysłowe 3D i CAD" : "Industrial 3D & CAD",
+      href: `${servicesHref}#industrial-3d-cad`,
+    },
+    {
       label:
         language === "pl" ? "Branding i identyfikacja wizualna" : "Branding and visual identity",
       href: `${servicesHref}#branding`,
