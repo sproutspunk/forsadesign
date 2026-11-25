@@ -98,6 +98,10 @@ export default function FooterContent({
             <h2 className="text-lg font-semibold">{t("nav.services")}</h2>
             {[
               {
+                href: `/${language}/services/#industrial-3d-cad`,
+                label: language === "pl" ? "Przemysłowe 3D i CAD" : "Industrial 3D & CAD",
+              },
+              {
                 href: `/${language}/services/#branding`,
                 label:
                   language === "pl"
