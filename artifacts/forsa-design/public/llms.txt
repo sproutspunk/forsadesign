@@ -1,6 +1,7 @@
 # Forsa Design
 
-> Forsa Design is an industrial web design studio based in Banff, Aberdeenshire. We build custom websites and bespoke web systems for offshore, energy, engineering, industrial equipment, logistics and manufacturing businesses across the UK and EU.
+> Forsa Design provides Industrial Digital Solutions & 3D Engineering from Banff, Scotland. We develop bespoke digital systems, technical product catalogues and interactive 3D solutions for industrial and engineering businesses.
+> Forsa Design z Banff w Szkocji tworzy dedykowane systemy cyfrowe, katalogi techniczne oraz interaktywne rozwiązania 3D dla przedsiębiorstw przemysłowych i inżynieryjnych.
 
 ## Key pages
 
@@ -8,6 +9,8 @@
 - [Homepage (Polish)](https://forsadesign.co.uk/pl/)
 - [Services (English)](https://forsadesign.co.uk/en/services/)
 - [Usługi (Polish)](https://forsadesign.co.uk/pl/services/)
+- [History & Development](https://forsadesign.co.uk/en/history/)
+- [Historia i rozwój](https://forsadesign.co.uk/pl/history/)
 - [Contact (English)](https://forsadesign.co.uk/en/contact/)
 - [Kontakt (Polish)](https://forsadesign.co.uk/pl/contact/)
 - [Terms & Conditions (EN)](https://forsadesign.co.uk/en/terms/)
@@ -17,13 +20,18 @@
 
 ## Services
 
-Custom industrial websites, B2B catalogues and ordering systems, client portals, API integrations and 3D product configurators. Visual identity covers logos, colours, typography and usage guidelines. Counterparty credibility and commercial risk assessment is a separate service. Ongoing support is optional and paid separately. Project times depend on functionality, content and integration requirements.
+Industrial Digital Solutions covers industrial websites, bespoke web systems, technical product catalogues, B2B and customer portals, enquiries, quotations, ordering, API integrations and business process automation. 3D Engineering covers CAD-based visualisation, interactive product models, industrial component visualisation and parametric configuration tools. Branding and commercial due diligence are also available.
+
+Przemysłowe rozwiązania cyfrowe obejmują strony, dedykowane systemy webowe, katalogi techniczne, portale B2B i portale klientów, obsługę zapytań, wycen i zamówień, integracje API oraz automatyzację procesów. Inżynieria 3D obejmuje wizualizację CAD, interaktywne modele produktów, wizualizację komponentów przemysłowych i narzędzia do konfiguracji parametrycznej. Oferujemy także branding i weryfikację kontrahentów.
 
 ## Portfolio
 
-- [Dach Systema: 3D configurator](https://forsadesign.co.uk/en/case-studies/dachsystema/)
-- [LinkLang: client portal and visual identity](https://forsadesign.co.uk/en/case-studies/linklang/)
-- [Counterparty assessment](https://forsadesign.co.uk/en/services/commercial-due-diligence/)
+- [LinkLang: production service platform](https://forsadesign.co.uk/en/case-studies/linklang/)
+- [LinkLang: system produkcyjny](https://forsadesign.co.uk/pl/case-studies/linklang/)
+- [Dach Systema: 3D configurator prototype](https://forsadesign.co.uk/en/case-studies/dachsystema/)
+- [Dach Systema: prototyp konfiguratora 3D](https://forsadesign.co.uk/pl/case-studies/dachsystema/)
+- [Interactive 3D demonstration](https://forsadesign.co.uk/en/services/#industrial-3d-cad)
+- [Interaktywna demonstracja 3D](https://forsadesign.co.uk/pl/services/#industrial-3d-cad)
 
 ## Founder
 

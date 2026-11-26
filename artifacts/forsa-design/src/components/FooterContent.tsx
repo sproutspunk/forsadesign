@@ -1,3 +1,4 @@
+import { historyCopy, historyPath } from "../data/history";
 import React from "react";
 import { siteCopy } from "../data/siteCopy";
 import { Mail, Phone, Linkedin } from "lucide-react";
@@ -30,7 +31,6 @@ export default function FooterContent({
                 className="h-auto w-40"
               />
             </a>
-            <p className="text-foreground/60 font-light mb-2">{t("footer.tagline")}</p>
             <p className="text-foreground/60 font-light mb-4">{t("footer.location")}</p>
             <div className="space-y-2">
               <p className="text-sm text-foreground/50">
@@ -75,6 +75,7 @@ export default function FooterContent({
               { href: `/${language}/#portfolio`, label: "Portfolio" },
               { href: `/${language}/#process`, label: t("nav.process") },
               { href: language === "pl" ? "/pl/o-nas/" : "/en/about/", label: t("nav.about") },
+              { href: historyPath(language), label: historyCopy[language].title },
               { href: `/${language}/blog/`, label: "Blog" },
               { href: `/${language}/#contact`, label: t("nav.contact") },
               { href: `/${language}/#faq`, label: t("nav.faq") },
@@ -98,8 +99,12 @@ export default function FooterContent({
             <h2 className="text-lg font-semibold">{t("nav.services")}</h2>
             {[
               {
+                href: `/${language}/services/#industrial-digital-solutions`,
+                label: siteCopy[language].services.digital.title,
+              },
+              {
                 href: `/${language}/services/#industrial-3d-cad`,
-                label: language === "pl" ? "Przemysłowe 3D i CAD" : "Industrial 3D & CAD",
+                label: siteCopy[language].services.engineering.title,
               },
               {
                 href: `/${language}/services/#branding`,
@@ -115,18 +120,6 @@ export default function FooterContent({
               {
                 href: `/${language}/services/commercial-due-diligence/`,
                 label: language === "pl" ? "Weryfikacja kontrahentów" : "Commercial due diligence",
-              },
-              {
-                href: `/${language}/services/#industrial-websites`,
-                label: language === "pl" ? "Strony dla przemysłu" : "Industrial websites",
-              },
-              {
-                href: `/${language}/services/#b2b-e-commerce`,
-                label: language === "pl" ? "E-commerce B2B" : "B2B e-commerce",
-              },
-              {
-                href: `/${language}/services/#web-systems`,
-                label: language === "pl" ? "Systemy webowe" : "Web systems",
               },
             ].map(({ href, label }) => (
               <a

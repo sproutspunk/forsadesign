@@ -1,39 +1,10 @@
+import { aboutContent } from "@/data/about";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { m as motion } from "framer-motion";
 
 export default function About() {
   const { t, language } = useLanguage();
-  const isEn = language === "en";
-
-  const highlighted = isEn
-    ? [
-        [
-          "Industrial B2B experience",
-          "More than 20 years in international B2B sales means we approach a website as a commercial tool, not only as a visual project. We understand industrial products, technical sales, international trade and procurement.",
-        ],
-        [
-          "Understanding the buying process",
-          "We understand the questions buyers ask, the information they look for and the credibility signals that matter when a supplier is being evaluated.",
-        ],
-        [
-          "Direct responsibility",
-          "We work directly with you from specification through launch. Scope, costs and responsibilities are agreed before work begins.",
-        ],
-      ]
-    : [
-        [
-          "Doświadczenie w przemysłowym B2B",
-          "Ponad 20 lat w międzynarodowej sprzedaży B2B sprawia, że traktujemy stronę jako narzędzie biznesowe, a nie wyłącznie projekt wizualny. Rozumiemy produkty przemysłowe, sprzedaż techniczną, handel międzynarodowy i procesy zakupowe.",
-        ],
-        [
-          "Znajomość procesu zakupowego",
-          "Rozumiemy pytania zadawane przez kupujących, informacje, których szukają, oraz elementy budujące wiarygodność podczas oceny potencjalnego dostawcy.",
-        ],
-        [
-          "Bezpośrednia odpowiedzialność",
-          "Współpracujemy z Tobą bezpośrednio od specyfikacji do uruchomienia. Zakres, koszty i odpowiedzialność ustalamy przed rozpoczęciem prac.",
-        ],
-      ];
+  const { intro, background } = aboutContent[language];
 
   return (
     <section id="about" className="py-24 bg-background">
@@ -53,24 +24,17 @@ export default function About() {
               <div className="w-16 h-1 bg-primary mb-8" />
             </div>
 
-            <p className="text-lg text-foreground/80 font-light leading-relaxed text-justify">
-              {t("about.body")}
-            </p>
-            <p className="text-lg text-foreground/80 font-light leading-relaxed text-justify">
-              {t("about.body2")}
-            </p>
-            <p className="text-lg text-foreground/80 font-light leading-relaxed text-justify">
-              {t("about.body3")}
-            </p>
-            <p className="text-lg text-foreground/80 font-light leading-relaxed text-justify">
-              {t("about.body4")}
-            </p>
+            {intro.map((paragraph) => (
+              <p key={paragraph} className="text-lg text-foreground/80 font-light leading-relaxed">
+                {paragraph}
+              </p>
+            ))}
 
             <div className="pt-4 space-y-6">
               <h3 className="font-serif text-2xl font-bold text-white">
                 {t("about.highlightsTitle")}
               </h3>
-              {highlighted.map(([title, desc]) => (
+              {background.map(([title, desc]) => (
                 <div key={title} className="space-y-1">
                   <p className="text-base font-semibold text-primary">{title}</p>
                   <p className="text-base text-foreground/75 leading-relaxed">{desc}</p>

@@ -1,3 +1,6 @@
+import HistoryContent from "./src/components/HistoryContent.tsx";
+import { historyCopy, historyPath } from "./src/data/history.ts";
+import { positioningSeo, serviceSchema } from "./src/data/positioningSeo.ts";
 import {
   ServicesContent,
   AboutContent,
@@ -80,12 +83,15 @@ function ht(str) {
  * @returns {string}          - Patched HTML string.
  */
 function patch(html, meta) {
-  let out = html;
+  let out = html.replaceAll(
+    `"description": ${JSON.stringify(siteCopy.en.hero.subheader)}`,
+    `"description": ${JSON.stringify(siteCopy[meta.lang].hero.subheader)}`,
+  );
   if (meta.schema) {
     const schema = JSON.stringify(meta.schema).replace(/</g, "\\u003c");
     out = out.replace(
       /(\s*<\/head>)/,
-      `\n    <script type="application/ld+json" data-json-ld-id="linklang-case-study">${schema}</script>$1`,
+      `\n    <script type="application/ld+json" data-json-ld-id="${meta.schemaId ?? "linklang-case-study"}">${schema}</script>$1`,
     );
   }
 
@@ -97,6 +103,10 @@ function patch(html, meta) {
 
   // <meta name="description" content="...">
   out = out.replace(/(name="description"\s+content=")[^"]*(")/s, `$1${he(meta.desc)}$2`);
+
+  out = out.replace(/(name="citation_language"\s+content=")[^"]*(")/s, `$1${meta.lang}$2`);
+  out = out.replace(/(name="citation_title"\s+content=")[^"]*(")/s, `$1${he(meta.title)}$2`);
+  out = out.replace(/(name="citation_description"\s+content=")[^"]*(")/s, `$1${he(meta.desc)}$2`);
 
   // <meta property="og:title" content="...">
   out = out.replace(/(property="og:title"\s+content=")[^"]*(")/s, `$1${he(meta.ogTitle)}$2`);
@@ -239,7 +249,6 @@ ${renderToStaticMarkup(createElement(LinklangBrandingProof, { lang }))}
 <section><h2>${ht(c.workflowHeading)}</h2><p>${ht(c.workflowIntro)}</p><ol>${c.steps.map((step) => `<li><h3>${ht(step.title)}</h3><p>${ht(step.body)}</p></li>`).join("")}</ol></section>
 <figure><a href="/projects/linklang-workflow.webp"><img src="/projects/linklang-workflow.webp" alt="${lang === "pl" ? "Schemat zgłoszenia, wyceny, akceptacji i płatności; karta zlecenia zawiera wiadomości i dokumenty" : "Service request, quotation, acceptance and payment workflow; the order workspace holds messages and documents"}" width="1983" height="793" loading="lazy" /></a><figcaption>${lang === "pl" ? "Uproszczony przebieg. Karta zlecenia jest dostępna również przed płatnością." : "Simplified workflow. The order workspace is also available before payment."}</figcaption></figure>
 <section><h2>${ht(c.decisionsHeading)}</h2>${blocks(c.decisions)}</section>
-<section><h2>${ht(c.stackHeading)}</h2><p>${ht(c.stackIntro)}</p><ul>${linklangProject.technologies.map((t) => `<li>${ht(t)}</li>`).join("")}</ul></section>
 <section><h2>${ht(c.outcomeHeading)}</h2><p>${ht(c.outcome)}</p><p>${ht(c.evidence)}</p></section>
 <aside><h2>${ht(c.ctaTitle)}</h2><p>${ht(c.ctaBody)}</p><a href="/${lang}/contact/">${ht(c.cta)}</a></aside>
 </article></main>`;
@@ -253,7 +262,6 @@ function buildHome(lang) {
   return (
     staticNav(lang) +
     `<main id="main-content"><section id="home" class="container mx-auto px-6 py-16 max-w-6xl"><h1 class="font-serif text-4xl md:text-6xl text-white mb-6">${ht(c.hero.tagline)}</h1><p class="text-xl text-foreground/80 mb-5">${ht(c.hero.subheader)}</p>${c.hero.body
-      .split("\n\n")
       .map((p) => `<p class="text-lg text-foreground/80 mb-4">${ht(p)}</p>`)
       .join(
         "",
@@ -278,14 +286,15 @@ function buildSearchBody(lang) {
   return `<header>
 <nav><a href="/${lang}/">Forsa Design</a> | <a href="/${lang}/#services">${en ? "Services" : "Usługi"}</a> | <a href="/${lang}/#faq">FAQ</a> | <a href="/${lang}/#contact">${en ? "Contact" : "Kontakt"}</a> | <a href="/${lang}/blog">Blog</a></nav>
 </header>
-<main>
+<main id="main-content">
 <h1>${en ? "Search Forsa Design" : "Szukaj w Forsa Design"}</h1>
-<p>${en ? "Search our services, frequently asked questions, guides and articles." : "Przeszukaj nasze usługi, najczęstsze pytania, poradniki i artykuły."}</p>
+<p>${en ? "Search our services, development milestones, case studies, frequently asked questions and articles." : "Przeszukaj nasze usługi, etapy rozwoju, opisy projektów, najczęstsze pytania i artykuły."}</p>
 <form role="search"><label for="site-search">${en ? "Search the site" : "Szukaj na stronie"}</label><input id="site-search" type="search" placeholder="${en ? "Search services, FAQ and articles" : "Szukaj usług, FAQ i artykułów"}" /></form>
 <h2>${en ? "Searchable content" : "Treści dostępne w wyszukiwarce"}</h2>
 <ul>
-<li><a href="/${lang}/services">${en ? "Industrial web design and bespoke web systems" : "Web design dla przemysłu i dedykowane systemy"}</a></li>
-<li><a href="/${lang}/about">${en ? "About Forsa Design" : "O Forsa Design"}</a></li>
+<li><a href="/${lang}/services">${en ? "Industrial Digital Solutions &amp; 3D Engineering" : "Przemysłowe rozwiązania cyfrowe i inżynieria 3D"}</a></li>
+<li><a href="${en ? "/en/about/" : "/pl/o-nas/"}">${en ? "About Forsa Design" : "O Forsa Design"}</a></li>
+<li><a href="${historyPath(lang)}">${ht(historyCopy[lang].title)}</a></li>
 <li><a href="/${lang}/#faq">FAQ</a></li>
 </ul>
 </main>`;
@@ -379,8 +388,8 @@ ${buildNewsletterBody(lang, `article:${article.slugEn}`)}
 function buildContactBody(lang) {
   const en = lang === "en";
   return `<header><nav><a href="/${lang}/">Forsa Design</a> | <a href="/${lang}/services">${en ? "Services" : "Usługi"}</a></nav></header>
-<main><h1>${en ? "Start with the technical brief" : "Zacznijmy od briefu technicznego"}</h1>
-<p>${en ? "Tell us what you build, who buys it and where your current website falls short." : "Opowiedz, co budujesz, kto to kupuje i gdzie obecna strona nie spełnia swojej roli."}</p>
+<main id="main-content"><h1>${en ? "Start with the technical brief" : "Zacznijmy od briefu technicznego"}</h1>
+<p>${en ? "Tell us about your product range, customer workflow or 3D requirements." : "Opowiedz nam o swoich produktach, procesie obsługi klientów lub potrzebach związanych z 3D."}</p>
 <h2>${en ? "Contact Forsa Design" : "Skontaktuj się z Forsa Design"}</h2>
 <p>Email: <a href="mailto:hello@forsadesign.co.uk">hello@forsadesign.co.uk</a></p>
 <p>Telefon: <a href="tel:07770110735">07770110735</a></p>
@@ -440,9 +449,6 @@ const routes = [
   {
     outDir: "en",
     lang: "en",
-    title: "Industrial Web Design & Bespoke Web Systems | Forsa Design",
-    desc: "Forsa Design builds procurement-ready websites and bespoke web systems for offshore, energy, engineering, equipment, logistics and manufacturing businesses.",
-    ogTitle: "Forsa Design | Web Design & Creation",
     locale: "en_GB",
     canonical: `${SITE}/en/`,
     alternates: [
@@ -455,9 +461,6 @@ const routes = [
   {
     outDir: "pl",
     lang: "pl",
-    title: "Web Design dla Przemysłu i Dedykowane Systemy | Forsa Design",
-    desc: "Forsa Design tworzy strony gotowe na audyt zakupowy i dedykowane systemy webowe dla firm offshore, energetycznych, inżynieryjnych, logistycznych i produkcyjnych.",
-    ogTitle: "Forsa Design | Web Design i Tworzenie Stron",
     locale: "pl_PL",
     canonical: `${SITE}/pl/`,
     alternates: [
@@ -554,9 +557,6 @@ const routes = [
   {
     outDir: "en/services",
     lang: "en",
-    title: "Industrial Web Design & Bespoke Web Systems | Forsa Design",
-    desc: "Procurement-ready websites, B2B e-commerce and bespoke web systems for offshore, energy, engineering, equipment, logistics and manufacturing businesses.",
-    ogTitle: "Industrial Web Services | Forsa Design",
     locale: "en_GB",
     canonical: `${SITE}/en/services`,
     alternates: [
@@ -568,9 +568,6 @@ const routes = [
   {
     outDir: "pl/services",
     lang: "pl",
-    title: "Web Design dla Przemysłu i Dedykowane Systemy | Forsa Design",
-    desc: "Strony gotowe na audyt zakupowy, e-commerce B2B i dedykowane systemy webowe dla firm offshore, energetycznych, inżynieryjnych, logistycznych i produkcyjnych.",
-    ogTitle: "Usługi Webowe dla Przemysłu | Forsa Design",
     locale: "pl_PL",
     canonical: `${SITE}/pl/services`,
     alternates: [
@@ -638,9 +635,6 @@ const routes = [
   {
     outDir: "en/quote",
     lang: "en",
-    title: "Request a Quote | Forsa Design",
-    desc: "Tell us about your industrial, manufacturing or engineering website project and we will review requirements and identify information needed for a quotation.",
-    ogTitle: "Request a Quote | Forsa Design",
     locale: "en_GB",
     canonical: `${SITE}/en/quote`,
     alternates: [
@@ -652,9 +646,6 @@ const routes = [
   {
     outDir: "pl/quote",
     lang: "pl",
-    title: "Poproś o Wycenę | Forsa Design",
-    desc: "Opowiedz nam o swoim projekcie strony internetowej dla przemysłu, produkcji lub inżynierii, a my przeanalizujemy wymagania i wskażemy informacje potrzebne do przygotowania oferty.",
-    ogTitle: "Poproś o Wycenę | Forsa Design",
     locale: "pl_PL",
     canonical: `${SITE}/pl/quote`,
     alternates: [
@@ -666,9 +657,6 @@ const routes = [
   {
     outDir: "en/search",
     lang: "en",
-    title: "Search | Forsa Design",
-    desc: "Search Forsa Design services, industrial web design guidance, frequently asked questions and articles.",
-    ogTitle: "Search Forsa Design",
     locale: "en_GB",
     canonical: `${SITE}/en/search`,
     alternates: [
@@ -680,9 +668,6 @@ const routes = [
   {
     outDir: "pl/search",
     lang: "pl",
-    title: "Szukaj | Forsa Design",
-    desc: "Przeszukaj usługi Forsa Design, poradniki web design dla przemysłu, FAQ i artykuły.",
-    ogTitle: "Szukaj w Forsa Design",
     locale: "pl_PL",
     canonical: `${SITE}/pl/search`,
     alternates: [
@@ -788,6 +773,24 @@ for (const lang of ["pl", "en"]) {
   );
 }
 
+for (const lang of ["en", "pl"]) {
+  const { title, description } = historyCopy[lang];
+  routes.push({
+    outDir: `${lang}/history`,
+    lang,
+    title: `${title} | Forsa Design`,
+    desc: description,
+    ogTitle: title,
+    locale: lang === "pl" ? "pl_PL" : "en_GB",
+    canonical: SITE + historyPath(lang),
+    alternates: ["en", "pl"].map((language) => ({
+      lang: language,
+      href: SITE + historyPath(language),
+    })),
+    bodyHtml: staticNav(lang) + renderToStaticMarkup(createElement(HistoryContent, { lang })),
+  });
+}
+
 // Blog article routes — one per article per language, derived from
 // src/data/articlesData.ts so slugs and content never drift.
 for (const article of articles) {
@@ -842,16 +845,19 @@ for (const route of routes) {
         ? "Informacje o zasadach usług i przetwarzania danych w Forsa Design."
         : "Information about service terms and data processing at Forsa Design.";
   }
-  if (route.outDir === `${lang}/services`) {
-    route.title =
-      lang === "en"
-        ? "Industrial Web Development UK | Manufacturing, Engineering & B2B Systems"
-        : "Strony i systemy webowe dla przemysłu | Forsa Design";
-    route.ogTitle = route.title;
-    route.desc =
-      lang === "en"
-        ? "Custom websites, B2B catalogues and web tools for industrial, engineering and technical businesses. No WordPress, no page builders and no off-the-shelf templates."
-        : "Dedykowane strony, katalogi B2B i narzędzia webowe dla firm przemysłowych, inżynieryjnych i technicznych. Bez WordPressa, bez kreatorów stron i bez gotowych szablonów.";
+  const page = route.outDir === lang ? "home" : route.outDir.split("/")[1];
+  if (
+    ["home", "services", "search", "quote", "contact"].includes(page) &&
+    route.outDir.split("/").length <= 2
+  ) {
+    const { title, description } = positioningSeo(lang, page);
+    route.title = title;
+    route.ogTitle = title;
+    route.desc = description;
+  }
+  if (route.outDir === lang || route.outDir === `${lang}/services`) {
+    route.schema = serviceSchema(lang);
+    route.schemaId = route.outDir === lang ? "offer-catalog" : "services-schema";
   }
   if (!["pl", "en"].includes(lang))
     throw new Error(`Invalid route language: ${route.outDir}: ${lang}`);

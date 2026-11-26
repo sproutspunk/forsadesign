@@ -90,11 +90,11 @@ const questions: BilingualItem[] = [
     category: "scope",
     pl: [
       "Jakie rozwiązania tworzy Forsa Design?",
-      "Tworzymy strony przedsiębiorstw przemysłowych i technicznych, katalogi produktów B2B, systemy zamówień, portale klientów oraz dedykowane aplikacje internetowe. Łączymy je z usługami zewnętrznymi za pośrednictwem API. Nasza oferta obejmuje również identyfikację wizualną, konfiguratory produktów 3D i analizę wiarygodności kontrahentów. Punktem wyjścia jest funkcja rozwiązania w działalności firmy: prezentacja oferty, obsługa klienta lub usprawnienie przepływu informacji.",
+      "Tworzymy strony i systemy cyfrowe dla przemysłu, w tym katalogi techniczne, portale B2B oraz narzędzia do obsługi zapytań, wycen i zamówień. W ramach inżynierii 3D opracowujemy wizualizacje CAD, interaktywne modele produktów i konfiguratory. Oferujemy także identyfikację wizualną i weryfikację kontrahentów.",
     ],
     en: [
       "What solutions does Forsa Design develop?",
-      "We develop websites for industrial and technical businesses, B2B product catalogues, ordering systems, client portals and custom web applications. We connect them to external services through APIs. Our services also include visual identity, 3D product configurators and counterparty assessments. Each solution addresses a business function: presenting an offer, serving customers or improving the flow of information.",
+      "We develop industrial websites and digital systems, including technical catalogues, B2B portals and tools for managing enquiries, quotations and orders. Our 3D engineering work includes CAD visualisation, interactive product models and configurators. We also offer visual identity and commercial due diligence.",
     ],
   },
   {
@@ -493,8 +493,8 @@ export function getFaqItems(lang: "pl" | "en"): FaqItem[] {
     } else if (["faq-configurators", "faq-configurator-prices"].includes(id)) {
       a +=
         lang === "pl"
-          ? " Zobacz konfigurator 3D Dach Systema w naszym portfolio."
-          : " See the Dach Systema 3D configurator in our portfolio.";
+          ? " Zobacz prototyp konfiguratora 3D Dach Systema w naszym portfolio."
+          : " See the Dach Systema 3D configurator prototype in our portfolio.";
       links = [dach];
     } else if (id === "faq-multilingual") {
       a +=

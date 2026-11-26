@@ -1,3 +1,8 @@
+import { siteCopy } from "@/data/siteCopy";
+import { historyCopy, historyMilestones, historyPath } from "@/data/history";
+import { dachCase, dachPath } from "@/data/dachCaseStudy";
+import { linklangCaseStudy, linklangCasePath } from "@/data/linklangCaseStudy";
+import { positioningSeo } from "@/data/positioningSeo";
 import { useMemo, useState } from "react";
 import { Search as SearchIcon, ArrowRight } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -26,16 +31,18 @@ const pageEntries: Record<Language, SearchEntry[]> = {
       category: "Services",
     },
     {
-      title: "Forsa Design",
-      excerpt:
-        "Web systems for heavy industry, including industrial web design, B2B e-commerce and bespoke web applications.",
+      title: siteCopy.en.hero.tagline,
+      excerpt: siteCopy.en.hero.subheader,
       href: "/en/",
       category: "Home",
     },
     {
-      title: "Industrial Web Design & Bespoke Web Systems",
-      excerpt:
-        "Procurement-ready websites, e-commerce and bespoke web systems for industrial, engineering, energy and logistics businesses.",
+      title: positioningSeo("en", "services").title,
+      excerpt: positioningSeo("en", "services").description,
+      searchText: [
+        ...siteCopy.en.services.digital.items,
+        ...siteCopy.en.services.engineering.items,
+      ].join(" "),
       href: "/en/services",
       category: "Services",
     },
@@ -60,8 +67,7 @@ const pageEntries: Record<Language, SearchEntry[]> = {
     },
     {
       title: "Contact Forsa Design",
-      excerpt:
-        "Discuss an industrial website, B2B catalogue, e-commerce project or bespoke web system.",
+      excerpt: "Discuss an industrial digital system, technical catalogue or 3D project.",
       href: "/en/contact",
       category: "Contact",
     },
@@ -86,16 +92,18 @@ const pageEntries: Record<Language, SearchEntry[]> = {
       category: "Usługi",
     },
     {
-      title: "Forsa Design",
-      excerpt:
-        "Systemy webowe dla przemysłu ciężkiego, w tym web design, e-commerce B2B i dedykowane aplikacje webowe.",
+      title: siteCopy.pl.hero.tagline,
+      excerpt: siteCopy.pl.hero.subheader,
       href: "/pl/",
       category: "Strona główna",
     },
     {
-      title: "Web Design dla Przemysłu i Dedykowane Systemy",
-      excerpt:
-        "Strony gotowe na audyt zakupowy, e-commerce i dedykowane systemy dla firm przemysłowych, inżynieryjnych, energetycznych i logistycznych.",
+      title: positioningSeo("pl", "services").title,
+      excerpt: positioningSeo("pl", "services").description,
+      searchText: [
+        ...siteCopy.pl.services.digital.items,
+        ...siteCopy.pl.services.engineering.items,
+      ].join(" "),
       href: "/pl/services",
       category: "Usługi",
     },
@@ -122,7 +130,7 @@ const pageEntries: Record<Language, SearchEntry[]> = {
     {
       title: "Kontakt z Forsa Design",
       excerpt:
-        "Porozmawiaj o stronie przemysłowej, katalogu B2B, e-commerce lub dedykowanym systemie webowym.",
+        "Porozmawiaj o systemie cyfrowym dla przemysłu, katalogu technicznym lub projekcie 3D.",
       href: "/pl/contact",
       category: "Kontakt",
     },
@@ -147,19 +155,14 @@ export default function SearchPage({ lang }: { lang: Language }) {
   const isEn = lang === "en";
   const faqItems = t("faq.items") as unknown as { id: string; q: string; a: string }[];
 
+  const { title, description } = positioningSeo(lang, "search");
   useSeoMeta({
-    title: isEn ? "Search | Forsa Design" : "Szukaj | Forsa Design",
-    description: isEn
-      ? "Search Forsa Design services, industrial web design guidance, frequently asked questions and articles."
-      : "Przeszukaj usługi Forsa Design, poradniki web design dla przemysłu, FAQ i artykuły.",
-    ogTitle: isEn ? "Search Forsa Design" : "Szukaj w Forsa Design",
-    ogDescription: isEn
-      ? "Find information about industrial web design, bespoke web systems, FAQ and articles."
-      : "Znajdź informacje o web design dla przemysłu, dedykowanych systemach, FAQ i artykułach.",
-    twitterTitle: isEn ? "Search Forsa Design" : "Szukaj w Forsa Design",
-    twitterDescription: isEn
-      ? "Find information about industrial web design, bespoke web systems, FAQ and articles."
-      : "Znajdź informacje o web design dla przemysłu, dedykowanych systemach, FAQ i artykułach.",
+    title,
+    description,
+    ogTitle: title,
+    ogDescription: description,
+    twitterTitle: title,
+    twitterDescription: description,
     ogLocale: isEn ? "en_GB" : "pl_PL",
     canonical: buildHref(`/${lang}/search`),
     alternates: [
@@ -187,7 +190,29 @@ export default function SearchPage({ lang }: { lang: Language }) {
       href: `/${lang}/#${item.id}`,
       category: "FAQ",
     }));
-    return [...pageEntries[lang], ...faqEntries, ...articleEntries];
+    const developmentEntries: SearchEntry[] = [
+      {
+        title: historyCopy[lang].title,
+        excerpt: historyCopy[lang].description,
+        searchText: historyMilestones.map((milestone) => milestone[lang]).join(" "),
+        href: historyPath(lang),
+        category: siteCopy[lang].nav.about,
+      },
+      {
+        title: dachCase[lang].title,
+        excerpt: dachCase[lang].intro,
+        searchText: dachCase[lang].status,
+        href: dachPath(lang),
+        category: "Portfolio",
+      },
+      {
+        title: linklangCaseStudy[lang].title,
+        excerpt: linklangCaseStudy[lang].description,
+        href: linklangCasePath(lang),
+        category: "Portfolio",
+      },
+    ];
+    return [...pageEntries[lang], ...developmentEntries, ...faqEntries, ...articleEntries];
   }, [faqItems, isEn, lang]);
 
   const normalizedQuery = query.trim().toLocaleLowerCase(lang === "pl" ? "pl-PL" : "en-GB");
@@ -210,8 +235,8 @@ export default function SearchPage({ lang }: { lang: Language }) {
             </h1>
             <p className="text-xl text-foreground/70 font-light leading-relaxed">
               {isEn
-                ? "Search our services, frequently asked questions, guides and articles."
-                : "Przeszukaj nasze usługi, najczęstsze pytania, poradniki i artykuły."}
+                ? "Search our services, development milestones, case studies, frequently asked questions and articles."
+                : "Przeszukaj nasze usługi, etapy rozwoju, opisy projektów, najczęstsze pytania i artykuły."}
             </p>
           </div>
 

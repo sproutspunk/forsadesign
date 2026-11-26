@@ -4,22 +4,11 @@ export const linklangProject = {
   name: "LinkLang",
   url: "https://www.linklang.co.uk/",
   reviewedOn: "2026-11-16",
-  technologies: [
-    "React",
-    "TypeScript",
-    "Hono",
-    "Cloudflare Pages",
-    "Workers",
-    "D1",
-    "R2",
-    "Stripe",
-    "Resend",
-  ],
 };
 
 export const linklangCaseStudy = {
   pl: {
-    label: "Case study / System webowy",
+    label: "Case study / System produkcyjny",
     portfolioHeading: "Projekt w praktyce",
     portfolioIntro: "Od publicznej strony usługowej do obsługi zlecenia w panelu klienta.",
     title: "LinkLang: strona usługowa i portal obsługi tłumaczeń",
@@ -58,15 +47,15 @@ export const linklangCaseStudy = {
       },
       {
         title: "Wycena i akceptacja",
-        body: "Administrator tworzy wycenę dla konkretnego zlecenia. Klient może ją zaakceptować w panelu. Kwota pochodzi z zapisanej oferty, a nie z dowolnej wartości wpisanej w przeglądarce.",
+        body: "Administrator tworzy wycenę dla konkretnego zlecenia. Klient może ją zaakceptować w panelu.",
       },
       {
         title: "Integracja płatności",
-        body: "Po akceptacji wyceny aplikacja może utworzyć sesję Stripe Checkout. Backend obsługuje podpisane powiadomienie Stripe potwierdzające opłaconą sesję.",
+        body: "Po akceptacji wyceny klient może przejść do płatności.",
       },
       {
         title: "Dokumenty i wiadomości",
-        body: "Pliki i rozmowa są przypisane do zlecenia. Endpoint pobierania sprawdza dostęp właściciela zlecenia lub administratora oraz zgodność dokumentu z daną sprawą.",
+        body: "Pliki i rozmowa są przypisane do zlecenia.",
       },
       {
         title: "Panel administracyjny",
@@ -87,7 +76,7 @@ export const linklangCaseStudy = {
       },
       {
         title: "Akceptacja i płatność",
-        body: "Klient akceptuje wycenę. Integracja Checkout przekazuje płatność do Stripe, a backend odbiera jej potwierdzenie.",
+        body: "Klient akceptuje wycenę. Następnie klient może opłacić zlecenie.",
       },
       {
         title: "Realizacja i kontakt",
@@ -106,16 +95,13 @@ export const linklangCaseStudy = {
       },
       {
         title: "Dostęp do plików przez aplikację",
-        body: "Dokumenty są przechowywane w R2 i pobierane przez endpoint z kontrolą dostępu. Dane zleceń i metadane plików znajdują się w D1. To oddziela plik od publicznej prezentacji oferty.",
+        body: "Klient może pobrać materiały w karcie zlecenia po zalogowaniu.",
       },
       {
         title: "Osobny zapis zgód dotyczących zdrowia",
         body: "Kod przewiduje nadanie i wycofanie zgody dla zleceń dotyczących danych o zdrowiu. Rejestr obejmuje wersję treści, język i powiązanie ze zleceniem. Opisuje to funkcję systemu, nie stanowi deklaracji pełnej zgodności prawnej.",
       },
     ],
-    stackHeading: "Architektura projektu",
-    stackIntro:
-      "Interfejs React i TypeScript jest oddzielony od API Hono działającego na Cloudflare Workers. D1 przechowuje dane, R2 dokumenty, Stripe obsługuje Checkout, a Resend powiadomienia e-mail.",
     outcomeHeading: "Rezultat: spójny proces obsługi usługi",
     outcome:
       "Projekt łączy publiczną ofertę z kontem klienta i pracą administratora. Wycena, status, korespondencja oraz pliki mają wspólny kontekst zlecenia. To przykład dedykowanego systemu usługowego, który wykracza poza formularz kontaktowy.",
@@ -127,7 +113,7 @@ export const linklangCaseStudy = {
     cta: "Omów swój projekt",
   },
   en: {
-    label: "Case study / Web system",
+    label: "Case study / Production system",
     portfolioHeading: "A project in practice",
     portfolioIntro: "From a public service website to managing an enquiry through a client portal.",
     title: "LinkLang: a service website and translation client portal",
@@ -166,15 +152,15 @@ export const linklangCaseStudy = {
       },
       {
         title: "Quotations and acceptance",
-        body: "An administrator prepares a quotation for a particular order. The client can accept it in the portal. The amount comes from the stored quotation rather than an arbitrary browser-supplied value.",
+        body: "An administrator prepares a quotation for a particular order. The client can accept it in the portal.",
       },
       {
         title: "Payment integration",
-        body: "After quotation acceptance, the application can create a Stripe Checkout session. The backend handles a signed Stripe notification confirming a paid session.",
+        body: "Clients can proceed to payment after accepting a quotation.",
       },
       {
         title: "Documents and messages",
-        body: "Files and conversation belong to the order. The download endpoint checks access for the order owner or administrator and verifies that the document belongs to that order.",
+        body: "Files and conversation belong to the order.",
       },
       {
         title: "Administration",
@@ -195,7 +181,7 @@ export const linklangCaseStudy = {
       },
       {
         title: "Accept and pay",
-        body: "The client accepts the quotation. The Checkout integration passes payment to Stripe and the backend receives confirmation.",
+        body: "The client accepts the quotation. The client can then pay for the order.",
       },
       {
         title: "Work and communication",
@@ -214,16 +200,13 @@ export const linklangCaseStudy = {
       },
       {
         title: "Application-controlled document access",
-        body: "Documents are stored in R2 and downloaded through an access-controlled endpoint. D1 holds order data and file metadata. This separates working documents from the public service pages.",
+        body: "Clients can download the materials from the order workspace after signing in.",
       },
       {
         title: "A separate health-consent record",
         body: "The code supports granting and withdrawing consent for orders involving health information. The record includes the text version, language and associated order. This describes an implemented feature, rather than a claim of complete legal compliance.",
       },
     ],
-    stackHeading: "Project architecture",
-    stackIntro:
-      "The React and TypeScript interface is separate from a Hono API running on Cloudflare Workers. D1 holds application data, R2 stores documents, Stripe provides Checkout and Resend handles email notifications.",
     outcomeHeading: "The result: a connected service workflow",
     outcome:
       "The project connects the public offer with the client account and administrator's work. Quotations, status, correspondence and files share the order context. It demonstrates a bespoke service system that extends beyond a contact form.",

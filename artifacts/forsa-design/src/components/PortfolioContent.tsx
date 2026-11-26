@@ -49,7 +49,7 @@ export default function PortfolioContent({ lang }: { lang: "pl" | "en" }) {
         lang === "pl"
           ? "Platforma usług językowych. Konto klienta, zlecenia, dokumenty i kontakt z obsługą w jednym miejscu."
           : "A language-services platform bringing client accounts, orders, documents and communication into one workspace.",
-      detail: lang === "pl" ? "PL / EN · Wyceny i płatności" : "PL / EN · Quotations and payments",
+      detail: lang === "pl" ? "System produkcyjny · PL / EN" : "Production system · PL / EN",
       image: c.image,
       alt: c.imageAlt,
       href: linklangCasePath(lang),
@@ -78,8 +78,8 @@ export default function PortfolioContent({ lang }: { lang: "pl" | "en" }) {
             </h2>
             <p className="text-foreground/70 leading-relaxed">
               {lang === "pl"
-                ? "Strony i narzędzia połączone z rzeczywistym procesem obsługi klienta."
-                : "Websites and tools built around real customer workflows."}
+                ? "Portal obsługi klienta działający produkcyjnie oraz prototyp konfiguratora 3D."
+                : "A live service platform and a 3D configurator prototype."}
             </p>
           </div>
           <div

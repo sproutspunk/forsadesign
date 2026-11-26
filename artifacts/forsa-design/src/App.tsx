@@ -17,6 +17,7 @@ const TermsPage = lazy(() => import("@/pages/TermsPage"));
 const TermsPagePL = lazy(() => import("@/pages/TermsPagePL"));
 const PrivacyPage = lazy(() => import("@/pages/PrivacyPage"));
 const PrivacyPagePL = lazy(() => import("@/pages/PrivacyPagePL"));
+const HistoryPage = lazy(() => import("@/pages/HistoryPage"));
 const AboutPage = lazy(() => import("@/pages/AboutPage"));
 const ComparisonPage = lazy(() => import("@/pages/ComparisonPage"));
 const QuoteCalculatorPage = lazy(() => import("@/pages/QuoteCalculatorPage"));
@@ -76,9 +77,7 @@ function RootLandingPage() {
         height="710"
         className="h-auto w-56"
       />
-      <p className="text-foreground/70 text-center max-w-md">
-        Web Design &amp; Development Agency - Banff, Scotland
-      </p>
+      <p className="text-foreground/70 text-center max-w-md">Banff, Scotland</p>
       <nav className="flex items-center gap-6 text-sm font-semibold">
         <a
           href="/en/"
@@ -129,6 +128,8 @@ function Router() {
         <Route path="/en/privacy" component={PrivacyPage} />
         <Route path="/pl/privacy" component={PrivacyPagePL} />
         <Route path="/privacy" component={() => <RedirectTo to="/en/privacy" />} />
+        <Route path="/en/history" component={() => <HistoryPage lang="en" />} />
+        <Route path="/pl/history" component={() => <HistoryPage lang="pl" />} />
         <Route path="/en/about" component={() => <AboutPage lang="en" />} />
         <Route path="/pl/about" component={() => <AboutPage lang="pl" />} />
         <Route path="/pl/o-nas" component={() => <AboutPage lang="pl" />} />

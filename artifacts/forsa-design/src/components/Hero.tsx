@@ -1,5 +1,6 @@
 import { lazy, Suspense } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { siteCopy } from "@/data/siteCopy";
 import ToolLogos from "@/components/ToolLogos";
 import { trackEvent } from "@/lib/consentManager";
 
@@ -29,19 +30,19 @@ export default function Hero() {
 
           <div className="w-20 h-px bg-primary mb-6 mt-4" />
 
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold tracking-tight leading-tight mb-4 max-w-4xl">
-            {t("hero.tagline")}
-          </h1>
+          <h1 className="sr-only">{t("hero.tagline")}</h1>
 
           <ToolLogos />
 
-          <p className="text-lg md:text-xl text-foreground/80 font-medium mb-5 max-w-3xl text-balance">
+          <p className="text-2xl md:text-3xl font-serif font-bold leading-tight mt-5 mb-5 max-w-3xl text-balance">
             {t("hero.subheader")}
           </p>
 
-          <p className="text-base md:text-lg text-foreground/60 font-light leading-relaxed mb-8 max-w-[65ch] text-left">
-            {t("hero.body")}
-          </p>
+          <div className="space-y-4 text-base md:text-lg text-foreground/70 font-light leading-relaxed mb-8 max-w-[65ch] text-left">
+            {siteCopy[language].hero.body.map((paragraph) => (
+              <p key={paragraph}>{paragraph}</p>
+            ))}
+          </div>
 
           <a
             href="#contact"

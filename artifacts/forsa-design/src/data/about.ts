@@ -18,7 +18,7 @@ const shared = {
     en: [
       [
         "Industrial B2B experience",
-        "Our founder’s more than 20 years in international B2B sales inform our approach to websites as commercial tools. We understand industrial products, technical sales, international trade and procurement.",
+        "Our founder’s more than 20 years in international B2B sales inform how we connect technical product information with sales and procurement. We understand industrial products, technical sales, international trade and procurement.",
       ],
       [
         "Understanding the buying process",
@@ -32,7 +32,7 @@ const shared = {
     pl: [
       [
         "Doświadczenie w przemysłowym B2B",
-        "Ponad 20-letnie doświadczenie założyciela w międzynarodowej sprzedaży B2B sprawia, że traktujemy stronę jako narzędzie biznesowe, a nie wyłącznie projekt wizualny. Rozumiemy produkty przemysłowe, sprzedaż techniczną, handel międzynarodowy i procesy zakupowe.",
+        "Ponad 20-letnie doświadczenie założyciela w międzynarodowej sprzedaży B2B pomaga nam łączyć informacje techniczne o produktach z procesami sprzedaży i zakupów. Rozumiemy produkty przemysłowe, sprzedaż techniczną, handel międzynarodowy i procesy zakupowe.",
       ],
       [
         "Znajomość procesu zakupowego",
@@ -140,14 +140,14 @@ const shared = {
 
 export const aboutContent: Record<"en" | "pl", AboutContent> = {
   en: {
-    seoTitle: "About Forsa Design | Industrial Web Development in Aberdeenshire",
+    seoTitle: "About Forsa Design | Industrial Digital Solutions & 3D Engineering",
     seoDesc:
-      "Forsa Design builds custom websites and web systems for industrial, engineering and technical B2B companies. Team based in Banff, Aberdeenshire.",
+      "Meet Forsa Design in Banff, Scotland. Our experience spans industrial machinery, technical sales, web development and CAD-based visualisation.",
     heading: "Who’s Behind Forsa Design?",
     intro: [
-      "Forsa Design brings together web development and industrial B2B experience. Our founder, Miro, spent more than 20 years in international B2B sales, trading metalworking machinery, industrial equipment and engineering solutions across Europe and Asia. He ran businesses in two countries, negotiated contracts across three continents and managed international teams.",
+      "Forsa Design combines practical experience in industrial machinery, technical sales and international commerce with web development and CAD-based visualisation. Our founder, Miro, has worked in international B2B sales of metalworking machinery and industrial equipment.",
       "Our founder’s experience gives us a practical understanding of industrial sales and procurement. We know the process from initial contact and technical discussions through negotiation to the signed contract. We understand what buyers, engineers and decision-makers look for when they assess a potential supplier.",
-      "We work directly with you from the first conversation through development and launch. We use modern development tools including VS Code, GitHub, Cloudflare and AI-assisted development tools, but we remain responsible for the architecture, configuration, testing and final result.",
+      "We work directly with you from the first conversation through development and launch. We develop digital tools that connect technical product information with commercial processes, including product selection, configuration, enquiries and quotations.",
       "We are based in Banff, Aberdeenshire. We work in English and Polish with clients in the UK and internationally.",
     ],
     backgroundHeading: "Why Our Experience Matters",
@@ -159,14 +159,14 @@ export const aboutContent: Record<"en" | "pl", AboutContent> = {
     contactCta: "Request a Quote",
   },
   pl: {
-    seoTitle: "O Forsa Design | Strony i systemy webowe dla przemysłu",
+    seoTitle: "O Forsa Design | Rozwiązania cyfrowe dla przemysłu i inżynieria 3D",
     seoDesc:
-      "Forsa Design buduje dedykowane strony i systemy webowe dla firm przemysłowych, inżynieryjnych i technicznych. Zespół z siedzibą w Banff, Aberdeenshire.",
+      "Poznaj Forsa Design z Banff w Szkocji. Łączymy doświadczenie w branży maszyn przemysłowych i sprzedaży technicznej z tworzeniem systemów webowych i wizualizacją CAD.",
     heading: "Kto stoi za Forsa Design?",
     intro: [
-      "W Forsa Design łączymy web development z doświadczeniem w przemysłowym B2B. Nasz założyciel, Miro, przez ponad 20 lat pracował w międzynarodowej sprzedaży B2B, handlując maszynami do obróbki metalu, wyposażeniem przemysłowym i rozwiązaniami inżynieryjnymi w Europie i Azji. Prowadził firmy w dwóch krajach, negocjował kontrakty na trzech kontynentach i zarządzał międzynarodowymi zespołami.",
+      "Forsa Design łączy praktyczne doświadczenie w branży maszyn przemysłowych, sprzedaży technicznej i handlu międzynarodowym z tworzeniem systemów webowych oraz wizualizacją opartą na modelach CAD. Nasz założyciel, Miro, zajmował się międzynarodową sprzedażą B2B maszyn do obróbki metalu i wyposażenia przemysłowego.",
       "To doświadczenie dało nam praktyczną znajomość sprzedaży przemysłowej i procesów zakupowych. Znamy ten proces od pierwszego kontaktu i rozmów technicznych, przez negocjacje, aż po podpisanie kontraktu. Rozumiemy, na co zwracają uwagę kupcy, inżynierowie i osoby podejmujące decyzje, oceniając potencjalnego dostawcę.",
-      "Współpracujemy z Tobą bezpośrednio od pierwszej rozmowy, przez development, aż po uruchomienie projektu. Korzystamy z nowoczesnych narzędzi, takich jak VS Code, GitHub, Cloudflare, oraz narzędzi wspomaganych przez AI, ale odpowiadamy za architekturę, konfigurację, testy i końcowy rezultat.",
+      "Współpracujemy z Tobą bezpośrednio od pierwszej rozmowy, przez development, aż po uruchomienie projektu. Tworzymy narzędzia cyfrowe łączące informacje techniczne o produktach z procesami handlowymi, w tym doborem produktów, konfiguracją, zapytaniami i wycenami.",
       "Działamy z Banff w Aberdeenshire. Współpracujemy po polsku i angielsku z klientami z Wielkiej Brytanii oraz z zagranicy.",
     ],
     backgroundHeading: "Dlaczego nasze doświadczenie ma znaczenie",

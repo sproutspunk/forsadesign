@@ -2,8 +2,8 @@ export const dachCase = {
   pl: {
     title: "Dach Systema: konfigurator garaży i hal 3D",
     intro:
-      "Konfigurator łączy wybór bryły, dachu, wymiarów i wyposażenia z podglądem 3D. Klient może zobaczyć swój wariant, zachować projekt i przygotować zapytanie z konkretnymi parametrami.",
-    status: "Konfigurator 3D / Gotowy do wdrożenia pod klienta",
+      "Prototyp łączy wybór bryły, dachu, wymiarów i wyposażenia z podglądem 3D. Klient może zobaczyć swój wariant, zachować projekt i przygotować zapytanie z konkretnymi parametrami.",
+    status: "Konfigurator 3D / Prototyp rozwojowy",
     caption:
       "Rzeczywisty zrzut rosyjskiej wersji konfiguratora, wykonany 16 listopada 2026 z aplikacji uruchomionej lokalnie z gałęzi projektu.",
     scope: "Zakres konfiguratora",
@@ -39,9 +39,9 @@ export const dachCase = {
     enquiry:
       "Podsumowanie zbiera parametry wybranego wariantu i przygotowuje wiadomość w aplikacji pocztowej klienta. Wysyłkę zatwierdza użytkownik; dalsze ustalenia techniczne i wycena odbywają się z dostawcą.",
     technology: "Technologia i model 3D",
-    tech: "Model wykorzystuje Three.js i WebGL2, a interfejs lokalne moduły JavaScript oraz CSS. Proces czterech kroków jest wydzielony w workflow.js. Samodzielny plik HTML zawiera lokalne zasoby i może działać bez zewnętrznego CDN. Przy braku WebGL pozostają funkcje formularza, zapisu i zapytania.",
+    tech: "Wersja rozwojowa łączy komponenty CAD z interaktywnym modelem 3D. Wybór parametrów aktualizuje podgląd.",
     limits:
-      "Model służy do wizualnego doprecyzowania potrzeb. Nie zastępuje CAD, dokumentacji konstrukcyjnej ani zatwierdzenia nietypowych układów przez producenta. Kolory i faktury są orientacyjne; wymiary modelu i potwierdzone światło otworów są rozdzielone.",
+      "Model wspiera rozmowę o wymaganiach i przygotowanie zapytania. Możliwość wykonania, wymiary otworów i wykończenie potwierdza producent.",
     result: "Rezultat: wspólny punkt odniesienia do rozmowy technicznej",
     outcome:
       "Klient przekazuje wybraną konfigurację wraz z poglądowym modelem i zestawieniem parametrów. Zespół otrzymuje punkt wyjścia do rozmowy o wymiarach, wyposażeniu i warunkach wykonania. Zapis projektu pozwala wrócić do wcześniejszych ustaleń.",
@@ -52,8 +52,8 @@ export const dachCase = {
   en: {
     title: "Dach Systema: a 3D garage and hall configurator",
     intro:
-      "The configurator connects footprint, roof, dimension and equipment choices with a 3D preview. Customers can inspect their chosen variant, save the project and prepare an enquiry with specific requirements.",
-    status: "3D configurator / Ready for client-specific deployment",
+      "The prototype connects footprint, roof, dimension and equipment choices with a 3D preview. Customers can inspect their chosen variant, save the project and prepare an enquiry with specific requirements.",
+    status: "3D configurator / Development prototype",
     caption:
       "An actual Russian-language interface capture, taken on 16 November 2026 from the application run locally from the project branch.",
     scope: "What the configurator includes",
@@ -89,9 +89,9 @@ export const dachCase = {
     enquiry:
       "The summary collects the selected parameters and prepares a message in the customer's email application. The user authorises sending; technical details and quotation terms are then discussed with the supplier.",
     technology: "Technology and the 3D model",
-    tech: "The model uses Three.js and WebGL2, with local JavaScript modules and CSS for the interface. The four-step flow is separated into workflow.js. A standalone HTML file embeds local resources and can operate without an external CDN. Forms, saving and enquiries remain available without WebGL.",
+    tech: "The development version incorporates CAD components into an interactive 3D model. The preview updates as parameters change.",
     limits:
-      "The model helps clarify requirements visually. It does not replace CAD, structural documentation or manufacturer approval of non-standard layouts. Colours and textures are indicative; model dimensions are distinguished from confirmed clear opening dimensions.",
+      "The model helps clarify requirements and prepare an enquiry. The manufacturer confirms feasibility, clear opening dimensions and finishes.",
     result: "The result: a shared reference for a technical discussion",
     outcome:
       "Customers can share the selected configuration with an indicative model and parameter summary. The team receives a starting point for discussing dimensions, equipment and manufacturing requirements. A saved project preserves the choices for later review.",

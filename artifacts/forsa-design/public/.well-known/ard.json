@@ -4,10 +4,12 @@
       "identifier": "urn:air:forsadesign.co.uk:website",
       "displayName": "Forsa Design website",
       "type": "application/ld+json",
-      "description": "Industrial web design and bespoke web systems from Banff, Scotland. Website available in English and Polish.",
+      "description": "Industrial Digital Solutions & 3D Engineering from Banff, Scotland. Bespoke digital systems, technical catalogues and interactive 3D solutions. Website available in English and Polish.",
       "representativeQueries": [
-        "What web design services does Forsa Design offer?",
-        "How can I contact Forsa Design about an industrial website?"
+        "What industrial digital and 3D services does Forsa Design offer?",
+        "What are Forsa Design’s documented development milestones?",
+        "Jakie rozwiązania cyfrowe i usługi 3D oferuje Forsa Design?",
+        "Jakie etapy rozwoju udokumentowała Forsa Design?"
       ],
       "data": {
         "@context": "https://schema.org",
@@ -31,6 +33,18 @@
             "@type": "WebPage",
             "url": "https://forsadesign.co.uk/pl/",
             "inLanguage": "pl-PL"
+          },
+          {
+            "@type": "WebPage",
+            "url": "https://forsadesign.co.uk/en/history/",
+            "inLanguage": "en-GB",
+            "name": "History & Development"
+          },
+          {
+            "@type": "WebPage",
+            "url": "https://forsadesign.co.uk/pl/history/",
+            "inLanguage": "pl-PL",
+            "name": "Historia i rozwój"
           }
         ]
       }
