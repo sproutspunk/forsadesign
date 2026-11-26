@@ -289,7 +289,7 @@ const termsPL: LegalSection[] = [
     body: `Każda ze stron może zrezygnować z projektu lub rozwiązać umowę zgodnie z umową projektową, niniejszym Regulaminem i obowiązującym prawem. Jeżeli klient biznesowy zrezygnuje po rozpoczęciu prac, możemy wystawić fakturę za prace wykonane do dnia rezygnacji, ukończone etapy projektu i bezzwrotne koszty usług zewnętrznych poniesione na potrzeby projektu. Sposób rozliczenia zaliczki wynika z zaakceptowanej oferty, umowy projektowej i obowiązującego prawa.`,
     subsections: [
       {
-        title: "Umowy o świadczenie usług zawierane na odległość z konsumentami w Wielkiej Brytanii",
+        title: "Umowy o usługi zawierane na odległość z konsumentami w Wielkiej Brytanii",
         body: `Jeżeli przysługuje Ci ustawowe prawo odstąpienia, zwykle masz 14 dni, licząc od dnia następującego po zawarciu umowy, na odstąpienie bez podania przyczyny. Wystarczy wysłać jednoznaczne oświadczenie na hello@forsadesign.co.uk. Przed zawarciem umowy musimy przekazać instrukcję odstąpienia i wzór formularza. Abyśmy rozpoczęli prace w tym okresie, potrzebne jest Twoje wyraźne żądanie. Jeśli następnie odstąpisz od umowy, proporcjonalna opłata za wykonaną część usługi jest należna wyłącznie po spełnieniu warunków ustawowych. Prawo wygasa po wykonaniu całej usługi tylko wtedy, gdy wyraźnie zażądasz wcześniejszego rozpoczęcia prac i uprzednio przyjmiesz do wiadomości utratę tego prawa po zakończeniu usługi.`,
       },
       {
