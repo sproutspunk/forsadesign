@@ -11,7 +11,10 @@ export default function HistoryContent({ lang }: { lang: "en" | "pl" }) {
   });
 
   return (
-    <main id="main-content" className="container mx-auto max-w-4xl px-6 pt-36 pb-20">
+    <main
+      id="main-content"
+      className="container mx-auto max-w-4xl px-6 pt-52 pb-20 md:pt-48 xl:pt-40"
+    >
       <div className="w-12 h-1 bg-primary mb-8" />
       <h1 className="font-serif text-4xl md:text-6xl font-bold text-white mb-6">{title}</h1>
       <p className="text-xl text-foreground/70 font-light leading-relaxed mb-10">{description}</p>

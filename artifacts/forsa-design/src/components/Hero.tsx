@@ -12,7 +12,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-[62dvh] flex items-center justify-center py-16 md:py-20 overflow-hidden"
+      className="relative min-h-[62dvh] flex items-center justify-center pt-52 pb-16 md:pt-48 md:pb-20 xl:pt-40 overflow-hidden"
     >
       <div className="blueprint-hero-glow absolute inset-0 pointer-events-none" />
       <div className="container mx-auto px-6 relative z-10">
@@ -32,8 +32,6 @@ export default function Hero() {
 
           <h1 className="sr-only">{t("hero.tagline")}</h1>
 
-          <ToolLogos />
-
           <p className="text-2xl md:text-3xl font-serif font-bold leading-tight mt-5 mb-5 max-w-3xl text-balance">
             {t("hero.subheader")}
           </p>
@@ -52,6 +50,8 @@ export default function Hero() {
           >
             {t("hero.cta")}
           </a>
+
+          <ToolLogos />
 
           <Suspense fallback={null}>
             <TrustBar />
