@@ -117,8 +117,8 @@ export default function WaitlistForm({ isEn, className }: WaitlistFormProps) {
       )}
       <p className="text-xs leading-relaxed mt-3">
         {isEn
-          ? "We use these details to handle your request."
-          : "Dane wykorzystujemy do obsługi zgłoszenia."}{" "}
+          ? "We will email you about the editor demo. You can leave the list by emailing hello@forsadesign.co.uk."
+          : "Wyślemy Ci wiadomość o wersji demonstracyjnej edytora. Możesz wypisać się z listy, pisząc na hello@forsadesign.co.uk."}{" "}
         <a className="underline" href={`/${isEn ? "en" : "pl"}/privacy/`}>
           {isEn ? "Privacy policy" : "Polityka prywatności"}
         </a>

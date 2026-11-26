@@ -207,6 +207,15 @@ export default function PayPage({ lang }: PayPageProps) {
                   className="mt-2 w-full rounded-sm border border-border bg-card px-4 py-3 text-white outline-none focus:border-primary"
                 />
               </label>
+              <p className="text-sm text-muted-foreground">
+                {t(
+                  "Stripe handles the payment. We use your email and payment reference to match it to your invoice or deposit.",
+                  "Płatność obsługuje Stripe. Adres e-mail i opis płatności pomagają nam przypisać wpłatę do faktury lub zaliczki.",
+                )}{" "}
+                <a href={`/${lang}/privacy/`} className="text-primary underline">
+                  {t("Privacy and cookie notice", "Polityka prywatności i cookies")}
+                </a>
+              </p>
               {status === "error" && (
                 <p role="alert" className="text-sm text-red-400">
                   {error}

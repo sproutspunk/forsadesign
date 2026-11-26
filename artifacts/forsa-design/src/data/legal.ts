@@ -4,12 +4,12 @@ export type LegalSection = {
   body: string;
   subsections?: { title: string; body: string }[];
 };
-export const legalUpdated = "22 November 2026";
+export const legalUpdated = "2026-11-26";
 const termsEN: LegalSection[] = [
   {
     number: "1",
     title: "Introduction",
-    body: `These Terms and Conditions apply to the Forsa Design website and to services supplied by Forsa Design. Forsa Design is based in Banff, Scotland. We provide custom website development, B2B catalogues and ordering systems, custom web tools, API integrations and optional ongoing support. These Terms are intended for services supplied to businesses, organisations and individuals acting for purposes relating to their trade, business or profession. If we agree to provide services to a consumer, any statutory consumer rights that cannot legally be excluded or restricted will continue to apply. A quotation, project agreement or other written agreement may contain terms specific to a particular project. If a project-specific agreement conflicts with these general Terms, the project-specific agreement takes precedence for that project.`,
+    body: `These Terms and Conditions apply to the Forsa Design website and to services supplied by Forsa Design. Forsa Design is based in Banff, Scotland. Our main services are industrial digital systems and 3D engineering. We also provide branding and commercial due diligence. These Terms are intended for services supplied to businesses, organisations and individuals acting for purposes relating to their trade, business or profession. If we agree to provide services to a consumer, any statutory consumer rights that cannot legally be excluded or restricted will continue to apply. A quotation, project agreement or other written agreement may contain terms specific to a particular project. If a project-specific agreement conflicts with these general Terms, the project-specific agreement takes precedence for that project.`,
   },
   {
     number: "2",
@@ -19,7 +19,7 @@ const termsEN: LegalSection[] = [
   {
     number: "3",
     title: "Services",
-    body: `Services may include custom websites, B2B catalogues and ordering systems, custom web tools, API integrations, and optional post-launch technical support and further development. The exact services and deliverables included in a project are defined in the relevant quotation or project agreement. A feature, integration or service mentioned on the website is not automatically included in a project unless it is included in the agreed scope.`,
+    body: `Industrial digital projects can include websites, technical product catalogues, B2B portals, product selection tools, enquiry, quotation and ordering systems, API integrations and process automation. We agree any ongoing support or further development separately. The exact services and deliverables included in a project are defined in the relevant quotation or project agreement. A feature, integration or service mentioned on the website is not automatically included in a project unless it is included in the agreed scope.`,
   },
   {
     number: "4",
@@ -29,7 +29,7 @@ const termsEN: LegalSection[] = [
   {
     number: "5",
     title: "Deposits and Payments",
-    body: `The deposit and payment schedule for a project are stated in the quotation or project agreement. Where a 25% deposit is specified, work will normally begin after that deposit has been received and after the information or access required to start the project has been provided. Remaining payments may be due at agreed milestones, on completion or according to another payment schedule stated in the project documentation. Unless a different payment period is stated on the invoice or agreed in writing, invoices are due within 14 days. Payments may be processed through Stripe or another agreed payment method. Third-party payment services operate under their own terms and policies.`,
+    body: `The quotation or project agreement sets any deposit, its amount, the payment schedule and the conditions for starting work, including any information or access the client must provide. Remaining payments may be due at agreed milestones, on completion or according to another payment schedule stated in the project documentation. Unless a different payment period is stated on the invoice or agreed in writing, invoices are due within 14 days. The payment page takes the amount of an existing invoice or agreed deposit in pounds sterling and redirects the client to Stripe Checkout. The accepted quotation or project agreement sets the price and scope. The parties may agree another payment method. Third-party payment services operate under their own terms and policies.`,
   },
   {
     number: "6",
@@ -109,7 +109,7 @@ const termsEN: LegalSection[] = [
   {
     number: "19",
     title: "Data Protection and Privacy",
-    body: `We process personal data in accordance with applicable UK data protection law and the Forsa Design Privacy Policy. The respective data protection roles of Forsa Design, the client and third-party providers depend on the circumstances of the project and the processing involved. Where required, appropriate data processing terms may be agreed separately. The client remains responsible for the legal and regulatory obligations applicable to its own business and its use of the delivered website or system. Depending on the project, these may include privacy notices, lawful processing of personal data, cookie consent, marketing communications, customer data, retention requirements and industry-specific obligations. Forsa Design does not provide legal advice.`,
+    body: `We process personal data in accordance with applicable UK data protection law and the Forsa Design Privacy Policy. The respective data protection roles of Forsa Design, the client and third-party providers depend on the circumstances of the project and the processing involved. Where we process personal data on a client’s instructions as its processor, the contract must include the terms required by Article 28 UK GDPR before processing begins. The client remains responsible for the legal and regulatory obligations applicable to its own business and its use of the delivered website or system. Depending on the project, these may include privacy notices, lawful processing of personal data, cookie consent, marketing communications, customer data, retention requirements and industry-specific obligations. Forsa Design does not provide legal advice.`,
   },
   {
     number: "20",
@@ -119,8 +119,12 @@ const termsEN: LegalSection[] = [
   {
     number: "21",
     title: "Cancellation and Termination",
-    body: `Either party may cancel or terminate a project in accordance with the project agreement, these Terms and applicable law. If the client cancels after work has begun, we may invoice for work completed up to the cancellation date, completed project stages and non-recoverable third-party costs incurred for the project. The treatment of any deposit is governed by the accepted quotation, project agreement and applicable law.`,
+    body: `Either party may cancel or terminate a project in accordance with the project agreement, these Terms and applicable law. If a business client cancels after work has begun, we may invoice for work completed up to the cancellation date, completed project stages and non-recoverable third-party costs incurred for the project. The treatment of any deposit is governed by the accepted quotation, project agreement and applicable law.`,
     subsections: [
+      {
+        title: "UK consumer service contracts agreed at a distance",
+        body: `Where a statutory cancellation right applies, you normally have 14 days from the day after the contract is made to cancel without giving a reason. You can email hello@forsadesign.co.uk with a clear statement that you wish to cancel. Before you are bound, we must provide the cancellation instructions and model form. Starting work during this period requires your express request. If you then cancel, a proportionate charge for work supplied is payable only where the legal conditions are met. The right ends on full performance only if you requested the early start and acknowledged beforehand that you would lose the right on completion.`,
+      },
       {
         title: "Suspension or Termination by Forsa Design",
         body: `We may suspend or terminate work where there is serious or continuing non-payment, a material breach of the project agreement or these Terms, a request to use the project or services unlawfully, or repeated failure to provide information, access or decisions required to continue the work. Where reasonably possible, we will notify the client before suspension or termination.`,
@@ -172,7 +176,7 @@ const termsPL: LegalSection[] = [
   {
     number: "1",
     title: "Postanowienia ogólne",
-    body: `Niniejszy Regulamin dotyczy strony internetowej Forsa Design oraz usług świadczonych przez Forsa Design. Forsa Design ma siedzibę w Banff w Szkocji. Świadczymy usługi obejmujące tworzenie dedykowanych stron internetowych, katalogów i systemów zamówień B2B, dedykowanych narzędzi webowych, integracji API oraz opcjonalnego wsparcia po wdrożeniu. Regulamin jest przeznaczony dla usług świadczonych na rzecz firm, organizacji oraz osób działających w związku ze swoją działalnością gospodarczą lub zawodową. Jeżeli zgodzimy się świadczyć usługę konsumentowi, zastosowanie zachowują wszystkie ustawowe prawa konsumenta, których zgodnie z prawem nie można wyłączyć ani ograniczyć. Oferta, umowa projektowa lub inne pisemne uzgodnienie może zawierać warunki dotyczące konkretnego projektu. Jeżeli takie uzgodnienie jest sprzeczne z niniejszym Regulaminem, w odniesieniu do danego projektu pierwszeństwo ma uzgodnienie projektowe.`,
+    body: `Niniejszy Regulamin dotyczy strony internetowej Forsa Design oraz usług świadczonych przez Forsa Design. Forsa Design ma siedzibę w Banff w Szkocji. Nasze główne usługi to przemysłowe rozwiązania cyfrowe i inżynieria 3D. Oferujemy również identyfikację wizualną oraz analizę wiarygodności kontrahentów i ryzyka handlowego. Regulamin jest przeznaczony dla usług świadczonych na rzecz firm, organizacji oraz osób działających w związku ze swoją działalnością gospodarczą lub zawodową. Jeżeli zgodzimy się świadczyć usługę konsumentowi, zastosowanie zachowują wszystkie ustawowe prawa konsumenta, których zgodnie z prawem nie można wyłączyć ani ograniczyć. Oferta, umowa projektowa lub inne pisemne uzgodnienie może zawierać warunki dotyczące konkretnego projektu. Jeżeli takie uzgodnienie jest sprzeczne z niniejszym Regulaminem, w odniesieniu do danego projektu pierwszeństwo ma uzgodnienie projektowe.`,
   },
   {
     number: "2",
@@ -182,7 +186,7 @@ const termsPL: LegalSection[] = [
   {
     number: "3",
     title: "Usługi",
-    body: `Usługi mogą obejmować dedykowane strony internetowe, katalogi i systemy zamówień B2B, dedykowane narzędzia webowe, integracje API oraz opcjonalne wsparcie techniczne i dalszy rozwój po uruchomieniu. Dokładny zakres usług i elementów projektu określa odpowiednia oferta lub umowa projektowa. Funkcja, integracja lub usługa wymieniona na stronie nie jest automatycznie częścią projektu, jeżeli nie została uwzględniona w uzgodnionym zakresie.`,
+    body: `Projekty cyfrowe dla przemysłu mogą obejmować strony internetowe, katalogi techniczne, portale B2B, narzędzia do doboru produktów, systemy zapytań, wycen i zamówień, integracje API oraz automatyzację procesów. Zakres dalszego rozwoju i wsparcia po wdrożeniu uzgadniamy osobno. Dokładny zakres usług i elementów projektu określa odpowiednia oferta lub umowa projektowa. Funkcja, integracja lub usługa wymieniona na stronie nie jest automatycznie częścią projektu, jeżeli nie została uwzględniona w uzgodnionym zakresie.`,
   },
   {
     number: "4",
@@ -192,7 +196,7 @@ const termsPL: LegalSection[] = [
   {
     number: "5",
     title: "Zaliczki i płatności",
-    body: `Wysokość zaliczki i harmonogram płatności są określane w ofercie lub umowie projektowej. Jeżeli dla danego projektu określono zaliczkę w wysokości 25%, prace zwykle rozpoczynamy po jej otrzymaniu oraz po otrzymaniu informacji lub dostępu potrzebnego do rozpoczęcia projektu. Pozostałe płatności mogą być wymagane na uzgodnionych etapach, po zakończeniu projektu lub zgodnie z innym harmonogramem wskazanym w dokumentacji projektowej. Jeżeli faktura lub pisemne uzgodnienie nie określa innego terminu, faktura jest płatna w ciągu 14 dni. Płatności mogą być obsługiwane przez Stripe lub inną uzgodnioną metodę płatności. Zewnętrzni dostawcy usług płatniczych działają na podstawie własnych warunków i polityk.`,
+    body: `Oferta lub umowa projektowa określa, czy wymagana jest zaliczka, jej wysokość, harmonogram płatności oraz warunki rozpoczęcia prac, w tym informacje i dostęp, które klient ma zapewnić. Pozostałe płatności mogą być wymagane na uzgodnionych etapach, po zakończeniu projektu lub zgodnie z innym harmonogramem wskazanym w dokumentacji projektowej. Jeżeli faktura lub pisemne uzgodnienie nie określa innego terminu, faktura jest płatna w ciągu 14 dni. Na stronie płatności klient podaje w funtach szterlingach kwotę z wystawionej faktury lub uzgodnionej zaliczki, po czym przechodzi do Stripe Checkout. Cenę i zakres prac określa zaakceptowana oferta lub umowa projektowa. Strony mogą uzgodnić inną metodę płatności. Zewnętrzni dostawcy usług płatniczych działają na podstawie własnych warunków i polityk.`,
   },
   {
     number: "6",
@@ -272,7 +276,7 @@ const termsPL: LegalSection[] = [
   {
     number: "19",
     title: "Ochrona danych i prywatność",
-    body: `Przetwarzamy dane osobowe zgodnie z obowiązującymi przepisami Wielkiej Brytanii dotyczącymi ochrony danych oraz Polityką prywatności Forsa Design. Role Forsa Design, klienta i zewnętrznych dostawców w zakresie ochrony danych zależą od okoliczności konkretnego projektu i rodzaju przetwarzania. Jeżeli jest to wymagane, odpowiednie zasady przetwarzania danych mogą zostać uzgodnione osobno. Klient pozostaje odpowiedzialny za obowiązki prawne i regulacyjne dotyczące jego własnej działalności oraz sposobu korzystania z dostarczonej strony lub systemu. W zależności od projektu mogą one obejmować politykę prywatności, zgodne z prawem przetwarzanie danych osobowych, zgodę na pliki cookie, komunikację marketingową, dane klientów, okresy przechowywania danych i wymagania właściwe dla danej branży. Forsa Design nie świadczy usług doradztwa prawnego.`,
+    body: `Przetwarzamy dane osobowe zgodnie z obowiązującymi przepisami Wielkiej Brytanii dotyczącymi ochrony danych oraz Polityką prywatności Forsa Design. Role Forsa Design, klienta i zewnętrznych dostawców w zakresie ochrony danych zależą od okoliczności konkretnego projektu i rodzaju przetwarzania. Gdy przetwarzamy dane osobowe na polecenie klienta jako podmiot przetwarzający, przed rozpoczęciem przetwarzania umowa musi zawierać postanowienia wymagane przez art. 28 UK GDPR. Klient pozostaje odpowiedzialny za obowiązki prawne i regulacyjne dotyczące jego własnej działalności oraz sposobu korzystania z dostarczonej strony lub systemu. W zależności od projektu mogą one obejmować politykę prywatności, zgodne z prawem przetwarzanie danych osobowych, zgodę na pliki cookie, komunikację marketingową, dane klientów, okresy przechowywania danych i wymagania właściwe dla danej branży. Forsa Design nie świadczy usług doradztwa prawnego.`,
   },
   {
     number: "20",
@@ -282,8 +286,12 @@ const termsPL: LegalSection[] = [
   {
     number: "21",
     title: "Rezygnacja i rozwiązanie umowy",
-    body: `Każda ze stron może zrezygnować z projektu lub rozwiązać umowę zgodnie z umową projektową, niniejszym Regulaminem i obowiązującym prawem. Jeżeli klient zrezygnuje po rozpoczęciu prac, możemy wystawić fakturę za prace wykonane do dnia rezygnacji, ukończone etapy projektu i bezzwrotne koszty usług zewnętrznych poniesione na potrzeby projektu. Sposób rozliczenia zaliczki wynika z zaakceptowanej oferty, umowy projektowej i obowiązującego prawa.`,
+    body: `Każda ze stron może zrezygnować z projektu lub rozwiązać umowę zgodnie z umową projektową, niniejszym Regulaminem i obowiązującym prawem. Jeżeli klient biznesowy zrezygnuje po rozpoczęciu prac, możemy wystawić fakturę za prace wykonane do dnia rezygnacji, ukończone etapy projektu i bezzwrotne koszty usług zewnętrznych poniesione na potrzeby projektu. Sposób rozliczenia zaliczki wynika z zaakceptowanej oferty, umowy projektowej i obowiązującego prawa.`,
     subsections: [
+      {
+        title: "Umowy o świadczenie usług zawierane na odległość z konsumentami w Wielkiej Brytanii",
+        body: `Jeżeli przysługuje Ci ustawowe prawo odstąpienia, zwykle masz 14 dni, licząc od dnia następującego po zawarciu umowy, na odstąpienie bez podania przyczyny. Wystarczy wysłać jednoznaczne oświadczenie na hello@forsadesign.co.uk. Przed zawarciem umowy musimy przekazać instrukcję odstąpienia i wzór formularza. Abyśmy rozpoczęli prace w tym okresie, potrzebne jest Twoje wyraźne żądanie. Jeśli następnie odstąpisz od umowy, proporcjonalna opłata za wykonaną część usługi jest należna wyłącznie po spełnieniu warunków ustawowych. Prawo wygasa po wykonaniu całej usługi tylko wtedy, gdy wyraźnie zażądasz wcześniejszego rozpoczęcia prac i uprzednio przyjmiesz do wiadomości utratę tego prawa po zakończeniu usługi.`,
+      },
       {
         title: "Wstrzymanie lub zakończenie prac przez Forsa Design",
         body: `Możemy wstrzymać lub zakończyć prace w przypadku poważnego lub utrzymującego się braku płatności, istotnego naruszenia umowy projektowej lub Regulaminu, żądania wykorzystania projektu lub usług w sposób niezgodny z prawem albo powtarzającego się braku informacji, dostępu lub decyzji niezbędnych do kontynuowania prac. Jeżeli będzie to rozsądnie możliwe, poinformujemy klienta przed wstrzymaniem lub zakończeniem prac.`,
@@ -339,8 +347,8 @@ const serviceDetails = {
       body: "Przedmiotem usługi są elementy identyfikacji wizualnej, takie jak logo, paleta barw, typografia i zasady stosowania. Dokumentacja projektu określa formaty plików, zakres opracowania i prawa do ich wykorzystania. Materiały zewnętrzne pozostają objęte własnymi licencjami.",
     },
     {
-      title: "Konfiguratory 3D",
-      body: "Konfigurator przedstawia parametry i wizualizację produktu na podstawie reguł oraz danych zatwierdzonych przez klienta. Model nie zastępuje obliczeń konstrukcyjnych, dokumentacji wykonawczej ani akceptacji producenta. Sposób obliczania cen, zapisu konfiguracji i przekazywania zapytań wynika z funkcji wskazanych w projekcie.",
+      title: "Inżynieria 3D i wizualizacja CAD",
+      body: "Zakres prac może obejmować wizualizacje na podstawie CAD, interaktywne modele komponentów lub konfiguratory parametryczne. Oferta określa wymagane od klienta rysunki źródłowe, formaty modeli, parametry i reguły doboru produktu. Demonstracje w portfolio pokazują dostępne funkcje. Model nie zastępuje obliczeń konstrukcyjnych, dokumentacji wykonawczej ani akceptacji producenta. Sposób obliczania cen, zapisu konfiguracji i przekazywania zapytań wynika z funkcji wskazanych w projekcie.",
     },
     {
       title: "Analiza kontrahentów",
@@ -353,8 +361,8 @@ const serviceDetails = {
       body: "The service concerns visual assets such as logos, colour palettes, typography and usage guidelines. Project documentation specifies deliverables, file formats and usage rights. Third-party materials remain subject to their own licences.",
     },
     {
-      title: "3D configurators",
-      body: "A configurator presents product parameters and visualisation using rules and data approved by the client. The model does not replace structural calculations, manufacturing documentation or manufacturer approval. Pricing, configuration storage and enquiry handling depend on the functions included in the project.",
+      title: "3D engineering and CAD visualisation",
+      body: "The agreed deliverables may include CAD-based visualisations, interactive component models or parametric configurators. The quotation identifies the source drawings, model formats, parameters and product rules required from the client. Portfolio demonstrations illustrate the available functions. The model does not replace structural calculations, manufacturing documentation or manufacturer approval. Pricing, configuration storage and enquiry handling depend on the functions included in the project.",
     },
     {
       title: "Counterparty assessment",
@@ -376,60 +384,70 @@ export const privacySections: Record<"pl" | "en", LegalSection[]> = {
     {
       number: "2",
       title: "Zapytania i realizacja usług",
-      body: "Formularze kontaktu i wyceny przekazują imię, adres e-mail, treść zapytania oraz dobrowolnie podane dane firmy. Wykorzystujemy je do odpowiedzi i przygotowania współpracy. Podstawą jest podjęcie działań przed zawarciem umowy na żądanie osoby, której dane dotyczą, albo uzasadniony interes w obsłudze kontaktu z przedstawicielem przedsiębiorstwa. Dane niezbędne do realizacji umowy i rozliczeń przetwarzamy odpowiednio w celu wykonania umowy lub obowiązków prawnych.",
+      body: "W formularzach kontaktu i wyceny prosimy o imię i adres e-mail, aby móc odpowiedzieć. Formularz kontaktowy wymaga również treści wiadomości. W formularzu wyceny nazwa firmy i opis projektu są dobrowolne. Zapisujemy język, czas zgłoszenia i przekazane informacje. Korzystamy z nich, aby odpowiedzieć, ocenić wymagania i przygotować ofertę. Jeżeli to Ty masz być stroną umowy, podstawą są działania podejmowane na Twoje żądanie przed jej zawarciem lub wykonanie umowy. W przypadku przedstawiciela firmy naszym uzasadnionym interesem jest obsługa zapytania i realizacja uzgodnionych prac. Dokumentację księgową i podatkową przechowujemy w zakresie wymaganym prawem.",
     },
     {
       number: "3",
       title: "Checklista, informacje o edytorze i newsletter",
-      body: "Adres podany przy pobraniu checklisty służy do dostarczenia zamówionego materiału. Pobranie nie zapisuje na newsletter ani automatyczną sekwencję promocyjną. Zapis na informacje o edytorze dotyczy tego produktu. Newsletter wymaga odrębnej zgody i potwierdzenia adresu. Z komunikacji można zrezygnować przez link w wiadomości, jeżeli został udostępniony, lub przez kontakt na hello@forsadesign.co.uk. Rezygnacja z marketingu nie blokuje odpowiedzi na zgłoszenie ani koniecznych wiadomości dotyczących realizowanej usługi.",
+      body: "Gdy zamawiasz checklistę, wysyłamy ją na podany adres. Forsa Design otrzymuje powiadomienie z adresem e-mail, podaną dobrowolnie nazwą firmy, językiem i czasem zgłoszenia. Naszym uzasadnionym interesem jest dostarczenie i obsługa zamówionego materiału. Zapis na listę zainteresowanych edytorem oznacza zgodę na wiadomości o jego wersji demonstracyjnej. Newsletter bloga wymaga osobnej zgody i potwierdzenia adresu e-mail. Zapisujemy adres, język, źródło zapisu, wersję zgody, daty i status subskrypcji. Zgodę można wycofać przez link rezygnacji z newslettera lub e-mail na hello@forsadesign.co.uk. Pobranie checklisty nie zapisuje na żadną z tych list.",
     },
     {
       number: "4",
       title: "Analiza kontrahentów",
-      body: "W związku ze zleconą analizą możemy przetwarzać dane identyfikacyjne i zawodowe osób prowadzących działalność, reprezentantów przedsiębiorstw oraz właścicieli, pochodzące od zleceniodawcy lub z dostępnych zgodnie z prawem rejestrów i publikacji. Cel, zakres, role stron i właściwa podstawa przetwarzania wymagają ustalenia dla danego zlecenia. Informacje o przedsiębiorstwie nie są automatycznie informacjami o osobie fizycznej; nie gromadzimy danych osobowych wyłącznie dlatego, że są dostępne publicznie.",
+      body: "Raport może zawierać dane przedsiębiorców, członków zarządu, beneficjentów rzeczywistych i przedstawicieli firm. Źródłami mogą być zleceniodawca, rejestry przedsiębiorstw, opublikowane sprawozdania finansowe, urzędowe listy sankcyjne i publikacje branżowe. Uzgodniony raport otrzymuje zleceniodawca. Gdy sami określamy sposób wykorzystania danych jako administrator, oceniamy, czy uzasadniony interes nasz lub klienta w sprawdzeniu partnera handlowego uzasadnia ich użycie, z uwzględnieniem praw danej osoby. Gdy działamy jako podmiot przetwarzający na polecenie klienta, podstawę prawną określa klient. Jeśli jako administrator pozyskamy dane z innego źródła niż bezpośrednio od Ciebie, przekazujemy informacje wymagane przez UK GDPR, chyba że zastosowanie ma ustawowy wyjątek.",
     },
     {
       number: "5",
       title: "Dostawcy i odbiorcy danych",
-      body: "Witryna i jej zaplecze korzystają z Cloudflare do hostingu, bezpieczeństwa i obsługi danych formularzy. Resend obsługuje wysyłkę wiadomości. Stripe przetwarza płatności realizowane za pośrednictwem tej usługi; dane kart należy przekazywać operatorowi płatności, a nie w formularzu kontaktowym. Po wyrażeniu zgody opcjonalną analitykę obsługuje Google Analytics. Dostawcy mogą działać jako procesorzy lub odrębni administratorzy zależnie od operacji. Dane mogą także otrzymać uprawnione organy i doradcy, gdy wynika to z obowiązków prawnych lub obsługi sprawy.",
+      body: "Cloudflare zapewnia hosting strony i API, zabezpiecza ruch oraz przechowuje dane zgłoszeń i płatności. Resend dostarcza wiadomości dotyczące zapytań, potwierdzenia i zamówione materiały. Przy płatności za fakturę lub zaliczkę przekazujemy do Stripe kwotę, adres e-mail i podany opis płatności. Dane karty podajesz bezpośrednio w Stripe. Do rozliczenia zapisujemy identyfikator transakcji, kwotę, opis, e-mail, język, czas i status płatności. Google otrzymuje dane analityczne po wyrażeniu zgody. Uprawnione organy i doradcy mogą otrzymać odpowiednie dane, gdy wymaga tego prawo lub obsługa danej sprawy.",
     },
     {
       number: "6",
       title: "Okresy przechowywania",
-      body: "Nowe zgłoszenia zapisane w bazie formularzy wygasają po dwóch latach, a nowe wpisy na listę zainteresowanych edytorem po roku. Korespondencję i dokumentację współpracy przechowujemy przez czas potrzebny do obsługi sprawy, realizacji umowy, obowiązkowych rozliczeń i ochrony roszczeń. Odrębnie oceniamy potrzebę przechowywania materiałów roboczych. Aktywna subskrypcja trwa do rezygnacji; minimalny zapis sprzeciwu może być potrzebny, aby respektować rezygnację. Okres przechowywania danych analitycznych zależy od ustawień właściwości Google Analytics i nie jest określany samym czasem życia cookies.",
+      body: "Wpisy z formularzy kontaktu i wyceny wygasają w bazie zgłoszeń po 730 dniach, a wpisy na listę zainteresowanych edytorem po 365 dniach. Niepotwierdzony zapis na newsletter i link potwierdzający wygasają po 24 godzinach. Potwierdzona subskrypcja trwa do rezygnacji. System zachowuje następnie wpis ze statusem rezygnacji, aby uwzględnić sprzeciw i udokumentować historię zgody. Kopie wiadomości i dane o płatnościach mają odrębne okresy przechowywania, zależne od obsługi zapytania, realizacji projektu, obowiązków księgowych i ewentualnych roszczeń. Aplikacja nie usuwa automatycznie wpisów o płatnościach ani wypisanych subskrypcjach. Okres przechowywania zdarzeń w Google Analytics określa ustawienie usługi, niezależne od czasu życia cookies w przeglądarce.",
     },
     {
       number: "7",
       title: "Cookies i pamięć urządzenia",
-      body: "Ustawienia zgód zapisujemy lokalnie na 365 dni. Język, wybór zatrzymania animacji i zamknięcie banera produktu służą zapamiętaniu wyborów użytkownika. Opcjonalna analityka Google Analytics jest uruchamiana po jej zaakceptowaniu. Wybór można zmienić w ustawieniach cookies dostępnych w stopce lub poniżej. Brak zgody nie uniemożliwia kontaktu ani przeglądania oferty.",
+      body: "Twój wybór dotyczący cookies jest ważny w tej przeglądarce przez 365 dni. Język, wybór zatrzymania animacji i zamknięcie banera produktu służą zapamiętaniu wyborów użytkownika. Opcjonalna analityka Google Analytics jest uruchamiana po jej zaakceptowaniu. Wybór można zmienić w ustawieniach cookies dostępnych w stopce lub poniżej. Brak zgody nie uniemożliwia kontaktu ani przeglądania oferty.",
       subsections: [
         {
           title: "Ustawienia zgód",
-          body: "forsa-cookie-consent: localStorage, zapis decyzji i czasu jej podjęcia; ważność wyboru 365 dni. Po upływie okresu lub zmianie wersji mechanizmu użytkownik jest proszony o ponowny wybór.",
+          body: "Wpis forsa-cookie-consent w pamięci localStorage zawiera Twój wybór i jego datę. Po 365 dniach lub po zmianie wersji mechanizmu strona pomija poprzednią decyzję i pyta ponownie. Wpis pozostaje w przeglądarce do zastąpienia lub usunięcia.",
         },
         {
           title: "Preferencje interfejsu",
-          body: "forsa-lang zapisuje język; ustawienie ruchu tła zapisuje decyzję o animacji; forsa-announcement-dismissed-v1 zapamiętuje zamknięcie zapowiedzi produktu. Są to wpisy localStorage pozostające do wyczyszczenia danych witryny albo zmiany ustawienia, a nie pliki służące reklamie.",
+          body: "Forsa Design korzysta z pamięci localStorage w przeglądarce. Wpis forsa-lang zapisuje język strony, forsa-blueprint-paused ustawienie animacji tła, a forsa-announcement-dismissed-v1 zamknięcie zapowiedzi edytora. Te wpisy nie mają automatycznego terminu wygaśnięcia. Możesz je usunąć, czyszcząc dane witryny w przeglądarce. Ustawienie Google Analytics dotyczy wyłącznie analityki.",
         },
         {
           title: "Google Analytics",
-          body: "Po akceptacji analityki Google może używać cookies _ga i _ga_* do rozróżniania wizyt i obsługi pomiaru. Ich czas zależy od konfiguracji tagu i przeglądarki; domyślnie może wynosić do dwóch lat i być odnawiany. Nie należy utożsamiać tego z okresem przechowywania zdarzeń na koncie usługi. Po wycofaniu zgody blokujemy dalsze zdarzenia aplikacji i usuwamy dostępne dla witryny cookies tej kategorii.",
+          body: "Po wyrażeniu zgody Google Analytics 4 mierzy odsłony i działania, takie jak przesłanie formularza lub rozpoczęcie płatności wraz z jej kwotą. W tagu wyłączono Google Signals i personalizację reklam. Google może używać cookies _ga i _ga_* do rozróżniania wizyt i obsługi pomiaru. Ich czas zależy od konfiguracji tagu i przeglądarki; domyślnie może wynosić do dwóch lat i być odnawiany. Nie należy utożsamiać tego z okresem przechowywania zdarzeń na koncie usługi. Po wycofaniu zgody blokujemy dalsze zdarzenia aplikacji i usuwamy dostępne dla witryny cookies tej kategorii.",
         },
         {
           title: "Usługi bezpieczeństwa",
-          body: "Infrastruktura hostingowa może przetwarzać adres IP i dane techniczne połączenia w celu dostarczenia i zabezpieczenia usługi. Zakres niezbędnych mechanizmów zależy od uruchomionych zabezpieczeń; nie jest zgodą na reklamowe śledzenie użytkownika.",
+          body: "Cloudflare i nasze API wykorzystują adres IP i dane techniczne żądania do dostarczenia strony, ograniczania liczby powtarzanych żądań oraz sprawdzania podejrzeń spamu. Naszym uzasadnionym interesem jest zapewnienie dostępności witryny i ochrona formularzy przed nadużyciami. Po przejściu do Stripe Checkout informacje o zapisie na urządzeniu i zapobieganiu oszustwom podaje Stripe.",
         },
       ],
     },
     {
       number: "8",
       title: "Bezpieczeństwo i transfery",
-      body: "Stosujemy połączenia HTTPS, ograniczanie dostępu, walidację danych i utrzymanie zależności odpowiednie do systemu. Dostawcy usług mogą przetwarzać dane w różnych państwach. Jeżeli występuje transfer objęty ograniczeniami UK GDPR, wymaga on właściwego mechanizmu prawnego, na przykład mającej zastosowanie decyzji o adekwatności lub odpowiednich zabezpieczeń umownych. Informacje o odbiorcach i zabezpieczeniach można uzyskać pod adresem kontaktowym. Nie przedstawiamy globalnej usługi jako gwarancji przechowywania danych wyłącznie w UK lub UE.",
+      body: "Korzystamy z HTTPS i ograniczamy dostęp do dokumentacji projektowej oraz danych usługowych. Nasi dostawcy działają w różnych krajach. W szczególności Resend przetwarza pocztę w Stanach Zjednoczonych. Zależnie od odbiorcy i kraju zabezpieczenia transferu z Wielkiej Brytanii obejmują brytyjskie przepisy stwierdzające odpowiedni stopień ochrony, w tym brytyjskie rozszerzenie EU–US Data Privacy Framework w odniesieniu do objętych nim odbiorców w USA, lub standardowe klauzule umowne z brytyjskim aneksem. O szczegóły lub kopię zabezpieczeń dotyczących Twoich danych możesz poprosić pod adresem hello@forsadesign.co.uk.",
     },
     {
       number: "9",
       title: "Prawa osób",
-      body: "W zależności od podstawy i okoliczności przetwarzania przysługuje prawo dostępu, sprostowania, usunięcia, ograniczenia, przenoszenia danych, sprzeciwu oraz wycofania zgody. Wycofanie nie wpływa na zgodność wcześniejszego przetwarzania. Sprzeciw wobec marketingu bezpośredniego jest respektowany. Wnioski obsługujemy bez zbędnej zwłoki, co do zasady w ciągu miesiąca kalendarzowego, z uwzględnieniem ustawowych zasad potwierdzenia tożsamości i przedłużenia terminu. Można złożyć skargę do Information Commissioner’s Office: ico.org.uk.",
+      body: "W zależności od podstawy i okoliczności przetwarzania przysługuje prawo dostępu, sprostowania, usunięcia, ograniczenia, przenoszenia danych, sprzeciwu oraz wycofania zgody. Wycofanie nie wpływa na zgodność wcześniejszego przetwarzania. Sprzeciw wobec marketingu bezpośredniego jest respektowany. Wnioski obsługujemy bez zbędnej zwłoki, co do zasady w ciągu miesiąca kalendarzowego, z uwzględnieniem ustawowych zasad potwierdzenia tożsamości i przedłużenia terminu.",
+      subsections: [
+        {
+          title: "Prawo do sprzeciwu",
+          body: "Możesz sprzeciwić się przetwarzaniu opartemu na uzasadnionym interesie z przyczyn związanych z Twoją sytuacją. Wobec marketingu bezpośredniego możesz wnieść sprzeciw w dowolnym momencie. W obu sprawach możesz napisać na hello@forsadesign.co.uk.",
+        },
+        {
+          title: "Skargi dotyczące danych osobowych",
+          body: "Skargę na sposób wykorzystania danych możesz zgłosić e-mailem na hello@forsadesign.co.uk lub telefonicznie pod numerem +44 7770 110735. Musimy potwierdzić jej otrzymanie w ciągu 30 dni, zbadać sprawę i bez zbędnej zwłoki przekazać wynik. Możesz również złożyć skargę do brytyjskiego Information Commissioner’s Office.",
+        },
+      ],
     },
     {
       number: "10",
@@ -451,60 +469,70 @@ export const privacySections: Record<"pl" | "en", LegalSection[]> = {
     {
       number: "2",
       title: "Enquiries and service delivery",
-      body: "Contact and quotation forms provide a name, email address, enquiry and any business information supplied voluntarily. We use these to respond and prepare a working relationship. The basis is steps taken at the individual’s request before a contract, or legitimate interests in handling a business representative’s enquiry. Information necessary for service delivery and accounting is processed for contract performance or applicable legal obligations.",
+      body: "The contact and quote forms ask for your name and email address so we can reply. The contact form also requires a message. On the quote form, the company and project description are optional. We keep the language, submission time and details you send. We use them to respond, assess the project and prepare a quotation. If you would be the contracting party, the basis is taking steps at your request before a contract or performing that contract. For contacts acting for a business, our legitimate interest is handling its enquiry and delivering the agreed work. We retain the records required to meet our accounting and tax obligations.",
     },
     {
       number: "3",
       title: "Checklist, editor updates and newsletter",
-      body: "An address supplied for the checklist is used to deliver the requested material. Downloading it does not subscribe anyone to a newsletter or promotional sequence. Editor update requests concern that product. Newsletter subscriptions require separate consent and address confirmation. To stop communications, use an available unsubscribe link or contact hello@forsadesign.co.uk. Marketing withdrawal does not prevent requested responses or necessary service communications.",
+      body: "When you request the checklist, we email it to you and notify Forsa Design of the request, including your email, any company name you enter, language and time. Our legitimate interest is delivering and administering the material you requested. Joining the editor waiting list gives us permission to email you about that demo. The blog newsletter has its own consent checkbox and email confirmation step. We record the address, language, signup source, consent version, dates and subscription status. To withdraw, use the newsletter unsubscribe link or email hello@forsadesign.co.uk. A checklist request does not subscribe you to either list.",
     },
     {
       number: "4",
       title: "Counterparty assessments",
-      body: "An assessment may involve identity and professional information about sole traders, business representatives and owners, supplied by the client or obtained from lawfully available registers and publications. The purpose, scope, roles and lawful basis must be established for the engagement. Business information is not automatically personal information, and public availability alone does not justify collecting it.",
+      body: "A report may identify sole traders, directors, beneficial owners or business representatives. Sources can include the commissioning client, company registers, published accounts, official sanctions lists and business publications. The client commissioning the assessment receives the agreed report. Where we determine how personal data is used, we assess whether our or our client’s legitimate interest in checking a trading partner justifies using the information, taking account of the individual’s rights. Where we act on a client’s instructions as its processor, the client determines the lawful basis. If we obtain your details indirectly as controller, we provide the information required by UK GDPR unless a statutory exception applies.",
     },
     {
       number: "5",
       title: "Providers and recipients",
-      body: "The website uses Cloudflare for hosting, security and form-data infrastructure. Resend delivers email. Stripe processes payments made through that service; card information should be provided to the payment provider rather than a contact form. Google Analytics provides optional analytics after consent. Providers may act as processors or separate controllers depending on the activity. Authorised bodies and advisers may receive data where required by law or to handle a matter.",
+      body: "Cloudflare hosts the site and API, protects traffic and stores form and payment records. Resend delivers enquiry messages, confirmations and requested materials. For an invoice or deposit payment we send Stripe the amount, your email and any payment reference you enter. Card details go directly to Stripe. We record the checkout reference, amount, description, email, language, time and payment status to reconcile payments. Google receives analytics data when you opt in. Advisers or public authorities may receive relevant records where necessary to handle a matter or meet a legal obligation.",
     },
     {
       number: "6",
       title: "Retention",
-      body: "New enquiries stored in the form database expire after two years and new editor-interest records after one year. Correspondence and project records are retained as needed for the matter, contract, statutory accounting and legal claims. Working materials are considered separately. Active subscriptions continue until withdrawal; a minimal suppression record may be necessary to honour that choice. Analytics event retention depends on the property settings and is distinct from cookie expiry.",
+      body: "Contact and quote form records in the form database expire after 730 days. Editor waiting-list records expire after 365 days. A pending newsletter signup and its confirmation link expire after 24 hours. Confirmed subscriptions continue until withdrawal. The system then keeps the subscription record with its unsubscribe status to honour the request and document the consent history. Email copies and payment records are separate from the form database expiry. Their retention depends on the enquiry, project, accounting obligations and any outstanding claims. Payment and unsubscribed newsletter records have no automatic expiry in the application. Google Analytics event retention is a separate property setting from the lifetime of its browser cookies.",
     },
     {
       number: "7",
       title: "Cookies and device storage",
-      body: "Consent choices are stored locally for 365 days. Language, motion and announcement-dismissal preferences remember user choices. Optional Google Analytics starts after analytics is accepted. Preferences can be changed through the footer or the control below. Refusing optional analytics does not prevent browsing services or contacting us.",
+      body: "Your consent choice is valid for 365 days in this browser. Language, motion and announcement-dismissal preferences remember user choices. Optional Google Analytics starts after analytics is accepted. Preferences can be changed through the footer or the control below. Refusing optional analytics does not prevent browsing services or contacting us.",
       subsections: [
         {
           title: "Consent preferences",
-          body: "forsa-cookie-consent: localStorage recording the choice and its date, valid for 365 days. Expiry or a consent-version change prompts a new decision.",
+          body: "The forsa-cookie-consent entry in localStorage records your choice and its date. After 365 days, or when its version changes, the site disregards the old choice and asks again. The entry remains in the browser until replaced or cleared.",
         },
         {
           title: "Interface preferences",
-          body: "forsa-lang records language; the background-motion setting records animation preference; forsa-announcement-dismissed-v1 remembers dismissal of the product announcement. These localStorage entries remain until site data is cleared or the setting changes; they are not advertising identifiers.",
+          body: "Forsa Design uses localStorage on this browser. The forsa-lang entry stores the language of the page, forsa-blueprint-paused stores the background animation choice and forsa-announcement-dismissed-v1 remembers closing the editor announcement. These entries have no automatic expiry. You can remove them by clearing site data in your browser. The Google Analytics setting controls analytics only.",
         },
         {
           title: "Google Analytics",
-          body: "After analytics consent, Google may use _ga and _ga_* cookies to distinguish visits and support measurement. Duration depends on tag and browser settings; the default may be up to two years and can be renewed. This differs from event retention in the service account. On withdrawal we block further application analytics events and remove analytics cookies accessible to the website.",
+          body: "If you consent, Google Analytics 4 measures page views and interactions such as form submissions and the start of checkout, including the payment amount. The site disables Google Signals and advertising personalisation in its tag. Google may use _ga and _ga_* cookies to distinguish visits and support measurement. Duration depends on tag and browser settings; the default may be up to two years and can be renewed. This differs from event retention in the service account. On withdrawal we block further application analytics events and remove analytics cookies accessible to the website.",
         },
         {
           title: "Security services",
-          body: "Hosting infrastructure may process IP addresses and technical connection information to deliver and protect the service. Necessary controls depend on the security configuration and do not constitute consent to advertising tracking.",
+          body: "Cloudflare and our API use IP addresses and technical request information to deliver the site, limit repeated requests and investigate suspected spam. Our legitimate interest is keeping the site available and protecting its forms from abuse. If you proceed to Stripe Checkout, Stripe provides its own information about storage and fraud prevention on the payment page.",
         },
       ],
     },
     {
       number: "8",
       title: "Security and international transfers",
-      body: "We use HTTPS, access restrictions, input validation and dependency maintenance appropriate to the system. Providers may process information in several countries. A restricted transfer under UK GDPR requires an applicable legal mechanism, such as an adequacy arrangement or appropriate contractual safeguards. Information about recipients and safeguards is available through the contact address. A global service is not presented as a guarantee of UK- or EU-only storage.",
+      body: "We use HTTPS and restrict access to project and service records. Our providers operate internationally. In particular, Resend processes email in the United States. Depending on the provider and destination, protections for restricted UK transfers include UK adequacy regulations, including the UK Extension to the EU–US Data Privacy Framework for covered US recipients, or standard contractual clauses with the UK Addendum. Email hello@forsadesign.co.uk for details or a copy of the safeguards relevant to your information.",
     },
     {
       number: "9",
       title: "Individual rights",
-      body: "Depending on the basis and circumstances, rights include access, correction, erasure, restriction, portability, objection and consent withdrawal. Withdrawal does not affect earlier lawful processing. Objections to direct marketing are honoured. Requests are handled without undue delay, normally within one calendar month, subject to statutory identity-verification and extension rules. Complaints may be made to the Information Commissioner’s Office at ico.org.uk.",
+      body: "Depending on the basis and circumstances, rights include access, correction, erasure, restriction, portability, objection and consent withdrawal. Withdrawal does not affect earlier lawful processing. Objections to direct marketing are honoured. Requests are handled without undue delay, normally within one calendar month, subject to statutory identity-verification and extension rules.",
+      subsections: [
+        {
+          title: "Your right to object",
+          body: "You can object to processing based on legitimate interests on grounds relating to your situation. You can object to direct marketing at any time. Email hello@forsadesign.co.uk to exercise either right.",
+        },
+        {
+          title: "Data protection complaints",
+          body: "Email hello@forsadesign.co.uk or call +44 7770 110735 to complain about how we use your information. We must acknowledge receipt within 30 days, investigate and tell you the outcome without undue delay. You may also complain to the UK Information Commissioner’s Office.",
+        },
+      ],
     },
     {
       number: "10",

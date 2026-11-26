@@ -1,5 +1,5 @@
 import React from "react";
-import { privacySections, termsSections } from "../data/legal";
+import { legalUpdated, privacySections, termsSections } from "../data/legal";
 export default function LegalContent({
   lang,
   kind,
@@ -28,9 +28,19 @@ export default function LegalContent({
             ? "Polityka prywatności i cookies"
             : "Privacy and cookie notice"}
       </h1>
-      <p>Forsa Design, Banff, Scotland, United Kingdom</p>
+      <p>
+        {pl
+          ? "Forsa Design, Banff, Szkocja, Wielka Brytania"
+          : "Forsa Design, Banff, Scotland, United Kingdom"}
+      </p>
       <p className="mt-2 mb-10">
-        {pl ? "Aktualizacja: 17 listopada 2026" : "Updated: 17 November 2026"}
+        {pl ? "Aktualizacja" : "Last updated"}{" "}
+        <time dateTime={legalUpdated}>
+          {new Intl.DateTimeFormat(pl ? "pl-PL" : "en-GB", {
+            dateStyle: "long",
+            timeZone: "UTC",
+          }).format(new Date(legalUpdated))}
+        </time>
       </p>
       {sections.map((section) => (
         <section
@@ -48,6 +58,14 @@ export default function LegalContent({
               <p>{sub.body}</p>
             </div>
           ))}
+          {kind === "privacy" && section.number === "9" && (
+            <a
+              href="https://ico.org.uk/make-a-complaint/"
+              className="mt-3 inline-block text-primary underline"
+            >
+              {pl ? "Złóż skargę do ICO" : "Make a complaint to the ICO"}
+            </a>
+          )}
           {kind === "privacy" && section.number === "7" && (
             <button
               type="button"
