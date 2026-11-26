@@ -14,6 +14,10 @@ export default function ServicesPage({ lang }: { lang: "en" | "pl" }) {
   const { syncLanguage } = useLanguage();
   const en = lang === "en";
   useEffect(() => syncLanguage(lang), [lang, syncLanguage]);
+  useEffect(() => {
+    const sectionId = window.location.hash.slice(1);
+    if (sectionId) document.getElementById(sectionId)?.scrollIntoView();
+  }, [lang]);
   const { title, description } = positioningSeo(lang, "services");
   useSeoMeta({
     title,

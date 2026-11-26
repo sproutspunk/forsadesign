@@ -31,7 +31,7 @@ export default function BrandingOffer({ lang }: { lang: "pl" | "en" }) {
     <section
       id="branding"
       aria-labelledby="branding-heading"
-      className="scroll-mt-36 mt-16 rounded-lg border border-primary/25 bg-card p-6 md:p-10"
+      className="scroll-mt-48 xl:scroll-mt-36 mt-16 rounded-lg border border-primary/25 bg-card p-6 md:p-10"
     >
       <div className="max-w-3xl">
         <h3

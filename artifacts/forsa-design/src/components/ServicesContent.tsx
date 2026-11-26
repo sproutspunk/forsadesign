@@ -21,12 +21,12 @@ export function ServicesContent({ lang }: { lang: "pl" | "en" }) {
         <div className="grid gap-6 md:grid-cols-2">
           <article
             id="industrial-digital-solutions"
-            className="scroll-mt-28 rounded-lg border border-border border-t-primary bg-card p-6 md:p-8"
+            className="scroll-mt-48 xl:scroll-mt-36 rounded-lg border border-border border-t-primary bg-card p-6 md:p-8"
           >
             <h3 className="font-serif text-2xl md:text-3xl text-white mb-4">{digital.title}</h3>
             <ul className="list-disc pl-5 space-y-2 text-foreground/80">
               {digital.items.map((item, index) => (
-                <li key={item} id={digitalAnchors[index]} className="scroll-mt-28">
+                <li key={item} id={digitalAnchors[index]} className="scroll-mt-48 xl:scroll-mt-36">
                   {item}
                 </li>
               ))}
@@ -34,7 +34,7 @@ export function ServicesContent({ lang }: { lang: "pl" | "en" }) {
           </article>
           <article
             id="industrial-3d-cad"
-            className="scroll-mt-28 rounded-lg border border-border border-t-primary bg-card p-6 md:p-8"
+            className="scroll-mt-48 xl:scroll-mt-36 rounded-lg border border-border border-t-primary bg-card p-6 md:p-8"
           >
             <h3 className="font-serif text-2xl md:text-3xl text-white mb-4">{engineering.title}</h3>
             <ul className="list-disc pl-5 space-y-2 text-foreground/80">
