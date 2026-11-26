@@ -26,7 +26,9 @@ export default function HistoryContent({ lang }: { lang: "en" | "pl" }) {
               className="absolute -left-1 top-2 size-2 rounded-full bg-primary"
             />
             <time dateTime={milestone.date} className="font-semibold text-primary">
-              {dateFormat.format(new Date(milestone.date))}
+              {milestone.date.length === 4
+                ? milestone.date
+                : dateFormat.format(new Date(milestone.date))}
             </time>
             <p className="mt-2 text-foreground/80 leading-relaxed">{milestone[lang]}</p>
           </li>
