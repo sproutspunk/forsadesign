@@ -104,17 +104,16 @@ export const siteCopy = {
     cookies: {
       bannerTitle: "We use cookies",
       bannerDesc:
-        "We use essential cookies to keep the site running and optional cookies to understand how you use it. You can accept all, reject non-essential cookies, or customise your preferences.",
+        "Your cookie choice is valid for 365 days in this browser. With your permission, Google Analytics measures visits and actions such as enquiry submissions. You can change your choice in the footer.",
       acceptAll: "Accept All",
       rejectNonEssential: "Reject Non-Essential",
       customise: "Customise",
       savePreferences: "Save Preferences",
       essential: "Essential",
-      essentialDesc:
-        "Required for the site to function, including language preferences and security. These cannot be disabled.",
+      essentialDesc: "Remembers your cookie choice and supports site security.",
       analytics: "Analytics",
       analyticsDesc:
-        "Used to understand how visitors interact with the website when analytics are enabled.",
+        "Google Analytics 4 uses cookies to measure visits and use of the site’s forms.",
       marketing: "Marketing",
       marketingDesc: "Used for advertising purposes when marketing cookies are enabled.",
       alwaysOn: "Always on",
@@ -224,17 +223,16 @@ export const siteCopy = {
     cookies: {
       bannerTitle: "Używamy plików cookie",
       bannerDesc:
-        "Używamy niezbędnych plików cookie do prawidłowego działania strony oraz opcjonalnych plików cookie do analizy sposobu korzystania z witryny. Możesz zaakceptować wszystkie, odrzucić opcjonalne lub dostosować ustawienia.",
+        "Twój wybór dotyczący cookies jest ważny w tej przeglądarce przez 365 dni. Za Twoją zgodą Google Analytics mierzy odwiedziny i działania, takie jak wysłanie zapytania. Wybór możesz zmienić w stopce.",
       acceptAll: "Akceptuj wszystkie",
       rejectNonEssential: "Odrzuć opcjonalne",
       customise: "Dostosuj",
       savePreferences: "Zapisz ustawienia",
       essential: "Niezbędne",
-      essentialDesc:
-        "Wymagane do prawidłowego działania strony, w tym obsługi preferencji językowych i bezpieczeństwa. Nie można ich wyłączyć.",
+      essentialDesc: "Zapamiętuje wybór dotyczący cookies i wspiera zabezpieczenia strony.",
       analytics: "Analityczne",
       analyticsDesc:
-        "Służą do analizy sposobu korzystania ze strony, jeśli analityka jest włączona.",
+        "Google Analytics 4 używa cookies do pomiaru odwiedzin i korzystania z formularzy.",
       marketing: "Marketingowe",
       marketingDesc: "Służą do celów reklamowych, jeśli marketingowe pliki cookie są włączone.",
       alwaysOn: "Zawsze włączone",

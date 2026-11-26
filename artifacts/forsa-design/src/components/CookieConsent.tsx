@@ -134,7 +134,10 @@ export default function CookieConsent() {
           </div>
 
           <p className="text-sm text-foreground/60 font-light leading-relaxed mb-5">
-            {t("cookies.bannerDesc")}
+            {t("cookies.bannerDesc")}{" "}
+            <a href={`/${language}/privacy/#cookies`} className="text-primary underline">
+              {language === "pl" ? "Jak korzystamy z cookies" : "How we use cookies"}
+            </a>
           </p>
 
           {/* Expanded categories - CSS max-h transition */}
