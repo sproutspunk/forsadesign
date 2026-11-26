@@ -1,3 +1,4 @@
+import { positioningSeo } from "@/data/positioningSeo";
 import { useEffect } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useSeoMeta, useJsonLd, buildHref } from "@/hooks/useSeoMeta";
@@ -9,12 +10,7 @@ import Footer from "@/components/Footer";
 export default function ContactPage({ lang }: { lang: "en" | "pl" }) {
   const { syncLanguage } = useLanguage();
   const en = lang === "en";
-  const title = en
-    ? "Contact Industrial Web Design UK | Forsa Design, Aberdeenshire"
-    : "Kontakt Web Design dla Przemysłu UK | Forsa Design, Aberdeenshire";
-  const description = en
-    ? "Contact Forsa Design for industrial web design, manufacturing websites and B2B web systems in Scotland and across the UK. Based in Banff, Aberdeenshire."
-    : "Skontaktuj się z Forsa Design w sprawie projektowania stron dla przemysłu, produkcji i systemów B2B w Szkocji i UK. Siedziba w Banff, Aberdeenshire.";
+  const { title, description } = positioningSeo(lang, "contact");
   useEffect(() => syncLanguage(lang), [lang, syncLanguage]);
   useSeoMeta({
     title,
@@ -57,8 +53,8 @@ export default function ContactPage({ lang }: { lang: "en" | "pl" }) {
             </h1>
             <p className="text-xl text-foreground/70 font-light leading-relaxed">
               {en
-                ? "Email, call or send a message to discuss your industrial website, B2B catalogue or bespoke web system."
-                : "Napisz, zadzwoń lub wyślij wiadomość, aby omówić stronę przemysłową, katalog B2B lub dedykowany system webowy."}
+                ? "Email, call or send a message to discuss an industrial digital system, technical catalogue or 3D project."
+                : "Napisz, zadzwoń lub wyślij wiadomość, aby omówić system cyfrowy dla przemysłu, katalog techniczny lub projekt 3D."}
             </p>
           </div>
         </section>

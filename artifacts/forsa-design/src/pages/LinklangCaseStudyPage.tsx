@@ -179,21 +179,6 @@ export default function LinklangCaseStudyPage({ lang }: { lang: CaseStudyLanguag
             </div>
           </section>
 
-          <section className="bg-card/80 border border-primary/20 p-7 md:p-10 rounded-lg mb-16">
-            <h2 className="font-serif text-3xl text-white mb-5">{c.stackHeading}</h2>
-            <p className="text-foreground/75 leading-relaxed max-w-3xl">{c.stackIntro}</p>
-            <ul className="flex flex-wrap gap-2 mt-6">
-              {linklangProject.technologies.map((t) => (
-                <li
-                  key={t}
-                  className="text-sm text-primary border border-primary/25 rounded-full px-3 py-1"
-                >
-                  {t}
-                </li>
-              ))}
-            </ul>
-          </section>
-
           <section className="max-w-3xl mb-16">
             <h2 className="font-serif text-3xl text-white mb-5">{c.outcomeHeading}</h2>
             <p className="text-foreground/75 leading-relaxed mb-6">{c.outcome}</p>

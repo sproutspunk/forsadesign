@@ -1,3 +1,4 @@
+import { positioningSeo } from "@/data/positioningSeo";
 import { useEffect } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useSeoMeta, useJsonLd, buildHref } from "@/hooks/useSeoMeta";
@@ -17,19 +18,14 @@ export default function QuoteCalculatorPage({ lang }: QuoteCalculatorPageProps) 
     syncLanguage(lang);
   }, [lang, syncLanguage]);
 
+  const { title, description } = positioningSeo(lang, "quote");
   useSeoMeta({
-    title: isEn ? "Request a Quote | Forsa Design" : "Poproś o Wycenę | Forsa Design",
-    description: isEn
-      ? "Tell us about your industrial, manufacturing or engineering website project and we will review the requirements and identify the information needed for a quotation."
-      : "Opowiedz nam o swoim projekcie strony internetowej dla przemysłu, produkcji lub inżynierii, a my przeanalizujemy wymagania i wskażemy dane potrzebne do przygotowania oferty.",
-    ogTitle: isEn ? "Request a Quote | Forsa Design" : "Poproś o Wycenę | Forsa Design",
-    ogDescription: isEn
-      ? "Tell us about your industrial, manufacturing or engineering website project and we will review the requirements and identify the information needed for a quotation."
-      : "Opowiedz nam o swoim projekcie strony internetowej dla przemysłu, produkcji lub inżynierii, a my przeanalizujemy wymagania i wskażemy dane potrzebne do przygotowania oferty.",
-    twitterTitle: isEn ? "Request a Quote | Forsa Design" : "Poproś o Wycenę | Forsa Design",
-    twitterDescription: isEn
-      ? "Tell us about your industrial, manufacturing or engineering website project and we will review the requirements and identify the information needed for a quotation."
-      : "Opowiedz nam o swoim projekcie strony internetowej dla przemysłu, produkcji lub inżynierii, a my przeanalizujemy wymagania i wskażemy dane potrzebne do przygotowania oferty.",
+    title,
+    description,
+    ogTitle: title,
+    ogDescription: description,
+    twitterTitle: title,
+    twitterDescription: description,
     ogLocale: isEn ? "en_GB" : "pl_PL",
     canonical: buildHref(isEn ? "/en/quote" : "/pl/quote"),
     alternates: [

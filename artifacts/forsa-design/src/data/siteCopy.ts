@@ -1,3 +1,4 @@
+import { aboutContent } from "./about";
 import { processCopy } from "./process";
 import { getFaqItems } from "./faq";
 export const siteCopy = {
@@ -36,72 +37,43 @@ export const siteCopy = {
         "We use AI-assisted development tools to accelerate appropriate parts of the build, then review, configure and optimise the implementation ourselves. Performance, accessibility, security and SEO are tested as part of the development process.",
     },
     hero: {
-      tagline: "Websites and Web Systems for Industry",
+      tagline: "Industrial Digital Solutions & 3D Engineering",
       subheader:
-        "No templates. No page builders. Custom websites and web systems built for technical B2B companies.",
-      body: "You know your industry. We understand how industrial buyers evaluate suppliers. Our founder, Miro, has more than 20 years of experience in international B2B sales, including metalworking machinery, industrial equipment and engineering solutions across Europe and Asia.\n\nForsa Design combines that commercial experience with modern web development to build websites and web systems for industrial, engineering and technical businesses.\n\nBased in Banff, Aberdeenshire. Available to work with clients in the UK and internationally.",
+        "Bespoke digital systems, technical product catalogues and interactive 3D solutions for industrial and engineering businesses.",
+      body: [
+        "Forsa Design combines practical experience in industrial machinery, technical sales and international commerce with web development and CAD-based visualisation.",
+        "We develop digital tools that connect technical product information with commercial processes, including product selection, configuration, enquiries and quotations.",
+        "Based in Banff, Scotland.",
+      ],
       cta: "Request a Quote",
     },
     services: {
-      heading: "What We Build",
-      card1: {
-        title: "Industrial and Engineering Websites",
-        desc: "Custom websites for industrial, engineering and manufacturing businesses. We focus on clear technical communication, performance, mobile usability, SEO, accessibility and security.\n\nWe use AI-assisted development tools where they improve efficiency, then review and refine the structure, implementation, content logic, SEO and performance ourselves. There are no off-the-shelf templates or page builders.",
+      heading: "Services",
+      digital: {
+        title: "Industrial Digital Solutions",
+        items: [
+          "Industrial websites and bespoke web systems.",
+          "Technical product catalogues.",
+          "B2B and customer portals.",
+          "Enquiry, quotation and ordering systems.",
+          "API integrations and business process automation.",
+        ],
       },
-      card2: {
-        title: "B2B Catalogues and Ordering Systems",
-        desc: "Custom product catalogues, enquiry systems, quote workflows and B2B ordering interfaces. Depending on the project, these can include customer accounts, account-specific information, bulk enquiries and API integrations with external services.\n\nThe delivery schedule for a B2B catalogue or ordering system depends on product data, functionality and integration requirements. More complex systems are estimated individually.",
-      },
-      card3: {
-        title: "Custom Web Tools and API Integrations",
-        desc: "Dealer portals, specification tools, multilingual quote systems, custom forms and workflow integrations built around the way your business operates.\n\nWe use AI-assisted tools to accelerate appropriate parts of development while retaining direct control over architecture, configuration, testing, security and the final implementation. API integrations are assessed individually according to the external system and its documentation.",
+      engineering: {
+        title: "3D Engineering",
+        items: [
+          "CAD-based visualisation.",
+          "Interactive technical product models.",
+          "Industrial component visualisation.",
+          "Parametric 3D configurators.",
+          "Technical product configuration tools.",
+        ],
       },
     },
     process: processCopy["en"],
     about: {
-      heading: "Who’s Behind Forsa Design?",
-      body: "Forsa Design brings together web development and industrial B2B experience. Our founder, Miro, spent more than 20 years in international B2B sales, trading metalworking machinery, industrial equipment and engineering solutions across Europe and Asia. He ran businesses in two countries, negotiated contracts across three continents and managed international teams.",
-      body2:
-        "Our founder’s experience gives us a practical understanding of industrial sales and procurement. We know the process from initial contact and technical discussions through negotiation to the signed contract. We understand what buyers, engineers and decision-makers look for when they assess a potential supplier.",
-      body3:
-        "We work directly with you from the first conversation through development and launch. We use modern development tools including VS Code, GitHub, Cloudflare and AI-assisted development tools, but we remain responsible for the architecture, configuration, testing and final result.",
-      body4:
-        "We are based in Banff, Aberdeenshire. We work in English and Polish with clients in the UK and internationally.",
-      highlightsTitle: "Why Our Experience Matters",
-      paragraphs: [
-        "Industrial B2B experience",
-        "Our founder’s more than 20 years in international B2B sales inform our approach to websites as commercial tools. We understand industrial products, technical sales, international trade and procurement.",
-        "Understanding the buying process",
-        "We understand the questions buyers ask, the information they look for and the credibility signals that matter when a supplier is being evaluated.",
-        "Direct responsibility",
-        "We work directly with you from specification through launch. Scope, costs and responsibilities are agreed before work begins.",
-      ],
-      processTitle: "Typical Website Project",
-      processList: [
-        "Discovery and strategy - weeks 1-2",
-        "We review your business, customers, competitors, existing website and project requirements and define the objectives and structure.",
-        "Design - weeks 3-4",
-        "We develop the page structure, visual direction and user experience before moving into the main development stage.",
-        "Development - weeks 5-8",
-        "We build and configure the website, content structure and required functionality, with attention to performance, security, accessibility and SEO.",
-        "Testing and optimisation - week 9",
-        "We test the website across relevant devices and browsers and review performance, accessibility, security configuration and SEO fundamentals.",
-        "Launch and optional support",
-        "We deploy the completed website. Ongoing maintenance and support are available separately if required.",
-      ],
-      valuesTitle: "How We Work",
-      values: [
-        "No off-the-shelf templates",
-        "We build custom implementations without WordPress, Elementor-style page builders or ready-made website templates.",
-        "Business before decoration",
-        "The structure and content should help visitors understand what your company does, what it can deliver and how to take the next step.",
-        "No deliberate vendor lock-in",
-        "We do not deliberately build systems that make a client dependent on us. The technical setup and access arrangements are agreed for each project.",
-        "Optional ongoing support",
-        "Support after launch is available as a separate paid service. You are not required to purchase an ongoing maintenance contract.",
-        "Direct communication",
-        "You communicate directly with the team delivering the project. Scope, costs and responsibilities are agreed before the work begins.",
-      ],
+      heading: aboutContent.en.heading,
+      highlightsTitle: aboutContent.en.backgroundHeading,
     },
     pricing: {
       heading: "What Does It Cost?",
@@ -109,13 +81,12 @@ export const siteCopy = {
         "Every project is scoped individually according to its functionality, content and integration requirements.",
     },
     cta: {
-      heading: "Need a Better Website or Web System?",
-      body: "Tell us what your business needs. We’ll assess the scope and propose a practical technical approach.",
+      heading: "Discuss Your Project",
+      body: "Tell us about your product range, customer workflow or 3D requirements. We’ll review the scope with you.",
       button: "Let's Talk",
       contactHref: "/en/contact",
     },
     footer: {
-      tagline: "Custom web development for technical B2B.",
       location: "Banff, Aberdeenshire, Scotland",
       contactPersonLabel: "Contact person",
       contactPerson: "Miro",
@@ -186,72 +157,43 @@ export const siteCopy = {
         "Korzystamy z narzędzi wspomaganych przez AI, aby przyspieszyć odpowiednie etapy tworzenia strony, a następnie sprawdzamy, konfigurujemy i optymalizujemy wdrożenie. Wydajność, dostępność, bezpieczeństwo i SEO są testowane w ramach procesu tworzenia strony.",
     },
     hero: {
-      tagline: "Strony i systemy webowe dla przemysłu",
+      tagline: "Przemysłowe rozwiązania cyfrowe i inżynieria 3D",
       subheader:
-        "Bez szablonów. Bez kreatorów stron. Dedykowane strony i systemy webowe dla technicznych firm B2B.",
-      body: "Ty znasz swoją branżę. My rozumiemy, jak przemysłowi klienci oceniają dostawców. Założyciel Forsa Design, Miro, ma ponad 20 lat doświadczenia w międzynarodowej sprzedaży B2B, obejmującej maszyny do obróbki metalu, wyposażenie przemysłowe i rozwiązania inżynieryjne w Europie i Azji.\n\nForsa Design łączy to doświadczenie handlowe z nowoczesnym web developmentem, tworząc strony i systemy webowe dla firm przemysłowych, inżynieryjnych i technicznych.\n\nDziałamy z Banff w Aberdeenshire i możemy współpracować z klientami z Wielkiej Brytanii oraz z zagranicy.",
+        "Dedykowane systemy cyfrowe, katalogi techniczne oraz interaktywne rozwiązania 3D dla przedsiębiorstw przemysłowych i inżynieryjnych.",
+      body: [
+        "Forsa Design łączy praktyczne doświadczenie w branży maszyn przemysłowych, sprzedaży technicznej i handlu międzynarodowym z tworzeniem systemów webowych oraz wizualizacją opartą na modelach CAD.",
+        "Tworzymy narzędzia cyfrowe łączące informacje techniczne o produktach z procesami handlowymi, w tym doborem produktów, konfiguracją, zapytaniami i wycenami.",
+        "Siedziba w Banff, w Szkocji.",
+      ],
       cta: "Poproś o wycenę",
     },
     services: {
-      heading: "Co budujemy",
-      card1: {
-        title: "Strony dla przemysłu i firm inżynieryjnych",
-        desc: "Dedykowane strony internetowe dla firm przemysłowych, inżynieryjnych i produkcyjnych. Koncentrujemy się na czytelnej komunikacji technicznej, wydajności, obsłudze urządzeń mobilnych, SEO, dostępności i bezpieczeństwie.\n\nKorzystamy z narzędzi wspomaganych przez AI tam, gdzie zwiększają efektywność pracy, a następnie sprawdzamy i dopracowujemy strukturę, implementację, logikę treści, SEO i wydajność. Nie używamy gotowych szablonów ani kreatorów stron.",
+      heading: "Usługi",
+      digital: {
+        title: "Przemysłowe rozwiązania cyfrowe",
+        items: [
+          "Strony dla przemysłu i dedykowane systemy webowe.",
+          "Katalogi techniczne produktów.",
+          "Portale B2B i portale klientów.",
+          "Systemy obsługi zapytań, wycen i zamówień.",
+          "Integracje API i automatyzacja procesów biznesowych.",
+        ],
       },
-      card2: {
-        title: "Katalogi B2B i systemy zamówień",
-        desc: "Dedykowane katalogi produktów, systemy zapytań, procesy wycenowe i interfejsy zamówień B2B. W zależności od projektu mogą obejmować konta klientów, informacje przypisane do kont, zapytania zbiorcze oraz integracje API z usługami zewnętrznymi.\n\nCzas realizacji katalogu lub systemu zamówień B2B zależy od danych produktowych, funkcji i wymaganych integracji. Bardziej złożone systemy planujemy i wyceniamy indywidualnie.",
-      },
-      card3: {
-        title: "Dedykowane narzędzia webowe i integracje API",
-        desc: "Portale dealerskie, narzędzia do tworzenia specyfikacji, wielojęzyczne systemy wycen, dedykowane formularze i integracje procesów dopasowane do sposobu działania firmy.\n\nKorzystamy z narzędzi wspomaganych przez AI, aby przyspieszyć odpowiednie etapy developmentu, zachowując bezpośrednią kontrolę nad architekturą, konfiguracją, testami, bezpieczeństwem i końcowym wdrożeniem. Każdą integrację API oceniamy indywidualnie na podstawie systemu zewnętrznego i jego dokumentacji.",
+      engineering: {
+        title: "Inżynieria 3D",
+        items: [
+          "Wizualizacja na podstawie modeli CAD.",
+          "Interaktywne modele techniczne produktów.",
+          "Wizualizacja komponentów przemysłowych.",
+          "Parametryczne konfiguratory 3D.",
+          "Narzędzia do konfiguracji produktów technicznych.",
+        ],
       },
     },
     process: processCopy["pl"],
     about: {
-      heading: "Kto stoi za Forsa Design?",
-      body: "W Forsa Design łączymy web development z doświadczeniem w przemysłowym B2B. Nasz założyciel, Miro, przez ponad 20 lat pracował w międzynarodowej sprzedaży B2B, handlując maszynami do obróbki metalu, wyposażeniem przemysłowym i rozwiązaniami inżynieryjnymi w Europie i Azji. Prowadził firmy w dwóch krajach, negocjował kontrakty na trzech kontynentach i zarządzał międzynarodowymi zespołami.",
-      body2:
-        "To doświadczenie dało nam praktyczną znajomość sprzedaży przemysłowej i procesów zakupowych. Znamy ten proces od pierwszego kontaktu i rozmów technicznych, przez negocjacje, aż po podpisanie kontraktu. Rozumiemy, na co zwracają uwagę kupcy, inżynierowie i osoby podejmujące decyzje przy ocenie potencjalnego dostawcy.",
-      body3:
-        "Współpracujemy z Tobą bezpośrednio od pierwszej rozmowy, przez development, aż po uruchomienie projektu. Korzystamy z nowoczesnych narzędzi, takich jak VS Code, GitHub, Cloudflare oraz narzędzia wspomagane przez AI, ale odpowiadamy za architekturę, konfigurację, testy i końcowy rezultat.",
-      body4:
-        "Działamy z Banff w Aberdeenshire. Współpracujemy po polsku i angielsku z klientami z Wielkiej Brytanii oraz z zagranicy.",
-      highlightsTitle: "Dlaczego nasze doświadczenie ma znaczenie",
-      paragraphs: [
-        "Doświadczenie w przemysłowym B2B",
-        "Ponad 20-letnie doświadczenie założyciela w międzynarodowej sprzedaży B2B sprawia, że traktujemy stronę jako narzędzie biznesowe, a nie wyłącznie projekt wizualny. Rozumiemy produkty przemysłowe, sprzedaż techniczną, handel międzynarodowy i procesy zakupowe.",
-        "Znajomość procesu zakupowego",
-        "Rozumiemy pytania zadawane przez kupujących, informacje, których szukają, oraz elementy budujące wiarygodność podczas oceny potencjalnego dostawcy.",
-        "Bezpośrednia odpowiedzialność",
-        "Współpracujemy z Tobą bezpośrednio od specyfikacji do uruchomienia. Zakres, koszty i odpowiedzialność ustalamy przed rozpoczęciem prac.",
-      ],
-      processTitle: "Typowy projekt strony internetowej",
-      processList: [
-        "Analiza i strategia: tygodnie 1–2",
-        "Analizujemy firmę, klientów, konkurencję, obecną stronę oraz wymagania projektu i określamy jego cele oraz strukturę.",
-        "Projekt: tygodnie 3–4",
-        "Opracowujemy strukturę stron, kierunek wizualny i sposób korzystania z witryny przed rozpoczęciem głównego etapu developmentu.",
-        "Development: tygodnie 5–8",
-        "Budujemy i konfigurujemy stronę, strukturę treści oraz wymagane funkcje, zwracając uwagę na wydajność, bezpieczeństwo, dostępność i SEO.",
-        "Testy i optymalizacja: tydzień 9",
-        "Testujemy stronę na odpowiednich urządzeniach i przeglądarkach oraz sprawdzamy wydajność, dostępność, konfigurację bezpieczeństwa i podstawy SEO.",
-        "Uruchomienie i opcjonalne wsparcie",
-        "Uruchamiamy gotową stronę. Dalsze utrzymanie i wsparcie są dostępne oddzielnie, jeśli są potrzebne.",
-      ],
-      valuesTitle: "Jak pracujemy",
-      values: [
-        "Bez gotowych szablonów",
-        "Budujemy dedykowane rozwiązania bez WordPressa, kreatorów typu Elementor i gotowych szablonów stron.",
-        "Biznes przed dekoracją",
-        "Struktura i treść strony powinny pomagać odbiorcy zrozumieć, czym zajmuje się firma, co potrafi dostarczyć i jaki powinien być kolejny krok.",
-        "Bez celowego vendor lock-in",
-        "Nie budujemy celowo rozwiązań uzależniających klienta od nas. Sposób konfiguracji technicznej i zasady dostępu ustalamy indywidualnie dla każdego projektu.",
-        "Opcjonalne wsparcie",
-        "Wsparcie po uruchomieniu jest dostępne jako oddzielna płatna usługa. Nie wymagamy podpisania stałej umowy serwisowej.",
-        "Bezpośrednia komunikacja",
-        "Rozmawiasz bezpośrednio z zespołem realizującym projekt. Zakres, koszty i odpowiedzialność ustalamy przed rozpoczęciem prac.",
-      ],
+      heading: aboutContent.pl.heading,
+      highlightsTitle: aboutContent.pl.backgroundHeading,
     },
     pricing: {
       heading: "Ile to kosztuje?",
@@ -259,13 +201,12 @@ export const siteCopy = {
         "Każdy projekt wyceniamy indywidualnie na podstawie wymaganych funkcji, treści i integracji.",
     },
     cta: {
-      heading: "Potrzebujesz lepszej strony lub systemu webowego?",
-      body: "Powiedz nam, czego potrzebuje Twoja firma. Ocenimy zakres i zaproponujemy praktyczne rozwiązanie techniczne.",
+      heading: "Porozmawiajmy o Twoim projekcie",
+      body: "Opowiedz nam o swoich produktach, procesie obsługi klientów lub potrzebach związanych z 3D. Wspólnie omówimy zakres projektu.",
       button: "Porozmawiajmy",
       contactHref: "/pl/contact",
     },
     footer: {
-      tagline: "Dedykowany web development dla technicznego B2B.",
       location: "Banff, Aberdeenshire, Szkocja",
       contactPersonLabel: "Osoba kontaktowa",
       contactPerson: "Miro",

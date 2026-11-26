@@ -1,3 +1,5 @@
+import { historyCopy, historyPath } from "@/data/history";
+import { siteCopy } from "@/data/siteCopy";
 import { articlesMeta } from "../data/articlesMeta";
 import { BlueprintToggle } from "@/components/BlueprintBackground";
 import { useEffect, useRef, useState } from "react";
@@ -30,11 +32,10 @@ export default function Header() {
     { label: "FAQ", href: sectionHref("#faq") },
     { label: language === "pl" ? "Porównanie" : "Comparison", href: `${base}comparison/` },
   ];
+  const { digital, engineering } = siteCopy[language].services;
   const serviceLinks = [
-    {
-      label: language === "pl" ? "Przemysłowe 3D i CAD" : "Industrial 3D & CAD",
-      href: `${servicesHref}#industrial-3d-cad`,
-    },
+    { label: digital.title, href: `${servicesHref}#industrial-digital-solutions` },
+    { label: engineering.title, href: `${servicesHref}#industrial-3d-cad` },
     {
       label:
         language === "pl" ? "Branding i identyfikacja wizualna" : "Branding and visual identity",
@@ -44,20 +45,11 @@ export default function Header() {
       label: language === "pl" ? "Weryfikacja kontrahentów" : "Commercial due diligence",
       href: `${servicesHref}commercial-due-diligence/`,
     },
-    {
-      label: language === "pl" ? "Strony dla przemysłu" : "Industrial websites",
-      href: `${servicesHref}#industrial-websites`,
-    },
-    {
-      label: language === "pl" ? "E-commerce B2B" : "B2B e-commerce",
-      href: `${servicesHref}#b2b-e-commerce`,
-    },
-    {
-      label: language === "pl" ? "Systemy webowe" : "Web systems",
-      href: `${servicesHref}#web-systems`,
-    },
   ];
-  const aboutLinks = [{ label: "Blog", href: blogHref }];
+  const aboutLinks = [
+    { label: historyCopy[language].title, href: historyPath(language) },
+    { label: "Blog", href: blogHref },
+  ];
 
   const closeMobileMenu = () => {
     setIsMobileMenuOpen(false);

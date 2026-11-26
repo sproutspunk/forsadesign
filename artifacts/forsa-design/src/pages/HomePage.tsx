@@ -1,3 +1,5 @@
+import { siteCopy } from "@/data/siteCopy";
+import { positioningSeo, serviceSchema } from "@/data/positioningSeo";
 import { lazy, Suspense, useEffect, useRef, useState } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useSeoMeta, useJsonLd, buildHref } from "@/hooks/useSeoMeta";
@@ -103,25 +105,14 @@ export default function HomePage({ lang }: HomePageProps) {
   }, []);
 
   const isEn = lang === "en";
+  const { title, description } = positioningSeo(lang, "home");
   useSeoMeta({
-    title: isEn
-      ? "Industrial Web Design UK | Web Design for Manufacturing & Engineering"
-      : "Web Design dla Przemysłu UK | Strony dla Produkcji i Inżynierii",
-    description: isEn
-      ? "Industrial web design for manufacturing, engineering and offshore businesses across the UK. Custom websites, B2B e-commerce and bespoke web systems from Banff, Aberdeenshire."
-      : "Projektowanie stron dla przemysłu, produkcji i inżynierii w UK. Dedykowane strony, e-commerce B2B i systemy webowe. Siedziba w Banff, Aberdeenshire.",
-    ogTitle: isEn
-      ? "Forsa Design | Industrial Web Design for Manufacturing & Engineering"
-      : "Forsa Design | Web Design dla Przemysłu i Produkcji",
-    ogDescription: isEn
-      ? "Industrial web design for manufacturing, engineering and offshore businesses across the UK. Custom websites, B2B e-commerce and bespoke web systems."
-      : "Projektowanie stron dla przemysłu, produkcji i inżynierii w UK. Dedykowane strony, e-commerce B2B i systemy webowe.",
-    twitterTitle: isEn
-      ? "Forsa Design | Industrial Web Design for Manufacturing & Engineering"
-      : "Forsa Design | Web Design dla Przemysłu i Produkcji",
-    twitterDescription: isEn
-      ? "Industrial web design for manufacturing, engineering and offshore businesses across the UK. Custom websites, B2B e-commerce and bespoke web systems."
-      : "Projektowanie stron dla przemysłu, produkcji i inżynierii w UK. Dedykowane strony, e-commerce B2B i systemy webowe.",
+    title,
+    description,
+    ogTitle: title,
+    ogDescription: description,
+    twitterTitle: title,
+    twitterDescription: description,
     ogLocale: isEn ? "en_GB" : "pl_PL",
     canonical: buildHref(isEn ? "/en/" : "/pl/"),
     alternates: [
@@ -130,6 +121,8 @@ export default function HomePage({ lang }: HomePageProps) {
       { lang: "x-default", href: buildHref("/en/") },
     ],
   });
+
+  useJsonLd(serviceSchema(lang), "offer-catalog");
 
   useJsonLd(
     {
@@ -149,21 +142,24 @@ export default function HomePage({ lang }: HomePageProps) {
           name: "Forsa Design",
           url: "https://forsadesign.co.uk",
           email: "hello@forsadesign.co.uk",
-          description: isEn
-            ? "Industrial web design and bespoke web systems for offshore, energy, engineering, equipment, logistics and manufacturing businesses."
-            : "Projektowanie stron i dedykowane systemy webowe dla firm offshore, energetycznych, inżynieryjnych, produkcyjnych i logistycznych.",
+          description,
           founder: { "@id": "https://forsadesign.co.uk/#miro-potaczek" },
           areaServed: ["United Kingdom", "European Union"],
-          knowsAbout: [
-            "Industrial web design",
-            "B2B procurement",
-            "Offshore energy",
-            "Engineering",
-            "Industrial equipment",
-            "Manufacturing",
-            "Technical SEO",
-            "E-commerce integrations",
-          ],
+          knowsAbout: isEn
+            ? [
+                "Industrial web development",
+                "Technical product catalogues",
+                "B2B procurement",
+                "CAD-based visualisation",
+                "Parametric 3D configurators",
+              ]
+            : [
+                "Systemy webowe dla przemysłu",
+                "Katalogi techniczne produktów",
+                "Zakupy B2B",
+                "Wizualizacja CAD",
+                "Parametryczne konfiguratory 3D",
+              ],
         },
         {
           "@type": "Person",
@@ -196,59 +192,10 @@ export default function HomePage({ lang }: HomePageProps) {
         {
           "@type": "Service",
           "@id": "https://forsadesign.co.uk/#services",
-          name: isEn
-            ? "Custom Web Design for Industrial & B2B Businesses"
-            : "Dedykowany Web Design dla Firm Przemysłowych i B2B",
+          name: siteCopy[lang].hero.tagline,
           provider: { "@id": "https://forsadesign.co.uk/#organization" },
           areaServed: ["GB", "EU"],
-          hasOfferCatalog: {
-            "@type": "OfferCatalog",
-            name: isEn ? "Web Services" : "Usługi Webowe",
-            itemListElement: [
-              {
-                "@type": "Offer",
-                itemOffered: {
-                  "@type": "Service",
-                  name: isEn ? "Industrial Web Presence" : "Strona dla przemysłu",
-                  description: isEn
-                    ? "Single-page site focused on one goal: generate leads or validate an idea."
-                    : "Jednopodstronicowa witryna skoncentrowana na jednym celu: generowaniu leadów lub walidacji pomysłu.",
-                },
-              },
-              {
-                "@type": "Offer",
-                itemOffered: {
-                  "@type": "Service",
-                  name: isEn ? "Bespoke Web Systems" : "Dedykowane systemy webowe",
-                  description: isEn
-                    ? "Multi-page site presenting your company, services and credentials."
-                    : "Wielostronicowa witryna prezentująca firmę, usługi i referencje.",
-                },
-              },
-              {
-                "@type": "Offer",
-                itemOffered: {
-                  "@type": "Service",
-                  name: isEn
-                    ? "E-commerce for Parts and Equipment"
-                    : "E-commerce dla części i urządzeń",
-                  description: isEn
-                    ? "Online store with product catalogue, basket and checkout."
-                    : "Sklep internetowy z katalogiem produktów, koszykiem i płatnościami.",
-                },
-              },
-              {
-                "@type": "Offer",
-                itemOffered: {
-                  "@type": "Service",
-                  name: isEn ? "Procurement-ready Web Application" : "Aplikacja webowa dla zakupów",
-                  description: isEn
-                    ? "Custom tool or platform built around your business logic."
-                    : "Dedykowane narzędzie lub platforma zbudowana wokół Twojej logiki biznesowej.",
-                },
-              },
-            ],
-          },
+          hasOfferCatalog: { "@id": `https://forsadesign.co.uk/${lang}/#offer-catalog` },
         },
         {
           "@type": "FAQPage",

@@ -1,3 +1,4 @@
+import { historyCopy, historyPath } from "../data/history";
 import React from "react";
 import { aboutContent } from "../data/about";
 import ProcessContent from "./ProcessContent";
@@ -13,6 +14,9 @@ export function AboutContent({ lang }: { lang: "pl" | "en" }) {
               {p}
             </p>
           ))}
+          <a href={historyPath(lang)} className="text-primary underline">
+            {historyCopy[lang].title}
+          </a>
         </div>
       </div>
       <section className="py-14">

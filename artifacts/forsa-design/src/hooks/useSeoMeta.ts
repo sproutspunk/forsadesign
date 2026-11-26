@@ -94,6 +94,7 @@ export function useSeoMeta(meta: SeoMeta) {
 
     setMetaName("description", meta.description);
 
+    setMetaProperty("og:url", meta.canonical);
     setMetaProperty("og:title", meta.ogTitle);
     setMetaProperty("og:description", meta.ogDescription);
     setMetaProperty("og:locale", meta.ogLocale);
