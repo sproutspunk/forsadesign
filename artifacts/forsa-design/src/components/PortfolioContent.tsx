@@ -100,6 +100,11 @@ export default function PortfolioContent({ lang }: { lang: "pl" | "en" }) {
                 ? "Działający konfigurator 3D Dach Systema, portal klienta LinkLang i interaktywny model uchwytu tokarskiego."
                 : "Dach Systema’s working 3D configurator, the LinkLang client portal and an interactive lathe chuck model."}
             </p>
+            <p className="mt-4 text-sm text-foreground/70 leading-relaxed">
+              {lang === "pl"
+                ? "Strony Forsa Design i LinkLang zaprojektowano z myślą o niskim śladzie węglowym."
+                : "The Forsa Design and LinkLang websites are designed for a low carbon footprint."}
+            </p>
           </div>
           <div
             className="flex items-center justify-between gap-4 mb-4 lg:hidden"
