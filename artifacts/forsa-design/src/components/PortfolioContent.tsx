@@ -102,8 +102,8 @@ export default function PortfolioContent({ lang }: { lang: "pl" | "en" }) {
             </p>
             <p className="mt-4 text-sm text-foreground/70 leading-relaxed">
               {lang === "pl"
-                ? "Strony Forsa Design i LinkLang zaprojektowano z myślą o niskim śladzie węglowym."
-                : "The Forsa Design and LinkLang websites are designed for a low carbon footprint."}
+                ? "Szacunki emisji opublikowane wcześniej na stronach głównych: Forsa Design 0,07 g CO₂ na wizytę, LinkLang 0,09 g CO₂ na wizytę."
+                : "Emission estimates previously published on the homepages: Forsa Design 0.07 g CO₂ per visit and LinkLang 0.09 g CO₂ per visit."}
             </p>
           </div>
           <div
