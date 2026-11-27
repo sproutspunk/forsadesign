@@ -44,8 +44,8 @@ export const historyMilestones: { date: string; en: string; pl: string }[] = [
   },
   {
     date: "2026-11-26",
-    en: "Development of a CAD-integrated parametric building configurator prototype with interactive 3D visualisation.",
-    pl: "Rozwój prototypu parametrycznego konfiguratora obiektów z integracją CAD i interaktywną wizualizacją 3D.",
+    en: "Development of the Dach Systema 3D configurator for garages and halls, integrating CAD components into an interactive model.",
+    pl: "Rozwój konfiguratora 3D garaży i hal Dach Systema oraz integracja komponentów CAD z interaktywnym modelem.",
   },
 ];
 
