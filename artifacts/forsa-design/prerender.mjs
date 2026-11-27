@@ -42,10 +42,12 @@ import { dachCase, dachPath, dachSchema } from "./src/data/dachCaseStudy.ts";
  *   initial HTML response.
  */
 
+import assert from "node:assert/strict";
 import { readFileSync, writeFileSync, mkdirSync } from "fs";
 import { join, dirname } from "path";
 import { fileURLToPath } from "url";
 import { articles } from "./src/data/articlesData.ts";
+import { articlesMeta } from "./src/data/articlesMeta.ts";
 import {
   linklangCaseStudy,
   linklangCasePath,
@@ -56,6 +58,18 @@ import {
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const distDir = join(__dirname, "..", "..", "dist/public");
 const SITE = "https://forsadesign.co.uk";
+
+const weeklyArticles = [...articles].sort((a, b) => b.dateIso.localeCompare(a.dateIso));
+const datesBySlug = new Map(articlesMeta.map((article) => [article.slugEn, article.dateIso]));
+assert.equal(datesBySlug.size, articlesMeta.length, "Duplicate article in blog listing");
+assert.equal(datesBySlug.size, articles.length, "Blog listing and archive must agree");
+for (const [index, article] of weeklyArticles.entries()) {
+  assert.equal(datesBySlug.get(article.slugEn), article.dateIso, article.slugEn);
+  if (index > 0) {
+    const gap = Date.parse(weeklyArticles[index - 1].dateIso) - Date.parse(article.dateIso);
+    assert.equal(gap, 7 * 86_400_000, `Expected seven days between issues near ${article.slugEn}`);
+  }
+}
 
 /** Encode plain text for safe insertion into an HTML attribute value. */
 function he(str) {
@@ -314,11 +328,10 @@ function buildNewsletterBody(lang, source) {
 
 function buildBlogBody(lang) {
   const en = lang === "en";
-  const items = [...articles]
-    .sort((a, b) => b.dateIso.localeCompare(a.dateIso))
+  const items = weeklyArticles
     .map(
       (article) =>
-        `<li><a href="/${lang}/blog/${lang === "en" ? article.slugEn : article.slugPl}">${ht(article[lang].title)}</a> <span>${article.publishedDateIso ? (en ? "Updated: " : "Aktualizacja: ") : ""}<time datetime="${article.dateIso}">${article.dateIso}</time></span></li>`,
+        `<li><a href="/${lang}/blog/${lang === "en" ? article.slugEn : article.slugPl}">${ht(article[lang].title)}</a> <span>${en ? "Editorial date: " : "Data redakcyjna: "}<time datetime="${article.dateIso}">${article.dateIso}</time></span></li>`,
     )
     .join("\n");
   return `<header>
@@ -370,7 +383,7 @@ function buildArticleBody(lang, article) {
 <article>
 <p><a href="/${lang}/blog">${en ? "← Back to blog" : "← Wróć do bloga"}</a></p>
 <h1>${ht(content.title)}</h1>
-<p>${article.publishedDateIso ? (en ? "Updated: " : "Aktualizacja: ") : ""}<time datetime="${article.dateIso}">${article.dateIso}</time> · ${article.readingTimeMin} min</p>
+<p>${en ? "Editorial date: " : "Data redakcyjna: "}<time datetime="${article.dateIso}">${article.dateIso}</time> · ${article.readingTimeMin} min</p>
 ${sectionsHtml}
 ${relatedHtml}
 ${sourcesHtml}
@@ -814,8 +827,8 @@ for (const article of articles) {
       ],
       bodyHtml: buildArticleBody(lang, article),
       isArticle: true,
-      lastmod: article.dateIso,
-      publishedAt: article.publishedDateIso ?? article.dateIso,
+      lastmod: article.modifiedDateIso ?? article.publishedDateIso,
+      publishedAt: article.publishedDateIso,
     });
   }
 }

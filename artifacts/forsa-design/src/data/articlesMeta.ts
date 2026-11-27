@@ -2,7 +2,8 @@ export interface ArticleMeta {
   slugEn: string;
   slugPl: string;
   dateIso: string;
-  publishedDateIso?: string;
+  publishedDateIso: string;
+  modifiedDateIso?: string;
   readingTimeMin: number;
   en: { title: string; excerpt: string };
   pl: { title: string; excerpt: string };
@@ -12,7 +13,8 @@ export const articlesMeta: ArticleMeta[] = [
   {
     slugEn: "b2b-catalogue-part-number-search",
     slugPl: "wyszukiwarka-katalogu-b2b-numery-czesci",
-    dateIso: "2026-11-16",
+    dateIso: "2026-11-20",
+    publishedDateIso: "2026-11-16",
     readingTimeMin: 4,
     pl: {
       title: "Wyszukiwarka w katalogu B2B: jak szukać po numerach części",
@@ -266,7 +268,8 @@ export const articlesMeta: ArticleMeta[] = [
   {
     slugEn: "how-to-choose-a-web-agency",
     slugPl: "jak-wybrac-agencje-webowa",
-    dateIso: "2026-11-17",
+    dateIso: "2026-06-05",
+    modifiedDateIso: "2026-11-17",
     readingTimeMin: 2,
     publishedDateIso: "2026-06-01",
     pl: {
@@ -282,7 +285,8 @@ export const articlesMeta: ArticleMeta[] = [
   {
     slugEn: "responsiveness-vs-speed",
     slugPl: "responsywnosc-vs-szybkosc",
-    dateIso: "2026-11-17",
+    dateIso: "2026-06-12",
+    modifiedDateIso: "2026-11-17",
     readingTimeMin: 2,
     publishedDateIso: "2026-06-05",
     pl: {
@@ -299,7 +303,8 @@ export const articlesMeta: ArticleMeta[] = [
   {
     slugEn: "cms-template-vs-custom-site",
     slugPl: "szablon-cms-vs-strona-na-zamowienie",
-    dateIso: "2026-11-17",
+    dateIso: "2026-06-19",
+    modifiedDateIso: "2026-11-17",
     readingTimeMin: 2,
     publishedDateIso: "2026-06-10",
     pl: {
@@ -316,7 +321,8 @@ export const articlesMeta: ArticleMeta[] = [
   {
     slugEn: "ecommerce-speed-and-ux",
     slugPl: "ecommerce-szybkosc-i-ux",
-    dateIso: "2026-11-17",
+    dateIso: "2026-06-26",
+    modifiedDateIso: "2026-11-17",
     readingTimeMin: 2,
     publishedDateIso: "2026-06-14",
     pl: {
@@ -333,7 +339,8 @@ export const articlesMeta: ArticleMeta[] = [
   {
     slugEn: "seo-2026-website-is-just-the-start",
     slugPl: "seo-2026-strona-to-dopiero-poczatek",
-    dateIso: "2026-11-17",
+    dateIso: "2026-07-03",
+    modifiedDateIso: "2026-11-17",
     readingTimeMin: 2,
     publishedDateIso: "2026-06-18",
     pl: {
@@ -348,7 +355,8 @@ export const articlesMeta: ArticleMeta[] = [
   {
     slugEn: "web-design-aberdeenshire",
     slugPl: "web-design-aberdeenshire-szkocja",
-    dateIso: "2026-11-17",
+    dateIso: "2026-07-10",
+    modifiedDateIso: "2026-11-17",
     readingTimeMin: 2,
     publishedDateIso: "2026-06-30",
     pl: {
@@ -365,7 +373,8 @@ export const articlesMeta: ArticleMeta[] = [
   {
     slugEn: "website-conversion-what-actually-works",
     slugPl: "konwersja-strony-co-dziala-naprawde",
-    dateIso: "2026-11-17",
+    dateIso: "2026-07-17",
+    modifiedDateIso: "2026-11-17",
     readingTimeMin: 2,
     publishedDateIso: "2026-07-01",
     pl: {
@@ -381,7 +390,8 @@ export const articlesMeta: ArticleMeta[] = [
   {
     slugEn: "website-maintenance-matters",
     slugPl: "dlaczego-utrzymanie-strony-ma-znaczenie",
-    dateIso: "2026-11-17",
+    dateIso: "2026-07-24",
+    modifiedDateIso: "2026-11-17",
     readingTimeMin: 2,
     publishedDateIso: "2026-07-10",
     pl: {
@@ -398,7 +408,8 @@ export const articlesMeta: ArticleMeta[] = [
   {
     slugEn: "from-template-to-shipyard",
     slugPl: "od-szablonu-do-stoczni",
-    dateIso: "2026-11-17",
+    dateIso: "2026-07-31",
+    modifiedDateIso: "2026-11-17",
     readingTimeMin: 2,
     publishedDateIso: "2026-08-04",
     pl: {
@@ -415,7 +426,8 @@ export const articlesMeta: ArticleMeta[] = [
   {
     slugEn: "how-we-improved-performance-polish-version",
     slugPl: "jak-podnieslismy-wydajnosc-polskiej-wersji-strony",
-    dateIso: "2026-11-17",
+    dateIso: "2026-08-07",
+    modifiedDateIso: "2026-11-17",
     readingTimeMin: 2,
     publishedDateIso: "2026-08-07",
     pl: {

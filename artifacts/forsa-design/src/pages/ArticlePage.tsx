@@ -46,6 +46,7 @@ const ui = {
 function formatDate(iso: string, lang: "en" | "pl") {
   const date = new Date(iso);
   return date.toLocaleDateString(lang === "pl" ? "pl-PL" : "en-GB", {
+    timeZone: "UTC",
     day: "numeric",
     month: "long",
     year: "numeric",
@@ -88,8 +89,8 @@ export default function ArticlePage({ lang, slug }: ArticlePageProps) {
           "@type": "BlogPosting",
           headline: a.title,
           description: a.excerpt,
-          datePublished: article.publishedDateIso ?? article.dateIso,
-          dateModified: article.dateIso,
+          datePublished: article.publishedDateIso,
+          dateModified: article.modifiedDateIso ?? article.publishedDateIso,
           inLanguage: lang === "en" ? "en-GB" : "pl-PL",
           url: buildHref(`/${lang}/blog/${canonicalSlug}`),
           author: {
@@ -158,9 +159,7 @@ export default function ArticlePage({ lang, slug }: ArticlePageProps) {
           >
             <div className="flex items-center gap-4 text-xs text-foreground/40 font-light mb-6">
               <span>
-                {article.publishedDateIso && (
-                  <span>{lang === "pl" ? "Aktualizacja: " : "Updated: "}</span>
-                )}
+                {lang === "pl" ? "Data redakcyjna: " : "Editorial date: "}
                 <time dateTime={article.dateIso}>{formatDate(article.dateIso, lang)}</time>
               </span>
               <span>·</span>

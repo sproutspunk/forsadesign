@@ -20,7 +20,8 @@ export interface Article {
   slugEn: string;
   slugPl: string;
   dateIso: string;
-  publishedDateIso?: string;
+  publishedDateIso: string;
+  modifiedDateIso?: string;
   readingTimeMin: number;
   en: ArticleLang;
   pl: ArticleLang;
@@ -32,7 +33,8 @@ export function getArticleBySlug(slug: string): Article | undefined {
 
 export const articles: Article[] = [
   {
-    dateIso: "2026-11-16",
+    dateIso: "2026-11-20",
+    publishedDateIso: "2026-11-16",
     slugPl: "wyszukiwarka-katalogu-b2b-numery-czesci",
     slugEn: "b2b-catalogue-part-number-search",
     pl: {
@@ -1574,7 +1576,8 @@ export const articles: Article[] = [
   {
     slugEn: "how-to-choose-a-web-agency",
     slugPl: "jak-wybrac-agencje-webowa",
-    dateIso: "2026-11-17",
+    dateIso: "2026-06-05",
+    modifiedDateIso: "2026-11-17",
     readingTimeMin: 2,
     en: {
       title: "How to choose a website provider: requirements, evidence and handover",
@@ -1626,7 +1629,8 @@ export const articles: Article[] = [
   {
     slugEn: "responsiveness-vs-speed",
     slugPl: "responsywnosc-vs-szybkosc",
-    dateIso: "2026-11-17",
+    dateIso: "2026-06-12",
+    modifiedDateIso: "2026-11-17",
     readingTimeMin: 2,
     en: {
       title: "Responsive design and speed: two distinct measures of website quality",
@@ -1691,7 +1695,8 @@ export const articles: Article[] = [
   {
     slugEn: "cms-template-vs-custom-site",
     slugPl: "szablon-cms-vs-strona-na-zamowienie",
-    dateIso: "2026-11-17",
+    dateIso: "2026-06-19",
+    modifiedDateIso: "2026-11-17",
     readingTimeMin: 2,
     en: {
       title: "CMS templates and custom development: selection criteria",
@@ -1744,7 +1749,8 @@ export const articles: Article[] = [
   {
     slugEn: "ecommerce-speed-and-ux",
     slugPl: "ecommerce-szybkosc-i-ux",
-    dateIso: "2026-11-17",
+    dateIso: "2026-06-26",
+    modifiedDateIso: "2026-11-17",
     readingTimeMin: 2,
     en: {
       title: "B2B e-commerce: performance, information and ordering workflows",
@@ -1797,7 +1803,8 @@ export const articles: Article[] = [
   {
     slugEn: "seo-2026-website-is-just-the-start",
     slugPl: "seo-2026-strona-to-dopiero-poczatek",
-    dateIso: "2026-11-17",
+    dateIso: "2026-07-03",
+    modifiedDateIso: "2026-11-17",
     readingTimeMin: 2,
     en: {
       title: "Technical SEO, content and visibility: distinct parts of one process",
@@ -1868,7 +1875,8 @@ export const articles: Article[] = [
   {
     slugEn: "web-design-aberdeenshire",
     slugPl: "web-design-aberdeenshire-szkocja",
-    dateIso: "2026-11-17",
+    dateIso: "2026-07-10",
+    modifiedDateIso: "2026-11-17",
     readingTimeMin: 2,
     en: {
       title: "A business website in Aberdeenshire: scope and selection criteria",
@@ -1921,7 +1929,8 @@ export const articles: Article[] = [
   {
     slugEn: "website-conversion-what-actually-works",
     slugPl: "konwersja-strony-co-dziala-naprawde",
-    dateIso: "2026-11-17",
+    dateIso: "2026-07-17",
+    modifiedDateIso: "2026-11-17",
     readingTimeMin: 2,
     en: {
       title: "How to assess whether a website supports enquiries",
@@ -1973,7 +1982,8 @@ export const articles: Article[] = [
   {
     slugEn: "website-maintenance-matters",
     slugPl: "dlaczego-utrzymanie-strony-ma-znaczenie",
-    dateIso: "2026-11-17",
+    dateIso: "2026-07-24",
+    modifiedDateIso: "2026-11-17",
     readingTimeMin: 2,
     en: {
       title: "Website maintenance: updates, recovery and operational checks",
@@ -2046,7 +2056,8 @@ export const articles: Article[] = [
   {
     slugEn: "from-template-to-shipyard",
     slugPl: "od-szablonu-do-stoczni",
-    dateIso: "2026-11-17",
+    dateIso: "2026-07-31",
+    modifiedDateIso: "2026-11-17",
     readingTimeMin: 2,
     en: {
       title: "Marine-industry websites: information for supplier assessment",
@@ -2099,7 +2110,8 @@ export const articles: Article[] = [
   {
     slugEn: "how-we-improved-performance-polish-version",
     slugPl: "jak-podnieslismy-wydajnosc-polskiej-wersji-strony",
-    dateIso: "2026-11-17",
+    dateIso: "2026-08-07",
+    modifiedDateIso: "2026-11-17",
     readingTimeMin: 2,
     en: {
       title: "PL and EN performance: content, resources and caching",

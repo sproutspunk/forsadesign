@@ -73,7 +73,7 @@ The frontend build writes to **`dist/public` at the repository root**, then prer
 
 The site uses a gold bird mark, navy/gold styling, self-hosted Inter and Playfair Display fonts, and a full-page Blueprint background with motion controls. Branding assets are in `artifacts/forsa-design/public/brand/`.
 
-Blog content is in `src/data/articlesData.ts`; listing/search metadata is in `src/data/articlesMeta.ts`. Keep the two synchronised. The backlog articles have weekly editorial dates in `dateIso`, visibly labelled as such; `publishedDateIso` retains the actual publication date for structured data. These are distinct dates.
+Blog content is in `src/data/articlesData.ts`; listing/search metadata is in `src/data/articlesMeta.ts`. Keep the two synchronised. Each bilingual article has one editorial date in `dateIso`, exactly seven days after the previous issue. Use the actual publication and revision dates for `publishedDateIso` and `modifiedDateIso`.
 
 The LinkLang case study is available at `/pl/case-studies/linklang/` and `/en/case-studies/linklang/`, with a homepage portfolio card. Content is shared between React and prerendering through `src/data/linklangCaseStudy.ts`. See [implementation evidence](content/case-studies/linklang-evidence.md).
 
