@@ -46,9 +46,7 @@ export function ServicesContent({ lang }: { lang: "pl" | "en" }) {
               className="mt-5 inline-block text-primary underline"
               href={`/${lang}/case-studies/dachsystema/`}
             >
-              {lang === "pl"
-                ? "Konfigurator 3D Dach Systema"
-                : "Dach Systema 3D configurator"}
+              {lang === "pl" ? "Konfigurator 3D Dach Systema" : "Dach Systema 3D configurator"}
             </a>
           </article>
         </div>
