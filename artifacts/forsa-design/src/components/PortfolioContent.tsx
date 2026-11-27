@@ -57,6 +57,25 @@ export default function PortfolioContent({ lang }: { lang: "pl" | "en" }) {
       height: 420,
       light: true,
     },
+    {
+      title: "Industrial 3D CAD",
+      category: lang === "pl" ? "Wizualizacja przemysłowa" : "Industrial visualisation",
+      description:
+        lang === "pl"
+          ? "Tworzymy interaktywne modele 3D części i zespołów przemysłowych. Obróć uchwyt tokarski i rozsuń jego elementy, żeby zobaczyć, jak do siebie pasują."
+          : "We create interactive 3D models of industrial parts and assemblies. Rotate the lathe chuck and use the exploded view to see how its components fit together.",
+      detail: lang === "pl" ? "Autorski model Forsa Design" : "Original Forsa Design model",
+      image: "/projects/industrial-3d-cad-chuck.webp",
+      alt:
+        lang === "pl"
+          ? "Trójszczękowy uchwyt tokarski w widoku ukośnym"
+          : "Three-jaw lathe chuck viewed at an angle",
+      href: `/${lang}/services/#industrial-3d-demo`,
+      cta: lang === "pl" ? "Obejrzyj model 3D" : "Explore the 3D model",
+      width: 715,
+      height: 480,
+      light: false,
+    },
   ];
   return (
     <React.Fragment>
@@ -78,12 +97,12 @@ export default function PortfolioContent({ lang }: { lang: "pl" | "en" }) {
             </h2>
             <p className="text-foreground/70 leading-relaxed">
               {lang === "pl"
-                ? "Działający konfigurator 3D garaży i hal Dach Systema oraz portal klienta LinkLang."
-                : "A working 3D configurator for Dach Systema garages and halls, alongside the LinkLang client portal."}
+                ? "Działający konfigurator 3D Dach Systema, portal klienta LinkLang i interaktywny model uchwytu tokarskiego."
+                : "Dach Systema’s working 3D configurator, the LinkLang client portal and an interactive lathe chuck model."}
             </p>
           </div>
           <div
-            className="flex items-center justify-between gap-4 mb-4 md:hidden"
+            className="flex items-center justify-between gap-4 mb-4 lg:hidden"
             aria-label={lang === "pl" ? "Nawigacja portfolio" : "Portfolio navigation"}
           >
             <div className="text-sm text-foreground/70">
@@ -134,6 +153,11 @@ export default function PortfolioContent({ lang }: { lang: "pl" | "en" }) {
             onScroll={(event) => {
               const list = event.currentTarget;
               const item = list.children[0] as HTMLElement;
+              const end = list.scrollWidth - list.clientWidth;
+              if (list.scrollLeft > 0 && list.scrollLeft >= end - 1) {
+                setActive(cards.length - 1);
+                return;
+              }
               setActive(
                 Math.max(
                   0,
@@ -145,7 +169,7 @@ export default function PortfolioContent({ lang }: { lang: "pl" | "en" }) {
               );
             }}
             aria-label={lang === "pl" ? "Projekty portfolio" : "Portfolio projects"}
-            className="grid grid-flow-col auto-cols-[88%] sm:auto-cols-[340px] items-stretch gap-6 overflow-x-auto snap-x snap-mandatory pb-5 pt-1 px-1 -mx-1"
+            className="grid grid-flow-col auto-cols-[88%] sm:auto-cols-[65%] lg:grid-flow-row lg:grid-cols-3 items-stretch gap-6 overflow-x-auto snap-x snap-mandatory pb-5 pt-1 px-1 -mx-1"
           >
             {cards.map((card) => (
               <li key={card.href} className="min-w-0 snap-start">
@@ -173,7 +197,7 @@ export default function PortfolioContent({ lang }: { lang: "pl" | "en" }) {
                     <p className="text-sm text-foreground/75 leading-relaxed">{card.description}</p>
                     <p className="text-xs text-primary/80 leading-relaxed">{card.detail}</p>
                     <span className="h-full inline-flex items-center justify-between gap-3 text-sm font-semibold text-primary border-t border-primary/15">
-                      {c.readCase}
+                      {card.cta ?? c.readCase}
                       <svg
                         viewBox="0 0 24 24"
                         width="18"

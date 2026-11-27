@@ -50,7 +50,7 @@ export function ServicesContent({ lang }: { lang: "pl" | "en" }) {
             </a>
           </article>
         </div>
-        <div className="mt-6">
+        <div id="industrial-3d-demo" className="mt-6 scroll-mt-48 xl:scroll-mt-36">
           <ChuckDemo lang={lang} />
         </div>
         <BrandingOffer lang={lang} />
