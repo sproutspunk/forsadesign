@@ -100,11 +100,33 @@ export default function PortfolioContent({ lang }: { lang: "pl" | "en" }) {
                 ? "Działający konfigurator 3D Dach Systema, portal klienta LinkLang i interaktywny model uchwytu tokarskiego."
                 : "Dach Systema’s working 3D configurator, the LinkLang client portal and an interactive lathe chuck model."}
             </p>
-            <p className="mt-4 text-sm text-foreground/70 leading-relaxed">
-              {lang === "pl"
-                ? "Szacunki emisji opublikowane wcześniej na stronach głównych: Forsa Design 0,07 g CO₂ na wizytę, LinkLang 0,09 g CO₂ na wizytę."
-                : "Emission estimates previously published on the homepages: Forsa Design 0.07 g CO₂ per visit and LinkLang 0.09 g CO₂ per visit."}
-            </p>
+            <div
+              id="website-emissions"
+              className="mt-6 scroll-mt-28 rounded-lg border border-primary/40 bg-card p-4 sm:p-5"
+            >
+              <h3 className="font-semibold text-white">
+                {lang === "pl" ? "Ślad węglowy stron" : "Website carbon footprint"}
+              </h3>
+              <dl className="mt-3 grid grid-cols-1 gap-3 sm:grid-cols-2">
+                <div>
+                  <dt className="text-sm text-foreground/80">Forsa Design</dt>
+                  <dd className="text-lg font-semibold text-primary">
+                    {lang === "pl" ? "0,07 g CO₂ na wizytę" : "0.07 g CO₂ per visit"}
+                  </dd>
+                </div>
+                <div>
+                  <dt className="text-sm text-foreground/80">LinkLang</dt>
+                  <dd className="text-lg font-semibold text-primary">
+                    {lang === "pl" ? "0,09 g CO₂ na wizytę" : "0.09 g CO₂ per visit"}
+                  </dd>
+                </div>
+              </dl>
+              <p className="mt-3 text-xs text-foreground/70">
+                {lang === "pl"
+                  ? "Szacunki opublikowane wcześniej na stronach głównych."
+                  : "Estimates previously published on the homepages."}
+              </p>
+            </div>
           </div>
           <div
             className="flex items-center justify-between gap-4 mb-4 lg:hidden"
