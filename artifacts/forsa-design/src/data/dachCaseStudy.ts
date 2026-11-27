@@ -5,7 +5,7 @@ export const dachCase = {
       "Klient wybiera kształt, dach, wymiary i wyposażenie garażu lub hali. Zmiany widzi w podglądzie 3D. Może zapisać projekt i przygotować zapytanie ofertowe z wybranymi parametrami.",
     status: "Działający konfigurator 3D",
     caption:
-      "Rzeczywisty zrzut rosyjskiej wersji konfiguratora, wykonany 16 listopada 2026 z aplikacji uruchomionej lokalnie z gałęzi projektu.",
+      "Garaż 5,50 × 5,00 m z dwiema bramami. Widok z rosyjskiej wersji konfiguratora Dach Systema, 27 listopada 2026.",
     scope: "Zakres konfiguratora",
     features: [
       [
@@ -55,7 +55,7 @@ export const dachCase = {
       "Customers choose the footprint, roof, dimensions and equipment for a garage or hall. The 3D preview updates as they make changes. They can save the design and prepare an enquiry with their chosen specifications.",
     status: "Working 3D configurator",
     caption:
-      "An actual Russian-language interface capture, taken on 16 November 2026 from the application run locally from the project branch.",
+      "A 5.50 × 5.00 m garage with two doors, shown in the Russian-language Dach Systema configurator on 27 November 2026.",
     scope: "What the configurator includes",
     features: [
       [
@@ -100,7 +100,7 @@ export const dachCase = {
     cta: "Discuss a similar configurator",
   },
 };
-export const dachImage = "/projects/dachsystema-configurator-ru.webp";
+export const dachImage = "/projects/dachsystema-double-garage-configurator-ru.webp";
 export const dachPath = (lang: "pl" | "en") => `/${lang}/case-studies/dachsystema/`;
 export function dachSchema(lang: "pl" | "en") {
   return {

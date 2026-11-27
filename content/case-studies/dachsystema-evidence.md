@@ -11,3 +11,7 @@ The preview is protected and remains a separate prototype. The case study does n
 ## Deployment positioning
 
 The project owner supplied the final public positioning: ready for client-specific deployment. Shared PL/EN portfolio and case-study labels use that wording. The January 2027 sales announcement is removed. This describes readiness for adaptation and deployment for a client, not an existing production deployment or a dated sales launch.
+
+## Portfolio image update, 27 November 2026
+
+The updated images show the double garage (model `double55`, 5.50 × 5.00 m) in the public Russian-language configurator. The portfolio card uses the model viewport (838 × 640). The case study uses the full interface (1440 × 1000). Both WebP captures were taken after the 3D viewer rendered on 27 November 2026.

@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react";
-import { dachCase, dachImage, dachPath } from "../data/dachCaseStudy";
+import { dachCase, dachPath } from "../data/dachCaseStudy";
 import { linklangCasePath, linklangCaseStudy } from "../data/linklangCaseStudy";
 
 export default function PortfolioContent({ lang }: { lang: "pl" | "en" }) {
@@ -29,14 +29,14 @@ export default function PortfolioContent({ lang }: { lang: "pl" | "en" }) {
           ? "Wymiary, dach i wyposażenie garażu lub hali w interaktywnym modelu 3D. Zapis projektu i przygotowanie zapytania."
           : "Garage and hall dimensions, roofs and equipment in an interactive 3D model. Project saving and enquiry preparation.",
       detail: dachCase[lang].status,
-      image: dachImage,
+      image: "/projects/dachsystema-double-garage-3d.webp",
       alt:
         lang === "pl"
-          ? "Rosyjska wersja konfiguratora Dach Systema z modelem garażu 3D"
-          : "Russian-language Dach Systema configurator with a 3D garage model",
+          ? "Model 3D garażu z dwiema bramami w kolorze orzecha"
+          : "3D model of a garage with two walnut-coloured doors",
       href: dachPath(lang),
-      width: 1440,
-      height: 1000,
+      width: 838,
+      height: 640,
       light: false,
     },
     {
