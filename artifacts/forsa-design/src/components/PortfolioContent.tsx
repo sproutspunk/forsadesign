@@ -28,7 +28,7 @@ export default function PortfolioContent({ lang }: { lang: "pl" | "en" }) {
         lang === "pl"
           ? "Wymiary, dach i wyposażenie garażu lub hali w interaktywnym modelu 3D. Zapis projektu i przygotowanie zapytania."
           : "Garage and hall dimensions, roofs and equipment in an interactive 3D model. Project saving and enquiry preparation.",
-      detail: dachCase[lang].status.split(" / ")[1],
+      detail: dachCase[lang].status,
       image: dachImage,
       alt:
         lang === "pl"
@@ -78,8 +78,8 @@ export default function PortfolioContent({ lang }: { lang: "pl" | "en" }) {
             </h2>
             <p className="text-foreground/70 leading-relaxed">
               {lang === "pl"
-                ? "Portal obsługi klienta działający produkcyjnie oraz prototyp konfiguratora 3D."
-                : "A live service platform and a 3D configurator prototype."}
+                ? "Działający konfigurator 3D garaży i hal Dach Systema oraz portal klienta LinkLang."
+                : "A working 3D configurator for Dach Systema garages and halls, alongside the LinkLang client portal."}
             </p>
           </div>
           <div

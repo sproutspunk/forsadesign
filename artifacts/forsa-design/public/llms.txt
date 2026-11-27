@@ -28,8 +28,8 @@ Przemysłowe rozwiązania cyfrowe obejmują strony, dedykowane systemy webowe, k
 
 - [LinkLang: production service platform](https://forsadesign.co.uk/en/case-studies/linklang/)
 - [LinkLang: system produkcyjny](https://forsadesign.co.uk/pl/case-studies/linklang/)
-- [Dach Systema: 3D configurator prototype](https://forsadesign.co.uk/en/case-studies/dachsystema/)
-- [Dach Systema: prototyp konfiguratora 3D](https://forsadesign.co.uk/pl/case-studies/dachsystema/)
+- [Dach Systema: working 3D configurator](https://forsadesign.co.uk/en/case-studies/dachsystema/)
+- [Dach Systema: działający konfigurator 3D](https://forsadesign.co.uk/pl/case-studies/dachsystema/)
 - [Interactive 3D demonstration](https://forsadesign.co.uk/en/services/#industrial-3d-cad)
 - [Interaktywna demonstracja 3D](https://forsadesign.co.uk/pl/services/#industrial-3d-cad)
 

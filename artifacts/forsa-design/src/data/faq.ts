@@ -493,8 +493,8 @@ export function getFaqItems(lang: "pl" | "en"): FaqItem[] {
     } else if (["faq-configurators", "faq-configurator-prices"].includes(id)) {
       a +=
         lang === "pl"
-          ? " Zobacz prototyp konfiguratora 3D Dach Systema w naszym portfolio."
-          : " See the Dach Systema 3D configurator prototype in our portfolio.";
+          ? " Zobacz działający konfigurator 3D Dach Systema w naszym portfolio."
+          : " See the working Dach Systema 3D configurator in our portfolio.";
       links = [dach];
     } else if (id === "faq-multilingual") {
       a +=

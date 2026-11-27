@@ -47,8 +47,8 @@ export function ServicesContent({ lang }: { lang: "pl" | "en" }) {
               href={`/${lang}/case-studies/dachsystema/`}
             >
               {lang === "pl"
-                ? "Prototyp konfiguratora Dach Systema"
-                : "Dach Systema configurator prototype"}
+                ? "Konfigurator 3D Dach Systema"
+                : "Dach Systema 3D configurator"}
             </a>
           </article>
         </div>

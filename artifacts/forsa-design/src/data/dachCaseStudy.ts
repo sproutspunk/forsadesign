@@ -2,8 +2,8 @@ export const dachCase = {
   pl: {
     title: "Dach Systema: konfigurator garaży i hal 3D",
     intro:
-      "Prototyp łączy wybór bryły, dachu, wymiarów i wyposażenia z podglądem 3D. Klient może zobaczyć swój wariant, zachować projekt i przygotować zapytanie z konkretnymi parametrami.",
-    status: "Konfigurator 3D / Prototyp rozwojowy",
+      "Klient wybiera kształt, dach, wymiary i wyposażenie garażu lub hali. Zmiany widzi w podglądzie 3D. Może zapisać projekt i przygotować zapytanie ofertowe z wybranymi parametrami.",
+    status: "Działający konfigurator 3D",
     caption:
       "Rzeczywisty zrzut rosyjskiej wersji konfiguratora, wykonany 16 listopada 2026 z aplikacji uruchomionej lokalnie z gałęzi projektu.",
     scope: "Zakres konfiguratora",
@@ -39,7 +39,7 @@ export const dachCase = {
     enquiry:
       "Podsumowanie zbiera parametry wybranego wariantu i przygotowuje wiadomość w aplikacji pocztowej klienta. Wysyłkę zatwierdza użytkownik; dalsze ustalenia techniczne i wycena odbywają się z dostawcą.",
     technology: "Technologia i model 3D",
-    tech: "Wersja rozwojowa łączy komponenty CAD z interaktywnym modelem 3D. Wybór parametrów aktualizuje podgląd.",
+    tech: "Konfigurator łączy komponenty CAD z interaktywnym modelem 3D. Wybór parametrów aktualizuje podgląd.",
     limits:
       "Model wspiera rozmowę o wymaganiach i przygotowanie zapytania. Możliwość wykonania, wymiary otworów i wykończenie potwierdza producent.",
     result: "Rezultat: wspólny punkt odniesienia do rozmowy technicznej",
@@ -52,8 +52,8 @@ export const dachCase = {
   en: {
     title: "Dach Systema: a 3D garage and hall configurator",
     intro:
-      "The prototype connects footprint, roof, dimension and equipment choices with a 3D preview. Customers can inspect their chosen variant, save the project and prepare an enquiry with specific requirements.",
-    status: "3D configurator / Development prototype",
+      "Customers choose the footprint, roof, dimensions and equipment for a garage or hall. The 3D preview updates as they make changes. They can save the design and prepare an enquiry with their chosen specifications.",
+    status: "Working 3D configurator",
     caption:
       "An actual Russian-language interface capture, taken on 16 November 2026 from the application run locally from the project branch.",
     scope: "What the configurator includes",
@@ -89,7 +89,7 @@ export const dachCase = {
     enquiry:
       "The summary collects the selected parameters and prepares a message in the customer's email application. The user authorises sending; technical details and quotation terms are then discussed with the supplier.",
     technology: "Technology and the 3D model",
-    tech: "The development version incorporates CAD components into an interactive 3D model. The preview updates as parameters change.",
+    tech: "The configurator incorporates CAD components into an interactive 3D model. The preview updates as parameters change.",
     limits:
       "The model helps clarify requirements and prepare an enquiry. The manufacturer confirms feasibility, clear opening dimensions and finishes.",
     result: "The result: a shared reference for a technical discussion",
