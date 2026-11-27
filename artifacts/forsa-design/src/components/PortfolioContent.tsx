@@ -13,7 +13,7 @@ export default function PortfolioContent({ lang }: { lang: "pl" | "en" }) {
     const step = item.getBoundingClientRect().width + 24;
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     list.scrollTo({
-      left: Math.max(0, Math.min(cards.length - 1, active + direction)) * step,
+      left: Math.max(0, Math.min(cardCount - 1, active + direction)) * step,
       behavior: reduced ? "instant" : "smooth",
     });
   };
@@ -77,6 +77,8 @@ export default function PortfolioContent({ lang }: { lang: "pl" | "en" }) {
       light: false,
     },
   ];
+  const cardCount = cards.length + 1;
+
   return (
     <React.Fragment>
       <section
@@ -100,33 +102,6 @@ export default function PortfolioContent({ lang }: { lang: "pl" | "en" }) {
                 ? "Działający konfigurator 3D Dach Systema, portal klienta LinkLang i interaktywny model uchwytu tokarskiego."
                 : "Dach Systema’s working 3D configurator, the LinkLang client portal and an interactive lathe chuck model."}
             </p>
-            <div
-              id="website-emissions"
-              className="mt-6 scroll-mt-28 rounded-lg border border-primary/40 bg-card p-4 sm:p-5"
-            >
-              <h3 className="font-semibold text-white">
-                {lang === "pl" ? "Ślad węglowy stron" : "Website carbon footprint"}
-              </h3>
-              <dl className="mt-3 grid grid-cols-1 gap-3 sm:grid-cols-2">
-                <div>
-                  <dt className="text-sm text-foreground/80">Forsa Design</dt>
-                  <dd className="text-lg font-semibold text-primary">
-                    {lang === "pl" ? "0,07 g CO₂ na wizytę" : "0.07 g CO₂ per visit"}
-                  </dd>
-                </div>
-                <div>
-                  <dt className="text-sm text-foreground/80">LinkLang</dt>
-                  <dd className="text-lg font-semibold text-primary">
-                    {lang === "pl" ? "0,09 g CO₂ na wizytę" : "0.09 g CO₂ per visit"}
-                  </dd>
-                </div>
-              </dl>
-              <p className="mt-3 text-xs text-foreground/70">
-                {lang === "pl"
-                  ? "Szacunki opublikowane wcześniej na stronach głównych."
-                  : "Estimates previously published on the homepages."}
-              </p>
-            </div>
           </div>
           <div
             className="flex items-center justify-between gap-4 mb-4 lg:hidden"
@@ -137,7 +112,7 @@ export default function PortfolioContent({ lang }: { lang: "pl" | "en" }) {
                 {lang === "pl" ? "Przesuń, aby zobaczyć więcej" : "Swipe to explore more"}
               </p>
               <p className="text-xs mt-1" aria-live="polite">
-                {active + 1} / {cards.length}
+                {active + 1} / {cardCount}
               </p>
             </div>
             <div className="flex gap-2">
@@ -146,7 +121,7 @@ export default function PortfolioContent({ lang }: { lang: "pl" | "en" }) {
                   key={direction}
                   type="button"
                   onClick={() => move(direction)}
-                  disabled={direction < 0 ? active === 0 : active === cards.length - 1}
+                  disabled={direction < 0 ? active === 0 : active === cardCount - 1}
                   aria-controls="portfolio-projects"
                   aria-label={
                     lang === "pl"
@@ -182,21 +157,21 @@ export default function PortfolioContent({ lang }: { lang: "pl" | "en" }) {
               const item = list.children[0] as HTMLElement;
               const end = list.scrollWidth - list.clientWidth;
               if (list.scrollLeft > 0 && list.scrollLeft >= end - 1) {
-                setActive(cards.length - 1);
+                setActive(cardCount - 1);
                 return;
               }
               setActive(
                 Math.max(
                   0,
                   Math.min(
-                    cards.length - 1,
+                    cardCount - 1,
                     Math.round(list.scrollLeft / (item.getBoundingClientRect().width + 24)),
                   ),
                 ),
               );
             }}
             aria-label={lang === "pl" ? "Projekty portfolio" : "Portfolio projects"}
-            className="grid grid-flow-col auto-cols-[88%] sm:auto-cols-[65%] lg:grid-flow-row lg:grid-cols-3 items-stretch gap-6 overflow-x-auto snap-x snap-mandatory pb-5 pt-1 px-1 -mx-1"
+            className="grid grid-flow-col auto-cols-[88%] sm:auto-cols-[65%] lg:grid-flow-row lg:grid-cols-2 items-stretch gap-6 overflow-x-auto snap-x snap-mandatory pb-5 pt-1 px-1 -mx-1"
           >
             {cards.map((card) => (
               <li key={card.href} className="min-w-0 snap-start">
@@ -241,6 +216,58 @@ export default function PortfolioContent({ lang }: { lang: "pl" | "en" }) {
                 </a>
               </li>
             ))}
+            <li id="website-emissions" className="min-w-0 snap-start scroll-mt-28">
+              <article
+                aria-labelledby="website-emissions-heading"
+                className="grid min-h-[600px] grid-rows-[220px_1fr] overflow-hidden rounded-lg border border-primary/25 bg-card"
+              >
+                <dl className="grid grid-cols-2 items-center divide-x divide-primary/20 border-b border-primary/15 bg-[#151d21] px-4 sm:px-6">
+                  <div className="px-2 text-center">
+                    <dt className="text-sm font-medium text-white">Forsa Design</dt>
+                    <dd className="mt-3">
+                      <span className="block font-serif text-4xl font-bold text-primary">
+                        {lang === "pl" ? "0,07" : "0.07"}
+                      </span>
+                      <span className="mt-1 block text-xs text-foreground/80">
+                        {lang === "pl" ? "g CO₂ na wizytę" : "g CO₂ per visit"}
+                      </span>
+                    </dd>
+                  </div>
+                  <div className="px-2 text-center">
+                    <dt className="text-sm font-medium text-white">LinkLang</dt>
+                    <dd className="mt-3">
+                      <span className="block font-serif text-4xl font-bold text-primary">
+                        {lang === "pl" ? "0,09" : "0.09"}
+                      </span>
+                      <span className="mt-1 block text-xs text-foreground/80">
+                        {lang === "pl" ? "g CO₂ na wizytę" : "g CO₂ per visit"}
+                      </span>
+                    </dd>
+                  </div>
+                </dl>
+                <div className="flex flex-col gap-3 p-5 sm:p-6">
+                  <p className="text-primary text-[11px] uppercase tracking-[0.14em]">
+                    {lang === "pl" ? "Wskaźnik środowiskowy" : "Environmental metric"}
+                  </p>
+                  <h3
+                    id="website-emissions-heading"
+                    className="font-serif text-3xl font-bold text-white"
+                  >
+                    {lang === "pl" ? "Ślad węglowy stron" : "Website carbon footprint"}
+                  </h3>
+                  <p className="text-sm text-foreground/75 leading-relaxed">
+                    {lang === "pl"
+                      ? "Szacunkowa emisja CO₂ przypadająca na jedną wizytę na publicznej stronie głównej Forsa Design i LinkLang."
+                      : "Estimated CO₂ emissions per visit to the public homepages of Forsa Design and LinkLang."}
+                  </p>
+                  <p className="mt-auto border-t border-primary/15 pt-4 text-xs text-foreground/70">
+                    {lang === "pl"
+                      ? "Obie wartości były wcześniej opublikowane na stronach głównych."
+                      : "Both estimates were previously published on the homepages."}
+                  </p>
+                </div>
+              </article>
+            </li>
           </ul>
         </div>
       </section>
