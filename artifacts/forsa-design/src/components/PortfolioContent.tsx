@@ -177,7 +177,7 @@ export default function PortfolioContent({ lang }: { lang: "pl" | "en" }) {
               <li key={card.href} className="min-w-0 snap-start">
                 <a
                   href={card.href}
-                  className="group grid grid-rows-[220px_minmax(0,1fr)] w-full h-[600px] overflow-hidden rounded-lg border border-primary/25 bg-card hover:border-primary/70 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary focus-visible:outline-offset-2"
+                  className="group grid grid-rows-[220px_minmax(0,1fr)] w-full h-full min-h-[600px] overflow-hidden rounded-lg border border-primary/25 bg-card hover:border-primary/70 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary focus-visible:outline-offset-2"
                 >
                   <div
                     className={`min-w-0 min-h-0 p-4 flex items-center justify-center border-b border-primary/15 ${card.light ? "bg-slate-100" : "bg-[#151d21]"}`}
@@ -219,7 +219,7 @@ export default function PortfolioContent({ lang }: { lang: "pl" | "en" }) {
             <li id="website-emissions" className="min-w-0 snap-start scroll-mt-28">
               <article
                 aria-labelledby="website-emissions-heading"
-                className="grid min-h-[600px] grid-rows-[220px_1fr] overflow-hidden rounded-lg border border-primary/25 bg-card"
+                className="grid h-full min-h-[600px] grid-rows-[220px_1fr] overflow-hidden rounded-lg border border-primary/25 bg-card"
               >
                 <dl className="grid grid-cols-2 items-center divide-x divide-primary/20 border-b border-primary/15 bg-[#151d21] px-4 sm:px-6">
                   <div className="px-2 text-center">
@@ -247,7 +247,7 @@ export default function PortfolioContent({ lang }: { lang: "pl" | "en" }) {
                 </dl>
                 <div className="flex flex-col gap-3 p-5 sm:p-6">
                   <p className="text-primary text-[11px] uppercase tracking-[0.14em]">
-                    {lang === "pl" ? "Wskaźnik środowiskowy" : "Environmental metric"}
+                    {lang === "pl" ? "Efektywność cyfrowa · UK" : "Digital efficiency · UK"}
                   </p>
                   <h3
                     id="website-emissions-heading"
@@ -257,13 +257,40 @@ export default function PortfolioContent({ lang }: { lang: "pl" | "en" }) {
                   </h3>
                   <p className="text-sm text-foreground/75 leading-relaxed">
                     {lang === "pl"
-                      ? "Szacunkowa emisja CO₂ przypadająca na jedną wizytę na publicznej stronie głównej Forsa Design i LinkLang."
-                      : "Estimated CO₂ emissions per visit to the public homepages of Forsa Design and LinkLang."}
+                      ? "Dobrze zaprojektowana strona powinna działać sprawnie i oszczędnie korzystać z zasobów. Optymalizacja kodu, obrazów i transferu danych pomaga skracać czas ładowania oraz ograniczać ślad węglowy."
+                      : "A well-built website should be quick to use and economical with resources. Optimising code, images and data transfer can improve loading times and reduce its carbon footprint."}
+                  </p>
+                  <p className="text-sm text-foreground/75 leading-relaxed">
+                    {lang === "pl"
+                      ? "W UK ma to również znaczenie przy wyborze dostawców. "
+                      : "In the UK, this also matters when choosing suppliers. "}
+                    <a
+                      href="https://www.gov.uk/service-manual/design/environmentally-sustainable-services"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-primary underline underline-offset-4 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary"
+                    >
+                      GOV.UK
+                    </a>
+                    {lang === "pl"
+                      ? " zaleca zespołom administracji uwzględnianie wpływu środowiskowego ofert, a "
+                      : " advises government service teams to assess the environmental impact of proposals, while "}
+                    <a
+                      href="https://design.scotentblog.co.uk/reducing-carbon-emissions-from-our-websites/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-primary underline underline-offset-4 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary"
+                    >
+                      Scottish Enterprise
+                    </a>
+                    {lang === "pl"
+                      ? " łączy redukcję emisji swoich stron z realizacją celów Net Zero."
+                      : " links reductions in website emissions to its Net Zero goals."}
                   </p>
                   <p className="mt-auto border-t border-primary/15 pt-4 text-xs text-foreground/70">
                     {lang === "pl"
-                      ? "Obie wartości były wcześniej opublikowane na stronach głównych."
-                      : "Both estimates were previously published on the homepages."}
+                      ? "Wcześniej opublikowane szacunki dla publicznych stron głównych, w gramach CO₂ na wizytę."
+                      : "Previously published estimates for the public homepages, in grams of CO₂ per visit."}
                   </p>
                 </div>
               </article>
