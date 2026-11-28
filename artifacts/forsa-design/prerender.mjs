@@ -19,6 +19,8 @@ import { dueDiligence, dueDiligencePath, dueDiligenceSchema } from "./src/data/d
 import PortfolioContent from "./src/components/PortfolioContent.tsx";
 import { renderToStaticMarkup } from "react-dom/server";
 import { createElement } from "react";
+import CarbonReport from "./src/components/CarbonReport.tsx";
+import { carbonCopy, carbonPath } from "./src/data/websiteCarbon.ts";
 import DachCaseContent from "./src/components/DachCaseContent.tsx";
 import { dachCase, dachPath, dachSchema } from "./src/data/dachCaseStudy.ts";
 /**
@@ -736,6 +738,25 @@ for (const lang of ["en", "pl"]) {
     bodyHtml: buildLinklangCaseBody(lang),
     schema: linklangCaseSchema(lang),
     lastmod: linklangProject.reviewedOn,
+  });
+}
+
+for (const lang of ["pl", "en"]) {
+  const c = carbonCopy[lang];
+  routes.push({
+    outDir: `${lang}/case-studies/website-carbon`,
+    lang,
+    title: c.title + " | Forsa Design",
+    desc: c.intro,
+    ogTitle: c.title,
+    locale: lang === "pl" ? "pl_PL" : "en_GB",
+    canonical: SITE + carbonPath(lang),
+    alternates: [
+      { lang: "pl", href: SITE + carbonPath("pl") },
+      { lang: "en", href: SITE + carbonPath("en") },
+    ],
+    bodyHtml: `<header><nav><a href="/${lang}/#portfolio">Portfolio</a></nav></header><main id="main-content">${renderToStaticMarkup(createElement(CarbonReport, { lang }))}</main>`,
+    lastmod: "2026-11-27",
   });
 }
 
