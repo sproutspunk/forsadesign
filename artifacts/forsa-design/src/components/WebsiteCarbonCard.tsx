@@ -131,10 +131,7 @@ export default function WebsiteCarbonCard({ lang }: { lang: "pl" | "en" }) {
 
       <div className="flex flex-1 flex-col gap-3 p-5 sm:p-6">
         <p className="text-sm font-medium uppercase tracking-[0.12em] text-primary">{c.category}</p>
-        <h3
-          id="website-emissions-heading"
-          className="font-serif text-3xl font-bold text-white"
-        >
+        <h3 id="website-emissions-heading" className="font-serif text-3xl font-bold text-white">
           {c.title}
         </h3>
         <p className="text-base leading-relaxed text-foreground/80">{c.intro}</p>

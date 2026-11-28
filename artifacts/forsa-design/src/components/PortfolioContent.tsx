@@ -226,4 +226,3 @@ export default function PortfolioContent({ lang }: { lang: "pl" | "en" }) {
     </React.Fragment>
   );
 }
-
