@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react";
 import { dachCase, dachPath } from "../data/dachCaseStudy";
 import { linklangCasePath, linklangCaseStudy } from "../data/linklangCaseStudy";
+import WebsiteCarbonCard from "./WebsiteCarbonCard";
 
 export default function PortfolioContent({ lang }: { lang: "pl" | "en" }) {
   const c = linklangCaseStudy[lang];
@@ -99,8 +100,8 @@ export default function PortfolioContent({ lang }: { lang: "pl" | "en" }) {
             </h2>
             <p className="text-foreground/70 leading-relaxed">
               {lang === "pl"
-                ? "Działający konfigurator 3D Dach Systema, portal klienta LinkLang i interaktywny model uchwytu tokarskiego."
-                : "Dach Systema’s working 3D configurator, the LinkLang client portal and an interactive lathe chuck model."}
+                ? "Działający konfigurator 3D Dach Systema, portal klienta LinkLang, interaktywny model uchwytu tokarskiego oraz udokumentowane wyniki emisji stron."
+                : "Dach Systema’s working 3D configurator, the LinkLang client portal, an interactive lathe chuck model and documented website emissions."}
             </p>
           </div>
           <div
@@ -217,83 +218,7 @@ export default function PortfolioContent({ lang }: { lang: "pl" | "en" }) {
               </li>
             ))}
             <li id="website-emissions" className="min-w-0 snap-start scroll-mt-28">
-              <article
-                aria-labelledby="website-emissions-heading"
-                className="grid h-full min-h-[600px] grid-rows-[220px_1fr] overflow-hidden rounded-lg border border-primary/25 bg-card"
-              >
-                <dl className="grid grid-cols-2 items-center divide-x divide-primary/20 border-b border-primary/15 bg-[#151d21] px-4 sm:px-6">
-                  <div className="px-2 text-center">
-                    <dt className="text-sm font-medium text-white">Forsa Design</dt>
-                    <dd className="mt-3">
-                      <span className="block font-serif text-4xl font-bold text-primary">
-                        {lang === "pl" ? "0,07" : "0.07"}
-                      </span>
-                      <span className="mt-1 block text-xs text-foreground/80">
-                        {lang === "pl" ? "g CO₂ na wizytę" : "g CO₂ per visit"}
-                      </span>
-                    </dd>
-                  </div>
-                  <div className="px-2 text-center">
-                    <dt className="text-sm font-medium text-white">LinkLang</dt>
-                    <dd className="mt-3">
-                      <span className="block font-serif text-4xl font-bold text-primary">
-                        {lang === "pl" ? "0,09" : "0.09"}
-                      </span>
-                      <span className="mt-1 block text-xs text-foreground/80">
-                        {lang === "pl" ? "g CO₂ na wizytę" : "g CO₂ per visit"}
-                      </span>
-                    </dd>
-                  </div>
-                </dl>
-                <div className="flex flex-col gap-3 p-5 sm:p-6">
-                  <p className="text-primary text-[11px] uppercase tracking-[0.14em]">
-                    {lang === "pl" ? "Efektywność cyfrowa · UK" : "Digital efficiency · UK"}
-                  </p>
-                  <h3
-                    id="website-emissions-heading"
-                    className="font-serif text-3xl font-bold text-white"
-                  >
-                    {lang === "pl" ? "Ślad węglowy stron" : "Website carbon footprint"}
-                  </h3>
-                  <p className="text-sm text-foreground/75 leading-relaxed">
-                    {lang === "pl"
-                      ? "Dobrze zaprojektowana strona powinna działać sprawnie i oszczędnie korzystać z zasobów. Optymalizacja kodu, obrazów i transferu danych pomaga skracać czas ładowania oraz ograniczać ślad węglowy."
-                      : "A well-built website should be quick to use and economical with resources. Optimising code, images and data transfer can improve loading times and reduce its carbon footprint."}
-                  </p>
-                  <p className="text-sm text-foreground/75 leading-relaxed">
-                    {lang === "pl"
-                      ? "W UK ma to również znaczenie przy wyborze dostawców. "
-                      : "In the UK, this also matters when choosing suppliers. "}
-                    <a
-                      href="https://www.gov.uk/service-manual/design/environmentally-sustainable-services"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-primary underline underline-offset-4 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary"
-                    >
-                      GOV.UK
-                    </a>
-                    {lang === "pl"
-                      ? " zaleca zespołom administracji uwzględnianie wpływu środowiskowego ofert, a "
-                      : " advises government service teams to assess the environmental impact of proposals, while "}
-                    <a
-                      href="https://design.scotentblog.co.uk/reducing-carbon-emissions-from-our-websites/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-primary underline underline-offset-4 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary"
-                    >
-                      Scottish Enterprise
-                    </a>
-                    {lang === "pl"
-                      ? " łączy redukcję emisji swoich stron z realizacją celów Net Zero."
-                      : " links reductions in website emissions to its Net Zero goals."}
-                  </p>
-                  <p className="mt-auto border-t border-primary/15 pt-4 text-xs text-foreground/70">
-                    {lang === "pl"
-                      ? "Wcześniej opublikowane szacunki dla publicznych stron głównych, w gramach CO₂ na wizytę."
-                      : "Previously published estimates for the public homepages, in grams of CO₂ per visit."}
-                  </p>
-                </div>
-              </article>
+              <WebsiteCarbonCard lang={lang} />
             </li>
           </ul>
         </div>
