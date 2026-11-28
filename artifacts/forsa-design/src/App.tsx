@@ -27,6 +27,7 @@ const ContactPage = lazy(() => import("@/pages/ContactPage"));
 const SearchPage = lazy(() => import("@/pages/SearchPage"));
 const BlogPage = lazy(() => import("@/pages/BlogPage"));
 const ArticlePage = lazy(() => import("@/pages/ArticlePage"));
+const CarbonReportPage = lazy(() => import("@/pages/CarbonReportPage"));
 const DachCaseStudyPage = lazy(() => import("@/pages/DachCaseStudyPage"));
 const LinklangCaseStudyPage = lazy(() => import("@/pages/LinklangCaseStudyPage"));
 const PayPage = lazy(() => import("@/pages/PayPage"));
@@ -104,6 +105,14 @@ function Router() {
     <Suspense fallback={null}>
       <Redirector />
       <Switch>
+        <Route
+          path="/pl/case-studies/website-carbon"
+          component={() => <CarbonReportPage lang="pl" />}
+        />
+        <Route
+          path="/en/case-studies/website-carbon"
+          component={() => <CarbonReportPage lang="en" />}
+        />
         <Route
           path="/pl/case-studies/dachsystema"
           component={() => <DachCaseStudyPage lang="pl" />}

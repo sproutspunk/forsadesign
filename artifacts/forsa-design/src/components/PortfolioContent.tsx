@@ -1,7 +1,8 @@
 import React, { useRef, useState } from "react";
 import { dachCase, dachPath } from "../data/dachCaseStudy";
 import { linklangCasePath, linklangCaseStudy } from "../data/linklangCaseStudy";
-import WebsiteCarbonCard from "./WebsiteCarbonCard";
+import CarbonPreview from "./CarbonPreview";
+import { carbonCopy, carbonPath } from "../data/websiteCarbon";
 
 export default function PortfolioContent({ lang }: { lang: "pl" | "en" }) {
   const c = linklangCaseStudy[lang];
@@ -77,8 +78,21 @@ export default function PortfolioContent({ lang }: { lang: "pl" | "en" }) {
       height: 480,
       light: false,
     },
+    {
+      id: "website-emissions",
+      title: carbonCopy[lang].title,
+      category: carbonCopy[lang].category,
+      description:
+        lang === "pl"
+          ? "Ile CO₂e przypada na odsłonę? Porównaj szacowane emisje, transfer danych i zużycie energii stron Forsa Design i LinkLang."
+          : "How much CO₂e does one page view generate? Compare estimated emissions, data transfer and energy use for Forsa Design and LinkLang.",
+      detail: `1ClickImpact · ${carbonCopy[lang].testDate}`,
+      href: carbonPath(lang),
+      cta: carbonCopy[lang].details,
+      preview: <CarbonPreview lang={lang} />,
+    },
   ];
-  const cardCount = cards.length + 1;
+  const cardCount = cards.length;
 
   return (
     <React.Fragment>
@@ -175,24 +189,26 @@ export default function PortfolioContent({ lang }: { lang: "pl" | "en" }) {
             className="grid grid-flow-col auto-cols-[88%] sm:auto-cols-[65%] lg:grid-flow-row lg:grid-cols-2 items-stretch gap-6 overflow-x-auto snap-x snap-mandatory pb-5 pt-1 px-1 -mx-1"
           >
             {cards.map((card) => (
-              <li key={card.href} className="min-w-0 snap-start">
+              <li key={card.href} id={card.id} className="min-w-0 snap-start scroll-mt-28">
                 <a
                   href={card.href}
                   className="group grid grid-rows-[220px_minmax(0,1fr)] w-full h-full min-h-[600px] overflow-hidden rounded-lg border border-primary/25 bg-card hover:border-primary/70 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary focus-visible:outline-offset-2"
                 >
-                  <div
-                    className={`min-w-0 min-h-0 p-4 flex items-center justify-center border-b border-primary/15 ${card.light ? "bg-slate-100" : "bg-[#151d21]"}`}
-                  >
-                    <img
-                      src={card.image}
-                      alt={card.alt}
-                      width={card.width}
-                      height={card.height}
-                      loading="lazy"
-                      className="w-full h-full object-contain"
-                    />
-                  </div>
-                  <div className="grid grid-rows-[20px_40px_minmax(0,1fr)_40px_48px] gap-3 min-w-0 min-h-0 p-5 sm:p-6">
+                  {card.preview ?? (
+                    <div
+                      className={`min-w-0 min-h-0 p-4 flex items-center justify-center border-b border-primary/15 ${card.light ? "bg-slate-100" : "bg-[#151d21]"}`}
+                    >
+                      <img
+                        src={card.image}
+                        alt={card.alt}
+                        width={card.width}
+                        height={card.height}
+                        loading="lazy"
+                        className="w-full h-full object-contain"
+                      />
+                    </div>
+                  )}
+                  <div className="grid grid-rows-[auto_auto_1fr_auto_minmax(48px,auto)] gap-3 min-w-0 min-h-0 p-5 sm:p-6">
                     <p className="text-primary text-[11px] uppercase tracking-[0.14em]">
                       {card.category}
                     </p>
@@ -217,9 +233,6 @@ export default function PortfolioContent({ lang }: { lang: "pl" | "en" }) {
                 </a>
               </li>
             ))}
-            <li id="website-emissions" className="min-w-0 snap-start scroll-mt-28">
-              <WebsiteCarbonCard lang={lang} />
-            </li>
           </ul>
         </div>
       </section>
